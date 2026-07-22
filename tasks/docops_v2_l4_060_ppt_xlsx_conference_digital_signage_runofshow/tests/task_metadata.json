@@ -1,0 +1,172 @@
+{
+  "task_id": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+  "task_dir_name": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+  "doc_type": "ppt+xlsx",
+  "primary_modality": "PowerPoint (.pptx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 10,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "screen-schedule-filter -> public-PPT-signage-deck -> Excel-run-of-show-publish-gate -> cross-output-slot-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+  "supporting_input_paths": [
+    "/root/screen_schedule_source.xlsx",
+    "/root/digital_signage_operations_note.docx",
+    "/root/digital_signage_screen_standard.pdf"
+  ],
+  "output_paths": {
+    "deck": "/root/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+    "workbook": "/root/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+  "output_filename": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Create a public conference digital-signage deck and internal run-of-show workbook from a draft deck, schedule source, operations note, and screen standard while excluding internal VIP escort details from public screens.",
+  "single_step_benchmark_instruction": "Create the final PPTX and XLSX. Public deck must include only SIG-01/SIG-02/SIG-03, preserve screen-safe reference slide, and exclude OPS-99/VIP/green-room/radio details. Workbook must retain OPS-99 internally with table, formulas, print area, validation, hidden rules, conditional formatting, and cross-output slot consistency.",
+  "atomic_scope": "PPT/XLSX conference digital signage and run-of-show formatting workflow.",
+  "expected_output_type": "A final .pptx signage deck and .xlsx run-of-show workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "PowerPoint slide masters and layouts support consistent formatting",
+      "url": "https://support.microsoft.com/en-US/PowerPoint/training/what-is-a-slide-master-in-powerpoint"
+    },
+    {
+      "title": "Excel print areas and persistent worksheet formatting",
+      "url": "https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e"
+    }
+  ],
+  "verifier_expectations": {
+    "deck_output": "/root/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+    "workbook_output": "/root/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx",
+    "ppt_titles": [
+      "Conference Digital Signage",
+      "Lobby Rotation",
+      "Breakout Wayfinding",
+      "Evening Departures",
+      "Reference - Screen Safe Zones"
+    ],
+    "ppt_required": [
+      "Final public screen deck uses midnight/cyber palette",
+      "Internal ops rows remain in the run-of-show workbook",
+      "LOCKED REFERENCE"
+    ],
+    "ppt_forbidden": [
+      "Staff Ops Scratch - Remove",
+      "VIP Escort Screen",
+      "OPS-99",
+      "green room route",
+      "staff radio channel"
+    ],
+    "public_slots": [
+      [
+        "SIG-01",
+        "Lobby Rotation",
+        "08:00",
+        "Welcome / badge pickup / keynote hall"
+      ],
+      [
+        "SIG-02",
+        "Breakout Wayfinding",
+        "09:30",
+        "Tracks A-C room directions"
+      ],
+      [
+        "SIG-03",
+        "Evening Departures",
+        "17:15",
+        "Shuttle bays and reception notice"
+      ]
+    ],
+    "sheet_order": [
+      "Run of Show",
+      "Rules"
+    ],
+    "run_rows": [
+      [
+        "SIG-01",
+        "Lobby Rotation",
+        "08:00",
+        "Public Screen",
+        "Slide 2",
+        "Publish"
+      ],
+      [
+        "SIG-02",
+        "Breakout Wayfinding",
+        "09:30",
+        "Public Screen",
+        "Slide 3",
+        "Publish"
+      ],
+      [
+        "SIG-03",
+        "Evening Departures",
+        "17:15",
+        "Public Screen",
+        "Slide 4",
+        "Publish"
+      ],
+      [
+        "OPS-99",
+        "VIP Speaker Escort",
+        "07:40",
+        "Internal Ops",
+        "No slide",
+        "Do Not Publish"
+      ]
+    ],
+    "table_ref": "A2:I6",
+    "print_area": "'Run of Show'!$A$1:$I$6",
+    "freeze_panes": "A3",
+    "formula_cells": {
+      "G3": "=IF(F3=\"Publish\",\"IN DECK\",\"STAFF ONLY\")",
+      "G4": "=IF(F4=\"Publish\",\"IN DECK\",\"STAFF ONLY\")",
+      "G5": "=IF(F5=\"Publish\",\"IN DECK\",\"STAFF ONLY\")",
+      "G6": "=IF(F6=\"Publish\",\"IN DECK\",\"STAFF ONLY\")",
+      "H3": "=IF(A3=\"OPS-99\",\"INTERNAL\",\"PUBLIC\")",
+      "H4": "=IF(A4=\"OPS-99\",\"INTERNAL\",\"PUBLIC\")",
+      "H5": "=IF(A5=\"OPS-99\",\"INTERNAL\",\"PUBLIC\")",
+      "H6": "=IF(A6=\"OPS-99\",\"INTERNAL\",\"PUBLIC\")",
+      "I3": "=IF(E3<>\"No slide\",\"CHECKED\",\"HOLD\")",
+      "I4": "=IF(E4<>\"No slide\",\"CHECKED\",\"HOLD\")",
+      "I5": "=IF(E5<>\"No slide\",\"CHECKED\",\"HOLD\")",
+      "I6": "=IF(E6<>\"No slide\",\"CHECKED\",\"HOLD\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "publish_choices",
+      "audience_choices"
+    ],
+    "data_validation_ranges": [
+      "F3:F6",
+      "D3:D6"
+    ],
+    "public_slot_ids": [
+      "SIG-01",
+      "SIG-02",
+      "SIG-03"
+    ],
+    "internal_slot_ids": [
+      "OPS-99"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow"
+}

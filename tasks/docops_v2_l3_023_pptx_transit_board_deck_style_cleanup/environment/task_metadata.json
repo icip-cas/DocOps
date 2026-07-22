@@ -1,0 +1,215 @@
+{
+  "task_id": "docops_v2_l3_023_pptx_transit_board_deck_style_cleanup",
+  "task_dir_name": "docops_v2_l3_023_pptx_transit_board_deck_style_cleanup",
+  "doc_type": "pptx",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "N1 Speaker notes",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-slide-removal -> slide-reorder -> correction-log-application -> style-migration -> public-table-rebuild -> speaker-note-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-notes-strict",
+  "user_task_description": "Prepare a clean public board packet deck for the HarborLink fare pilot from a messy internal working presentation.",
+  "single_step_benchmark_instruction": "Remove internal slides and confidential notes, reorder public slides, apply correction-log fixes, migrate approved deck style, rebuild public tables/structured blocks, and preserve only concise public speaker notes.",
+  "atomic_scope": "Only the requested presentation-wide workflow edits are in scope; public board facts, correction facts, speaker notes, slide order, and style requirements must be preserved.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested single-presentation workflow.",
+  "input_path": "/root/docops_v2_l3_023_pptx_transit_board_deck_style_cleanup_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_023_pptx_transit_board_deck_style_cleanup_output.pptx",
+  "output_filename": "docops_v2_l3_023_pptx_transit_board_deck_style_cleanup_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "presentation",
+  "verifier_expectations": {
+    "slide_titles": [
+      "HarborLink Fare Pilot: Board Decision Packet",
+      "Decision Snapshot",
+      "Pilot Corridor Baseline",
+      "Equity Safeguards",
+      "Implementation Timeline",
+      "Budget Controls",
+      "Board Actions"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "backchannel",
+      "vendor dispute",
+      "union strategy",
+      "fare evasion watchlist",
+      "CFO panic notes",
+      "mayor backchannel",
+      "personal phone",
+      "do not disclose",
+      "unvetted",
+      "Eastbay Connector",
+      "+7%",
+      "Zone B subsidy cap $14",
+      "Procurement gate May 18",
+      "accessiblity"
+    ],
+    "style": {
+      "title_background": "12355B",
+      "content_background": "F7F3EA",
+      "accent_fill": "C85A3D",
+      "title_font": "Georgia",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "12355B",
+      "footer_text": "HarborLink Public Board Packet | July 2026"
+    },
+    "required_text_by_slide": {
+      "HarborLink Fare Pilot: Board Decision Packet": [
+        "Public board packet",
+        "July 2026",
+        "Prepared for the Mobility Committee"
+      ],
+      "Decision Snapshot": [
+        "Recommended vote: Authorize 12-month pilot",
+        "Corridor: East Bay Connector",
+        "Launch: September 14, 2026",
+        "Public success metric: +9% ridership lift with no increase in unresolved complaints"
+      ],
+      "Board Actions": [
+        "Authorize 12-month fare capping pilot on the East Bay Connector",
+        "Approve $2.96M public budget envelope",
+        "Direct monthly public dashboard beginning October 30, 2026",
+        "Require equity and accessibility checkpoint before full rollout"
+      ]
+    },
+    "tables": {
+      "Pilot Corridor Baseline": [
+        [
+          "Metric",
+          "Corrected public value",
+          "Board use"
+        ],
+        [
+          "Pilot corridor",
+          "East Bay Connector",
+          "Confirms final naming"
+        ],
+        [
+          "Baseline weekday ridership",
+          "18,400 average boardings",
+          "Sets denominator"
+        ],
+        [
+          "Projected pilot ridership lift",
+          "+9%",
+          "Updated demand case"
+        ],
+        [
+          "Low-income pass enrollment",
+          "12,750 active riders",
+          "Equity reference"
+        ]
+      ],
+      "Equity Safeguards": [
+        [
+          "Safeguard",
+          "Public commitment",
+          "Owner"
+        ],
+        [
+          "Zone A transfer credit",
+          "Two-hour free transfer window",
+          "Fare Policy"
+        ],
+        [
+          "Zone B subsidy cap",
+          "$16 monthly cap",
+          "Equity Office"
+        ],
+        [
+          "Accessibility review",
+          "Two ADA field audits before launch",
+          "Customer Experience"
+        ],
+        [
+          "Community clinics",
+          "Six multilingual enrollment clinics",
+          "Outreach"
+        ]
+      ],
+      "Implementation Timeline": [
+        [
+          "Milestone",
+          "Public date",
+          "Gate"
+        ],
+        [
+          "Board authorization",
+          "July 28, 2026",
+          "Decision"
+        ],
+        [
+          "Procurement gate",
+          "May 22, 2026",
+          "Corrected pre-launch checkpoint"
+        ],
+        [
+          "Operator training",
+          "August 17, 2026",
+          "Readiness"
+        ],
+        [
+          "Pilot launch",
+          "September 14, 2026",
+          "Service start"
+        ],
+        [
+          "First public dashboard",
+          "October 30, 2026",
+          "Transparency"
+        ]
+      ],
+      "Budget Controls": [
+        [
+          "Line Item",
+          "Amount",
+          "Control"
+        ],
+        [
+          "Fare capping technology",
+          "$1.8M",
+          "Fixed-price task order"
+        ],
+        [
+          "Enrollment support",
+          "$620K",
+          "Clinic staffing cap"
+        ],
+        [
+          "Accessibility testing",
+          "$240K",
+          "Independent QA signoff"
+        ],
+        [
+          "Contingency reserve",
+          "$300K",
+          "Board approval required to release"
+        ]
+      ]
+    },
+    "speaker_notes": [
+      "Open with the public decision frame and confirm this deck excludes nonpublic deliberation material.",
+      "State the requested action, corridor, launch date, and public success metric.",
+      "Explain that baseline values reflect the corrected public corridor name and updated ridership case.",
+      "Emphasize equity and accessibility safeguards before discussing launch mechanics.",
+      "Walk through the corrected public timeline and highlight the May 22 procurement gate.",
+      "Describe budget controls without referencing confidential vendor negotiations.",
+      "Close by reading the four requested board actions."
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_023_pptx_transit_board_deck_style_cleanup"
+}

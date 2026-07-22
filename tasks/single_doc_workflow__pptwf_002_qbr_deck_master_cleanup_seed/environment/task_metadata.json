@@ -1,0 +1,85 @@
+{
+  "task_id": "pptwf_002",
+  "task_dir_name": "pptwf_002_qbr_deck_master_cleanup_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "F4 Theme transfer",
+    "F1 Style consistency",
+    "S3 Hierarchy editing",
+    "C2 Editing"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "master-cleanup -> hierarchy-fix -> slide-rebuild",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean up a quarterly business review deck.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the Old Risk Appendix slide, restore the live slide order from Quarterly Business Review through the locked reference slide, and do not modify the locked reference slide.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pptx deck that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pptwf_002_qbr_deck_master_cleanup_seed.pptx",
+  "output_path": "/root/submission/pptwf_002_qbr_deck_master_cleanup_seed.pptx",
+  "output_filename": "pptwf_002_qbr_deck_master_cleanup_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "slide_title_contains_order": [
+      "Quarterly Business Review",
+      "Agenda",
+      "Risk Review",
+      "Open Actions",
+      "Closing",
+      "Layout Reference - Master"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Quarterly Business Review",
+        "required_lines": [
+          "Workflow-locked review deck",
+          "Keep the reference slide unchanged."
+        ]
+      },
+      {
+        "slide_title": "Agenda",
+        "required_lines": [
+          "Overview",
+          "Risk Review",
+          "Next Steps"
+        ]
+      },
+      {
+        "slide_title": "Risk Review",
+        "required_lines": [
+          "Risk A remains open.",
+          "Risk B has been mitigated."
+        ]
+      },
+      {
+        "slide_title": "Open Actions",
+        "required_lines": [
+          "Action 1 needs a new owner.",
+          "Action 2 is ready to close."
+        ]
+      },
+      {
+        "slide_title": "Closing",
+        "required_lines": [
+          "Thanks",
+          "Deck closes after the live storyline."
+        ]
+      }
+    ],
+    "slide_tables": [],
+    "reference_slides_match_input": [
+      "Layout Reference - Master"
+    ],
+    "absent_slide_titles": [
+      "Old Risk Appendix"
+    ]
+  }
+}

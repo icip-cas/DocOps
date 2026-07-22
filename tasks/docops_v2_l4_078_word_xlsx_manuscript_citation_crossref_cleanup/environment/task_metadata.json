@@ -1,0 +1,372 @@
+{
+  "task_id": "docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup",
+  "task_dir_name": "docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx), Excel (.xlsx), and PDF",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_input.docx",
+  "supporting_input_paths": [
+    "/root/draft_manuscript_author_date.docx",
+    "/root/journal_submission_guide.pdf",
+    "/root/reviewer_cleanup_requests.pdf",
+    "/root/reference_library.xlsx",
+    "/root/figure_table_inventory.docx"
+  ],
+  "output_paths": {
+    "revised_manuscript": "/root/submission/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_revised_manuscript.docx",
+    "audit_workbook": "/root/submission/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_audit_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_revised_manuscript.docx",
+  "output_filename": "revised_manuscript.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-citation-order-strict",
+  "user_task_description": "Create a revised manuscript and citation/cross-reference audit workbook by converting author-date citations to numeric Vancouver style, rebuilding references, fixing figure/table references, and excluding private author notes.",
+  "single_step_benchmark_instruction": "Create revised_manuscript.docx and citation_crossref_audit.xlsx. Convert citations to Vancouver numeric order, repair figure/table cross-references, remove obsolete supplement callouts, preserve workbook formulas/tables/validation/hidden sheets, and exclude private notes.",
+  "expected_output_type": "A .docx revised manuscript and .xlsx audit workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "ICMJE Recommendations: references numbered in order of first mention in text",
+      "url": "https://www.icmje.org/recommendations/browse/manuscript-preparation/preparing-for-submission.html"
+    },
+    {
+      "title": "NLM Citing Medicine reference formatting guidance",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK7256/"
+    },
+    {
+      "title": "Journal manuscript editing workflows around citation renumbering and figure/table cross-references",
+      "url": "https://www.councilscienceeditors.org/"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_revised_manuscript.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup_audit_workbook.xlsx",
+    "doc_heading_order": [
+      "Hybrid Clinic Follow-up Study",
+      "Abstract",
+      "Introduction",
+      "Methods",
+      "Results",
+      "Discussion",
+      "Figures and Tables",
+      "References"
+    ],
+    "doc_required": [
+      "Hybrid Clinic Follow-up Study",
+      "telehealth follow-up can preserve visit completion in chronic care [1]",
+      "missed-visit risk is associated with travel burden and scheduling friction [2]",
+      "We followed the reporting checklist for observational health services studies [3]",
+      "The final cohort included 486 visits after excluding 22 test encounters",
+      "Visit completion improved from 78.4% to 86.9% after hybrid scheduling [4]",
+      "Patient-reported convenience improved without a measurable increase in urgent callbacks [5]",
+      "Figure 1 shows the revised cohort flow",
+      "Table 1 reports visit completion by modality",
+      "Supplementary Figure S1 was removed from the main text",
+      "1. Nguyen A, Patel R. Telehealth follow-up completion in chronic care. J Ambulatory Care. 2022;14(3):155-162.",
+      "2. Romero L, Shah N, Bell K. Travel burden and missed outpatient visits. Health Serv Access. 2021;9(2):88-97.",
+      "3. Turner M, Singh P. Reporting checklist for observational health services studies. Methods Clin Care. 2020;6(1):11-19.",
+      "4. Li J, Gomez A. Hybrid scheduling and visit completion. Care Delivery Rev. 2023;18(4):240-251.",
+      "5. Osei D, Martin G. Patient convenience and callbacks after virtual care. Patient Exp Q. 2022;12(1):33-41."
+    ],
+    "doc_forbidden": [
+      "(Nguyen, 2022)",
+      "(Romero et al., 2021)",
+      "(Turner and Singh, 2020)",
+      "(Li & Gomez, 2023)",
+      "(Osei, 2022)",
+      "Figure 3 shows the revised cohort flow",
+      "Table 2 reports visit completion",
+      "see Supplementary Figure S1 for primary results",
+      "internal author note",
+      "do not mention reviewer 2"
+    ],
+    "citation_rows": [
+      [
+        "Citation No.",
+        "First-Appearance Section",
+        "Original Marker",
+        "Final Marker",
+        "Reference Key",
+        "Status"
+      ],
+      [
+        1,
+        "Introduction",
+        "(Nguyen, 2022)",
+        "[1]",
+        "NGUYEN2022",
+        "Mapped"
+      ],
+      [
+        2,
+        "Introduction",
+        "(Romero et al., 2021)",
+        "[2]",
+        "ROMERO2021",
+        "Mapped"
+      ],
+      [
+        3,
+        "Methods",
+        "(Turner and Singh, 2020)",
+        "[3]",
+        "TURNER2020",
+        "Mapped"
+      ],
+      [
+        4,
+        "Results",
+        "(Li & Gomez, 2023)",
+        "[4]",
+        "LI2023",
+        "Mapped"
+      ],
+      [
+        5,
+        "Discussion",
+        "(Osei, 2022)",
+        "[5]",
+        "OSEI2022",
+        "Mapped"
+      ]
+    ],
+    "crossref_rows": [
+      [
+        "Item",
+        "Original Reference",
+        "Final Reference",
+        "Reason",
+        "Status"
+      ],
+      [
+        "Cohort flow figure",
+        "Figure 3",
+        "Figure 1",
+        "Removed two earlier draft figures",
+        "Fixed"
+      ],
+      [
+        "Visit completion table",
+        "Table 2",
+        "Table 1",
+        "Only one main table remains",
+        "Fixed"
+      ],
+      [
+        "Supplementary Figure S1",
+        "Main-text result callout",
+        "Removed from main text",
+        "Reviewer requested main text focus",
+        "Fixed"
+      ]
+    ],
+    "reference_rows": [
+      [
+        "Citation No.",
+        "Reference Key",
+        "Formatted Reference"
+      ],
+      [
+        1,
+        "NGUYEN2022",
+        "Nguyen A, Patel R. Telehealth follow-up completion in chronic care. J Ambulatory Care. 2022;14(3):155-162."
+      ],
+      [
+        2,
+        "ROMERO2021",
+        "Romero L, Shah N, Bell K. Travel burden and missed outpatient visits. Health Serv Access. 2021;9(2):88-97."
+      ],
+      [
+        3,
+        "TURNER2020",
+        "Turner M, Singh P. Reporting checklist for observational health services studies. Methods Clin Care. 2020;6(1):11-19."
+      ],
+      [
+        4,
+        "LI2023",
+        "Li J, Gomez A. Hybrid scheduling and visit completion. Care Delivery Rev. 2023;18(4):240-251."
+      ],
+      [
+        5,
+        "OSEI2022",
+        "Osei D, Martin G. Patient convenience and callbacks after virtual care. Patient Exp Q. 2022;12(1):33-41."
+      ]
+    ],
+    "qa_rows": [
+      [
+        "Check",
+        "Expected",
+        "Status"
+      ],
+      [
+        "Citation style",
+        "Bracketed numeric citations in first-appearance order",
+        "Pass"
+      ],
+      [
+        "Reference list",
+        "Five Vancouver-style references",
+        "Pass"
+      ],
+      [
+        "Figure numbering",
+        "Cohort flow is Figure 1",
+        "Pass"
+      ],
+      [
+        "Table numbering",
+        "Visit completion is Table 1",
+        "Pass"
+      ],
+      [
+        "Removed supplement callout",
+        "Supplementary Figure S1 removed from main text",
+        "Pass"
+      ],
+      [
+        "Private comments",
+        "Private comments excluded",
+        "Pass"
+      ]
+    ],
+    "private_rows": [
+      [
+        "Private Note",
+        "Treatment"
+      ],
+      [
+        "internal author note",
+        "Exclude"
+      ],
+      [
+        "do not mention reviewer 2",
+        "Exclude"
+      ],
+      [
+        "the sample is weaker than planned",
+        "Exclude"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Manuscript",
+        "Hybrid Clinic Follow-up Study",
+        "Draft manuscript",
+        "Matched"
+      ],
+      [
+        "Citation style",
+        "Numeric Vancouver",
+        "Journal guide",
+        "Matched"
+      ],
+      [
+        "Mapped citations",
+        "=COUNTIF('Citation Map'!F2:F6,\"Mapped\")",
+        "Citation Map",
+        "Calculated"
+      ],
+      [
+        "Fixed cross-references",
+        "=COUNTIF('Cross-Reference Fixes'!E2:E4,\"Fixed\")",
+        "Cross-Reference Fixes",
+        "Calculated"
+      ],
+      [
+        "Final references",
+        "=COUNTA('Reference List'!A2:A6)",
+        "Reference List",
+        "Calculated"
+      ],
+      [
+        "Private notes excluded",
+        3,
+        "Private Notes",
+        "Checked"
+      ],
+      [
+        "Submission ready",
+        "=IF(AND(B4=5,B5=3,B6=5,B7=3),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "sheet_order": [
+      "Submission Summary",
+      "Citation Map",
+      "Cross-Reference Fixes",
+      "Reference List",
+      "Style QA",
+      "Private Notes"
+    ],
+    "tables": {
+      "Submission Summary": [
+        "tblSubmissionSummary",
+        "A1:D8"
+      ],
+      "Citation Map": [
+        "tblCitationMap",
+        "A1:F6"
+      ],
+      "Cross-Reference Fixes": [
+        "tblCrossRefFixes",
+        "A1:E4"
+      ],
+      "Reference List": [
+        "tblReferenceList",
+        "A1:C6"
+      ],
+      "Style QA": [
+        "tblStyleQA",
+        "A1:C7"
+      ],
+      "Private Notes": [
+        "tblPrivateNotes",
+        "A1:B4"
+      ]
+    },
+    "formula_cells": {
+      "Submission Summary!B4": "=COUNTIF('Citation Map'!F2:F6,\"Mapped\")",
+      "Submission Summary!B5": "=COUNTIF('Cross-Reference Fixes'!E2:E4,\"Fixed\")",
+      "Submission Summary!B6": "=COUNTA('Reference List'!A2:A6)",
+      "Submission Summary!B8": "=IF(AND(B4=5,B5=3,B6=5,B7=3),\"Ready\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Private Notes"
+    ],
+    "defined_names": [
+      "MappedCitationCount",
+      "FixedCrossRefCount",
+      "SubmissionReady"
+    ],
+    "print_areas": {
+      "Submission Summary": "A1:D8",
+      "Citation Map": "A1:F6",
+      "Cross-Reference Fixes": "A1:E4",
+      "Reference List": "A1:C6",
+      "Style QA": "A1:C7"
+    },
+    "data_validation": {
+      "Citation Map": [
+        "F2:F6"
+      ],
+      "Cross-Reference Fixes": [
+        "E2:E4"
+      ],
+      "Style QA": [
+        "C2:C7"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_078_word_xlsx_manuscript_citation_crossref_cleanup"
+}

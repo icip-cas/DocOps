@@ -1,0 +1,249 @@
+{
+  "task_id": "docops_v2_l4_042_excel_pdf_month_close_exception_pack",
+  "task_dir_name": "docops_v2_l4_042_excel_pdf_month_close_exception_pack",
+  "doc_type": "excel+pdf",
+  "primary_modality": "Excel (.xlsx) and PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "receipt-manifest-join -> controller-exception-override -> clean-close-workbook -> generate-exception-pdf -> cross-output-exception-reconciliation",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_042_excel_pdf_month_close_exception_pack_input.xlsx",
+  "supporting_input_paths": [
+    "/root/receipt_manifest.xlsx",
+    "/root/invoice_evidence_packet.pdf",
+    "/root/controller_close_review_note.docx"
+  ],
+  "output_paths": {
+    "workbook": "/root/submission/docops_v2_l4_042_excel_pdf_month_close_exception_pack_workbook.xlsx",
+    "packet": "/root/submission/docops_v2_l4_042_excel_pdf_month_close_exception_pack_packet.pdf"
+  },
+  "output_path": "/root/submission/docops_v2_l4_042_excel_pdf_month_close_exception_pack_workbook.xlsx",
+  "output_filename": "docops_v2_l4_042_excel_pdf_month_close_exception_pack_input.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A monthly close workbook and matching PDF exception packet must be prepared from transaction data, receipt manifest, invoice evidence, and controller notes.",
+  "single_step_benchmark_instruction": "Create a release-ready close workbook and matching exception PDF packet. Clean transactions, classify receipt status, produce open exceptions, preserve workbook formulas/tables/validation/hidden sheets, and ensure PDF exception count and amount match the workbook.",
+  "atomic_scope": "Cross-document, multi-output workflow with coupled Excel/PDF reconciliation and native workbook preservation.",
+  "expected_output_type": "A revised .xlsx close workbook and .pdf exception packet saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "L3 reddit/community month close workbook task",
+      "url": "local:harbor_tasks_l3_reddit_batch4_over10/excelwf_reddit_006_month_close_over10_seed"
+    },
+    {
+      "title": "Trying to find unique values when comparing hundreds of millions of rows",
+      "url": "https://np.reddit.com/r/excel/comments/uoixte/trying_to_find_unique_values_when_comparing/"
+    },
+    {
+      "title": "Index Match to return multiple values",
+      "url": "https://us.reddit.com/r/excel/comments/seajec/how_can_i_use_index_match_to_return_multiple/"
+    }
+  ],
+  "verifier_expectations": {
+    "workbook_output": "/root/submission/docops_v2_l4_042_excel_pdf_month_close_exception_pack_workbook.xlsx",
+    "packet_output": "/root/submission/docops_v2_l4_042_excel_pdf_month_close_exception_pack_packet.pdf",
+    "sheet_order": [
+      "Close Summary",
+      "Clean Transactions",
+      "Exceptions",
+      "Raw Transactions",
+      "Archive",
+      "Rules"
+    ],
+    "summary_formulas": {
+      "B3": "=SUMIF('Clean Transactions'!D:D,\"Revenue\",'Clean Transactions'!G:G)",
+      "B4": "=SUMIF('Clean Transactions'!D:D,\"Expense\",'Clean Transactions'!G:G)+SUMIF('Clean Transactions'!D:D,\"Consulting\",'Clean Transactions'!G:G)",
+      "B5": "=B3+B4",
+      "B7": "=COUNTIF(Exceptions!E2:E4,\"Open\")",
+      "B8": "=SUM(Exceptions!D2:D4)"
+    },
+    "summary_computed": {
+      "exception_count": 3,
+      "exception_amount": 4030
+    },
+    "clean_rows": [
+      [
+        "TRX-101",
+        "2026-05-30",
+        "Northstar Bank",
+        "Revenue",
+        "Mina Zhou",
+        "RC-1001",
+        12400,
+        "Present",
+        "OK"
+      ],
+      [
+        "TRX-102",
+        "2026-05-31",
+        "Harbor Print",
+        "Expense",
+        "Owen Hart",
+        "RC-1002",
+        -1180,
+        "Duplicate",
+        "Review"
+      ],
+      [
+        "TRX-103",
+        "2026-05-31",
+        "Harbor Print",
+        "Expense",
+        "Owen Hart",
+        "RC-1002",
+        -1180,
+        "Duplicate",
+        "Review"
+      ],
+      [
+        "TRX-104",
+        "2026-06-01",
+        "Civic Travel",
+        "Expense",
+        "Priya Shah",
+        "RC-1004",
+        -875,
+        "Missing",
+        "Review"
+      ],
+      [
+        "TRX-105",
+        "2026-06-02",
+        "Zenith Foods",
+        "Revenue",
+        "Mina Zhou",
+        "RC-1005",
+        7400,
+        "Present",
+        "OK"
+      ],
+      [
+        "TRX-106",
+        "2026-06-02",
+        "Orion Logistics",
+        "Revenue",
+        "Mina Zhou",
+        "RC-1006",
+        6100,
+        "Present",
+        "OK"
+      ],
+      [
+        "TRX-107",
+        "2026-06-03",
+        "Cedar Advisory",
+        "Consulting",
+        "Owen Hart",
+        "RC-1007",
+        -1975,
+        "Policy Exception",
+        "Review"
+      ]
+    ],
+    "exception_rows": [
+      [
+        "EX-01",
+        "TRX-102/TRX-103",
+        "Duplicate receipt RC-1002 used by Harbor Print",
+        1180,
+        "Open",
+        "Remove one duplicate before final close."
+      ],
+      [
+        "EX-02",
+        "TRX-104",
+        "Missing receipt RC-1004 for Civic Travel",
+        875,
+        "Open",
+        "Hold travel reimbursement until receipt is attached."
+      ],
+      [
+        "EX-03",
+        "TRX-107",
+        "Policy exception: Cedar Advisory moved to Consulting",
+        1975,
+        "Open",
+        "Controller approved consulting reclass; include in exception packet."
+      ]
+    ],
+    "hidden_sheets": [
+      "Raw Transactions",
+      "Archive",
+      "Rules"
+    ],
+    "defined_names": [
+      "receipt_status_choices"
+    ],
+    "data_validation_ranges": {
+      "Clean Transactions": [
+        "H2:H8"
+      ]
+    },
+    "table_refs": {
+      "Clean Transactions!CleanTransactions": "A1:I8",
+      "Exceptions!CloseExceptions": "A1:F4"
+    },
+    "highlight_rows": [
+      {
+        "sheet": "Clean Transactions",
+        "row": 3
+      },
+      {
+        "sheet": "Clean Transactions",
+        "row": 4
+      },
+      {
+        "sheet": "Clean Transactions",
+        "row": 5
+      },
+      {
+        "sheet": "Clean Transactions",
+        "row": 8
+      }
+    ],
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "May Close Exception Packet",
+      "EX-01 Duplicate Receipt",
+      "EX-02 Missing Receipt",
+      "EX-03 Policy Exception"
+    ],
+    "pdf_required": [
+      "Open Exception Count 3",
+      "Total Exception Amount $4,030",
+      "TRX-102/TRX-103",
+      "$1,180",
+      "TRX-104",
+      "$875",
+      "TRX-107",
+      "$1,975"
+    ],
+    "pdf_forbidden": [
+      "Packet Status Draft",
+      "No exceptions",
+      "Exception Count 0"
+    ],
+    "outline_titles": [
+      "Exception Packet Cover",
+      "Open Exceptions",
+      "EX-01 Duplicate Receipt",
+      "EX-02 Missing Receipt",
+      "EX-03 Policy Exception"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_042_excel_pdf_month_close_exception_pack"
+}

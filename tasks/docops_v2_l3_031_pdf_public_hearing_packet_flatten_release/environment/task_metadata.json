@@ -1,0 +1,232 @@
+{
+  "task_id": "docops_v2_l3_031_pdf_public_hearing_packet_flatten_release",
+  "input_path": "/root/docops_v2_l3_031_pdf_public_hearing_packet_flatten_release_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_031_pdf_public_hearing_packet_flatten_release_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 5,
+    "page_titles": [
+      "Public Hearing Packet: Zoning Amendment Comments",
+      "Corrected Hearing Summary",
+      "Comment Category Matrix",
+      "Response Workflow",
+      "Release Controls and Appendix Index"
+    ],
+    "outline_titles": [
+      "Public Hearing Packet: Zoning Amendment Comments",
+      "Corrected Hearing Summary",
+      "Comment Category Matrix",
+      "Response Workflow",
+      "Release Controls and Appendix Index"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "Public Hearing Packet: Zoning Amendment Comments",
+        "Docket ID: ZA-2026-041",
+        "Clean flattened public release packet",
+        "Public Hearing Desk"
+      ],
+      "1": [
+        "Hearing date",
+        "2026-03-14",
+        "Public comment count",
+        "128",
+        "Response deadline",
+        "2026-09-15"
+      ],
+      "2": [
+        "Support",
+        "Opposition",
+        "Procedural question",
+        "Out of scope"
+      ],
+      "3": [
+        "Validate corrected docket",
+        "Publish comment matrix",
+        "Release FAQ response",
+        "Archive flattened packet"
+      ],
+      "4": [
+        "AcroForm fields",
+        "Annotations",
+        "Embedded files",
+        "JavaScript",
+        "Nonpublic metadata",
+        "Appendix A - Corrected hearing summary",
+        "Appendix B - Comment category matrix",
+        "Appendix C - Release controls"
+      ]
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "Vivian Holt",
+      "Marco Ruiz",
+      "personal phone",
+      "legal hold",
+      "unreleased deliberation",
+      "staff-only",
+      "do not publish",
+      "2026-03-04",
+      "112 comments",
+      "2026-09-01",
+      "private reviewer"
+    ],
+    "tables": {
+      "Corrected Hearing Summary": [
+        [
+          "Field",
+          "Public Value",
+          "Release Note"
+        ],
+        [
+          "Docket ID",
+          "ZA-2026-041",
+          "Corrected public docket"
+        ],
+        [
+          "Hearing date",
+          "2026-03-14",
+          "Corrected hearing record"
+        ],
+        [
+          "Public comment count",
+          "128",
+          "Deduplicated comment count"
+        ],
+        [
+          "Public contact",
+          "Public Hearing Desk",
+          "No individual staff names"
+        ],
+        [
+          "Response deadline",
+          "2026-09-15",
+          "Public response deadline"
+        ]
+      ],
+      "Comment Category Matrix": [
+        [
+          "Category",
+          "Public Handling",
+          "Count"
+        ],
+        [
+          "Support",
+          "Include aggregate rationale",
+          "54"
+        ],
+        [
+          "Opposition",
+          "Include aggregate rationale",
+          "61"
+        ],
+        [
+          "Procedural question",
+          "Respond through FAQ",
+          "9"
+        ],
+        [
+          "Out of scope",
+          "Log only",
+          "4"
+        ]
+      ],
+      "Response Workflow": [
+        [
+          "Step",
+          "Owner",
+          "Deadline",
+          "Status"
+        ],
+        [
+          "Validate corrected docket",
+          "Planning Records",
+          "2026-08-20",
+          "Complete"
+        ],
+        [
+          "Publish comment matrix",
+          "Public Hearing Desk",
+          "2026-08-27",
+          "Ready"
+        ],
+        [
+          "Release FAQ response",
+          "Planning Director",
+          "2026-09-08",
+          "Ready"
+        ],
+        [
+          "Archive flattened packet",
+          "Records Manager",
+          "2026-09-15",
+          "Ready"
+        ]
+      ],
+      "Release Controls and Appendix Index": [
+        [
+          "Control",
+          "Required Result",
+          "Status"
+        ],
+        [
+          "AcroForm fields",
+          "Flattened or removed",
+          "Complete"
+        ],
+        [
+          "Annotations",
+          "Removed",
+          "Complete"
+        ],
+        [
+          "Embedded files",
+          "Removed",
+          "Complete"
+        ],
+        [
+          "JavaScript",
+          "Removed",
+          "Complete"
+        ],
+        [
+          "Nonpublic metadata",
+          "Replaced with public metadata",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "page_width": 612,
+      "page_height": 792,
+      "header_bar": "0B3D91",
+      "accent": "F59E0B",
+      "footer_text": "Public Hearing Release | ZA-2026-041 | 2026"
+    },
+    "metadata": {
+      "title": "Public Hearing Packet: Zoning Amendment Comments",
+      "author": "Public Hearing Desk",
+      "subject": "Clean flattened public release packet"
+    },
+    "source_must_have": {
+      "acroform": true,
+      "annotations": true,
+      "embedded_files": true,
+      "javascript": true,
+      "metadata_author": "Vivian Holt",
+      "phrases": [
+        "DRAFT",
+        "PRIVATE",
+        "personal phone",
+        "unreleased deliberation",
+        "2026-03-04",
+        "112 comments"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_031_pdf_public_hearing_packet_flatten_release",
+  "task_dir_name": "docops_v2_l3_031_pdf_public_hearing_packet_flatten_release"
+}

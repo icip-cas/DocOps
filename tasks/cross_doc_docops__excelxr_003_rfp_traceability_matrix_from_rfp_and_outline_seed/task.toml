@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed"
+description = "excelxr_003 - RFP traceability matrix task for DocumentBenchmark."
+authors = []
+keywords = ["excel", "cross-document", "document-processing", "c1-extraction", "c5-reasoning", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["excel", "cross-document", "document-processing", "skill-gap-v7-realworld", "rfp-traceability"]
+task_id = "excelxr_003"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "extract-rfp-locators -> map-proposal-sections -> fill-traceability-matrix -> preserve-summary-formulas"
+atomic_operations = ["C1 Extraction", "C5 Reasoning", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed.xlsx"
+OUTPUT_PATH = "/root/submission/excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed.xlsx"
+TASK_ID = "excelxr_003"
+DOC_TYPE = "excel"
+
+[solution.env]

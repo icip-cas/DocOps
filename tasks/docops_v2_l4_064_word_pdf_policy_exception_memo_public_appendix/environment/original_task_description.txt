@@ -1,0 +1,1 @@
+A policy exception release memo and public appendix must be generated from an exception log, policy source, approval note, and evidence appendix while excluding internal-only legal details.

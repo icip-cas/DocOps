@@ -1,0 +1,195 @@
+{
+  "task_id": "docops_v2_l3_038_pdf_benefits_notice_errata_repair",
+  "input_path": "/root/docops_v2_l3_038_pdf_benefits_notice_errata_repair_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_038_pdf_benefits_notice_errata_repair_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 5,
+    "page_titles": [
+      "Public Benefits Notice Repair Packet",
+      "Corrected Notice Summary",
+      "Eligibility and Payment Table",
+      "Appeal Rights Workflow",
+      "Release Checklist"
+    ],
+    "outline_titles": [
+      "Public Benefits Notice Repair Packet",
+      "Corrected Notice Summary",
+      "Eligibility and Payment Table",
+      "Appeal Rights Workflow",
+      "Release Checklist"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "BN-2026-8842",
+        "Benefits Service Center",
+        "Public benefits notice"
+      ],
+      "1": [
+        "Notice date",
+        "2026-06-18",
+        "Monthly benefit",
+        "$842",
+        "Appeal deadline",
+        "2026-07-18"
+      ],
+      "2": [
+        "Eligible household",
+        "Monthly benefit",
+        "$842",
+        "Public phone",
+        "1-800-555-0188"
+      ],
+      "3": [
+        "File appeal",
+        "2026-07-18",
+        "Benefits Service Center"
+      ],
+      "4": [
+        "Errata applied",
+        "Nonpublic pages removed",
+        "Bookmarks rebuilt"
+      ]
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "BN-2026-8428",
+      "$824",
+      "2026-06-08",
+      "2026-07-08",
+      "caseworker direct line",
+      "do not mail",
+      "scratch"
+    ],
+    "tables": {
+      "Corrected Notice Summary": [
+        [
+          "Field",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Case ID",
+          "BN-2026-8842",
+          "Corrected"
+        ],
+        [
+          "Notice date",
+          "2026-06-18",
+          "Corrected"
+        ],
+        [
+          "Monthly benefit",
+          "$842",
+          "Corrected"
+        ],
+        [
+          "Appeal deadline",
+          "2026-07-18",
+          "Corrected"
+        ]
+      ],
+      "Eligibility and Payment Table": [
+        [
+          "Item",
+          "Public Value",
+          "Release Note"
+        ],
+        [
+          "Eligible household",
+          "Approved",
+          "Public determination"
+        ],
+        [
+          "Monthly benefit",
+          "$842",
+          "Corrected amount"
+        ],
+        [
+          "Public phone",
+          "1-800-555-0188",
+          "Published contact"
+        ],
+        [
+          "Office",
+          "Benefits Service Center",
+          "Corrected office"
+        ]
+      ],
+      "Appeal Rights Workflow": [
+        [
+          "Step",
+          "Public Action",
+          "Deadline"
+        ],
+        [
+          "Review notice",
+          "Check corrected case details",
+          "Upon receipt"
+        ],
+        [
+          "File appeal",
+          "Submit appeal request",
+          "2026-07-18"
+        ],
+        [
+          "Contact office",
+          "Benefits Service Center",
+          "As needed"
+        ]
+      ],
+      "Release Checklist": [
+        [
+          "Control",
+          "Required Result",
+          "Status"
+        ],
+        [
+          "Errata",
+          "Errata applied",
+          "Complete"
+        ],
+        [
+          "Nonpublic pages",
+          "Nonpublic pages removed",
+          "Complete"
+        ],
+        [
+          "Bookmarks",
+          "Bookmarks rebuilt",
+          "Complete"
+        ],
+        [
+          "Metadata",
+          "Clean metadata applied",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "page_width": 612,
+      "page_height": 792,
+      "header_bar": "1D4ED8",
+      "accent": "FACC15",
+      "footer_text": "Public Benefits Notice Repair Packet | 2026"
+    },
+    "metadata": {
+      "title": "Public Benefits Notice Repair Packet",
+      "author": "Benefits Service Center",
+      "subject": "Clean benefits notice errata repair packet"
+    },
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE",
+      "BN-2026-8428",
+      "$824",
+      "2026-06-08",
+      "2026-07-08",
+      "caseworker direct line"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_038_pdf_benefits_notice_errata_repair",
+  "task_dir_name": "docops_v2_l3_038_pdf_benefits_notice_errata_repair"
+}

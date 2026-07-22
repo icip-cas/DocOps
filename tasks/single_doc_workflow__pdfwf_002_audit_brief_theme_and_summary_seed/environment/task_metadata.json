@@ -1,0 +1,72 @@
+{
+  "task_id": "pdfwf_002",
+  "task_dir_name": "pdfwf_002_audit_brief_theme_and_summary_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "F4 Theme transfer",
+    "C3 Generation",
+    "F3 Layout control",
+    "S2 Reorder"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "theme-refresh -> summary-rewrite -> appendix-move",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the audit brief PDF while preserving the live page text.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the obsolete summary page, restore the live pages to Cover, Audit Brief, Callouts, Appendix, and Reference, and add bookmarks for each live page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pdf packet that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pdfwf_002_audit_brief_theme_and_summary_seed.pdf",
+  "output_path": "/root/submission/pdfwf_002_audit_brief_theme_and_summary_seed.pdf",
+  "output_filename": "pdfwf_002_audit_brief_theme_and_summary_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "page_count": 5,
+    "page_title_contains_order": [
+      "Cover",
+      "Audit Brief",
+      "Callouts",
+      "Appendix",
+      "Reference"
+    ],
+    "cover_lines": [
+      "Audit Brief: Closeout Edition",
+      "Prepared for release",
+      "Version 3"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Audit Brief",
+        "lines": [
+          "summary now reflects the final review state",
+          "placeholders have been removed"
+        ]
+      },
+      {
+        "page_title": "Callouts",
+        "lines": [
+          "final action complete",
+          "final review approved"
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "TBD Summary"
+    ],
+    "outline_contains_order": [
+      "Cover",
+      "Audit Brief",
+      "Callouts",
+      "Appendix",
+      "Reference"
+    ],
+    "theme_colors_any": []
+  }
+}

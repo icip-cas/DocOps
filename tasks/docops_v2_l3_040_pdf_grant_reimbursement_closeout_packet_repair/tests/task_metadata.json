@@ -1,0 +1,290 @@
+{
+  "task_id": "docops_v2_l3_040_pdf_grant_reimbursement_closeout_packet_repair",
+  "input_path": "/root/docops_v2_l3_040_pdf_grant_reimbursement_closeout_packet_repair_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_040_pdf_grant_reimbursement_closeout_packet_repair_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_titles": [
+      "Grant Reimbursement Closeout Packet",
+      "Corrected Award and Claim Summary",
+      "Eligible Cost Reconciliation",
+      "Evidence Crosswalk",
+      "Payment Hold Resolution Workflow",
+      "Final Certification Checklist"
+    ],
+    "outline_titles": [
+      "Grant Reimbursement Closeout Packet",
+      "Corrected Award and Claim Summary",
+      "Eligible Cost Reconciliation",
+      "Evidence Crosswalk",
+      "Payment Hold Resolution Workflow",
+      "Final Certification Checklist"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "GRC-2026-118",
+        "North Valley Food Bank",
+        "2026-04-01 to 2026-06-30",
+        "$184,620",
+        "$179,420",
+        "grants-closeout@state.example"
+      ],
+      "1": [
+        "Eligible cost total",
+        "$179,420",
+        "Disallowed cost",
+        "$5,200"
+      ],
+      "2": [
+        "Food procurement",
+        "$121,300",
+        "Administrative fee",
+        "$10,000",
+        "$5,200",
+        "$4,800",
+        "final payable amount must equal"
+      ],
+      "3": [
+        "EV-01",
+        "EV-05",
+        "Evidence must be reviewed in ID order"
+      ],
+      "4": [
+        "Steps must be completed in sequence",
+        "payment operations cannot act"
+      ],
+      "5": [
+        "Final certification: approve the closeout packet",
+        "preservation check"
+      ]
+    },
+    "tables": {
+      "Corrected Award and Claim Summary": [
+        [
+          "Field",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Grant ID",
+          "GRC-2026-118",
+          "Applied"
+        ],
+        [
+          "Recipient",
+          "North Valley Food Bank",
+          "Applied"
+        ],
+        [
+          "Reporting period",
+          "2026-04-01 to 2026-06-30",
+          "Applied"
+        ],
+        [
+          "Claim amount",
+          "$184,620",
+          "Applied"
+        ],
+        [
+          "Eligible cost total",
+          "$179,420",
+          "Applied"
+        ],
+        [
+          "Disallowed cost",
+          "$5,200",
+          "Separated"
+        ],
+        [
+          "Final payable",
+          "$179,420",
+          "Ready"
+        ]
+      ],
+      "Eligible Cost Reconciliation": [
+        [
+          "Cost category",
+          "Claimed",
+          "Disallowed",
+          "Eligible"
+        ],
+        [
+          "Food procurement",
+          "$121,300",
+          "$0",
+          "$121,300"
+        ],
+        [
+          "Cold storage rental",
+          "$32,450",
+          "$0",
+          "$32,450"
+        ],
+        [
+          "Transportation",
+          "$20,870",
+          "$0",
+          "$20,870"
+        ],
+        [
+          "Administrative fee",
+          "$10,000",
+          "$5,200",
+          "$4,800"
+        ],
+        [
+          "Total",
+          "$184,620",
+          "$5,200",
+          "$179,420"
+        ]
+      ],
+      "Evidence Crosswalk": [
+        [
+          "Evidence ID",
+          "Supports",
+          "Required check",
+          "Status"
+        ],
+        [
+          "EV-01",
+          "Food procurement invoices",
+          "Invoice dates inside reporting period",
+          "Ready"
+        ],
+        [
+          "EV-02",
+          "Cold storage lease",
+          "Lease overlaps eligible service dates",
+          "Ready"
+        ],
+        [
+          "EV-03",
+          "Transportation logs",
+          "Routes tied to food distribution",
+          "Ready"
+        ],
+        [
+          "EV-04",
+          "Admin fee worksheet",
+          "Disallowed amount separated",
+          "Ready"
+        ],
+        [
+          "EV-05",
+          "Recipient certification",
+          "Signed by authorized role",
+          "Ready"
+        ]
+      ],
+      "Payment Hold Resolution Workflow": [
+        [
+          "Step",
+          "Owner group",
+          "Completion rule",
+          "Output"
+        ],
+        [
+          "1",
+          "Program finance",
+          "Confirm eligible total equals $179,420",
+          "Reconciliation locked"
+        ],
+        [
+          "2",
+          "Grant compliance",
+          "Confirm restricted payment data removed",
+          "Publication copy approved"
+        ],
+        [
+          "3",
+          "Evidence reviewer",
+          "Confirm EV-01 through EV-05 are ready",
+          "Hold release memo"
+        ],
+        [
+          "4",
+          "Payment operations",
+          "Release final payable amount",
+          "Payment queue updated"
+        ]
+      ],
+      "Final Certification Checklist": [
+        [
+          "Certification item",
+          "Requirement",
+          "Status"
+        ],
+        [
+          "Correct award",
+          "GRC-2026-118 and North Valley Food Bank",
+          "Complete"
+        ],
+        [
+          "Amounts",
+          "Claim, disallowed cost, and final payable reconcile",
+          "Complete"
+        ],
+        [
+          "Evidence",
+          "EV-01 through EV-05 crosswalk present",
+          "Complete"
+        ],
+        [
+          "Restricted data",
+          "Payment-account and identity fragments removed",
+          "Complete"
+        ],
+        [
+          "Release controls",
+          "Bookmarks, metadata, footer, and style applied",
+          "Complete"
+        ]
+      ]
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "PRIVATE bank",
+      "GRC-2025-044",
+      "Lakeside Shelter",
+      "$192,800",
+      "routing number",
+      "021000021",
+      "wire instructions",
+      "SSN",
+      "account ending",
+      "grants-old@state.example"
+    ],
+    "metadata": {
+      "title": "Grant Reimbursement Closeout Packet GRC-2026-118",
+      "author": "State Grant Closeout Office",
+      "subject": "Corrected reimbursement closeout packet for GRC-2026-118"
+    },
+    "style": {
+      "page_width": 612,
+      "page_height": 792,
+      "header_bar": "14532D",
+      "accent": "F59E0B",
+      "footer_text": "Grant Reimbursement Closeout Packet | GRC-2026-118"
+    },
+    "source_must_contain": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "PRIVATE bank",
+      "GRC-2025-044",
+      "Lakeside Shelter",
+      "$192,800",
+      "routing number",
+      "021000021",
+      "wire instructions",
+      "SSN",
+      "account ending",
+      "grants-old@state.example"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_040_pdf_grant_reimbursement_closeout_packet_repair",
+  "task_dir_name": "docops_v2_l3_040_pdf_grant_reimbursement_closeout_packet_repair"
+}

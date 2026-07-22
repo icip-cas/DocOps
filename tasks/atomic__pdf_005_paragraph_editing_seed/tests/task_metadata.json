@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_005",
+  "task_dir_name": "pdf_005_paragraph_editing_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "C2 Editing",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdf_005_paragraph_editing_seed.pdf",
+  "source_doc_path": "pdf/pdf_005_paragraph_editing_seed.pdf",
+  "task_description_filename": "pdf_005_paragraph_editing_seed.txt",
+  "task_description_path": "pdf/pdf_005_paragraph_editing_seed.txt",
+  "input_path": "/root/pdf_005_paragraph_editing_seed.pdf",
+  "output_path": "/root/submission/pdf_005_paragraph_editing_seed.pdf",
+  "output_filename": "pdf_005_paragraph_editing_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF contains a client-facing draft where one paragraph is too blunt for external use.",
+  "single_step_benchmark_instruction": "Rewrite only the paragraph that begins with `The supplier missed two promised dates again`. The replacement paragraph must keep these facts: two promised dates were missed, the latest package was incomplete, and the timeline remains uncertain until revised materials are confirmed; use a more formal client-safe tone; and avoid emotionally charged wording such as `again` and `cannot rely on the timeline they gave us`.",
+  "atomic_scope": "Only local content editing is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the targeted paragraph rewritten using constrained factual anchors.",
+  "inspired_by": [
+    {
+      "title": "How do you edit a pdf document while keeping everything the same font and layout exactly?",
+      "url": "https://www.reddit.com/r/pdf/comments/1snrzd5/how_do_you_edit_a_pdf_document_while_keeping/"
+    },
+    {
+      "title": "I want to keep the formatting",
+      "url": "https://www.reddit.com/r/pdf/comments/1sg500e/i_want_to_keep_the_formatting/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The edit is scoped to one paragraph inside a fixed-layout PDF\n- The tone must soften without removing the schedule risk signal\n- Other imperfections in the PDF are intentionally left in place and are not the explicit request"
+  }
+}

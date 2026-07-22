@@ -1,0 +1,270 @@
+{
+  "task_id": "docops_v2_l3_004_docx_public_loan_agreement_copyedit_repair",
+  "input_path": "/root/docops_v2_l3_004_docx_public_loan_agreement_copyedit_repair_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_004_docx_public_loan_agreement_copyedit_repair_output.docx",
+  "output_extension": ".docx",
+  "verifier_expectations": {
+    "headings": [
+      "Public Loan Agreement Repair Packet",
+      "Correction Register Applied",
+      "Party and Object Summary",
+      "Insurance and Transport Terms",
+      "Condition Reporting Workflow",
+      "Public Communication Checklist",
+      "Final Consistency Appendix"
+    ],
+    "required_phrases": [
+      "This repaired packet applies the correction register across the public loan agreement record.",
+      "Riverbend Museum and Northstar Gallery use corrected organization names throughout the packet.",
+      "The loan covers 42 objects with an insurance value of $240,000.",
+      "Environmental controls are 68-72 F and 45-55% RH.",
+      "All public dates, values, names, and workflow steps have been reconciled."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "TODO",
+      "uncertain",
+      "maybe",
+      "Riverbend Musuem",
+      "Riverbend Mueseum",
+      "Northstar Gallary",
+      "40 objects",
+      "$24,000",
+      "$2,4000",
+      "2026-09-31",
+      "2026-10-12",
+      "2026-10-05",
+      "2027-01-02",
+      "35-65% RH",
+      "recieve",
+      "enviroment",
+      "accomodation",
+      "insurence",
+      "liablity",
+      "temperatre",
+      "securty"
+    ],
+    "tables": {
+      "Correction Register Applied": [
+        [
+          "Issue",
+          "Correct Public Value",
+          "Applied To"
+        ],
+        [
+          "Lender name",
+          "Riverbend Museum",
+          "Narrative and tables"
+        ],
+        [
+          "Borrower name",
+          "Northstar Gallery",
+          "Narrative and tables"
+        ],
+        [
+          "Object count",
+          "42",
+          "Summary and appendix"
+        ],
+        [
+          "Insurance value",
+          "$240,000",
+          "Insurance table"
+        ],
+        [
+          "Courier pickup date",
+          "2026-09-30",
+          "Workflow"
+        ],
+        [
+          "Initial condition report",
+          "2026-10-02",
+          "Workflow"
+        ],
+        [
+          "Public opening",
+          "2026-10-15",
+          "Workflow"
+        ],
+        [
+          "Return deadline",
+          "2027-01-20",
+          "Workflow"
+        ],
+        [
+          "Environment",
+          "68-72 F and 45-55% RH",
+          "Terms"
+        ]
+      ],
+      "Party and Object Summary": [
+        [
+          "Field",
+          "Corrected Public Text",
+          "Status"
+        ],
+        [
+          "Lender",
+          "Riverbend Museum",
+          "Corrected"
+        ],
+        [
+          "Borrower",
+          "Northstar Gallery",
+          "Corrected"
+        ],
+        [
+          "Object count",
+          "42",
+          "Corrected"
+        ],
+        [
+          "Public opening",
+          "2026-10-15",
+          "Corrected"
+        ],
+        [
+          "Return deadline",
+          "2027-01-20",
+          "Corrected"
+        ]
+      ],
+      "Insurance and Transport Terms": [
+        [
+          "Term",
+          "Corrected Requirement",
+          "Responsible Party"
+        ],
+        [
+          "Insurance value",
+          "$240,000",
+          "Riverbend Museum"
+        ],
+        [
+          "Courier pickup",
+          "2026-09-30",
+          "Northstar Gallery"
+        ],
+        [
+          "Environment",
+          "68-72 F and 45-55% RH",
+          "Northstar Gallery"
+        ],
+        [
+          "Security",
+          "Gallery alarm and locked case checks",
+          "Northstar Gallery"
+        ]
+      ],
+      "Condition Reporting Workflow": [
+        [
+          "Step",
+          "Responsible Party",
+          "Date",
+          "Output"
+        ],
+        [
+          "Confirm corrected object list",
+          "Collections Office",
+          "2026-09-25",
+          "Final object schedule"
+        ],
+        [
+          "Release courier pickup instructions",
+          "Registrar",
+          "2026-09-30",
+          "Transport notice"
+        ],
+        [
+          "Complete initial condition report",
+          "Northstar Gallery",
+          "2026-10-02",
+          "Signed condition report"
+        ],
+        [
+          "Open exhibition to public",
+          "Northstar Gallery",
+          "2026-10-15",
+          "Public opening"
+        ],
+        [
+          "Confirm return shipment",
+          "Riverbend Museum",
+          "2027-01-20",
+          "Return closeout"
+        ]
+      ],
+      "Public Communication Checklist": [
+        [
+          "Item",
+          "Public Wording",
+          "Status"
+        ],
+        [
+          "Organization names",
+          "Riverbend Museum and Northstar Gallery",
+          "Consistent"
+        ],
+        [
+          "Object count",
+          "42 objects",
+          "Consistent"
+        ],
+        [
+          "Insurance value",
+          "$240,000",
+          "Consistent"
+        ],
+        [
+          "Environmental language",
+          "68-72 F and 45-55% RH",
+          "Consistent"
+        ]
+      ]
+    },
+    "appendix_phrases": [
+      "All spelling repairs are complete.",
+      "All invalid dates have been replaced with corrected public dates.",
+      "All obsolete incorrect values have been removed.",
+      "Final review status: ready for public loan agreement release."
+    ],
+    "style": {
+      "title_font": "Aptos Display",
+      "title_size_pt": 18,
+      "title_color": "6B2E2E",
+      "heading_color": "6B2E2E",
+      "body_font": "Aptos",
+      "body_size_pt": 10.5,
+      "table_header_fill": "6B2E2E",
+      "table_header_font": "FFFFFF",
+      "margin_inches": 0.8,
+      "footer_text": "Public Loan Agreement Repair Packet | 2026"
+    },
+    "metadata": {
+      "author": "Collections Office",
+      "title": "Public Loan Agreement Repair Packet"
+    },
+    "page_break_before": [
+      "Condition Reporting Workflow",
+      "Final Consistency Appendix"
+    ],
+    "source_must_contain": [
+      "Riverbend Musuem",
+      "Riverbend Mueseum",
+      "Northstar Gallary",
+      "recieve",
+      "enviroment",
+      "accomodation",
+      "insurence",
+      "liablity",
+      "temperatre",
+      "securty",
+      "2026-09-31",
+      "$2,4000"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_004_docx_public_loan_agreement_copyedit_repair",
+  "task_dir_name": "docops_v2_l3_004_docx_public_loan_agreement_copyedit_repair"
+}

@@ -1,0 +1,243 @@
+{
+  "task_id": "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log",
+  "task_dir_name": "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log",
+  "doc_type": "pdf+xlsx+docx",
+  "primary_modality": "PDF (.pdf), Excel (.xlsx), and Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops",
+    "S5 PDF bookmark ops"
+  ],
+  "num_atomic_operations": 10,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "review-coding-filter -> produced-PDF-binder-with-Bates -> Excel-production-index-and-privilege-log -> Word-production-memo -> cross-output-Bates-and-privilege-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_input.docx",
+  "supporting_input_paths": [
+    "/root/production_request_protocol.docx",
+    "/root/candidate_document_manifest.xlsx",
+    "/root/source_candidate_documents.pdf",
+    "/root/attorney_review_coding_notes.pdf"
+  ],
+  "output_paths": {
+    "exhibit_binder": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_exhibit_binder.pdf",
+    "privilege_log_workbook": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_privilege_log_workbook.xlsx",
+    "production_memo": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_production_memo.docx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_exhibit_binder.pdf",
+  "output_filename": "produced_exhibit_binder.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a litigation exhibit production binder, production/privilege-log workbook, and production index memo from a draft memo, protocol, candidate manifest, source candidate PDF bundle, and attorney review notes while withholding privileged/work-product documents and excluding duplicates/non-responsive items.",
+  "single_step_benchmark_instruction": "Create produced_exhibit_binder.pdf, production_privilege_log.xlsx, and production_index_memo.docx. Produce only PROD-001 through PROD-004 with Bates ACME-000001 through ACME-000007 and document bookmarks; log PRIV-005 through PRIV-007 without revealing legal strategy; exclude NONRESP-008 and NONRESP-009; preserve workbook formulas/tables/validation/hidden sheets and Word TOC.",
+  "atomic_scope": "Cross-document, multi-output workflow with PDF Bates/bookmark operations, Excel privilege-log controls, Word production memo structure, and public/privileged boundary enforcement.",
+  "expected_output_type": "A .pdf exhibit binder, .xlsx production/privilege workbook, and .docx production memo saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Federal civil discovery requires withheld privileged material to be identified without revealing protected content",
+      "url": "https://www.law.cornell.edu/rules/frcp/rule_26"
+    },
+    {
+      "title": "Bates numbering is widely used to identify produced pages during litigation discovery",
+      "url": "https://en.wikipedia.org/wiki/Bates_numbering"
+    }
+  ],
+  "verifier_expectations": {
+    "pdf_output": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_exhibit_binder.pdf",
+    "xlsx_output": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_privilege_log_workbook.xlsx",
+    "docx_output": "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_production_memo.docx",
+    "produced_ids": [
+      "PROD-001",
+      "PROD-002",
+      "PROD-003",
+      "PROD-004"
+    ],
+    "withheld_ids": [
+      "PRIV-005",
+      "PRIV-006",
+      "PRIV-007"
+    ],
+    "excluded_ids": [
+      "NONRESP-008",
+      "NONRESP-009"
+    ],
+    "bates_labels": [
+      "ACME-000001",
+      "ACME-000002",
+      "ACME-000003",
+      "ACME-000004",
+      "ACME-000005",
+      "ACME-000006",
+      "ACME-000007"
+    ],
+    "pdf_bookmarks": [
+      "PROD-001 Maintenance Email Thread",
+      "PROD-002 Vendor Invoice",
+      "PROD-003 Incident Photo Contact Sheet",
+      "PROD-004 Safety Audit Extract"
+    ],
+    "pdf_required_phrases": [
+      "PROD-001 - Maintenance Email Thread",
+      "PROD-002 - Vendor Invoice",
+      "PROD-003 - Incident Photo Contact Sheet",
+      "PROD-004 - Safety Audit Extract",
+      "Bates: ACME-000001",
+      "Bates: ACME-000007"
+    ],
+    "pdf_forbidden_text": [
+      "PRIV-005",
+      "PRIV-006",
+      "PRIV-007",
+      "NONRESP-008",
+      "NONRESP-009",
+      "Counsel Strategy Memo",
+      "Attorney Email",
+      "Insurance Reserve Analysis",
+      "settlement posture",
+      "reserve exposure",
+      "counsel theory"
+    ],
+    "confidential_pdf_ids": [
+      "PROD-001",
+      "PROD-003",
+      "PROD-004"
+    ],
+    "workbook_sheet_order": [
+      "Production Index",
+      "Privilege Log",
+      "Excluded Items",
+      "QC Summary",
+      "Rules",
+      "Attorney Notes"
+    ],
+    "tables": {
+      "Production Index": [
+        "production_index",
+        "A1:K5"
+      ],
+      "Privilege Log": [
+        "privilege_log",
+        "A1:I4"
+      ],
+      "Excluded Items": [
+        "excluded_items",
+        "A1:C3"
+      ]
+    },
+    "hidden_sheets": [
+      "Rules",
+      "Attorney Notes"
+    ],
+    "defined_names": [
+      "qc_status_choices",
+      "privilege_status_choices",
+      "confidentiality_choices"
+    ],
+    "data_validation_ranges": {
+      "Production Index": [
+        "K2:K5",
+        "E2:E5"
+      ],
+      "Privilege Log": [
+        "I2:I4"
+      ]
+    },
+    "print_areas": {
+      "Production Index": "'Production Index'!$A$1:$K$5",
+      "Privilege Log": "'Privilege Log'!$A$1:$I$4",
+      "QC Summary": "'QC Summary'!$A$1:$B$6"
+    },
+    "formula_cells": {
+      "Production Index!I2": "=IF(LEFT(A2,4)=\"PROD\",\"PRODUCED\",\"CHECK\")",
+      "Production Index!I5": "=IF(LEFT(A5,4)=\"PROD\",\"PRODUCED\",\"CHECK\")",
+      "QC Summary!B2": "=COUNTA('Production Index'!A2:A5)",
+      "QC Summary!B3": "=SUM('Production Index'!F2:F5)",
+      "QC Summary!B4": "=COUNTA('Privilege Log'!A2:A4)",
+      "QC Summary!B5": "=COUNTA('Excluded Items'!A2:A3)"
+    },
+    "privilege_rows": [
+      [
+        "PRIV-005",
+        "2026-02-20",
+        "Counsel Strategy Memo",
+        "Maya Ortiz, Esq.",
+        "Litigation team",
+        "Legal analysis of pump-room incident response",
+        "Attorney-client; Work product",
+        "Maya Ortiz",
+        "Withheld"
+      ],
+      [
+        "PRIV-006",
+        "2026-02-21",
+        "Attorney Email",
+        "Maya Ortiz, Esq.",
+        "Avery Chen; Leo Grant",
+        "Request for facts to support legal advice",
+        "Attorney-client",
+        "Avery Chen",
+        "Withheld"
+      ],
+      [
+        "PRIV-007",
+        "2026-02-23",
+        "Insurance Reserve Analysis",
+        "Claims Counsel",
+        "Risk committee",
+        "Reserve analysis prepared at counsel direction",
+        "Work product",
+        "Risk committee",
+        "Withheld"
+      ]
+    ],
+    "excluded_rows": [
+      [
+        "NONRESP-008",
+        "Duplicate vendor invoice already produced as PROD-002",
+        "Duplicate"
+      ],
+      [
+        "NONRESP-009",
+        "Lunch receipt with no pump-room content",
+        "Non-responsive"
+      ]
+    ],
+    "doc_heading_order": [
+      "Production Index Memo",
+      "Production Scope",
+      "Produced Exhibit Index",
+      "Privilege and Exclusion Summary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "This production includes four responsive, non-privileged documents in produced_exhibit_binder.pdf.",
+      "The exhibit binder uses consecutive Bates numbers ACME-000001 through ACME-000007 and document-level PDF bookmarks.",
+      "PRIV-005, PRIV-006, and PRIV-007 are withheld and described only in the privilege log.",
+      "NONRESP-008 and NONRESP-009 are excluded as duplicate or non-responsive materials.",
+      "The PDF binder, Production Index sheet, and this memo agree on produced documents PROD-001, PROD-002, PROD-003, and PROD-004.",
+      "The Privilege Log sheet retains three withheld entries while the public PDF contains no PRIV or NONRESP document IDs."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Counsel Notes - Remove",
+      "Legal strategy:",
+      "reserve exposure analysis",
+      "settlement posture"
+    ],
+    "doc_header_contains": "Produced documents: 4 | Withheld entries: 3",
+    "doc_footer_contains": "production_privilege_log.xlsx",
+    "doc_highlight_text": "QC hold: confirm that PROD-003 and PROD-004 carry the CONFIDENTIAL stamp in the produced binder."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log"
+}

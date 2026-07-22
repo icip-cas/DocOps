@@ -1,0 +1,272 @@
+{
+  "task_id": "docops_v2_l3_021_pptx_shelter_accessibility_public_remediation",
+  "input_path": "/root/docops_v2_l3_021_pptx_shelter_accessibility_public_remediation_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_021_pptx_shelter_accessibility_public_remediation_output.pptx",
+  "output_extension": ".pptx",
+  "verifier_expectations": {
+    "slide_titles": [
+      "Emergency Shelter Public Briefing",
+      "Corrected Shelter Network",
+      "Accessibility Map",
+      "Transit Access Updates",
+      "Service Animal and Medical Equipment",
+      "Hotline and Web Links",
+      "Update Log",
+      "Accessibility Checklist"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "staff-only",
+      "off-slide",
+      "personal phone",
+      "emergency operations center",
+      "do not publish",
+      "EOC",
+      "eoc.internal",
+      "16 shelters",
+      "11 wheelchair",
+      "555-0199",
+      "http://internal.example/eoc",
+      "unverified closure rumor",
+      "medical privacy note"
+    ],
+    "required_text_by_slide": {
+      "Emergency Shelter Public Briefing": [
+        "Public emergency shelter accessibility briefing",
+        "Updated 2026-07-20",
+        "18 public shelters"
+      ],
+      "Corrected Shelter Network": [
+        "18 public shelters",
+        "14 wheelchair accessible shelters",
+        "1-800-555-0148"
+      ],
+      "Accessibility Map": [
+        "North zone",
+        "Central zone",
+        "South zone",
+        "14 accessible locations"
+      ],
+      "Transit Access Updates": [
+        "Priority return trips added",
+        "Two lift-equipped vehicles"
+      ],
+      "Service Animal and Medical Equipment": [
+        "Service animals",
+        "Charging areas listed by shelter"
+      ],
+      "Hotline and Web Links": [
+        "1-800-555-0148",
+        "https://city.example/shelters/public",
+        "accessibility@city.example"
+      ],
+      "Update Log": [
+        "Shelter count",
+        "Wheelchair accessible count",
+        "2026-07-20"
+      ],
+      "Accessibility Checklist": [
+        "Alt text",
+        "Public hyperlinks",
+        "Speaker notes"
+      ]
+    },
+    "tables": {
+      "Corrected Shelter Network": [
+        [
+          "Metric",
+          "Public Value",
+          "Release Note"
+        ],
+        [
+          "Open public shelters",
+          "18",
+          "Corrected count"
+        ],
+        [
+          "Wheelchair accessible shelters",
+          "14",
+          "Corrected accessible count"
+        ],
+        [
+          "Public hotline",
+          "1-800-555-0148",
+          "Published contact"
+        ],
+        [
+          "Public website",
+          "https://city.example/shelters/public",
+          "Published link"
+        ],
+        [
+          "Update date",
+          "2026-07-20",
+          "Current public update"
+        ]
+      ],
+      "Transit Access Updates": [
+        [
+          "Service",
+          "Update",
+          "Status"
+        ],
+        [
+          "Paratransit",
+          "Priority return trips added",
+          "Ready"
+        ],
+        [
+          "Bus Route 4",
+          "Stops at North High shelter",
+          "Ready"
+        ],
+        [
+          "Bus Route 9",
+          "Extended weekend service",
+          "Ready"
+        ],
+        [
+          "Accessible shuttle",
+          "Two lift-equipped vehicles",
+          "Ready"
+        ]
+      ],
+      "Service Animal and Medical Equipment": [
+        [
+          "Need",
+          "Public Support",
+          "Status"
+        ],
+        [
+          "Service animals",
+          "Welcome at every public shelter",
+          "Ready"
+        ],
+        [
+          "Durable medical equipment",
+          "Charging areas listed by shelter",
+          "Ready"
+        ],
+        [
+          "Medication refrigeration",
+          "Available through shelter intake desk",
+          "Ready"
+        ],
+        [
+          "Quiet room request",
+          "Ask accessibility team on arrival",
+          "Ready"
+        ]
+      ],
+      "Update Log": [
+        [
+          "Correction",
+          "Public Result",
+          "Status"
+        ],
+        [
+          "Shelter count",
+          "18",
+          "Applied"
+        ],
+        [
+          "Wheelchair accessible count",
+          "14",
+          "Applied"
+        ],
+        [
+          "Public hotline",
+          "1-800-555-0148",
+          "Applied"
+        ],
+        [
+          "Public website",
+          "https://city.example/shelters/public",
+          "Applied"
+        ],
+        [
+          "Update date",
+          "2026-07-20",
+          "Applied"
+        ]
+      ],
+      "Accessibility Checklist": [
+        [
+          "Item",
+          "Requirement",
+          "Status"
+        ],
+        [
+          "Alt text",
+          "Key visual on every slide",
+          "Complete"
+        ],
+        [
+          "Public hyperlinks",
+          "Website and email links repaired",
+          "Complete"
+        ],
+        [
+          "Hidden content",
+          "Nonpublic material removed",
+          "Complete"
+        ],
+        [
+          "Speaker notes",
+          "Public notes only",
+          "Complete"
+        ]
+      ]
+    },
+    "alt_text_by_slide": {
+      "Emergency Shelter Public Briefing": "Accessible shelter public briefing cover",
+      "Corrected Shelter Network": "County map showing 18 public shelters and 14 wheelchair accessible locations",
+      "Accessibility Map": "Simplified map of shelter zones north central south",
+      "Transit Access Updates": "Bus and paratransit route update diagram",
+      "Service Animal and Medical Equipment": "Service animal and medical equipment accommodation icon",
+      "Hotline and Web Links": "Public hotline website and email contact card",
+      "Update Log": "Timeline of corrected public shelter updates",
+      "Accessibility Checklist": "Accessibility remediation checklist icon"
+    },
+    "hyperlinks": [
+      "https://city.example/shelters/public",
+      "mailto:accessibility@city.example"
+    ],
+    "style": {
+      "title_background": "102A43",
+      "content_background": "F7FBFF",
+      "title_font": "Aptos Display",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "102A43",
+      "accent_fill": "F59E0B",
+      "table_header_fill": "0B5CAD",
+      "table_header_font": "FFFFFF",
+      "footer_text": "Public Shelter Accessibility Briefing | 2026"
+    },
+    "speaker_notes": [
+      "Public note: introduce the corrected shelter accessibility briefing.",
+      "Public note: summarize corrected shelter counts and contact details.",
+      "Public note: explain accessible shelter zones at a high level.",
+      "Public note: review transit access updates.",
+      "Public note: describe public support for service animals and medical equipment.",
+      "Public note: direct residents to the public hotline website and email.",
+      "Public note: summarize corrections applied for publication.",
+      "Public note: confirm accessibility remediation is complete."
+    ],
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE",
+      "off-slide",
+      "personal phone",
+      "eoc.internal",
+      "16 shelters",
+      "11 wheelchair",
+      "555-0199"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_021_pptx_shelter_accessibility_public_remediation",
+  "task_dir_name": "docops_v2_l3_021_pptx_shelter_accessibility_public_remediation"
+}

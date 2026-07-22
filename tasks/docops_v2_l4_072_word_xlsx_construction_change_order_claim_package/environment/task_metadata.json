@@ -1,0 +1,379 @@
+{
+  "task_id": "docops_v2_l4_072_word_xlsx_construction_change_order_claim_package",
+  "task_dir_name": "docops_v2_l4_072_word_xlsx_construction_change_order_claim_package",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document many-input multi-output",
+  "composition_pattern": "construction-source-doc-reconciliation -> entitlement-matrix -> cost-and-schedule-workbook -> change-order-request -> internal-strategy-boundary",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_input.docx",
+  "supporting_input_paths": [
+    "/root/contract_change_clause_excerpt.pdf",
+    "/root/owner_directive_od014.docx",
+    "/root/rfi_221_response.pdf",
+    "/root/daily_reports_bundle.pdf",
+    "/root/schedule_update.xlsx",
+    "/root/weather_log.xlsx",
+    "/root/subcontractor_quote_sq17.pdf",
+    "/root/cost_ledger.xlsx",
+    "/root/internal_claim_strategy_note.pdf"
+  ],
+  "output_paths": {
+    "change_order_request": "/root/submission/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_change_order_request.docx",
+    "workbook": "/root/submission/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_change_order_request.docx",
+  "output_filename": "change_order_request.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a substantiated construction change order request and cost/schedule workbook from ten input documents while excluding weather leverage and internal settlement strategy from the public package.",
+  "single_step_benchmark_instruction": "Create change_order_request.docx and change_order_cost_schedule_workbook.xlsx. Reconcile OD-014, RFI-221, daily reports, schedule update, weather log, subcontractor quote, and cost ledger; request $52,635 and 3 compensable days; exclude weather delay and internal strategy positions; preserve workbook formulas/tables/validation/hidden sheets.",
+  "expected_output_type": "A .docx change order request and .xlsx cost/schedule workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Construction change orders modify scope, contract amount, or completion date and commonly require pricing and schedule support",
+      "url": "https://en.wikipedia.org/wiki/Change_order"
+    },
+    {
+      "title": "Recent construction literature notes that change orders commonly increase cost and duration",
+      "url": "https://arxiv.org/abs/2507.00281"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_change_order_request.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_072_word_xlsx_construction_change_order_claim_package_workbook.xlsx",
+    "entitlement_rows": [
+      [
+        "EV-001",
+        "Owner Directive OD-014",
+        "Owner-directed bypass piping reroute",
+        "2026-05-07",
+        "Compensable",
+        "Yes",
+        "Public"
+      ],
+      [
+        "EV-002",
+        "RFI-221 Response",
+        "Engineer confirmed valve relocation required before ceiling close-in",
+        "2026-05-08",
+        "Compensable",
+        "Yes",
+        "Public"
+      ],
+      [
+        "EV-003",
+        "Daily Reports 05/07-05/09",
+        "Crew disruption and access resequencing on critical path",
+        "2026-05-09",
+        "Compensable",
+        "Yes",
+        "Public"
+      ],
+      [
+        "EV-004",
+        "Weather Log 05/08",
+        "Severe rain affected exterior deliveries but not bypass reroute critical path",
+        "2026-05-08",
+        "Non-compensable",
+        "No",
+        "Public"
+      ],
+      [
+        "EV-005",
+        "Internal Strategy Note",
+        "Negotiation reserve and settlement anchor",
+        "2026-05-10",
+        "Internal Only",
+        "No",
+        "Internal"
+      ]
+    ],
+    "cost_rows": [
+      [
+        "LAB-014",
+        "Mechanical labor resequence",
+        "Labor",
+        "OD-014; DR-0507",
+        128,
+        95,
+        12160,
+        "Compensable"
+      ],
+      [
+        "MAT-014",
+        "Bypass piping materials",
+        "Material",
+        "Sub quote SQ-17",
+        1,
+        18440,
+        18440,
+        "Compensable"
+      ],
+      [
+        "LAB-221",
+        "Valve relocation labor",
+        "Labor",
+        "RFI-221; DR-0508",
+        72,
+        95,
+        6840,
+        "Compensable"
+      ],
+      [
+        "SUB-017",
+        "Insulation rework subcontractor",
+        "Subcontractor",
+        "Sub quote SQ-17",
+        1,
+        5250,
+        5250,
+        "Compensable"
+      ],
+      [
+        "EQ-003",
+        "Lift standby during access resequence",
+        "Equipment",
+        "Cost ledger CL-003",
+        1,
+        5160,
+        5160,
+        "Compensable"
+      ],
+      [
+        "WTH-001",
+        "Weather delivery delay",
+        "Weather",
+        "Weather log",
+        1,
+        0,
+        0,
+        "Excluded"
+      ]
+    ],
+    "schedule_rows": [
+      [
+        "SCH-001",
+        "Baseline substantial completion",
+        "2026-09-15",
+        null,
+        0,
+        "Baseline",
+        "Public"
+      ],
+      [
+        "SCH-002",
+        "Bypass piping reroute start",
+        "2026-05-07",
+        "2026-05-07",
+        0,
+        "Start of owner-directed work",
+        "Public"
+      ],
+      [
+        "SCH-003",
+        "Critical path resequence duration",
+        "2026-05-07",
+        "2026-05-09",
+        3,
+        "Compensable time extension",
+        "Public"
+      ],
+      [
+        "SCH-004",
+        "Weather delivery disruption",
+        "2026-05-08",
+        "2026-05-08",
+        0,
+        "Excluded from time extension",
+        "Public"
+      ],
+      [
+        "SCH-005",
+        "Revised substantial completion",
+        "2026-09-18",
+        null,
+        3,
+        "Baseline plus approved extension",
+        "Public"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "OD-014",
+        "Owner directive",
+        "owner_directive_od014.docx",
+        "Public",
+        "Authorizes reroute"
+      ],
+      [
+        "RFI-221",
+        "RFI response",
+        "rfi_221_response.pdf",
+        "Public",
+        "Confirms relocation requirement"
+      ],
+      [
+        "DR-0507",
+        "Daily report",
+        "daily_reports_bundle.pdf",
+        "Public",
+        "Crew disruption start"
+      ],
+      [
+        "DR-0508",
+        "Daily report",
+        "daily_reports_bundle.pdf",
+        "Public",
+        "Weather and interior resequence separated"
+      ],
+      [
+        "SCH-UPD",
+        "Schedule update",
+        "schedule_update.xlsx",
+        "Public",
+        "Shows 3-day critical path impact"
+      ],
+      [
+        "SQ-17",
+        "Subcontractor quote",
+        "subcontractor_quote_sq17.pdf",
+        "Public",
+        "Materials and insulation rework"
+      ],
+      [
+        "CL-003",
+        "Cost ledger",
+        "cost_ledger.xlsx",
+        "Public",
+        "Cost backup"
+      ],
+      [
+        "INT-CLAIM",
+        "Internal strategy",
+        "internal_claim_strategy_note.pdf",
+        "Internal",
+        "Do not publish"
+      ]
+    ],
+    "forbidden_public": [
+      "INT-CLAIM",
+      "settlement anchor",
+      "claim 7 days",
+      "weather as leverage",
+      "18% markup",
+      "walk-away",
+      "inflate",
+      "internal reserve"
+    ],
+    "sheet_order": [
+      "Entitlement Matrix",
+      "Cost Summary",
+      "Schedule Impact",
+      "Evidence Index",
+      "Public Backup",
+      "Internal Strategy",
+      "Rules"
+    ],
+    "tables": {
+      "Entitlement Matrix": [
+        "entitlement_matrix",
+        "A1:G6"
+      ],
+      "Cost Summary": [
+        "cost_summary",
+        "A1:I10"
+      ],
+      "Schedule Impact": [
+        "schedule_impact",
+        "A1:G7"
+      ],
+      "Evidence Index": [
+        "evidence_index",
+        "A1:E9"
+      ],
+      "Public Backup": [
+        "public_backup",
+        "A1:B4"
+      ]
+    },
+    "hidden_sheets": [
+      "Internal Strategy",
+      "Rules"
+    ],
+    "defined_names": [
+      "entitlement_choices",
+      "claim_treatment_choices"
+    ],
+    "data_validation_ranges": {
+      "Entitlement Matrix": [
+        "E2:E6"
+      ],
+      "Cost Summary": [
+        "H2:H7"
+      ]
+    },
+    "print_areas": {
+      "Entitlement Matrix": "'Entitlement Matrix'!$A$1:$G$6",
+      "Cost Summary": "'Cost Summary'!$A$1:$I$10",
+      "Schedule Impact": "'Schedule Impact'!$A$1:$G$7",
+      "Evidence Index": "'Evidence Index'!$A$1:$E$9",
+      "Public Backup": "'Public Backup'!$A$1:$B$4"
+    },
+    "formula_cells": {
+      "Cost Summary!I2": "=IF(H2=\"Compensable\",G2,0)",
+      "Cost Summary!I7": "=IF(H7=\"Compensable\",G7,0)",
+      "Cost Summary!I8": "=SUM(I2:I7)",
+      "Cost Summary!I9": "=I8*0.10",
+      "Cost Summary!I10": "=I8+I9",
+      "Schedule Impact!E7": "=SUM(E2:E6)"
+    },
+    "doc_heading_order": [
+      "Change Order Request",
+      "Executive Summary",
+      "Entitlement Basis",
+      "Cost and Schedule Summary",
+      "Evidence Boundary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "This request covers owner-directed bypass piping reroute and valve relocation work documented by OD-014 and RFI-221.",
+      "The requested change amount is $52,635, consisting of $47,850 compensable direct cost plus 10% allowable markup.",
+      "Weather delivery disruption is tracked separately and excluded from the compensable time request.",
+      "This request and change_order_cost_schedule_workbook.xlsx agree on $52,635 and a 3-day compensable time extension.",
+      "The workbook excludes weather delivery disruption from the compensable time request."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Internal Strategy - Remove",
+      "INT-CLAIM",
+      "settlement anchor",
+      "claim 7 days",
+      "weather as leverage",
+      "18% markup",
+      "walk-away",
+      "inflate",
+      "internal reserve"
+    ],
+    "doc_header_contains": "OD-014 / RFI-221",
+    "doc_footer_contains": "change_order_cost_schedule_workbook.xlsx",
+    "doc_highlight_text": "Critical path impact: OD-014 and RFI-221 support a 3-day compensable extension, revising substantial completion from 2026-09-15 to 2026-09-18."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_072_word_xlsx_construction_change_order_claim_package"
+}

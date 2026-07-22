@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_001",
+  "task_dir_name": "pdfc_001_payment_conflict_highlight_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C5 Reasoning",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "detect -> highlight",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_001_payment_conflict_highlight_seed.pdf",
+  "source_doc_path": "pdf/pdfc_001_payment_conflict_highlight_seed.pdf",
+  "task_description_filename": "pdfc_001_payment_conflict_highlight_seed.txt",
+  "task_description_path": "pdf/pdfc_001_payment_conflict_highlight_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_001_payment_conflict_highlight_seed.pdf",
+  "output_path": "/root/submission/pdfc_001_payment_conflict_highlight_seed.pdf",
+  "output_filename": "pdfc_001_payment_conflict_highlight_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This contract excerpt contains a payment-timing conflict that should be highlighted for review.",
+  "single_step_benchmark_instruction": "Review the payment references on page 1 and highlight only the statements that create the timing contradiction between the base clause, the schedule entry, and the late-fee trigger. Do not rewrite the text.",
+  "atomic_scope": "Only the true conflicting payment lines should be visually highlighted.",
+  "expected_output_type": "A revised .pdf document with the conflicting payment lines highlighted.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The surrounding commentary remains intentionally unedited\n- Do not alter the wording"
+  }
+}

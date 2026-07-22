@@ -1,0 +1,26 @@
+Task ID: excel_012
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: S1 Insert/Delete
+Difficulty: Medium
+
+Inspired By:
+- Title: Excel is not saving multiple sheets
+  URL: https://www.reddit.com/r/excel/comments/1sncbt9/excel_is_not_saving_multiple_sheets/
+
+User Task Description:
+This workbook contains one obsolete sheet that should no longer be present in the deliverable.
+
+Single-Step Benchmark Instruction:
+Delete the worksheet named `Archive_2024_DO_NOT_USE` and leave the rest of the workbook unchanged.
+
+Atomic Scope:
+Only sheet deletion is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The workbook contains multiple tabs and one of them looks plausibly useful unless the name is read carefully
+- The instruction is structural, not content-based
+- Nothing else in the workbook should be renamed or edited
+
+Expected Output Type:
+A revised .xlsx workbook with the obsolete sheet removed.

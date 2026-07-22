@@ -1,0 +1,52 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet"
+description = "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet - DocOps v2 final L4 task."
+authors = []
+keywords = ["pptx", "excel", "pdf", "energy", "rebate", "measurement-verification", "cross-document"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["pptx", "excel", "pdf", "cross-document", "energy-rebate", "formula"]
+task_id = "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet"
+doc_type = "pptx+xlsx"
+primary_modality = "PowerPoint (.pptx), Excel (.xlsx), PDF, and Word (.docx)"
+atomic_operation = "Cross-document Rebate Calculation and Presentation Assembly"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-structural-formula-privacy-strict"
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet"
+final_index = 61
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx"
+TASK_ID = "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet"
+DOC_TYPE = "pptx+xlsx"
+
+[solution.env]

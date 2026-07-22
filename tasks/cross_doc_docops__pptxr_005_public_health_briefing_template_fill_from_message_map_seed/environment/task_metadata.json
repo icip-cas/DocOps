@@ -1,0 +1,80 @@
+{
+  "task_id": "pptxr_005",
+  "task_dir_name": "pptxr_005_public_health_briefing_template_fill_from_message_map_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "F1 Style consistency",
+    "F4 Theme transfer",
+    "S1 Insert/Delete"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "refresh-metrics -> insert-decision-slide -> preserve-order",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pptxr_005_public_health_briefing_template_fill_from_message_map_seed.pptx",
+  "supporting_input_paths": [
+    "/root/metrics.xlsx",
+    "/root/minutes.pdf",
+    "/root/decision_log.docx"
+  ],
+  "output_path": "/root/submission/pptxr_005_public_health_briefing_template_fill_from_message_map_seed.pptx",
+  "output_filename": "pptxr_005_public_health_briefing_template_fill_from_message_map_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Fill the title and subtitle placeholders.",
+  "single_step_benchmark_instruction": "Fill the title and subtitle placeholders, replace the three-message slide, update the contact/resources slide, and insert a short FAQ slide from the webinar reference layout without changing the master theme.",
+  "atomic_scope": "Only the `Metrics` values and the inserted `Decision Snapshot` slide are required.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the existing title and appendix slides\n- Insert exactly one new slide"
+  },
+  "verifier_expectations": {
+    "slide_count": 5,
+    "last_slide_title_contains": "Appendix",
+    "slide_text_anchors": [
+      {
+        "title_contains_any": [
+          "Metrics",
+          "Program Metrics"
+        ],
+        "required_all": [
+          "Open Actions",
+          "4",
+          "Late Items",
+          "1",
+          "Completed",
+          "7"
+        ]
+      }
+    ],
+    "presentation_text_anchors": [
+      {
+        "required_all": [
+          "revised FAQ",
+          "three license",
+          "action log",
+          "Friday"
+        ],
+        "required_any_groups": [
+          [
+            "FAQ",
+            "Frequently Asked Questions"
+          ],
+          [
+            "what changed",
+            "when will",
+            "which licenses",
+            "what follow-up",
+            "what is the current status"
+          ]
+        ]
+      }
+    ]
+  }
+}

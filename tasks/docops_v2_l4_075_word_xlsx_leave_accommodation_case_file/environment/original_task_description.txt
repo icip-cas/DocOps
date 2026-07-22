@@ -1,0 +1,1 @@
+Create a manager-safe leave accommodation determination memo and HR case tracker workbook from ten source documents while calculating eligibility, leave-bank, notice-deadline, and manager-packet audit controls, and keeping medical and legal strategy details out of public/manager-facing outputs.

@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_004
+
+Doc type: pdf
+Atomic operations: S4 Table/Sheet ops, F2 Highlighting
+Composition pattern: restructure -> emphasize
+Difficulty: Hard
+
+User-facing goal:
+This action table needs separate owner/team columns and stronger emphasis on the critical rows.
+
+Single-step benchmark instruction:
+Split the `Owner / Team` header into separate `Owner` and `Team` columns, preserve the row wording, and visually emphasize only the two rows marked `Critical`.
+
+Atomic scope:
+Only the column split and emphasis of the critical rows are explicitly requested.
+
+Expected output type:
+A revised .pdf document with separate `Owner` and `Team` columns and highlighted critical rows.

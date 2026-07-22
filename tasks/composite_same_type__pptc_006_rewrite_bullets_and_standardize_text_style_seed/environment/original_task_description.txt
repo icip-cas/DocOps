@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_006
+
+Doc type: ppt
+Atomic operations: C2 Editing, F1 Style consistency
+Composition pattern: rewrite -> restyle
+Difficulty: Medium
+
+User-facing goal:
+This status deck has rough draft bullets and inconsistent text styling.
+
+Single-step benchmark instruction:
+Rewrite the three draft bullets on Slide 2 so they sound executive-ready, then standardize the bullet text style on that slide so all three bullets match.
+
+Atomic scope:
+Only the three bullet rewrites and their style normalization on Slide 2 are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with polished bullets and consistent bullet styling on Slide 2.

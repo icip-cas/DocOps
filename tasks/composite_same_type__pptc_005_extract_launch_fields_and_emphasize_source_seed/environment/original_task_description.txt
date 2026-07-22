@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_005
+
+Doc type: ppt
+Atomic operations: C1 Extraction, F2 Highlighting
+Composition pattern: extract -> emphasize
+Difficulty: Medium-Hard
+
+User-facing goal:
+This deck needs the final launch date and owner surfaced on the summary slide and the source line emphasized.
+
+Single-step benchmark instruction:
+Fill the two summary callouts on Slide 1 with the final launch date and final action owner from the deck, then visually emphasize the source line on the detailed status slide.
+
+Atomic scope:
+Only the two extracted callout values and the corresponding source-line emphasis are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with populated summary callouts and one emphasized evidence line.

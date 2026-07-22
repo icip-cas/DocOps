@@ -1,0 +1,218 @@
+{
+  "task_id": "docops_v2_l3_002_docx_meeting_minutes_public_repair",
+  "input_path": "/root/docops_v2_l3_002_docx_meeting_minutes_public_repair_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_002_docx_meeting_minutes_public_repair_output.docx",
+  "output_extension": ".docx",
+  "verifier_expectations": {
+    "headings": [
+      "Public Meeting Minutes Repair Packet",
+      "Correction Register Applied",
+      "Attendance and Quorum",
+      "Motion and Vote Summary",
+      "Budget Resolution",
+      "Public Action Calendar",
+      "Final Release Checklist"
+    ],
+    "required_phrases": [
+      "This repaired packet applies the correction register across the public meeting minutes.",
+      "Lakeside School Board minutes are corrected for public release.",
+      "The meeting date is 2026-04-21 with 5 members present.",
+      "The budget resolution authorizes $1,275,000 under Policy 6145.",
+      "All public dates, votes, amounts, and action items have been reconciled."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "TODO",
+      "obsolete",
+      "Lake Side School Bord",
+      "2026-04-12",
+      "4 members present",
+      "3-2",
+      "$1,257,000",
+      "Policy 6154",
+      "8:24 PM",
+      "2026-05-16",
+      "approvl",
+      "attendence",
+      "minits",
+      "resoultion",
+      "budgte",
+      "calender"
+    ],
+    "tables": {
+      "Correction Register Applied": [
+        [
+          "Issue",
+          "Correct Public Value",
+          "Applied To"
+        ],
+        [
+          "Board name",
+          "Lakeside School Board",
+          "All sections"
+        ],
+        [
+          "Meeting date",
+          "2026-04-21",
+          "Header and calendar"
+        ],
+        [
+          "Quorum",
+          "5 members present",
+          "Attendance table"
+        ],
+        [
+          "Vote result",
+          "4-1",
+          "Motion table"
+        ],
+        [
+          "Budget authorization",
+          "$1,275,000",
+          "Budget table"
+        ],
+        [
+          "Policy number",
+          "Policy 6145",
+          "Budget table"
+        ],
+        [
+          "Adjournment",
+          "8:42 PM",
+          "Minutes summary"
+        ]
+      ],
+      "Attendance and Quorum": [
+        [
+          "Role",
+          "Public Entry",
+          "Status"
+        ],
+        [
+          "Board",
+          "Lakeside School Board",
+          "Corrected"
+        ],
+        [
+          "Members present",
+          "5 members present",
+          "Quorum met"
+        ],
+        [
+          "Members absent",
+          "2 members absent",
+          "Recorded"
+        ],
+        [
+          "Meeting date",
+          "2026-04-21",
+          "Corrected"
+        ]
+      ],
+      "Motion and Vote Summary": [
+        [
+          "Motion",
+          "Moved By",
+          "Vote",
+          "Result"
+        ],
+        [
+          "Approve transportation contract",
+          "Director Hayes",
+          "4-1",
+          "Approved"
+        ],
+        [
+          "Adopt public action calendar",
+          "Chair Rivera",
+          "Unanimous",
+          "Approved"
+        ]
+      ],
+      "Budget Resolution": [
+        [
+          "Item",
+          "Corrected Public Value",
+          "Status"
+        ],
+        [
+          "Budget authorization",
+          "$1,275,000",
+          "Approved"
+        ],
+        [
+          "Policy reference",
+          "Policy 6145",
+          "Corrected"
+        ],
+        [
+          "Adjournment",
+          "8:42 PM",
+          "Corrected"
+        ]
+      ],
+      "Public Action Calendar": [
+        [
+          "Action",
+          "Date",
+          "Owner"
+        ],
+        [
+          "Publish corrected minutes",
+          "2026-04-25",
+          "Board Clerk"
+        ],
+        [
+          "Post budget resolution",
+          "2026-04-28",
+          "Finance Office"
+        ],
+        [
+          "Next public review",
+          "2026-05-06",
+          "Board Office"
+        ]
+      ]
+    },
+    "appendix_phrases": [
+      "All spelling repairs are complete.",
+      "All incorrect values have been removed.",
+      "Final review status: ready for public minutes release."
+    ],
+    "style": {
+      "title_font": "Aptos Display",
+      "title_size_pt": 18,
+      "title_color": "1F4E79",
+      "heading_color": "1F4E79",
+      "body_font": "Aptos",
+      "body_size_pt": 10.5,
+      "table_header_fill": "1F4E79",
+      "table_header_font": "FFFFFF",
+      "margin_inches": 0.8,
+      "footer_text": "Public Meeting Minutes Repair Packet | 2026"
+    },
+    "metadata": {
+      "author": "Board Clerk Office",
+      "title": "Public Meeting Minutes Repair Packet"
+    },
+    "page_break_before": [
+      "Motion and Vote Summary",
+      "Final Release Checklist"
+    ],
+    "source_must_contain": [
+      "Lake Side School Bord",
+      "approvl",
+      "attendence",
+      "minits",
+      "resoultion",
+      "budgte",
+      "calender",
+      "2026-04-12",
+      "$1,257,000"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_002_docx_meeting_minutes_public_repair",
+  "task_dir_name": "docops_v2_l3_002_docx_meeting_minutes_public_repair"
+}

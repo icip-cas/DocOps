@@ -1,0 +1,35 @@
+{
+  "task_id": "ppt_003",
+  "task_dir_name": "ppt_003_theme_transfer_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "F4 Theme transfer",
+  "difficulty": "Medium",
+  "source_doc_filename": "ppt_003_theme_transfer_seed.pptx",
+  "source_doc_path": "ppt/ppt_003_theme_transfer_seed.pptx",
+  "task_description_filename": "ppt_003_theme_transfer_seed.txt",
+  "task_description_path": "ppt/ppt_003_theme_transfer_seed.txt",
+  "input_path": "/root/ppt_003_theme_transfer_seed.pptx",
+  "output_path": "/root/submission/ppt_003_theme_transfer_seed.pptx",
+  "output_filename": "ppt_003_theme_transfer_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck was assembled from mismatched slides and needs a consistent visual theme.",
+  "single_step_benchmark_instruction": "Apply a unified blue professional theme across the whole presentation.",
+  "atomic_scope": "Only global theme transfer is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with a coherent blue theme.",
+  "inspired_by": [
+    {
+      "title": "Why do so many presentations still have inconsistent colors and layouts? Are people not using Slide Master?",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1sknmk4/why_do_so_many_presentations_still_have/"
+    },
+    {
+      "title": "Good all-round PowerPoint theme for lectures?",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1s7z1dz/good_allround_powerpoint_theme_for_lectures/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Some spacing is awkward\n- Slide layouts are basic\n- Content wording could be improved, but that is not the explicit request"
+  }
+}

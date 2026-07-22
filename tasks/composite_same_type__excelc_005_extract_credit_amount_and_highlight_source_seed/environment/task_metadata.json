@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_005",
+  "task_dir_name": "excelc_005_extract_credit_amount_and_highlight_source_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "extract -> highlight",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_005_extract_credit_amount_and_highlight_source_seed.xlsx",
+  "source_doc_path": "excel/excelc_005_extract_credit_amount_and_highlight_source_seed.xlsx",
+  "task_description_filename": "excelc_005_extract_credit_amount_and_highlight_source_seed.txt",
+  "task_description_path": "excel/excelc_005_extract_credit_amount_and_highlight_source_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_005_extract_credit_amount_and_highlight_source_seed.xlsx",
+  "output_path": "/root/submission/excelc_005_extract_credit_amount_and_highlight_source_seed.xlsx",
+  "output_filename": "excelc_005_extract_credit_amount_and_highlight_source_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This credit workbook needs the final approved amount surfaced and the source decision row highlighted.",
+  "single_step_benchmark_instruction": "Fill `Summary!B3` with the final approved customer credit amount for `CR-1184` when the shipment date is after `2026-04-18`, then highlight the supporting decision row on `Requests`.",
+  "atomic_scope": "Only the targeted extracted amount and supporting-row highlight are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with the extracted amount in `Summary!B3` and the correct source row highlighted.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Other requests remain intentionally unhighlighted\n- Do not add extra formulas outside the requested field"
+  }
+}

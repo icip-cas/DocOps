@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_007
+
+Doc type: excel
+Atomic operations: S1 Insert/Delete, C3 Generation
+Composition pattern: delete -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This workbook still contains an obsolete archive sheet and needs a concise cover note for reviewers.
+
+Single-step benchmark instruction:
+Delete the worksheet named `Archive_OLD`, then write exactly two short lines into `Cover!B3`: the first must start with `Supplier:` and the second must start with `Inspection:`.
+
+Atomic scope:
+Only the archive-sheet deletion and the two-sentence cover note are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook without `Archive_OLD` and with a two-sentence note in `Cover!B3`.

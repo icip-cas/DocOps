@@ -1,0 +1,22 @@
+Task ID: ppt_010
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: F1 Style consistency
+Difficulty: Medium
+
+User Task Description:
+This deck feels visually inconsistent from slide to slide.
+
+Single-Step Benchmark Instruction:
+Make the slide styling consistent across the deck, including titles, body text, and card appearance.
+
+Atomic Scope:
+Only style consistency is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Inconsistency appears across multiple style dimensions at once
+- The deck is not completely broken, so the agent must normalize rather than redesign from scratch
+- The request is global rather than local
+
+Expected Output Type:
+A revised .pptx deck with consistent styling across slides.

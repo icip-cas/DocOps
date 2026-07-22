@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_006",
+  "task_dir_name": "excelc_006_formalize_update_and_match_body_style_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "rewrite -> restyle",
+  "difficulty": "Medium",
+  "source_doc_filename": "excelc_006_formalize_update_and_match_body_style_seed.xlsx",
+  "source_doc_path": "excel/excelc_006_formalize_update_and_match_body_style_seed.xlsx",
+  "task_description_filename": "excelc_006_formalize_update_and_match_body_style_seed.txt",
+  "task_description_path": "excel/excelc_006_formalize_update_and_match_body_style_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_006_formalize_update_and_match_body_style_seed.xlsx",
+  "output_path": "/root/submission/excelc_006_formalize_update_and_match_body_style_seed.xlsx",
+  "output_filename": "excelc_006_formalize_update_and_match_body_style_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This client update sheet has one risky draft sentence and inconsistent nearby body formatting.",
+  "single_step_benchmark_instruction": "Rewrite only `Status Draft!B8` so it sounds formal and client-safe while preserving the schedule uncertainty, then make `B8:B10` use one consistent body style that matches `B7`.",
+  "atomic_scope": "Only the targeted draft rewrite and requested body-style normalization are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with a polished sentence in `B8` and matched body styling in `B8:B10`.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Header styling is intentionally left as-is\n- Do not change worksheet structure"
+  }
+}

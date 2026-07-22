@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_009",
+  "task_dir_name": "excel_009_body_style_consistency_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "F1 Style consistency",
+  "difficulty": "Medium",
+  "source_doc_filename": "excel_009_body_style_consistency_seed.xlsx",
+  "source_doc_path": "excel/excel_009_body_style_consistency_seed.xlsx",
+  "task_description_filename": "excel_009_body_style_consistency_seed.txt",
+  "task_description_path": "excel/excel_009_body_style_consistency_seed.txt",
+  "input_path": "/root/excel_009_body_style_consistency_seed.xlsx",
+  "output_path": "/root/submission/excel_009_body_style_consistency_seed.xlsx",
+  "output_filename": "excel_009_body_style_consistency_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains a candidate table where the body rows use inconsistent fonts, emphasis, and fills.",
+  "single_step_benchmark_instruction": "On the `Hiring Tracker` sheet, make rows `4:10` use one consistent body style that matches row `4`, while leaving the title row, header row, and note in row `13` unchanged.",
+  "atomic_scope": "Only formatting consistency is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with normalized body-row styling.",
+  "inspired_by": [
+    {
+      "title": "Cells in table won't update format",
+      "url": "https://www.reddit.com/r/excel/comments/1snfjl6/cells_in_table_wont_update_format/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Several rows look intentionally emphasized even though they are inconsistent noise\n- The instruction references a style exemplar rather than listing every formatting attribute\n- Non-target rows should remain untouched"
+  }
+}

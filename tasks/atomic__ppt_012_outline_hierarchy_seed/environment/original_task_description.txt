@@ -1,0 +1,22 @@
+Task ID: ppt_012
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: S3 Hierarchy editing
+Difficulty: Medium
+
+User Task Description:
+This slide outline has the wrong bullet hierarchy: some items that should be sub-points are currently at the top level.
+
+Single-Step Benchmark Instruction:
+Fix the outline hierarchy so that task-level items are nested correctly under their parent workstreams.
+
+Atomic Scope:
+Only hierarchy editing is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The text content itself is fine, but the structural levels are wrong
+- A visual fix is not enough if the logical bullet levels remain incorrect
+- Multiple lines need consistent promotion/demotion decisions
+
+Expected Output Type:
+A revised .pptx deck with corrected bullet hierarchy.

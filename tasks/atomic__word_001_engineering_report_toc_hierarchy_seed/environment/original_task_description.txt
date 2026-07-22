@@ -1,0 +1,28 @@
+Task ID: word_001
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: S3 Hierarchy editing
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: Custom Table of Content Template for my Engineering Report
+  URL: https://www.reddit.com/r/word/comments/1s7j1d6/custom_table_of_content_template_for_my/
+- Title: Headline issues
+  URL: https://www.reddit.com/r/word/comments/1rzumyi/headline_issues/
+
+User Task Description:
+This engineering report draft has a broken heading hierarchy and a manually typed table of contents.
+
+Single-Step Benchmark Instruction:
+Repair the heading hierarchy so the document uses a consistent multi-level heading structure, the subsection under `2. Temporary bypass plan` restarts correctly from `a` instead of continuing from `c`, and the matching manually typed table-of-contents entry is updated to match.
+
+Atomic Scope:
+Only the heading hierarchy and its matching TOC entry are explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The table of contents is manually typed
+- Fonts and spacing are inconsistent
+- Some headings use direct formatting instead of true styles
+
+Expected Output Type:
+A repaired .docx document with corrected heading hierarchy and matching TOC entry.

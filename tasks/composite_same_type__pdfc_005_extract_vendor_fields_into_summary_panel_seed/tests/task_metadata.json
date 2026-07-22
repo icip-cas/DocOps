@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_005",
+  "task_dir_name": "pdfc_005_extract_vendor_fields_into_summary_panel_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "extract -> generate",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_005_extract_vendor_fields_into_summary_panel_seed.pdf",
+  "source_doc_path": "pdf/pdfc_005_extract_vendor_fields_into_summary_panel_seed.pdf",
+  "task_description_filename": "pdfc_005_extract_vendor_fields_into_summary_panel_seed.txt",
+  "task_description_path": "pdf/pdfc_005_extract_vendor_fields_into_summary_panel_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_005_extract_vendor_fields_into_summary_panel_seed.pdf",
+  "output_path": "/root/submission/pdfc_005_extract_vendor_fields_into_summary_panel_seed.pdf",
+  "output_filename": "pdfc_005_extract_vendor_fields_into_summary_panel_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This vendor packet needs a concise extracted summary panel on the cover page.",
+  "single_step_benchmark_instruction": "Fill the cover `Key Facts` panel with vendor name, quote reference, total including options, and delivery window extracted from the detailed quote page.",
+  "atomic_scope": "Only the four extracted fields inserted into the cover summary panel are explicitly requested.",
+  "expected_output_type": "A revised .pdf packet with a populated cover `Key Facts` panel.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not modify the detailed quote text\n- Keep the summary panel compact"
+  }
+}

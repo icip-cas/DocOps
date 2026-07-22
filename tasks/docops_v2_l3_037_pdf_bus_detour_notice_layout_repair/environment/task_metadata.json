@@ -1,0 +1,207 @@
+{
+  "task_id": "docops_v2_l3_037_pdf_bus_detour_notice_layout_repair",
+  "input_path": "/root/docops_v2_l3_037_pdf_bus_detour_notice_layout_repair_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_037_pdf_bus_detour_notice_layout_repair_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 5,
+    "page_titles": [
+      "Public Bus Detour Notice Packet",
+      "Corrected Detour Summary",
+      "Stop Closure and Shuttle Matrix",
+      "Rider Communication Timeline",
+      "Release Checklist"
+    ],
+    "outline_titles": [
+      "Public Bus Detour Notice Packet",
+      "Corrected Detour Summary",
+      "Stop Closure and Shuttle Matrix",
+      "Rider Communication Timeline",
+      "Release Checklist"
+    ],
+    "landscape_pages": [
+      2
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "Route 21",
+      "2026-10-13",
+      "2026-10-27",
+      "7 stops",
+      "30 minutes",
+      "operator personal phone",
+      "do not post",
+      "duplicate draft"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "Route 12",
+        "311 Transit Desk",
+        "Public detour notice"
+      ],
+      "1": [
+        "Bridge closure start",
+        "2026-10-03",
+        "Reopening target",
+        "2026-10-17",
+        "Closed stops",
+        "9"
+      ],
+      "2": [
+        "Stop ID",
+        "Closure Status",
+        "Shuttle Stop",
+        "Headway",
+        "15 minutes"
+      ],
+      "3": [
+        "Public alert",
+        "Platform signage",
+        "Operator briefing",
+        "2026-10-03"
+      ],
+      "4": [
+        "Landscape matrix page confirmed",
+        "Bookmarks rebuilt",
+        "Clean metadata applied"
+      ]
+    },
+    "tables": {
+      "Corrected Detour Summary": [
+        [
+          "Field",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Route",
+          "Route 12",
+          "Corrected"
+        ],
+        [
+          "Bridge closure start",
+          "2026-10-03",
+          "Corrected"
+        ],
+        [
+          "Reopening target",
+          "2026-10-17",
+          "Corrected"
+        ],
+        [
+          "Closed stops",
+          "9",
+          "Corrected"
+        ],
+        [
+          "Shuttle headway",
+          "15 minutes",
+          "Corrected"
+        ]
+      ],
+      "Stop Closure and Shuttle Matrix": [
+        [
+          "Stop ID",
+          "Closure Status",
+          "Shuttle Stop",
+          "Headway"
+        ],
+        [
+          "S-1201",
+          "Closed",
+          "Shuttle A",
+          "15 minutes"
+        ],
+        [
+          "S-1202",
+          "Closed",
+          "Shuttle A",
+          "15 minutes"
+        ],
+        [
+          "S-1203",
+          "Closed",
+          "Shuttle B",
+          "15 minutes"
+        ],
+        [
+          "S-1204",
+          "Closed",
+          "Shuttle B",
+          "15 minutes"
+        ]
+      ],
+      "Rider Communication Timeline": [
+        [
+          "Action",
+          "Owner",
+          "Date"
+        ],
+        [
+          "Public alert",
+          "Communications",
+          "2026-10-01"
+        ],
+        [
+          "Platform signage",
+          "Field Team",
+          "2026-10-02"
+        ],
+        [
+          "Operator briefing",
+          "Transit Operations",
+          "2026-10-03"
+        ]
+      ],
+      "Release Checklist": [
+        [
+          "Control",
+          "Required Result",
+          "Status"
+        ],
+        [
+          "Landscape matrix",
+          "Landscape matrix page confirmed",
+          "Complete"
+        ],
+        [
+          "Bookmarks",
+          "Bookmarks rebuilt",
+          "Complete"
+        ],
+        [
+          "Metadata",
+          "Clean metadata applied",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "portrait_width": 612,
+      "portrait_height": 792,
+      "landscape_width": 792,
+      "landscape_height": 612,
+      "header_bar": "0E7490",
+      "accent": "F97316",
+      "footer_text": "Public Bus Detour Notice Packet | 2026"
+    },
+    "metadata": {
+      "title": "Public Bus Detour Notice Packet",
+      "author": "Transit Communications Office",
+      "subject": "Clean bus detour layout repair packet"
+    },
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE",
+      "Route 21",
+      "2026-10-13",
+      "7 stops",
+      "30 minutes",
+      "operator personal phone"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_037_pdf_bus_detour_notice_layout_repair",
+  "task_dir_name": "docops_v2_l3_037_pdf_bus_detour_notice_layout_repair"
+}

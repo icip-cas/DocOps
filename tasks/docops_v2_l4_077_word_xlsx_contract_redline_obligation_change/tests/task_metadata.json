@@ -1,0 +1,410 @@
+{
+  "task_id": "docops_v2_l4_077_word_xlsx_contract_redline_obligation_change",
+  "task_dir_name": "docops_v2_l4_077_word_xlsx_contract_redline_obligation_change",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx), Excel (.xlsx), and PDF",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_input.docx",
+  "supporting_input_paths": [
+    "/root/current_sla_amendment.docx",
+    "/root/counterparty_comment_digest.pdf",
+    "/root/security_evidence_schedule.xlsx",
+    "/root/precedent_clause_library.docx",
+    "/root/deal_summary.pdf",
+    "/root/internal_fallback_positions.docx"
+  ],
+  "output_paths": {
+    "clean_doc": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_clean_doc.docx",
+    "redline_doc": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_redline_doc.docx",
+    "change_log": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_change_log.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_clean_doc.docx",
+  "output_filename": "clean_sla_amendment.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-ooxml-redline-strict",
+  "user_task_description": "Create a clean SLA amendment, an actual tracked-change redline amendment, and an obligation change log workbook from cross-document contract comments, schedule data, precedent clauses, deal summary, and private fallback notes.",
+  "single_step_benchmark_instruction": "Create clean_sla_amendment.docx, redline_sla_amendment.docx, and obligation_change_log.xlsx. Apply accepted contract changes, produce real OOXML tracked insertions/deletions, extract obligations, preserve workbook formulas/tables/validation/hidden sheets, and exclude internal fallback strategy.",
+  "expected_output_type": "Two .docx contract documents and one .xlsx obligation workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Contract lifecycle management redline and version-control workflows",
+      "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/"
+    },
+    {
+      "title": "Common legal operations challenges around contract redlining, comparison, and obligation tracking",
+      "url": "https://cloc.org/"
+    },
+    {
+      "title": "Document comparison and tracked-change pain points in legal/procurement workflows",
+      "url": "https://support.microsoft.com/office/compare-document-differences-using-the-legal-blackline-option-dbfc7351-4022-43a2-a0c4-54d1898702a0"
+    }
+  ],
+  "verifier_expectations": {
+    "clean_docx_output": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_clean_doc.docx",
+    "redline_docx_output": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_redline_doc.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_077_word_xlsx_contract_redline_obligation_change_change_log.xlsx",
+    "clean_heading_order": [
+      "Service Level Amendment No. 3",
+      "Parties and Effective Date",
+      "Support Response Commitments",
+      "Security Evidence Package",
+      "Service Credits",
+      "Excluded Requests",
+      "Operational Contacts"
+    ],
+    "clean_required": [
+      "Cloud Harbor Systems, Inc.",
+      "Northwind Health Plan",
+      "Effective date: 2026-09-01",
+      "Priority 1 response time is reduced from four business hours to two business hours",
+      "Priority 2 response time remains one business day",
+      "monthly security evidence package by the fifth business day",
+      "SOC 2 bridge letter",
+      "penetration-test executive summary",
+      "vulnerability remediation export",
+      "service credit is 6% of monthly SaaS fees for any Priority 1 breach",
+      "aggregate monthly service credits remain capped at 12%",
+      "custom data extract requests are excluded from SLA credit calculations",
+      "Escalation owner: Priya Nair",
+      "Customer notice mailbox: vendor-notices@northwind.example"
+    ],
+    "forbidden_public": [
+      "accept 4 hours if pushed",
+      "do not mention budget cap",
+      "use old credit language",
+      "walk back evidence package",
+      "private fallback",
+      "legal strategy"
+    ],
+    "redline_insertions": [
+      "two business hours",
+      "monthly security evidence package by the fifth business day",
+      "6% of monthly SaaS fees",
+      "custom data extract requests are excluded",
+      "vendor-notices@northwind.example"
+    ],
+    "redline_deletions": [
+      "four business hours",
+      "quarterly security evidence package",
+      "3% of monthly SaaS fees",
+      "ad hoc data exports are included",
+      "contracts@northwind.example"
+    ],
+    "change_rows": [
+      [
+        "Change ID",
+        "Clause",
+        "Original Text",
+        "Final Text",
+        "Source",
+        "Risk",
+        "Owner",
+        "Status"
+      ],
+      [
+        "CH-01",
+        "Support Response Commitments",
+        "Priority 1 response time: four business hours",
+        "Priority 1 response time: two business hours",
+        "Counterparty comment C-04",
+        "High",
+        "Support Ops",
+        "Accepted"
+      ],
+      [
+        "CH-02",
+        "Security Evidence Package",
+        "Quarterly evidence package",
+        "Monthly security evidence package by fifth business day",
+        "Security schedule",
+        "High",
+        "Security GRC",
+        "Accepted"
+      ],
+      [
+        "CH-03",
+        "Service Credits",
+        "3% of monthly SaaS fees for Priority 1 breach",
+        "6% of monthly SaaS fees for Priority 1 breach; 12% monthly aggregate cap",
+        "Deal summary",
+        "Medium",
+        "Finance",
+        "Accepted"
+      ],
+      [
+        "CH-04",
+        "Excluded Requests",
+        "Ad hoc data exports are included in SLA credit calculations",
+        "Custom data extract requests are excluded from SLA credit calculations",
+        "Clause library",
+        "Medium",
+        "Legal Ops",
+        "Accepted"
+      ],
+      [
+        "CH-05",
+        "Operational Contacts",
+        "contracts@northwind.example",
+        "vendor-notices@northwind.example; Priya Nair escalation owner",
+        "Counterparty comment C-09",
+        "Low",
+        "Vendor Manager",
+        "Accepted"
+      ]
+    ],
+    "obligation_rows": [
+      [
+        "Obligation",
+        "Frequency/Trigger",
+        "Due/Target",
+        "Evidence",
+        "Owner",
+        "Monitor?"
+      ],
+      [
+        "Priority 1 response",
+        "Each Priority 1 ticket",
+        "Two business hours",
+        "Support ticket export",
+        "Support Ops",
+        "Yes"
+      ],
+      [
+        "Priority 2 response",
+        "Each Priority 2 ticket",
+        "One business day",
+        "Support ticket export",
+        "Support Ops",
+        "Yes"
+      ],
+      [
+        "Security evidence package",
+        "Monthly",
+        "Fifth business day",
+        "SOC 2 bridge letter; pen-test executive summary; vulnerability remediation export",
+        "Security GRC",
+        "Yes"
+      ],
+      [
+        "Priority 1 service credit",
+        "Any Priority 1 breach",
+        "6% monthly SaaS fees",
+        "SLA credit worksheet",
+        "Finance",
+        "Yes"
+      ],
+      [
+        "Monthly credit cap",
+        "Monthly aggregate",
+        "12% cap",
+        "SLA credit worksheet",
+        "Finance",
+        "Yes"
+      ],
+      [
+        "Excluded custom data extracts",
+        "Custom extract request",
+        "Excluded from SLA credits",
+        "Request log",
+        "Legal Ops",
+        "Yes"
+      ]
+    ],
+    "source_map_rows": [
+      [
+        "Source",
+        "Used For",
+        "Public Output Treatment"
+      ],
+      [
+        "current_sla_amendment.docx",
+        "Original clause baseline",
+        "Use"
+      ],
+      [
+        "counterparty_comment_digest.pdf",
+        "Requested redlines",
+        "Use"
+      ],
+      [
+        "security_evidence_schedule.xlsx",
+        "Evidence package details",
+        "Use"
+      ],
+      [
+        "precedent_clause_library.docx",
+        "Exclusion wording",
+        "Use"
+      ],
+      [
+        "deal_summary.pdf",
+        "Credit cap and effective date",
+        "Use"
+      ],
+      [
+        "internal_fallback_positions.docx",
+        "Private negotiation fallback",
+        "Exclude"
+      ]
+    ],
+    "approval_rows": [
+      [
+        "Reviewer",
+        "Area",
+        "Required Check",
+        "Status"
+      ],
+      [
+        "Legal Ops",
+        "Redline",
+        "Tracked insertions and deletions present",
+        "Ready"
+      ],
+      [
+        "Security GRC",
+        "Evidence Package",
+        "Monthly evidence package matches schedule",
+        "Ready"
+      ],
+      [
+        "Finance",
+        "Service Credits",
+        "6% credit and 12% aggregate cap reflected",
+        "Ready"
+      ],
+      [
+        "Vendor Manager",
+        "Contacts",
+        "Priya Nair and notice mailbox reflected",
+        "Ready"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Contract",
+        "Service Level Amendment No. 3",
+        "Current amendment",
+        "Matched"
+      ],
+      [
+        "Supplier",
+        "Cloud Harbor Systems, Inc.",
+        "Current amendment",
+        "Matched"
+      ],
+      [
+        "Customer",
+        "Northwind Health Plan",
+        "Current amendment",
+        "Matched"
+      ],
+      [
+        "Effective date",
+        "2026-09-01",
+        "Deal summary",
+        "Matched"
+      ],
+      [
+        "Accepted changes",
+        "=COUNTIF('Change Log'!H2:H6,\"Accepted\")",
+        "Change Log",
+        "Calculated"
+      ],
+      [
+        "Monitored obligations",
+        "=COUNTIF('Obligations Register'!F2:F7,\"Yes\")",
+        "Obligations Register",
+        "Calculated"
+      ],
+      [
+        "Private sources excluded",
+        1,
+        "Source Map",
+        "Checked"
+      ],
+      [
+        "Package ready",
+        "=IF(AND(B6=5,B7=6,B8=1),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "sheet_order": [
+      "Package Summary",
+      "Change Log",
+      "Obligations Register",
+      "Source Map",
+      "Approval Checklist",
+      "Private Fallback"
+    ],
+    "tables": {
+      "Package Summary": [
+        "tblPackageSummary",
+        "A1:D9"
+      ],
+      "Change Log": [
+        "tblChangeLog",
+        "A1:H6"
+      ],
+      "Obligations Register": [
+        "tblObligations",
+        "A1:F7"
+      ],
+      "Source Map": [
+        "tblSourceMap",
+        "A1:C7"
+      ],
+      "Approval Checklist": [
+        "tblApproval",
+        "A1:D5"
+      ],
+      "Private Fallback": [
+        "tblPrivateFallback",
+        "A1:B4"
+      ]
+    },
+    "formula_cells": {
+      "Package Summary!B6": "=COUNTIF('Change Log'!H2:H6,\"Accepted\")",
+      "Package Summary!B7": "=COUNTIF('Obligations Register'!F2:F7,\"Yes\")",
+      "Package Summary!B9": "=IF(AND(B6=5,B7=6,B8=1),\"Ready\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Private Fallback"
+    ],
+    "defined_names": [
+      "AcceptedChangeCount",
+      "MonitoredObligationCount",
+      "PackageReady"
+    ],
+    "print_areas": {
+      "Package Summary": "A1:D9",
+      "Change Log": "A1:H6",
+      "Obligations Register": "A1:F7",
+      "Source Map": "A1:C7",
+      "Approval Checklist": "A1:D5"
+    },
+    "data_validation": {
+      "Change Log": [
+        "H2:H6"
+      ],
+      "Obligations Register": [
+        "F2:F7"
+      ],
+      "Approval Checklist": [
+        "D2:D5"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_077_word_xlsx_contract_redline_obligation_change"
+}

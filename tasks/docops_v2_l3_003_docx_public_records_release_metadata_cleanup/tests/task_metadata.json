@@ -1,0 +1,186 @@
+{
+  "task_id": "docops_v2_l3_003_docx_public_records_release_metadata_cleanup",
+  "input_path": "/root/docops_v2_l3_003_docx_public_records_release_metadata_cleanup_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_003_docx_public_records_release_metadata_cleanup_output.docx",
+  "output_extension": ".docx",
+  "verifier_expectations": {
+    "headings": [
+      "Public Release Packet: Water Main Break Claims",
+      "Release Summary",
+      "Corrected Determination Facts",
+      "Claim Category Table",
+      "Notification Workflow",
+      "Redaction and Metadata Checklist",
+      "Public Appendix Index"
+    ],
+    "required_phrases": [
+      "This packet provides the public release version of the water main break reimbursement claims determination.",
+      "All claimant identifiers and legal-strategy notes have been removed.",
+      "Confirm corrected incident date and claim count.",
+      "Apply $650 reimbursement cap before public summaries.",
+      "Route public inquiries to Public Records Desk.",
+      "Publish response package by 2026-08-15.",
+      "Appendix A - Corrected determination facts",
+      "Appendix B - Claim category handling",
+      "Appendix C - Redaction and metadata checklist"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "legal strategy",
+      "attorney-client",
+      "home address",
+      "personal phone",
+      "claimant name",
+      "Nora Chen",
+      "Marcus Vale",
+      "Eliza Park",
+      "2026-01-08",
+      "34 claims",
+      "$500",
+      "2026-07-31",
+      "do not release",
+      "settlement exposure",
+      "private reviewer",
+      "comment author"
+    ],
+    "tables": {
+      "Corrected Determination Facts": [
+        [
+          "Field",
+          "Public Value",
+          "Release Note"
+        ],
+        [
+          "Incident date",
+          "2026-01-18",
+          "Corrected from correction memo"
+        ],
+        [
+          "Claim count",
+          "37",
+          "Deduplicated public count"
+        ],
+        [
+          "Reimbursable cap",
+          "$650",
+          "Applies per approved claim"
+        ],
+        [
+          "Public contact",
+          "Public Records Desk",
+          "No individual staff names"
+        ],
+        [
+          "Response deadline",
+          "2026-08-15",
+          "Public response package deadline"
+        ]
+      ],
+      "Claim Category Table": [
+        [
+          "Category",
+          "Public Criteria",
+          "Release Handling"
+        ],
+        [
+          "Standard reimbursement",
+          "Approved water main break claims up to $650",
+          "Include aggregate totals only"
+        ],
+        [
+          "Appeal pending",
+          "Claims needing supplemental documentation",
+          "Include workflow status only"
+        ],
+        [
+          "Denied claim",
+          "Not tied to incident boundary or deadline",
+          "Include count only"
+        ],
+        [
+          "Duplicate intake",
+          "Replaced by retained claim record",
+          "Exclude duplicate personal records"
+        ]
+      ],
+      "Redaction and Metadata Checklist": [
+        [
+          "Item",
+          "Required Public Result",
+          "Status"
+        ],
+        [
+          "Tracked changes",
+          "Accepted or removed",
+          "Complete"
+        ],
+        [
+          "Comments",
+          "Deleted from package",
+          "Complete"
+        ],
+        [
+          "Document properties",
+          "Public metadata only",
+          "Complete"
+        ],
+        [
+          "PII and confidential analysis",
+          "Removed from visible and hidden text",
+          "Complete"
+        ],
+        [
+          "Footer and style",
+          "Public release format applied",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "title_font": "Aptos Display",
+      "title_size_pt": 18,
+      "title_color": "1F4E79",
+      "heading_color": "1F4E79",
+      "body_font": "Aptos",
+      "body_size_pt": 10.5,
+      "table_header_fill": "1F4E79",
+      "table_header_font": "FFFFFF",
+      "margin_inches": 0.75,
+      "footer_text": "Public Records Release | Water Main Break Claims | 2026"
+    },
+    "metadata": {
+      "author": "Public Records Office",
+      "subject": "Clean public release packet",
+      "title": "Public Release Packet: Water Main Break Claims"
+    },
+    "page_break_before": [
+      "Redaction and Metadata Checklist",
+      "Public Appendix Index"
+    ],
+    "forbidden_ooxml_markers": [
+      "<w:ins ",
+      "<w:del ",
+      "<w:commentRangeStart",
+      "<w:commentRangeEnd",
+      "<w:commentReference"
+    ],
+    "forbidden_package_parts": [
+      "word/comments.xml"
+    ],
+    "source_must_contain": [
+      "word/comments.xml",
+      "<w:ins ",
+      "<w:del ",
+      "Nora Chen",
+      "personal phone",
+      "settlement exposure",
+      "2026-01-08",
+      "$500"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_003_docx_public_records_release_metadata_cleanup",
+  "task_dir_name": "docops_v2_l3_003_docx_public_records_release_metadata_cleanup"
+}

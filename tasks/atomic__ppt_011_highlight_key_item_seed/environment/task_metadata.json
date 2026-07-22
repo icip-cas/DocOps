@@ -1,0 +1,26 @@
+{
+  "task_id": "ppt_011",
+  "task_dir_name": "ppt_011_highlight_key_item_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "F2 Highlighting",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "ppt_011_highlight_key_item_seed.pptx",
+  "source_doc_path": "ppt/ppt_011_highlight_key_item_seed.pptx",
+  "task_description_filename": "ppt_011_highlight_key_item_seed.txt",
+  "task_description_path": "ppt/ppt_011_highlight_key_item_seed.txt",
+  "input_path": "/root/ppt_011_highlight_key_item_seed.pptx",
+  "output_path": "/root/submission/ppt_011_highlight_key_item_seed.pptx",
+  "output_filename": "ppt_011_highlight_key_item_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This milestone slide contains one explicitly critical item that should stand out more clearly.",
+  "single_step_benchmark_instruction": "Visually emphasize the line marked as Critical so it stands out from the other bullets.",
+  "atomic_scope": "Only highlighting/emphasis is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with the critical line clearly highlighted.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The task is narrow and local, so over-formatting is an easy failure mode\n- The slide already has multiple bullets competing for attention\n- The agent must identify the single intended emphasis target"
+  }
+}

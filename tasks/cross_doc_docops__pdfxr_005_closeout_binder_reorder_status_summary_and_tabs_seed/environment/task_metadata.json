@@ -1,0 +1,35 @@
+{
+  "task_id": "pdfxr_005",
+  "task_dir_name": "pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-warranty-lines -> delete-divider -> preserve-image-pages -> rebuild-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "supporting_input_paths": [
+    "/root/closeout_index.xlsx",
+    "/root/warranty_note.docx",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "output_filename": "pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Reorder the binder into the requested closeout sequence.",
+  "single_step_benchmark_instruction": "Reorder the binder into the requested closeout sequence, refresh the cover status summary with exact counts, and rebuild bookmarks for O&M, Warranties, Punch List, and Training while preserving non-target manual pages.",
+  "atomic_scope": "Only the cover lines, the warranty-note lines, the divider deletion, the final page order, and the outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the image-bearing certificate and O&M pages\n- Do not regenerate the binder as plain text pages"
+  }
+}

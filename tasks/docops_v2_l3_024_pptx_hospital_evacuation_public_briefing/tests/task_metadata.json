@@ -1,0 +1,341 @@
+{
+  "task_id": "docops_v2_l3_024_pptx_hospital_evacuation_public_briefing",
+  "task_dir_name": "docops_v2_l3_024_pptx_hospital_evacuation_public_briefing",
+  "doc_type": "pptx",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "N1 Speaker notes",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-slide-removal -> slide-reorder -> correction-log-application -> public-table-rebuild -> style-migration -> speaker-note-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-notes-strict",
+  "user_task_description": "Prepare a clean public briefing deck from a messy internal hospital evacuation exercise presentation.",
+  "single_step_benchmark_instruction": "Remove internal slides and confidential notes, reorder public slides, apply correction-log fixes, rebuild public timeline/matrix/resource/workflow/communications/commitment sections, migrate explicit styles, and preserve only public speaker notes.",
+  "atomic_scope": "Only the requested presentation-wide workflow edits are in scope; public exercise facts, correction facts, speaker notes, slide order, table style, footer, and visual style requirements must be preserved.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested single-presentation workflow.",
+  "input_path": "/root/docops_v2_l3_024_pptx_hospital_evacuation_public_briefing_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_024_pptx_hospital_evacuation_public_briefing_output.pptx",
+  "output_filename": "docops_v2_l3_024_pptx_hospital_evacuation_public_briefing_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "presentation",
+  "verifier_expectations": {
+    "slide_titles": [
+      "Harborview Hospital Evacuation Exercise: Public Briefing",
+      "Exercise Scope and Assumptions",
+      "Patient Movement Timeline",
+      "Unit Impact Matrix",
+      "Transport Resource Plan",
+      "Family Reunification Workflow",
+      "Communications Cadence",
+      "Corrective Action Commitments",
+      "Publication Style Guide",
+      "Appendix Slide Index"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "patient name",
+      "nurse grievance",
+      "insurer notification",
+      "legal risk memo",
+      "bed shortage rumor",
+      "security camera note",
+      "personal phone",
+      "do not disclose",
+      "West Tower 5B",
+      "ambulance count 14",
+      "10:45",
+      "Peds Unit",
+      "Helen Mora"
+    ],
+    "style": {
+      "title_background": "172A3A",
+      "content_background": "F8F4EC",
+      "accent_fill": "E4572E",
+      "table_header_fill": "0B6E4F",
+      "table_header_font": "FFFFFF",
+      "title_font": "Georgia",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "172A3A",
+      "footer_text": "Harborview Public Exercise Briefing | September 2026"
+    },
+    "required_text_by_slide": {
+      "Harborview Hospital Evacuation Exercise: Public Briefing": [
+        "Public exercise briefing",
+        "Exercise date: 2026-09-12",
+        "Prepared for the Regional Health Preparedness Council"
+      ],
+      "Exercise Scope and Assumptions": [
+        "Scenario: partial evacuation following utility loss in West Tower 5C",
+        "Scope includes patient movement, transport staging, family reunification, and public communications.",
+        "Scope excludes patient-level clinical details and nonpublic personnel issues."
+      ]
+    },
+    "tables": {
+      "Patient Movement Timeline": [
+        [
+          "Time",
+          "Public Event",
+          "Status"
+        ],
+        [
+          "08:10",
+          "Utility loss detected in West Tower 5C",
+          "Confirmed"
+        ],
+        [
+          "08:25",
+          "Evacuation branch activated",
+          "Complete"
+        ],
+        [
+          "09:05",
+          "Pediatric Unit relocation began",
+          "Complete"
+        ],
+        [
+          "10:15",
+          "Family reunification center opened",
+          "Complete"
+        ],
+        [
+          "11:40",
+          "All exercise patients accounted for",
+          "Complete"
+        ]
+      ],
+      "Unit Impact Matrix": [
+        [
+          "Unit",
+          "Public Impact",
+          "Patients Moved",
+          "Receiving Area"
+        ],
+        [
+          "West Tower 5C",
+          "Partial evacuation",
+          "18",
+          "East Tower step-down"
+        ],
+        [
+          "Pediatric Unit",
+          "Temporary relocation",
+          "12",
+          "Children's clinic wing"
+        ],
+        [
+          "Imaging",
+          "Scheduled studies paused",
+          "0",
+          "No relocation"
+        ],
+        [
+          "Emergency Department",
+          "Ambulance intake rerouted",
+          "6",
+          "South ambulance bay"
+        ]
+      ],
+      "Transport Resource Plan": [
+        [
+          "Resource",
+          "Quantity",
+          "Staging Location",
+          "Status"
+        ],
+        [
+          "Ambulances",
+          "18",
+          "South ambulance bay",
+          "Ready"
+        ],
+        [
+          "Wheelchair vans",
+          "6",
+          "Main entrance loop",
+          "Ready"
+        ],
+        [
+          "Hospital transport teams",
+          "9",
+          "West Tower lobby",
+          "Ready"
+        ],
+        [
+          "Bus support",
+          "2",
+          "Conference center curb",
+          "Standby"
+        ]
+      ],
+      "Family Reunification Workflow": [
+        [
+          "Step",
+          "Public Workflow",
+          "Owner"
+        ],
+        [
+          "1",
+          "Open reunification center at 10:15",
+          "Family Assistance Lead"
+        ],
+        [
+          "2",
+          "Verify visitor identity at registration",
+          "Security Desk"
+        ],
+        [
+          "3",
+          "Provide unit status cards every 30 minutes",
+          "Patient Experience"
+        ],
+        [
+          "4",
+          "Escalate unresolved inquiries to social work",
+          "Social Work Lead"
+        ]
+      ],
+      "Communications Cadence": [
+        [
+          "Audience",
+          "Channel",
+          "Cadence",
+          "Owner"
+        ],
+        [
+          "Families",
+          "Reunification center updates",
+          "Every 30 minutes",
+          "Patient Experience"
+        ],
+        [
+          "Regional partners",
+          "Preparedness council email",
+          "Hourly",
+          "Liaison Officer"
+        ],
+        [
+          "Public",
+          "Website banner and media line",
+          "At status change",
+          "Public Information Officer"
+        ],
+        [
+          "Staff",
+          "Command center briefing",
+          "Every 45 minutes",
+          "Operations Chief"
+        ]
+      ],
+      "Corrective Action Commitments": [
+        [
+          "Commitment",
+          "Owner",
+          "Due"
+        ],
+        [
+          "Update evacuation unit map for West Tower 5C",
+          "Facilities",
+          "2026-09-30"
+        ],
+        [
+          "Expand transport staging checklist for 18 ambulances",
+          "Logistics",
+          "2026-10-04"
+        ],
+        [
+          "Standardize family center opening script",
+          "Patient Experience",
+          "2026-10-07"
+        ],
+        [
+          "Run Pediatric Unit relocation drill",
+          "Dr. Helena Mora",
+          "2026-10-15"
+        ]
+      ],
+      "Publication Style Guide": [
+        [
+          "Style Element",
+          "Requirement"
+        ],
+        [
+          "Title background",
+          "172A3A"
+        ],
+        [
+          "Content background",
+          "F8F4EC"
+        ],
+        [
+          "Accent rectangle",
+          "E4572E"
+        ],
+        [
+          "Table header fill",
+          "0B6E4F"
+        ],
+        [
+          "Title font",
+          "Georgia bold"
+        ],
+        [
+          "Footer",
+          "Harborview Public Exercise Briefing | September 2026"
+        ]
+      ],
+      "Appendix Slide Index": [
+        [
+          "Appendix",
+          "Public Slide",
+          "Status"
+        ],
+        [
+          "A",
+          "Exercise Scope and Assumptions",
+          "Included"
+        ],
+        [
+          "B",
+          "Patient Movement Timeline",
+          "Included"
+        ],
+        [
+          "C",
+          "Transport Resource Plan",
+          "Included"
+        ],
+        [
+          "D",
+          "Corrective Action Commitments",
+          "Included"
+        ]
+      ]
+    },
+    "speaker_notes": [
+      "Open with the public exercise frame and confirm the deck excludes patient-level and personnel-sensitive details.",
+      "Clarify the exercise scope and the corrected West Tower 5C assumption.",
+      "Walk through the public timeline, including the 10:15 family center opening.",
+      "Summarize unit impacts with corrected unit names and public movement totals.",
+      "Explain the resource plan with corrected ambulance quantity.",
+      "Describe the public family reunification workflow without clinical details.",
+      "Explain communication cadence across families, partners, public, and staff.",
+      "Close with public corrective action commitments and owners.",
+      "State the visual style requirements used for the public deck.",
+      "Use the appendix index to orient reviewers to the public slide set."
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_024_pptx_hospital_evacuation_public_briefing"
+}

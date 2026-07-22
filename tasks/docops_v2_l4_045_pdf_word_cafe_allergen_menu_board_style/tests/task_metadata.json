@@ -1,0 +1,140 @@
+{
+  "task_id": "docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style",
+  "task_dir_name": "docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style",
+  "doc_type": "pdf+word",
+  "primary_modality": "PDF (.pdf) and Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "menu-source-filter -> public-PDF-menu-board-format -> internal-DOCX-landscape-allergen-sheet -> public/internal-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_input.pdf",
+  "supporting_input_paths": [
+    "/root/menu_source.xlsx",
+    "/root/cafe_brand_allergen_note.docx",
+    "/root/allergen_format_policy.pdf"
+  ],
+  "output_paths": {
+    "packet": "/root/submission/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_packet.pdf",
+    "document": "/root/submission/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_document.docx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_packet.pdf",
+  "output_filename": "docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_input.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Create a public cafe allergen menu board PDF and an internal kitchen allergen print sheet from a draft menu PDF, menu source workbook, brand/allergen note, and allergen format policy.",
+  "single_step_benchmark_instruction": "Create the final PDF and DOCX. Public PDF must publish only customer-facing menu items and remove staff-only details. DOCX must be landscape, include a live TOC, retain full kitchen controls, highlight high-risk controls, and preserve internal-only M-140 as kitchen-only.",
+  "atomic_scope": "PDF/DOCX food-service menu and allergen formatting workflow.",
+  "expected_output_type": "A final public .pdf menu board and internal .docx kitchen print sheet saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Adobe Acrobat bookmarks and page organization",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    },
+    {
+      "title": "Microsoft Word TOC requires heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    }
+  ],
+  "verifier_expectations": {
+    "packet_output": "/root/submission/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_packet.pdf",
+    "document_output": "/root/submission/docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_document.docx",
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Cafe Allergen Menu Board",
+      "Coffee and Breakfast",
+      "Lunch and Bakery",
+      "Guest Allergen Notice"
+    ],
+    "pdf_required": [
+      "Published Item Count 3",
+      "M-101",
+      "M-118",
+      "M-126",
+      "Public Allergen Note Contains sesame and soy",
+      "Staff-only prep notes are not printed on public menu boards"
+    ],
+    "pdf_forbidden": [
+      "M-140",
+      "Staff Family Meal Curry",
+      "Shared steaming wand",
+      "Separate garnish spoon",
+      "Dedicated bakery tongs"
+    ],
+    "outline_titles": [
+      "Cafe Allergen Menu Board",
+      "Coffee and Breakfast",
+      "Lunch and Bakery",
+      "Guest Allergen Notice"
+    ],
+    "heading_order": [
+      "Kitchen Allergen Print Sheet",
+      "Service Boundary",
+      "Allergen Control Matrix",
+      "Internal Staff Meal Note"
+    ],
+    "doc_required": [
+      "Public PDF uses concise allergen wording; kitchen print sheet retains staff-only cross-contact controls.",
+      "M-140 remains kitchen only and is excluded from the public PDF menu board."
+    ],
+    "doc_forbidden": [
+      "Manual TOC placeholder",
+      "Draft"
+    ],
+    "doc_header": "Kitchen Allergen Print Sheet | Internal Use",
+    "doc_footer": "Public board: docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style_input.pdf",
+    "allergen_rows": [
+      [
+        "M-101",
+        "Cardamom Oat Latte",
+        "Oat",
+        "Shared steaming wand; purge before service",
+        "Front menu"
+      ],
+      [
+        "M-118",
+        "Sesame Citrus Bowl",
+        "Sesame; Soy",
+        "Separate garnish spoon required",
+        "Front menu"
+      ],
+      [
+        "M-126",
+        "Hazelnut Cocoa Tart",
+        "Tree nuts; Milk; Wheat",
+        "Dedicated bakery tongs required",
+        "Front menu"
+      ],
+      [
+        "M-140",
+        "Staff Family Meal Curry",
+        "Peanut",
+        "Internal staff meal only; do not publish",
+        "Kitchen only"
+      ]
+    ],
+    "highlight_text": "High-risk control: M-118 sesame garnish spoon and M-126 dedicated bakery tongs must be checked before service.",
+    "public_ids": [
+      "M-101",
+      "M-118",
+      "M-126"
+    ],
+    "internal_ids": [
+      "M-140"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_045_pdf_word_cafe_allergen_menu_board_style"
+}

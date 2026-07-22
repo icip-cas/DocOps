@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed"
+description = "wordxr_001 - cross-document skill-gap v5 structural task for DocumentBenchmark."
+authors = []
+keywords = ["word", "cross-document", "document-processing", "c1-extraction", "c2-editing", "f1-style-consistency", "f2-highlighting", "s4-table/sheet-ops", "s3-hierarchy-editing"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["word", "cross-document", "document-processing", "skill-gap-v5-structural", "word"]
+task_id = "wordxr_001"
+doc_type = "word"
+primary_modality = "Word (.docx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "publish-status-fields -> replace-minutes-sections -> insert-h2-subheading -> build-attendance-table -> insert-page-break -> highlight-watch"
+atomic_operations = ["C1 Extraction", "C2 Editing", "F1 Style consistency", "F2 Highlighting", "S4 Table/Sheet ops", "S3 Hierarchy editing"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx"
+OUTPUT_PATH = "/root/submission/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx"
+TASK_ID = "wordxr_001"
+DOC_TYPE = "word"
+
+[solution.env]

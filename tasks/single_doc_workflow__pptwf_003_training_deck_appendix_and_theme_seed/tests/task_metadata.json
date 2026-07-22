@@ -1,0 +1,89 @@
+{
+  "task_id": "pptwf_003",
+  "task_dir_name": "pptwf_003_training_deck_appendix_and_theme_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "S4 Table/Sheet ops",
+    "F3 Layout control",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "appendix-insert -> table-fix -> theme-propagation",
+  "difficulty": "Medium-Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Prepare a training deck with appendix and theme cleanup.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the Old Appendix Divider slide, restore the live slide order, keep the Checklist table values unchanged, and do not modify the locked reference slide.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pptx deck that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pptwf_003_training_deck_appendix_and_theme_seed.pptx",
+  "output_path": "/root/submission/pptwf_003_training_deck_appendix_and_theme_seed.pptx",
+  "output_filename": "pptwf_003_training_deck_appendix_and_theme_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "slide_title_contains_order": [
+      "Training Deck",
+      "Overview",
+      "Checklist",
+      "Appendix Divider",
+      "Layout Reference - Comparison"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Training Deck",
+        "required_lines": [
+          "Workflow-locked training publication",
+          "Keep the comparison card layout aligned."
+        ]
+      },
+      {
+        "slide_title": "Overview",
+        "required_lines": [
+          "Module 1",
+          "Module 2",
+          "Module 3"
+        ]
+      },
+      {
+        "slide_title": "Checklist",
+        "required_lines": [
+          "Checklist item A",
+          "Checklist item B",
+          "Checklist item C"
+        ]
+      },
+      {
+        "slide_title": "Appendix Divider",
+        "required_lines": [
+          "Appendix begins here."
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Checklist",
+        "cells": {
+          "0,0": "Item",
+          "0,1": "Owner",
+          "1,0": "Policy",
+          "1,1": "Editor",
+          "2,0": "Appendix",
+          "2,1": "PMO"
+        }
+      }
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Comparison"
+    ],
+    "absent_slide_titles": [
+      "Old Appendix Divider"
+    ]
+  }
+}

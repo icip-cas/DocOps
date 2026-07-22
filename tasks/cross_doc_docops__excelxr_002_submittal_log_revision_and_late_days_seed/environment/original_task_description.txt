@@ -1,0 +1,1 @@
+Update only the returned submittal rows with the new revision status and resubmit date.

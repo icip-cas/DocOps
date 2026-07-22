@@ -1,0 +1,166 @@
+{
+  "task_id": "docops_v2_l4_056_ppt_docx_incident_review_release_pack",
+  "task_dir_name": "docops_v2_l4_056_ppt_docx_incident_review_release_pack",
+  "doc_type": "ppt+docx",
+  "primary_modality": "PowerPoint (.pptx) and Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "timeline-decision-reconciliation -> release-deck-refresh -> executive-memo-generation -> cross-output-action-and-message-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_056_ppt_docx_incident_review_release_pack_input.pptx",
+  "supporting_input_paths": [
+    "/root/incident_timeline_and_actions.xlsx",
+    "/root/incident_message_map.docx",
+    "/root/incident_decision_log.pdf"
+  ],
+  "output_paths": {
+    "deck": "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_deck.pptx",
+    "memo": "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_memo.docx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_deck.pptx",
+  "output_filename": "docops_v2_l4_056_ppt_docx_incident_review_release_pack_input.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "An incident review deck and executive memo must be released from a draft deck, timeline/actions workbook, message map, and decision log without letting rejected decisions leak into final outputs.",
+  "single_step_benchmark_instruction": "Refresh the incident review deck and create incident_review_executive_memo.docx. Reconcile timeline, decisions, message map, and action owners. Remove scratch slide, preserve reference slides, and ensure deck and memo action/timeline rows agree.",
+  "atomic_scope": "Cross-document, multi-output workflow with native PPTX tables and DOCX section/TOC/table preservation.",
+  "expected_output_type": "A revised .pptx deck and .docx executive memo saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Common incident review workflow: deck and memo drift after timeline/action updates",
+      "url": "local:DocumentBenchmark L3 PPT/Word workflow seeds"
+    },
+    {
+      "title": "Microsoft support: reuse slides while preserving formatting",
+      "url": "https://support.microsoft.com/office/reuse-import-slides-from-another-presentation-9f7d5dad-9348-4661-8a1b-41bfb3fb0e06"
+    }
+  ],
+  "verifier_expectations": {
+    "deck_output": "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_deck.pptx",
+    "memo_output": "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_memo.docx",
+    "titles_order": [
+      "Incident Review",
+      "Executive Summary",
+      "Timeline",
+      "Decision Summary",
+      "Action Plan",
+      "Customer Message",
+      "Reference - Action Table",
+      "Reference - Message Layout"
+    ],
+    "absent_slide_titles": [
+      "Draft Scratch - Remove"
+    ],
+    "summary_required": [
+      "External incident declared after checkout latency crossed S1 threshold.",
+      "Payments failover restored checkout latency below threshold at 09:42.",
+      "Customer FAQ is approved; pricing launch email is excluded from release pack."
+    ],
+    "timeline_rows": [
+      [
+        "09:05",
+        "Alert fired for checkout latency",
+        "Detection",
+        "S1"
+      ],
+      [
+        "09:18",
+        "Payments failover started",
+        "Containment",
+        "S1"
+      ],
+      [
+        "09:42",
+        "Checkout latency returned below threshold",
+        "Recovery",
+        "S2"
+      ],
+      [
+        "10:15",
+        "Comms update published to support",
+        "Communication",
+        "S2"
+      ]
+    ],
+    "decision_rows": [
+      [
+        "D-14",
+        "Declare external incident",
+        "Approved",
+        "Use S1 until 09:42, then S2"
+      ],
+      [
+        "D-15",
+        "Send proactive customer FAQ",
+        "Approved",
+        "Owner Luis Romero"
+      ]
+    ],
+    "action_rows": [
+      [
+        "IR-21",
+        "Patch retry backoff in payment gateway",
+        "Dana Kim",
+        "2026-08-03",
+        "Open"
+      ],
+      [
+        "IR-22",
+        "Publish customer-facing incident FAQ",
+        "Luis Romero",
+        "2026-08-04",
+        "Watch"
+      ],
+      [
+        "IR-23",
+        "Add synthetic checkout monitor",
+        "Nora Singh",
+        "2026-08-07",
+        "Open"
+      ]
+    ],
+    "required_message": [
+      "Customer message: Checkout latency was mitigated by payment failover.",
+      "FAQ owner: Luis Romero",
+      "Do not mention the rejected pricing launch email delay."
+    ],
+    "forbidden": [
+      "Draft Scratch - Remove",
+      "pricing launch email delay as approved",
+      "Delay pricing launch email|Approved"
+    ],
+    "memo_heading_order": [
+      "Incident Review Executive Memo",
+      "Executive Summary",
+      "Timeline",
+      "Decision Summary",
+      "Action Plan",
+      "Customer Message"
+    ],
+    "memo_required": [
+      "Severity path: S1 through 09:42, then S2 through closeout.",
+      "Rejected decision D-16 is excluded from the final release pack.",
+      "Do not mention the rejected pricing launch email delay."
+    ],
+    "toc_present": true,
+    "section_count_min": 2,
+    "header_contains": "Incident Review Release Pack",
+    "footer_contains": "Status: Final"
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_056_ppt_docx_incident_review_release_pack"
+}

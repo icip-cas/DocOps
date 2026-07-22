@@ -1,0 +1,72 @@
+{
+  "task_id": "pdfwf_005",
+  "task_dir_name": "pdfwf_005_closeout_binder_page_labels_and_bookmarks_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "F4 Theme transfer",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "page-label-refresh -> reorder -> bookmark-rebuild",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Rebuild a closeout binder PDF.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the obsolete divider page, restore the live pages to Cover, Meeting Log, Binder Index, Approved Exhibit, Appendix A, and Appendix B, and add bookmarks for each live page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pdf packet that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pdfwf_005_closeout_binder_page_labels_and_bookmarks_seed.pdf",
+  "output_path": "/root/submission/pdfwf_005_closeout_binder_page_labels_and_bookmarks_seed.pdf",
+  "output_filename": "pdfwf_005_closeout_binder_page_labels_and_bookmarks_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_title_contains_order": [
+      "Cover",
+      "Meeting Log",
+      "Binder Index",
+      "Approved Exhibit",
+      "Appendix A",
+      "Appendix B"
+    ],
+    "cover_lines": [
+      "Closeout Binder",
+      "Page labels refreshed",
+      "Bookmarks rebuilt"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Binder Index",
+        "lines": [
+          "Binder index is now in final order."
+        ]
+      },
+      {
+        "page_title": "Appendix B",
+        "lines": [
+          "completion log"
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Obsolete Divider"
+    ],
+    "outline_contains_order": [
+      "Cover",
+      "Meeting Log",
+      "Binder Index",
+      "Approved Exhibit",
+      "Appendix A",
+      "Appendix B"
+    ],
+    "theme_colors_any": []
+  }
+}

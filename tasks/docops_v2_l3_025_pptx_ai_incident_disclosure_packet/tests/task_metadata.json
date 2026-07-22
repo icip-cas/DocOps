@@ -1,0 +1,319 @@
+{
+  "task_id": "docops_v2_l3_025_pptx_ai_incident_disclosure_packet",
+  "task_dir_name": "docops_v2_l3_025_pptx_ai_incident_disclosure_packet",
+  "doc_type": "pptx",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "N1 Speaker notes",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "confidential-cleanup -> correction-log-application -> timeline-rebuild -> impact-matrix-rebuild -> controls-register-rebuild -> disclosure-checklist -> style-migration -> speaker-note-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-notes-strict",
+  "user_task_description": "Prepare a clean public AI incident disclosure briefing deck from a messy internal model-review presentation.",
+  "single_step_benchmark_instruction": "Complete the ordered workflow: clean confidential material, apply correction-log facts, rebuild timeline, affected services, controls, transparency, disclosure checklist, and board actions, then apply explicit public style and speaker-note cleanup.",
+  "atomic_scope": "Only the requested strict-order presentation workflow edits are in scope; corrected public AI incident facts, slide order, table content, speaker notes, and style requirements must be preserved.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested strict-order single-presentation workflow.",
+  "input_path": "/root/docops_v2_l3_025_pptx_ai_incident_disclosure_packet_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_025_pptx_ai_incident_disclosure_packet_output.pptx",
+  "output_filename": "docops_v2_l3_025_pptx_ai_incident_disclosure_packet_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "presentation",
+  "verifier_expectations": {
+    "slide_titles": [
+      "CivicHelp AI Incident Disclosure Packet",
+      "Disclosure Scope",
+      "Corrected Incident Timeline",
+      "Affected Services Matrix",
+      "Remediation Controls",
+      "Transparency Register",
+      "Public Disclosure Checklist",
+      "Board Action Items",
+      "Publication Style Guide"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "prompt transcript",
+      "jailbreak reproduction",
+      "vendor security exception",
+      "employee discipline note",
+      "personal phone",
+      "legal hold",
+      "do not publish",
+      "private model score",
+      "v2.1-beta",
+      "2,900",
+      "2026-04-03",
+      "Containted"
+    ],
+    "style": {
+      "title_background": "111827",
+      "content_background": "F9FAFB",
+      "accent_fill": "2563EB",
+      "table_header_fill": "374151",
+      "table_header_font": "FFFFFF",
+      "title_font": "Aptos Display",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "111827",
+      "footer_text": "CivicHelp Public AI Disclosure | April 2026"
+    },
+    "required_text_by_slide": {
+      "CivicHelp AI Incident Disclosure Packet": [
+        "Public disclosure packet",
+        "Incident window: 2026-04-01 to 2026-04-02",
+        "Prepared for the Digital Services Oversight Committee"
+      ],
+      "Disclosure Scope": [
+        "Scope includes CivicHelp Chatbot v2.2, corrected affected-session counts, public controls, and transparency actions.",
+        "Scope excludes confidential prompt details, exploit reproduction details, and personnel matters."
+      ]
+    },
+    "tables": {
+      "Corrected Incident Timeline": [
+        [
+          "Time",
+          "Public Event",
+          "Status"
+        ],
+        [
+          "2026-04-01 09:20",
+          "Routing anomaly detected in CivicHelp Chatbot v2.2",
+          "Contained"
+        ],
+        [
+          "2026-04-01 10:05",
+          "Human review queue activated for high-impact topics",
+          "Complete"
+        ],
+        [
+          "2026-04-01 13:40",
+          "Affected-session review narrowed to 1,240 sessions",
+          "Complete"
+        ],
+        [
+          "2026-04-02 08:30",
+          "First public notice posted",
+          "Complete"
+        ],
+        [
+          "2026-04-02 15:00",
+          "Corrected disclosure packet approved",
+          "Complete"
+        ]
+      ],
+      "Affected Services Matrix": [
+        [
+          "Service",
+          "AI System",
+          "Affected Sessions",
+          "Public Impact",
+          "Status"
+        ],
+        [
+          "Service triage",
+          "CivicHelp Chatbot v2.2",
+          "1,240",
+          "Misrouted service category suggestions",
+          "Contained"
+        ],
+        [
+          "Permit FAQ",
+          "CivicHelp Chatbot v2.2",
+          "0",
+          "No public impact identified",
+          "Closed"
+        ],
+        [
+          "Benefits navigation",
+          "CivicHelp Chatbot v2.2",
+          "84",
+          "Manual review completed",
+          "Closed"
+        ],
+        [
+          "Language support",
+          "CivicHelp Chatbot v2.2",
+          "37",
+          "Quality sampling expanded",
+          "Closed"
+        ]
+      ],
+      "Remediation Controls": [
+        [
+          "Control ID",
+          "Control",
+          "Owner",
+          "Due",
+          "Status"
+        ],
+        [
+          "CTL-001",
+          "Human review for high-impact routing topics",
+          "Jules Renner",
+          "2026-04-04",
+          "Active"
+        ],
+        [
+          "CTL-002",
+          "Daily affected-session reconciliation",
+          "Data Quality Lead",
+          "2026-04-05",
+          "Active"
+        ],
+        [
+          "CTL-003",
+          "Public knowledge-base citation check",
+          "Records Analyst",
+          "2026-04-06",
+          "Complete"
+        ],
+        [
+          "CTL-004",
+          "Weekly model behavior sampling",
+          "AI Governance Lead",
+          "2026-04-08",
+          "Active"
+        ]
+      ],
+      "Transparency Register": [
+        [
+          "Register ID",
+          "Public Disclosure",
+          "Date",
+          "Status"
+        ],
+        [
+          "TR-001",
+          "First public notice posted",
+          "2026-04-02",
+          "Published"
+        ],
+        [
+          "TR-002",
+          "Affected-session count corrected to 1,240",
+          "2026-04-02",
+          "Published"
+        ],
+        [
+          "TR-003",
+          "Human review control added",
+          "2026-04-04",
+          "Published"
+        ],
+        [
+          "TR-004",
+          "Disclosure packet archived",
+          "2026-04-08",
+          "Ready"
+        ]
+      ],
+      "Public Disclosure Checklist": [
+        [
+          "Checklist Item",
+          "Required Public State"
+        ],
+        [
+          "Correction log applied before timeline rebuild",
+          "Yes"
+        ],
+        [
+          "Confidential prompt material removed",
+          "Yes"
+        ],
+        [
+          "Affected-session count corrected",
+          "Yes"
+        ],
+        [
+          "Public notice date corrected",
+          "Yes"
+        ],
+        [
+          "Owner names corrected",
+          "Yes"
+        ]
+      ],
+      "Board Action Items": [
+        [
+          "Action",
+          "Owner",
+          "Due"
+        ],
+        [
+          "Approve publication of corrected disclosure packet",
+          "Digital Services Director",
+          "2026-04-08"
+        ],
+        [
+          "Receive 30-day control effectiveness update",
+          "AI Governance Lead",
+          "2026-05-08"
+        ],
+        [
+          "Review transparency register update cadence",
+          "Oversight Committee",
+          "2026-05-15"
+        ],
+        [
+          "Confirm public archive retention approach",
+          "Records Office",
+          "2026-05-20"
+        ]
+      ],
+      "Publication Style Guide": [
+        [
+          "Style Element",
+          "Requirement"
+        ],
+        [
+          "Title background",
+          "111827"
+        ],
+        [
+          "Content background",
+          "F9FAFB"
+        ],
+        [
+          "Accent rectangle",
+          "2563EB"
+        ],
+        [
+          "Table header fill",
+          "374151"
+        ],
+        [
+          "Title font",
+          "Aptos Display bold"
+        ],
+        [
+          "Footer",
+          "CivicHelp Public AI Disclosure | April 2026"
+        ]
+      ]
+    },
+    "speaker_notes": [
+      "Open with the public disclosure frame and confirm confidential model-review material has been removed.",
+      "Clarify the disclosure scope and the corrected CivicHelp Chatbot v2.2 system name.",
+      "Walk through the corrected sequence after applying the correction log.",
+      "Explain affected services using the corrected 1,240 affected-session count.",
+      "Describe public remediation controls and corrected ownership.",
+      "Summarize the transparency register and corrected public notice date.",
+      "Confirm the ordered workflow was completed before publication.",
+      "Close with board actions and follow-up dates.",
+      "State the public style requirements used for the disclosure deck."
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_025_pptx_ai_incident_disclosure_packet"
+}

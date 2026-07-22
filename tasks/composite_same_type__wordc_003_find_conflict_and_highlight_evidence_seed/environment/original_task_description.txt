@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_003
+
+Doc type: word
+Atomic operations: C5 Reasoning, F2 Highlighting
+Composition pattern: detect -> highlight
+Difficulty: Medium-Hard
+
+User-facing goal:
+This policy note contains an approval-logic conflict that should be highlighted for legal review.
+
+Single-step benchmark instruction:
+Highlight only the two statements that conflict on whether emergency purchases above $50,000 need CFO approval and leave the rest of the wording unchanged.
+
+Atomic scope:
+Only the true conflict-evidence highlight is explicitly requested.
+
+Expected output type:
+A revised .docx document with the conflicting approval statements highlighted.

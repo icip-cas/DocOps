@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_004",
+  "task_dir_name": "excelc_004_outline_and_print_ready_program_plan_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S3 Hierarchy editing",
+    "F3 Layout control"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "restructure -> print-layout",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_004_outline_and_print_ready_program_plan_seed.xlsx",
+  "source_doc_path": "excel/excelc_004_outline_and_print_ready_program_plan_seed.xlsx",
+  "task_description_filename": "excelc_004_outline_and_print_ready_program_plan_seed.txt",
+  "task_description_path": "excel/excelc_004_outline_and_print_ready_program_plan_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_004_outline_and_print_ready_program_plan_seed.xlsx",
+  "output_path": "/root/submission/excelc_004_outline_and_print_ready_program_plan_seed.xlsx",
+  "output_filename": "excelc_004_outline_and_print_ready_program_plan_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This program plan should become collapsible and print cleanly on a single landscape page.",
+  "single_step_benchmark_instruction": "On `Program Plan`, make rows `4`, `7`, and `10` the top-level section rows, group the following detail rows under each section using row outlining, then set the sheet to print on one landscape page with row `2` repeated.",
+  "atomic_scope": "Only the row-outline hierarchy and print-layout setup are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with outline grouping and a print-ready page setup.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Cell values should remain unchanged\n- Cosmetic styling beyond the requested print setup may remain basic"
+  }
+}

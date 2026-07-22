@@ -1,0 +1,28 @@
+Task ID: pdf_011
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: S3 Hierarchy editing
+Difficulty: Hard
+
+Inspired By:
+- Title: Looking for Best Way to Attach Files to PDF Document
+  URL: https://www.reddit.com/r/pdf/comments/1sl4n2w/looking_for_best_way_to_attach_files_to_pdf/
+- Title: Preview pdf fast or in large grid view?
+  URL: https://www.reddit.com/r/pdf/comments/1sijife/preview_pdf_fast_or_in_large_grid_view/
+
+User Task Description:
+This PDF already has bookmarks, but the bookmark hierarchy does not match the section structure of the document.
+
+Single-Step Benchmark Instruction:
+Update the PDF bookmarks so `Findings` and `Recommendations` are top-level entries, and `Site A` and `Site B` appear nested under `Findings`.
+
+Atomic Scope:
+Only hierarchy editing in the PDF outline / bookmark structure is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The content pages are correct, but the structural navigation layer is wrong
+- The incorrect outline is not obvious unless the PDF bookmark tree is inspected
+- A correct fix changes hierarchy without rewriting the visible document text
+
+Expected Output Type:
+A revised PDF with corrected bookmark hierarchy.

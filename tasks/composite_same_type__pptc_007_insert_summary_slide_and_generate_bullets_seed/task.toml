@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__composite_same_type__pptc_007_insert_summary_slide_and_generate_bullets_seed"
+description = "pptc_007 - composite same-type task for DocumentBenchmark batch v1."
+authors = []
+keywords = ["ppt", "s1-insert-delete", "c3-generation", "document-processing", "composite", "same-doc-type"]
+
+[metadata]
+difficulty_level = "L2-composite"
+benchmark_split = "composite_same_type"
+difficulty = "Medium-Hard"
+category = "document-processing"
+tags = ["ppt", "s1-insert-delete", "c3-generation", "document-processing", "composite", "same-doc-type"]
+task_id = "pptc_007"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Composite"
+source_type = "Composite same-type benchmark seed"
+verifier_mode = "semantic-strict"
+composition_type = "same-doc-type"
+composition_pattern = "insert -> generate"
+atomic_operations = ["S1 Insert/Delete", "C3 Generation"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx"
+TASK_ID = "pptc_007"
+DOC_TYPE = "ppt"
+
+[solution.env]

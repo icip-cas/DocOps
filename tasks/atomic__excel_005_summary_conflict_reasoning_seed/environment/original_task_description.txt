@@ -1,0 +1,31 @@
+Task ID: excel_005
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: C5 Reasoning
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: Tips on my Dashboard Summary and Sales Tracker
+  URL: https://www.reddit.com/r/excel/comments/1sle1k0/tips_on_my_dashboard_summary_and_sales_tracker/
+
+User Task Description:
+This workbook contains a short summary sheet that may not match the actual regional performance data.
+
+Single-Step Benchmark Instruction:
+Identify which note on the `Ops Summary` sheet is inconsistent or incomplete when compared with the `Monthly Data` sheet.
+Reply using exactly this 4-line template:
+Note: 1
+North: actual 93 vs target 95
+East: actual 83 vs target 88
+Why: North is not the only region below target because East is also below target.
+
+Atomic Scope:
+Only reasoning over consistency between sheets is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Several summary notes are correct, so the task is not simple error spotting by suspicion alone
+- The incorrect statement is partially true but still misleading
+- The workbook requires cross-sheet comparison, not just local reading
+
+Expected Output Type:
+A concise, template-constrained explanation of the inconsistent note.

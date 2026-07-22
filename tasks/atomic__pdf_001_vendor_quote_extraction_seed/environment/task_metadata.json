@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_001",
+  "task_dir_name": "pdf_001_vendor_quote_extraction_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "C1 Extraction",
+  "difficulty": "Medium",
+  "source_doc_filename": "pdf_001_vendor_quote_extraction_seed.pdf",
+  "source_doc_path": "pdf/pdf_001_vendor_quote_extraction_seed.pdf",
+  "task_description_filename": "pdf_001_vendor_quote_extraction_seed.txt",
+  "task_description_path": "pdf/pdf_001_vendor_quote_extraction_seed.txt",
+  "input_path": "/root/pdf_001_vendor_quote_extraction_seed.pdf",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This vendor quote PDF contains key commercial details in a messy, semi-structured layout.",
+  "single_step_benchmark_instruction": "Extract the requested fields from the PDF and reply using exactly this 6-line template: Vendor: ... | Quote Ref: ... | Quoted Total Including Options: ... | Delivery Window: ... | Warranty Term: ... | Project Contact Email: ...",
+  "atomic_scope": "Only information extraction is explicitly requested in this task.",
+  "expected_output_type": "A structured, template-constrained extraction of the requested fields.",
+  "inspired_by": [
+    {
+      "title": "Extracting data from PDF in an organized manner?",
+      "url": "https://www.reddit.com/r/excel/comments/1sn21r5/extracting_data_from_pdf_in_an_organized_manner/"
+    },
+    {
+      "title": "how can i transfer a pdf table into word?",
+      "url": "https://www.reddit.com/r/word/comments/1si8saz/how_can_i_transfer_a_pdf_table_into_word/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The document layout is visually messy\n- Relevant fields are split across narrative text and tables\n- There are extra commercial notes that are easy to confuse with the requested output"
+  }
+}

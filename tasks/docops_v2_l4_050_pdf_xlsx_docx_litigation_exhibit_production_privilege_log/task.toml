@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log"
+description = "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log - DocOps v2 final L4 task."
+authors = []
+keywords = ["pdf", "excel", "word", "ediscovery", "bates", "privilege-log", "cross-document"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["pdf", "excel", "word", "cross-document", "multi-output", "ediscovery"]
+task_id = "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log"
+doc_type = "pdf+xlsx+docx"
+primary_modality = "PDF (.pdf), Excel (.xlsx), and Word (.docx)"
+atomic_operation = "Cross-document Multi-output Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-structural-boundary-strict"
+composition_type = "cross-document multi-output"
+composition_pattern = "review-coding-filter -> produced-PDF-binder-with-Bates -> Excel-production-index-and-privilege-log -> Word-production-memo -> cross-output-Bates-and-privilege-boundary-consistency"
+atomic_operations = ["C1 Extraction", "C2 Editing", "C3 Generation", "C4 Computation", "C5 Reasoning", "F1 Redaction", "S1 Insert/Delete", "S3 Hierarchy editing", "S4 Table/Sheet ops", "S5 PDF bookmark ops"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log"
+final_index = 50
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log_exhibit_binder.pdf"
+TASK_ID = "docops_v2_l4_050_pdf_xlsx_docx_litigation_exhibit_production_privilege_log"
+DOC_TYPE = "pdf+xlsx+docx"
+
+[solution.env]

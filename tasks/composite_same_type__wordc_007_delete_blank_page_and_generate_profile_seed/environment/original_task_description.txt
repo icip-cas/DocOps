@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_007
+
+Doc type: word
+Atomic operations: S1 Insert/Delete, C3 Generation
+Composition pattern: delete -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This resume opens with a blank page and lacks a concise professional profile.
+
+Single-step benchmark instruction:
+Delete the blank first page, then insert exactly two profile lines under the candidate name: the first must start `Commissioning:` and the second must start `Vendor coordination:`.
+
+Atomic scope:
+Only the blank-page deletion and the two-line profile generation are explicitly requested.
+
+Expected output type:
+A revised .docx resume with no blank opening page and a two-line profile under the name.

@@ -1,0 +1,104 @@
+{
+  "task_id": "pptxr_002",
+  "task_dir_name": "pptxr_002_qbr_storyline_reorder_and_risk_callout_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "duplicate-reference-slide -> insert-risk-callout -> delete-obsolete-slide -> replace-risk-table -> reorder-storyline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pptxr_002_qbr_storyline_reorder_and_risk_callout_seed.pptx",
+  "supporting_input_paths": [
+    "/root/risk_note.docx",
+    "/root/issue_log.xlsx",
+    "/root/storyline_order.docx"
+  ],
+  "output_path": "/root/submission/pptxr_002_qbr_storyline_reorder_and_risk_callout_seed.pptx",
+  "output_filename": "pptxr_002_qbr_storyline_reorder_and_risk_callout_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Reorder the storyline slides into the requested sequence.",
+  "single_step_benchmark_instruction": "Reorder the live slides into the requested sequence, replace the `Open Risks` table from the issue log, insert a bounded `Risk Callout` slide by duplicating the locked reference layout, and keep the reference slide unchanged.",
+  "atomic_scope": "Only the inserted risk-callout slide, deleted obsolete slide, refreshed risk table, reordered live slides, and preserved reference slide are required.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the reference slide unchanged\n- Do not rebuild the inserted slide with a different geometry"
+  },
+  "verifier_expectations": {
+    "titles_order": [
+      "Quarterly Business Review",
+      "Agenda",
+      "Risk Callout",
+      "Open Risks",
+      "Storyline",
+      "Closing",
+      "Layout Reference - Risk Callout"
+    ],
+    "absent_slide_titles": [
+      "Obsolete Note"
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Risk Callout"
+    ],
+    "slide_text_anchors": [
+      {
+        "slide_title": "Risk Callout",
+        "required_all": [
+          "Budget variance narrowed to 1.8 percent.",
+          "Two customer UAT defects remain open.",
+          "Go-live approval depends on final security signoff."
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Open Risks",
+        "cells": {
+          "1,0": "Budget variance",
+          "1,1": "Glen Ho",
+          "1,2": "Monitor",
+          "2,0": "UAT defects",
+          "2,1": "Naomi Reed",
+          "2,2": "Open",
+          "3,0": "Security signoff",
+          "3,1": "Ravi Shah",
+          "3,2": "Late"
+        }
+      }
+    ],
+    "shape_count_matches_input": [
+      {
+        "slide_title": "Risk Callout",
+        "reference_title": "Layout Reference - Risk Callout"
+      }
+    ],
+    "picture_count_matches_input": [
+      {
+        "slide_title": "Risk Callout",
+        "reference_title": "Layout Reference - Risk Callout"
+      }
+    ],
+    "title_signature_matches_input": [
+      {
+        "slide_title": "Risk Callout",
+        "reference_title": "Layout Reference - Risk Callout"
+      }
+    ],
+    "body_signature_matches_input": [
+      {
+        "slide_title": "Risk Callout",
+        "reference_title": "Layout Reference - Risk Callout"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_006",
+  "task_dir_name": "excel_006_summary_generation_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C3 Generation",
+  "difficulty": "Hard",
+  "source_doc_filename": "excel_006_summary_generation_seed.xlsx",
+  "source_doc_path": "excel/excel_006_summary_generation_seed.xlsx",
+  "task_description_filename": "excel_006_summary_generation_seed.txt",
+  "task_description_path": "excel/excel_006_summary_generation_seed.txt",
+  "input_path": "/root/excel_006_summary_generation_seed.xlsx",
+  "output_path": "/root/submission/excel_006_summary_generation_seed.xlsx",
+  "output_filename": "excel_006_summary_generation_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook has a raw incident log and a request for a concise executive summary sheet.",
+  "single_step_benchmark_instruction": "Create a new sheet named `Executive Summary` and generate three short summary bullets that synthesize the main operational themes from the `Incident Log` sheet.",
+  "atomic_scope": "Only content generation is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook containing the new generated summary sheet.",
+  "inspired_by": [
+    {
+      "title": "Need a way to get avg times for different factors.",
+      "url": "https://www.reddit.com/r/excel/comments/1sjx8f9/need_a_way_to_get_avg_times_for_different_factors/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The correct output is not a direct copy of any one row\n- Multiple incidents overlap across categories and sites\n- Good answers require abstraction, not just counting"
+  }
+}

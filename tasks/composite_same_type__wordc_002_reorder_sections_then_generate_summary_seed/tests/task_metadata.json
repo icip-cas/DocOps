@@ -1,0 +1,32 @@
+{
+  "task_id": "wordc_002",
+  "task_dir_name": "wordc_002_reorder_sections_then_generate_summary_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> generate",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "wordc_002_reorder_sections_then_generate_summary_seed.docx",
+  "source_doc_path": "word/wordc_002_reorder_sections_then_generate_summary_seed.docx",
+  "task_description_filename": "wordc_002_reorder_sections_then_generate_summary_seed.txt",
+  "task_description_path": "word/wordc_002_reorder_sections_then_generate_summary_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/wordc_002_reorder_sections_then_generate_summary_seed.docx",
+  "output_path": "/root/submission/wordc_002_reorder_sections_then_generate_summary_seed.docx",
+  "output_filename": "wordc_002_reorder_sections_then_generate_summary_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report is out of order and needs a constrained executive summary at the front.",
+  "single_step_benchmark_instruction": "Reorder the document so it reads `Executive Summary -> Findings -> Next Steps -> Appendix Materials`, then place exactly three short summary lines directly under `Executive Summary` using the prefixes `Permit:`, `Supplier:`, and `Safety:` in that order.",
+  "atomic_scope": "Only the section reorder and one-paragraph executive summary generation are explicitly requested.",
+  "expected_output_type": "A revised .docx document with the requested section order and one grounded summary paragraph.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Existing theme and typography issues are outside scope\n- Do not generate more than one summary paragraph"
+  }
+}

@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_056_ppt_docx_incident_review_release_pack"
+description = "docops_v2_l4_056_ppt_docx_incident_review_release_pack - DocOps v2 final L4 task."
+authors = []
+keywords = ["ppt", "word", "cross-document", "multi-output", "incident-review"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["ppt", "word", "cross-document", "multi-output", "manual-expansion"]
+task_id = "docops_v2_l4_056_ppt_docx_incident_review_release_pack"
+doc_type = "ppt+docx"
+primary_modality = "PowerPoint (.pptx) and Word (.docx)"
+atomic_operation = "Cross-document Multi-output Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-strict-tolerant"
+composition_type = "cross-document multi-output"
+composition_pattern = "timeline-decision-reconciliation -> release-deck-refresh -> executive-memo-generation -> cross-output-action-and-message-consistency"
+atomic_operations = ["C1 Extraction", "C2 Editing", "C3 Generation", "C5 Reasoning", "F1 Style consistency", "S1 Insert/Delete", "S2 Reorder", "S3 Hierarchy editing", "S4 Table/Sheet ops"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_056_ppt_docx_incident_review_release_pack"
+final_index = 56
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_056_ppt_docx_incident_review_release_pack_input.pptx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_056_ppt_docx_incident_review_release_pack_deck.pptx"
+TASK_ID = "docops_v2_l4_056_ppt_docx_incident_review_release_pack"
+DOC_TYPE = "ppt+docx"
+
+[solution.env]

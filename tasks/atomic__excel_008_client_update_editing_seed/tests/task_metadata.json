@@ -1,0 +1,35 @@
+{
+  "task_id": "excel_008",
+  "task_dir_name": "excel_008_client_update_editing_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C2 Editing",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excel_008_client_update_editing_seed.xlsx",
+  "source_doc_path": "excel/excel_008_client_update_editing_seed.xlsx",
+  "task_description_filename": "excel_008_client_update_editing_seed.txt",
+  "task_description_path": "excel/excel_008_client_update_editing_seed.txt",
+  "input_path": "/root/excel_008_client_update_editing_seed.xlsx",
+  "output_path": "/root/submission/excel_008_client_update_editing_seed.xlsx",
+  "output_filename": "excel_008_client_update_editing_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains a draft client-facing status note that is too blunt for external communication.",
+  "single_step_benchmark_instruction": "Rewrite only cell `B8` on the `Status Draft` sheet so it sounds more formal and client-safe while preserving the underlying meaning about schedule uncertainty.",
+  "atomic_scope": "Only local content editing is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with the edited sentence in `B8`.",
+  "inspired_by": [
+    {
+      "title": "is there a way to modify formulas based on inputs?",
+      "url": "https://www.reddit.com/r/excel/comments/1snrbmh/is_there_a_way_to_modify_formulas_based_on_inputs/"
+    },
+    {
+      "title": "Data Prep for Software Transition",
+      "url": "https://www.reddit.com/r/excel/comments/1sna8on/data_prep_for_software_transition/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The edit must stay confined to one specific cell\n- The rewritten sentence should soften tone without removing the risk signal\n- Nearby cells include instructions and noise that should not be rewritten"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "task_id": "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register",
+  "task_dir_name": "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 10,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "agenda-section-order -> reconcile-attendance-and-votes -> publish-minutes -> build-action-register-output -> cross-output-action-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_input.docx",
+  "supporting_input_paths": [
+    "/root/published_agenda_packet.pdf",
+    "/root/attendance_vote_action_log.xlsx",
+    "/root/chair_reconciliation_notes.docx"
+  ],
+  "output_paths": {
+    "minutes": "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_minutes.docx",
+    "register": "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_register.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_minutes.docx",
+  "output_filename": "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "Publish board minutes and a matching action register from a draft minutes file, agenda packet, attendance/vote log, and chair reconciliation notes.",
+  "single_step_benchmark_instruction": "Create final board minutes and board_action_register.xlsx. Reconcile agenda order, attendance, motions, action owners, and chair-note overrides. Preserve a real TOC field, final header/footer status, page break before Appendix A, highlighted Watch item, workbook formulas, data validation, hidden Rules sheet, and cross-output action rows.",
+  "atomic_scope": "Cross-document, multi-output workflow with native DOCX structure and XLSX structure preservation.",
+  "expected_output_type": "A revised .docx minutes packet and a .xlsx action register saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Community pain point: minutes, action registers, agenda order, and TOC/appendix formatting drift across documents",
+      "url": "local:DocumentBenchmark L3 Word/Excel workflow seeds"
+    },
+    {
+      "title": "Microsoft Word table of contents and heading workflow",
+      "url": "https://support.microsoft.com/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    }
+  ],
+  "verifier_expectations": {
+    "minutes_output": "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_minutes.docx",
+    "register_output": "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_register.xlsx",
+    "heading_order": [
+      "Board Governance Committee Minutes",
+      "Publication Status",
+      "Attendance",
+      "Motions",
+      "Action Register",
+      "Appendix A - Posting Package"
+    ],
+    "required_paragraphs": [
+      "Status changed from Draft to Final for the 2026-07-24 board packet.",
+      "Authoritative sources used: agenda packet, attendance and vote log, and chair notes.",
+      "Posting package summary: agenda published, attendance captured, vote outcomes reconciled, and action owners assigned.",
+      "The vendor escalation decision is deferred, not approved.",
+      "Watch item: A-18 remains Watch until counsel reviews vendor escalation options."
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Notes - Remove",
+      "Internal scratch",
+      "Priya Shah|Absent|Counsel",
+      "Approve vendor escalation|Approved",
+      "Pending|TBD"
+    ],
+    "attendance_rows": [
+      [
+        "Alex Rivera",
+        "Present",
+        "Chair"
+      ],
+      [
+        "Mina Zhou",
+        "Present",
+        "Treasurer"
+      ],
+      [
+        "Owen Hart",
+        "Present",
+        "Director"
+      ],
+      [
+        "Priya Shah",
+        "Remote",
+        "Counsel"
+      ],
+      [
+        "Samir Patel",
+        "Absent",
+        "Director"
+      ]
+    ],
+    "motion_rows": [
+      [
+        "M-17",
+        "Approve revised cyber reserve draw",
+        "Approved as amended",
+        "4-0-1"
+      ],
+      [
+        "M-18",
+        "Defer vendor escalation decision",
+        "Deferred",
+        "3-1-1"
+      ]
+    ],
+    "action_rows": [
+      [
+        "A-17",
+        "Circulate reserve draw memo with amendment language",
+        "Mina Zhou",
+        "2026-08-02",
+        "Open",
+        "M-17"
+      ],
+      [
+        "A-18",
+        "Send vendor escalation options to counsel",
+        "Priya Shah",
+        "2026-08-06",
+        "Watch",
+        "M-18"
+      ],
+      [
+        "A-19",
+        "Publish signed minutes packet to board portal",
+        "Alex Rivera",
+        "2026-08-09",
+        "Open",
+        "M-17"
+      ]
+    ],
+    "toc_present": true,
+    "section_count_min": 2,
+    "header_contains": "Board Governance Committee",
+    "footer_contains": "Minutes packet status: Final",
+    "appendix_heading": "Appendix A - Posting Package",
+    "highlight_text": "Watch item: A-18 remains Watch until counsel reviews vendor escalation options.",
+    "register_sheet_order": [
+      "Action Register",
+      "Rules"
+    ],
+    "register_table_ref": "A1:G4",
+    "register_formula_cells": {
+      "G2": "=IF(COUNTIF($F$2:$F$4,F2)>=1,\"OK\",\"CHECK\")",
+      "G3": "=IF(COUNTIF($F$2:$F$4,F3)>=1,\"OK\",\"CHECK\")",
+      "G4": "=IF(COUNTIF($F$2:$F$4,F4)>=1,\"OK\",\"CHECK\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "status_choices"
+    ],
+    "data_validation_ranges": {
+      "Action Register": [
+        "E2:E4"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register"
+}

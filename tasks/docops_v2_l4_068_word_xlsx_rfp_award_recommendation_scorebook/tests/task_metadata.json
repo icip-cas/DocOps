@@ -1,0 +1,183 @@
+{
+  "task_id": "docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook",
+  "task_dir_name": "docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "rfp-rules-and-proposal-filtering -> weighted-scorebook-with-gates-and-conflict-treatment -> award-memo-generation -> public-confidential-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_input.docx",
+  "supporting_input_paths": [
+    "/root/raw_scoring_export.xlsx",
+    "/root/rfp_evaluation_rules.pdf",
+    "/root/vendor_proposal_excerpts.pdf",
+    "/root/evaluator_conflict_note.docx"
+  ],
+  "output_paths": {
+    "award_memo": "/root/submission/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_award_memo.docx",
+    "scorebook": "/root/submission/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_scorebook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_award_memo.docx",
+  "output_filename": "award_recommendation_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a best-value RFP award recommendation memo and evaluation scorebook from a draft memo, raw scoring export, evaluation rules, vendor proposal excerpts, and evaluator conflict note while applying mandatory gates, weighted scoring, price normalization, and public/confidential boundaries.",
+  "single_step_benchmark_instruction": "Create award_recommendation_memo.docx and evaluation_scorebook.xlsx. Recommend CivicStack, make Northstar Data ineligible despite its low price, apply the stated weights and price normalization, preserve native Excel formulas/tables/validation/hidden sheets, and keep proprietary vendor details and evaluator names out of the public memo.",
+  "expected_output_type": "A .docx award recommendation memo and .xlsx evaluation scorebook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "FAR 15.304 requires evaluation factors to support meaningful comparison and disclose relative importance",
+      "url": "https://www.acquisition.gov/far/15.304"
+    },
+    {
+      "title": "FAR 15.305 describes proposal evaluation including numerical weights, price, past performance, strengths, weaknesses, and risks",
+      "url": "https://www.acquisition.gov/far/15.305"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_award_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook_scorebook.xlsx",
+    "winner": "CivicStack",
+    "ineligible_vendor": "Northstar Data",
+    "public_rank_rows": [
+      [
+        "1",
+        "VND-B",
+        "CivicStack",
+        "89.54",
+        "Recommended award"
+      ],
+      [
+        "2",
+        "VND-A",
+        "Apex Archive",
+        "87.90",
+        "Competitive alternate"
+      ],
+      [
+        "3",
+        "VND-D",
+        "BrightLedger",
+        "85.88",
+        "Acceptable alternate"
+      ],
+      [
+        "Not ranked",
+        "VND-C",
+        "Northstar Data",
+        "0.00",
+        "Ineligible - mandatory data residency failure"
+      ]
+    ],
+    "expected_totals": {
+      "VND-A": 87.9,
+      "VND-B": 89.54,
+      "VND-C": 0.0,
+      "VND-D": 85.88
+    },
+    "sheet_order": [
+      "Eligibility",
+      "Score Matrix",
+      "Price Analysis",
+      "Public Debrief",
+      "Weights",
+      "Conflict Log",
+      "Rules"
+    ],
+    "tables": {
+      "Eligibility": [
+        "vendor_eligibility",
+        "A1:F5"
+      ],
+      "Score Matrix": [
+        "weighted_score_matrix",
+        "A1:K5"
+      ],
+      "Price Analysis": [
+        "price_analysis",
+        "A1:F5"
+      ],
+      "Public Debrief": [
+        "public_debrief_summary",
+        "A1:E5"
+      ]
+    },
+    "hidden_sheets": [
+      "Weights",
+      "Conflict Log",
+      "Rules"
+    ],
+    "defined_names": [
+      "gate_choices",
+      "recommendation_choices",
+      "factor_weights"
+    ],
+    "data_validation_ranges": {
+      "Eligibility": [
+        "C2:C5"
+      ],
+      "Score Matrix": [
+        "K2:K5"
+      ]
+    },
+    "print_areas": {
+      "Eligibility": "'Eligibility'!$A$1:$F$5",
+      "Score Matrix": "'Score Matrix'!$A$1:$K$5",
+      "Price Analysis": "'Price Analysis'!$A$1:$F$5",
+      "Public Debrief": "'Public Debrief'!$A$1:$E$5"
+    },
+    "formula_cells": {
+      "Eligibility!E2": "=IF(C2=\"Pass\",\"Eligible\",\"Ineligible\")",
+      "Eligibility!E4": "=IF(C4=\"Pass\",\"Eligible\",\"Ineligible\")",
+      "Score Matrix!H2": "=IF(Eligibility!C2=\"Pass\",MINIFS($F$2:$F$5,Eligibility!$C$2:$C$5,\"Pass\")/F2*100,0)",
+      "Score Matrix!I2": "=IF(Eligibility!C2<>\"Pass\",0,C2*Weights!$B$2+D2*Weights!$B$3+E2*Weights!$B$4+H2*Weights!$B$5+G2*Weights!$B$6)",
+      "Score Matrix!J3": "=IF(I3=0,\"Not ranked\",RANK(I3,$I$2:$I$5,0))",
+      "Price Analysis!D3": "=Eligibility!E3",
+      "Price Analysis!E3": "='Score Matrix'!H3"
+    },
+    "doc_heading_order": [
+      "Award Recommendation Memo",
+      "Recommendation",
+      "Evaluation Method",
+      "Ranking Summary",
+      "Price and Tradeoff Rationale",
+      "Cross-File Consistency"
+    ],
+    "doc_required_paragraphs": [
+      "Recommend award to CivicStack for the records digitization platform RFP.",
+      "CivicStack is the highest-ranked eligible vendor with a weighted total score of 89.54.",
+      "The evaluation applied the stated weights: technical 35%, implementation 20%, accessibility 15%, price 20%, and past performance 10%.",
+      "Northstar Data was not ranked because it failed the mandatory data-residency gate.",
+      "Apex Archive offered the lowest eligible price, but CivicStack's accessibility and technical advantages justified the best-value tradeoff.",
+      "The memo and evaluation_scorebook.xlsx agree that CivicStack is the recommended awardee and Northstar Data is ineligible."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Evaluator Scratch - Remove",
+      "Taylor",
+      "proprietary OCR routing",
+      "discount floors",
+      "raw evaluator comments"
+    ],
+    "doc_header_contains": "Recommended vendor: CivicStack",
+    "doc_footer_contains": "evaluation_scorebook.xlsx",
+    "doc_highlight_text": "Control note: the conflicted evaluator's CivicStack score was excluded before final averaging because of a disclosed conflict."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_068_word_xlsx_rfp_award_recommendation_scorebook"
+}

@@ -1,0 +1,1 @@
+A QBR renewal deck and action register must be generated from a draft deck, risk workbook, account owner notes, and finance exception notice. The two outputs must agree.

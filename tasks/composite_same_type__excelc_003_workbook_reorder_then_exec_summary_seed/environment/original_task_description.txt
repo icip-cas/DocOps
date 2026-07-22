@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_003
+
+Doc type: excel
+Atomic operations: S2 Reorder, C3 Generation
+Composition pattern: reorder -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This workbook should follow an executive review order and include a tightly constrained summary sheet.
+
+Single-step benchmark instruction:
+Reorder the workbook tabs to `Overview -> Detail_Q1 -> Detail_Q2 -> Risks`, then add a new sheet named `Executive Summary` at the end and fill `A2:A4` with exactly three short bullets using the prefixes `Supplier:`, `Inspection:`, and `Staffing:` in that order.
+
+Atomic scope:
+Only the sheet reorder and the constrained three-bullet executive summary are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with the required tab order and a grounded three-bullet summary sheet.

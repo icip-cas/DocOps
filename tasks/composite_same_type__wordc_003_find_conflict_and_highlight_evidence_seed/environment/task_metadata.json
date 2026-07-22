@@ -1,0 +1,32 @@
+{
+  "task_id": "wordc_003",
+  "task_dir_name": "wordc_003_find_conflict_and_highlight_evidence_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C5 Reasoning",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "detect -> highlight",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "wordc_003_find_conflict_and_highlight_evidence_seed.docx",
+  "source_doc_path": "word/wordc_003_find_conflict_and_highlight_evidence_seed.docx",
+  "task_description_filename": "wordc_003_find_conflict_and_highlight_evidence_seed.txt",
+  "task_description_path": "word/wordc_003_find_conflict_and_highlight_evidence_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/wordc_003_find_conflict_and_highlight_evidence_seed.docx",
+  "output_path": "/root/submission/wordc_003_find_conflict_and_highlight_evidence_seed.docx",
+  "output_filename": "wordc_003_find_conflict_and_highlight_evidence_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This policy note contains an approval-logic conflict that should be highlighted for legal review.",
+  "single_step_benchmark_instruction": "Highlight only the two statements that conflict on whether emergency purchases above $50,000 need CFO approval and leave the rest of the wording unchanged.",
+  "atomic_scope": "Only the true conflict-evidence highlight is explicitly requested.",
+  "expected_output_type": "A revised .docx document with the conflicting approval statements highlighted.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Other drafting issues remain intentionally\n- Do not rewrite the highlighted text"
+  }
+}

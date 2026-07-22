@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_006",
+  "task_dir_name": "pptc_006_rewrite_bullets_and_standardize_text_style_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "rewrite -> restyle",
+  "difficulty": "Medium",
+  "source_doc_filename": "pptc_006_rewrite_bullets_and_standardize_text_style_seed.pptx",
+  "source_doc_path": "ppt/pptc_006_rewrite_bullets_and_standardize_text_style_seed.pptx",
+  "task_description_filename": "pptc_006_rewrite_bullets_and_standardize_text_style_seed.txt",
+  "task_description_path": "ppt/pptc_006_rewrite_bullets_and_standardize_text_style_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_006_rewrite_bullets_and_standardize_text_style_seed.pptx",
+  "output_path": "/root/submission/pptc_006_rewrite_bullets_and_standardize_text_style_seed.pptx",
+  "output_filename": "pptc_006_rewrite_bullets_and_standardize_text_style_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This status deck has rough draft bullets and inconsistent text styling.",
+  "single_step_benchmark_instruction": "Rewrite the three draft bullets on Slide 2 so they sound executive-ready, then standardize the bullet text style on that slide so all three bullets match.",
+  "atomic_scope": "Only the three bullet rewrites and their style normalization on Slide 2 are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with polished bullets and consistent bullet styling on Slide 2.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Leave slide order unchanged\n- Keep the underlying facts intact"
+  }
+}

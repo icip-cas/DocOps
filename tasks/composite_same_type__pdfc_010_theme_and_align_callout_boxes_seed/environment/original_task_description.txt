@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_010
+
+Doc type: pdf
+Atomic operations: F4 Theme transfer, F3 Layout control
+Composition pattern: retheme -> realign
+Difficulty: Medium-Hard
+
+User-facing goal:
+This one-page PDF has mismatched accent colors and uneven callout alignment.
+
+Single-step benchmark instruction:
+Apply a cohesive blue-gray theme to the callout boxes and align the three callout boxes into one evenly spaced horizontal row beneath the title.
+
+Atomic scope:
+Only the callout theming and alignment are explicitly requested.
+
+Expected output type:
+A revised .pdf page with aligned callout boxes and a cohesive blue-gray theme.

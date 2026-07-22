@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_005",
+  "task_dir_name": "excel_005_summary_conflict_reasoning_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C5 Reasoning",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excel_005_summary_conflict_reasoning_seed.xlsx",
+  "source_doc_path": "excel/excel_005_summary_conflict_reasoning_seed.xlsx",
+  "task_description_filename": "excel_005_summary_conflict_reasoning_seed.txt",
+  "task_description_path": "excel/excel_005_summary_conflict_reasoning_seed.txt",
+  "input_path": "/root/excel_005_summary_conflict_reasoning_seed.xlsx",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains a short summary sheet that may not match the actual regional performance data.",
+  "single_step_benchmark_instruction": "Identify which note on the `Ops Summary` sheet is inconsistent or incomplete when compared with the `Monthly Data` sheet. Reply using exactly this 4-line template: Note: 1 | North: actual 93 vs target 95 | East: actual 83 vs target 88 | Why: North is not the only region below target because East is also below target.",
+  "atomic_scope": "Only reasoning over consistency between sheets is explicitly requested in this task.",
+  "expected_output_type": "A concise, template-constrained explanation of the inconsistent note.",
+  "inspired_by": [
+    {
+      "title": "Tips on my Dashboard Summary and Sales Tracker",
+      "url": "https://www.reddit.com/r/excel/comments/1sle1k0/tips_on_my_dashboard_summary_and_sales_tracker/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Several summary notes are correct, so the task is not simple error spotting by suspicion alone\n- The incorrect statement is partially true but still misleading\n- The workbook requires cross-sheet comparison, not just local reading"
+  }
+}

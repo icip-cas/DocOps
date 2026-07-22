@@ -1,0 +1,1 @@
+Create a public conference digital-signage deck and internal run-of-show workbook from a draft deck, schedule source, operations note, and screen standard while excluding internal VIP escort details from public screens.\n

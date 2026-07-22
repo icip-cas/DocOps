@@ -1,0 +1,1 @@
+Create a shortlist interview leave-behind and synchronized interview deck from a draft Word file, source matrix, agenda note, and style brief while excluding a confidential project.\n

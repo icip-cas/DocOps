@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__composite_same_type__pdfc_009_reason_and_rewrite_conflict_note_seed"
+description = "pdfc_009 - composite same-type task for DocumentBenchmark batch v1."
+authors = []
+keywords = ["pdf", "c5-reasoning", "c2-editing", "document-processing", "composite", "same-doc-type"]
+
+[metadata]
+difficulty_level = "L2-composite"
+benchmark_split = "composite_same_type"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["pdf", "c5-reasoning", "c2-editing", "document-processing", "composite", "same-doc-type"]
+task_id = "pdfc_009"
+doc_type = "pdf"
+primary_modality = "PDF (.pdf)"
+atomic_operation = "Composite"
+source_type = "Composite same-type benchmark seed"
+verifier_mode = "semantic-strict"
+composition_type = "same-doc-type"
+composition_pattern = "reason -> rewrite"
+atomic_operations = ["C5 Reasoning", "C2 Editing"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pdfc_009_reason_and_rewrite_conflict_note_seed.pdf"
+OUTPUT_PATH = "/root/submission/pdfc_009_reason_and_rewrite_conflict_note_seed.pdf"
+TASK_ID = "pdfc_009"
+DOC_TYPE = "pdf"
+
+[solution.env]

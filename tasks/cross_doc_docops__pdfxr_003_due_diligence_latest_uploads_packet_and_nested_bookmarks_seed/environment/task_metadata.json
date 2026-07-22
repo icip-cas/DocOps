@@ -1,0 +1,38 @@
+{
+  "task_id": "pdfxr_003",
+  "task_dir_name": "pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-body-lines -> insert-two-support-pages -> delete-stale-page -> reorder-kept-pages -> rebuild-nested-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "supporting_input_paths": [
+    "/root/cover_values.xlsx",
+    "/root/upload_rules.docx",
+    "/root/upload_log.pdf",
+    "/root/folder_map.pdf",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "output_filename": "pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Insert only the latest-upload exhibits.",
+  "single_step_benchmark_instruction": "Insert only the latest-upload exhibits, remove outdated duplicates, update the cover totals by request-list section, and build nested bookmarks that mirror the request-list hierarchy.",
+  "atomic_scope": "Only the cover lines, body lines, inserted support pages, deleted stale page, final page order, and outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the image-bearing evidence pages\n- Do not rebuild the packet as plain text pages"
+  }
+}

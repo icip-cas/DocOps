@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_004
+
+Doc type: excel
+Atomic operations: S3 Hierarchy editing, F3 Layout control
+Composition pattern: restructure -> print-layout
+Difficulty: Medium-Hard
+
+User-facing goal:
+This program plan should become collapsible and print cleanly on a single landscape page.
+
+Single-step benchmark instruction:
+On `Program Plan`, make rows `4`, `7`, and `10` the top-level section rows, group the following detail rows under each section using row outlining, then set the sheet to print on one landscape page with row `2` repeated.
+
+Atomic scope:
+Only the row-outline hierarchy and print-layout setup are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with outline grouping and a print-ready page setup.

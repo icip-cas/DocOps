@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed"
+description = "pptxr_004 - cross-document skill-gap v6 workflow-locked task for DocumentBenchmark."
+authors = []
+keywords = ["ppt", "cross-document", "document-processing", "c1-extraction", "c4-computation", "s1-insert/delete", "f1-style-consistency", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["ppt", "cross-document", "document-processing", "skill-gap-v6-workflow-locked", "ppt"]
+task_id = "pptxr_004"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "refresh-metrics -> replace-blocker-table -> duplicate-reference-slide -> insert-owner-escalations -> preserve-reference"
+atomic_operations = ["C1 Extraction", "C4 Computation", "S1 Insert/Delete", "F1 Style consistency", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx"
+TASK_ID = "pptxr_004"
+DOC_TYPE = "ppt"
+
+[solution.env]

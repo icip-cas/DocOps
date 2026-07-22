@@ -1,0 +1,250 @@
+{
+  "task_id": "docops_v2_l3_027_pptx_food_recall_public_briefing_repair",
+  "input_path": "/root/docops_v2_l3_027_pptx_food_recall_public_briefing_repair_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_027_pptx_food_recall_public_briefing_repair_output.pptx",
+  "output_extension": ".pptx",
+  "verifier_expectations": {
+    "slide_titles": [
+      "Public Food Recall Briefing",
+      "Correction Register Applied",
+      "Affected Product Summary",
+      "Consumer Action Workflow",
+      "Retailer Removal Checklist",
+      "Communication Timeline",
+      "Final Release Checklist"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "do not publish",
+      "peanut",
+      "FR-2407-D",
+      "2026-08-12",
+      "162 stores",
+      "555-0100",
+      "legal review hold",
+      "supplier dispute"
+    ],
+    "required_text_by_slide": {
+      "Public Food Recall Briefing": [
+        "Recall date 2026-08-22",
+        "Lot FR-2407-B",
+        "undeclared sesame"
+      ],
+      "Correction Register Applied": [
+        "FR-2407-B",
+        "126",
+        "1-888-555-0134"
+      ],
+      "Affected Product Summary": [
+        "Ready-to-eat salad kit",
+        "undeclared sesame",
+        "126"
+      ],
+      "Consumer Action Workflow": [
+        "Stop using product",
+        "Check lot code",
+        "Call hotline"
+      ],
+      "Retailer Removal Checklist": [
+        "Remove product",
+        "Post recall notice"
+      ],
+      "Communication Timeline": [
+        "2026-08-22",
+        "2026-08-23"
+      ],
+      "Final Release Checklist": [
+        "Correction register applied",
+        "Speaker notes cleaned"
+      ]
+    },
+    "tables": {
+      "Correction Register Applied": [
+        [
+          "Issue",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Recall date",
+          "2026-08-22",
+          "Applied"
+        ],
+        [
+          "Lot code",
+          "FR-2407-B",
+          "Applied"
+        ],
+        [
+          "Affected stores",
+          "126",
+          "Applied"
+        ],
+        [
+          "Allergen",
+          "undeclared sesame",
+          "Applied"
+        ],
+        [
+          "Hotline",
+          "1-888-555-0134",
+          "Applied"
+        ]
+      ],
+      "Affected Product Summary": [
+        [
+          "Field",
+          "Public Value",
+          "Release Note"
+        ],
+        [
+          "Product",
+          "Ready-to-eat salad kit",
+          "Public product description"
+        ],
+        [
+          "Lot code",
+          "FR-2407-B",
+          "Corrected lot"
+        ],
+        [
+          "Allergen",
+          "undeclared sesame",
+          "Corrected allergen"
+        ],
+        [
+          "Affected stores",
+          "126",
+          "Corrected count"
+        ]
+      ],
+      "Consumer Action Workflow": [
+        [
+          "Step",
+          "Consumer Action",
+          "Public Support"
+        ],
+        [
+          "1",
+          "Stop using product",
+          "Discard or return product"
+        ],
+        [
+          "2",
+          "Check lot code",
+          "Use lot FR-2407-B"
+        ],
+        [
+          "3",
+          "Call hotline",
+          "1-888-555-0134"
+        ]
+      ],
+      "Retailer Removal Checklist": [
+        [
+          "Action",
+          "Owner",
+          "Status"
+        ],
+        [
+          "Remove product",
+          "Store manager",
+          "Ready"
+        ],
+        [
+          "Post recall notice",
+          "Retailer desk",
+          "Ready"
+        ],
+        [
+          "Confirm shelf audit",
+          "Food safety lead",
+          "Ready"
+        ]
+      ],
+      "Communication Timeline": [
+        [
+          "Milestone",
+          "Date",
+          "Status"
+        ],
+        [
+          "Public recall notice",
+          "2026-08-22",
+          "Ready"
+        ],
+        [
+          "Retailer confirmation",
+          "2026-08-23",
+          "Ready"
+        ],
+        [
+          "Daily update cadence",
+          "Until closeout",
+          "Ready"
+        ]
+      ],
+      "Final Release Checklist": [
+        [
+          "Item",
+          "Requirement",
+          "Status"
+        ],
+        [
+          "Correction register",
+          "Correction register applied",
+          "Complete"
+        ],
+        [
+          "Speaker notes",
+          "Speaker notes cleaned",
+          "Complete"
+        ],
+        [
+          "Old values",
+          "Old incorrect values removed",
+          "Complete"
+        ],
+        [
+          "Public style",
+          "Public style applied",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "title_background": "3F1D38",
+      "content_background": "FFF7ED",
+      "title_font": "Aptos Display",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "3F1D38",
+      "accent_fill": "F97316",
+      "table_header_fill": "9A3412",
+      "table_header_font": "FFFFFF",
+      "footer_text": "Public Food Recall Briefing | FR-2407-B | 2026"
+    },
+    "speaker_notes": [
+      "Public note: public food recall briefing.",
+      "Public note: correction register applied.",
+      "Public note: affected product summary.",
+      "Public note: consumer action workflow.",
+      "Public note: retailer removal checklist.",
+      "Public note: communication timeline.",
+      "Public note: final release checklist."
+    ],
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE",
+      "peanut",
+      "FR-2407-D",
+      "2026-08-12",
+      "162 stores",
+      "555-0100"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_027_pptx_food_recall_public_briefing_repair",
+  "task_dir_name": "docops_v2_l3_027_pptx_food_recall_public_briefing_repair"
+}

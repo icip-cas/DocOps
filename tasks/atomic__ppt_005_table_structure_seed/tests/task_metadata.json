@@ -1,0 +1,31 @@
+{
+  "task_id": "ppt_005",
+  "task_dir_name": "ppt_005_table_structure_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "S4 Table/Sheet ops",
+  "difficulty": "Medium",
+  "source_doc_filename": "ppt_005_table_structure_seed.pptx",
+  "source_doc_path": "ppt/ppt_005_table_structure_seed.pptx",
+  "task_description_filename": "ppt_005_table_structure_seed.txt",
+  "task_description_path": "ppt/ppt_005_table_structure_seed.txt",
+  "input_path": "/root/ppt_005_table_structure_seed.pptx",
+  "output_path": "/root/submission/ppt_005_table_structure_seed.pptx",
+  "output_filename": "ppt_005_table_structure_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This slide contains a milestone table, but the table is missing an `Owner` column.",
+  "single_step_benchmark_instruction": "Insert a new `Owner` column between `Milestone` and `Due Date` in the table on the slide.",
+  "atomic_scope": "Only the table-structure change is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with the requested table modification.",
+  "inspired_by": [
+    {
+      "title": "Trying to figure out a PPT Report",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1smzxig/trying_to_figure_out_a_ppt_report/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Table edits in slides are brittle compared with plain text edits\n- The change must preserve the existing rows and column order around the insertion point\n- The slide is otherwise simple, so the task is specifically structural"
+  }
+}

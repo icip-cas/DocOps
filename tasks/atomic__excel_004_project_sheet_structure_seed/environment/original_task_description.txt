@@ -1,0 +1,28 @@
+Task ID: excel_004
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: S4 Table/Sheet ops
+Difficulty: Medium
+
+Inspired By:
+- Title: Pulling data out of multiple tables across sheets to a master table?
+  URL: https://www.reddit.com/r/excel/comments/1smraf4/pulling_data_out_of_multiple_tables_across_sheets/
+- Title: Inserting new, whilst copying adjacent protected formulas
+  URL: https://www.reddit.com/r/excel/comments/1smbh65/inserting_new_whilst_copying_adjacent_protected/
+
+User Task Description:
+This workbook has multiple project sheets with the same task-table structure, but each one is missing a `Priority` column.
+
+Single-Step Benchmark Instruction:
+Insert a new `Priority` column between `Task` and `Owner` on both `Project_A` and `Project_B` while preserving the existing row data.
+
+Atomic Scope:
+Only the table/sheet structure change is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The workbook has no consistent table styling
+- There is no master roll-up logic yet
+- Dates and statuses are not validated, but that is not the explicit request
+
+Expected Output Type:
+A revised .xlsx workbook with the requested structural change on both project sheets.

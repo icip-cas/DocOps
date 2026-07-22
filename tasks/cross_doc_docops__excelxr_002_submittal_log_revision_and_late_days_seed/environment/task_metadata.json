@@ -1,0 +1,35 @@
+{
+  "task_id": "excelxr_002",
+  "task_dir_name": "excelxr_002_submittal_log_revision_and_late_days_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C4 Computation",
+    "F2 Highlighting",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "rebuild-return-and-hold-sheets -> fill-dual-trackers -> restore-dashboard-formulas -> preserve-validations-and-cf",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/reviewer_return_extract.pdf",
+    "/root/revision_note.docx",
+    "/root/owner_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "output_filename": "excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Update only the returned submittal rows with the new revision status and resubmit date.",
+  "single_step_benchmark_instruction": "Update only the returned submittal rows with the new revision status and resubmit date, insert a `Late Days` formula column immediately after `Due Date`, and highlight rejected rows in the requested color while preserving filters and existing formulas.",
+  "atomic_scope": "Only the two live sheets, both template sheets, the dashboard formulas, workbook names, and highlighted late rows are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the template sheets unchanged\n- Do not flatten the workbook into plain cells"
+  }
+}

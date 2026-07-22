@@ -1,0 +1,36 @@
+{
+  "task_id": "wordxr_001",
+  "task_dir_name": "wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "publish-status-fields -> replace-minutes-sections -> insert-h2-subheading -> build-attendance-table -> insert-page-break -> highlight-watch",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "supporting_input_paths": [
+    "/root/posting_fields.xlsx",
+    "/root/published_agenda_notes.pdf",
+    "/root/attendance_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "output_filename": "wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Publish the minutes by replacing placeholders under existing headings.",
+  "single_step_benchmark_instruction": "Publish the minutes by replacing placeholders under existing headings, filling the attendance table, recording motions in the correct section order, changing status from Draft to Final, and preserving the TOC and heading hierarchy.",
+  "atomic_scope": "Only the header table, the named sections, the page break, the attendance table, and the highlighted exception paragraph are required The inserted `Publication Controls` heading must use Heading 2 and the attachment section must still begin on a new page.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the posting-copy header/footer and logo\n- Do not add new agenda headings"
+  }
+}

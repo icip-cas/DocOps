@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_010
+
+Doc type: excel
+Atomic operations: C4 Computation, F2 Highlighting
+Composition pattern: compute -> highlight
+Difficulty: Medium-Hard
+
+User-facing goal:
+This tracker needs a computed risk flag and visible emphasis on the flagged items.
+
+Single-step benchmark instruction:
+Create a `Risk Flag` column on `Tracker` using formulas that mark rows as `Critical` when score is at least `85`, then highlight the full flagged rows.
+
+Atomic scope:
+Only the formula-based flag column and highlighting of the flagged rows are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with a computed `Risk Flag` column and highlighted critical rows.

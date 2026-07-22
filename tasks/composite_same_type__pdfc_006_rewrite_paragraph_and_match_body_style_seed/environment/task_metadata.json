@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_006",
+  "task_dir_name": "pdfc_006_rewrite_paragraph_and_match_body_style_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C2 Editing",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "rewrite -> restyle",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf",
+  "source_doc_path": "pdf/pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf",
+  "task_description_filename": "pdfc_006_rewrite_paragraph_and_match_body_style_seed.txt",
+  "task_description_path": "pdf/pdfc_006_rewrite_paragraph_and_match_body_style_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf",
+  "output_path": "/root/submission/pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf",
+  "output_filename": "pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This status memo contains one informal paragraph and inconsistent body styling.",
+  "single_step_benchmark_instruction": "Rewrite only the paragraph beginning `The supplier missed two promised dates again` so it reads formally while preserving the meaning, then make its body style match the surrounding body paragraphs.",
+  "atomic_scope": "Only the targeted paragraph rewrite and body-style matching are explicitly requested.",
+  "expected_output_type": "A revised .pdf memo with one formalized paragraph and matching body styling.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Leave headers unchanged\n- Do not alter other paragraphs"
+  }
+}

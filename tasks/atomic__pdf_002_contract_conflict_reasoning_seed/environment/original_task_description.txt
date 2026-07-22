@@ -1,0 +1,28 @@
+Task ID: pdf_002
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: C5 Reasoning
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: How do you edit a pdf document while keeping everything the same font and layout exactly?
+  URL: https://www.reddit.com/r/pdf/comments/1snrzd5/how_do_you_edit_a_pdf_document_while_keeping/
+- Title: Automatic Redaction Tools
+  URL: https://www.reddit.com/r/pdf/comments/1s3kg1q/automatic_redaction_tools/
+
+User Task Description:
+This contract excerpt contains payment clauses and schedule notes that may not agree with each other.
+
+Single-Step Benchmark Instruction:
+Identify the conflict in the payment terms and explain which clauses or schedule entries are inconsistent with one another.
+
+Atomic Scope:
+Only reasoning over internal document consistency is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The PDF mixes clause text with schedule summaries
+- There is no explicit correction note inside the contract body
+- The layout is slightly messy and could be reorganized, but that is not the explicit request
+
+Expected Output Type:
+A concise explanation of the conflicting provisions.

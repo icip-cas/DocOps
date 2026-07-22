@@ -1,0 +1,106 @@
+{
+  "task_id": "wordwf_003",
+  "task_dir_name": "wordwf_003_bilingual_report_publication_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "F1 Style consistency",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "single-document",
+  "composition_pattern": "rewrite -> restyle -> publish",
+  "difficulty": "Medium-Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the bilingual report draft without paraphrasing the English or Chinese content.",
+  "single_step_benchmark_instruction": "Remove the visible Draft: prefixes, restore the report sections to Abstract, Key Findings, Tables & Data, and Conclusion, refresh the table of contents, keep the table values unchanged, and match the body style to the reference body paragraph.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .docx document that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/wordwf_003_bilingual_report_publication_seed.docx",
+  "output_path": "/root/submission/wordwf_003_bilingual_report_publication_seed.docx",
+  "output_filename": "wordwf_003_bilingual_report_publication_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Abstract",
+        "Heading 1"
+      ],
+      [
+        "Key Findings",
+        "Heading 1"
+      ],
+      [
+        "Tables & Data",
+        "Heading 1"
+      ],
+      [
+        "Conclusion",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Abstract",
+      "Key Findings",
+      "Tables & Data",
+      "Conclusion"
+    ],
+    "required_paragraphs": [
+      "This report summarizes the publication workflow.",
+      "This report also demonstrates mixed-language body handling.",
+      "English and Chinese body styles now match.",
+      "Table labels remain consistent.",
+      "The table below summarizes the workload.",
+      "The report is ready for distribution."
+    ],
+    "forbidden_paragraphs": [
+      "TOC placeholder - update fields",
+      "Draft: Remove this scratch section before publication.",
+      "Draft: Internal reviewer notes must not remain in the released file.",
+      "Draft: Abstract",
+      "Draft: Key Findings",
+      "Draft: Tables & Data",
+      "Draft: Conclusion",
+      "Draft: This report summarizes the publication workflow.",
+      "Draft: This report also demonstrates mixed-language body handling.",
+      "Draft: English and Chinese body styles now match.",
+      "Draft: Table labels remain consistent.",
+      "Draft: The table below summarizes the workload.",
+      "Draft: The report is ready for distribution."
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Metric",
+          "0,1": "Value",
+          "1,0": "Drafts",
+          "1,1": "4",
+          "2,0": "Finals",
+          "2,1": "2"
+        }
+      }
+    ],
+    "page_break_before": [],
+    "toc_present": true,
+    "header_contains": [
+      "Bilingual Report | 2026-05-09"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_009",
+  "task_dir_name": "excelc_009_insert_owner_column_from_lookup_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "extract -> restructure",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_009_insert_owner_column_from_lookup_seed.xlsx",
+  "source_doc_path": "excel/excelc_009_insert_owner_column_from_lookup_seed.xlsx",
+  "task_description_filename": "excelc_009_insert_owner_column_from_lookup_seed.txt",
+  "task_description_path": "excel/excelc_009_insert_owner_column_from_lookup_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_009_insert_owner_column_from_lookup_seed.xlsx",
+  "output_path": "/root/submission/excelc_009_insert_owner_column_from_lookup_seed.xlsx",
+  "output_filename": "excelc_009_insert_owner_column_from_lookup_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This milestone plan is missing owners that can be recovered from a lookup sheet.",
+  "single_step_benchmark_instruction": "Insert a new `Owner` column between `Milestone` and `Due Date` on `Plan`, then populate it by pulling the matching owners from `Owner Lookup`.",
+  "atomic_scope": "Only the inserted `Owner` column and the extracted owner values are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with the new `Owner` column populated from lookup data.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not alter milestone names\n- Do not reorder the rows"
+  }
+}

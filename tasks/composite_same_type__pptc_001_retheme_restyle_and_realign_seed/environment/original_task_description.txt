@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_001
+
+Doc type: ppt
+Atomic operations: F4 Theme transfer, F1 Style consistency, F3 Layout control
+Composition pattern: retheme -> restyle -> realign
+Difficulty: Hard
+
+User-facing goal:
+This deck needs a coherent theme, consistent typography, and aligned workstream cards.
+
+Single-step benchmark instruction:
+Apply a unified navy professional theme across the deck, make slide titles and card/body text stylistically consistent, and align the three workstream cards on Slide 2 onto one even horizontal line with equal spacing.
+
+Atomic scope:
+Only the deck-wide theming, style consistency, and Slide 2 card alignment are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with coherent theme, consistent styling, and corrected card alignment.

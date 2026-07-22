@@ -1,0 +1,28 @@
+Task ID: pdf_010
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: S1 Insert/Delete
+Difficulty: Medium
+
+Inspired By:
+- Title: Slice and merge two different pdfs
+  URL: https://www.reddit.com/r/pdf/comments/1s9p0hm/slice_and_merge_two_different_pdfs/
+- Title: Acrobat Pro alternatives for batch Bates Numbering across multiple PDFs?
+  URL: https://www.reddit.com/r/pdf/comments/1sm47um/acrobat_pro_alternatives_for_batch_bates/
+
+User Task Description:
+This PDF packet contains one obsolete appendix page that should not be part of the final document.
+
+Single-Step Benchmark Instruction:
+Delete the page titled `Superseded Rate Card` and leave the remaining pages unchanged.
+
+Atomic Scope:
+Only page deletion is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The obsolete page still looks like a legitimate report page
+- The operation is structural, not textual
+- The surrounding pages should remain in place and unchanged
+
+Expected Output Type:
+A revised PDF with the obsolete page removed.

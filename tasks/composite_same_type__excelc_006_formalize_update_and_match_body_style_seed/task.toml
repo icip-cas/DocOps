@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__composite_same_type__excelc_006_formalize_update_and_match_body_style_seed"
+description = "excelc_006 - composite same-type task for DocumentBenchmark batch v1."
+authors = []
+keywords = ["excel", "c2-editing", "f1-style-consistency", "document-processing", "composite", "same-doc-type"]
+
+[metadata]
+difficulty_level = "L2-composite"
+benchmark_split = "composite_same_type"
+difficulty = "Medium"
+category = "document-processing"
+tags = ["excel", "c2-editing", "f1-style-consistency", "document-processing", "composite", "same-doc-type"]
+task_id = "excelc_006"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "Composite"
+source_type = "Composite same-type benchmark seed"
+verifier_mode = "semantic-strict"
+composition_type = "same-doc-type"
+composition_pattern = "rewrite -> restyle"
+atomic_operations = ["C2 Editing", "F1 Style consistency"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/excelc_006_formalize_update_and_match_body_style_seed.xlsx"
+OUTPUT_PATH = "/root/submission/excelc_006_formalize_update_and_match_body_style_seed.xlsx"
+TASK_ID = "excelc_006"
+DOC_TYPE = "excel"
+
+[solution.env]

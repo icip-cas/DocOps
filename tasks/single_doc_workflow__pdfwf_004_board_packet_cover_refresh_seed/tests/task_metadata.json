@@ -1,0 +1,62 @@
+{
+  "task_id": "pdfwf_004",
+  "task_dir_name": "pdfwf_004_board_packet_cover_refresh_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "C3 Generation",
+    "S3 Hierarchy editing",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "cover-move -> summary-rewrite -> bookmark-standardize",
+  "difficulty": "Medium-Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the board packet PDF while preserving the live page text.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the draft cover page, restore the live pages to Cover, Management Summary, Working Pages, and Closing, and add bookmarks for each live page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pdf packet that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pdfwf_004_board_packet_cover_refresh_seed.pdf",
+  "output_path": "/root/submission/pdfwf_004_board_packet_cover_refresh_seed.pdf",
+  "output_filename": "pdfwf_004_board_packet_cover_refresh_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "page_count": 4,
+    "page_title_contains_order": [
+      "Cover",
+      "Management Summary",
+      "Working Pages",
+      "Closing"
+    ],
+    "cover_lines": [
+      "Board Packet",
+      "Release Ready",
+      "Page labels normalized"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Management Summary",
+        "lines": [
+          "management summary now reflects the final board packet language"
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Draft Cover"
+    ],
+    "outline_contains_order": [
+      "Cover",
+      "Management Summary",
+      "Working Pages",
+      "Closing"
+    ],
+    "theme_colors_any": []
+  }
+}

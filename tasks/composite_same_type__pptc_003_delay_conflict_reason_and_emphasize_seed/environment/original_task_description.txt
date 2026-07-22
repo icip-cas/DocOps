@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_003
+
+Doc type: ppt
+Atomic operations: C5 Reasoning, F2 Highlighting
+Composition pattern: detect -> emphasize
+Difficulty: Medium-Hard
+
+User-facing goal:
+This deck contains one outdated delay statement that should be visually emphasized for review.
+
+Single-step benchmark instruction:
+Compare the updated launch date on Slide 1 with the schedule bullets on Slide 2, then visually emphasize only the inconsistent bullet on Slide 2 so it stands out from the surrounding lines.
+
+Atomic scope:
+Only the emphasis of the truly inconsistent delay line is explicitly requested.
+
+Expected output type:
+A revised .pptx deck with the inconsistent line clearly emphasized.

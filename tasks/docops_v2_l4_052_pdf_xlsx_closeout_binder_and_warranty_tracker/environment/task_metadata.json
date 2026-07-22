@@ -1,0 +1,161 @@
+{
+  "task_id": "docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker",
+  "task_dir_name": "docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker",
+  "doc_type": "pdf+xlsx",
+  "primary_modality": "PDF (.pdf) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "filter-closed-items -> assemble-owner-binder -> build-followup-tracker -> sync-cover-counts-bookmarks-and-tracker",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_input.pdf",
+  "supporting_input_paths": [
+    "/root/punchlist_log.xlsx",
+    "/root/warranty_register.xlsx",
+    "/root/photo_appendix.pdf",
+    "/root/superintendent_closeout_note.docx"
+  ],
+  "output_paths": {
+    "binder": "/root/submission/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_binder.pdf",
+    "tracker": "/root/submission/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_binder.pdf",
+  "output_filename": "docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_input.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A closeout binder and warranty follow-up tracker must be prepared for owner release from punchlist, warranty, photo appendix, and superintendent notes.",
+  "single_step_benchmark_instruction": "Remove internal-only draft material, publish a final owner closeout PDF binder, and create warranty_followup_tracker.xlsx. Carry only open punchlist and unresolved warranty follow-up items, exclude closed/received items, and keep binder cover counts consistent with tracker rows.",
+  "atomic_scope": "Cross-document, multi-output workflow with PDF packet assembly and XLSX tracker preservation.",
+  "expected_output_type": "A revised .pdf binder and .xlsx follow-up tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Common construction/project closeout workflow: binder, punchlist, warranty, and photo appendix must stay synchronized",
+      "url": "local:DocumentBenchmark cross-doc closeout task family"
+    },
+    {
+      "title": "L3 closeout binder and appendix workflow seeds",
+      "url": "local:harbor_tasks_l3_reddit_batch5_coupled/pdfwf_reddit_007_audit_binder_cascade_seed"
+    }
+  ],
+  "verifier_expectations": {
+    "binder_output": "/root/submission/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_binder.pdf",
+    "tracker_output": "/root/submission/docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker_tracker.xlsx",
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Closeout Binder",
+      "Open Punchlist Summary",
+      "Warranty Follow-up Summary",
+      "Photo Evidence Appendix"
+    ],
+    "pdf_required": [
+      "Status Final Owner Release",
+      "Open Punch Items 2",
+      "Open Warranty Items 2",
+      "Critical Follow-up PL-04 and W-18",
+      "PL-04",
+      "PL-07",
+      "W-18",
+      "W-29"
+    ],
+    "pdf_forbidden": [
+      "INTERNAL ONLY",
+      "Draft",
+      "PL-11: Still shown open",
+      "W-22: Received item carried"
+    ],
+    "outline_titles": [
+      "Release Cover",
+      "Status Summaries",
+      "Open Punchlist Summary",
+      "Warranty Follow-up Summary",
+      "Photo Evidence Appendix"
+    ],
+    "tracker_sheet_order": [
+      "Follow-up Tracker",
+      "Release Summary",
+      "Rules"
+    ],
+    "followup_rows": [
+      [
+        "F-01",
+        "PL-04",
+        "Punchlist",
+        "Level 2 north stair handrail finish mismatch",
+        "Rosa Iyer",
+        "High",
+        "Open",
+        "2026-08-12"
+      ],
+      [
+        "F-02",
+        "PL-07",
+        "Punchlist",
+        "Mechanical room label set incomplete",
+        "Noah Patel",
+        "Medium",
+        "Open",
+        "2026-08-16"
+      ],
+      [
+        "F-03",
+        "W-18",
+        "Warranty",
+        "Air handler VFD warranty letter",
+        "Noah Patel",
+        "High",
+        "Open",
+        "2026-08-20"
+      ],
+      [
+        "F-04",
+        "W-29",
+        "Warranty",
+        "Lighting controls calibration warranty",
+        "Mina Zhou",
+        "Medium",
+        "Watch",
+        "2026-08-18"
+      ]
+    ],
+    "tracker_table_ref": "A1:I5",
+    "formula_cells": {
+      "Follow-up Tracker!I2": "=IF(G2<>\"Closed\",\"IN BINDER\",\"EXCLUDE\")",
+      "Follow-up Tracker!I3": "=IF(G3<>\"Closed\",\"IN BINDER\",\"EXCLUDE\")",
+      "Follow-up Tracker!I4": "=IF(G4<>\"Closed\",\"IN BINDER\",\"EXCLUDE\")",
+      "Follow-up Tracker!I5": "=IF(G5<>\"Closed\",\"IN BINDER\",\"EXCLUDE\")",
+      "Release Summary!B3": "=COUNTIFS('Follow-up Tracker'!C:C,\"Punchlist\",'Follow-up Tracker'!G:G,\"Open\")",
+      "Release Summary!B4": "=COUNTIF('Follow-up Tracker'!C:C,\"Warranty\")",
+      "Release Summary!B5": "=COUNTIF('Follow-up Tracker'!F:F,\"High\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "status_choices"
+    ],
+    "data_validation_ranges": {
+      "Follow-up Tracker": [
+        "G2:G5"
+      ]
+    },
+    "highlight_rows": [
+      2,
+      4
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_052_pdf_xlsx_closeout_binder_and_warranty_tracker"
+}

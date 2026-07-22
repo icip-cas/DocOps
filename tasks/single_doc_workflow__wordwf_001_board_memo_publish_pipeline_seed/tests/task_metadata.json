@@ -1,0 +1,117 @@
+{
+  "task_id": "wordwf_001",
+  "task_dir_name": "wordwf_001_board_memo_publish_pipeline_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "F1 Style consistency",
+    "S1 Insert/Delete"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-marker-cleanup -> reorder -> toc-refresh -> header-footer",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the board memorandum draft without changing the live wording.",
+  "single_step_benchmark_instruction": "Remove the visible Draft: prefixes, restore the sections to Executive Summary, Program Snapshot, Board Actions, and Appendix A - Metrics, refresh the table of contents, keep the table values unchanged, and normalize the header and footer.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .docx document that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/wordwf_001_board_memo_publish_pipeline_seed.docx",
+  "output_path": "/root/submission/wordwf_001_board_memo_publish_pipeline_seed.docx",
+  "output_filename": "wordwf_001_board_memo_publish_pipeline_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Executive Summary",
+        "Heading 1"
+      ],
+      [
+        "Program Snapshot",
+        "Heading 1"
+      ],
+      [
+        "Board Actions",
+        "Heading 1"
+      ],
+      [
+        "Appendix A - Metrics",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Executive Summary",
+      "Program Snapshot",
+      "Board Actions",
+      "Appendix A - Metrics"
+    ],
+    "required_paragraphs": [
+      "This memo is ready for board circulation.",
+      "The release package is fully prepared.",
+      "All core milestones are on track.",
+      "No open blockers remain for publication.",
+      "Approve the release plan at the next meeting.",
+      "Confirm the publication date.",
+      "Open items: 3",
+      "Closed items: 12"
+    ],
+    "forbidden_paragraphs": [
+      "TOC placeholder - update fields",
+      "Draft: Remove this scratch section before publication.",
+      "Draft: Internal reviewer notes must not remain in the released file.",
+      "Draft: Executive Summary",
+      "Draft: Program Snapshot",
+      "Draft: Board Actions",
+      "Draft: Appendix A - Metrics",
+      "Draft: This memo is ready for board circulation.",
+      "Draft: The release package is fully prepared.",
+      "Draft: All core milestones are on track.",
+      "Draft: No open blockers remain for publication.",
+      "Draft: Approve the release plan at the next meeting.",
+      "Draft: Confirm the publication date.",
+      "Draft: Open items: 3",
+      "Draft: Closed items: 12"
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Action",
+          "0,1": "Owner",
+          "0,2": "Status",
+          "1,0": "Approve release plan",
+          "1,1": "Board",
+          "1,2": "Pending",
+          "2,0": "Confirm publication date",
+          "2,1": "PMO",
+          "2,2": "Draft"
+        }
+      }
+    ],
+    "page_break_before": [
+      "Appendix A - Metrics"
+    ],
+    "toc_present": true,
+    "header_contains": [
+      "Board Memo | 2026-05-09"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 3
+      }
+    ]
+  }
+}

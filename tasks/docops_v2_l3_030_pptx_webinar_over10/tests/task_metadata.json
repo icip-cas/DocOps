@@ -1,0 +1,47 @@
+{
+  "task_id": "docops_v2_l3_030_pptx_webinar_over10",
+  "task_dir_name": "docops_v2_l3_030_pptx_webinar_over10",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "F4 Theme transfer",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 12,
+  "composition_type": "single-document",
+  "composition_pattern": "slide-delete -> slide-reorder -> draft-title-cleanup -> agenda-generation -> quiz-table -> section-labels -> footer-sync -> speaker-notes -> locked-slide-preserve -> release-format",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A webinar deck needs agenda, quiz, notes, numbering, and locked legal content synchronized after major cleanup.",
+  "single_step_benchmark_instruction": "Delete Scratch Backup and Deprecated Poll; remove Draft from retained titles; reorder to Title, Agenda, Setup, Scenario, Deep Dive, Quiz, Actions, Reference - Legal; generate an Agenda native table with slide numbers; generate a Quiz native table; add section labels to delivery slides; add Slide X of 8 footer text to editable slides; add the required facilitator note to Actions; preserve Reference - Legal exactly; apply consistent release styling.",
+  "atomic_scope": "Single-document workflow with coupled edits; preserve unrelated document-native structure.",
+  "expected_output_type": "A revised .pptx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Slides not in Slide Master",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1rxet0f/slides_not_in_slide_master/"
+    },
+    {
+      "title": "Custom slide numbering in PowerPoint",
+      "url": "https://www.reddit.com/r/powerpoint/comments/w337xw"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_030_pptx_webinar_over10_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_030_pptx_webinar_over10_output.pptx",
+  "output_filename": "docops_v2_l3_030_pptx_webinar_over10_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_030_pptx_webinar_over10"
+}

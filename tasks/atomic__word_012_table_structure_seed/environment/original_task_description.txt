@@ -1,0 +1,22 @@
+Task ID: word_012
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: S4 Table/Sheet ops
+Difficulty: Medium
+
+User Task Description:
+This inspection table is missing a Status column.
+
+Single-Step Benchmark Instruction:
+Insert a new Status column between Owner and Due Date while preserving the existing rows.
+
+Atomic Scope:
+Only the table structure change is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The change is structural rather than textual
+- Existing data must stay aligned with the right rows
+- The insertion point matters, so appending at the end is not sufficient
+
+Expected Output Type:
+A revised .docx document with the requested table modification.

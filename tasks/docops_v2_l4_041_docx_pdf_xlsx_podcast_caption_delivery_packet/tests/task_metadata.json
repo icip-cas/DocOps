@@ -1,0 +1,438 @@
+{
+  "task_id": "docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet",
+  "task_dir_name": "docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet",
+  "doc_type": "docx+pdf+xlsx",
+  "primary_modality": "Word (.docx), PDF, Excel (.xlsx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/rough_transcript_with_notes.docx",
+    "/root/producer_timecode_log.xlsx",
+    "/root/chapter_outline.docx",
+    "/root/caption_style_guide.pdf",
+    "/root/sponsor_internal_note.docx"
+  ],
+  "output_paths": {
+    "caption_packet": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_caption_packet.docx",
+    "show_notes": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_show_notes.pdf",
+    "timing_qc": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_timing_qc.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_caption_packet.docx",
+  "output_filename": "episode_07_caption_transcript_packet.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "timecode-document-structured-privacy-strict",
+  "user_task_description": "Create a traditional document podcast caption delivery packet from transcript, timecode log, chapter outline, style guide, and private sponsor notes.",
+  "single_step_benchmark_instruction": "Create episode_07_caption_transcript_packet.docx, episode_07_public_show_notes.pdf, and episode_07_timing_qc.xlsx. Normalize timecodes, remove speaker labels, build public show notes and QC workbook, and exclude private edit/sponsor/music notes.",
+  "expected_output_type": "A .docx caption transcript packet, .pdf show notes file, and .xlsx timing QA workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "W3C media accessibility guidance",
+      "url": "https://www.w3.org/WAI/media/av/"
+    },
+    {
+      "title": "Captioning and transcript production workflows",
+      "url": "https://www.w3.org/TR/webvtt1/"
+    },
+    {
+      "title": "Podcast publishing workflows for show notes and accessibility assets",
+      "url": "https://podcasters.apple.com/support/"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_caption_packet.docx",
+    "pdf_output": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_show_notes.pdf",
+    "xlsx_output": "/root/submission/docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet_timing_qc.xlsx",
+    "heading_order": [
+      "Harbor Signals Episode 07: Repair Night",
+      "Episode Metadata",
+      "Caption Transcript",
+      "Chapter Markers",
+      "Access and Rights Notes",
+      "Publishing QA"
+    ],
+    "doc_required": [
+      "Episode ID: HS-07",
+      "Guest: Maya Torres",
+      "Duration: 00:04:09.000",
+      "00:00:04.000 - 00:00:11.500",
+      "Welcome to Harbor Signals. Today we visit a neighborhood repair cafe.",
+      "00:02:41.000 - 00:02:50.000",
+      "A listener asks how to start a repair night with no permanent space.",
+      "00:03:44.000 - 00:03:54.000",
+      "Music returns under the closing credits, licensed from Blue Harbor Library.",
+      "Open captions are approved for publication.",
+      "Speaker labels have been removed from caption text."
+    ],
+    "pdf_required": [
+      "Harbor Signals Episode 07: Repair Night",
+      "Episode ID: HS-07",
+      "Guest: Maya Torres",
+      "A neighborhood repair cafe keeps small appliances out of landfill and teaches repair skills.",
+      "00:00:04",
+      "Opening and guest introduction",
+      "00:00:23",
+      "Repair cafe mission",
+      "00:01:18",
+      "Field recording at Tidepool Station",
+      "00:02:41",
+      "Listener question",
+      "00:03:44",
+      "Credits and access notes",
+      "Open captions are available in the caption transcript packet.",
+      "Music cue licensed from Blue Harbor Library.",
+      "libraries",
+      "simple sign-up forms"
+    ],
+    "forbidden": [
+      "cut around the weak answer",
+      "do not mention sponsor delay",
+      "host sounds tired",
+      "replace guest credit",
+      "unlicensed loop",
+      "private edit note",
+      "make sponsor sound less controversial",
+      "HOST:",
+      "MAYA:",
+      "FIELD:",
+      "LISTENER:",
+      "PRODUCER:"
+    ],
+    "cue_rows": [
+      [
+        "Cue",
+        "Start",
+        "End",
+        "Caption Text",
+        "QC"
+      ],
+      [
+        1,
+        "00:00:04.000",
+        "00:00:11.500",
+        "Welcome to Harbor Signals. Today we visit a neighborhood repair cafe.",
+        "Pass"
+      ],
+      [
+        2,
+        "00:00:11.500",
+        "00:00:19.000",
+        "Our guest is Maya Torres, who coordinates volunteer fix-it nights.",
+        "Pass"
+      ],
+      [
+        3,
+        "00:00:23.000",
+        "00:00:30.500",
+        "The project keeps small appliances out of landfill and teaches repair skills.",
+        "Pass"
+      ],
+      [
+        4,
+        "00:00:42.000",
+        "00:00:49.000",
+        "At Tidepool Station, volunteers sort tools before the doors open.",
+        "Pass"
+      ],
+      [
+        5,
+        "00:01:18.000",
+        "00:01:27.000",
+        "Maya says the busiest table is usually lamps, kettles, and radios.",
+        "Pass"
+      ],
+      [
+        6,
+        "00:02:05.000",
+        "00:02:13.500",
+        "The team tracks common faults so next month's parts bin is ready.",
+        "Pass"
+      ],
+      [
+        7,
+        "00:02:41.000",
+        "00:02:50.000",
+        "A listener asks how to start a repair night with no permanent space.",
+        "Pass"
+      ],
+      [
+        8,
+        "00:03:12.000",
+        "00:03:21.000",
+        "Maya recommends partnering with libraries and keeping sign-up forms simple.",
+        "Pass"
+      ],
+      [
+        9,
+        "00:03:44.000",
+        "00:03:54.000",
+        "Music returns under the closing credits, licensed from Blue Harbor Library.",
+        "Pass"
+      ],
+      [
+        10,
+        "00:04:02.000",
+        "00:04:09.000",
+        "Full show notes and access transcript are available at harbor signals dot org.",
+        "Pass"
+      ]
+    ],
+    "chapter_rows": [
+      [
+        "Chapter",
+        "Time",
+        "Title",
+        "Status"
+      ],
+      [
+        1,
+        "00:00:04",
+        "Opening and guest introduction",
+        "Ready"
+      ],
+      [
+        2,
+        "00:00:23",
+        "Repair cafe mission",
+        "Ready"
+      ],
+      [
+        3,
+        "00:01:18",
+        "Field recording at Tidepool Station",
+        "Ready"
+      ],
+      [
+        4,
+        "00:02:41",
+        "Listener question",
+        "Ready"
+      ],
+      [
+        5,
+        "00:03:44",
+        "Credits and access notes",
+        "Ready"
+      ]
+    ],
+    "manifest_rows": [
+      [
+        "Field",
+        "Value"
+      ],
+      [
+        "episode_id",
+        "HS-07"
+      ],
+      [
+        "title",
+        "Harbor Signals Episode 07: Repair Night"
+      ],
+      [
+        "duration",
+        "00:04:09.000"
+      ],
+      [
+        "caption_packet",
+        "episode_07_caption_transcript_packet.docx"
+      ],
+      [
+        "show_notes",
+        "episode_07_public_show_notes.pdf"
+      ],
+      [
+        "cue_count",
+        10
+      ],
+      [
+        "chapter_count",
+        5
+      ],
+      [
+        "music_license",
+        "Blue Harbor Library"
+      ]
+    ],
+    "qa_rows": [
+      [
+        "Check",
+        "Expected",
+        "Status"
+      ],
+      [
+        "Cue count",
+        10,
+        "Pass"
+      ],
+      [
+        "Chapter count",
+        5,
+        "Pass"
+      ],
+      [
+        "Chronological cues",
+        "No overlap",
+        "Pass"
+      ],
+      [
+        "Speaker labels",
+        "Removed",
+        "Pass"
+      ],
+      [
+        "Private notes",
+        "Excluded",
+        "Pass"
+      ],
+      [
+        "Traditional output types",
+        "DOCX, PDF, XLSX",
+        "Pass"
+      ]
+    ],
+    "private_rows": [
+      [
+        "Private Note",
+        "Treatment"
+      ],
+      [
+        "cut around the weak answer",
+        "Exclude"
+      ],
+      [
+        "do not mention sponsor delay",
+        "Exclude"
+      ],
+      [
+        "host sounds tired",
+        "Exclude"
+      ],
+      [
+        "replace guest credit",
+        "Exclude"
+      ],
+      [
+        "unlicensed loop",
+        "Exclude"
+      ],
+      [
+        "make sponsor sound less controversial",
+        "Exclude"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Episode",
+        "Harbor Signals Episode 07: Repair Night",
+        "Transcript",
+        "Matched"
+      ],
+      [
+        "Episode ID",
+        "HS-07",
+        "Transcript",
+        "Matched"
+      ],
+      [
+        "Cue count",
+        "=COUNTA('Cue Timing QC'!A2:A11)",
+        "Cue Timing QC",
+        "Calculated"
+      ],
+      [
+        "Chapter count",
+        "=COUNTA('Chapter Markers'!A2:A6)",
+        "Chapter Markers",
+        "Calculated"
+      ],
+      [
+        "Private notes excluded",
+        6,
+        "Private Notes",
+        "Checked"
+      ],
+      [
+        "Package ready",
+        "=IF(AND(B4=10,B5=5,B6=6),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "sheet_order": [
+      "Package Summary",
+      "Cue Timing QC",
+      "Chapter Markers",
+      "Publish Manifest",
+      "QA Checks",
+      "Private Notes"
+    ],
+    "tables": {
+      "Package Summary": [
+        "tblPackageSummary",
+        "A1:D7"
+      ],
+      "Cue Timing QC": [
+        "tblCueTiming",
+        "A1:E11"
+      ],
+      "Chapter Markers": [
+        "tblChapters",
+        "A1:D6"
+      ],
+      "Publish Manifest": [
+        "tblManifest",
+        "A1:B9"
+      ],
+      "QA Checks": [
+        "tblQA",
+        "A1:C7"
+      ],
+      "Private Notes": [
+        "tblPrivateNotes",
+        "A1:B7"
+      ]
+    },
+    "formula_cells": {
+      "Package Summary!B4": "=COUNTA('Cue Timing QC'!A2:A11)",
+      "Package Summary!B5": "=COUNTA('Chapter Markers'!A2:A6)",
+      "Package Summary!B7": "=IF(AND(B4=10,B5=5,B6=6),\"Ready\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Private Notes"
+    ],
+    "defined_names": [
+      "CueCount",
+      "ChapterCount",
+      "PackageReady"
+    ],
+    "print_areas": {
+      "Package Summary": "A1:D7",
+      "Cue Timing QC": "A1:E11",
+      "Chapter Markers": "A1:D6",
+      "Publish Manifest": "A1:B9",
+      "QA Checks": "A1:C7"
+    },
+    "data_validation": {
+      "Cue Timing QC": [
+        "E2:E11"
+      ],
+      "Chapter Markers": [
+        "D2:D6"
+      ],
+      "QA Checks": [
+        "C2:C7"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_041_docx_pdf_xlsx_podcast_caption_delivery_packet"
+}

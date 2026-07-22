@@ -1,0 +1,1 @@
+Regenerated strict-order L3 single-workbook workflow seed: rebuild a messy internal procurement evaluation workbook into a clean public release workbook by applying corrections first, rebuilding vendor tables, creating a named range, applying data validation, rebuilding formulas, adding debrief hyperlinks, and migrating explicit workbook styles. All content is synthetic.

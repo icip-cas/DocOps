@@ -1,0 +1,241 @@
+{
+  "task_id": "docops_v2_l3_022_pptx_port_cyber_ttx_public_deck",
+  "task_dir_name": "docops_v2_l3_022_pptx_port_cyber_ttx_public_deck",
+  "doc_type": "pptx",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "N1 Speaker notes",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-slide-removal -> slide-reorder -> correction-log-application -> public-table-rebuild -> style-migration -> speaker-note-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "reference_sources": [
+    {
+      "title": "CISA cyber tabletop exercise material pattern",
+      "url": "https://www.cisa.gov/resources-tools/resources/cisa-tabletop-exercise-packages",
+      "usage": "Used only as structural inspiration for public cyber exercise sections; task facts and deck content are synthetic."
+    }
+  ],
+  "verifier_mode": "semantic-structural-style-notes-strict",
+  "user_task_description": "Prepare a clean public after-action briefing deck from a messy internal port cyber tabletop exercise presentation.",
+  "single_step_benchmark_instruction": "Remove internal slides and confidential notes, reorder public slides, apply correction-log fixes, rebuild public timeline/decision/impact/recovery sections, migrate public style, and preserve only public speaker notes.",
+  "atomic_scope": "Only the requested presentation-wide workflow edits are in scope; public tabletop facts, correction facts, speaker notes, slide order, and style requirements must be preserved.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested single-presentation workflow.",
+  "input_path": "/root/docops_v2_l3_022_pptx_port_cyber_ttx_public_deck_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_022_pptx_port_cyber_ttx_public_deck_output.pptx",
+  "output_filename": "docops_v2_l3_022_pptx_port_cyber_ttx_public_deck_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "presentation",
+  "verifier_expectations": {
+    "slide_titles": [
+      "Port Azure Cyber Tabletop Exercise: Public After-Action Briefing",
+      "Exercise Scope",
+      "Incident Timeline",
+      "Decision Log",
+      "Operational Impact Matrix",
+      "Recovery Priorities",
+      "Public Communications",
+      "After-Action Commitments"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "ransomware attribution",
+      "insurer call",
+      "unpaid invoice",
+      "board blame",
+      "personal phone",
+      "do not disclose",
+      "law-enforcement-sensitive",
+      "Terminal 3",
+      "74 minutes",
+      "11:20",
+      "36 hours",
+      "Dana Rhee"
+    ],
+    "style": {
+      "title_background": "0B1F33",
+      "content_background": "F5F7FA",
+      "accent_fill": "00A896",
+      "title_font": "Trebuchet MS",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "0B1F33",
+      "footer_text": "Port Azure Public After-Action Briefing | August 2026"
+    },
+    "required_text_by_slide": {
+      "Port Azure Cyber Tabletop Exercise: Public After-Action Briefing": [
+        "Public after-action briefing",
+        "Exercise date: 2026-08-03",
+        "Prepared for the Port Resilience Committee"
+      ],
+      "Exercise Scope": [
+        "Scenario: degraded terminal scheduling and public communications pressure",
+        "Scope includes Terminal 2 gate scheduling, appointment restoration, and external communications.",
+        "Scope excludes threat attribution and confidential law-enforcement actions."
+      ],
+      "Public Communications": [
+        "First public update released at 11:05",
+        "Customer advisory banner remained active until appointment restoration.",
+        "Next public dashboard update scheduled for 2026-08-10"
+      ],
+      "After-Action Commitments": [
+        "Complete identity reset validation by 2026-08-04",
+        "Reduce public update approval path to 20 minutes",
+        "Run manual gate scheduling drill each quarter",
+        "Publish recovery progress dashboard by 2026-08-10"
+      ]
+    },
+    "tables": {
+      "Incident Timeline": [
+        [
+          "Time",
+          "Public Event",
+          "Status"
+        ],
+        [
+          "08:40",
+          "Phishing report escalated to security operations",
+          "Confirmed"
+        ],
+        [
+          "09:15",
+          "Terminal 2 gate scheduling degraded",
+          "Contained"
+        ],
+        [
+          "10:05",
+          "Crane PLC monitoring shifted to manual confirmation",
+          "Stabilized"
+        ],
+        [
+          "11:05",
+          "First public update released",
+          "Complete"
+        ],
+        [
+          "14:30",
+          "Terminal appointment system restored",
+          "Complete"
+        ]
+      ],
+      "Decision Log": [
+        [
+          "Decision ID",
+          "Decision",
+          "Public Rationale",
+          "Owner"
+        ],
+        [
+          "DEC-01",
+          "Shift gate scheduling to manual queue",
+          "Maintain container release while systems are validated",
+          "Operations"
+        ],
+        [
+          "DEC-02",
+          "Activate public advisory banner",
+          "Provide consistent customer-facing status",
+          "Communications"
+        ],
+        [
+          "DEC-03",
+          "Prioritize appointment restoration",
+          "Limit extended terminal congestion",
+          "Technology"
+        ],
+        [
+          "DEC-04",
+          "Hold threat-attribution details",
+          "Avoid nonpublic investigative disclosure",
+          "Legal"
+        ]
+      ],
+      "Operational Impact Matrix": [
+        [
+          "Function",
+          "Public Impact",
+          "Duration",
+          "Recovery Owner"
+        ],
+        [
+          "Gate scheduling",
+          "Intermittent delays at Terminal 2",
+          "47 minutes",
+          "Operations"
+        ],
+        [
+          "Container release",
+          "Manual verification",
+          "2 hours",
+          "Port Police"
+        ],
+        [
+          "Reefer monitoring",
+          "No public service interruption",
+          "0 minutes",
+          "Facilities"
+        ],
+        [
+          "Public website",
+          "Advisory banner active",
+          "3 hours",
+          "Communications"
+        ]
+      ],
+      "Recovery Priorities": [
+        [
+          "Priority",
+          "Action",
+          "Owner",
+          "Due"
+        ],
+        [
+          "P1",
+          "Validate identity reset for port staff",
+          "CISO Dana Reed",
+          "2026-08-04"
+        ],
+        [
+          "P2",
+          "Compress public update approval path to 20 minutes",
+          "Communications",
+          "2026-08-07"
+        ],
+        [
+          "P3",
+          "Document manual gate scheduling drill",
+          "Operations",
+          "2026-08-14"
+        ],
+        [
+          "P4",
+          "Publish recovery progress dashboard",
+          "Technology",
+          "2026-08-10"
+        ]
+      ]
+    },
+    "speaker_notes": [
+      "Open with the public after-action frame and confirm the deck excludes confidential investigative details.",
+      "Clarify what was included in the exercise scope and what remains outside public disclosure.",
+      "Walk through the corrected public timeline, including Terminal 2 and the 11:05 update.",
+      "Explain decisions in operational terms without assigning blame or naming vendors.",
+      "Summarize public impacts with corrected 47-minute gate scheduling duration.",
+      "Highlight the 24-hour recovery target through the listed recovery priorities.",
+      "Describe communications improvements and the next public dashboard update.",
+      "Close with the four public commitments and owners."
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_022_pptx_port_cyber_ttx_public_deck"
+}

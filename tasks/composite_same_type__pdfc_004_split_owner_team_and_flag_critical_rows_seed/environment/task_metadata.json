@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_004",
+  "task_dir_name": "pdfc_004_split_owner_team_and_flag_critical_rows_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S4 Table/Sheet ops",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "restructure -> emphasize",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_004_split_owner_team_and_flag_critical_rows_seed.pdf",
+  "source_doc_path": "pdf/pdfc_004_split_owner_team_and_flag_critical_rows_seed.pdf",
+  "task_description_filename": "pdfc_004_split_owner_team_and_flag_critical_rows_seed.txt",
+  "task_description_path": "pdf/pdfc_004_split_owner_team_and_flag_critical_rows_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_004_split_owner_team_and_flag_critical_rows_seed.pdf",
+  "output_path": "/root/submission/pdfc_004_split_owner_team_and_flag_critical_rows_seed.pdf",
+  "output_filename": "pdfc_004_split_owner_team_and_flag_critical_rows_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This action table needs separate owner/team columns and stronger emphasis on the critical rows.",
+  "single_step_benchmark_instruction": "Split the `Owner / Team` header into separate `Owner` and `Team` columns, preserve the row wording, and visually emphasize only the two rows marked `Critical`.",
+  "atomic_scope": "Only the column split and emphasis of the critical rows are explicitly requested.",
+  "expected_output_type": "A revised .pdf document with separate `Owner` and `Team` columns and highlighted critical rows.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Other table styling may remain basic\n- Do not change row text beyond the column split presentation"
+  }
+}

@@ -1,0 +1,7 @@
+FROM harbor-codex-base:2.1.114
+
+COPY wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx /root/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx
+COPY posting_fields.xlsx /root/posting_fields.xlsx
+COPY published_agenda_notes.pdf /root/published_agenda_notes.pdf
+COPY attendance_rows.docx /root/attendance_rows.docx
+COPY original_task_description.txt /root/original_task_description.txt

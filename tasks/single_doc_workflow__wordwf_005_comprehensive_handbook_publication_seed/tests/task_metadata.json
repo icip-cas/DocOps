@@ -1,0 +1,156 @@
+{
+  "task_id": "wordwf_005",
+  "task_dir_name": "wordwf_005_comprehensive_handbook_publication_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "C3 Generation",
+    "F1 Style consistency",
+    "F3 Layout control",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "cover-cleanup -> toc-refresh -> hierarchy-normalization -> table-repair -> appendix-split",
+  "difficulty": "Very Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the comprehensive handbook draft into a structured DOCX without rewriting its live content.",
+  "single_step_benchmark_instruction": "Remove the visible Draft: prefixes, restore the exact chapter headings in order, refresh the table of contents, preserve the English and Chinese paragraphs, keep the table values unchanged, normalize body style, and put Appendix A - Release Checklist on a fresh page with the document header and footer.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .docx document that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/wordwf_005_comprehensive_handbook_publication_seed.docx",
+  "output_path": "/root/submission/wordwf_005_comprehensive_handbook_publication_seed.docx",
+  "output_filename": "wordwf_005_comprehensive_handbook_publication_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Introduction",
+        "Heading 1"
+      ],
+      [
+        "Typography & Styling",
+        "Heading 1"
+      ],
+      [
+        "Tables & Data",
+        "Heading 1"
+      ],
+      [
+        "Multi-Language Content",
+        "Heading 1"
+      ],
+      [
+        "Headers, Footers & Page Numbers",
+        "Heading 1"
+      ],
+      [
+        "Conclusion",
+        "Heading 1"
+      ],
+      [
+        "Appendix A - Release Checklist",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Introduction",
+      "Typography & Styling",
+      "Tables & Data",
+      "Multi-Language Content",
+      "Headers, Footers & Page Numbers",
+      "Conclusion",
+      "Appendix A - Release Checklist"
+    ],
+    "required_paragraphs": [
+      "This handbook demonstrates the complete single-document publication workflow.",
+      "It covers document structure, bilingual text, tables, navigation, and release formatting.",
+      "Body paragraphs now share one publication style.",
+      "Important examples use consistent emphasis without draft markers.",
+      "The table below summarizes final sales and feature coverage.",
+      "All numeric totals and labels are publication ready.",
+      "English and Chinese content remain readable in the same body style.",
+      "中文段落与英文段落在最终稿中保持一致的正文排版。",
+      "Every circulation page uses the handbook header and page footer.",
+      "The appendix starts after a clear page break.",
+      "The comprehensive handbook is ready for distribution.",
+      "Confirm the table of contents.",
+      "Confirm the header and footer.",
+      "Confirm bilingual text and tables."
+    ],
+    "forbidden_paragraphs": [
+      "TOC placeholder - update fields",
+      "Draft: Remove this scratch section before publication.",
+      "Draft: Internal reviewer notes must not remain in the released file.",
+      "Draft: Introduction",
+      "Draft: Typography & Styling",
+      "Draft: Tables & Data",
+      "Draft: Multi-Language Content",
+      "Draft: Headers, Footers & Page Numbers",
+      "Draft: Conclusion",
+      "Draft: Appendix A - Release Checklist",
+      "Draft: This handbook demonstrates the complete single-document publication workflow.",
+      "Draft: It covers document structure, bilingual text, tables, navigation, and release formatting.",
+      "Draft: Body paragraphs now share one publication style.",
+      "Draft: Important examples use consistent emphasis without draft markers.",
+      "Draft: The table below summarizes final sales and feature coverage.",
+      "Draft: All numeric totals and labels are publication ready.",
+      "Draft: English and Chinese content remain readable in the same body style.",
+      "Draft: 中文段落与英文段落在最终稿中保持一致的正文排版。",
+      "Draft: Every circulation page uses the handbook header and page footer.",
+      "Draft: The appendix starts after a clear page break.",
+      "Draft: The comprehensive handbook is ready for distribution.",
+      "Draft: Confirm the table of contents.",
+      "Draft: Confirm the header and footer.",
+      "Draft: Confirm bilingual text and tables."
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Item",
+          "0,1": "Q1",
+          "0,2": "Q2",
+          "0,3": "Total",
+          "1,0": "Product A",
+          "1,1": "45000",
+          "1,2": "52000",
+          "1,3": "97000",
+          "2,0": "Product B",
+          "2,1": "32000",
+          "2,2": "38000",
+          "2,3": "70000",
+          "3,0": "Feature Coverage",
+          "3,1": "Complete",
+          "3,2": "Complete",
+          "3,3": "Ready"
+        }
+      }
+    ],
+    "page_break_before": [
+      "Appendix A - Release Checklist"
+    ],
+    "toc_present": true,
+    "header_contains": [
+      "Comprehensive Handbook | 2026-05-09"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 4,
+        "cols": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "pdfxr_001",
+  "task_dir_name": "pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C3 Generation",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "reorder-public-pages -> fill-cover -> replace-appendix-lines -> rebuild-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed.pdf",
+  "supporting_input_paths": [
+    "/root/public_agenda.pdf",
+    "/root/public_minutes.pdf",
+    "/root/finance_memo.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed.pdf",
+  "output_filename": "pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Replace only the stale finance-appendix pages in the seed packet.",
+  "single_step_benchmark_instruction": "Replace only the stale finance-appendix pages in the seed packet, refresh the cover counts and attendance summary lines, and rebuild the top-level bookmarks for Agenda, Minutes, Finance Appendix, and Attendance.",
+  "atomic_scope": "Only the final page order, obsolete-page deletion, cover values, appendix lines, and outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the page titles unchanged\n- Do not add extra packet pages"
+  },
+  "verifier_expectations": {
+    "page_titles_order": [
+      "Cover",
+      "Public Agenda",
+      "Public Minutes",
+      "Finance Appendix"
+    ],
+    "cover_lines": [
+      "Meeting Date: January 13, 2025",
+      "Approved Motions: 2",
+      "Appendix Pages: 1"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Finance Appendix",
+        "lines": [
+          "Budget variance note: Operating variance held below 2 percent.",
+          "Reserve note: Reserve balance remains above policy minimum."
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Old Appendix"
+    ],
+    "outline": [
+      [
+        0,
+        "Agenda"
+      ],
+      [
+        0,
+        "Minutes"
+      ],
+      [
+        0,
+        "Finance Appendix"
+      ],
+      [
+        0,
+        "Attendance"
+      ]
+    ]
+  }
+}

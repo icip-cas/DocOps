@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_003",
+  "task_dir_name": "excelc_003_workbook_reorder_then_exec_summary_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> generate",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_003_workbook_reorder_then_exec_summary_seed.xlsx",
+  "source_doc_path": "excel/excelc_003_workbook_reorder_then_exec_summary_seed.xlsx",
+  "task_description_filename": "excelc_003_workbook_reorder_then_exec_summary_seed.txt",
+  "task_description_path": "excel/excelc_003_workbook_reorder_then_exec_summary_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_003_workbook_reorder_then_exec_summary_seed.xlsx",
+  "output_path": "/root/submission/excelc_003_workbook_reorder_then_exec_summary_seed.xlsx",
+  "output_filename": "excelc_003_workbook_reorder_then_exec_summary_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook should follow an executive review order and include a tightly constrained summary sheet.",
+  "single_step_benchmark_instruction": "Reorder the workbook tabs to `Overview -> Detail_Q1 -> Detail_Q2 -> Risks`, then add a new sheet named `Executive Summary` at the end and fill `A2:A4` with exactly three short bullets using the prefixes `Supplier:`, `Inspection:`, and `Staffing:` in that order.",
+  "atomic_scope": "Only the sheet reorder and the constrained three-bullet executive summary are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with the required tab order and a grounded three-bullet summary sheet.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Existing formatting on the detail sheets is intentionally plain\n- Do not add extra summary sheets or charts"
+  }
+}

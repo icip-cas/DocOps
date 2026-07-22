@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_008",
+  "task_dir_name": "pptc_008_fix_outline_and_align_cards_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S3 Hierarchy editing",
+    "F3 Layout control"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "repair-hierarchy -> align",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_008_fix_outline_and_align_cards_seed.pptx",
+  "source_doc_path": "ppt/pptc_008_fix_outline_and_align_cards_seed.pptx",
+  "task_description_filename": "pptc_008_fix_outline_and_align_cards_seed.txt",
+  "task_description_path": "ppt/pptc_008_fix_outline_and_align_cards_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_008_fix_outline_and_align_cards_seed.pptx",
+  "output_path": "/root/submission/pptc_008_fix_outline_and_align_cards_seed.pptx",
+  "output_filename": "pptc_008_fix_outline_and_align_cards_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workstream slide has both incorrect bullet nesting and uneven card alignment.",
+  "single_step_benchmark_instruction": "Fix the bullet hierarchy so task-level lines are nested under the correct workstreams, then align the three workstream cards into one even row.",
+  "atomic_scope": "Only the bullet hierarchy repair and card alignment on the target slide are explicitly requested.",
+  "expected_output_type": "A revised .pptx slide with corrected bullet nesting and aligned workstream cards.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not rewrite bullet wording\n- Leave the rest of the deck unchanged"
+  }
+}

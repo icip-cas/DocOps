@@ -1,0 +1,26 @@
+Task ID: pdf_004
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: S2 Reorder
+Difficulty: Medium
+
+Inspired By:
+- Title: Slice and merge two different pdfs
+  URL: https://www.reddit.com/r/pdf/comments/1s9p0hm/slice_and_merge_two_different_pdfs/
+
+User Task Description:
+This audit PDF contains the right pages but in the wrong sequence.
+
+Single-Step Benchmark Instruction:
+Reorder the pages so the report flows in the sequence: Scope -> Findings -> Recommendations -> Appendix.
+
+Atomic Scope:
+Only page reordering is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Every page looks valid on its own
+- The correct order must be inferred from section titles rather than page numbers in the viewer
+- No other content changes are requested
+
+Expected Output Type:
+A revised PDF with the pages in correct order.

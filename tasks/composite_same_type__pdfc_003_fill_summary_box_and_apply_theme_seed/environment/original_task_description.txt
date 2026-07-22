@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_003
+
+Doc type: pdf
+Atomic operations: C3 Generation, F4 Theme transfer
+Composition pattern: generate -> retheme
+Difficulty: Hard
+
+User-facing goal:
+This report has an empty summary box and inconsistent accent colors.
+
+Single-step benchmark instruction:
+Replace the placeholder text in the `Management Summary` box on page 1 with exactly three short lines starting `Supplier:`, `Inspection:`, and `Staffing:` in that order, then retheme the title bar and callout boxes to a cohesive blue-gray palette.
+
+Atomic scope:
+Only the three constrained summary bullets and the requested blue-gray theme update are explicitly requested.
+
+Expected output type:
+A revised .pdf document with a filled summary box and a cohesive blue-gray theme.

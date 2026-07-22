@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register"
+description = "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register - DocOps v2 final L4 task."
+authors = []
+keywords = ["ppt", "excel", "cross-document", "multi-output", "document-processing"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["ppt", "excel", "cross-document", "multi-output", "manual-expansion"]
+task_id = "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register"
+doc_type = "ppt+xlsx"
+primary_modality = "PowerPoint (.pptx) and Excel (.xlsx)"
+atomic_operation = "Cross-document Multi-output Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-strict-tolerant"
+composition_type = "cross-document multi-output"
+composition_pattern = "resolve-authoritative-exceptions -> refresh-risk-table -> build-action-register-output -> sync-ppt-and-xlsx -> preserve-reference-slides-and-formulas"
+atomic_operations = ["C1 Extraction", "C3 Generation", "C4 Computation", "C5 Reasoning", "F1 Style consistency", "S1 Insert/Delete", "S2 Reorder", "S4 Table/Sheet ops"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register"
+final_index = 58
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx"
+TASK_ID = "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register"
+DOC_TYPE = "ppt+xlsx"
+
+[solution.env]

@@ -1,0 +1,48 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__atomic__pdf_006_management_summary_generation_seed"
+description = "pdf_006 - C3 Generation task exported from DocumentBenchmark source seeds."
+authors = []
+keywords = ["pdf", "c3-generation", "document-processing", "single-step", "source-doc-export"]
+
+[metadata]
+difficulty_level = "L1-atomic"
+benchmark_split = "atomic"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["pdf", "c3-generation", "document-processing", "single-step", "source-doc-export"]
+task_id = "pdf_006"
+doc_type = "pdf"
+primary_modality = "PDF (.pdf)"
+atomic_operation = "C3 Generation"
+source_type = "Reddit-derived representative benchmark seed"
+verifier_mode = "semantic-strict"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pdf_006_management_summary_generation_seed.pdf"
+OUTPUT_PATH = "/root/submission/pdf_006_management_summary_generation_seed.pdf"
+TASK_ID = "pdf_006"
+DOC_TYPE = "pdf"
+
+[solution.env]

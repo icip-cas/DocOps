@@ -1,0 +1,3 @@
+Regenerated L3 single-document workflow seed.
+
+Create a release-ready museum exhibition installation binder from a complex internal Word working draft. The final output must reorder sections, remove internal and private material, rebuild registrar/conservation/production tables, compute inclusive schedule durations, preserve a real Word TOC field, normalize header/footer, and move the vendor/courier appendix to a new page.

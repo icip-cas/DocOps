@@ -1,0 +1,1 @@
+Inspired by Excel users maintaining formula-driven forecasts where one assumption cell cascades through dashboard and exception outputs.

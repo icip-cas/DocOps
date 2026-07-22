@@ -1,0 +1,484 @@
+{
+  "task_id": "docops_v2_l3_019_xlsx_vendor_compliance_exception_register_repair",
+  "input_path": "/root/docops_v2_l3_019_xlsx_vendor_compliance_exception_register_repair_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_019_xlsx_vendor_compliance_exception_register_repair_output.xlsx",
+  "output_extension": ".xlsx",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Dashboard",
+      "Clean Intake",
+      "Exception Register",
+      "Renewal Calendar",
+      "Audit Log"
+    ],
+    "tab_colors": {
+      "Dashboard": "0F766E",
+      "Clean Intake": "14B8A6",
+      "Exception Register": "F59E0B",
+      "Renewal Calendar": "2563EB",
+      "Audit Log": "64748B"
+    },
+    "header_fill": "1F2937",
+    "header_font": "FFFFFF",
+    "body_font": "Arial",
+    "body_font_size": 10,
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE contact",
+      "Ava Stone",
+      "555-0142",
+      "do not share",
+      "personal email",
+      "staff-only",
+      "unreviewed vendor",
+      "compliance-old@city.example",
+      "Named individual owner",
+      "TBD"
+    ],
+    "dashboard_cells": {
+      "B2": "=COUNTA('Exception Register'!A2:A7)",
+      "B3": "=COUNTIF('Exception Register'!H2:H7,\"Open\")",
+      "B4": "=COUNTIFS('Exception Register'!G2:G7,\"High\",'Exception Register'!H2:H7,\"Open\")",
+      "B5": "=COUNTIF('Renewal Calendar'!F2:F7,\"<=45\")",
+      "B6": "compliance-review@city.example",
+      "B7": "2026-10-01",
+      "B8": "Ready for audit",
+      "B11": "=COUNTIFS('Exception Register'!G2:G7,\"High\",'Exception Register'!H2:H7,\"Open\")",
+      "B12": "=COUNTIFS('Exception Register'!G2:G7,\"Medium\",'Exception Register'!H2:H7,\"Open\")",
+      "B13": "=COUNTIFS('Exception Register'!G2:G7,\"Low\",'Exception Register'!H2:H7,\"Open\")"
+    },
+    "tables": {
+      "Dashboard": [
+        [
+          "Metric",
+          "Value",
+          "Target",
+          "Status"
+        ],
+        [
+          "Total active vendors",
+          "=COUNTA('Exception Register'!A2:A7)",
+          6,
+          "Complete"
+        ],
+        [
+          "Open exceptions",
+          "=COUNTIF('Exception Register'!H2:H7,\"Open\")",
+          3,
+          "Watch"
+        ],
+        [
+          "High risk open",
+          "=COUNTIFS('Exception Register'!G2:G7,\"High\",'Exception Register'!H2:H7,\"Open\")",
+          1,
+          "Escalate"
+        ],
+        [
+          "Expiring in 45 days",
+          "=COUNTIF('Renewal Calendar'!F2:F7,\"<=45\")",
+          2,
+          "Watch"
+        ],
+        [
+          "Public contact",
+          "compliance-review@city.example",
+          "Published",
+          "Complete"
+        ],
+        [
+          "Review date",
+          "2026-10-01",
+          "Required",
+          "Complete"
+        ],
+        [
+          "Workbook status",
+          "Ready for audit",
+          "Ready",
+          "Complete"
+        ],
+        [
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Risk Bucket",
+          "Open Count",
+          "",
+          ""
+        ],
+        [
+          "High",
+          "=COUNTIFS('Exception Register'!G2:G7,\"High\",'Exception Register'!H2:H7,\"Open\")",
+          "",
+          ""
+        ],
+        [
+          "Medium",
+          "=COUNTIFS('Exception Register'!G2:G7,\"Medium\",'Exception Register'!H2:H7,\"Open\")",
+          "",
+          ""
+        ],
+        [
+          "Low",
+          "=COUNTIFS('Exception Register'!G2:G7,\"Low\",'Exception Register'!H2:H7,\"Open\")",
+          "",
+          ""
+        ]
+      ],
+      "Clean Intake": [
+        [
+          "Vendor ID",
+          "Vendor Name",
+          "Category",
+          "Insurance Expiry",
+          "Cyber Attestation",
+          "Tax Form",
+          "Contact Email",
+          "Clean Status"
+        ],
+        [
+          "VEN-001",
+          "Northstar Janitorial",
+          "Facilities",
+          "2026-10-15",
+          "Complete",
+          "Complete",
+          "compliance-review@city.example",
+          "Ready"
+        ],
+        [
+          "VEN-002",
+          "Brightline Catering",
+          "Food Service",
+          "2026-11-02",
+          "Missing",
+          "Complete",
+          "compliance-review@city.example",
+          "Exception"
+        ],
+        [
+          "VEN-003",
+          "MetroLift Services",
+          "Transport",
+          "2026-09-28",
+          "Complete",
+          "Complete",
+          "compliance-review@city.example",
+          "Ready"
+        ],
+        [
+          "VEN-004",
+          "HarborMed Supplies",
+          "Medical Supply",
+          "2026-12-05",
+          "Complete",
+          "Missing",
+          "compliance-review@city.example",
+          "Exception"
+        ],
+        [
+          "VEN-005",
+          "CivicCloud Hosting",
+          "Technology",
+          "2027-01-18",
+          "Missing",
+          "Complete",
+          "compliance-review@city.example",
+          "Exception"
+        ],
+        [
+          "VEN-006",
+          "Greenway Waste",
+          "Waste Services",
+          "2026-10-06",
+          "Complete",
+          "Complete",
+          "compliance-review@city.example",
+          "Ready"
+        ]
+      ],
+      "Exception Register": [
+        [
+          "Exception ID",
+          "Vendor ID",
+          "Control Area",
+          "Finding",
+          "Required Action",
+          "Owner Group",
+          "Risk",
+          "Status",
+          "Due Date"
+        ],
+        [
+          "EX-001",
+          "VEN-002",
+          "Cyber Attestation",
+          "Cyber attestation missing for food-service vendor",
+          "Collect signed cyber attestation",
+          "Procurement Compliance",
+          "Medium",
+          "Open",
+          "2026-10-09"
+        ],
+        [
+          "EX-002",
+          "VEN-004",
+          "Tax Form",
+          "Current tax form missing from supplier file",
+          "Request updated W-9 or equivalent",
+          "Supplier Records",
+          "Low",
+          "Open",
+          "2026-10-12"
+        ],
+        [
+          "EX-003",
+          "VEN-005",
+          "Cyber Attestation",
+          "Technology vendor lacks approved cyber attestation",
+          "Escalate to cyber review board",
+          "Security Review",
+          "High",
+          "Open",
+          "2026-10-04"
+        ],
+        [
+          "EX-004",
+          "VEN-001",
+          "Insurance",
+          "Insurance certificate verified after source correction",
+          "Attach certificate evidence",
+          "Procurement Compliance",
+          "Low",
+          "Closed",
+          "2026-09-24"
+        ],
+        [
+          "EX-005",
+          "VEN-003",
+          "Insurance",
+          "Insurance renewal is inside 45-day watch window",
+          "Confirm renewal binder",
+          "Risk Management",
+          "Medium",
+          "Monitoring",
+          "2026-09-27"
+        ],
+        [
+          "EX-006",
+          "VEN-006",
+          "Insurance",
+          "Insurance renewal is inside 45-day watch window",
+          "Confirm renewal binder",
+          "Risk Management",
+          "Medium",
+          "Monitoring",
+          "2026-09-29"
+        ]
+      ],
+      "Renewal Calendar": [
+        [
+          "Vendor ID",
+          "Vendor Name",
+          "Insurance Expiry",
+          "Review Date",
+          "Renewal Owner",
+          "Days Until Expiry",
+          "Days Bucket"
+        ],
+        [
+          "VEN-001",
+          "Northstar Janitorial",
+          "2026-10-15",
+          "2026-10-01",
+          "Risk Management",
+          "=DATEVALUE(C2)-DATEVALUE(D2)",
+          "=IF(F2<=45,\"<=45\",\"OK\")"
+        ],
+        [
+          "VEN-002",
+          "Brightline Catering",
+          "2026-11-02",
+          "2026-10-01",
+          "Procurement Compliance",
+          "=DATEVALUE(C3)-DATEVALUE(D3)",
+          "=IF(F3<=45,\"<=45\",\"OK\")"
+        ],
+        [
+          "VEN-003",
+          "MetroLift Services",
+          "2026-09-28",
+          "2026-10-01",
+          "Risk Management",
+          "=DATEVALUE(C4)-DATEVALUE(D4)",
+          "=IF(F4<=45,\"<=45\",\"OK\")"
+        ],
+        [
+          "VEN-004",
+          "HarborMed Supplies",
+          "2026-12-05",
+          "2026-10-01",
+          "Supplier Records",
+          "=DATEVALUE(C5)-DATEVALUE(D5)",
+          "=IF(F5<=45,\"<=45\",\"OK\")"
+        ],
+        [
+          "VEN-005",
+          "CivicCloud Hosting",
+          "2027-01-18",
+          "2026-10-01",
+          "Security Review",
+          "=DATEVALUE(C6)-DATEVALUE(D6)",
+          "=IF(F6<=45,\"<=45\",\"OK\")"
+        ],
+        [
+          "VEN-006",
+          "Greenway Waste",
+          "2026-10-06",
+          "2026-10-01",
+          "Risk Management",
+          "=DATEVALUE(C7)-DATEVALUE(D7)",
+          "=IF(F7<=45,\"<=45\",\"OK\")"
+        ]
+      ],
+      "Audit Log": [
+        [
+          "Field",
+          "Source Defect",
+          "Repair Action",
+          "Evidence"
+        ],
+        [
+          "Restricted contacts",
+          "Named staff and personal phone number appeared in source",
+          "Removed personal contact details",
+          "Clean Intake uses compliance-review@city.example"
+        ],
+        [
+          "Status normalization",
+          "Unreviewed placeholder statuses appeared in source",
+          "Mapped to Open, Monitoring, or Closed",
+          "Exception Register status validation applied"
+        ],
+        [
+          "Owner normalization",
+          "Named individuals appeared in source",
+          "Converted to owner groups",
+          "Owner Group column contains groups only"
+        ],
+        [
+          "Renewal dates",
+          "Some dates were copied as text or stale values",
+          "Standardized dates and added days-until-expiry formulas",
+          "Renewal Calendar formulas in F2:F7"
+        ],
+        [
+          "Review controls",
+          "No structured audit checklist existed",
+          "Added dashboard, comments, validation, conditional formatting, chart, and protection",
+          "Workbook structure and sheets protected"
+        ]
+      ]
+    },
+    "freeze_panes": {
+      "Dashboard": "A2",
+      "Clean Intake": "A2",
+      "Exception Register": "A2",
+      "Renewal Calendar": "A2",
+      "Audit Log": "A2"
+    },
+    "excel_tables": {
+      "Clean Intake": {
+        "name": "CleanIntakeTable",
+        "ref": "A1:H7"
+      },
+      "Exception Register": {
+        "name": "ExceptionRegisterTable",
+        "ref": "A1:I7"
+      },
+      "Renewal Calendar": {
+        "name": "RenewalCalendarTable",
+        "ref": "A1:G7"
+      },
+      "Audit Log": {
+        "name": "AuditLogTable",
+        "ref": "A1:D6"
+      }
+    },
+    "currency_cells": [],
+    "currency_format": "$#,##0;($#,##0);-",
+    "data_validations": [
+      {
+        "sheet": "Exception Register",
+        "sqref": "G2:G7",
+        "formula1": "\"High,Medium,Low\""
+      },
+      {
+        "sheet": "Exception Register",
+        "sqref": "H2:H7",
+        "formula1": "\"Open,Monitoring,Closed\""
+      }
+    ],
+    "comments": {
+      "Dashboard!B5": "Review formula uses Renewal Calendar days-until-expiry values.",
+      "Exception Register!E2": "Required actions must be owner-group level and must not name individual staff."
+    },
+    "conditional_formats": [
+      {
+        "sheet": "Exception Register",
+        "sqref": "G2:G7",
+        "type": "cellIs",
+        "operator": "equal",
+        "formula": "\"High\"",
+        "text": null
+      },
+      {
+        "sheet": "Exception Register",
+        "sqref": "H2:H7",
+        "type": "cellIs",
+        "operator": "equal",
+        "formula": "\"Open\"",
+        "text": null
+      },
+      {
+        "sheet": "Renewal Calendar",
+        "sqref": "G2:G7",
+        "type": "cellIs",
+        "operator": "equal",
+        "formula": "\"<=45\"",
+        "text": null
+      }
+    ],
+    "chart": {
+      "sheet": "Dashboard",
+      "categories": "'Dashboard'!$A$11:$A$13",
+      "values": "'Dashboard'!$B$11:$B$13"
+    },
+    "protected_sheets": [
+      "Dashboard",
+      "Clean Intake",
+      "Exception Register",
+      "Renewal Calendar",
+      "Audit Log"
+    ],
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE contact",
+      "Ava Stone",
+      "555-0142",
+      "do not share",
+      "personal email",
+      "staff-only",
+      "unreviewed vendor",
+      "compliance-old@city.example",
+      "Named individual owner",
+      "TBD"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_019_xlsx_vendor_compliance_exception_register_repair",
+  "task_dir_name": "docops_v2_l3_019_xlsx_vendor_compliance_exception_register_repair"
+}

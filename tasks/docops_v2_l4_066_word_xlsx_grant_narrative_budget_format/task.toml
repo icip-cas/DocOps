@@ -1,0 +1,54 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_066_word_xlsx_grant_narrative_budget_format"
+description = "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format - DocOps v2 final L4 task."
+authors = []
+keywords = ["word", "excel", "style", "format", "grant", "budget"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["word", "excel", "cross-document", "style-format"]
+task_id = "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format"
+doc_type = "word+xlsx"
+primary_modality = "Word (.docx) and Excel (.xlsx)"
+atomic_operation = "Cross-document Style Format Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "style-format-semantic-strict"
+composition_type = "cross-document multi-output style-format"
+composition_pattern = "foundation-format-guide -> Word margin/TOC/table repair -> Excel print/rule controls -> public/internal budget-line consistency"
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format"
+final_index = 66
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_document.docx"
+TASK_ID = "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format"
+DOC_TYPE = "word+xlsx"
+
+[solution.env]

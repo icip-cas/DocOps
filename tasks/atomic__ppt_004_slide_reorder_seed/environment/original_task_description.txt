@@ -1,0 +1,26 @@
+Task ID: ppt_004
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: S2 Reorder
+Difficulty: Easy-Medium
+
+Inspired By:
+- Title: Automated table of contents
+  URL: https://www.reddit.com/r/powerpoint/comments/1s98sok/automated_table_of_contents/
+
+User Task Description:
+The deck's slides are out of logical order.
+
+Single-Step Benchmark Instruction:
+Reorder the slides so the presentation flows in the sequence: Executive Summary -> Root Cause -> Implementation Plan -> Appendix.
+
+Atomic Scope:
+Only slide reordering is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The deck has no polished theme
+- The slide layouts are very plain
+- Some text could be tightened, but that is not the explicit request
+
+Expected Output Type:
+A revised .pptx deck with corrected slide order.

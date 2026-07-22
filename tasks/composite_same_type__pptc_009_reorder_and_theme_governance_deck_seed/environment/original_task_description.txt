@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_009
+
+Doc type: ppt
+Atomic operations: S2 Reorder, F4 Theme transfer
+Composition pattern: reorder -> retheme
+Difficulty: Medium-Hard
+
+User-facing goal:
+This governance deck should follow a cleaner story order and use one navy theme.
+
+Single-step benchmark instruction:
+Reorder the slides to `Overview -> Risks -> Actions -> Appendix`, then apply a unified navy theme by turning the title text boxes into navy title bars and the main body text boxes into matching light-blue cards across the deck.
+
+Atomic scope:
+Only the requested slide reorder and navy theme transfer are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with corrected order and a navy visual theme.

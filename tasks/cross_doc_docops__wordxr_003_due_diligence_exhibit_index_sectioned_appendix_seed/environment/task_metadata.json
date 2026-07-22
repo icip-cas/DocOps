@@ -1,0 +1,37 @@
+{
+  "task_id": "wordxr_003",
+  "task_dir_name": "wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-metadata -> preserve-toc -> replace-ddq-sections -> insert-heading2 -> update-exhibit-appendix",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "supporting_input_paths": [
+    "/root/response_fields.xlsx",
+    "/root/release_extract.pdf",
+    "/root/exhibit_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "output_filename": "wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Create the exhibit-index hierarchy from the request list.",
+  "single_step_benchmark_instruction": "Create the exhibit-index hierarchy from the request list, populate the appendix table from the inventory, insert the required Heading 2 exception note, and keep the appendix in its own section with a distinct header and footer.",
+  "atomic_scope": "Only the metadata table, TOC field, named sections, Heading 2 insertion, appendix section header/footer, appendix table, and highlighted exception line are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the title logo intact\n- Do not collapse the appendix into the body section"
+  }
+}

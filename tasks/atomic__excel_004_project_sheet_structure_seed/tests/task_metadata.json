@@ -1,0 +1,35 @@
+{
+  "task_id": "excel_004",
+  "task_dir_name": "excel_004_project_sheet_structure_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "S4 Table/Sheet ops",
+  "difficulty": "Medium",
+  "source_doc_filename": "excel_004_project_sheet_structure_seed.xlsx",
+  "source_doc_path": "excel/excel_004_project_sheet_structure_seed.xlsx",
+  "task_description_filename": "excel_004_project_sheet_structure_seed.txt",
+  "task_description_path": "excel/excel_004_project_sheet_structure_seed.txt",
+  "input_path": "/root/excel_004_project_sheet_structure_seed.xlsx",
+  "output_path": "/root/submission/excel_004_project_sheet_structure_seed.xlsx",
+  "output_filename": "excel_004_project_sheet_structure_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook has multiple project sheets with the same task-table structure, but each one is missing a `Priority` column.",
+  "single_step_benchmark_instruction": "Insert a new `Priority` column between `Task` and `Owner` on both `Project_A` and `Project_B` while preserving the existing row data.",
+  "atomic_scope": "Only the table/sheet structure change is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with the requested structural change on both project sheets.",
+  "inspired_by": [
+    {
+      "title": "Pulling data out of multiple tables across sheets to a master table?",
+      "url": "https://www.reddit.com/r/excel/comments/1smraf4/pulling_data_out_of_multiple_tables_across_sheets/"
+    },
+    {
+      "title": "Inserting new, whilst copying adjacent protected formulas",
+      "url": "https://www.reddit.com/r/excel/comments/1smbh65/inserting_new_whilst_copying_adjacent_protected/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The workbook has no consistent table styling\n- There is no master roll-up logic yet\n- Dates and statuses are not validated, but that is not the explicit request"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "task_id": "docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof",
+  "task_dir_name": "docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof",
+  "doc_type": "ppt+pdf",
+  "primary_modality": "PowerPoint (.pptx) and PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "object-checklist-rights-filter -> PPT card-size label repair -> locked-reference-slide preservation -> PDF print-proof bookmark rebuild",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_input.pptx",
+  "supporting_input_paths": [
+    "/root/object_checklist.xlsx",
+    "/root/rights_accessibility_note.docx",
+    "/root/gallery_label_style_sheet.pdf"
+  ],
+  "output_paths": {
+    "deck": "/root/submission/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_deck.pptx",
+    "packet": "/root/submission/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_packet.pdf"
+  },
+  "output_path": "/root/submission/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_deck.pptx",
+  "output_filename": "docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_input.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Create a final museum wall-label PPTX and PDF print proof from a draft deck, object checklist, rights note, and gallery style sheet while excluding a restricted object.",
+  "single_step_benchmark_instruction": "Fix label slide size and style, remove scratch content, publish only permitted objects, retain the locked reference grid in PPTX, and produce a bookmarked PDF print proof with one page per public object.",
+  "atomic_scope": "PPT/PDF label card and print-proof formatting workflow.",
+  "expected_output_type": "A final .pptx label deck and .pdf print proof saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "PowerPoint slide size and layout control",
+      "url": "https://support.microsoft.com/en-us/office/change-the-size-of-your-slides-040a811c-be43-40b9-8d04-0de5ed79987e"
+    },
+    {
+      "title": "Adobe Acrobat bookmarks and page organization",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    }
+  ],
+  "verifier_expectations": {
+    "deck_output": "/root/submission/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_deck.pptx",
+    "packet_output": "/root/submission/docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof_packet.pdf",
+    "slide_size": [
+      5486400,
+      3657600
+    ],
+    "slide_titles": [
+      "Wall Label Print Deck",
+      "OBJ-104 | Gallery 2",
+      "OBJ-118 | Gallery 2",
+      "OBJ-126 | Gallery 3",
+      "Reference - Locked Label Grid"
+    ],
+    "deck_required": [
+      "Final label deck: 6 x 4 inch cards",
+      "Restricted object OBJ-133 is omitted",
+      "LOCKED REFERENCE"
+    ],
+    "deck_forbidden": [
+      "Rights Scratch - Remove",
+      "Label Grid Draft",
+      "Draft label deck",
+      "Private Collector Portrait"
+    ],
+    "public_objects": [
+      [
+        "OBJ-104",
+        "Night Market Study",
+        "Lina Park",
+        "Ink and gouache on paper",
+        "Gallery 2",
+        "Publish"
+      ],
+      [
+        "OBJ-118",
+        "Harbor Workers",
+        "Miguel Santos",
+        "Gelatin silver print",
+        "Gallery 2",
+        "Publish"
+      ],
+      [
+        "OBJ-126",
+        "Blue Vessel",
+        "Asha Rao",
+        "Glazed ceramic",
+        "Gallery 3",
+        "Publish"
+      ]
+    ],
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Museum Wall Label Print Proof",
+      "OBJ-104 Label Proof",
+      "OBJ-118 Label Proof",
+      "OBJ-126 Label Proof"
+    ],
+    "pdf_required": [
+      "Public Object Count 3",
+      "Restricted Object Excluded OBJ-133",
+      "Night Market Study",
+      "Harbor Workers",
+      "Blue Vessel",
+      "Card Size 6 x 4 inch"
+    ],
+    "pdf_forbidden": [
+      "Private Collector Portrait",
+      "Do Not Publish"
+    ],
+    "outline_titles": [
+      "Museum Wall Label Print Proof",
+      "OBJ-104 Label Proof",
+      "OBJ-118 Label Proof",
+      "OBJ-126 Label Proof"
+    ],
+    "public_ids": [
+      "OBJ-104",
+      "OBJ-118",
+      "OBJ-126"
+    ],
+    "restricted_ids": [
+      "OBJ-133"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_057_ppt_pdf_museum_wall_label_print_proof"
+}

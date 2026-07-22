@@ -1,0 +1,1 @@
+Regenerated L3 single-presentation workflow seed: convert a messy internal HarborLink fare pilot board deck into a public board packet by removing internal-only slides and notes, applying correction-log fixes, migrating the approved public style, rebuilding public tables/structured blocks, and preserving only concise public speaker notes.

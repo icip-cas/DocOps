@@ -1,0 +1,136 @@
+{
+  "task_id": "docops_v2_l4_080_xlsx_pdf_budget_print_packet",
+  "task_dir_name": "docops_v2_l4_080_xlsx_pdf_budget_print_packet",
+  "doc_type": "xlsx+pdf",
+  "primary_modality": "xlsx+pdf",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "style-guide-extraction -> cross-document-format-repair -> native-style-object-preservation -> multi-output-format-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_080_xlsx_pdf_budget_print_packet_input.xlsx",
+  "supporting_input_paths": [
+    "/root/style_guide.docx",
+    "/root/source_rows.xlsx",
+    "/root/format_requirements.pdf"
+  ],
+  "output_paths": {
+    "workbook": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_workbook.xlsx",
+    "packet": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_packet.pdf"
+  },
+  "output_path": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_workbook.xlsx",
+  "output_filename": "xlsxpdfsf_012_budget_print_packet_seed_styled_register.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Apply cross-document style and formatting rules to the budget print packet package while preserving native style controls.",
+  "single_step_benchmark_instruction": "Create the required outputs for the budget print packet package. Use style_guide.docx and format_requirements.pdf as authoritative formatting sources, remove draft/scratch material, and preserve native style objects such as TOC fields, PPT tables, Excel print areas, and PDF bookmarks where applicable.",
+  "atomic_scope": "Cross-document, multi-output format and style workflow.",
+  "expected_output_type": "Multiple formatted documents saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Microsoft Word table of contents depends on heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    },
+    {
+      "title": "Microsoft PowerPoint slide master is used for consistent slide formatting",
+      "url": "https://support.microsoft.com/en-us/office/what-is-a-slide-master-b9abb2a0-7aef-4257-a14e-4329c904da54"
+    },
+    {
+      "title": "Microsoft Excel print areas control worksheet printing",
+      "url": "https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e"
+    },
+    {
+      "title": "Adobe Acrobat bookmarks and page organization are core PDF navigation tools",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    }
+  ],
+  "verifier_expectations": {
+    "outputs": {
+      "workbook": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_workbook.xlsx",
+      "packet": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_packet.pdf"
+    },
+    "primary_color": "7B2CBF",
+    "accent_color": "F4A261",
+    "forbidden": [
+      "Draft Notes - Remove",
+      "Manual TOC placeholder",
+      "Scratch Slide - Remove",
+      "Draft layout",
+      "Scratch Page",
+      "unstyled"
+    ],
+    "xlsx": {
+      "path": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_workbook.xlsx",
+      "sheet_order": [
+        "Styled Register",
+        "Rules"
+      ],
+      "rows": [
+        [
+          "B-101",
+          "Program reserve",
+          128000,
+          "High"
+        ],
+        [
+          "B-118",
+          "Facilities holdback",
+          64000,
+          "Medium"
+        ],
+        [
+          "B-144",
+          "Training carryover",
+          27000,
+          "Low"
+        ]
+      ],
+      "table_name": "xlsxpdfsf_012_budget_print_packet_seed_style_table",
+      "table_ref": "A1:F4",
+      "print_area": "'Styled Register'!$A$1:$F$4",
+      "freeze_panes": "A2",
+      "formula_cells": {
+        "E2": "=IF(D2<>\"Exclude\",\"STYLE OK\",\"HIDDEN\")",
+        "E3": "=IF(D3<>\"Exclude\",\"STYLE OK\",\"HIDDEN\")",
+        "E4": "=IF(D4<>\"Exclude\",\"STYLE OK\",\"HIDDEN\")"
+      },
+      "defined_names": [
+        "status_choices"
+      ],
+      "hidden_sheets": [
+        "Rules"
+      ],
+      "dv_ranges": [
+        "D2:D4"
+      ]
+    },
+    "pdf": {
+      "path": "/root/submission/docops_v2_l4_080_xlsx_pdf_budget_print_packet_packet.pdf",
+      "titles": [
+        "Budget Print Packet",
+        "Variance Summary",
+        "Print Control Appendix"
+      ],
+      "required": [
+        "Final budget print packet format",
+        "Accent F4A261"
+      ],
+      "outline_root": "Budget Print Packet Packet"
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_080_xlsx_pdf_budget_print_packet"
+}

@@ -1,0 +1,527 @@
+{
+  "task_id": "docops_v2_l3_013_xlsx_procurement_bid_evaluation_release",
+  "task_dir_name": "docops_v2_l3_013_xlsx_procurement_bid_evaluation_release",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Formula construction",
+    "F2 Style migration",
+    "X1 Named ranges",
+    "X2 Data validation",
+    "X3 Hyperlinks",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "single-document",
+  "composition_pattern": "cleanup -> correction-log-application -> vendor-register -> named-range -> scoring-formulas -> data-validation -> hyperlinks -> style-migration",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-feature-strict",
+  "user_task_description": "Prepare a clean public procurement bid evaluation workbook from a messy internal evaluation workbook.",
+  "single_step_benchmark_instruction": "Complete the ordered workflow: clean confidential material, apply corrections, rebuild vendor register, create VendorIDs named range, rebuild scoring and price formulas, add data validation and debrief hyperlinks, then apply public workbook style.",
+  "atomic_scope": "Only the requested strict-order workbook workflow edits are in scope; corrected public procurement facts, tables, formulas, named range, data validation, hyperlinks, sheet order, and styles must be preserved.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested strict-order single-workbook workflow.",
+  "input_path": "/root/docops_v2_l3_013_xlsx_procurement_bid_evaluation_release_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_013_xlsx_procurement_bid_evaluation_release_output.xlsx",
+  "output_filename": "docops_v2_l3_013_xlsx_procurement_bid_evaluation_release_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "spreadsheet",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Evaluation Summary",
+      "Vendor Register",
+      "Requirements Scoring",
+      "Price Normalization",
+      "Conflict-of-Interest Log",
+      "Award Recommendation",
+      "Debrief Register",
+      "Data Validation Guide",
+      "Publication Style Guide",
+      "Appendix Index"
+    ],
+    "tab_colors": {
+      "Evaluation Summary": "4F2D7F",
+      "Vendor Register": "70AD47",
+      "Requirements Scoring": "4472C4",
+      "Price Normalization": "ED7D31",
+      "Conflict-of-Interest Log": "C00000",
+      "Award Recommendation": "0F6B6E",
+      "Debrief Register": "7030A0",
+      "Data Validation Guide": "5B9BD5",
+      "Publication Style Guide": "4F2D7F",
+      "Appendix Index": "4472C4"
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "evaluator disagreement",
+      "personal phone",
+      "vendor protest strategy",
+      "legal hold",
+      "do not release",
+      "scoring rumor",
+      "private negotiation"
+    ],
+    "header_fill": "4F2D7F",
+    "header_font": "FFFFFF",
+    "body_font": "Aptos",
+    "summary_title_fill": "4F2D7F",
+    "currency_format": "$#,##0",
+    "percent_format": "0%",
+    "named_ranges": {
+      "VendorIDs": "'Vendor Register'!$A$2:$A$6"
+    },
+    "data_validations": [
+      {
+        "sheet": "Requirements Scoring",
+        "sqref": "B2:B16",
+        "formula1": "=VendorIDs"
+      },
+      {
+        "sheet": "Conflict-of-Interest Log",
+        "sqref": "B2:B6",
+        "formula1": "=VendorIDs"
+      }
+    ],
+    "hyperlinks": {
+      "Debrief Register!D2": "mailto:procurement@city.example?subject=Debrief%20VND-001",
+      "Debrief Register!D3": "mailto:procurement@city.example?subject=Debrief%20VND-002",
+      "Debrief Register!D4": "mailto:procurement@city.example?subject=Debrief%20VND-003",
+      "Debrief Register!D5": "mailto:procurement@city.example?subject=Debrief%20VND-004",
+      "Debrief Register!D6": "mailto:procurement@city.example?subject=Debrief%20VND-005"
+    },
+    "summary_cells": {
+      "A1": "Procurement Bid Evaluation Release Workbook",
+      "A3": "Responsive Vendors",
+      "B3": "=COUNTIF('Vendor Register'!E2:E6,\"Responsive\")",
+      "A4": "Recommended Vendor",
+      "B4": "='Award Recommendation'!B2",
+      "A5": "Lowest Corrected Price",
+      "B5": "=MIN('Price Normalization'!C2:C6)",
+      "A6": "Average Technical Score",
+      "B6": "=AVERAGE('Requirements Scoring'!E2:E16)"
+    },
+    "currency_cells": [
+      "Price Normalization!C2",
+      "Price Normalization!C3",
+      "Price Normalization!C4",
+      "Price Normalization!C5",
+      "Price Normalization!C6"
+    ],
+    "percent_cells": [
+      "Requirements Scoring!D2",
+      "Requirements Scoring!D3",
+      "Requirements Scoring!D4",
+      "Requirements Scoring!D5",
+      "Requirements Scoring!D6",
+      "Requirements Scoring!D7",
+      "Requirements Scoring!D8",
+      "Requirements Scoring!D9",
+      "Requirements Scoring!D10",
+      "Requirements Scoring!D11",
+      "Requirements Scoring!D12",
+      "Requirements Scoring!D13",
+      "Requirements Scoring!D14",
+      "Requirements Scoring!D15",
+      "Requirements Scoring!D16"
+    ],
+    "tables": {
+      "Vendor Register": [
+        [
+          "Vendor ID",
+          "Vendor Name",
+          "Contact",
+          "Evaluator",
+          "Status"
+        ],
+        [
+          "VND-001",
+          "Civic Data Works",
+          "Ada Brooks",
+          "Leah Moore",
+          "Responsive"
+        ],
+        [
+          "VND-002",
+          "Harbor Systems",
+          "Iris Chen",
+          "Leah Moore",
+          "Responsive"
+        ],
+        [
+          "VND-003",
+          "Northstar Analytics",
+          "Omar Vale",
+          "Leah Moore",
+          "Responsive"
+        ],
+        [
+          "VND-004",
+          "SignalBridge Labs",
+          "Mina Patel",
+          "Leah Moore",
+          "Responsive"
+        ],
+        [
+          "VND-005",
+          "Westport Insight",
+          "Theo Grant",
+          "Leah Moore",
+          "Nonresponsive"
+        ]
+      ],
+      "Requirements Scoring": [
+        [
+          "Requirement ID",
+          "Vendor ID",
+          "Requirement",
+          "Weight",
+          "Score"
+        ],
+        [
+          "REQ-01",
+          "VND-001",
+          "Implementation plan",
+          0.2,
+          88
+        ],
+        [
+          "REQ-02",
+          "VND-001",
+          "Security controls",
+          0.3,
+          91
+        ],
+        [
+          "REQ-03",
+          "VND-001",
+          "Support model",
+          0.5,
+          87
+        ],
+        [
+          "REQ-01",
+          "VND-002",
+          "Implementation plan",
+          0.2,
+          83
+        ],
+        [
+          "REQ-02",
+          "VND-002",
+          "Security controls",
+          0.3,
+          86
+        ],
+        [
+          "REQ-03",
+          "VND-002",
+          "Support model",
+          0.5,
+          84
+        ],
+        [
+          "REQ-01",
+          "VND-003",
+          "Implementation plan",
+          0.2,
+          92
+        ],
+        [
+          "REQ-02",
+          "VND-003",
+          "Security controls",
+          0.3,
+          94
+        ],
+        [
+          "REQ-03",
+          "VND-003",
+          "Support model",
+          0.5,
+          93
+        ],
+        [
+          "REQ-01",
+          "VND-004",
+          "Implementation plan",
+          0.2,
+          81
+        ],
+        [
+          "REQ-02",
+          "VND-004",
+          "Security controls",
+          0.3,
+          82
+        ],
+        [
+          "REQ-03",
+          "VND-004",
+          "Support model",
+          0.5,
+          80
+        ],
+        [
+          "REQ-01",
+          "VND-005",
+          "Implementation plan",
+          0.2,
+          70
+        ],
+        [
+          "REQ-02",
+          "VND-005",
+          "Security controls",
+          0.3,
+          68
+        ],
+        [
+          "REQ-03",
+          "VND-005",
+          "Support model",
+          0.5,
+          72
+        ]
+      ],
+      "Price Normalization": [
+        [
+          "Vendor ID",
+          "Vendor Name",
+          "Corrected Price",
+          "Price Score"
+        ],
+        [
+          "VND-001",
+          "Civic Data Works",
+          1188000,
+          "=MIN($C$2:$C$6)/C2*100"
+        ],
+        [
+          "VND-002",
+          "Harbor Systems",
+          1255000,
+          "=MIN($C$2:$C$6)/C3*100"
+        ],
+        [
+          "VND-003",
+          "Northstar Analytics",
+          1204000,
+          "=MIN($C$2:$C$6)/C4*100"
+        ],
+        [
+          "VND-004",
+          "SignalBridge Labs",
+          1320000,
+          "=MIN($C$2:$C$6)/C5*100"
+        ],
+        [
+          "VND-005",
+          "Westport Insight",
+          1110000,
+          "=MIN($C$2:$C$6)/C6*100"
+        ]
+      ],
+      "Conflict-of-Interest Log": [
+        [
+          "Log ID",
+          "Vendor ID",
+          "Reviewer",
+          "Disclosure",
+          "Status"
+        ],
+        [
+          "COI-001",
+          "VND-001",
+          "Leah Moore",
+          "No conflict disclosed",
+          "Cleared"
+        ],
+        [
+          "COI-002",
+          "VND-002",
+          "Leah Moore",
+          "No conflict disclosed",
+          "Cleared"
+        ],
+        [
+          "COI-003",
+          "VND-003",
+          "Leah Moore",
+          "No conflict disclosed",
+          "Cleared"
+        ],
+        [
+          "COI-004",
+          "VND-004",
+          "Leah Moore",
+          "No conflict disclosed",
+          "Cleared"
+        ],
+        [
+          "COI-005",
+          "VND-005",
+          "Leah Moore",
+          "No conflict disclosed",
+          "Cleared"
+        ]
+      ],
+      "Award Recommendation": [
+        [
+          "Rank",
+          "Recommended Vendor",
+          "Rationale",
+          "Status"
+        ],
+        [
+          1,
+          "Northstar Analytics",
+          "Highest technical score with corrected responsive status",
+          "Recommend award"
+        ],
+        [
+          2,
+          "Civic Data Works",
+          "Strong security controls and lower price",
+          "Reserve"
+        ],
+        [
+          3,
+          "Harbor Systems",
+          "Responsive but lower technical score",
+          "Reserve"
+        ]
+      ],
+      "Debrief Register": [
+        [
+          "Vendor ID",
+          "Vendor Name",
+          "Debrief Status",
+          "Debrief Link"
+        ],
+        [
+          "VND-001",
+          "Civic Data Works",
+          "Ready",
+          "Email debrief"
+        ],
+        [
+          "VND-002",
+          "Harbor Systems",
+          "Ready",
+          "Email debrief"
+        ],
+        [
+          "VND-003",
+          "Northstar Analytics",
+          "Ready",
+          "Email debrief"
+        ],
+        [
+          "VND-004",
+          "SignalBridge Labs",
+          "Ready",
+          "Email debrief"
+        ],
+        [
+          "VND-005",
+          "Westport Insight",
+          "Ready",
+          "Email debrief"
+        ]
+      ],
+      "Data Validation Guide": [
+        [
+          "Feature",
+          "Requirement"
+        ],
+        [
+          "Named range",
+          "VendorIDs = Vendor Register A2:A6"
+        ],
+        [
+          "Scoring validation",
+          "Requirements Scoring B2:B16 uses =VendorIDs"
+        ],
+        [
+          "Conflict validation",
+          "Conflict-of-Interest Log B2:B6 uses =VendorIDs"
+        ],
+        [
+          "Debrief links",
+          "Debrief Register D2:D6 uses mailto hyperlinks"
+        ]
+      ],
+      "Publication Style Guide": [
+        [
+          "Element",
+          "Requirement"
+        ],
+        [
+          "Header fill",
+          "4F2D7F"
+        ],
+        [
+          "Header font",
+          "White bold"
+        ],
+        [
+          "Body font",
+          "Aptos"
+        ],
+        [
+          "Currency format",
+          "$#,##0"
+        ],
+        [
+          "Percent format",
+          "0%"
+        ],
+        [
+          "Tab colors",
+          "Public color set applied"
+        ]
+      ],
+      "Appendix Index": [
+        [
+          "Appendix",
+          "Description",
+          "Owner",
+          "Public Status"
+        ],
+        [
+          "A",
+          "Vendor register extract",
+          "Procurement",
+          "Ready"
+        ],
+        [
+          "B",
+          "Scoring summary extract",
+          "Evaluation Panel",
+          "Ready"
+        ],
+        [
+          "C",
+          "Price normalization extract",
+          "Finance",
+          "Ready"
+        ],
+        [
+          "D",
+          "Debrief register",
+          "Procurement",
+          "Ready"
+        ]
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_013_xlsx_procurement_bid_evaluation_release"
+}

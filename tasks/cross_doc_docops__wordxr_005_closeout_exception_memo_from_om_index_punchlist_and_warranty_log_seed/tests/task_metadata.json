@@ -1,0 +1,203 @@
+{
+  "task_id": "wordxr_005",
+  "task_dir_name": "wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-metadata -> preserve-toc -> replace-handover-sections -> insert-heading2 -> update-warranty-appendix",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "supporting_input_paths": [
+    "/root/handover_fields.xlsx",
+    "/root/handover_extract.pdf",
+    "/root/warranty_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "output_filename": "wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Replace the named body sections with the correct closeout exceptions.",
+  "single_step_benchmark_instruction": "Replace the named body sections with the correct closeout exceptions, insert the appendix heading sequence, populate the exception table, highlight the overdue warranty item, and preserve section breaks and footer separation between body and appendix.",
+  "atomic_scope": "Only the metadata table, TOC field, named sections, Heading 2 insertion, appendix section header/footer, appendix table, and highlighted exception line are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the title logo intact\n- Do not replace the memo with a single-section rewrite"
+  },
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Turnover Summary",
+        "Heading 1"
+      ],
+      [
+        "Owner Preconditions",
+        "Heading 1"
+      ],
+      [
+        "Release Controls",
+        "Heading 2"
+      ],
+      [
+        "Exception Watch",
+        "Heading 1"
+      ],
+      [
+        "Warranty and O&M Index",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Turnover Summary",
+      "Owner Preconditions",
+      "Release Controls",
+      "Exception Watch",
+      "Warranty and O&M Index"
+    ],
+    "forbidden_paragraphs": [
+      "[Fill]"
+    ],
+    "paragraphs_under_headings": [
+      {
+        "heading": "Turnover Summary",
+        "exact_lines": [
+          "Transmit the final closeout set after the warranty and O&M appendix is complete."
+        ]
+      },
+      {
+        "heading": "Owner Preconditions",
+        "exact_lines": [
+          "Reserve five business days for owner review before archive release."
+        ]
+      },
+      {
+        "heading": "Release Controls",
+        "exact_lines": [
+          "Appendix D must carry a distinct owner-handover footer.",
+          "Keep the memo TOC field intact for the turnover package."
+        ]
+      },
+      {
+        "heading": "Exception Watch",
+        "exact_lines": [
+          "Do not issue the unsigned startup letter in the appendix set."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Project",
+          "0,1": "West Yard Improvements",
+          "1,0": "Owner",
+          "1,1": "River District",
+          "2,0": "Handover Window",
+          "2,1": "Week of 2025-06-09"
+        }
+      },
+      {
+        "index": 1,
+        "cells": {
+          "0,0": "Item",
+          "0,1": "Source",
+          "0,2": "Status",
+          "1,0": "Warranty Letter",
+          "1,1": "warranty_rows.docx",
+          "1,2": "Ready",
+          "2,0": "O&M Manual",
+          "2,1": "om_extract.pdf",
+          "2,2": "Ready",
+          "3,0": "Project Fields",
+          "3,1": "handover_fields.xlsx",
+          "3,2": "Ready"
+        }
+      }
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 2
+      },
+      {
+        "index": 1,
+        "rows": 4,
+        "cols": 3
+      }
+    ],
+    "style_matches": [
+      {
+        "target_text": "Transmit the final closeout set after the warranty and O&M appendix is complete.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Reserve five business days for owner review before archive release.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Do not issue the unsigned startup letter in the appendix set.",
+        "reference_text": "Reference body style anchor."
+      }
+    ],
+    "toc_present": true,
+    "section_count": 2,
+    "section_headers": [
+      {
+        "index": 0,
+        "contains": [
+          "Closeout Delivery Control | Owner Handover Memo"
+        ]
+      },
+      {
+        "index": 1,
+        "contains": [
+          "Appendix D | Warranty and O&M Index"
+        ]
+      }
+    ],
+    "section_footers": [
+      {
+        "index": 0,
+        "contains": [
+          "Main handover memo body"
+        ]
+      },
+      {
+        "index": 1,
+        "contains": [
+          "Appendix release for owner handover set"
+        ]
+      }
+    ],
+    "section_links": [
+      {
+        "index": 1,
+        "header": false,
+        "footer": false
+      }
+    ],
+    "header_contains": [
+      "Closeout Delivery Control | Owner Handover Memo",
+      "Appendix D | Warranty and O&M Index"
+    ],
+    "footer_contains": [
+      "Main handover memo body",
+      "Appendix release for owner handover set"
+    ],
+    "inline_shape_count": 1,
+    "highlighted_paragraphs": [
+      "Do not issue the unsigned startup letter in the appendix set."
+    ]
+  }
+}

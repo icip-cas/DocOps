@@ -1,0 +1,1 @@
+Finalize a board deck with a locked reference layout.

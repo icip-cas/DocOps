@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_011",
+  "task_dir_name": "pdf_011_outline_hierarchy_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "S3 Hierarchy editing",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdf_011_outline_hierarchy_seed.pdf",
+  "source_doc_path": "pdf/pdf_011_outline_hierarchy_seed.pdf",
+  "task_description_filename": "pdf_011_outline_hierarchy_seed.txt",
+  "task_description_path": "pdf/pdf_011_outline_hierarchy_seed.txt",
+  "input_path": "/root/pdf_011_outline_hierarchy_seed.pdf",
+  "output_path": "/root/submission/pdf_011_outline_hierarchy_seed.pdf",
+  "output_filename": "pdf_011_outline_hierarchy_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF already has bookmarks, but the bookmark hierarchy does not match the section structure of the document.",
+  "single_step_benchmark_instruction": "Update the PDF bookmarks so `Findings` and `Recommendations` are top-level entries, and `Site A` and `Site B` appear nested under `Findings`.",
+  "atomic_scope": "Only hierarchy editing in the PDF outline / bookmark structure is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with corrected bookmark hierarchy.",
+  "inspired_by": [
+    {
+      "title": "Looking for Best Way to Attach Files to PDF Document",
+      "url": "https://www.reddit.com/r/pdf/comments/1sl4n2w/looking_for_best_way_to_attach_files_to_pdf/"
+    },
+    {
+      "title": "Preview pdf fast or in large grid view?",
+      "url": "https://www.reddit.com/r/pdf/comments/1sijife/preview_pdf_fast_or_in_large_grid_view/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The content pages are correct, but the structural navigation layer is wrong\n- The incorrect outline is not obvious unless the PDF bookmark tree is inspected\n- A correct fix changes hierarchy without rewriting the visible document text"
+  }
+}

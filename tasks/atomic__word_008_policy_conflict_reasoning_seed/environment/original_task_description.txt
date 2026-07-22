@@ -1,0 +1,27 @@
+Task ID: word_008
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: C5 Reasoning
+Difficulty: Medium-Hard
+
+User Task Description:
+This memo draft contains procedural statements that may not all be compatible with one another.
+
+Single-Step Benchmark Instruction:
+Identify the conflict in the approval logic and reply using exactly this 4-line template:
+Statement A: ...
+Statement B: ...
+Final rule: ...
+Why: ...
+Your answer should stay document-grounded: cite the temporary waiver statement, the final correction, and the surviving finance-approval rule.
+
+Atomic Scope:
+Only document-grounded reasoning over document consistency is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Several lines are individually plausible
+- The contradiction only becomes clear after comparing multiple statements
+- A later correction changes how an earlier rule should be interpreted
+
+Expected Output Type:
+A structured, document-grounded explanation of the conflicting approval logic.

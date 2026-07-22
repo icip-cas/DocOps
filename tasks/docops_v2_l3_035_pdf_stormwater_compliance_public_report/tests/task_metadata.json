@@ -1,0 +1,157 @@
+{
+  "task_id": "docops_v2_l3_035_pdf_stormwater_compliance_public_report",
+  "task_dir_name": "docops_v2_l3_035_pdf_stormwater_compliance_public_report",
+  "doc_type": "pdf",
+  "primary_modality": "PDF",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "M1 PDF metadata",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-page-removal -> page-reorder -> correction-log-application -> public-table-rebuild -> header-band-style-migration -> metadata-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-metadata-strict",
+  "user_task_description": "Prepare a clean public stormwater compliance report from a messy internal annual-review PDF.",
+  "single_step_benchmark_instruction": "Remove internal pages, reorder public sections, apply correction-log fixes, rebuild public tables, apply explicit color-coded header bands, footer text, page numbering, and public PDF metadata.",
+  "atomic_scope": "Only the requested PDF-wide workflow edits are in scope; public compliance facts, correction facts, page order, style bands, footers, page numbering, and metadata must be preserved.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested single-PDF workflow.",
+  "input_path": "/root/docops_v2_l3_035_pdf_stormwater_compliance_public_report_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_035_pdf_stormwater_compliance_public_report_output.pdf",
+  "output_filename": "docops_v2_l3_035_pdf_stormwater_compliance_public_report_output.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "pdf",
+  "verifier_expectations": {
+    "page_count": 10,
+    "page_titles": [
+      "Riverbend Stormwater Compliance Report",
+      "Executive Compliance Summary",
+      "Permit Milestone Tracker",
+      "Outfall Monitoring Results",
+      "Corrective Action Register",
+      "Public Complaint Log",
+      "Green Infrastructure Inventory",
+      "Sampling QA Checklist",
+      "Publication Style Guide",
+      "Appendix Release Register"
+    ],
+    "footer": "Riverbend Public Stormwater Report | Permit Year 2026",
+    "metadata": {
+      "title": "Riverbend Stormwater Compliance Report - Public Release",
+      "subject": "Public stormwater compliance report for permit year 2026",
+      "author": "Riverbend Department of Water Quality",
+      "keywords": "public,stormwater,compliance,permit year 2026"
+    },
+    "header_colors": [
+      "243B53",
+      "007C89",
+      "007C89",
+      "2E7D32",
+      "C55A11",
+      "7030A0",
+      "2E7D32",
+      "2E7D32",
+      "5B6770",
+      "243B53"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "enforcement strategy",
+      "contractor dispute",
+      "resident personal phone",
+      "legal settlement note",
+      "do not release",
+      "unverified lab note",
+      "Outfal 07",
+      "E. coli 410",
+      "2026-09-01",
+      "18,000 sq ft",
+      "permit year 2025"
+    ],
+    "required_lines_by_page": {
+      "1": [
+        "Public annual compliance report",
+        "Permit year: 2026",
+        "Public release date: 2026-10-15",
+        "Prepared by Riverbend Department of Water Quality"
+      ],
+      "2": [
+        "Overall status | Substantial compliance",
+        "Public monitoring locations | 8 active outfalls",
+        "Corrective actions closed | 5 of 6",
+        "Public complaint response target | 3 business days"
+      ],
+      "3": [
+        "Permit milestone | Public due date | Status",
+        "Annual report submission | 2026-10-15 | Complete",
+        "Dry-weather screening | 2026-07-31 | Complete",
+        "Public education campaign | 2026-09-20 | Complete",
+        "Illicit discharge training | 2026-08-12 | Complete"
+      ],
+      "4": [
+        "Outfall | Parameter | Result | Public Threshold | Status",
+        "Outfall 07 | E. coli | 140 | 235 | Within threshold",
+        "Outfall 12 | Turbidity | 7 NTU | 10 NTU | Within threshold",
+        "Outfall 18 | pH | 7.4 | 6.5-8.5 | Within threshold",
+        "Outfall 22 | Oil sheen | None observed | None | Within threshold"
+      ],
+      "5": [
+        "Action ID | Corrective Action | Public Due Date | Owner | Status",
+        "CA-001 | Repair sediment control at Maple Yard | 2026-08-25 | Field Operations | Complete",
+        "CA-002 | Replace damaged inlet marker set | 2026-08-28 | Public Works | Complete",
+        "CA-003 | Update contractor spill checklist | 2026-09-05 | Compliance Office | Open",
+        "CA-004 | Add outfall inspection photo log | 2026-09-09 | Field Operations | Complete"
+      ],
+      "6": [
+        "Complaint ID | Public Category | Received | Response Status",
+        "PC-001 | Odor report near West Creek | 2026-06-03 | Closed",
+        "PC-002 | Sediment tracking near Maple Yard | 2026-07-18 | Closed",
+        "PC-003 | Standing water near school route | 2026-08-02 | Closed",
+        "PC-004 | Storm drain marking request | 2026-08-19 | In progress"
+      ],
+      "7": [
+        "Asset | Location | Public Quantity | Maintenance Status",
+        "Bioretention cells | Civic Center | 14 | Current",
+        "Green roof area | Library Annex | 18,800 sq ft | Current",
+        "Permeable pavement | Depot Lot | 42,500 sq ft | Current",
+        "Tree trench segments | River Avenue | 11 | Current"
+      ],
+      "8": [
+        "QA Item | Required Public State",
+        "Chain-of-custody forms complete | Yes",
+        "Lab duplicate within tolerance | Yes",
+        "Field blank reviewed | Yes",
+        "Corrected values verified | Yes",
+        "Unsupported lab note removed | Yes"
+      ],
+      "9": [
+        "Style element | Public requirement",
+        "Header band height | 40 points",
+        "Cover and appendix color | 243B53",
+        "Summary and permit color | 007C89",
+        "Monitoring and QA color | 2E7D32",
+        "Corrective action color | C55A11",
+        "Complaint log color | 7030A0",
+        "Footer text | Riverbend Public Stormwater Report | Permit Year 2026"
+      ],
+      "10": [
+        "Register field | Public value",
+        "Appendix A | Monitoring method summary",
+        "Appendix B | Public complaint category definitions",
+        "Appendix C | Green infrastructure asset list",
+        "Release approval | Water Quality Director"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_035_pdf_stormwater_compliance_public_report"
+}

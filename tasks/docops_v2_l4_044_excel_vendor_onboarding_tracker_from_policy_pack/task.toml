@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack"
+description = "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack - DocOps v2 final L4 task."
+authors = []
+keywords = ["excel", "cross-document", "document-processing", "c1-extraction", "c4-computation", "f2-highlighting", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["excel", "cross-document", "document-processing", "manual-expansion"]
+task_id = "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "Cross-document Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-strict-tolerant"
+composition_type = "cross-document"
+composition_pattern = "extract-policy-requirements -> map-owner-aliases -> fill-release-tracker -> restore-review-formulas -> preserve-validations-and-hidden-rule-sheet"
+atomic_operations = ["C1 Extraction", "C4 Computation", "F2 Highlighting", "S1 Insert/Delete", "S4 Table/Sheet ops"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack"
+final_index = 44
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack_input.xlsx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack_output.xlsx"
+TASK_ID = "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack"
+DOC_TYPE = "excel"
+
+[solution.env]

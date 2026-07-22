@@ -1,0 +1,31 @@
+{
+  "task_id": "pdf_008",
+  "task_dir_name": "pdf_008_milestone_layout_control_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "F3 Layout control",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdf_008_milestone_layout_control_seed.pdf",
+  "source_doc_path": "pdf/pdf_008_milestone_layout_control_seed.pdf",
+  "task_description_filename": "pdf_008_milestone_layout_control_seed.txt",
+  "task_description_path": "pdf/pdf_008_milestone_layout_control_seed.txt",
+  "input_path": "/root/pdf_008_milestone_layout_control_seed.pdf",
+  "output_path": "/root/submission/pdf_008_milestone_layout_control_seed.pdf",
+  "output_filename": "pdf_008_milestone_layout_control_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF contains three milestone callout boxes that are visually misaligned even though their content is correct.",
+  "single_step_benchmark_instruction": "Realign the three milestone boxes into one evenly spaced horizontal row beneath the title, without changing any of the box text.",
+  "atomic_scope": "Only layout control is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the milestone boxes cleanly aligned.",
+  "inspired_by": [
+    {
+      "title": "Got stuck while building a PDF editing tool.",
+      "url": "https://www.reddit.com/r/pdf/comments/1slyk16/got_stuck_while_building_a_pdf_editing_tool/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The page has a valid-looking but awkward layout rather than an obvious rendering failure\n- The target requires geometric alignment, not text rewriting\n- Text must remain unchanged while object positions move"
+  }
+}

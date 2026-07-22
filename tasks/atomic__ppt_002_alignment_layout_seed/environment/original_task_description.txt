@@ -1,0 +1,26 @@
+Task ID: ppt_002
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: F3 Layout control
+Difficulty: Easy-Medium
+
+Inspired By:
+- Title: Anyone else spending way too much time just formatting slides instead of actually thinking?
+  URL: https://www.reddit.com/r/powerpoint/comments/1ryq4ko/anyone_else_spending_way_too_much_time_just/
+
+User Task Description:
+This slide contains three content cards that are obviously misaligned and unevenly distributed.
+
+Single-Step Benchmark Instruction:
+Align the three workstream cards so they sit on a clean horizontal line with even spacing.
+
+Atomic Scope:
+Only layout/alignment is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Typography is plain
+- Colors are inconsistent
+- The deck has no master theme, but that is not the explicit request
+
+Expected Output Type:
+A revised .pptx deck with evenly aligned cards.

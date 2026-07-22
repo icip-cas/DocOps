@@ -1,0 +1,48 @@
+{
+  "task_id": "docops_v2_l3_016_xlsx_forecast_driver_cascade",
+  "task_dir_name": "docops_v2_l3_016_xlsx_forecast_driver_cascade",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "F4 Theme transfer",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 13,
+  "composition_type": "single-document",
+  "composition_pattern": "assumption-validation -> scenario-driver -> forecast-formulas -> capacity-flags -> exception-index -> dashboard-cascade -> hide-raw -> reorder -> style",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A forecast workbook needs a scenario driver that cascades through model formulas, exception review, and dashboard totals.",
+  "single_step_benchmark_instruction": "Create Forecast Model and Exception Review; use Assumptions scenario validation to drive growth, price, revenue, capacity, and capacity flags; convert the model to a native table; highlight capacity breaches; update dashboard title and formulas from the model; generate exception rows from flagged months; hide Demand Raw and Archive; reorder sheets for release; preserve assumptions as the editable driver.",
+  "atomic_scope": "Single-document workflow with coupled edits; preserve unrelated document-native structure.",
+  "expected_output_type": "A revised .xlsx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Excel formula refresh and linked outputs",
+      "url": "https://dd.reddit.com/r/excel/comments/zwdlyx/can_i_add_a_currency_format_to_a_formula/"
+    },
+    {
+      "title": "Index Match formulas in shared workbooks",
+      "url": "https://us.reddit.com/r/excel/comments/seajec/how_can_i_use_index_match_to_return_multiple/"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_016_xlsx_forecast_driver_cascade_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_016_xlsx_forecast_driver_cascade_output.xlsx",
+  "output_filename": "docops_v2_l3_016_xlsx_forecast_driver_cascade_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_016_xlsx_forecast_driver_cascade"
+}

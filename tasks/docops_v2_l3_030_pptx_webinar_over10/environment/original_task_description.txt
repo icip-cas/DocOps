@@ -1,0 +1,1 @@
+Inspired by PowerPoint users maintaining slide numbers, TOCs/agendas, and master/layout-dependent deck updates.

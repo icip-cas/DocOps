@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_002
+
+Doc type: word
+Atomic operations: S2 Reorder, C3 Generation
+Composition pattern: reorder -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This report is out of order and needs a constrained executive summary at the front.
+
+Single-step benchmark instruction:
+Reorder the document so it reads `Executive Summary -> Findings -> Next Steps -> Appendix Materials`, then place exactly three short summary lines directly under `Executive Summary` using the prefixes `Permit:`, `Supplier:`, and `Safety:` in that order.
+
+Atomic scope:
+Only the section reorder and one-paragraph executive summary generation are explicitly requested.
+
+Expected output type:
+A revised .docx document with the requested section order and one grounded summary paragraph.

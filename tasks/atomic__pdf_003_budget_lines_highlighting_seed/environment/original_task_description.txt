@@ -1,0 +1,26 @@
+Task ID: pdf_003
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: F2 Highlighting
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: How can you remove watermarks from a PDF?
+  URL: https://www.reddit.com/r/pdf/comments/1smiay5/how_can_you_remove_watermarks_from_a_pdf/
+
+User Task Description:
+This approval sheet contains several spend lines, but only some should be visually emphasized for review.
+
+Single-Step Benchmark Instruction:
+Highlight the budget lines whose amounts are strictly greater than $10,000.
+
+Atomic Scope:
+Only visual emphasis/highlighting is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Near-threshold distractors are present, including $9,900 and exactly $10,000
+- The rule is strict inequality, not greater-than-or-equal
+- The content is simple, so the difficulty comes from precise interpretation rather than document length
+
+Expected Output Type:
+A revised PDF with the correct lines highlighted.

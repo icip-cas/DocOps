@@ -1,0 +1,38 @@
+{
+  "task_id": "pdfxr_002",
+  "task_dir_name": "pdfxr_002_resubmittal_package_selective_replace_preserve_approved_pages_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-body-lines -> insert-support-pages -> delete-superseded-pages -> reorder-kept-pages -> rebuild-nested-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_002_resubmittal_package_selective_replace_preserve_approved_pages_seed.pdf",
+  "supporting_input_paths": [
+    "/root/cover_values.xlsx",
+    "/root/revision_summary.docx",
+    "/root/revision_note.pdf",
+    "/root/Revised Sheet B.pdf",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_002_resubmittal_package_selective_replace_preserve_approved_pages_seed.pdf",
+  "output_filename": "pdfxr_002_resubmittal_package_selective_replace_preserve_approved_pages_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Replace only the superseded Sheet B pages.",
+  "single_step_benchmark_instruction": "Replace only the superseded Sheet B pages, keep previously approved pages untouched, update the resubmittal cover note and page-count callout, and preserve the bookmark order in the returned package.",
+  "atomic_scope": "Only the cover lines, body lines, inserted support pages, deleted stale pages, final page order, and outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the image-bearing approved pages\n- Do not flatten the packet into regenerated plain pages"
+  }
+}

@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_008
+
+Doc type: ppt
+Atomic operations: S3 Hierarchy editing, F3 Layout control
+Composition pattern: repair-hierarchy -> align
+Difficulty: Medium-Hard
+
+User-facing goal:
+This workstream slide has both incorrect bullet nesting and uneven card alignment.
+
+Single-step benchmark instruction:
+Fix the bullet hierarchy so task-level lines are nested under the correct workstreams, then align the three workstream cards into one even row.
+
+Atomic scope:
+Only the bullet hierarchy repair and card alignment on the target slide are explicitly requested.
+
+Expected output type:
+A revised .pptx slide with corrected bullet nesting and aligned workstream cards.

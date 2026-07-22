@@ -1,0 +1,26 @@
+Task ID: excel_002
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: C4 Computation
+Difficulty: Hard
+
+Inspired By:
+- Title: Two-way XLOOKUP to return the last non-blank value at a row-column intersection
+  URL: https://www.reddit.com/r/excel/comments/1snc945/twoway_xlookup_to_return_the_last_nonblank_value/
+
+User Task Description:
+This workbook stores monthly values by year and product, with many blanks. The user wants one result cell that returns the latest available value for the selected year and selected product.
+
+Single-Step Benchmark Instruction:
+Fill the result cell on the `Selector` sheet with a formula that returns the last non-blank monthly value for the chosen product and chosen year.
+
+Atomic Scope:
+Only the selector formula is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The data layout is awkward and repeated horizontally
+- Styling is inconsistent across sheets
+- The workbook could be normalized into a cleaner table, but that is not the explicit request
+
+Expected Output Type:
+A repaired .xlsx workbook where the selector cell returns the correct last non-blank value.

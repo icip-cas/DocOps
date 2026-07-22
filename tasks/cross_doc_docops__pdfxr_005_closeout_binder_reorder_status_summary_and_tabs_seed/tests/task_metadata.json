@@ -1,0 +1,105 @@
+{
+  "task_id": "pdfxr_005",
+  "task_dir_name": "pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-warranty-lines -> delete-divider -> preserve-image-pages -> rebuild-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "supporting_input_paths": [
+    "/root/closeout_index.xlsx",
+    "/root/warranty_note.docx",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "output_filename": "pdfxr_005_closeout_binder_reorder_status_summary_and_tabs_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Reorder the binder into the requested closeout sequence.",
+  "single_step_benchmark_instruction": "Reorder the binder into the requested closeout sequence, refresh the cover status summary with exact counts, and rebuild bookmarks for O&M, Warranties, Punch List, and Training while preserving non-target manual pages.",
+  "atomic_scope": "Only the cover lines, the warranty-note lines, the divider deletion, the final page order, and the outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the image-bearing certificate and O&M pages\n- Do not regenerate the binder as plain text pages"
+  },
+  "verifier_expectations": {
+    "page_count": 4,
+    "page_titles_order": [
+      "Cover",
+      "Certificates",
+      "Warranty Notes",
+      "O&M"
+    ],
+    "cover_lines": [
+      "Certificates: 1",
+      "Warranties: 2",
+      "O&M Pages: 1"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Warranty Notes",
+        "lines": [
+          "Warranty Note 1: Vendor letter remains signed.",
+          "Warranty Note 2: Startup checklist remains attached.",
+          "Warranty Note 3: Reserve five business days for owner review."
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Draft Appendix",
+      "Draft Note",
+      "Internal Draft",
+      "Superseded Divider",
+      "Superseded Note"
+    ],
+    "outline": [
+      [
+        0,
+        "Binder"
+      ],
+      [
+        1,
+        "Cover"
+      ],
+      [
+        1,
+        "Certificates"
+      ],
+      [
+        1,
+        "Warranty Notes"
+      ],
+      [
+        1,
+        "O&M"
+      ]
+    ],
+    "page_image_mins": [
+      {
+        "page_title": "Cover",
+        "min_images": 1
+      },
+      {
+        "page_title": "Certificates",
+        "min_images": 1
+      },
+      {
+        "page_title": "O&M",
+        "min_images": 1
+      }
+    ],
+    "theme_colors_any": [
+      "F3EEE7"
+    ]
+  }
+}

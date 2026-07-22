@@ -1,0 +1,26 @@
+Task ID: word_005
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: C1 Extraction
+Difficulty: Hard
+
+Inspired By:
+- Title: How much has Copilot changed the way word docs get edited these days?
+  URL: https://www.reddit.com/r/word/comments/1skxkx3/how_much_has_copilot_changed_the_way_word_docs/
+
+User Task Description:
+This meeting-minutes draft contains several proposed dates and ownership notes, but some were superseded later in the document.
+
+Single-Step Benchmark Instruction:
+Extract the final approved shutdown date and the final action owner for the vendor contact list.
+
+Atomic Scope:
+Only information extraction is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Earlier values are plausible but outdated
+- Corrections appear later and are phrased narratively, not in a clean table
+- There are near-miss distractors like tentative and fallback dates
+
+Expected Output Type:
+A concise extraction of the two requested fields.

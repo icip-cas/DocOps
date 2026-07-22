@@ -1,0 +1,244 @@
+{
+  "task_id": "docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker",
+  "task_dir_name": "docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "inspection-observation-filtering -> external-response-letter-generation -> internal-commitment-tracker-generation -> evidence-boundary-enforcement -> cross-output-observation-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_input.docx",
+  "supporting_input_paths": [
+    "/root/inspection_observation_log.xlsx",
+    "/root/sponsor_comment_resolution_note.docx",
+    "/root/inspection_response_guidance.pdf",
+    "/root/evidence_index_packet.pdf"
+  ],
+  "output_paths": {
+    "response_letter": "/root/submission/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_response_letter.docx",
+    "tracker": "/root/submission/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_response_letter.docx",
+  "output_filename": "docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A site inspection response letter and internal commitment tracker must be prepared from a draft letter, observation log, sponsor comments, guidance excerpt, and evidence packet while excluding internal-only patient/randomization material from the external letter.",
+  "single_step_benchmark_instruction": "Finalize the external inspection response letter and create site_commitment_tracker.xlsx. Include only OBS-01, OBS-02, and OBS-04 in the letter; keep OBS-03 only in the internal tracker; expand owner aliases, reconcile evidence IDs and due dates, preserve a real TOC and highlighted urgent commitments in the letter, and preserve Excel formulas/tables/validation/hidden rules.",
+  "atomic_scope": "Cross-document, multi-output workflow with Word external-release boundary and Excel internal tracker controls.",
+  "expected_output_type": "A revised .docx response letter and .xlsx commitment tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Inspection response and CAPA tracker workflows require observation-by-observation corrective action, evidence, and timelines",
+      "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations"
+    },
+    {
+      "title": "Community-style pain point: response letters and spreadsheet trackers drift when internal findings must be excluded from external packages",
+      "url": "local:DocumentBenchmark manual L4 scenario design"
+    }
+  ],
+  "verifier_expectations": {
+    "response_output": "/root/submission/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_response_letter.docx",
+    "tracker_output": "/root/submission/docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker_tracker.xlsx",
+    "heading_order": [
+      "Site Inspection Response Letter",
+      "Response Summary",
+      "Observation-by-Observation Response",
+      "Evidence Boundary",
+      "Closing Commitments"
+    ],
+    "required_paragraphs": [
+      "This response addresses OBS-01, OBS-02, and OBS-04 for external submission.",
+      "Internal-only observation OBS-03 is retained in the commitment tracker and excluded from this response letter.",
+      "Publishable evidence is limited to E-101A, E-101B, E-102A, and E-104A.",
+      "Patient initials, randomization notes, and internal sponsor comments must not be included in the external response.",
+      "The internal tracker records four commitments, while the external letter includes three publishable observation responses."
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Notes - Remove",
+      "patient initials and randomization note excerpts",
+      "E-103A",
+      "CMT-03"
+    ],
+    "header_contains": "Publishable observations: 3",
+    "footer_contains": "site_commitment_tracker.xlsx",
+    "response_rows": [
+      [
+        "OBS-01",
+        "Training records were incomplete for protocol deviation escalation.",
+        "CAP-101",
+        "E-101A; E-101B",
+        "2026-08-15"
+      ],
+      [
+        "OBS-02",
+        "Temperature excursion review lacked documented QA approval.",
+        "CAP-102",
+        "E-102A",
+        "2026-08-22"
+      ],
+      [
+        "OBS-04",
+        "Electronic signature review did not include delegated backup reviewers.",
+        "CAP-104",
+        "E-104A",
+        "2026-09-05"
+      ]
+    ],
+    "highlight_texts": [
+      "Urgent commitment: OBS-01 training completion evidence is due by 2026-08-15.",
+      "Urgent commitment: OBS-02 QA approval addendum remains open until the reviewer signature is filed."
+    ],
+    "tracker_sheet_order": [
+      "Commitment Tracker",
+      "Evidence Review",
+      "Rules"
+    ],
+    "tracker_rows": [
+      [
+        "CMT-01",
+        "OBS-01",
+        "CAP-101",
+        "Retrain deviation escalation owners and file completion roster.",
+        "Priya Shah",
+        "Quality",
+        "2026-08-15",
+        "Open",
+        "E-101A; E-101B",
+        "Yes"
+      ],
+      [
+        "CMT-02",
+        "OBS-02",
+        "CAP-102",
+        "Complete QA approval addendum for excursion review.",
+        "Mateo Cruz",
+        "QA",
+        "2026-08-22",
+        "Open",
+        "E-102A",
+        "Yes"
+      ],
+      [
+        "CMT-03",
+        "OBS-03",
+        "CAP-103",
+        "Investigate internal-only randomization note handling.",
+        "Noah Patel",
+        "Clinical Ops",
+        "2026-08-30",
+        "Internal",
+        "E-103A",
+        "No"
+      ],
+      [
+        "CMT-04",
+        "OBS-04",
+        "CAP-104",
+        "Expand e-signature review to delegated backup reviewers.",
+        "Lena Ortiz",
+        "Records",
+        "2026-09-05",
+        "Watch",
+        "E-104A",
+        "Yes"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "E-101A",
+        "OBS-01",
+        "Training completion roster",
+        "Publishable",
+        "Verified"
+      ],
+      [
+        "E-101B",
+        "OBS-01",
+        "Deviation escalation job aid",
+        "Publishable",
+        "Verified"
+      ],
+      [
+        "E-102A",
+        "OBS-02",
+        "QA approval addendum",
+        "Publishable",
+        "Pending QA signature"
+      ],
+      [
+        "E-103A",
+        "OBS-03",
+        "Patient initials and randomization note",
+        "Internal Only",
+        "Verified"
+      ],
+      [
+        "E-104A",
+        "OBS-04",
+        "Delegation log review extract",
+        "Publishable",
+        "Verified"
+      ]
+    ],
+    "tracker_table_ref": "A1:L5",
+    "evidence_table_ref": "A1:F6",
+    "formula_cells": {
+      "Commitment Tracker!K2": "=IF(J2=\"Yes\",\"IN LETTER\",\"INTERNAL\")",
+      "Commitment Tracker!K3": "=IF(J3=\"Yes\",\"IN LETTER\",\"INTERNAL\")",
+      "Commitment Tracker!K4": "=IF(J4=\"Yes\",\"IN LETTER\",\"INTERNAL\")",
+      "Commitment Tracker!K5": "=IF(J5=\"Yes\",\"IN LETTER\",\"INTERNAL\")",
+      "Commitment Tracker!L2": "=IF(G2<=\"2026-08-22\",\"Near-term\",\"Later\")",
+      "Commitment Tracker!L3": "=IF(G3<=\"2026-08-22\",\"Near-term\",\"Later\")",
+      "Commitment Tracker!L4": "=IF(G4<=\"2026-08-22\",\"Near-term\",\"Later\")",
+      "Commitment Tracker!L5": "=IF(G5<=\"2026-08-22\",\"Near-term\",\"Later\")",
+      "Evidence Review!F2": "=IF(AND(D2=\"Publishable\",E2<>\"Internal Only\"),\"May Cite\",\"Do Not Cite\")",
+      "Evidence Review!F3": "=IF(AND(D3=\"Publishable\",E3<>\"Internal Only\"),\"May Cite\",\"Do Not Cite\")",
+      "Evidence Review!F4": "=IF(AND(D4=\"Publishable\",E4<>\"Internal Only\"),\"May Cite\",\"Do Not Cite\")",
+      "Evidence Review!F5": "=IF(AND(D5=\"Publishable\",E5<>\"Internal Only\"),\"May Cite\",\"Do Not Cite\")",
+      "Evidence Review!F6": "=IF(AND(D6=\"Publishable\",E6<>\"Internal Only\"),\"May Cite\",\"Do Not Cite\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "status_choices",
+      "publish_choices"
+    ],
+    "data_validation_ranges": {
+      "Commitment Tracker": [
+        "H2:H5",
+        "J2:J5"
+      ]
+    },
+    "highlight_rows": [
+      2,
+      3,
+      4
+    ],
+    "public_observation_ids": [
+      "OBS-01",
+      "OBS-02",
+      "OBS-04"
+    ],
+    "internal_observation_ids": [
+      "OBS-03"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_067_word_xlsx_site_inspection_response_and_commitment_tracker"
+}

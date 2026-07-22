@@ -1,0 +1,104 @@
+{
+  "task_id": "pptwf_001",
+  "task_dir_name": "pptwf_001_board_deck_locked_layout_finalize_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "S1 Insert/Delete",
+    "C3 Generation",
+    "F1 Style consistency",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "reorder -> insert -> restyle",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Finalize a board deck with a locked reference layout.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the Draft Parking Lot slide, restore the live slide order from Board Memo through the locked reference slide, keep the Action Tracker table values unchanged, and do not modify the locked reference slide.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pptx deck that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+  "output_path": "/root/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+  "output_filename": "pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "slide_title_contains_order": [
+      "Board Memo",
+      "Metrics",
+      "Decision Snapshot",
+      "Action Tracker",
+      "Closing",
+      "Layout Reference - Decision Card"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Board Memo",
+        "required_lines": [
+          "Workflow-locked board update deck",
+          "Keep the decision reference slide unchanged."
+        ]
+      },
+      {
+        "slide_title": "Metrics",
+        "required_lines": [
+          "Open Actions 5",
+          "Late Items 2",
+          "Completed 8"
+        ]
+      },
+      {
+        "slide_title": "Decision Snapshot",
+        "required_lines": [
+          "Decision A",
+          "Release the revised FAQ.",
+          "Decision B",
+          "Approve the corrected attendance count.",
+          "Decision C",
+          "Post the packet by Friday."
+        ]
+      },
+      {
+        "slide_title": "Action Tracker",
+        "required_lines": [
+          "Keep this live table after the inserted decision slide."
+        ]
+      },
+      {
+        "slide_title": "Closing",
+        "required_lines": [
+          "Thank you",
+          "Keep the closing slide at the end of the live storyline."
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Action Tracker",
+        "cells": {
+          "0,0": "Owner",
+          "0,1": "Action",
+          "0,2": "Due",
+          "1,0": "Mia Torres",
+          "1,1": "Release FAQ",
+          "1,2": "2025-02-14",
+          "2,0": "Devin Park",
+          "2,1": "Post packet",
+          "2,2": "2025-02-15"
+        }
+      }
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Decision Card"
+    ],
+    "absent_slide_titles": [
+      "Draft Parking Lot"
+    ]
+  }
+}

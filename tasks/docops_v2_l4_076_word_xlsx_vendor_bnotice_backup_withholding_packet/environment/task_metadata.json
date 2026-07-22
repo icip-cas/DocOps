@@ -1,0 +1,540 @@
+{
+  "task_id": "docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet",
+  "task_dir_name": "docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx), Excel (.xlsx), and PDF",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/irs_cp2100a_notice.pdf",
+    "/root/irs_backup_withholding_rules.pdf",
+    "/root/corrected_w9_packets.docx",
+    "/root/vendor_master_and_payment_run.xlsx",
+    "/root/internal_ap_risk_note.docx"
+  ],
+  "output_paths": {
+    "action_memo": "/root/submission/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_action_memo.docx",
+    "withholding_tracker": "/root/submission/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_withholding_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_action_memo.docx",
+  "output_filename": "vendor_bnotice_action_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-formula-privacy-strict",
+  "user_task_description": "Create a vendor B-notice action memo and backup withholding tracker from IRS notice, corrected W-9s, vendor master, payment run, and private AP notes while applying backup withholding correctly and excluding internal risk commentary.",
+  "single_step_benchmark_instruction": "Create vendor_bnotice_action_memo.docx and backup_withholding_tracker.xlsx. Process CP2100A first B-notice workflow, update corrected TINs, apply 24% backup withholding only to Mesa Field Services, preserve workbook formulas/tables/validation/hidden sheets, and exclude internal AP risk notes.",
+  "expected_output_type": "A .docx action memo and .xlsx backup withholding tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "IRS Backup Withholding guidance",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/backup-withholding"
+    },
+    {
+      "title": "IRS Publication 1281, Backup Withholding for Missing and Incorrect Name/TIN(s)",
+      "url": "https://www.irs.gov/forms-pubs/about-publication-1281"
+    },
+    {
+      "title": "Accounts payable vendor master, W-9, and 1099 correction workflows",
+      "url": "https://www.irs.gov/forms-pubs/about-form-w-9"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_action_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet_withholding_tracker.xlsx",
+    "doc_heading_order": [
+      "Vendor B-Notice and Backup Withholding Action Memo",
+      "IRS Notice Summary",
+      "Vendor Determinations",
+      "Backup Withholding Setup",
+      "1099 Master Data Corrections",
+      "Communications and Deadlines",
+      "Privacy Boundary"
+    ],
+    "doc_required": [
+      "Notice CP2100A dated 2026-06-15",
+      "first B-notice workflow",
+      "backup withholding rate is 24%",
+      "Orion Creative LLC",
+      "TIN corrected to 88-4519021",
+      "no backup withholding for Orion after the validated W-9 update",
+      "Mesa Field Services",
+      "no valid W-9 received by 2026-07-12",
+      "withhold $2,016.00 from Mesa Field Services invoice INV-7781",
+      "net payable is $6,384.00",
+      "Brightline Legal PLLC",
+      "TIN corrected to 27-6401180",
+      "send B-notice packet by 2026-06-30",
+      "do not disclose internal fraud-watch or vendor-risk comments"
+    ],
+    "doc_forbidden": [
+      "fraud watch",
+      "blacklist",
+      "slow pay them",
+      "embarrassing vendor issue",
+      "do not tell procurement",
+      "hold all invoices forever",
+      "private AP risk note"
+    ],
+    "doc_header": "AP TAX COMPLIANCE - LIMITED DISTRIBUTION",
+    "doc_footer": "Prepared for AP/tax action; internal risk notes excluded.",
+    "decision_rows": [
+      [
+        "Vendor",
+        "Action",
+        "Backup Withholding",
+        "Reason"
+      ],
+      [
+        "Orion Creative LLC",
+        "Update EIN to 88-4519021 and release normal payment",
+        "$0.00",
+        "Validated corrected W-9 received 2026-06-24"
+      ],
+      [
+        "Mesa Field Services",
+        "Apply backup withholding to reportable July payment",
+        "$2,016.00",
+        "No valid W-9 received by 2026-07-12"
+      ],
+      [
+        "Brightline Legal PLLC",
+        "Update EIN to 27-6401180 and retain B-notice evidence",
+        "$0.00",
+        "Corrected W-9 received before July payment run"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "IRS notice",
+        "CP2100A",
+        "IRS notice PDF",
+        "Matched"
+      ],
+      [
+        "Notice date",
+        "2026-06-15",
+        "IRS notice PDF",
+        "Matched"
+      ],
+      [
+        "B-notice packet due",
+        "2026-06-30",
+        "AP calendar",
+        "Pending"
+      ],
+      [
+        "Backup withholding rate",
+        0.24,
+        "IRS rule excerpt",
+        "Matched"
+      ],
+      [
+        "Vendors on notice",
+        3,
+        "IRS notice PDF",
+        "Matched"
+      ],
+      [
+        "Validated corrected W-9s",
+        2,
+        "W-9 packets",
+        "Counted"
+      ],
+      [
+        "Vendors requiring July withholding",
+        1,
+        "Vendor Actions",
+        "Calculated"
+      ],
+      [
+        "Total reportable July payments",
+        "='Payment Decisions'!D6",
+        "Payment Decisions",
+        "Calculated"
+      ],
+      [
+        "Total backup withholding",
+        "='Payment Decisions'!E6",
+        "Payment Decisions",
+        "Calculated"
+      ],
+      [
+        "Net payable after withholding",
+        "='Payment Decisions'!F6",
+        "Payment Decisions",
+        "Calculated"
+      ],
+      [
+        "Packet ready",
+        "=IF(AND(B8=1,B10=2016),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "vendor_rows": [
+      [
+        "Vendor ID",
+        "Vendor",
+        "Notice Reason",
+        "Current Master TIN",
+        "Corrected TIN",
+        "W-9 Status",
+        "Action",
+        "Public Note"
+      ],
+      [
+        "V-1042",
+        "Orion Creative LLC",
+        "Name/TIN mismatch",
+        "88-4519020",
+        "88-4519021",
+        "Valid W-9 received 2026-06-24",
+        "Update master; no withholding",
+        "Corrected before July payment run"
+      ],
+      [
+        "V-2198",
+        "Mesa Field Services",
+        "Missing TIN",
+        "Missing",
+        "",
+        "No valid W-9 by 2026-07-12",
+        "Apply 24% backup withholding",
+        "First B-notice sent; withholding active"
+      ],
+      [
+        "V-3301",
+        "Brightline Legal PLLC",
+        "Name/TIN mismatch",
+        "27-6401188",
+        "27-6401180",
+        "Valid W-9 received 2026-06-25",
+        "Update master; no withholding",
+        "Corrected before July payment run"
+      ]
+    ],
+    "payment_rows": [
+      [
+        "Vendor ID",
+        "Vendor",
+        "Invoice",
+        "Gross Reportable Payment",
+        "Backup Withholding",
+        "Net Payable",
+        "Decision"
+      ],
+      [
+        "V-1042",
+        "Orion Creative LLC",
+        "INV-6142",
+        12500,
+        "=D2*0",
+        "=D2-E2",
+        "Pay normally"
+      ],
+      [
+        "V-2198",
+        "Mesa Field Services",
+        "INV-7781",
+        8400,
+        "=D3*0.24",
+        "=D3-E3",
+        "Withhold 24% and remit"
+      ],
+      [
+        "V-3301",
+        "Brightline Legal PLLC",
+        "INV-9034",
+        6100,
+        "=D4*0",
+        "=D4-E4",
+        "Pay normally"
+      ],
+      [
+        "V-4410",
+        "Northstar Supply Corp",
+        "INV-5530",
+        2700,
+        "=D5*0",
+        "=D5-E5",
+        "Corporation not on CP2100A list"
+      ],
+      [
+        "TOTAL",
+        "",
+        "",
+        "=SUM(D2:D5)",
+        "=SUM(E2:E5)",
+        "=SUM(F2:F5)",
+        "Control total"
+      ]
+    ],
+    "comm_rows": [
+      [
+        "Item",
+        "Owner",
+        "Due Date",
+        "Status",
+        "Evidence"
+      ],
+      [
+        "Send first B-notice packet",
+        "AP Tax",
+        "2026-06-30",
+        "Pending",
+        "Notice log"
+      ],
+      [
+        "Update Orion EIN",
+        "Vendor Master",
+        "2026-06-26",
+        "Ready",
+        "Corrected W-9"
+      ],
+      [
+        "Update Brightline EIN",
+        "Vendor Master",
+        "2026-06-26",
+        "Ready",
+        "Corrected W-9"
+      ],
+      [
+        "Set Mesa backup withholding",
+        "Payroll/AP Systems",
+        "2026-07-12",
+        "Ready",
+        "No-response log"
+      ],
+      [
+        "Remit backup withholding",
+        "Tax Ops",
+        "2026-07-31",
+        "Pending",
+        "Deposit calendar"
+      ]
+    ],
+    "tin_rows": [
+      [
+        "Vendor ID",
+        "Old Name/TIN",
+        "Corrected Name/TIN",
+        "1099 Box",
+        "Status"
+      ],
+      [
+        "V-1042",
+        "Orion Creative LLC / 88-4519020",
+        "Orion Creative LLC / 88-4519021",
+        "Box 1 NEC",
+        "Corrected"
+      ],
+      [
+        "V-2198",
+        "Mesa Field Services / Missing",
+        "Pending valid Form W-9",
+        "Box 1 NEC",
+        "Backup withholding active"
+      ],
+      [
+        "V-3301",
+        "Brightline Legal PLLC / 27-6401188",
+        "Brightline Legal PLLC / 27-6401180",
+        "Box 1 NEC",
+        "Corrected"
+      ]
+    ],
+    "privacy_rows": [
+      [
+        "Check",
+        "Rule",
+        "Result",
+        "Owner"
+      ],
+      [
+        "Internal risk notes",
+        "Do not include private vendor-risk commentary",
+        "Pass",
+        "AP Tax"
+      ],
+      [
+        "Procurement disclosure",
+        "Share only vendor master correction status",
+        "Pass",
+        "Vendor Master"
+      ],
+      [
+        "Payment controls",
+        "Apply only documented tax actions to affected payments",
+        "Pass",
+        "AP"
+      ],
+      [
+        "Vendor communications",
+        "Use neutral IRS B-notice language",
+        "Pass",
+        "AP Tax"
+      ]
+    ],
+    "raw_notice_rows": [
+      [
+        "Vendor ID",
+        "Notice Vendor Name",
+        "Notice TIN",
+        "Reason",
+        "Notice Date"
+      ],
+      [
+        "V-1042",
+        "Orion Creative LLC",
+        "88-4519020",
+        "Name/TIN mismatch",
+        "2026-06-15"
+      ],
+      [
+        "V-2198",
+        "Mesa Field Services",
+        "Missing",
+        "Missing TIN",
+        "2026-06-15"
+      ],
+      [
+        "V-3301",
+        "Brightline Legal PLLC",
+        "27-6401188",
+        "Name/TIN mismatch",
+        "2026-06-15"
+      ]
+    ],
+    "rules_rows": [
+      [
+        "Rule",
+        "Value"
+      ],
+      [
+        "Backup withholding rate",
+        0.24
+      ],
+      [
+        "First B-notice packet due",
+        "2026-06-30"
+      ],
+      [
+        "July payment run",
+        "2026-07-12"
+      ],
+      [
+        "Corrected W-9 clears withholding",
+        "Yes"
+      ]
+    ],
+    "sheet_order": [
+      "Action Summary",
+      "Vendor Actions",
+      "Payment Decisions",
+      "Communications Log",
+      "TIN Corrections",
+      "Privacy Review",
+      "Raw IRS Notice",
+      "Rules"
+    ],
+    "tables": {
+      "Action Summary": [
+        "tblActionSummary",
+        "A1:D12"
+      ],
+      "Vendor Actions": [
+        "tblVendorActions",
+        "A1:H4"
+      ],
+      "Payment Decisions": [
+        "tblPaymentDecisions",
+        "A1:G6"
+      ],
+      "Communications Log": [
+        "tblCommunicationsLog",
+        "A1:E6"
+      ],
+      "TIN Corrections": [
+        "tblTinCorrections",
+        "A1:E4"
+      ],
+      "Privacy Review": [
+        "tblPrivacyReview",
+        "A1:D5"
+      ],
+      "Raw IRS Notice": [
+        "tblRawIRSNotice",
+        "A1:E4"
+      ],
+      "Rules": [
+        "tblRules",
+        "A1:B5"
+      ]
+    },
+    "formula_cells": {
+      "Action Summary!B9": "='Payment Decisions'!D6",
+      "Action Summary!B10": "='Payment Decisions'!E6",
+      "Action Summary!B11": "='Payment Decisions'!F6",
+      "Action Summary!B12": "=IF(AND(B8=1,B10=2016),\"Ready\",\"Hold\")",
+      "Payment Decisions!E2": "=D2*0",
+      "Payment Decisions!F2": "=D2-E2",
+      "Payment Decisions!E3": "=D3*0.24",
+      "Payment Decisions!F3": "=D3-E3",
+      "Payment Decisions!E4": "=D4*0",
+      "Payment Decisions!F4": "=D4-E4",
+      "Payment Decisions!E5": "=D5*0",
+      "Payment Decisions!F5": "=D5-E5",
+      "Payment Decisions!D6": "=SUM(D2:D5)",
+      "Payment Decisions!E6": "=SUM(E2:E5)",
+      "Payment Decisions!F6": "=SUM(F2:F5)"
+    },
+    "hidden_sheets": [
+      "Raw IRS Notice",
+      "Rules"
+    ],
+    "defined_names": [
+      "BackupWithholdingRate",
+      "TotalBackupWithholding",
+      "MesaNetPayable"
+    ],
+    "print_areas": {
+      "Action Summary": "A1:D12",
+      "Vendor Actions": "A1:H4",
+      "Payment Decisions": "A1:G6",
+      "Communications Log": "A1:E6",
+      "TIN Corrections": "A1:E4",
+      "Privacy Review": "A1:D5"
+    },
+    "data_validation": {
+      "Vendor Actions": [
+        "G2:G4"
+      ],
+      "Communications Log": [
+        "D2:D6"
+      ],
+      "Privacy Review": [
+        "C2:C5"
+      ]
+    },
+    "forbidden_public": [
+      "fraud watch",
+      "blacklist",
+      "slow pay them",
+      "embarrassing vendor issue",
+      "do not tell procurement",
+      "hold all invoices forever",
+      "private AP risk note"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_076_word_xlsx_vendor_bnotice_backup_withholding_packet"
+}

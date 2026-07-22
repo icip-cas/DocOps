@@ -1,0 +1,26 @@
+{
+  "task_id": "ppt_009",
+  "task_dir_name": "ppt_009_metric_conflict_reasoning_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "C5 Reasoning",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "ppt_009_metric_conflict_reasoning_seed.pptx",
+  "source_doc_path": "ppt/ppt_009_metric_conflict_reasoning_seed.pptx",
+  "task_description_filename": "ppt_009_metric_conflict_reasoning_seed.txt",
+  "task_description_path": "ppt/ppt_009_metric_conflict_reasoning_seed.txt",
+  "input_path": "/root/ppt_009_metric_conflict_reasoning_seed.pptx",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck contains KPI commentary that may not be internally consistent.",
+  "single_step_benchmark_instruction": "Identify the inconsistency in the delay reporting and explain why the slides do not fully agree.",
+  "atomic_scope": "Only reasoning over internal consistency is explicitly requested in this task.",
+  "expected_output_type": "A concise explanation of the inconsistency.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The inconsistency depends on baseline interpretation, not just number mismatch\n- All slides sound plausible on their own\n- The correct explanation requires cross-slide reasoning"
+  }
+}

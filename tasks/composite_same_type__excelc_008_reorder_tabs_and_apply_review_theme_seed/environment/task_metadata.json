@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_008",
+  "task_dir_name": "excelc_008_reorder_tabs_and_apply_review_theme_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> retheme",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_008_reorder_tabs_and_apply_review_theme_seed.xlsx",
+  "source_doc_path": "excel/excelc_008_reorder_tabs_and_apply_review_theme_seed.xlsx",
+  "task_description_filename": "excelc_008_reorder_tabs_and_apply_review_theme_seed.txt",
+  "task_description_path": "excel/excelc_008_reorder_tabs_and_apply_review_theme_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_008_reorder_tabs_and_apply_review_theme_seed.xlsx",
+  "output_path": "/root/submission/excelc_008_reorder_tabs_and_apply_review_theme_seed.xlsx",
+  "output_filename": "excelc_008_reorder_tabs_and_apply_review_theme_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This review pack should follow a clean tab order and use a cohesive blue theme.",
+  "single_step_benchmark_instruction": "Reorder the workbook tabs to `Cover -> Metrics -> Risks -> Notes`, then apply a muted blue theme to the sheet title bands and visible tab colors.",
+  "atomic_scope": "Only the requested sheet reorder and visual theme transfer are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with the target tab order and a blue review theme.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- No content generation is needed\n- Underlying values should remain unchanged"
+  }
+}

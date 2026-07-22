@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed"
+description = "pptwf_001_board_deck_locked_layout_finalize_seed - single-document workflow task for DocumentBenchmark."
+authors = []
+keywords = ["ppt", "single-document", "workflow", "slides"]
+
+[metadata]
+difficulty_level = "L3-single-document-workflow"
+benchmark_split = "single_doc_workflow"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["ppt", "single-document", "workflow", "slides"]
+task_id = "pptwf_001"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Single-document Workflow"
+source_type = "Single-document workflow V1"
+verifier_mode = "semantic-strict"
+composition_type = "single-document"
+composition_pattern = "reorder -> insert -> restyle"
+atomic_operations = ["S2 Reorder", "S1 Insert/Delete", "C3 Generation", "F1 Style consistency", "F4 Theme transfer"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptwf_001_board_deck_locked_layout_finalize_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx"
+TASK_ID = "pptwf_001"
+DOC_TYPE = "ppt"
+
+[solution.env]

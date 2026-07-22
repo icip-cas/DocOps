@@ -1,0 +1,1 @@
+Create a release-ready public community resilience operations playbook from a messy single Word draft. The task is intentionally single-document but workflow-level: clean drafting noise, rebuild section hierarchy, convert scattered operational notes into native tables, preserve public content, remove private notes, and normalize release header/footer.

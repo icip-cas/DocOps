@@ -1,0 +1,26 @@
+Task ID: excel_003
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: F2 Highlighting
+Difficulty: Easy-Medium
+
+Inspired By:
+- Title: Conditional formatting based on a different cell's value
+  URL: https://www.reddit.com/r/excel/comments/1sndxcd/conditional_formatting_based_on_a_different_cells/
+
+User Task Description:
+This tracker sheet has risk scores, but urgent items do not stand out visually.
+
+Single-Step Benchmark Instruction:
+Visually highlight all rows where the `Risk Score` is greater than or equal to 85.
+
+Atomic Scope:
+Only highlighting/emphasis is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Column widths and layout are rough
+- Status logic could be improved
+- Dates are not visually prioritized, but that is not the explicit request
+
+Expected Output Type:
+A revised .xlsx workbook where high-risk rows are clearly highlighted.

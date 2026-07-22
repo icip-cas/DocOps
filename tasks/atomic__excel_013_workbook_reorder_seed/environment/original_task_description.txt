@@ -1,0 +1,26 @@
+Task ID: excel_013
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: S2 Reorder
+Difficulty: Medium
+
+Inspired By:
+- Title: Sorting and rearranging data using Pivot Table
+  URL: https://www.reddit.com/r/excel/comments/1sn86sl/sorting_and_rearranging_data_using_pivot_table/
+
+User Task Description:
+This workbook contains the right worksheets but they are arranged in an inconvenient order.
+
+Single-Step Benchmark Instruction:
+Reorder the worksheets so the tab order becomes: `Instructions` -> `Lookup` -> `Detail_Q1` -> `Detail_Q2` -> `Summary`.
+
+Atomic Scope:
+Only worksheet reordering is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The current order is plausible enough that a shallow pass may miss the issue
+- Several sheet names are similar and easy to misplace
+- The task is structural and should not trigger content edits
+
+Expected Output Type:
+A revised .xlsx workbook with the requested tab order.

@@ -1,0 +1,37 @@
+{
+  "task_id": "wordxr_005",
+  "task_dir_name": "wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-metadata -> preserve-toc -> replace-handover-sections -> insert-heading2 -> update-warranty-appendix",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "supporting_input_paths": [
+    "/root/handover_fields.xlsx",
+    "/root/handover_extract.pdf",
+    "/root/warranty_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "output_filename": "wordxr_005_closeout_exception_memo_from_om_index_punchlist_and_warranty_log_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Replace the named body sections with the correct closeout exceptions.",
+  "single_step_benchmark_instruction": "Replace the named body sections with the correct closeout exceptions, insert the appendix heading sequence, populate the exception table, highlight the overdue warranty item, and preserve section breaks and footer separation between body and appendix.",
+  "atomic_scope": "Only the metadata table, TOC field, named sections, Heading 2 insertion, appendix section header/footer, appendix table, and highlighted exception line are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the title logo intact\n- Do not replace the memo with a single-section rewrite"
+  }
+}

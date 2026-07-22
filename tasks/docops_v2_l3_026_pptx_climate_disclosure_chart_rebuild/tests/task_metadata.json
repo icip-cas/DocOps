@@ -1,0 +1,289 @@
+{
+  "task_id": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+  "input_path": "/root/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+  "output_extension": ".pptx",
+  "verifier_expectations": {
+    "slide_titles": [
+      "Northline Climate Disclosure Briefing",
+      "Disclosure Boundary",
+      "Corrected Emissions Inventory",
+      "Emissions Trend Chart",
+      "Assurance Status",
+      "Transition Action Plan",
+      "Supplier Engagement Register",
+      "Board Actions",
+      "Publication Style Guide"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "unreleased forecast",
+      "facility closure rumor",
+      "supplier dispute",
+      "personal phone",
+      "legal hold",
+      "do not publish",
+      "private assurance finding",
+      "14,800",
+      "42%",
+      "2023",
+      "Kara Sato",
+      "Submittd"
+    ],
+    "required_text_by_slide": {
+      "Northline Climate Disclosure Briefing": [
+        "Public climate disclosure briefing",
+        "FY2026",
+        "Prepared for the Sustainability and Audit Committee"
+      ],
+      "Disclosure Boundary": [
+        "Boundary uses corrected base year 2024.",
+        "Scope 2 location-based value corrected to 13,480 tCO2e.",
+        "Renewable electricity value corrected to 48%."
+      ],
+      "Emissions Trend Chart": [
+        "Corrected annual totals",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "Publication Style Guide": [
+        "Title slide background",
+        "Content slide background",
+        "Accent rectangle",
+        "Table header"
+      ]
+    },
+    "tables": {
+      "Corrected Emissions Inventory": [
+        [
+          "Category",
+          "FY2026 public value",
+          "Assurance status"
+        ],
+        [
+          "Scope 1 emissions",
+          "8,940 tCO2e",
+          "Submitted"
+        ],
+        [
+          "Scope 2 location-based",
+          "13,480 tCO2e",
+          "Submitted"
+        ],
+        [
+          "Scope 3 screened categories",
+          "13 categories",
+          "Submitted"
+        ],
+        [
+          "Renewable electricity",
+          "48%",
+          "Submitted"
+        ],
+        [
+          "Base year",
+          "2024",
+          "Submitted"
+        ]
+      ],
+      "Assurance Status": [
+        [
+          "Area",
+          "Owner",
+          "Status",
+          "Public Note"
+        ],
+        [
+          "Boundary review",
+          "Kara Saito",
+          "Submitted",
+          "Operational boundary confirmed"
+        ],
+        [
+          "Energy data tie-out",
+          "Facilities",
+          "Submitted",
+          "Utility records reconciled"
+        ],
+        [
+          "Supplier screen",
+          "Procurement",
+          "Submitted",
+          "Top suppliers reviewed"
+        ],
+        [
+          "Board review",
+          "Corporate Secretary",
+          "Submitted",
+          "Board action deck ready"
+        ]
+      ],
+      "Transition Action Plan": [
+        [
+          "Action",
+          "Owner",
+          "Due",
+          "Status"
+        ],
+        [
+          "Complete renewable electricity procurement review",
+          "Facilities",
+          "2026-07-15",
+          "On track"
+        ],
+        [
+          "Publish supplier engagement criteria",
+          "Procurement",
+          "2026-08-01",
+          "On track"
+        ],
+        [
+          "Update base-year methodology note",
+          "Sustainability",
+          "2026-07-01",
+          "Submitted"
+        ],
+        [
+          "Add quarterly emissions dashboard export",
+          "Data Office",
+          "2026-08-15",
+          "On track"
+        ]
+      ],
+      "Supplier Engagement Register": [
+        [
+          "Supplier Tier",
+          "Public Engagement",
+          "Coverage",
+          "Status"
+        ],
+        [
+          "Tier 1",
+          "Climate data request issued",
+          "82%",
+          "Active"
+        ],
+        [
+          "Tier 2",
+          "Spend-based screening complete",
+          "67%",
+          "Active"
+        ],
+        [
+          "Logistics",
+          "Fuel data review scheduled",
+          "54%",
+          "Active"
+        ],
+        [
+          "Facilities",
+          "Renewable energy certificate review",
+          "100%",
+          "Submitted"
+        ]
+      ],
+      "Board Actions": [
+        [
+          "Action",
+          "Owner",
+          "Due"
+        ],
+        [
+          "Approve corrected FY2026 climate disclosure packet",
+          "Board Chair",
+          "2026-06-30"
+        ],
+        [
+          "Receive assurance closeout update",
+          "Kara Saito",
+          "2026-07-10"
+        ],
+        [
+          "Review transition action dashboard",
+          "Sustainability Committee",
+          "2026-08-15"
+        ],
+        [
+          "Confirm publication archive",
+          "Corporate Secretary",
+          "2026-07-05"
+        ]
+      ],
+      "Publication Style Guide": [
+        [
+          "Element",
+          "Required public style"
+        ],
+        [
+          "Title slide background",
+          "0F172A"
+        ],
+        [
+          "Content slide background",
+          "F8FAFC"
+        ],
+        [
+          "Accent rectangle",
+          "22C55E"
+        ],
+        [
+          "Table header",
+          "166534 with white bold text"
+        ]
+      ]
+    },
+    "chart": {
+      "slide_title": "Emissions Trend Chart",
+      "chart_type": "COLUMN_CLUSTERED",
+      "categories": [
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "series_name": "Total emissions tCO2e",
+      "values": [
+        42800,
+        39750,
+        36220
+      ]
+    },
+    "style": {
+      "title_background": "0F172A",
+      "content_background": "F8FAFC",
+      "title_font": "Aptos Display",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "0F172A",
+      "accent_fill": "22C55E",
+      "table_header_fill": "166534",
+      "table_header_font": "FFFFFF",
+      "footer_text": "Northline Public Climate Disclosure | FY2026"
+    },
+    "speaker_notes": [
+      "Public note: introduce the FY2026 climate disclosure briefing.",
+      "Public note: explain the corrected disclosure boundary and base year.",
+      "Public note: summarize corrected FY2026 inventory values.",
+      "Public note: describe corrected annual emissions totals.",
+      "Public note: confirm assurance status and public owners.",
+      "Public note: review transition actions in sequence.",
+      "Public note: describe supplier engagement coverage.",
+      "Public note: present board actions and due dates.",
+      "Public note: confirm publication styling requirements."
+    ],
+    "source_must_contain": [
+      "DRAFT",
+      "INTERNAL",
+      "unreleased forecast",
+      "personal phone",
+      "private assurance finding",
+      "14,800",
+      "Submittd"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+  "task_dir_name": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild"
+}

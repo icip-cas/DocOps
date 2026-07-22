@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_004
+
+Doc type: word
+Atomic operations: S4 Table/Sheet ops, C2 Editing
+Composition pattern: restructure -> rewrite
+Difficulty: Medium-Hard
+
+User-facing goal:
+This action tracker section needs a richer table and more professional notes.
+
+Single-step benchmark instruction:
+Insert a new `Status` column between `Owner` and `Due Date` in the action table, then rewrite only the two draft note paragraphs into a labeled pair where the first starts `Schedule risk:` and the second starts `Client update:`.
+
+Atomic scope:
+Only the requested table-column insertion and the two targeted note rewrites are explicitly requested.
+
+Expected output type:
+A revised .docx document with the new table column and polished draft notes.

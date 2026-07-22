@@ -1,0 +1,1 @@
+Inspired by Word users struggling with TOC, appendices, and policy/manual release tables staying synchronized.

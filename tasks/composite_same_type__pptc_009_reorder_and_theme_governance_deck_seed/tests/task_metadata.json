@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_009",
+  "task_dir_name": "pptc_009_reorder_and_theme_governance_deck_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> retheme",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_009_reorder_and_theme_governance_deck_seed.pptx",
+  "source_doc_path": "ppt/pptc_009_reorder_and_theme_governance_deck_seed.pptx",
+  "task_description_filename": "pptc_009_reorder_and_theme_governance_deck_seed.txt",
+  "task_description_path": "ppt/pptc_009_reorder_and_theme_governance_deck_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_009_reorder_and_theme_governance_deck_seed.pptx",
+  "output_path": "/root/submission/pptc_009_reorder_and_theme_governance_deck_seed.pptx",
+  "output_filename": "pptc_009_reorder_and_theme_governance_deck_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This governance deck should follow a cleaner story order and use one navy theme.",
+  "single_step_benchmark_instruction": "Reorder the slides to `Overview -> Risks -> Actions -> Appendix`, then apply a unified navy theme by turning the title text boxes into navy title bars and the main body text boxes into matching light-blue cards across the deck.",
+  "atomic_scope": "Only the requested slide reorder and navy theme transfer are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with corrected order and a navy visual theme.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not add new slides\n- Keep slide text unchanged"
+  }
+}

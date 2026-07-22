@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed"
+description = "pptxr_003 - cross-document document-ops task for DocumentBenchmark."
+authors = []
+keywords = ["ppt", "cross-document", "document-processing", "c1-extraction", "c2-editing", "s1-insert/delete", "f1-style-consistency", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["ppt", "cross-document", "document-processing", "docops-v7-realworld", "ppt"]
+task_id = "pptxr_003"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "replace-summary -> refresh-risk-table -> duplicate-reference-slide -> insert-evidence-highlights -> update-answer-grid -> preserve-references"
+atomic_operations = ["C1 Extraction", "C2 Editing", "C3 Generation", "F1 Style consistency", "S1 Insert/Delete", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed.pptx"
+TASK_ID = "pptxr_003"
+DOC_TYPE = "ppt"
+
+[solution.env]

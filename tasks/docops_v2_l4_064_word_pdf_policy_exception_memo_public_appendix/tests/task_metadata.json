@@ -1,0 +1,185 @@
+{
+  "task_id": "docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix",
+  "task_dir_name": "docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix",
+  "doc_type": "word+pdf",
+  "primary_modality": "Word (.docx) and PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "exception-log-reconciliation -> policy-memo-public-boundary -> public-appendix-generation -> cross-output-exception-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_input.docx",
+  "supporting_input_paths": [
+    "/root/policy_exception_log.xlsx",
+    "/root/policy_source_excerpt.pdf",
+    "/root/approval_public_release_note.docx",
+    "/root/evidence_appendix_draft.pdf"
+  ],
+  "output_paths": {
+    "memo": "/root/submission/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_memo.docx",
+    "appendix": "/root/submission/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_appendix.pdf"
+  },
+  "output_path": "/root/submission/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_memo.docx",
+  "output_filename": "docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A policy exception release memo and public appendix must be generated from an exception log, policy source, approval note, and evidence appendix while excluding internal-only legal details.",
+  "single_step_benchmark_instruction": "Create the final memo and public appendix. Reconcile exception status and blocking counts, include only publishable exceptions in the public appendix, exclude closed/internal-only material, preserve memo TOC/sections/tables/highlights, and keep DOCX and PDF exception IDs consistent.",
+  "atomic_scope": "Cross-document, multi-output workflow with DOCX structure preservation and public PDF release boundary.",
+  "expected_output_type": "A revised .docx memo and .pdf public appendix saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "L3 reddit/community policy exception cascade task",
+      "url": "local:harbor_tasks_l3_reddit_batch5_coupled/wordwf_reddit_007_policy_exception_cascade_seed"
+    },
+    {
+      "title": "Table of contents pain point",
+      "url": "https://www.reddit.com/r/MicrosoftWord/comments/1de3nu5"
+    }
+  ],
+  "verifier_expectations": {
+    "memo_output": "/root/submission/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_memo.docx",
+    "appendix_output": "/root/submission/docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix_appendix.pdf",
+    "heading_order": [
+      "Policy Exception Release Memo",
+      "Scope",
+      "Release Matrix",
+      "Exception Register",
+      "Appendix A - Public Release Notes"
+    ],
+    "required_paragraphs": [
+      "This release covers open and watch policy exceptions for the August control review package.",
+      "The public appendix must include EX-102, EX-118, and EX-131 only.",
+      "Closed exception EX-144 and legal-only strategy details are excluded from the public appendix."
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Notes - Remove",
+      "Internal legal strategy",
+      "compensating-control details"
+    ],
+    "release_matrix": [
+      [
+        "CTRL-1",
+        "EX-102",
+        "1",
+        "Hold"
+      ],
+      [
+        "CTRL-2",
+        "EX-118",
+        "0",
+        "Watch"
+      ],
+      [
+        "CTRL-4",
+        "EX-131",
+        "1",
+        "Hold"
+      ]
+    ],
+    "exception_rows": [
+      [
+        "EX-102",
+        "CTRL-1",
+        "MFA exception for legacy vendor portal",
+        "Identity",
+        "Temporary Waiver",
+        "Open",
+        "Rosa Iyer",
+        "2026-09-15",
+        "Blocking"
+      ],
+      [
+        "EX-118",
+        "CTRL-2",
+        "Quarterly backup restore evidence delayed",
+        "Infrastructure",
+        "Accepted Risk",
+        "Watch",
+        "Noah Patel",
+        "2026-08-30",
+        "Non-blocking"
+      ],
+      [
+        "EX-131",
+        "CTRL-4",
+        "Privileged access review evidence incomplete",
+        "Security Operations",
+        "Remediation Required",
+        "Open",
+        "Ava Chen",
+        "2026-08-22",
+        "Blocking"
+      ],
+      [
+        "EX-144",
+        "CTRL-5",
+        "Vendor offboarding attestation late",
+        "Vendor Risk",
+        "Closed",
+        "Closed",
+        "Mina Zhou",
+        "2026-07-19",
+        "Resolved"
+      ]
+    ],
+    "highlight_texts": [
+      "Blocking exception: EX-102 remains open until the legacy vendor portal MFA waiver expires.",
+      "Blocking exception: EX-131 requires privileged access review evidence before release clearance."
+    ],
+    "toc_present": true,
+    "section_count_min": 2,
+    "header_contains": "Open blocking exceptions: 2",
+    "footer_contains": "Release status: Final",
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Public Policy Exception Appendix",
+      "EX-102 MFA Waiver",
+      "EX-118 Backup Evidence",
+      "EX-131 Access Review"
+    ],
+    "pdf_required": [
+      "Published Exception Count 3",
+      "Open Blocking Count 2",
+      "EX-102",
+      "CTRL-1",
+      "EX-118",
+      "CTRL-2",
+      "EX-131",
+      "CTRL-4"
+    ],
+    "pdf_forbidden": [
+      "EX-144",
+      "internal legal strategy",
+      "compensating control"
+    ],
+    "outline_titles": [
+      "Public Appendix Cover",
+      "Published Exceptions",
+      "EX-102 MFA Waiver",
+      "EX-118 Backup Evidence",
+      "EX-131 Access Review"
+    ],
+    "public_exception_ids": [
+      "EX-102",
+      "EX-118",
+      "EX-131"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_064_word_pdf_policy_exception_memo_public_appendix"
+}

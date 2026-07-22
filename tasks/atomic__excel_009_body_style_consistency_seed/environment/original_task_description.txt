@@ -1,0 +1,26 @@
+Task ID: excel_009
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: F1 Style consistency
+Difficulty: Medium
+
+Inspired By:
+- Title: Cells in table won't update format
+  URL: https://www.reddit.com/r/excel/comments/1snfjl6/cells_in_table_wont_update_format/
+
+User Task Description:
+This workbook contains a candidate table where the body rows use inconsistent fonts, emphasis, and fills.
+
+Single-Step Benchmark Instruction:
+On the `Hiring Tracker` sheet, make rows `4:10` use one consistent body style that matches row `4`, while leaving the title row, header row, and note in row `13` unchanged.
+
+Atomic Scope:
+Only formatting consistency is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Several rows look intentionally emphasized even though they are inconsistent noise
+- The instruction references a style exemplar rather than listing every formatting attribute
+- Non-target rows should remain untouched
+
+Expected Output Type:
+A revised .xlsx workbook with normalized body-row styling.

@@ -1,0 +1,1 @@
+Clean the contract schedule draft while preserving the listed clauses and schedule values.

@@ -1,0 +1,70 @@
+{
+  "task_id": "pdfwf_003",
+  "task_dir_name": "pdfwf_003_policy_appendix_rebuild_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "delete -> insert-index -> bookmark-rebuild",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Rebuild a policy appendix PDF in one file.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the obsolete appendix page, keep the Index page, restore the live pages to Cover, Index, Policy A, Policy B, and Appendix, and add bookmarks for each live page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pdf packet that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pdfwf_003_policy_appendix_rebuild_seed.pdf",
+  "output_path": "/root/submission/pdfwf_003_policy_appendix_rebuild_seed.pdf",
+  "output_filename": "pdfwf_003_policy_appendix_rebuild_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "page_count": 5,
+    "page_title_contains_order": [
+      "Cover",
+      "Index",
+      "Policy A",
+      "Policy B",
+      "Appendix"
+    ],
+    "cover_lines": [
+      "Policy Appendix",
+      "Revised binder",
+      "Edition 2"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Index",
+        "lines": [
+          "Index page for the revised appendix."
+        ]
+      },
+      {
+        "page_title": "Appendix",
+        "lines": [
+          "obsolete appendix has been removed"
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Obsolete Appendix"
+    ],
+    "outline_contains_order": [
+      "Cover",
+      "Index",
+      "Policy A",
+      "Policy B",
+      "Appendix"
+    ],
+    "theme_colors_any": []
+  }
+}

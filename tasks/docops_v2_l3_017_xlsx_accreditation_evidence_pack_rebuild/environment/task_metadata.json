@@ -1,0 +1,598 @@
+{
+  "task_id": "docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild",
+  "task_dir_name": "docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Formula construction",
+    "F2 Style migration",
+    "F3 Conditional formatting",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-sheet-removal -> sheet-reorder -> correction-log-application -> public-table-rebuild -> formula-rebuild -> tab-style-migration -> heatmap-style",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-formula-strict",
+  "user_task_description": "Prepare a clean accreditation evidence package workbook from a messy internal review workbook.",
+  "single_step_benchmark_instruction": "Remove internal sheets, reorder and rebuild public accreditation sheets, apply correction-log fixes, reconstruct formulas, apply public tab colors, apply table styling, and preserve a risk heatmap style.",
+  "atomic_scope": "Only the requested workbook-wide workflow edits are in scope; public evidence, correction, formula, sheet order, tab color, number format, and style facts must be preserved.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested single-workbook workflow.",
+  "input_path": "/root/docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild_output.xlsx",
+  "output_filename": "docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "spreadsheet",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Executive Summary",
+      "Evidence Register",
+      "Standards Matrix",
+      "Finding Tracker",
+      "Owner Workplan",
+      "Risk Heatmap",
+      "Citation Cleanup Log",
+      "Publication Style Guide",
+      "Appendix Index"
+    ],
+    "tab_colors": {
+      "Executive Summary": "1B4D3E",
+      "Evidence Register": "70AD47",
+      "Standards Matrix": "4472C4",
+      "Finding Tracker": "C00000",
+      "Owner Workplan": "ED7D31",
+      "Risk Heatmap": "7030A0",
+      "Citation Cleanup Log": "A5A5A5",
+      "Publication Style Guide": "1B4D3E",
+      "Appendix Index": "4472C4"
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "board-room dispute",
+      "reviewer personal phone",
+      "donor sensitivity note",
+      "grievance rumor",
+      "do not publish",
+      "legal hold"
+    ],
+    "header_fill": "1B4D3E",
+    "header_font": "FFFFFF",
+    "body_font": "Aptos",
+    "summary_title_fill": "1B4D3E",
+    "date_format": "yyyy-mm-dd",
+    "percent_format": "0%",
+    "summary_cells": {
+      "A1": "Accreditation Evidence Package",
+      "A3": "Publish Date",
+      "B3": "2026-08-15",
+      "A4": "Evidence Items",
+      "B4": "=COUNTA('Evidence Register'!A2:A13)",
+      "A5": "Open Findings",
+      "B5": "=COUNTIF('Finding Tracker'!F2:F9,\"Open\")",
+      "A6": "Workplan Days Remaining",
+      "B6": "=SUM('Owner Workplan'!G2:G9)",
+      "A7": "High Risks",
+      "B7": "=COUNTIF('Risk Heatmap'!D2:D7,\"High\")",
+      "A8": "Average Evidence Completeness",
+      "B8": "=AVERAGE('Evidence Register'!G2:G13)"
+    },
+    "evidence_rows": [
+      [
+        "Evidence ID",
+        "Standard",
+        "Evidence Title",
+        "Owner",
+        "Source Unit",
+        "Publish Date",
+        "Completeness",
+        "Public Status"
+      ],
+      [
+        "EV-001",
+        "Standard 1.A",
+        "Mission review minutes",
+        "Dr. Mina Zhou",
+        "President's Office",
+        "2026-08-15",
+        1,
+        "Ready"
+      ],
+      [
+        "EV-002",
+        "Standard 1.B",
+        "Student learning outcomes map",
+        "Nolan Price",
+        "Academic Affairs",
+        "2026-08-15",
+        0.95,
+        "Ready"
+      ],
+      [
+        "EV-003",
+        "Standard 2.B.1",
+        "Advising caseload analysis",
+        "Priya Raman",
+        "Student Success",
+        "2026-08-15",
+        0.9,
+        "Ready"
+      ],
+      [
+        "EV-004",
+        "Standard 2.C",
+        "Faculty credential audit",
+        "Lena Brooks",
+        "Human Resources",
+        "2026-08-15",
+        0.85,
+        "Ready"
+      ],
+      [
+        "EV-005",
+        "Standard 3.A",
+        "Budget allocation model",
+        "Evan Hart",
+        "Finance",
+        "2026-08-15",
+        0.8,
+        "Ready"
+      ],
+      [
+        "EV-006",
+        "Standard 3.B",
+        "Facilities renewal plan",
+        "Marta Singh",
+        "Facilities",
+        "2026-08-15",
+        0.75,
+        "Ready"
+      ],
+      [
+        "EV-007",
+        "Standard 4.A",
+        "Assessment cycle dashboard",
+        "Iris Chen",
+        "Institutional Research",
+        "2026-08-15",
+        0.88,
+        "Ready"
+      ],
+      [
+        "EV-008",
+        "Standard 4.B",
+        "Program review calendar",
+        "Sofia Grant",
+        "Academic Affairs",
+        "2026-08-15",
+        0.92,
+        "Ready"
+      ],
+      [
+        "EV-009",
+        "Standard 5.A",
+        "Student support usage report",
+        "Omar Lee",
+        "Student Success",
+        "2026-08-15",
+        0.86,
+        "Ready"
+      ],
+      [
+        "EV-010",
+        "Standard 5.B",
+        "Technology access inventory",
+        "Theo Wang",
+        "Information Technology",
+        "2026-08-15",
+        0.82,
+        "Ready"
+      ],
+      [
+        "EV-011",
+        "Standard 6.A",
+        "Governance handbook extract",
+        "Maya Patel",
+        "Board Office",
+        "2026-08-15",
+        0.78,
+        "Ready"
+      ],
+      [
+        "EV-012",
+        "Standard 6.B",
+        "Accreditation response calendar",
+        "Dr. Mina Zhou",
+        "Accreditation Office",
+        "2026-08-15",
+        1,
+        "Ready"
+      ]
+    ],
+    "standards_rows": [
+      [
+        "Standard",
+        "Evidence Count",
+        "Ready Count",
+        "Average Completeness",
+        "Status"
+      ],
+      [
+        "Standard 1.A",
+        "=COUNTIF('Evidence Register'!$B:$B,A2)",
+        "=COUNTIFS('Evidence Register'!$B:$B,A2,'Evidence Register'!$H:$H,\"Ready\")",
+        "=AVERAGEIF('Evidence Register'!$B:$B,A2,'Evidence Register'!$G:$G)",
+        "Ready"
+      ],
+      [
+        "Standard 1.B",
+        "=COUNTIF('Evidence Register'!$B:$B,A3)",
+        "=COUNTIFS('Evidence Register'!$B:$B,A3,'Evidence Register'!$H:$H,\"Ready\")",
+        "=AVERAGEIF('Evidence Register'!$B:$B,A3,'Evidence Register'!$G:$G)",
+        "Ready"
+      ],
+      [
+        "Standard 2.B.1",
+        "=COUNTIF('Evidence Register'!$B:$B,A4)",
+        "=COUNTIFS('Evidence Register'!$B:$B,A4,'Evidence Register'!$H:$H,\"Ready\")",
+        "=AVERAGEIF('Evidence Register'!$B:$B,A4,'Evidence Register'!$G:$G)",
+        "Ready"
+      ],
+      [
+        "Standard 3.A",
+        "=COUNTIF('Evidence Register'!$B:$B,A5)",
+        "=COUNTIFS('Evidence Register'!$B:$B,A5,'Evidence Register'!$H:$H,\"Ready\")",
+        "=AVERAGEIF('Evidence Register'!$B:$B,A5,'Evidence Register'!$G:$G)",
+        "Ready"
+      ],
+      [
+        "Standard 6.B",
+        "=COUNTIF('Evidence Register'!$B:$B,A6)",
+        "=COUNTIFS('Evidence Register'!$B:$B,A6,'Evidence Register'!$H:$H,\"Ready\")",
+        "=AVERAGEIF('Evidence Register'!$B:$B,A6,'Evidence Register'!$G:$G)",
+        "Ready"
+      ]
+    ],
+    "finding_rows": [
+      [
+        "Finding ID",
+        "Finding",
+        "Standard",
+        "Owner",
+        "Due Date",
+        "Status"
+      ],
+      [
+        "F-001",
+        "Clarify advising evidence narrative",
+        "Standard 2.B.1",
+        "Priya Raman",
+        "2026-08-20",
+        "Open"
+      ],
+      [
+        "F-002",
+        "Add budget model source note",
+        "Standard 3.A",
+        "Evan Hart",
+        "2026-08-21",
+        "Open"
+      ],
+      [
+        "F-003",
+        "Confirm facilities renewal year labels",
+        "Standard 3.B",
+        "Marta Singh",
+        "2026-08-22",
+        "Open"
+      ],
+      [
+        "F-004",
+        "Align governance appendix title",
+        "Standard 6.A",
+        "Maya Patel",
+        "2026-08-18",
+        "Closed"
+      ],
+      [
+        "F-005",
+        "Confirm dashboard export date",
+        "Standard 4.A",
+        "Iris Chen",
+        "2026-08-19",
+        "Closed"
+      ],
+      [
+        "F-006",
+        "Review technology access caption",
+        "Standard 5.B",
+        "Theo Wang",
+        "2026-08-23",
+        "Open"
+      ],
+      [
+        "F-007",
+        "Validate response calendar links",
+        "Standard 6.B",
+        "Dr. Mina Zhou",
+        "2026-08-24",
+        "Open"
+      ],
+      [
+        "F-008",
+        "Finalize publication checklist",
+        "Standard 1.A",
+        "Nolan Price",
+        "2026-08-19",
+        "Closed"
+      ]
+    ],
+    "workplan_rows": [
+      [
+        "Task ID",
+        "Task",
+        "Owner",
+        "Related Finding",
+        "Start Date",
+        "Due Date",
+        "Days Remaining",
+        "Status"
+      ],
+      [
+        "T-001",
+        "Update advising narrative",
+        "Priya Raman",
+        "F-001",
+        "2026-08-15",
+        "2026-08-20",
+        "=F2-DATE(2026,8,15)",
+        "Active"
+      ],
+      [
+        "T-002",
+        "Insert finance source note",
+        "Evan Hart",
+        "F-002",
+        "2026-08-15",
+        "2026-08-21",
+        "=F3-DATE(2026,8,15)",
+        "Active"
+      ],
+      [
+        "T-003",
+        "Correct facilities year labels",
+        "Marta Singh",
+        "F-003",
+        "2026-08-15",
+        "2026-08-22",
+        "=F4-DATE(2026,8,15)",
+        "Active"
+      ],
+      [
+        "T-004",
+        "Close governance appendix review",
+        "Maya Patel",
+        "F-004",
+        "2026-08-15",
+        "2026-08-18",
+        "=F5-DATE(2026,8,15)",
+        "Complete"
+      ],
+      [
+        "T-005",
+        "Check dashboard export date",
+        "Iris Chen",
+        "F-005",
+        "2026-08-15",
+        "2026-08-19",
+        "=F6-DATE(2026,8,15)",
+        "Complete"
+      ],
+      [
+        "T-006",
+        "Revise access caption",
+        "Theo Wang",
+        "F-006",
+        "2026-08-15",
+        "2026-08-23",
+        "=F7-DATE(2026,8,15)",
+        "Active"
+      ],
+      [
+        "T-007",
+        "Validate calendar links",
+        "Dr. Mina Zhou",
+        "F-007",
+        "2026-08-15",
+        "2026-08-24",
+        "=F8-DATE(2026,8,15)",
+        "Active"
+      ],
+      [
+        "T-008",
+        "Finalize publication checklist",
+        "Nolan Price",
+        "F-008",
+        "2026-08-15",
+        "2026-08-19",
+        "=F9-DATE(2026,8,15)",
+        "Complete"
+      ]
+    ],
+    "risk_rows": [
+      [
+        "Risk ID",
+        "Risk",
+        "Score",
+        "Level",
+        "Mitigation"
+      ],
+      [
+        "R-001",
+        "Evidence owner availability",
+        4,
+        "High",
+        "Backup owner assigned"
+      ],
+      [
+        "R-002",
+        "Broken citation links",
+        3,
+        "Medium",
+        "Nightly link check"
+      ],
+      [
+        "R-003",
+        "Late budget source note",
+        3,
+        "Medium",
+        "Finance review block"
+      ],
+      [
+        "R-004",
+        "Appendix naming mismatch",
+        2,
+        "Low",
+        "Publication checklist"
+      ],
+      [
+        "R-005",
+        "Reviewer question turnaround",
+        4,
+        "High",
+        "Daily response huddle"
+      ],
+      [
+        "R-006",
+        "Dashboard export lag",
+        2,
+        "Low",
+        "Scheduled export owner"
+      ]
+    ],
+    "citation_rows": [
+      [
+        "Correction ID",
+        "Field",
+        "Old Value",
+        "Corrected Value",
+        "Applied"
+      ],
+      [
+        "COR-001",
+        "Standard",
+        "Standard 2.B",
+        "Standard 2.B.1",
+        "Yes"
+      ],
+      [
+        "COR-002",
+        "Spelling",
+        "Acredidation",
+        "Accreditation",
+        "Yes"
+      ],
+      [
+        "COR-003",
+        "Owner",
+        "Dr. Mina Cho",
+        "Dr. Mina Zhou",
+        "Yes"
+      ],
+      [
+        "COR-004",
+        "Risk",
+        "Risk score 5",
+        "Risk score 4",
+        "Yes"
+      ],
+      [
+        "COR-005",
+        "Publish Date",
+        "2026-08-01",
+        "2026-08-15",
+        "Yes"
+      ]
+    ],
+    "style_rows": [
+      [
+        "Element",
+        "Requirement"
+      ],
+      [
+        "Header fill",
+        "1B4D3E"
+      ],
+      [
+        "Header font",
+        "White bold"
+      ],
+      [
+        "Body font",
+        "Aptos"
+      ],
+      [
+        "Tab colors",
+        "Public color set applied"
+      ],
+      [
+        "Risk heatmap",
+        "High C00000, Medium F4B183, Low 70AD47"
+      ],
+      [
+        "Date format",
+        "yyyy-mm-dd"
+      ],
+      [
+        "Percent format",
+        "0%"
+      ]
+    ],
+    "appendix_rows": [
+      [
+        "Appendix",
+        "Description",
+        "Owner",
+        "Public Status"
+      ],
+      [
+        "A",
+        "Mission and governance evidence",
+        "Maya Patel",
+        "Ready"
+      ],
+      [
+        "B",
+        "Student learning and support evidence",
+        "Nolan Price",
+        "Ready"
+      ],
+      [
+        "C",
+        "Resource planning evidence",
+        "Evan Hart",
+        "Ready"
+      ],
+      [
+        "D",
+        "Assessment and improvement evidence",
+        "Iris Chen",
+        "Ready"
+      ]
+    ],
+    "risk_level_fills": {
+      "High": "C00000",
+      "Medium": "F4B183",
+      "Low": "70AD47"
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_017_xlsx_accreditation_evidence_pack_rebuild"
+}

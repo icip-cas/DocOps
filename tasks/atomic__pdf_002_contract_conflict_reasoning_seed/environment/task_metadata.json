@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_002",
+  "task_dir_name": "pdf_002_contract_conflict_reasoning_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "C5 Reasoning",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdf_002_contract_conflict_reasoning_seed.pdf",
+  "source_doc_path": "pdf/pdf_002_contract_conflict_reasoning_seed.pdf",
+  "task_description_filename": "pdf_002_contract_conflict_reasoning_seed.txt",
+  "task_description_path": "pdf/pdf_002_contract_conflict_reasoning_seed.txt",
+  "input_path": "/root/pdf_002_contract_conflict_reasoning_seed.pdf",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This contract excerpt contains payment clauses and schedule notes that may not agree with each other.",
+  "single_step_benchmark_instruction": "Identify the conflict in the payment terms and explain which clauses or schedule entries are inconsistent with one another.",
+  "atomic_scope": "Only reasoning over internal document consistency is explicitly requested in this task.",
+  "expected_output_type": "A concise explanation of the conflicting provisions.",
+  "inspired_by": [
+    {
+      "title": "How do you edit a pdf document while keeping everything the same font and layout exactly?",
+      "url": "https://www.reddit.com/r/pdf/comments/1snrzd5/how_do_you_edit_a_pdf_document_while_keeping/"
+    },
+    {
+      "title": "Automatic Redaction Tools",
+      "url": "https://www.reddit.com/r/pdf/comments/1s3kg1q/automatic_redaction_tools/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The PDF mixes clause text with schedule summaries\n- There is no explicit correction note inside the contract body\n- The layout is slightly messy and could be reorganized, but that is not the explicit request"
+  }
+}

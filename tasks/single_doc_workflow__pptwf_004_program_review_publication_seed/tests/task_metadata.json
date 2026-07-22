@@ -1,0 +1,85 @@
+{
+  "task_id": "pptwf_004",
+  "task_dir_name": "pptwf_004_program_review_publication_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "F3 Layout control",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "summary-refresh -> reorder -> callout-conversion",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Publish a program review deck.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the Superseded Summary slide, restore the live slide order from Program Review through the locked reference slide, and do not modify the locked reference slide.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pptx deck that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pptwf_004_program_review_publication_seed.pptx",
+  "output_path": "/root/submission/pptwf_004_program_review_publication_seed.pptx",
+  "output_filename": "pptwf_004_program_review_publication_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "slide_title_contains_order": [
+      "Program Review",
+      "Summary",
+      "Risk Slide",
+      "Timeline",
+      "Closing",
+      "Layout Reference - Callout"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Program Review",
+        "required_lines": [
+          "Workflow-locked publication deck",
+          "Keep the reference slide unchanged."
+        ]
+      },
+      {
+        "slide_title": "Summary",
+        "required_lines": [
+          "The program is ready for publication.",
+          "All open items have been reduced."
+        ]
+      },
+      {
+        "slide_title": "Risk Slide",
+        "required_lines": [
+          "Risk 1 remains visible.",
+          "Risk 2 has been closed."
+        ]
+      },
+      {
+        "slide_title": "Timeline",
+        "required_lines": [
+          "Milestone A",
+          "Milestone B",
+          "Milestone C"
+        ]
+      },
+      {
+        "slide_title": "Closing",
+        "required_lines": [
+          "Thanks",
+          "The closing slide remains last."
+        ]
+      }
+    ],
+    "slide_tables": [],
+    "reference_slides_match_input": [
+      "Layout Reference - Callout"
+    ],
+    "absent_slide_titles": [
+      "Superseded Summary"
+    ]
+  }
+}

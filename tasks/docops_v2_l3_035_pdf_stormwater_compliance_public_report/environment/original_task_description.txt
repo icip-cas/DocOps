@@ -1,0 +1,1 @@
+Regenerated L3 single-PDF workflow seed: rebuild a messy internal stormwater annual-review PDF into a clean public compliance report by removing internal pages, applying correction-log fixes, rebuilding public sections, applying explicit header-band style migration, adding public footer and page numbering, and cleaning PDF metadata. All content is synthetic.

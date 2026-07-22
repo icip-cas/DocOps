@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__single_doc_workflow__excelwf_004_capex_register_cleanup_seed"
+description = "excelwf_004_capex_register_cleanup_seed - single-document workflow task for DocumentBenchmark."
+authors = []
+keywords = ["excel", "single-document", "workflow", "workbook"]
+
+[metadata]
+difficulty_level = "L3-single-document-workflow"
+benchmark_split = "single_doc_workflow"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["excel", "single-document", "workflow", "workbook"]
+task_id = "excelwf_004"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "Single-document Workflow"
+source_type = "Single-document workflow V1"
+verifier_mode = "semantic-strict"
+composition_type = "single-document"
+composition_pattern = "schema-normalization -> formula-fill -> risk-sort"
+atomic_operations = ["S4 Table/Sheet ops", "C4 Computation", "F1 Style consistency", "S2 Reorder"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/excelwf_004_capex_register_cleanup_seed.xlsx"
+OUTPUT_PATH = "/root/submission/excelwf_004_capex_register_cleanup_seed.xlsx"
+TASK_ID = "excelwf_004"
+DOC_TYPE = "excel"
+
+[solution.env]

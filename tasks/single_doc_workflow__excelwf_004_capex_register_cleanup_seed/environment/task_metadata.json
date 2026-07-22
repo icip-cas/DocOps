@@ -1,0 +1,75 @@
+{
+  "task_id": "excelwf_004",
+  "task_dir_name": "excelwf_004_capex_register_cleanup_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S4 Table/Sheet ops",
+    "C4 Computation",
+    "F1 Style consistency",
+    "S2 Reorder"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "schema-normalization -> formula-fill -> risk-sort",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean up a capex register workbook.",
+  "single_step_benchmark_instruction": "Insert the missing owner and status columns, compute the late-day formulas, convert the register into a formal table named CapexRegister, add status dropdowns to the live rows, and sort the register by risk so the workbook is publication ready.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/excelwf_004_capex_register_cleanup_seed.xlsx",
+  "output_path": "/root/submission/excelwf_004_capex_register_cleanup_seed.xlsx",
+  "output_filename": "excelwf_004_capex_register_cleanup_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Capex Register",
+      "Owners",
+      "Archive"
+    ],
+    "exact_cells": {
+      "Capex Register!A1": "Project",
+      "Capex Register!B2": "Ivy",
+      "Capex Register!D2": "=IF(C2=\"Open\",3,0)"
+    },
+    "formula_cells": {
+      "Capex Register!D2": "=IF(C2=\"Open\",3,0)",
+      "Capex Register!D3": "=IF(C3=\"Open\",5,0)"
+    },
+    "highlight_rows": [
+      {
+        "sheet": "Capex Register",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 4
+      }
+    ],
+    "nonhighlight_rows": [],
+    "sheet_states": {
+      "Archive": "hidden"
+    },
+    "freeze_panes": {
+      "Capex Register": "A2"
+    },
+    "unchanged_sheets": [
+      "Archive"
+    ],
+    "table_refs": {
+      "Capex Register!CapexRegister": "A1:D3"
+    },
+    "data_validation_ranges": {
+      "Capex Register": [
+        "C2:C3"
+      ]
+    },
+    "comments_contain": {
+      "Capex Register!A1": "Capex release register"
+    }
+  }
+}

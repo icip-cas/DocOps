@@ -1,0 +1,22 @@
+Task ID: word_011
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: F4 Theme transfer
+Difficulty: Medium
+
+User Task Description:
+This document was assembled from mismatched source files and now looks visually inconsistent.
+
+Single-Step Benchmark Instruction:
+Apply a unified blue professional theme across the document.
+
+Atomic Scope:
+Only theme transfer is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The document already has multiple conflicting style signals
+- The requested output is global, not just a local formatting patch
+- Theme transfer requires consistency without changing the underlying content
+
+Expected Output Type:
+A revised .docx document with a coherent blue professional theme.

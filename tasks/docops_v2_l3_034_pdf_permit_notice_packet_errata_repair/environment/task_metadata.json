@@ -1,0 +1,273 @@
+{
+  "task_id": "docops_v2_l3_034_pdf_permit_notice_packet_errata_repair",
+  "input_path": "/root/docops_v2_l3_034_pdf_permit_notice_packet_errata_repair_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_034_pdf_permit_notice_packet_errata_repair_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_titles": [
+      "Public Permit Notice Repair Packet",
+      "Corrected Errata Register",
+      "Applicant and Parcel Summary",
+      "Inspection Schedule",
+      "Fee and Condition Matrix",
+      "Public Posting Checklist"
+    ],
+    "outline_titles": [
+      "Public Permit Notice Repair Packet",
+      "Corrected Errata Register",
+      "Applicant and Parcel Summary",
+      "Inspection Schedule",
+      "Fee and Condition Matrix",
+      "Public Posting Checklist"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "Public Permit Notice Repair Packet",
+        "Greenville",
+        "Arbor House Cooperative",
+        "P-2046-17B",
+        "412 Cedar Avenue"
+      ],
+      "1": [
+        "Greenville",
+        "permit",
+        "public",
+        "address",
+        "inspection",
+        "receipt",
+        "condition"
+      ],
+      "2": [
+        "Applicant",
+        "Arbor House Cooperative",
+        "Parcel ID",
+        "P-2046-17B",
+        "Public address",
+        "412 Cedar Avenue"
+      ],
+      "3": [
+        "Notice posting date",
+        "2026-08-14",
+        "Hearing date",
+        "2026-09-18",
+        "Inspection date",
+        "2026-08-29"
+      ],
+      "4": [
+        "Filing fee",
+        "$1,850",
+        "Public condition count",
+        "7",
+        "Receipt status",
+        "Public receipt prepared"
+      ],
+      "5": [
+        "Duplicate pages",
+        "Errata",
+        "Bookmarks",
+        "Metadata",
+        "Clean public metadata applied"
+      ]
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "scratch",
+      "duplicate-page",
+      "OCR-error",
+      "obsolete",
+      "do-not-post",
+      "Greenvile",
+      "permti",
+      "publc",
+      "adress",
+      "inspeciton",
+      "reciept",
+      "conditon",
+      "P-2046-17D",
+      "2026-08-04",
+      "2026-09-08",
+      "2026-08-19",
+      "$1,580",
+      "5 conditions"
+    ],
+    "tables": {
+      "Corrected Errata Register": [
+        [
+          "Error Type",
+          "Correct Public Value",
+          "Applied To"
+        ],
+        [
+          "Jurisdiction",
+          "Greenville",
+          "All pages"
+        ],
+        [
+          "Permit term",
+          "permit",
+          "Notice text"
+        ],
+        [
+          "Public term",
+          "public",
+          "Notice text"
+        ],
+        [
+          "Address label",
+          "address",
+          "Summary table"
+        ],
+        [
+          "Inspection term",
+          "inspection",
+          "Schedule table"
+        ],
+        [
+          "Receipt term",
+          "receipt",
+          "Fee table"
+        ],
+        [
+          "Condition term",
+          "condition",
+          "Condition matrix"
+        ]
+      ],
+      "Applicant and Parcel Summary": [
+        [
+          "Field",
+          "Corrected Public Value",
+          "Status"
+        ],
+        [
+          "Applicant",
+          "Arbor House Cooperative",
+          "Corrected"
+        ],
+        [
+          "Parcel ID",
+          "P-2046-17B",
+          "Corrected"
+        ],
+        [
+          "Public address",
+          "412 Cedar Avenue",
+          "Corrected"
+        ],
+        [
+          "Jurisdiction",
+          "Greenville",
+          "Corrected"
+        ]
+      ],
+      "Inspection Schedule": [
+        [
+          "Milestone",
+          "Date",
+          "Public Note"
+        ],
+        [
+          "Notice posting date",
+          "2026-08-14",
+          "Corrected posting date"
+        ],
+        [
+          "Inspection date",
+          "2026-08-29",
+          "Corrected inspection date"
+        ],
+        [
+          "Hearing date",
+          "2026-09-18",
+          "Corrected hearing date"
+        ]
+      ],
+      "Fee and Condition Matrix": [
+        [
+          "Item",
+          "Corrected Public Value",
+          "Status"
+        ],
+        [
+          "Filing fee",
+          "$1,850",
+          "Corrected"
+        ],
+        [
+          "Public condition count",
+          "7",
+          "Corrected"
+        ],
+        [
+          "Receipt status",
+          "Public receipt prepared",
+          "Ready"
+        ],
+        [
+          "Condition summary",
+          "Seven public conditions listed in permit record",
+          "Ready"
+        ]
+      ],
+      "Public Posting Checklist": [
+        [
+          "Control",
+          "Required Result",
+          "Status"
+        ],
+        [
+          "Duplicate pages",
+          "Removed",
+          "Complete"
+        ],
+        [
+          "Errata",
+          "Applied across packet",
+          "Complete"
+        ],
+        [
+          "Bookmarks",
+          "Rebuilt in public order",
+          "Complete"
+        ],
+        [
+          "Metadata",
+          "Clean public metadata applied",
+          "Complete"
+        ]
+      ]
+    },
+    "style": {
+      "page_width": 612,
+      "page_height": 792,
+      "header_bar": "234E70",
+      "accent": "F59E0B",
+      "footer_text": "Public Permit Notice Repair Packet | 2026"
+    },
+    "metadata": {
+      "title": "Public Permit Notice Repair Packet",
+      "author": "Permit Records Office",
+      "subject": "Clean errata repair packet"
+    },
+    "source_must_contain": [
+      "DRAFT",
+      "PRIVATE",
+      "Greenvile",
+      "permti",
+      "publc",
+      "adress",
+      "inspeciton",
+      "reciept",
+      "conditon",
+      "P-2046-17D",
+      "2026-08-04",
+      "$1,580",
+      "duplicate-page"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_034_pdf_permit_notice_packet_errata_repair",
+  "task_dir_name": "docops_v2_l3_034_pdf_permit_notice_packet_errata_repair"
+}

@@ -1,0 +1,26 @@
+Task ID: word_006
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: S2 Reorder
+Difficulty: Medium
+
+Inspired By:
+- Title: Sort lists in Word without needing Excel
+  URL: https://www.reddit.com/r/word/comments/1qf4pat/sort_lists_in_word_without_needing_excel/
+
+User Task Description:
+This report draft has major sections in the wrong order.
+
+Single-Step Benchmark Instruction:
+Reorder the document sections so they appear in the logical sequence: Executive Summary -> Findings -> Next Steps -> Appendix Materials.
+
+Atomic Scope:
+Only section reordering is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Every section already looks complete, so the problem is structural rather than missing content
+- The current numbering is misleading because the physical order does not match the intended narrative flow
+- Reordering must preserve the section content itself
+
+Expected Output Type:
+A revised .docx document with corrected section order.

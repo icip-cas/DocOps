@@ -1,0 +1,35 @@
+{
+  "task_id": "word_001",
+  "task_dir_name": "word_001_engineering_report_toc_hierarchy_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "S3 Hierarchy editing",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "word_001_engineering_report_toc_hierarchy_seed.docx",
+  "source_doc_path": "word/word_001_engineering_report_toc_hierarchy_seed.docx",
+  "task_description_filename": "word_001_engineering_report_toc_hierarchy_seed.txt",
+  "task_description_path": "word/word_001_engineering_report_toc_hierarchy_seed.txt",
+  "input_path": "/root/word_001_engineering_report_toc_hierarchy_seed.docx",
+  "output_path": "/root/submission/word_001_engineering_report_toc_hierarchy_seed.docx",
+  "output_filename": "word_001_engineering_report_toc_hierarchy_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This engineering report draft has a broken heading hierarchy and a manually typed table of contents.",
+  "single_step_benchmark_instruction": "Repair the heading hierarchy so the document uses a consistent multi-level heading structure, the subsection under `2. Temporary bypass plan` restarts correctly from `a` instead of continuing from `c`, and the matching manually typed table-of-contents entry is updated to match.",
+  "atomic_scope": "Only the heading hierarchy and its matching TOC entry are explicitly requested in this task.",
+  "expected_output_type": "A repaired .docx document with corrected heading hierarchy and matching TOC entry.",
+  "inspired_by": [
+    {
+      "title": "Custom Table of Content Template for my Engineering Report",
+      "url": "https://www.reddit.com/r/word/comments/1s7j1d6/custom_table_of_content_template_for_my/"
+    },
+    {
+      "title": "Headline issues",
+      "url": "https://www.reddit.com/r/word/comments/1rzumyi/headline_issues/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The table of contents is manually typed\n- Fonts and spacing are inconsistent\n- Some headings use direct formatting instead of true styles"
+  }
+}

@@ -1,0 +1,52 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility"
+description = "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility - DocOps v2 final L4 task."
+authors = []
+keywords = ["pptx", "excel", "theater", "accessibility", "brand-refresh", "cross-document", "retrieval"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["pptx", "excel", "cross-document", "retrieval", "style-refresh", "performing-arts"]
+task_id = "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility"
+doc_type = "pptx+xlsx"
+primary_modality = "PowerPoint (.pptx), Excel (.xlsx), PDF, and Word (.docx)"
+atomic_operation = "Cross-document Retrieval and Large Style Transformation"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-structural-style-privacy-strict"
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility"
+final_index = 62
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_signage_deck.pptx"
+TASK_ID = "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility"
+DOC_TYPE = "pptx+xlsx"
+
+[solution.env]

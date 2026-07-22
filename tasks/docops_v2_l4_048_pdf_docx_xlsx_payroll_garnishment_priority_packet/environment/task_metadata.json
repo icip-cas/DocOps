@@ -1,0 +1,580 @@
+{
+  "task_id": "docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet",
+  "task_dir_name": "docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet",
+  "doc_type": "pdf+docx+xlsx",
+  "primary_modality": "PDF, Word (.docx), and Excel (.xlsx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/employee_profile.docx",
+    "/root/child_support_iwo.pdf",
+    "/root/consumer_garnishment_order.pdf",
+    "/root/payroll_register.xlsx",
+    "/root/ccpa_rules_excerpt.pdf",
+    "/root/state_priority_rules.pdf",
+    "/root/internal_hr_risk_note.docx"
+  ],
+  "output_paths": {
+    "setup_memo": "/root/submission/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_setup_memo.docx",
+    "calculation_tracker": "/root/submission/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_calculation_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_setup_memo.docx",
+  "output_filename": "payroll_garnishment_setup_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-formula-privacy-strict",
+  "user_task_description": "Create a payroll garnishment setup memo and calculation tracker from multiple legal/payroll documents while calculating disposable earnings, priority withholding, and privacy controls.",
+  "single_step_benchmark_instruction": "Create payroll_garnishment_setup_memo.docx and garnishment_calculation_tracker.xlsx. Calculate disposable earnings from required deductions only, prioritize child support, set ordinary garnishment withholding to zero where required, preserve workbook formulas/tables/validation/hidden sheets, and exclude internal HR/legal commentary.",
+  "expected_output_type": "A .docx payroll memo and .xlsx calculation tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "U.S. Department of Labor Fact Sheet #30: The Federal Wage Garnishment Law, Consumer Credit Protection Act's Title III",
+      "url": "https://www.dol.gov/agencies/whd/fact-sheets/30-cppa"
+    },
+    {
+      "title": "Payroll and HR practitioner pain points around multi-order garnishment setup and employee privacy boundaries",
+      "url": "https://www.shrm.org/topics-tools/tools/hr-answers/handle-wage-garnishment-order"
+    },
+    {
+      "title": "Office-agent benchmarks emphasize multi-step spreadsheet/document workflows and cross-application reliability",
+      "url": "https://os-world.github.io/"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_setup_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet_calculation_tracker.xlsx",
+    "doc_heading_order": [
+      "Payroll Garnishment Setup Memo",
+      "Employee and Pay Cycle",
+      "Orders Received",
+      "Disposable Earnings Calculation",
+      "Priority and Withholding Decision",
+      "Court and Employee Communications",
+      "Privacy Boundary"
+    ],
+    "doc_required": [
+      "Employee: Luis Romero",
+      "Employee ID: E-4187",
+      "Pay frequency: biweekly",
+      "First affected pay date: 2026-07-10",
+      "Disposable earnings: $2,515.20",
+      "Child support order CS-22-1189",
+      "withhold $730.00 per biweekly pay period",
+      "current support $620.00",
+      "arrears $110.00",
+      "55% child-support cap is $1,383.36",
+      "Consumer garnishment CG-7741",
+      "withhold $0.00 for the consumer garnishment this pay period",
+      "child support has priority",
+      "existing child-support withholding exceeds the ordinary 25% consumer garnishment limit",
+      "do not subtract voluntary 401(k), medical, or gym deductions when calculating disposable earnings",
+      "do not discipline or terminate Luis Romero because of one garnishment order",
+      "send the court answer by 2026-07-08"
+    ],
+    "doc_forbidden": [
+      "fire him",
+      "discipline for the debt",
+      "embarrassing credit issue",
+      "tell his manager",
+      "use extra medical deduction to reduce withholding",
+      "hold the IWO until creditor responds",
+      "ignore the support order",
+      "private HR risk note"
+    ],
+    "doc_header": "PAYROLL COMPLIANCE - LIMITED DISTRIBUTION",
+    "doc_footer": "Payroll setup memo; internal HR/legal notes excluded.",
+    "decision_rows": [
+      [
+        "Order",
+        "Decision",
+        "Amount",
+        "Reason"
+      ],
+      [
+        "CS-22-1189",
+        "Set up active withholding",
+        "$730.00",
+        "Current support plus arrears is below the 55% child-support cap."
+      ],
+      [
+        "CG-7741",
+        "Answer court; no withholding this pay period",
+        "$0.00",
+        "Child support has priority and already exceeds the ordinary consumer garnishment cap."
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Employee",
+        "Luis Romero",
+        "Employee profile",
+        "Matched"
+      ],
+      [
+        "Employee ID",
+        "E-4187",
+        "Employee profile",
+        "Matched"
+      ],
+      [
+        "Pay frequency",
+        "Biweekly",
+        "Payroll register",
+        "Matched"
+      ],
+      [
+        "First affected pay date",
+        "2026-07-10",
+        "Payroll calendar",
+        "Matched"
+      ],
+      [
+        "Gross wages",
+        3200,
+        "Payroll register",
+        "Matched"
+      ],
+      [
+        "Legally required deductions",
+        "=SUM('Disposable Earnings'!B3:B6)",
+        "Disposable Earnings",
+        "Calculated"
+      ],
+      [
+        "Disposable earnings",
+        "='Disposable Earnings'!B8",
+        "Disposable Earnings",
+        "Calculated"
+      ],
+      [
+        "Child support withholding",
+        "='Orders Priority'!F2",
+        "Orders Priority",
+        "Active"
+      ],
+      [
+        "Consumer garnishment withholding",
+        "='Orders Priority'!F3",
+        "Orders Priority",
+        "Held"
+      ],
+      [
+        "Court answer due",
+        "2026-07-08",
+        "Consumer garnishment order",
+        "Pending"
+      ],
+      [
+        "Payroll setup ready",
+        "=IF(AND(B8=2515.2,B9=730,B10=0),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "disposable_rows": [
+      [
+        "Component",
+        "Amount",
+        "Treatment",
+        "Source"
+      ],
+      [
+        "Gross wages",
+        3200,
+        "Start",
+        "Payroll register"
+      ],
+      [
+        "Federal income tax",
+        320,
+        "Subtract",
+        "Payroll register"
+      ],
+      [
+        "State income tax",
+        120,
+        "Subtract",
+        "Payroll register"
+      ],
+      [
+        "Social Security",
+        198.4,
+        "Subtract",
+        "Payroll register"
+      ],
+      [
+        "Medicare",
+        46.4,
+        "Subtract",
+        "Payroll register"
+      ],
+      [
+        "Mandatory retirement",
+        0,
+        "Subtract",
+        "Policy excerpt"
+      ],
+      [
+        "Disposable earnings",
+        "=B2-SUM(B3:B7)",
+        "Calculated",
+        "CCPA definition"
+      ],
+      [
+        "Voluntary 401(k)",
+        160,
+        "Do not subtract",
+        "Payroll register"
+      ],
+      [
+        "Medical premium",
+        145,
+        "Do not subtract",
+        "Payroll register"
+      ],
+      [
+        "Gym deduction",
+        20,
+        "Do not subtract",
+        "Payroll register"
+      ]
+    ],
+    "orders_rows": [
+      [
+        "Order ID",
+        "Type",
+        "Priority",
+        "Requested",
+        "Cap Formula",
+        "Approved Withholding",
+        "Status",
+        "Explanation"
+      ],
+      [
+        "CS-22-1189",
+        "Child support IWO",
+        1,
+        730,
+        "=B8*55%",
+        "=MIN(D2,E2)",
+        "Active",
+        "Employee supports another family and arrears are over 12 weeks; 55% cap applies."
+      ],
+      [
+        "CG-7741",
+        "Consumer debt garnishment",
+        2,
+        410,
+        "=MIN(B8*25%,MAX(0,B8-(60*7.25)))",
+        "=IF(F2>=E3,0,MIN(D3,E3-F2))",
+        "Answer only",
+        "No ordinary-garnishment room remains after priority support withholding."
+      ]
+    ],
+    "simulation_rows": [
+      [
+        "Line",
+        "Amount",
+        "Formula/Source",
+        "Notes"
+      ],
+      [
+        "Gross wages",
+        "='Disposable Earnings'!B2",
+        "Payroll register",
+        "Biweekly"
+      ],
+      [
+        "Required deductions",
+        "='Appeal Summary'!B7",
+        "Required tax deductions",
+        "Before garnishments"
+      ],
+      [
+        "Disposable earnings",
+        "='Disposable Earnings'!B8",
+        "Calculated",
+        "Garnishment base"
+      ],
+      [
+        "Child support",
+        "='Orders Priority'!F2",
+        "IWO",
+        "Remit to CA SDU"
+      ],
+      [
+        "Consumer garnishment",
+        "='Orders Priority'!F3",
+        "Court order",
+        "Hold this period"
+      ],
+      [
+        "Net after garnishments",
+        "=B4-B5-B6",
+        "Calculated",
+        "Before voluntary deductions"
+      ]
+    ],
+    "response_rows": [
+      [
+        "Communication",
+        "Due Date",
+        "Recipient",
+        "Content",
+        "Status"
+      ],
+      [
+        "Payroll setup confirmation",
+        "2026-07-05",
+        "Payroll Ops",
+        "Activate CS-22-1189 for 2026-07-10 payroll.",
+        "Ready"
+      ],
+      [
+        "Court answer",
+        "2026-07-08",
+        "County Court Clerk",
+        "Report no withholding available for CG-7741 this pay period.",
+        "Pending"
+      ],
+      [
+        "Employee notice",
+        "2026-07-05",
+        "Luis Romero",
+        "Provide neutral payroll notice and copy of orders.",
+        "Ready"
+      ],
+      [
+        "Manager boundary",
+        "2026-07-05",
+        "HRBP only",
+        "Do not notify manager unless schedule/payroll access is required.",
+        "Ready"
+      ]
+    ],
+    "remittance_rows": [
+      [
+        "Pay Date",
+        "Order ID",
+        "Payee",
+        "Amount",
+        "Method",
+        "Status"
+      ],
+      [
+        "2026-07-10",
+        "CS-22-1189",
+        "California State Disbursement Unit",
+        "='Orders Priority'!F2",
+        "EFT",
+        "Scheduled"
+      ],
+      [
+        "2026-07-10",
+        "CG-7741",
+        "County Court Clerk",
+        "='Orders Priority'!F3",
+        "Court answer only",
+        "Pending"
+      ]
+    ],
+    "privacy_rows": [
+      [
+        "Check",
+        "Rule",
+        "Result",
+        "Owner"
+      ],
+      [
+        "Manager disclosure",
+        "No manager notification about debt or order details",
+        "Pass",
+        "HR"
+      ],
+      [
+        "Internal notes",
+        "Exclude HR/legal risk note from employee and court-facing materials",
+        "Pass",
+        "Payroll"
+      ],
+      [
+        "Voluntary deductions",
+        "Do not manipulate voluntary deductions to reduce withholding",
+        "Pass",
+        "Payroll"
+      ],
+      [
+        "Job action",
+        "No discipline or termination for one garnishment order",
+        "Pass",
+        "HR"
+      ]
+    ],
+    "raw_payroll_rows": [
+      [
+        "Pay Date",
+        "Gross",
+        "Federal Tax",
+        "State Tax",
+        "Social Security",
+        "Medicare",
+        "Voluntary 401k",
+        "Medical Premium",
+        "Gym"
+      ],
+      [
+        "2026-07-10",
+        3200,
+        320,
+        120,
+        198.4,
+        46.4,
+        160,
+        145,
+        20
+      ]
+    ],
+    "rules_rows": [
+      [
+        "Rule",
+        "Value"
+      ],
+      [
+        "Federal minimum wage",
+        7.25
+      ],
+      [
+        "Ordinary garnishment cap",
+        "25%"
+      ],
+      [
+        "Biweekly 30x minimum wage threshold",
+        "=60*B2"
+      ],
+      [
+        "Child support cap selected",
+        "55%"
+      ]
+    ],
+    "sheet_order": [
+      "Appeal Summary",
+      "Disposable Earnings",
+      "Orders Priority",
+      "Paycheck Simulation",
+      "Court Response Log",
+      "Remittance Schedule",
+      "Privacy Review",
+      "Raw Payroll",
+      "Rules"
+    ],
+    "tables": {
+      "Appeal Summary": [
+        "tblSetupSummary",
+        "A1:D12"
+      ],
+      "Disposable Earnings": [
+        "tblDisposable",
+        "A1:D11"
+      ],
+      "Orders Priority": [
+        "tblOrdersPriority",
+        "A1:H3"
+      ],
+      "Paycheck Simulation": [
+        "tblPaycheckSimulation",
+        "A1:D7"
+      ],
+      "Court Response Log": [
+        "tblCourtResponse",
+        "A1:E5"
+      ],
+      "Remittance Schedule": [
+        "tblRemittance",
+        "A1:F3"
+      ],
+      "Privacy Review": [
+        "tblPrivacyReview",
+        "A1:D5"
+      ],
+      "Raw Payroll": [
+        "tblRawPayroll",
+        "A1:I2"
+      ],
+      "Rules": [
+        "tblRules",
+        "A1:B5"
+      ]
+    },
+    "formula_cells": {
+      "Appeal Summary!B7": "=SUM('Disposable Earnings'!B3:B6)",
+      "Appeal Summary!B8": "='Disposable Earnings'!B8",
+      "Appeal Summary!B9": "='Orders Priority'!F2",
+      "Appeal Summary!B10": "='Orders Priority'!F3",
+      "Appeal Summary!B12": "=IF(AND(B8=2515.2,B9=730,B10=0),\"Ready\",\"Hold\")",
+      "Disposable Earnings!B8": "=B2-SUM(B3:B7)",
+      "Orders Priority!E2": "=B8*55%",
+      "Orders Priority!F2": "=MIN(D2,E2)",
+      "Orders Priority!E3": "=MIN(B8*25%,MAX(0,B8-(60*7.25)))",
+      "Orders Priority!F3": "=IF(F2>=E3,0,MIN(D3,E3-F2))",
+      "Paycheck Simulation!B2": "='Disposable Earnings'!B2",
+      "Paycheck Simulation!B3": "='Appeal Summary'!B7",
+      "Paycheck Simulation!B4": "='Disposable Earnings'!B8",
+      "Paycheck Simulation!B5": "='Orders Priority'!F2",
+      "Paycheck Simulation!B6": "='Orders Priority'!F3",
+      "Paycheck Simulation!B7": "=B4-B5-B6",
+      "Remittance Schedule!D2": "='Orders Priority'!F2",
+      "Remittance Schedule!D3": "='Orders Priority'!F3",
+      "Rules!B4": "=60*B2"
+    },
+    "hidden_sheets": [
+      "Raw Payroll",
+      "Rules"
+    ],
+    "defined_names": [
+      "DisposableEarnings",
+      "ChildSupportWithholding",
+      "ConsumerWithholding"
+    ],
+    "print_areas": {
+      "Appeal Summary": "A1:D12",
+      "Disposable Earnings": "A1:D11",
+      "Orders Priority": "A1:H3",
+      "Paycheck Simulation": "A1:D7",
+      "Court Response Log": "A1:E5",
+      "Remittance Schedule": "A1:F3",
+      "Privacy Review": "A1:D5"
+    },
+    "data_validation": {
+      "Orders Priority": [
+        "G2:G3"
+      ],
+      "Court Response Log": [
+        "E2:E5"
+      ],
+      "Privacy Review": [
+        "C2:C5"
+      ]
+    },
+    "forbidden_public": [
+      "fire him",
+      "discipline for the debt",
+      "embarrassing credit issue",
+      "tell his manager",
+      "use extra medical deduction to reduce withholding",
+      "hold the IWO until creditor responds",
+      "ignore the support order",
+      "private HR risk note"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_048_pdf_docx_xlsx_payroll_garnishment_priority_packet"
+}

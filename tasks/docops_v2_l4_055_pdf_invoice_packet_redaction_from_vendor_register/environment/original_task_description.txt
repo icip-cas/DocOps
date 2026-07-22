@@ -1,0 +1,1 @@
+A client invoice packet must be assembled from a register, redaction policy, and approved appendix while removing duplicate/internal pages and preserving PDF navigation.

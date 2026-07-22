@@ -1,0 +1,54 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style"
+description = "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style - DocOps v2 final L4 task."
+authors = []
+keywords = ["ppt", "excel", "style", "format", "accessibility", "poster"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["ppt", "excel", "cross-document", "style-format"]
+task_id = "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style"
+doc_type = "ppt+xlsx"
+primary_modality = "PowerPoint (.pptx) and Excel (.xlsx)"
+atomic_operation = "Cross-document Style Format Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "style-format-semantic-strict"
+composition_type = "cross-document multi-output style-format"
+composition_pattern = "poster-style-brief -> PPT slide-size/card-grid repair -> accessibility-caption-gate -> Excel print-spec controls -> cross-output export consistency"
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style"
+final_index = 59
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_input.pptx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_deck.pptx"
+TASK_ID = "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style"
+DOC_TYPE = "ppt+xlsx"
+
+[solution.env]

@@ -1,0 +1,406 @@
+{
+  "task_id": "docops_v2_l3_012_xlsx_incident_action_plan_rebuild",
+  "task_dir_name": "docops_v2_l3_012_xlsx_incident_action_plan_rebuild",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Formula construction",
+    "F2 Style migration",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-sheet-removal -> sheet-reorder -> correction-log-application -> public-table-rebuild -> formula-rebuild -> style-migration",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "reference_sources": [
+    {
+      "title": "Incident Command System / Incident Action Plan form structure",
+      "url": "https://training.fema.gov/emiweb/is/icsresource/icsforms.htm",
+      "usage": "Used only as structural inspiration for IAP-style sections; task facts and workbook content are synthetic."
+    }
+  ],
+  "verifier_mode": "semantic-structural-style-strict",
+  "user_task_description": "Prepare a clean public Incident Action Plan workbook for a citywide heat emergency from a messy internal planning workbook.",
+  "single_step_benchmark_instruction": "Remove internal sheets, reorder and rebuild public IAP sheets, apply correction-log fixes, reconstruct formulas, migrate approved styles, clean sensitive text, and preserve public incident facts.",
+  "atomic_scope": "Only the requested workbook-wide workflow edits are in scope; public incident, correction, formula, sheet order, and style facts must be preserved.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested single-workbook workflow.",
+  "input_path": "/root/docops_v2_l3_012_xlsx_incident_action_plan_rebuild_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_012_xlsx_incident_action_plan_rebuild_output.xlsx",
+  "output_filename": "docops_v2_l3_012_xlsx_incident_action_plan_rebuild_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "spreadsheet",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Summary",
+      "Incident Objectives",
+      "Organization Assignments",
+      "Branch Assignments",
+      "Communications Plan",
+      "Medical Plan",
+      "Correction Log",
+      "Style Guide"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "vendor liability",
+      "mayor backchannel",
+      "personal phone",
+      "volunteer medical rumor",
+      "shelter shortage rumor",
+      "do not release",
+      "staffing grievance"
+    ],
+    "header_fill": "7030A0",
+    "header_font": "FFFFFF",
+    "body_font": "Calibri",
+    "summary_title_fill": "C00000",
+    "objectives_rows": [
+      [
+        "Objective ID",
+        "Operational Period",
+        "Public Objective",
+        "Owner",
+        "Status"
+      ],
+      [
+        "OBJ-01",
+        "2026-07-15 0600-1800",
+        "Open six cooling centers before peak heat index",
+        "Operations",
+        "Active"
+      ],
+      [
+        "OBJ-02",
+        "2026-07-15 0600-1800",
+        "Complete wellness checks for priority registry residents",
+        "Human Services",
+        "Active"
+      ],
+      [
+        "OBJ-03",
+        "2026-07-15 0600-1800",
+        "Maintain transit shuttles to cooling centers every 30 minutes",
+        "Transportation",
+        "Active"
+      ],
+      [
+        "OBJ-04",
+        "2026-07-15 0600-1800",
+        "Publish hourly public heat safety updates",
+        "Public Information",
+        "Active"
+      ],
+      [
+        "OBJ-05",
+        "2026-07-15 0600-1800",
+        "Stage medical support at North Cooling Center by 1900",
+        "Medical",
+        "Active"
+      ]
+    ],
+    "organization_rows": [
+      [
+        "Role",
+        "Assigned Lead",
+        "Agency",
+        "Public Contact"
+      ],
+      [
+        "Incident Commander",
+        "Daria Chen",
+        "Emergency Management",
+        "EOC main desk"
+      ],
+      [
+        "Operations Section Chief",
+        "Marisol Silva",
+        "Fire Department",
+        "Operations desk"
+      ],
+      [
+        "Planning Section Chief",
+        "Nina Patel",
+        "Emergency Management",
+        "Planning desk"
+      ],
+      [
+        "Logistics Section Chief",
+        "Theo Brooks",
+        "Public Works",
+        "Logistics desk"
+      ],
+      [
+        "Public Information Officer",
+        "Avery Morgan",
+        "Mayor's Office",
+        "PIO desk"
+      ],
+      [
+        "Safety Officer",
+        "Leah Grant",
+        "Health Department",
+        "Safety desk"
+      ]
+    ],
+    "branch_rows": [
+      [
+        "Branch ID",
+        "Branch",
+        "Location",
+        "Field Teams",
+        "Support Staff",
+        "Total Staff",
+        "Objective",
+        "Status"
+      ],
+      [
+        "BR-01",
+        "Cooling Centers",
+        "North Cooling Center",
+        9,
+        14,
+        "=D2+E2",
+        "OBJ-01",
+        "Active"
+      ],
+      [
+        "BR-02",
+        "Wellness Checks",
+        "East Senior Registry",
+        12,
+        8,
+        "=D3+E3",
+        "OBJ-02",
+        "Active"
+      ],
+      [
+        "BR-03",
+        "Transit Shuttle",
+        "Central Depot",
+        7,
+        6,
+        "=D4+E4",
+        "OBJ-03",
+        "Active"
+      ],
+      [
+        "BR-04",
+        "Public Information",
+        "EOC Media Room",
+        3,
+        5,
+        "=D5+E5",
+        "OBJ-04",
+        "Active"
+      ],
+      [
+        "BR-05",
+        "Medical",
+        "North Cooling Center",
+        5,
+        7,
+        "=D6+E6",
+        "OBJ-05",
+        "Active"
+      ],
+      [
+        "BR-06",
+        "Logistics",
+        "Public Works Yard",
+        6,
+        10,
+        "=D7+E7",
+        "OBJ-01",
+        "Active"
+      ]
+    ],
+    "communications_rows": [
+      [
+        "Net",
+        "Channel",
+        "Frequency",
+        "Use",
+        "Priority",
+        "Contact"
+      ],
+      [
+        "Command",
+        "CMD-1",
+        "155.010",
+        "Unified command",
+        "Primary",
+        "EOC radio desk"
+      ],
+      [
+        "Operations",
+        "OPS-3",
+        "155.220",
+        "Field branches",
+        "Primary",
+        "Operations desk"
+      ],
+      [
+        "Medical",
+        "TAC-7",
+        "155.460",
+        "Medical staging and triage",
+        "Primary",
+        "Medical desk"
+      ],
+      [
+        "Logistics",
+        "LOG-2",
+        "154.980",
+        "Supplies and facility support",
+        "Primary",
+        "Logistics desk"
+      ],
+      [
+        "Public Information",
+        "PIO-1",
+        "156.110",
+        "Public messaging coordination",
+        "Primary",
+        "PIO desk"
+      ],
+      [
+        "Backup",
+        "CITY-ALT",
+        "453.700",
+        "Backup voice channel",
+        "Backup",
+        "EOC radio desk"
+      ]
+    ],
+    "medical_rows": [
+      [
+        "Medical Asset",
+        "Location",
+        "Lead",
+        "Capacity",
+        "Staging Time"
+      ],
+      [
+        "EMS Strike Team Alpha",
+        "North Cooling Center",
+        "Rene Walsh",
+        24,
+        "1900"
+      ],
+      [
+        "Mobile Clinic Bravo",
+        "East Senior Registry",
+        "Mika Torres",
+        18,
+        "1700"
+      ],
+      [
+        "Triage Bus Charlie",
+        "Central Depot",
+        "Ibrahim Noor",
+        20,
+        "1630"
+      ],
+      [
+        "Behavioral Health Team Delta",
+        "EOC Family Assistance",
+        "June Park",
+        12,
+        "1600"
+      ]
+    ],
+    "correction_rows": [
+      [
+        "Correction ID",
+        "Field",
+        "Old Value",
+        "Corrected Value",
+        "Applied"
+      ],
+      [
+        "COR-001",
+        "Location",
+        "North Cooling Cneter",
+        "North Cooling Center",
+        "Yes"
+      ],
+      [
+        "COR-002",
+        "Assigned Lead",
+        "Marcos Silva",
+        "Marisol Silva",
+        "Yes"
+      ],
+      [
+        "COR-003",
+        "Branch",
+        "Medcial",
+        "Medical",
+        "Yes"
+      ],
+      [
+        "COR-004",
+        "Channel",
+        "TAC-6",
+        "TAC-7",
+        "Yes"
+      ],
+      [
+        "COR-005",
+        "Staging Time",
+        "ambulance staging 1800",
+        "ambulance staging 1900",
+        "Yes"
+      ]
+    ],
+    "style_rows": [
+      [
+        "Element",
+        "Requirement"
+      ],
+      [
+        "Header fill",
+        "7030A0"
+      ],
+      [
+        "Header font",
+        "White bold"
+      ],
+      [
+        "Body font",
+        "Calibri"
+      ],
+      [
+        "Freeze panes",
+        "Header row frozen on public tabular sheets"
+      ],
+      [
+        "Autofilter",
+        "Enabled on public tabular sheets"
+      ]
+    ],
+    "summary_cells": {
+      "A1": "City Heat Emergency Incident Action Plan",
+      "A3": "Operational Period",
+      "B3": "2026-07-15 0600-1800",
+      "A4": "Active Branches",
+      "B4": "=COUNTA('Branch Assignments'!A2:A7)",
+      "A5": "Total Assigned Staff",
+      "B5": "=SUM('Branch Assignments'!F2:F7)",
+      "A6": "Medical Capacity",
+      "B6": "=SUM('Medical Plan'!D2:D5)",
+      "A7": "Primary Radio Nets",
+      "B7": "=COUNTIF('Communications Plan'!E2:E7,\"Primary\")"
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_012_xlsx_incident_action_plan_rebuild"
+}

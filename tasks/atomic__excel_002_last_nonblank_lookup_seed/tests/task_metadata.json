@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_002",
+  "task_dir_name": "excel_002_last_nonblank_lookup_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C4 Computation",
+  "difficulty": "Hard",
+  "source_doc_filename": "excel_002_last_nonblank_lookup_seed.xlsx",
+  "source_doc_path": "excel/excel_002_last_nonblank_lookup_seed.xlsx",
+  "task_description_filename": "excel_002_last_nonblank_lookup_seed.txt",
+  "task_description_path": "excel/excel_002_last_nonblank_lookup_seed.txt",
+  "input_path": "/root/excel_002_last_nonblank_lookup_seed.xlsx",
+  "output_path": "/root/submission/excel_002_last_nonblank_lookup_seed.xlsx",
+  "output_filename": "excel_002_last_nonblank_lookup_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook stores monthly values by year and product, with many blanks. The user wants one result cell that returns the latest available value for the selected year and selected product.",
+  "single_step_benchmark_instruction": "Fill the result cell on the `Selector` sheet with a formula that returns the last non-blank monthly value for the chosen product and chosen year.",
+  "atomic_scope": "Only the selector formula is explicitly requested in this task.",
+  "expected_output_type": "A repaired .xlsx workbook where the selector cell returns the correct last non-blank value.",
+  "inspired_by": [
+    {
+      "title": "Two-way XLOOKUP to return the last non-blank value at a row-column intersection",
+      "url": "https://www.reddit.com/r/excel/comments/1snc945/twoway_xlookup_to_return_the_last_nonblank_value/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The data layout is awkward and repeated horizontally\n- Styling is inconsistent across sheets\n- The workbook could be normalized into a cleaner table, but that is not the explicit request"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "pdf_003",
+  "task_dir_name": "pdf_003_budget_lines_highlighting_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "F2 Highlighting",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdf_003_budget_lines_highlighting_seed.pdf",
+  "source_doc_path": "pdf/pdf_003_budget_lines_highlighting_seed.pdf",
+  "task_description_filename": "pdf_003_budget_lines_highlighting_seed.txt",
+  "task_description_path": "pdf/pdf_003_budget_lines_highlighting_seed.txt",
+  "input_path": "/root/pdf_003_budget_lines_highlighting_seed.pdf",
+  "output_path": "/root/submission/pdf_003_budget_lines_highlighting_seed.pdf",
+  "output_filename": "pdf_003_budget_lines_highlighting_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This approval sheet contains several spend lines, but only some should be visually emphasized for review.",
+  "single_step_benchmark_instruction": "Highlight the budget lines whose amounts are strictly greater than $10,000.",
+  "atomic_scope": "Only visual emphasis/highlighting is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the correct lines highlighted.",
+  "inspired_by": [
+    {
+      "title": "How can you remove watermarks from a PDF?",
+      "url": "https://www.reddit.com/r/pdf/comments/1smiay5/how_can_you_remove_watermarks_from_a_pdf/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Near-threshold distractors are present, including $9,900 and exactly $10,000\n- The rule is strict inequality, not greater-than-or-equal\n- The content is simple, so the difficulty comes from precise interpretation rather than document length"
+  }
+}

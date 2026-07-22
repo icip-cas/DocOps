@@ -1,0 +1,26 @@
+Task ID: excel_001
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: C4 Computation
+Difficulty: Medium
+
+Inspired By:
+- Title: Directing costs to multiple different totals based on category
+  URL: https://www.reddit.com/r/excel/comments/1snym9r/directing_costs_to_multiple_different_totals/
+
+User Task Description:
+This workbook tracks costs with a code in one column and needs totals split into Maintenance and Operations budgets.
+
+Single-Step Benchmark Instruction:
+Using formulas, calculate the correct Maintenance total and Operations total in the summary area based on the cost-code mapping in the `Code Map` sheet.
+
+Atomic Scope:
+Only the summary computation is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- The Budget Bucket column in the main table is blank
+- The summary panel formatting is uneven
+- The workbook layout is cluttered and could be improved, but that is not the explicit request
+
+Expected Output Type:
+A repaired .xlsx workbook with correct formula-driven totals.

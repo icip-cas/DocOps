@@ -1,0 +1,48 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__atomic__word_004_transcript_style_consistency_seed"
+description = "word_004 - F1 Style consistency task exported from DocumentBenchmark source seeds."
+authors = []
+keywords = ["word", "f1-style-consistency", "document-processing", "single-step", "source-doc-export"]
+
+[metadata]
+difficulty_level = "L1-atomic"
+benchmark_split = "atomic"
+difficulty = "Medium"
+category = "document-processing"
+tags = ["word", "f1-style-consistency", "document-processing", "single-step", "source-doc-export"]
+task_id = "word_004"
+doc_type = "word"
+primary_modality = "Word (.docx)"
+atomic_operation = "F1 Style consistency"
+source_type = "Reddit-derived representative benchmark seed"
+verifier_mode = "semantic-strict"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/word_004_transcript_style_consistency_seed.docx"
+OUTPUT_PATH = "/root/submission/word_004_transcript_style_consistency_seed.docx"
+TASK_ID = "word_004"
+DOC_TYPE = "word"
+
+[solution.env]

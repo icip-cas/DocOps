@@ -1,0 +1,26 @@
+{
+  "task_id": "word_007",
+  "task_dir_name": "word_007_summary_generation_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "C3 Generation",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "word_007_summary_generation_seed.docx",
+  "source_doc_path": "word/word_007_summary_generation_seed.docx",
+  "task_description_filename": "word_007_summary_generation_seed.txt",
+  "task_description_path": "word/word_007_summary_generation_seed.txt",
+  "input_path": "/root/word_007_summary_generation_seed.docx",
+  "output_path": "/root/submission/word_007_summary_generation_seed.docx",
+  "output_filename": "word_007_summary_generation_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This briefing document has context notes but the executive summary section is still only a placeholder.",
+  "single_step_benchmark_instruction": "Generate a concise executive summary paragraph based on the context notes already present in the document.",
+  "atomic_scope": "Only content generation for the placeholder section is explicitly requested in this task.",
+  "expected_output_type": "A revised .docx document with a generated executive summary paragraph.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The source notes overlap and need synthesis rather than copying\n- The generated paragraph must reflect both operational and commercial pressure\n- The placeholder is explicit, but the right tone still requires judgment"
+  }
+}

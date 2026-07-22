@@ -1,0 +1,28 @@
+Task ID: word_002
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: S1 Insert/Delete
+Difficulty: Easy-Medium
+
+Inspired By:
+- Title: How do you delete a blank first page??
+  URL: https://www.reddit.com/r/word/comments/1rhvhgd/how_do_you_delete_a_blank_first_page/
+- Title: CV editing
+  URL: https://www.reddit.com/r/word/comments/1s8t0is/cv_editing/
+
+User Task Description:
+This resume document opens with an unwanted blank first page before the actual content begins.
+
+Single-Step Benchmark Instruction:
+Delete the blank first page while keeping the rest of the resume content intact.
+
+Atomic Scope:
+Only deletion of the unwanted blank page is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Fonts and section styling are inconsistent
+- Spacing is slightly uneven across sections
+- Footer page numbering may need review, but that is not the explicit request
+
+Expected Output Type:
+A corrected .docx document with no blank opening page.

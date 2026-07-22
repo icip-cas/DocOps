@@ -1,0 +1,398 @@
+{
+  "task_id": "docops_v2_l3_015_xlsx_reimbursement_workbook_formula_repair",
+  "input_path": "/root/docops_v2_l3_015_xlsx_reimbursement_workbook_formula_repair_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_015_xlsx_reimbursement_workbook_formula_repair_output.xlsx",
+  "output_extension": ".xlsx",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Repair Dashboard",
+      "Transaction Register",
+      "Category Rollup",
+      "Exception Log",
+      "Control Lists"
+    ],
+    "tab_colors": {
+      "Repair Dashboard": "70AD47",
+      "Transaction Register": "5B9BD5",
+      "Category Rollup": "FFC000",
+      "Exception Log": "C00000",
+      "Control Lists": "7030A0"
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "scratch",
+      "obsolete",
+      "external-link",
+      "uncertain",
+      "Travel wrong category",
+      "Eligible wrong",
+      "2026-07-01",
+      "Lobbying reimbursed",
+      "broken formula",
+      "#REF!",
+      "#VALUE!"
+    ],
+    "header_fill": "305496",
+    "header_font": "FFFFFF",
+    "body_font": "Aptos",
+    "body_font_size": 11,
+    "currency_format": "$#,##0;($#,##0);-",
+    "freeze_panes": {
+      "Repair Dashboard": "A4",
+      "Transaction Register": "A2",
+      "Category Rollup": "A2",
+      "Exception Log": "A2",
+      "Control Lists": "A2"
+    },
+    "protected_sheets": [
+      "Repair Dashboard",
+      "Control Lists"
+    ],
+    "tables": {
+      "Transaction Register": [
+        [
+          "Transaction ID",
+          "Service Date",
+          "Vendor",
+          "Corrected Category",
+          "Amount",
+          "Eligible",
+          "Quarter",
+          "Reimbursement Amount",
+          "Audit Status",
+          "Correction Note"
+        ],
+        [
+          "TX-001",
+          "2026-04-05",
+          "Ada Supplies",
+          "Supplies",
+          1850,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B2)/3,0)",
+          "=IF(F2=\"Yes\",E2,0)",
+          "=IF(F2=\"No\",\"Exception\",IF(J2<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ],
+        [
+          "TX-002",
+          "2026-04-12",
+          "North Bus",
+          "Travel",
+          620,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B3)/3,0)",
+          "=IF(F3=\"Yes\",E3,0)",
+          "=IF(F3=\"No\",\"Exception\",IF(J3<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ],
+        [
+          "TX-003",
+          "2026-04-18",
+          "Civic Hall",
+          "Facility",
+          2400,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B4)/3,0)",
+          "=IF(F4=\"Yes\",E4,0)",
+          "=IF(F4=\"No\",\"Exception\",IF(J4<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ],
+        [
+          "TX-004",
+          "2026-05-02",
+          "Pathway Training",
+          "Training",
+          1250,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B5)/3,0)",
+          "=IF(F5=\"Yes\",E5,0)",
+          "=IF(F5=\"No\",\"Exception\",IF(J5<>\"OK\",\"Corrected\",\"Ready\"))",
+          "Category corrected from Travel"
+        ],
+        [
+          "TX-005",
+          "2026-05-15",
+          "Bright Media",
+          "Outreach",
+          980,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B6)/3,0)",
+          "=IF(F6=\"Yes\",E6,0)",
+          "=IF(F6=\"No\",\"Exception\",IF(J6<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ],
+        [
+          "TX-006",
+          "2026-05-20",
+          "Harbor Legal",
+          "Lobbying",
+          760,
+          "No",
+          "=\"Q\"&ROUNDUP(MONTH(B7)/3,0)",
+          "=IF(F7=\"Yes\",E7,0)",
+          "=IF(F7=\"No\",\"Exception\",IF(J7<>\"OK\",\"Corrected\",\"Ready\"))",
+          "Ineligible lobbying cost"
+        ],
+        [
+          "TX-007",
+          "2026-06-01",
+          "Ada Supplies",
+          "Supplies",
+          410,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B8)/3,0)",
+          "=IF(F8=\"Yes\",E8,0)",
+          "=IF(F8=\"No\",\"Exception\",IF(J8<>\"OK\",\"Corrected\",\"Ready\"))",
+          "Duplicate invoice resolved"
+        ],
+        [
+          "TX-008",
+          "2026-06-30",
+          "Transit Hub",
+          "Travel",
+          1330,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B9)/3,0)",
+          "=IF(F9=\"Yes\",E9,0)",
+          "=IF(F9=\"No\",\"Exception\",IF(J9<>\"OK\",\"Corrected\",\"Ready\"))",
+          "Date corrected into Q2"
+        ],
+        [
+          "TX-009",
+          "2026-06-28",
+          "City Print",
+          "Outreach",
+          540,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B10)/3,0)",
+          "=IF(F10=\"Yes\",E10,0)",
+          "=IF(F10=\"No\",\"Exception\",IF(J10<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ],
+        [
+          "TX-010",
+          "2026-06-30",
+          "Park Rentals",
+          "Facility",
+          2100,
+          "Yes",
+          "=\"Q\"&ROUNDUP(MONTH(B11)/3,0)",
+          "=IF(F11=\"Yes\",E11,0)",
+          "=IF(F11=\"No\",\"Exception\",IF(J11<>\"OK\",\"Corrected\",\"Ready\"))",
+          "OK"
+        ]
+      ],
+      "Category Rollup": [
+        [
+          "Category",
+          "Transactions",
+          "Eligible Amount",
+          "Exceptions"
+        ],
+        [
+          "Facility",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A2)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A2,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A2,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ],
+        [
+          "Lobbying",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A3)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A3,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A3,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ],
+        [
+          "Outreach",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A4)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A4,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A4,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ],
+        [
+          "Supplies",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A5)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A5,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A5,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ],
+        [
+          "Training",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A6)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A6,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A6,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ],
+        [
+          "Travel",
+          "=COUNTIF('Transaction Register'!$D$2:$D$11,A7)",
+          "=SUMIF('Transaction Register'!$D$2:$D$11,A7,'Transaction Register'!$H$2:$H$11)",
+          "=COUNTIFS('Transaction Register'!$D$2:$D$11,A7,'Transaction Register'!$I$2:$I$11,\"Exception\")"
+        ]
+      ],
+      "Exception Log": [
+        [
+          "Issue ID",
+          "Transaction ID",
+          "Issue",
+          "Corrected Action",
+          "Status"
+        ],
+        [
+          "EX-01",
+          "TX-004",
+          "Category miscoded as Travel",
+          "Reclassified to Training",
+          "Complete"
+        ],
+        [
+          "EX-02",
+          "TX-006",
+          "Ineligible lobbying cost",
+          "Marked Eligible No",
+          "Complete"
+        ],
+        [
+          "EX-03",
+          "TX-008",
+          "Date outside quarter",
+          "Corrected to 2026-06-30",
+          "Complete"
+        ],
+        [
+          "EX-04",
+          "TX-007",
+          "Duplicate supplier invoice",
+          "Verified separate receipt",
+          "Complete"
+        ]
+      ],
+      "Control Lists": [
+        [
+          "Allowed Categories",
+          "Eligible Values",
+          "Audit Status Values"
+        ],
+        [
+          "Facility",
+          "Yes",
+          "Ready"
+        ],
+        [
+          "Lobbying",
+          "No",
+          "Corrected"
+        ],
+        [
+          "Outreach",
+          "",
+          "Exception"
+        ],
+        [
+          "Supplies",
+          "",
+          ""
+        ],
+        [
+          "Training",
+          "",
+          ""
+        ],
+        [
+          "Travel",
+          "",
+          ""
+        ]
+      ]
+    },
+    "dashboard_cells": {
+      "A1": "Quarterly Reimbursement Repair Dashboard",
+      "A3": "Metric",
+      "B3": "Value",
+      "A4": "Transactions",
+      "B4": "=COUNTA('Transaction Register'!$A$2:$A$11)",
+      "A5": "Eligible Reimbursement",
+      "B5": "=SUM('Transaction Register'!$H$2:$H$11)",
+      "A6": "Exception Count",
+      "B6": "=COUNTIF('Transaction Register'!$I$2:$I$11,\"Exception\")",
+      "A7": "Corrected Count",
+      "B7": "=COUNTIF('Transaction Register'!$I$2:$I$11,\"Corrected\")"
+    },
+    "excel_tables": {
+      "Transaction Register": {
+        "name": "tblTransactionRegister",
+        "ref": "A1:J11"
+      },
+      "Category Rollup": {
+        "name": "tblCategoryRollup",
+        "ref": "A1:D7"
+      },
+      "Exception Log": {
+        "name": "tblExceptionLog",
+        "ref": "A1:E5"
+      },
+      "Control Lists": {
+        "name": "tblControlLists",
+        "ref": "A1:C7"
+      }
+    },
+    "currency_cells": [
+      "Transaction Register!E2:E11",
+      "Transaction Register!H2:H11",
+      "Category Rollup!C2:C7",
+      "Repair Dashboard!B5"
+    ],
+    "data_validations": [
+      {
+        "sheet": "Transaction Register",
+        "sqref": "D2:D11",
+        "formula1": "'Control Lists'!$A$2:$A$7"
+      },
+      {
+        "sheet": "Transaction Register",
+        "sqref": "F2:F11",
+        "formula1": "'Control Lists'!$B$2:$B$3"
+      }
+    ],
+    "conditional_formats": [
+      {
+        "sheet": "Transaction Register",
+        "sqref": "I2:I11",
+        "type": "containsText",
+        "operator": "containsText",
+        "text": "Exception"
+      },
+      {
+        "sheet": "Transaction Register",
+        "sqref": "H2:H11",
+        "type": "cellIs",
+        "operator": "greaterThan",
+        "formula": "0"
+      }
+    ],
+    "comments": {
+      "Transaction Register!J5": "Audit trail: category corrected to Training.",
+      "Transaction Register!J7": "Audit trail: lobbying remains ineligible.",
+      "Transaction Register!J8": "Audit trail: duplicate supplier invoice verified.",
+      "Transaction Register!J9": "Audit trail: service date corrected into Q2."
+    },
+    "chart": {
+      "sheet": "Repair Dashboard",
+      "type": "BarChart",
+      "title": "Eligible Amount by Category",
+      "categories": "'Category Rollup'!$A$2:$A$7",
+      "values": "'Category Rollup'!$C$2:$C$7"
+    },
+    "source_must_contain": [
+      "DRAFT_Reimbursement_Scratch",
+      "Correction_Log_PRIVATE",
+      "Travel wrong category",
+      "Eligible wrong",
+      "2026-07-01",
+      "Lobbying reimbursed",
+      "broken formula",
+      "#REF!"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_015_xlsx_reimbursement_workbook_formula_repair",
+  "task_dir_name": "docops_v2_l3_015_xlsx_reimbursement_workbook_formula_repair"
+}

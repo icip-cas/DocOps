@@ -1,0 +1,1 @@
+Clean the board packet PDF while preserving the live page text.

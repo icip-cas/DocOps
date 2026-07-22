@@ -1,0 +1,25 @@
+Task ID: ppt_008
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: C2 Editing
+Difficulty: Medium
+
+User Task Description:
+This client-facing slide contains bullets that are too blunt and emotionally charged.
+
+Single-Step Benchmark Instruction:
+Rewrite the three draft bullets so they sound professional and executive-appropriate while preserving the underlying message slots:
+- paperwork/files still need correction
+- corrected files/materials are needed today or promptly
+- another delay would require escalation to the steering team or leadership
+
+Atomic Scope:
+Only content editing is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The original wording is clear but not client-safe
+- The revised bullets must preserve urgency without sounding hostile
+- The change should stay local to the existing slide content
+
+Expected Output Type:
+A revised .pptx deck with three professionally rewritten but anchor-preserving bullets.

@@ -1,0 +1,41 @@
+{
+  "task_id": "docops_v2_l3_029_pptx_qbr_release_deck",
+  "task_dir_name": "docops_v2_l3_029_pptx_qbr_release_deck",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F3 Layout control",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 17,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-slide-removal -> section-reorder -> agenda-sync -> slide-number-sync -> metric-table-update -> risk-action-cascade -> decision-notes -> appendix-publication -> locked-reference-preservation",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A QBR deck must be converted from draft staging state into a release-ready presentation through a long ordered workflow.",
+  "single_step_benchmark_instruction": "Delete scratch/deprecated slides; remove draft labels; reorder slides; sync agenda and slide numbers; update KPI, risk, mitigation, decision, appendix, and speaker-note content; preserve the locked legal reference slide exactly.",
+  "atomic_scope": "Single-document long-flow PowerPoint workflow with ordered slide, table, note, and locked-reference constraints.",
+  "expected_output_type": "A revised .pptx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "PowerPoint deck release pain: stale agenda, slide numbers, metrics tables, notes, and locked reference slides",
+      "url": "https://support.microsoft.com/powerpoint"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+  "output_filename": "docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_029_pptx_qbr_release_deck"
+}

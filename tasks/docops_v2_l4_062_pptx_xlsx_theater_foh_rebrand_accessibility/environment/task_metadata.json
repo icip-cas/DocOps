@@ -1,0 +1,375 @@
+{
+  "task_id": "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility",
+  "task_dir_name": "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility",
+  "doc_type": "pptx+xlsx",
+  "primary_modality": "PowerPoint (.pptx), Excel (.xlsx), PDF, and Word (.docx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_input.docx",
+  "supporting_input_paths": [
+    "/root/legacy_foh_signage_template.pptx",
+    "/root/artist_brand_guide.pdf",
+    "/root/touring_tech_rider.pdf",
+    "/root/venue_accessibility_notes.docx",
+    "/root/stage_manager_update.docx",
+    "/root/run_of_show_and_access_roster.xlsx",
+    "/root/internal_vip_note.docx"
+  ],
+  "output_paths": {
+    "signage_deck": "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_signage_deck.pptx",
+    "source_trace": "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_source_trace.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_signage_deck.pptx",
+  "output_filename": "aurora_foh_signage_deck.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-style-privacy-strict",
+  "user_task_description": "Create a rebranded public front-of-house signage deck and source trace workbook from a legacy deck, brand guide, run-of-show, accessibility notes, tech rider, stage manager update, and private VIP note.",
+  "single_step_benchmark_instruction": "Create aurora_foh_signage_deck.pptx and foh_signage_source_trace.xlsx. Retrieve public schedule/accessibility/advisory details, replace the legacy red template with Aurora brand colors, preserve workbook controls, and exclude private VIP/staffing/hospitality notes.",
+  "expected_output_type": "A .pptx public signage deck and .xlsx source trace workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Performing arts front-of-house signage and accessibility operations",
+      "url": "https://www.arts.gov/impact/accessibility"
+    },
+    {
+      "title": "Live event technical riders and run-of-show coordination workflows",
+      "url": "https://www.eventbrite.com/blog/run-of-show-template-ds00/"
+    },
+    {
+      "title": "Venue accessibility communications for captioning, audio description, and seating",
+      "url": "https://www.arts.gov/impact/accessibility"
+    }
+  ],
+  "verifier_expectations": {
+    "pptx_output": "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_signage_deck.pptx",
+    "xlsx_output": "/root/submission/docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility_source_trace.xlsx",
+    "slide_titles": [
+      "Aurora Lines",
+      "Tonight's Schedule",
+      "Entry and Seating",
+      "Accessibility Services",
+      "Performance Advisories",
+      "Intermission and Exits",
+      "Final Reminders"
+    ],
+    "ppt_required": [
+      "Aurora Lines",
+      "North Pier Theater",
+      "Doors 6:30 PM",
+      "Curtain 7:30 PM",
+      "Act I 52 minutes",
+      "Intermission 18 minutes",
+      "Act II 47 minutes",
+      "Door 3",
+      "Rows B-D",
+      "Captioning screens",
+      "Audio description headsets at Coat Check",
+      "Quiet room Studio C",
+      "strobe effect in Scene 5",
+      "No photography or recording",
+      "post-show meet-and-greet is cancelled",
+      "merch table remains open until 10:15 PM"
+    ],
+    "ppt_forbidden": [
+      "OLD TEMPLATE",
+      "TBD",
+      "VIP donor list",
+      "complimentary champagne",
+      "artist hotel",
+      "security staffing shortage",
+      "red legacy theme"
+    ],
+    "required_colors": [
+      "102A43",
+      "F2C94C",
+      "F7F1E1"
+    ],
+    "forbidden_colors": [
+      "B00020",
+      "C00000"
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Show",
+        "Aurora Lines",
+        "Artist brand guide",
+        "Matched"
+      ],
+      [
+        "Venue",
+        "North Pier Theater",
+        "Run of show",
+        "Matched"
+      ],
+      [
+        "Doors",
+        "6:30 PM",
+        "Run of show",
+        "Matched"
+      ],
+      [
+        "Curtain",
+        "7:30 PM",
+        "Run of show",
+        "Matched"
+      ],
+      [
+        "Accessibility services",
+        4,
+        "Accessibility notes",
+        "Counted"
+      ],
+      [
+        "Advisories",
+        2,
+        "Tech rider",
+        "Counted"
+      ],
+      [
+        "Excluded private notes",
+        4,
+        "Internal VIP note",
+        "Checked"
+      ],
+      [
+        "Deck ready",
+        "=IF(AND(B6=4,B7=2,B8=4),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "slide_trace_rows": [
+      [
+        "Slide",
+        "Required Retrieval",
+        "Source File",
+        "Status"
+      ],
+      [
+        "Aurora Lines",
+        "Show title, venue, new brand colors",
+        "artist_brand_guide.pdf; run_of_show.xlsx",
+        "Ready"
+      ],
+      [
+        "Tonight's Schedule",
+        "Doors, curtain, Act I, intermission, Act II",
+        "run_of_show.xlsx",
+        "Ready"
+      ],
+      [
+        "Entry and Seating",
+        "Door 3 and Rows B-D",
+        "venue_accessibility_notes.docx",
+        "Ready"
+      ],
+      [
+        "Accessibility Services",
+        "Captioning, audio description, quiet room, wheelchair route",
+        "venue_accessibility_notes.docx; access_services_roster.xlsx",
+        "Ready"
+      ],
+      [
+        "Performance Advisories",
+        "Strobe Scene 5 and no photography",
+        "touring_tech_rider.pdf",
+        "Ready"
+      ],
+      [
+        "Intermission and Exits",
+        "18-minute intermission and exit reminders",
+        "run_of_show.xlsx; venue_accessibility_notes.docx",
+        "Ready"
+      ],
+      [
+        "Final Reminders",
+        "Meet-and-greet cancelled; merch open until 10:15 PM",
+        "stage_manager_update.docx",
+        "Ready"
+      ]
+    ],
+    "access_rows": [
+      [
+        "Service",
+        "Public Location/Instruction",
+        "Source",
+        "Include"
+      ],
+      [
+        "Wheelchair seating",
+        "Use Door 3; reserved Rows B-D",
+        "venue_accessibility_notes.docx",
+        "Yes"
+      ],
+      [
+        "Captioning screens",
+        "Captioning screens available for Rows B-D",
+        "access_services_roster.xlsx",
+        "Yes"
+      ],
+      [
+        "Audio description",
+        "Headsets available at Coat Check",
+        "access_services_roster.xlsx",
+        "Yes"
+      ],
+      [
+        "Quiet room",
+        "Studio C available before curtain and during intermission",
+        "venue_accessibility_notes.docx",
+        "Yes"
+      ]
+    ],
+    "advisory_rows": [
+      [
+        "Advisory",
+        "Public Wording",
+        "Source",
+        "Include"
+      ],
+      [
+        "Strobe",
+        "Brief strobe effect in Scene 5",
+        "touring_tech_rider.pdf",
+        "Yes"
+      ],
+      [
+        "Recording",
+        "No photography or recording",
+        "touring_tech_rider.pdf",
+        "Yes"
+      ]
+    ],
+    "style_rows": [
+      [
+        "Check",
+        "Expected",
+        "Status"
+      ],
+      [
+        "Primary color",
+        "102A43",
+        "Pass"
+      ],
+      [
+        "Accent color",
+        "F2C94C",
+        "Pass"
+      ],
+      [
+        "Warm background",
+        "F7F1E1",
+        "Pass"
+      ],
+      [
+        "Legacy red removed",
+        "B00020 absent",
+        "Pass"
+      ],
+      [
+        "Old placeholders removed",
+        "Legacy placeholders absent",
+        "Pass"
+      ]
+    ],
+    "private_rows": [
+      [
+        "Private Note",
+        "Treatment"
+      ],
+      [
+        "VIP donor list",
+        "Exclude"
+      ],
+      [
+        "complimentary champagne",
+        "Exclude"
+      ],
+      [
+        "artist hotel",
+        "Exclude"
+      ],
+      [
+        "security staffing shortage",
+        "Exclude"
+      ]
+    ],
+    "sheet_order": [
+      "Deck Summary",
+      "Slide Source Trace",
+      "Accessibility Map",
+      "Advisories",
+      "Style QA",
+      "Private Notes"
+    ],
+    "tables": {
+      "Deck Summary": [
+        "tblDeckSummary",
+        "A1:D9"
+      ],
+      "Slide Source Trace": [
+        "tblSlideTrace",
+        "A1:D8"
+      ],
+      "Accessibility Map": [
+        "tblAccessibility",
+        "A1:D5"
+      ],
+      "Advisories": [
+        "tblAdvisories",
+        "A1:D3"
+      ],
+      "Style QA": [
+        "tblStyleQA",
+        "A1:C6"
+      ],
+      "Private Notes": [
+        "tblPrivateNotes",
+        "A1:B5"
+      ]
+    },
+    "formula_cells": {
+      "Deck Summary!B9": "=IF(AND(B6=4,B7=2,B8=4),\"Ready\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Private Notes"
+    ],
+    "defined_names": [
+      "DeckReady",
+      "AccessibilityCount",
+      "AdvisoryCount"
+    ],
+    "print_areas": {
+      "Deck Summary": "A1:D9",
+      "Slide Source Trace": "A1:D8",
+      "Accessibility Map": "A1:D5",
+      "Advisories": "A1:D3",
+      "Style QA": "A1:C6"
+    },
+    "data_validation": {
+      "Slide Source Trace": [
+        "D2:D8"
+      ],
+      "Accessibility Map": [
+        "D2:D5"
+      ],
+      "Advisories": [
+        "D2:D3"
+      ],
+      "Style QA": [
+        "C2:C6"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_062_pptx_xlsx_theater_foh_rebrand_accessibility"
+}

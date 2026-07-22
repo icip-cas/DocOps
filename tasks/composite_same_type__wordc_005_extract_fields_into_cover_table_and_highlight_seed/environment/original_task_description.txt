@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_005
+
+Doc type: word
+Atomic operations: C1 Extraction, F2 Highlighting
+Composition pattern: extract -> highlight
+Difficulty: Medium-Hard
+
+User-facing goal:
+This shutdown memo needs the key fields surfaced at the top and the source evidence highlighted below.
+
+Single-step benchmark instruction:
+Fill the cover table with the final approved shutdown date and final action owner, then highlight only the two evidence lines in the body that support those fields.
+
+Atomic scope:
+Only the two extracted cover-table fields and the corresponding evidence highlights are explicitly requested.
+
+Expected output type:
+A revised .docx memo with populated cover fields and highlighted evidence lines.

@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_001
+
+Doc type: excel
+Atomic operations: C5 Reasoning, C2 Editing, F2 Highlighting
+Composition pattern: understand -> edit -> highlight
+Difficulty: Hard
+
+User-facing goal:
+This workbook contains an inaccurate ops-summary note that should be corrected and visually supported with evidence.
+
+Single-step benchmark instruction:
+Using the evidence on `Monthly Data`, correct only cell `B8` on `Ops Summary` so the executive note reflects the true steepest backlog region and whether any site crossed the 12-incident threshold, then highlight only the supporting evidence rows on `Monthly Data`.
+
+Atomic scope:
+Only the targeted note rewrite in `Ops Summary!B8` and the supporting-row highlight on `Monthly Data` are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with an accurate executive-safe note and highlighted supporting rows.

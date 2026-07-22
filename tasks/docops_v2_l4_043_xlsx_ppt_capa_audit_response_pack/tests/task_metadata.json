@@ -1,0 +1,270 @@
+{
+  "task_id": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+  "task_dir_name": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+  "doc_type": "xlsx+ppt",
+  "primary_modality": "Excel (.xlsx) and PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 10,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "regulatory-clause-reconciliation -> public-boundary-filtering -> CAPA-tracker-generation -> audit-deck-refresh -> cross-output-public-CAPA-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+  "supporting_input_paths": [
+    "/root/capa_deviation_log.xlsx",
+    "/root/audit_scope_note.docx",
+    "/root/regulation_excerpt.pdf",
+    "/root/evidence_index.xlsx"
+  ],
+  "output_paths": {
+    "tracker": "/root/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+    "deck": "/root/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+  "output_filename": "capa_audit_tracker.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A clinical quality CAPA audit response tracker and public audit response deck must be generated from a draft deck, deviation log, audit scope note, regulation excerpt, and evidence index while excluding internal-only root-cause material.",
+  "single_step_benchmark_instruction": "Create capa_audit_tracker.xlsx and refresh the CAPA audit response PPTX. Reconcile CAPA status, owner aliases, regulation clauses, evidence readiness, and publish boundaries across all inputs. Keep closed/internal CAPA-21 in the workbook but exclude it from public slides, preserve workbook formulas/tables/validation/hidden rules, and make the deck and workbook agree on public CAPA IDs.",
+  "atomic_scope": "Cross-document, multi-output workflow with native Excel controls and public PowerPoint release boundary.",
+  "expected_output_type": "A new .xlsx tracker and revised .pptx deck saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Real-world CAPA audit response pain point: trackers, evidence indexes, and external decks drift under public/internal release constraints",
+      "url": "local:DocumentBenchmark manual L4 scenario design"
+    },
+    {
+      "title": "Quality/compliance CAPA workflows commonly require evidence traceability and public response filtering",
+      "url": "local:DocumentBenchmark L3 policy/evidence cascade family"
+    }
+  ],
+  "verifier_expectations": {
+    "tracker_output": "/root/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+    "deck_output": "/root/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx",
+    "deck_titles_order": [
+      "CAPA Audit Response Pack",
+      "Executive Summary",
+      "Public CAPA Matrix",
+      "Evidence Readiness",
+      "Escalation Timeline",
+      "Appendix - Public Evidence Index",
+      "Reference - Matrix Template"
+    ],
+    "absent_slide_titles": [
+      "Internal Root Cause - Remove"
+    ],
+    "deck_required": [
+      "Three CAPAs are publishable to the audit response deck.",
+      "CAPA-24 is blocked by missing lab certificate; CAPA-17 remains at risk.",
+      "One closed internal CAPA is retained in the workbook but excluded from public slides."
+    ],
+    "deck_forbidden": [
+      "patient initials",
+      "unblinded lot",
+      "Internal root cause",
+      "CAPA-21",
+      "D-226",
+      "E-21A"
+    ],
+    "public_capa_rows": [
+      [
+        "CAPA-17",
+        "D-203",
+        "ICH E6(R2) 5.1",
+        "Priya Shah",
+        "2026-08-14",
+        "E-17A; E-17B",
+        "At Risk"
+      ],
+      [
+        "CAPA-18",
+        "D-219",
+        "21 CFR Part 11.10(e)",
+        "Mateo Cruz",
+        "2026-09-01",
+        "E-18A",
+        "Ready"
+      ],
+      [
+        "CAPA-24",
+        "D-241",
+        "ICH E6(R2) 4.9",
+        "Lena Ortiz",
+        "2026-08-05",
+        "E-24A",
+        "Blocked"
+      ]
+    ],
+    "public_evidence_rows": [
+      [
+        "E-17A",
+        "CAPA-17",
+        "Retraining roster",
+        "Publishable"
+      ],
+      [
+        "E-17B",
+        "CAPA-17",
+        "Monitoring checklist revision",
+        "Publishable"
+      ],
+      [
+        "E-18A",
+        "CAPA-18",
+        "eTMF upload audit trail",
+        "Publishable"
+      ],
+      [
+        "E-24A",
+        "CAPA-24",
+        "Lab certificate replacement request",
+        "Hold"
+      ]
+    ],
+    "tracker_sheet_order": [
+      "CAPA Tracker",
+      "Evidence Readiness",
+      "Rules"
+    ],
+    "tracker_rows": [
+      [
+        "CAPA-17",
+        "D-203",
+        "ICH E6(R2) 5.1",
+        "Priya Shah",
+        "2026-08-14",
+        "E-17A; E-17B",
+        "At Risk",
+        "Yes",
+        3
+      ],
+      [
+        "CAPA-18",
+        "D-219",
+        "21 CFR Part 11.10(e)",
+        "Mateo Cruz",
+        "2026-09-01",
+        "E-18A",
+        "Ready",
+        "Yes",
+        3
+      ],
+      [
+        "CAPA-21",
+        "D-226",
+        "ICH Q9(R1) 5.4",
+        "Noah Patel",
+        "2026-07-20",
+        "E-21A",
+        "Closed",
+        "No",
+        "N/A"
+      ],
+      [
+        "CAPA-24",
+        "D-241",
+        "ICH E6(R2) 4.9",
+        "Lena Ortiz",
+        "2026-08-05",
+        "E-24A",
+        "Blocked",
+        "Yes",
+        3
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "E-17A",
+        "CAPA-17",
+        "Retraining roster",
+        "Yes",
+        "Verified"
+      ],
+      [
+        "E-17B",
+        "CAPA-17",
+        "Monitoring checklist revision",
+        "Yes",
+        "Verified"
+      ],
+      [
+        "E-18A",
+        "CAPA-18",
+        "eTMF upload audit trail",
+        "Yes",
+        "Verified"
+      ],
+      [
+        "E-21A",
+        "CAPA-21",
+        "Unblinded lot investigation notes",
+        "No",
+        "Verified"
+      ],
+      [
+        "E-24A",
+        "CAPA-24",
+        "Lab certificate replacement request",
+        "Yes",
+        "Missing"
+      ]
+    ],
+    "tracker_table_ref": "A1:K5",
+    "evidence_table_ref": "A1:F6",
+    "formula_cells": {
+      "CAPA Tracker!J2": "=IF(H2=\"Yes\",\"IN DECK\",\"EXCLUDE\")",
+      "CAPA Tracker!J3": "=IF(H3=\"Yes\",\"IN DECK\",\"EXCLUDE\")",
+      "CAPA Tracker!J4": "=IF(H4=\"Yes\",\"IN DECK\",\"EXCLUDE\")",
+      "CAPA Tracker!J5": "=IF(H5=\"Yes\",\"IN DECK\",\"EXCLUDE\")",
+      "CAPA Tracker!K2": "=IF(COUNTIF('Evidence Readiness'!$B:$B,A2)>0,\"EVIDENCE INDEXED\",\"MISSING\")",
+      "CAPA Tracker!K3": "=IF(COUNTIF('Evidence Readiness'!$B:$B,A3)>0,\"EVIDENCE INDEXED\",\"MISSING\")",
+      "CAPA Tracker!K4": "=IF(COUNTIF('Evidence Readiness'!$B:$B,A4)>0,\"EVIDENCE INDEXED\",\"MISSING\")",
+      "CAPA Tracker!K5": "=IF(COUNTIF('Evidence Readiness'!$B:$B,A5)>0,\"EVIDENCE INDEXED\",\"MISSING\")",
+      "Evidence Readiness!F2": "=IF(AND(D2=\"Yes\",E2=\"Verified\"),\"Publishable\",\"Hold\")",
+      "Evidence Readiness!F3": "=IF(AND(D3=\"Yes\",E3=\"Verified\"),\"Publishable\",\"Hold\")",
+      "Evidence Readiness!F4": "=IF(AND(D4=\"Yes\",E4=\"Verified\"),\"Publishable\",\"Hold\")",
+      "Evidence Readiness!F5": "=IF(AND(D5=\"Yes\",E5=\"Verified\"),\"Publishable\",\"Hold\")",
+      "Evidence Readiness!F6": "=IF(AND(D6=\"Yes\",E6=\"Verified\"),\"Publishable\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "public_status_choices",
+      "publish_choices"
+    ],
+    "data_validation_ranges": {
+      "CAPA Tracker": [
+        "G2:G5",
+        "H2:H5"
+      ]
+    },
+    "highlight_rows": [
+      2,
+      5
+    ],
+    "public_capa_ids": [
+      "CAPA-17",
+      "CAPA-18",
+      "CAPA-24"
+    ],
+    "internal_capa_ids": [
+      "CAPA-21"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack"
+}

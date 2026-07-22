@@ -1,0 +1,1 @@
+Publish board minutes and a matching action register from a draft minutes file, agenda packet, attendance/vote log, and chair reconciliation notes.

@@ -1,0 +1,413 @@
+{
+  "task_id": "docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown",
+  "task_dir_name": "docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document many-input multi-output",
+  "composition_pattern": "grant-source-doc-reconciliation -> eligible-cost-and-match-workbook -> reimbursement-request -> internal-cash-strategy-boundary",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_input.docx",
+  "supporting_input_paths": [
+    "/root/grant_agreement_terms.pdf",
+    "/root/approved_project_budget.xlsx",
+    "/root/invoice_packet.pdf",
+    "/root/payroll_overtime_register.xlsx",
+    "/root/volunteer_match_log.xlsx",
+    "/root/procurement_quotes.pdf",
+    "/root/project_progress_report.docx",
+    "/root/grant_compliance_checklist.pdf",
+    "/root/internal_cash_strategy_note.pdf"
+  ],
+  "output_paths": {
+    "reimbursement_request": "/root/submission/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_reimbursement_request.docx",
+    "workbook": "/root/submission/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_reimbursement_request.docx",
+  "output_filename": "grant_reimbursement_request.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a grant reimbursement request and drawdown workbook from ten source documents while excluding ineligible and internal-only costs from the public reimbursement package.",
+  "single_step_benchmark_instruction": "Create grant_reimbursement_request.docx and grant_reimbursement_workbook.xlsx. Reconcile the grant agreement, budget, invoices, payroll, match log, procurement, progress, compliance, and internal cash strategy documents; request $43,912.50 federal reimbursement on $58,550.00 eligible cost; document $14,637.50 match; preserve workbook controls and keep internal cash strategy out of public outputs.",
+  "expected_output_type": "A .docx reimbursement request and .xlsx grant reimbursement workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "2 CFR 200.403 requires federal award costs to be necessary, reasonable, allocable, authorized, and adequately documented",
+      "url": "https://www.ecfr.gov/current/title-2/subtitle-A/chapter-II/part-200/subpart-E/section-200.403"
+    },
+    {
+      "title": "Federal grant documentation workflows commonly require eligible cost backup, match support, procurement files, and exclusion of unallowable costs",
+      "url": "local:DocumentBenchmark L4 scenario synthesis"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_reimbursement_request.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown_workbook.xlsx",
+    "eligible_rows": [
+      [
+        "DEB-101",
+        "Emergency debris removal",
+        "Contractor",
+        "INV-3301; PO-18",
+        28400,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "LAB-201",
+        "Shelter overtime labor",
+        "Payroll",
+        "PR-0526; TS-44",
+        12600,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "MAT-301",
+        "Emergency shelter supplies",
+        "Materials",
+        "INV-4420; quotes Q-11/Q-12/Q-13",
+        8750,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "EQ-401",
+        "Generator rental",
+        "Equipment",
+        "INV-776; equipment log",
+        5600,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "ADM-501",
+        "Direct administrative cost",
+        "Admin",
+        "DAC log; timesheet extract",
+        3200,
+        "Eligible",
+        "Public"
+      ]
+    ],
+    "all_cost_rows": [
+      [
+        "DEB-101",
+        "Emergency debris removal",
+        "Contractor",
+        "INV-3301; PO-18",
+        28400,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "LAB-201",
+        "Shelter overtime labor",
+        "Payroll",
+        "PR-0526; TS-44",
+        12600,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "MAT-301",
+        "Emergency shelter supplies",
+        "Materials",
+        "INV-4420; quotes Q-11/Q-12/Q-13",
+        8750,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "EQ-401",
+        "Generator rental",
+        "Equipment",
+        "INV-776; equipment log",
+        5600,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "ADM-501",
+        "Direct administrative cost",
+        "Admin",
+        "DAC log; timesheet extract",
+        3200,
+        "Eligible",
+        "Public"
+      ],
+      [
+        "LOBBY-901",
+        "State lobbying consultant",
+        "Professional Services",
+        "Consultant invoice",
+        4800,
+        "Ineligible",
+        "Excluded"
+      ],
+      [
+        "CAT-902",
+        "Late sole-source catering",
+        "Food Service",
+        "Receipt only; no procurement support",
+        3100,
+        "Ineligible",
+        "Excluded"
+      ],
+      [
+        "CASH-999",
+        "Bridge financing interest",
+        "Financing",
+        "Internal cash-flow note",
+        1250,
+        "Internal Only",
+        "Internal"
+      ]
+    ],
+    "match_rows": [
+      [
+        "MATCH-01",
+        "County cash match transfer",
+        "Cash",
+        9500,
+        "Bank confirmation",
+        "Eligible Match"
+      ],
+      [
+        "MATCH-02",
+        "Volunteer sandbag crew",
+        "In-kind",
+        3840,
+        "Volunteer sign-in log",
+        "Eligible Match"
+      ],
+      [
+        "MATCH-03",
+        "Donated forklift use",
+        "In-kind",
+        1297.5,
+        "Equipment donation log",
+        "Eligible Match"
+      ]
+    ],
+    "procurement_rows": [
+      [
+        "PO-18",
+        "Debris removal",
+        "Three quotes",
+        "Compliant",
+        "Lowest responsive quote selected"
+      ],
+      [
+        "PO-22",
+        "Shelter supplies",
+        "Three quotes",
+        "Compliant",
+        "Quotes Q-11/Q-12/Q-13 retained"
+      ],
+      [
+        "PO-31",
+        "Generator rental",
+        "Emergency rental",
+        "Compliant",
+        "Emergency justification retained"
+      ],
+      [
+        "PO-99",
+        "Catering",
+        "Receipt only",
+        "Do Not Claim",
+        "No procurement support"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "EV-001",
+        "Grant agreement",
+        "grant_agreement_terms.pdf",
+        "Public",
+        "Funding share and documentation rules"
+      ],
+      [
+        "EV-002",
+        "Approved budget",
+        "approved_project_budget.xlsx",
+        "Public",
+        "Approved cost categories"
+      ],
+      [
+        "EV-003",
+        "Invoice packet",
+        "invoice_packet.pdf",
+        "Public",
+        "Contractor/material/equipment invoices"
+      ],
+      [
+        "EV-004",
+        "Payroll register",
+        "payroll_overtime_register.xlsx",
+        "Public",
+        "Shelter overtime labor"
+      ],
+      [
+        "EV-005",
+        "Volunteer match log",
+        "volunteer_match_log.xlsx",
+        "Public",
+        "In-kind match support"
+      ],
+      [
+        "EV-006",
+        "Procurement quotes",
+        "procurement_quotes.pdf",
+        "Public",
+        "Quote support and non-claim item"
+      ],
+      [
+        "EV-007",
+        "Progress report",
+        "project_progress_report.docx",
+        "Public",
+        "Work completion narrative"
+      ],
+      [
+        "EV-008",
+        "Compliance checklist",
+        "grant_compliance_checklist.pdf",
+        "Public",
+        "Eligibility and documentation checks"
+      ],
+      [
+        "EV-009",
+        "Internal cash strategy",
+        "internal_cash_strategy_note.pdf",
+        "Internal",
+        "Do not publish"
+      ]
+    ],
+    "forbidden_public": [
+      "CASH-999",
+      "bridge financing",
+      "cash-flow gap",
+      "advance draw",
+      "use lobbying as match",
+      "temporary payroll float",
+      "internal reserve"
+    ],
+    "sheet_order": [
+      "Reimbursement Summary",
+      "Cost Detail",
+      "Match Ledger",
+      "Procurement Review",
+      "Evidence Index",
+      "Public Narrative",
+      "Internal Strategy",
+      "Rules"
+    ],
+    "tables": {
+      "Reimbursement Summary": [
+        "reimbursement_summary",
+        "A1:C5"
+      ],
+      "Cost Detail": [
+        "cost_detail",
+        "A1:J9"
+      ],
+      "Match Ledger": [
+        "match_ledger",
+        "A1:F5"
+      ],
+      "Procurement Review": [
+        "procurement_review",
+        "A1:E5"
+      ],
+      "Evidence Index": [
+        "evidence_index",
+        "A1:E10"
+      ],
+      "Public Narrative": [
+        "public_narrative",
+        "A1:B5"
+      ]
+    },
+    "hidden_sheets": [
+      "Internal Strategy",
+      "Rules"
+    ],
+    "defined_names": [
+      "eligibility_choices",
+      "boundary_choices"
+    ],
+    "data_validation_ranges": {
+      "Cost Detail": [
+        "F2:F9",
+        "G2:G9"
+      ],
+      "Evidence Index": [
+        "D2:D10"
+      ]
+    },
+    "print_areas": {
+      "Reimbursement Summary": "'Reimbursement Summary'!$A$1:$C$5",
+      "Cost Detail": "'Cost Detail'!$A$1:$J$9",
+      "Match Ledger": "'Match Ledger'!$A$1:$F$5",
+      "Procurement Review": "'Procurement Review'!$A$1:$E$5",
+      "Evidence Index": "'Evidence Index'!$A$1:$E$10",
+      "Public Narrative": "'Public Narrative'!$A$1:$B$5"
+    },
+    "formula_cells": {
+      "Reimbursement Summary!B2": "=SUMIF('Cost Detail'!F:F,\"Eligible\",'Cost Detail'!E:E)",
+      "Reimbursement Summary!B3": "=B2*0.75",
+      "Reimbursement Summary!B4": "=B2-B3",
+      "Cost Detail!H2": "=IF(F2=\"Eligible\",E2*0.75,0)",
+      "Cost Detail!J7": "=IF(F7=\"Eligible\",\"Claim\",\"Do Not Claim\")",
+      "Match Ledger!D5": "=SUM(D2:D4)",
+      "Match Ledger!F5": "=IF(D5>='Reimbursement Summary'!B4,\"Sufficient\",\"Shortfall\")"
+    },
+    "doc_heading_order": [
+      "Grant Reimbursement Request",
+      "Executive Summary",
+      "Eligible Cost Summary",
+      "Match and Procurement Review",
+      "Evidence Boundary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "This request seeks $43,912.50 in federal reimbursement for $58,550.00 in documented eligible disaster-response costs.",
+      "The required local match is $14,637.50 and is supported by cash and allowable in-kind records.",
+      "Documented match consists of county cash, volunteer sandbag crew value, and donated forklift use.",
+      "This request and grant_reimbursement_workbook.xlsx agree on $58,550.00 eligible cost, $43,912.50 federal reimbursement, and $14,637.50 required match.",
+      "The workbook excludes ineligible lobbying, unsupported catering, and internal financing costs from the reimbursement calculation."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Internal Cash Strategy - Remove",
+      "CASH-999",
+      "bridge financing",
+      "cash-flow gap",
+      "advance draw",
+      "use lobbying as match",
+      "temporary payroll float",
+      "internal reserve"
+    ],
+    "doc_header_contains": "Federal share: $43,912.50",
+    "doc_footer_contains": "grant_reimbursement_workbook.xlsx",
+    "doc_highlight_text": "Control note: lobbying, unsupported catering, and internal financing costs are excluded from this reimbursement request."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_073_word_xlsx_disaster_grant_reimbursement_drawdown"
+}

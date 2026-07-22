@@ -1,0 +1,381 @@
+{
+  "task_id": "docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge",
+  "task_dir_name": "docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge",
+  "doc_type": "pdf+xlsx",
+  "primary_modality": "PDF, Excel (.xlsx), Word (.docx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_input.docx",
+  "supporting_input_paths": [
+    "/root/certificate_badge_template.docx",
+    "/root/participant_roster.xlsx",
+    "/root/participant_corrections.docx",
+    "/root/studio_brand_guide.pdf",
+    "/root/private_exception_notes.docx"
+  ],
+  "output_paths": {
+    "merged_packet": "/root/submission/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_merged_packet.pdf",
+    "manifest": "/root/submission/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_manifest.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_merged_packet.pdf",
+  "output_filename": "workshop_certificate_badge_packet.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-merge-order-privacy-strict",
+  "user_task_description": "Create a batch merged certificate/badge PDF packet and fulfillment manifest workbook from template, roster, corrections, brand guide, and private notes.",
+  "single_step_benchmark_instruction": "Create workshop_certificate_badge_packet.pdf and workshop_fulfillment_manifest.xlsx. Generate certificate/badge pages in participant order, apply corrections, preserve workbook controls, and exclude private exception notes.",
+  "expected_output_type": "A .pdf merged certificate/badge packet and .xlsx fulfillment manifest saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Mail merge and batch document generation workflows",
+      "url": "https://support.microsoft.com/office/use-mail-merge-for-bulk-email-letters-labels-and-envelopes-f488ed5b-b849-4c11-9cff-932c49474705"
+    },
+    {
+      "title": "Event badge and certificate fulfillment operations",
+      "url": "https://www.eventbrite.com/blog/event-badges-ds00/"
+    }
+  ],
+  "verifier_expectations": {
+    "pdf_output": "/root/submission/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_merged_packet.pdf",
+    "xlsx_output": "/root/submission/docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge_manifest.xlsx",
+    "pdf_page_count": 10,
+    "pdf_required": [
+      "River Glass Studio",
+      "Community Repair Skills Weekend",
+      "Certificate of Completion",
+      "Badge",
+      "Ari Kim",
+      "Intro Tool Safety",
+      "Certificate ID: RGS-2026-001",
+      "Large-print badge",
+      "Bea Santos",
+      "Small Appliance Basics",
+      "Certificate ID: RGS-2026-002",
+      "Dietary note: vegetarian lunch",
+      "Chen Wu",
+      "Lamp Rewiring Lab",
+      "Certificate ID: RGS-2026-003",
+      "Interpreter seat reserved",
+      "Devin Hart",
+      "Radio Repair Clinic",
+      "Certificate ID: RGS-2026-004",
+      "Badge pickup at front desk",
+      "Elena Park",
+      "Fix-It Mentor Track",
+      "Certificate ID: RGS-2026-005",
+      "Photo consent not granted"
+    ],
+    "pdf_forbidden": [
+      "VIP comp",
+      "late payment",
+      "do not seat near sponsor",
+      "private donor note",
+      "staff complaint",
+      "discount dispute",
+      "internal exception"
+    ],
+    "merge_rows": [
+      [
+        "Seq",
+        "Name",
+        "Workshop",
+        "Certificate ID",
+        "Badge Variant",
+        "Public Note",
+        "Status"
+      ],
+      [
+        1,
+        "Ari Kim",
+        "Intro Tool Safety",
+        "RGS-2026-001",
+        "Large-print badge",
+        "Large-print badge",
+        "Ready"
+      ],
+      [
+        2,
+        "Bea Santos",
+        "Small Appliance Basics",
+        "RGS-2026-002",
+        "Standard badge",
+        "Dietary note: vegetarian lunch",
+        "Ready"
+      ],
+      [
+        3,
+        "Chen Wu",
+        "Lamp Rewiring Lab",
+        "RGS-2026-003",
+        "Interpreter badge",
+        "Interpreter seat reserved",
+        "Ready"
+      ],
+      [
+        4,
+        "Devin Hart",
+        "Radio Repair Clinic",
+        "RGS-2026-004",
+        "Standard badge",
+        "Badge pickup at front desk",
+        "Ready"
+      ],
+      [
+        5,
+        "Elena Park",
+        "Fix-It Mentor Track",
+        "RGS-2026-005",
+        "No-photo badge",
+        "Photo consent not granted",
+        "Ready"
+      ]
+    ],
+    "packet_rows": [
+      [
+        "Page",
+        "Document Type",
+        "Name",
+        "Expected Text",
+        "QC"
+      ],
+      [
+        1,
+        "Certificate",
+        "Ari Kim",
+        "RGS-2026-001",
+        "Pass"
+      ],
+      [
+        2,
+        "Badge",
+        "Ari Kim",
+        "Large-print badge",
+        "Pass"
+      ],
+      [
+        3,
+        "Certificate",
+        "Bea Santos",
+        "RGS-2026-002",
+        "Pass"
+      ],
+      [
+        4,
+        "Badge",
+        "Bea Santos",
+        "Dietary note: vegetarian lunch",
+        "Pass"
+      ],
+      [
+        5,
+        "Certificate",
+        "Chen Wu",
+        "RGS-2026-003",
+        "Pass"
+      ],
+      [
+        6,
+        "Badge",
+        "Chen Wu",
+        "Interpreter seat reserved",
+        "Pass"
+      ],
+      [
+        7,
+        "Certificate",
+        "Devin Hart",
+        "RGS-2026-004",
+        "Pass"
+      ],
+      [
+        8,
+        "Badge",
+        "Devin Hart",
+        "Badge pickup at front desk",
+        "Pass"
+      ],
+      [
+        9,
+        "Certificate",
+        "Elena Park",
+        "RGS-2026-005",
+        "Pass"
+      ],
+      [
+        10,
+        "Badge",
+        "Elena Park",
+        "Photo consent not granted",
+        "Pass"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Event",
+        "Community Repair Skills Weekend",
+        "Template brief",
+        "Matched"
+      ],
+      [
+        "Studio",
+        "River Glass Studio",
+        "Brand guide",
+        "Matched"
+      ],
+      [
+        "Merged participants",
+        "=COUNTA('Merge Control'!B2:B6)",
+        "Merge Control",
+        "Calculated"
+      ],
+      [
+        "Packet pages",
+        "=COUNTA('Packet QA'!A2:A11)",
+        "Packet QA",
+        "Calculated"
+      ],
+      [
+        "Ready rows",
+        "=COUNTIF('Merge Control'!G2:G6,\"Ready\")",
+        "Merge Control",
+        "Calculated"
+      ],
+      [
+        "Private exceptions excluded",
+        4,
+        "Private Exceptions",
+        "Checked"
+      ],
+      [
+        "Packet ready",
+        "=IF(AND(B4=5,B5=10,B6=5,B7=4),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "style_rows": [
+      [
+        "Check",
+        "Expected",
+        "Status"
+      ],
+      [
+        "Brand color",
+        "1F4E5F",
+        "Pass"
+      ],
+      [
+        "Accent color",
+        "E8B44B",
+        "Pass"
+      ],
+      [
+        "Certificate IDs",
+        "Sequential RGS-2026-001 through RGS-2026-005",
+        "Pass"
+      ],
+      [
+        "Badge pages",
+        "One badge after each certificate",
+        "Pass"
+      ],
+      [
+        "Private notes",
+        "Excluded from public packet",
+        "Pass"
+      ]
+    ],
+    "private_rows": [
+      [
+        "Private Note",
+        "Treatment"
+      ],
+      [
+        "VIP comp",
+        "Exclude"
+      ],
+      [
+        "late payment",
+        "Exclude"
+      ],
+      [
+        "do not seat near sponsor",
+        "Exclude"
+      ],
+      [
+        "staff complaint",
+        "Exclude"
+      ]
+    ],
+    "sheet_order": [
+      "Fulfillment Summary",
+      "Merge Control",
+      "Packet QA",
+      "Style QA",
+      "Private Exceptions"
+    ],
+    "tables": {
+      "Fulfillment Summary": [
+        "tblFulfillmentSummary",
+        "A1:D8"
+      ],
+      "Merge Control": [
+        "tblMergeControl",
+        "A1:G6"
+      ],
+      "Packet QA": [
+        "tblPacketQA",
+        "A1:E11"
+      ],
+      "Style QA": [
+        "tblStyleQA",
+        "A1:C6"
+      ],
+      "Private Exceptions": [
+        "tblPrivateExceptions",
+        "A1:B5"
+      ]
+    },
+    "formula_cells": {
+      "Fulfillment Summary!B4": "=COUNTA('Merge Control'!B2:B6)",
+      "Fulfillment Summary!B5": "=COUNTA('Packet QA'!A2:A11)",
+      "Fulfillment Summary!B6": "=COUNTIF('Merge Control'!G2:G6,\"Ready\")",
+      "Fulfillment Summary!B8": "=IF(AND(B4=5,B5=10,B6=5,B7=4),\"Ready\",\"Hold\")"
+    },
+    "hidden_sheets": [
+      "Private Exceptions"
+    ],
+    "defined_names": [
+      "MergedParticipantCount",
+      "PacketPageCount",
+      "PacketReady"
+    ],
+    "print_areas": {
+      "Fulfillment Summary": "A1:D8",
+      "Merge Control": "A1:G6",
+      "Packet QA": "A1:E11",
+      "Style QA": "A1:C6"
+    },
+    "data_validation": {
+      "Merge Control": [
+        "G2:G6"
+      ],
+      "Packet QA": [
+        "E2:E11"
+      ],
+      "Style QA": [
+        "C2:C6"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_054_pdf_xlsx_workshop_certificate_badge_merge"
+}

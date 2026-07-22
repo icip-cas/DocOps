@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_009
+
+Doc type: excel
+Atomic operations: C1 Extraction, S4 Table/Sheet ops
+Composition pattern: extract -> restructure
+Difficulty: Medium-Hard
+
+User-facing goal:
+This milestone plan is missing owners that can be recovered from a lookup sheet.
+
+Single-step benchmark instruction:
+Insert a new `Owner` column between `Milestone` and `Due Date` on `Plan`, then populate it by pulling the matching owners from `Owner Lookup`.
+
+Atomic scope:
+Only the inserted `Owner` column and the extracted owner values are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with the new `Owner` column populated from lookup data.

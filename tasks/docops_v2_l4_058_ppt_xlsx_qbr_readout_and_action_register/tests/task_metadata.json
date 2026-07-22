@@ -1,0 +1,145 @@
+{
+  "task_id": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+  "task_dir_name": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+  "doc_type": "ppt+xlsx",
+  "primary_modality": "PowerPoint (.pptx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "resolve-authoritative-exceptions -> refresh-risk-table -> build-action-register-output -> sync-ppt-and-xlsx -> preserve-reference-slides-and-formulas",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+  "supporting_input_paths": [
+    "/root/renewal_risk_source.xlsx",
+    "/root/account_owner_notes.docx",
+    "/root/finance_exception_notice.pdf"
+  ],
+  "output_paths": {
+    "deck": "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+    "register": "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+  "output_filename": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A QBR renewal deck and action register must be generated from a draft deck, risk workbook, account owner notes, and finance exception notice. The two outputs must agree.",
+  "single_step_benchmark_instruction": "Refresh the QBR renewal readout deck and create renewal_action_register.xlsx. Use the finance exception notice as authoritative over the draft deck when conflicts exist. Remove the scratch slide, preserve reference slides, synchronize risk/action rows across PPTX and XLSX, and keep XLSX formulas, table, data validation, and hidden Rules sheet.",
+  "atomic_scope": "Cross-document, multi-output workflow with coupled consistency checks across native PPTX and XLSX artifacts.",
+  "expected_output_type": "A revised .pptx deck and a new .xlsx action register saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Community pain point: deck tables and spreadsheet action trackers drift after manual QBR updates",
+      "url": "local:DocumentBenchmark L3 reddit PPT/Excel workflow seeds"
+    },
+    {
+      "title": "Microsoft support: reuse slides while preserving formatting",
+      "url": "https://support.microsoft.com/office/reuse-import-slides-from-another-presentation-9f7d5dad-9348-4661-8a1b-41bfb3fb0e06"
+    }
+  ],
+  "verifier_expectations": {
+    "deck_output": "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+    "register_output": "/root/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx",
+    "titles_order": [
+      "QBR Renewal Readout",
+      "Executive Summary",
+      "Renewal Risk Table",
+      "Action Register",
+      "Risk Callout",
+      "Reference - Risk Callout",
+      "Reference - Action Table"
+    ],
+    "absent_slide_titles": [
+      "Draft Scratch - Remove"
+    ],
+    "summary_required": [
+      "Three accounts require renewal action before August close.",
+      "Zenith Foods ARR revised to $1.40M after finance exception.",
+      "Northstar Bank is Watch, not Hold, because legal addendum cleared."
+    ],
+    "risk_rows": [
+      [
+        "Northstar Bank",
+        "$2.10M",
+        "2026-08-15",
+        "Watch",
+        "Priya Shah"
+      ],
+      [
+        "Zenith Foods",
+        "$1.40M",
+        "2026-08-22",
+        "Hold",
+        "Mateo Cruz"
+      ],
+      [
+        "Orion Logistics",
+        "$0.85M",
+        "2026-09-05",
+        "Ready",
+        "Lena Ortiz"
+      ]
+    ],
+    "action_rows": [
+      [
+        "A-17",
+        "Northstar Bank",
+        "Send cleared addendum to procurement",
+        "Priya Shah",
+        "Watch"
+      ],
+      [
+        "A-23",
+        "Zenith Foods",
+        "Executive pricing review",
+        "Mateo Cruz",
+        "Hold"
+      ],
+      [
+        "A-31",
+        "Orion Logistics",
+        "Confirm renewal packet",
+        "Lena Ortiz",
+        "Ready"
+      ]
+    ],
+    "reference_titles": [
+      "Reference - Risk Callout",
+      "Reference - Action Table"
+    ],
+    "register_sheet_order": [
+      "Action Register",
+      "Rules"
+    ],
+    "register_table_ref": "A1:G4",
+    "register_formula_cells": {
+      "G2": "=IF(E2=VLOOKUP(E2,Rules!$A$2:$B$4,2,FALSE),\"OK\",\"CHECK\")",
+      "G3": "=IF(E3=VLOOKUP(E3,Rules!$A$2:$B$4,2,FALSE),\"OK\",\"CHECK\")",
+      "G4": "=IF(E4=VLOOKUP(E4,Rules!$A$2:$B$4,2,FALSE),\"OK\",\"CHECK\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "risk_status_choices"
+    ],
+    "data_validation_ranges": {
+      "Action Register": [
+        "E2:E4"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register"
+}

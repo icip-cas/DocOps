@@ -1,0 +1,48 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__atomic__excel_011_theme_transfer_seed"
+description = "excel_011 - F4 Theme transfer task exported from DocumentBenchmark source seeds."
+authors = []
+keywords = ["excel", "f4-theme-transfer", "document-processing", "single-step", "source-doc-export"]
+
+[metadata]
+difficulty_level = "L1-atomic"
+benchmark_split = "atomic"
+difficulty = "Medium-Hard"
+category = "document-processing"
+tags = ["excel", "f4-theme-transfer", "document-processing", "single-step", "source-doc-export"]
+task_id = "excel_011"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "F4 Theme transfer"
+source_type = "Reddit-derived representative benchmark seed"
+verifier_mode = "semantic-strict"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/excel_011_theme_transfer_seed.xlsx"
+OUTPUT_PATH = "/root/submission/excel_011_theme_transfer_seed.xlsx"
+TASK_ID = "excel_011"
+DOC_TYPE = "excel"
+
+[solution.env]

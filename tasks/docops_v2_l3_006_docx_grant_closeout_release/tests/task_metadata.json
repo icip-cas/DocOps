@@ -1,0 +1,346 @@
+{
+  "task_id": "docops_v2_l3_006_docx_grant_closeout_release",
+  "task_dir_name": "docops_v2_l3_006_docx_grant_closeout_release",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Calculation",
+    "S3 Hierarchy editing",
+    "F1 Header/footer",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-cleanup -> section-reorder -> budget-reconciliation -> evidence-index -> privacy-redaction -> appendix-split -> header-footer",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-strict",
+  "user_task_description": "Prepare a complex public grant closeout packet from a messy single Word working draft.",
+  "single_step_benchmark_instruction": "Rename and release the grant closeout packet, remove internal material, reorder sections, rebuild deliverables/budget/evidence/certification/contact tables, compute variance values, keep a TOC field, move Appendix A to a new page, and normalize header/footer.",
+  "atomic_scope": "Only the requested document-wide workflow edits are in scope; public grant closeout facts and native Word structures must be preserved.",
+  "expected_output_type": "A revised .docx artifact that completes the requested single-document workflow.",
+  "input_path": "/root/docops_v2_l3_006_docx_grant_closeout_release_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_006_docx_grant_closeout_release_output.docx",
+  "output_filename": "docops_v2_l3_006_docx_grant_closeout_release_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "title": "Riverbend Food Resilience Grant Closeout Packet",
+    "heading_order": [
+      "Release Summary",
+      "Award Snapshot",
+      "Deliverables and Outcomes",
+      "Budget Reconciliation",
+      "Evidence Index",
+      "Closeout Certifications",
+      "Appendix A - Public Contact Directory"
+    ],
+    "required_paragraphs": [
+      "This public closeout packet documents completed food resilience activities for the Riverbend neighborhood network.",
+      "The project distributed 4,860 pantry boxes, coordinated 312 volunteer shifts, and hosted 18 neighborhood pop-ups.",
+      "Multilingual access included Spanish, Vietnamese, and large-print public materials.",
+      "All public deliverables are complete and ready for funder closeout review."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "Draft:",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "parking lot",
+      "bridge loan",
+      "staff performance issue",
+      "late invoice",
+      "private donor pressure",
+      "questionable match",
+      "board optics",
+      "cash advance",
+      "do not disclose",
+      "internal risk",
+      "sponsor complaint"
+    ],
+    "award_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Project",
+        "Riverbend Food Resilience Grant",
+        "Award memo",
+        "Confirmed"
+      ],
+      [
+        "Award ID",
+        "RFG-2026-14",
+        "Award memo",
+        "Confirmed"
+      ],
+      [
+        "Funder",
+        "Coastal Community Foundation",
+        "Award memo",
+        "Confirmed"
+      ],
+      [
+        "Period",
+        "2026-01-01 to 2026-06-30",
+        "Award memo",
+        "Confirmed"
+      ],
+      [
+        "Award Total",
+        "$142,500",
+        "Budget ledger",
+        "Confirmed"
+      ],
+      [
+        "Required Match",
+        "$28,500",
+        "Award memo",
+        "Confirmed"
+      ],
+      [
+        "Closeout Status",
+        "Complete",
+        "Closeout review",
+        "Confirmed"
+      ]
+    ],
+    "deliverable_rows": [
+      [
+        "Deliverable ID",
+        "Commitment",
+        "Final Result",
+        "Status",
+        "Evidence ID"
+      ],
+      [
+        "D-01",
+        "Distribute 4,500 pantry boxes",
+        "4,860 pantry boxes distributed",
+        "Complete",
+        "EV-001"
+      ],
+      [
+        "D-02",
+        "Run 12 neighborhood pop-ups",
+        "18 neighborhood pop-ups hosted",
+        "Complete",
+        "EV-002"
+      ],
+      [
+        "D-03",
+        "Coordinate 250 volunteer shifts",
+        "312 volunteer shifts coordinated",
+        "Complete",
+        "EV-003"
+      ],
+      [
+        "D-04",
+        "Publish multilingual materials",
+        "Spanish, Vietnamese, and large-print materials published",
+        "Complete",
+        "EV-004"
+      ],
+      [
+        "D-05",
+        "Collect participant feedback",
+        "428 survey responses collected",
+        "Complete",
+        "EV-005"
+      ],
+      [
+        "D-06",
+        "Submit final public closeout packet",
+        "Closeout packet prepared for funder review",
+        "Complete",
+        "EV-006"
+      ]
+    ],
+    "budget_rows": [
+      [
+        "Category",
+        "Approved Budget",
+        "Final Actual",
+        "Variance",
+        "Closeout Note"
+      ],
+      [
+        "Personnel",
+        "$52,000",
+        "$50,940",
+        "$1,060",
+        "Under budget"
+      ],
+      [
+        "Food supplies",
+        "$38,500",
+        "$39,275",
+        "-$775",
+        "Overage covered by approved flexibility"
+      ],
+      [
+        "Outreach",
+        "$16,000",
+        "$15,320",
+        "$680",
+        "Under budget"
+      ],
+      [
+        "Equipment rental",
+        "$21,000",
+        "$20,850",
+        "$150",
+        "Under budget"
+      ],
+      [
+        "Accessibility services",
+        "$9,000",
+        "$9,075",
+        "-$75",
+        "Overage covered by approved flexibility"
+      ],
+      [
+        "Evaluation",
+        "$6,000",
+        "$5,890",
+        "$110",
+        "Under budget"
+      ],
+      [
+        "Total",
+        "$142,500",
+        "$141,350",
+        "$1,150",
+        "Final actual under award total"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "Evidence ID",
+        "Document",
+        "Public Description",
+        "Retention Location"
+      ],
+      [
+        "EV-001",
+        "Pantry box distribution log",
+        "Counts by date and site",
+        "Closeout folder A"
+      ],
+      [
+        "EV-002",
+        "Pop-up event calendar",
+        "18 public pop-up dates",
+        "Closeout folder A"
+      ],
+      [
+        "EV-003",
+        "Volunteer shift roster",
+        "312 completed volunteer shifts",
+        "Closeout folder B"
+      ],
+      [
+        "EV-004",
+        "Access materials bundle",
+        "Spanish, Vietnamese, and large-print files",
+        "Closeout folder B"
+      ],
+      [
+        "EV-005",
+        "Participant survey export",
+        "428 public survey responses",
+        "Closeout folder C"
+      ],
+      [
+        "EV-006",
+        "Closeout review checklist",
+        "Final public packet approval record",
+        "Closeout folder C"
+      ]
+    ],
+    "certification_rows": [
+      [
+        "Certification",
+        "Required Statement",
+        "Status"
+      ],
+      [
+        "Allowable costs",
+        "Costs align with approved public budget categories",
+        "Ready"
+      ],
+      [
+        "Deliverables complete",
+        "All six deliverables are complete",
+        "Ready"
+      ],
+      [
+        "Evidence retained",
+        "Evidence files are listed with retention locations",
+        "Ready"
+      ],
+      [
+        "Restricted notes excluded",
+        "Restricted finance and personnel notes are excluded",
+        "Ready"
+      ],
+      [
+        "Public packet ready",
+        "Packet is ready for funder closeout review",
+        "Ready"
+      ]
+    ],
+    "contact_rows": [
+      [
+        "Role",
+        "Name",
+        "Email",
+        "Public Phone"
+      ],
+      [
+        "Project Director",
+        "Maya Chen",
+        "maya.chen@example.test",
+        "555-0201"
+      ],
+      [
+        "Finance Contact",
+        "Jon Bell",
+        "finance@example.test",
+        "555-0202"
+      ],
+      [
+        "Program Contact",
+        "Leila Ortiz",
+        "programs@example.test",
+        "555-0203"
+      ],
+      [
+        "Accessibility Contact",
+        "Nina Tran",
+        "access@example.test",
+        "555-0204"
+      ]
+    ],
+    "header_contains": [
+      "Riverbend Grant Closeout | Public Release 2026-10-15"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "toc_present": true,
+    "page_break_before": [
+      "Appendix A - Public Contact Directory"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_006_docx_grant_closeout_release"
+}

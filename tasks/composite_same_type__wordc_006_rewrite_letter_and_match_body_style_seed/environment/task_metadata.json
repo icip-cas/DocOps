@@ -1,0 +1,32 @@
+{
+  "task_id": "wordc_006",
+  "task_dir_name": "wordc_006_rewrite_letter_and_match_body_style_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "rewrite -> restyle",
+  "difficulty": "Medium",
+  "source_doc_filename": "wordc_006_rewrite_letter_and_match_body_style_seed.docx",
+  "source_doc_path": "word/wordc_006_rewrite_letter_and_match_body_style_seed.docx",
+  "task_description_filename": "wordc_006_rewrite_letter_and_match_body_style_seed.txt",
+  "task_description_path": "word/wordc_006_rewrite_letter_and_match_body_style_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/wordc_006_rewrite_letter_and_match_body_style_seed.docx",
+  "output_path": "/root/submission/wordc_006_rewrite_letter_and_match_body_style_seed.docx",
+  "output_filename": "wordc_006_rewrite_letter_and_match_body_style_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This client letter has two rough draft sections and inconsistent body formatting.",
+  "single_step_benchmark_instruction": "Rewrite the sections titled `Draft opening` and `Draft ask` so they sound professional and client-appropriate, then standardize those rewritten body paragraphs to one consistent style.",
+  "atomic_scope": "Only the two targeted rewrites and body-style normalization for those sections are explicitly requested.",
+  "expected_output_type": "A revised .docx letter with polished draft sections and consistent body styling.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Heading styling may remain unchanged\n- Preserve the underlying urgency and facts"
+  }
+}

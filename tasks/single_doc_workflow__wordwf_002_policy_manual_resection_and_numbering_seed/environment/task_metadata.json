@@ -1,0 +1,113 @@
+{
+  "task_id": "wordwf_002",
+  "task_dir_name": "wordwf_002_policy_manual_resection_and_numbering_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "F3 Layout control",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "reorder -> renumber -> section-break",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Repair the policy manual draft while preserving the wording of the live sections.",
+  "single_step_benchmark_instruction": "Remove the visible Draft: prefixes, restore the exact section headings shown in the source, refresh the table of contents, keep the table values unchanged, and make Appendix A - Forms start on a fresh page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .docx document that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/wordwf_002_policy_manual_resection_and_numbering_seed.docx",
+  "output_path": "/root/submission/wordwf_002_policy_manual_resection_and_numbering_seed.docx",
+  "output_filename": "wordwf_002_policy_manual_resection_and_numbering_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Policy Scope",
+        "Heading 1"
+      ],
+      [
+        "Safety Procedures",
+        "Heading 1"
+      ],
+      [
+        "Incident Reporting",
+        "Heading 1"
+      ],
+      [
+        "Appendix A - Forms",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Policy Scope",
+      "Safety Procedures",
+      "Incident Reporting",
+      "Appendix A - Forms"
+    ],
+    "required_paragraphs": [
+      "This manual applies to all field staff.",
+      "Use it together with the checklist.",
+      "Use the checklist before each site visit.",
+      "Escalate unresolved issues within one business day.",
+      "File the report within 24 hours.",
+      "Attach supporting photos when available.",
+      "Form A-1 is the required incident log.",
+      "Form A-2 covers supervisor review."
+    ],
+    "forbidden_paragraphs": [
+      "TOC placeholder - update fields",
+      "Draft: Remove this scratch section before publication.",
+      "Draft: Internal reviewer notes must not remain in the released file.",
+      "Draft: Policy Scope",
+      "Draft: Safety Procedures",
+      "Draft: Incident Reporting",
+      "Draft: Appendix A - Forms",
+      "Draft: This manual applies to all field staff.",
+      "Draft: Use it together with the checklist.",
+      "Draft: Use the checklist before each site visit.",
+      "Draft: Escalate unresolved issues within one business day.",
+      "Draft: File the report within 24 hours.",
+      "Draft: Attach supporting photos when available.",
+      "Draft: Form A-1 is the required incident log.",
+      "Draft: Form A-2 covers supervisor review."
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Reference",
+          "0,1": "Purpose",
+          "1,0": "A-1",
+          "1,1": "Incident log",
+          "2,0": "A-2",
+          "2,1": "Supervisor review"
+        }
+      }
+    ],
+    "page_break_before": [
+      "Appendix A - Forms"
+    ],
+    "toc_present": true,
+    "header_contains": [
+      "Policy Manual | 2026-05-09"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "task_id": "docops_v2_l3_014_xlsx_disaster_housing_grant_public_release",
+  "input_path": "/root/docops_v2_l3_014_xlsx_disaster_housing_grant_public_release_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_014_xlsx_disaster_housing_grant_public_release_output.xlsx",
+  "output_extension": ".xlsx",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Funding Dashboard",
+      "Eligibility Register",
+      "County Rollup",
+      "Appeal Queue",
+      "Publication Controls"
+    ],
+    "tab_colors": {
+      "Funding Dashboard": "70AD47",
+      "Eligibility Register": "5B9BD5",
+      "County Rollup": "FFC000",
+      "Appeal Queue": "C00000",
+      "Publication Controls": "7030A0"
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "legal hold",
+      "raw intake",
+      "duplicate scratch",
+      "unverified hardship narrative",
+      "personal phone",
+      "applicant name",
+      "Alicia Tran",
+      "Marta Ruiz",
+      "Lena Okafor",
+      "N. Fork",
+      "Minor correction pending",
+      "moderate income pending"
+    ],
+    "header_fill": "1F4E79",
+    "header_font": "FFFFFF",
+    "body_font": "Aptos",
+    "body_font_size": 11,
+    "currency_format": "$#,##0;($#,##0);-",
+    "freeze_panes": {
+      "Funding Dashboard": "A4",
+      "Eligibility Register": "A2",
+      "County Rollup": "A2",
+      "Appeal Queue": "A2",
+      "Publication Controls": "A2"
+    },
+    "protected_sheets": [
+      "Funding Dashboard",
+      "Publication Controls"
+    ],
+    "tables": {
+      "Eligibility Register": [
+        [
+          "Application ID",
+          "County",
+          "Damage Category",
+          "Repair Estimate",
+          "Insurance Proceeds",
+          "Income Band",
+          "Vulnerable Household",
+          "Appeal Flag",
+          "Inspection Date",
+          "Eligible Amount",
+          "Priority Score",
+          "Review Status"
+        ],
+        [
+          "H-101",
+          "South Ridge",
+          "Moderate",
+          21500,
+          3000,
+          "Moderate",
+          "No",
+          "No",
+          "2026-05-14",
+          "=MAX(0,MIN(D2-E2,VLOOKUP(C2,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G2=\"Yes\",20,0)+IF(C2=\"Destroyed\",40,IF(C2=\"Major\",30,IF(C2=\"Moderate\",20,10)))+IF(F2=\"Low\",20,IF(F2=\"Moderate\",10,0))",
+          "=IF(J2>=20000,\"Senior Review\",IF(H2=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-102",
+          "East Bay",
+          "Major",
+          40200,
+          5000,
+          "Low",
+          "Yes",
+          "No",
+          "2026-05-15",
+          "=MAX(0,MIN(D3-E3,VLOOKUP(C3,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G3=\"Yes\",20,0)+IF(C3=\"Destroyed\",40,IF(C3=\"Major\",30,IF(C3=\"Moderate\",20,10)))+IF(F3=\"Low\",20,IF(F3=\"Moderate\",10,0))",
+          "=IF(J3>=20000,\"Senior Review\",IF(H3=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-103",
+          "West Lake",
+          "Minor",
+          8800,
+          0,
+          "High",
+          "No",
+          "Yes",
+          "2026-05-16",
+          "=MAX(0,MIN(D4-E4,VLOOKUP(C4,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G4=\"Yes\",20,0)+IF(C4=\"Destroyed\",40,IF(C4=\"Major\",30,IF(C4=\"Moderate\",20,10)))+IF(F4=\"Low\",20,IF(F4=\"Moderate\",10,0))",
+          "=IF(J4>=20000,\"Senior Review\",IF(H4=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-104",
+          "North Fork",
+          "Major",
+          30500,
+          4000,
+          "Low",
+          "No",
+          "No",
+          "2026-05-18",
+          "=MAX(0,MIN(D5-E5,VLOOKUP(C5,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G5=\"Yes\",20,0)+IF(C5=\"Destroyed\",40,IF(C5=\"Major\",30,IF(C5=\"Moderate\",20,10)))+IF(F5=\"Low\",20,IF(F5=\"Moderate\",10,0))",
+          "=IF(J5>=20000,\"Senior Review\",IF(H5=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-105",
+          "South Ridge",
+          "Destroyed",
+          68000,
+          12000,
+          "Low",
+          "Yes",
+          "Yes",
+          "2026-05-18",
+          "=MAX(0,MIN(D6-E6,VLOOKUP(C6,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G6=\"Yes\",20,0)+IF(C6=\"Destroyed\",40,IF(C6=\"Major\",30,IF(C6=\"Moderate\",20,10)))+IF(F6=\"Low\",20,IF(F6=\"Moderate\",10,0))",
+          "=IF(J6>=20000,\"Senior Review\",IF(H6=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-106",
+          "East Bay",
+          "Moderate",
+          15600,
+          800,
+          "Moderate",
+          "No",
+          "No",
+          "2026-05-19",
+          "=MAX(0,MIN(D7-E7,VLOOKUP(C7,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G7=\"Yes\",20,0)+IF(C7=\"Destroyed\",40,IF(C7=\"Major\",30,IF(C7=\"Moderate\",20,10)))+IF(F7=\"Low\",20,IF(F7=\"Moderate\",10,0))",
+          "=IF(J7>=20000,\"Senior Review\",IF(H7=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-107",
+          "West Lake",
+          "Major",
+          23500,
+          2000,
+          "Moderate",
+          "Yes",
+          "No",
+          "2026-05-21",
+          "=MAX(0,MIN(D8-E8,VLOOKUP(C8,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G8=\"Yes\",20,0)+IF(C8=\"Destroyed\",40,IF(C8=\"Major\",30,IF(C8=\"Moderate\",20,10)))+IF(F8=\"Low\",20,IF(F8=\"Moderate\",10,0))",
+          "=IF(J8>=20000,\"Senior Review\",IF(H8=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-108",
+          "South Ridge",
+          "Minor",
+          9400,
+          1200,
+          "Low",
+          "No",
+          "No",
+          "2026-05-20",
+          "=MAX(0,MIN(D9-E9,VLOOKUP(C9,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G9=\"Yes\",20,0)+IF(C9=\"Destroyed\",40,IF(C9=\"Major\",30,IF(C9=\"Moderate\",20,10)))+IF(F9=\"Low\",20,IF(F9=\"Moderate\",10,0))",
+          "=IF(J9>=20000,\"Senior Review\",IF(H9=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-109",
+          "East Bay",
+          "Major",
+          26700,
+          2500,
+          "Moderate",
+          "No",
+          "Yes",
+          "2026-05-22",
+          "=MAX(0,MIN(D10-E10,VLOOKUP(C10,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G10=\"Yes\",20,0)+IF(C10=\"Destroyed\",40,IF(C10=\"Major\",30,IF(C10=\"Moderate\",20,10)))+IF(F10=\"Low\",20,IF(F10=\"Moderate\",10,0))",
+          "=IF(J10>=20000,\"Senior Review\",IF(H10=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-110",
+          "North Fork",
+          "Destroyed",
+          72000,
+          15000,
+          "Low",
+          "Yes",
+          "No",
+          "2026-05-23",
+          "=MAX(0,MIN(D11-E11,VLOOKUP(C11,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G11=\"Yes\",20,0)+IF(C11=\"Destroyed\",40,IF(C11=\"Major\",30,IF(C11=\"Moderate\",20,10)))+IF(F11=\"Low\",20,IF(F11=\"Moderate\",10,0))",
+          "=IF(J11>=20000,\"Senior Review\",IF(H11=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-111",
+          "West Lake",
+          "Moderate",
+          19800,
+          0,
+          "High",
+          "No",
+          "No",
+          "2026-05-23",
+          "=MAX(0,MIN(D12-E12,VLOOKUP(C12,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G12=\"Yes\",20,0)+IF(C12=\"Destroyed\",40,IF(C12=\"Major\",30,IF(C12=\"Moderate\",20,10)))+IF(F12=\"Low\",20,IF(F12=\"Moderate\",10,0))",
+          "=IF(J12>=20000,\"Senior Review\",IF(H12=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ],
+        [
+          "H-112",
+          "South Ridge",
+          "Major",
+          31500,
+          5000,
+          "Low",
+          "Yes",
+          "No",
+          "2026-05-24",
+          "=MAX(0,MIN(D13-E13,VLOOKUP(C13,'Publication Controls'!$A$2:$B$5,2,FALSE)))",
+          "=IF(G13=\"Yes\",20,0)+IF(C13=\"Destroyed\",40,IF(C13=\"Major\",30,IF(C13=\"Moderate\",20,10)))+IF(F13=\"Low\",20,IF(F13=\"Moderate\",10,0))",
+          "=IF(J13>=20000,\"Senior Review\",IF(H13=\"Yes\",\"Appeal Review\",\"Ready\"))"
+        ]
+      ],
+      "County Rollup": [
+        [
+          "County",
+          "Applications",
+          "Eligible Amount",
+          "Senior Review Count"
+        ],
+        [
+          "East Bay",
+          "=COUNTIF('Eligibility Register'!$B$2:$B$13,A2)",
+          "=SUMIF('Eligibility Register'!$B$2:$B$13,A2,'Eligibility Register'!$J$2:$J$13)",
+          "=COUNTIFS('Eligibility Register'!$B$2:$B$13,A2,'Eligibility Register'!$L$2:$L$13,\"Senior Review\")"
+        ],
+        [
+          "North Fork",
+          "=COUNTIF('Eligibility Register'!$B$2:$B$13,A3)",
+          "=SUMIF('Eligibility Register'!$B$2:$B$13,A3,'Eligibility Register'!$J$2:$J$13)",
+          "=COUNTIFS('Eligibility Register'!$B$2:$B$13,A3,'Eligibility Register'!$L$2:$L$13,\"Senior Review\")"
+        ],
+        [
+          "South Ridge",
+          "=COUNTIF('Eligibility Register'!$B$2:$B$13,A4)",
+          "=SUMIF('Eligibility Register'!$B$2:$B$13,A4,'Eligibility Register'!$J$2:$J$13)",
+          "=COUNTIFS('Eligibility Register'!$B$2:$B$13,A4,'Eligibility Register'!$L$2:$L$13,\"Senior Review\")"
+        ],
+        [
+          "West Lake",
+          "=COUNTIF('Eligibility Register'!$B$2:$B$13,A5)",
+          "=SUMIF('Eligibility Register'!$B$2:$B$13,A5,'Eligibility Register'!$J$2:$J$13)",
+          "=COUNTIFS('Eligibility Register'!$B$2:$B$13,A5,'Eligibility Register'!$L$2:$L$13,\"Senior Review\")"
+        ]
+      ],
+      "Appeal Queue": [
+        [
+          "Application ID",
+          "County",
+          "Damage Category",
+          "Eligible Amount",
+          "Review Status"
+        ],
+        [
+          "H-103",
+          "West Lake",
+          "Minor",
+          "='Eligibility Register'!J4",
+          "='Eligibility Register'!L4"
+        ],
+        [
+          "H-105",
+          "South Ridge",
+          "Destroyed",
+          "='Eligibility Register'!J6",
+          "='Eligibility Register'!L6"
+        ],
+        [
+          "H-109",
+          "East Bay",
+          "Major",
+          "='Eligibility Register'!J10",
+          "='Eligibility Register'!L10"
+        ]
+      ],
+      "Publication Controls": [
+        [
+          "Damage Category",
+          "Assistance Cap",
+          "Public Correction",
+          "Corrected Fact"
+        ],
+        [
+          "Minor",
+          12000,
+          "H-104 county",
+          "North Fork"
+        ],
+        [
+          "Moderate",
+          18000,
+          "H-109 damage category",
+          "Major"
+        ],
+        [
+          "Major",
+          28000,
+          "H-112 income band",
+          "Low"
+        ],
+        [
+          "Destroyed",
+          42000,
+          "Nonpublic notes removed",
+          "Yes"
+        ]
+      ]
+    },
+    "dashboard_cells": {
+      "A1": "Public Disaster Housing Repair Grant Release",
+      "A3": "Metric",
+      "B3": "Value",
+      "A4": "Total Applications",
+      "B4": "=COUNTA('Eligibility Register'!$A$2:$A$13)",
+      "A5": "Total Eligible Amount",
+      "B5": "=SUM('Eligibility Register'!$J$2:$J$13)",
+      "A6": "Senior Review Count",
+      "B6": "=COUNTIF('Eligibility Register'!$L$2:$L$13,\"Senior Review\")",
+      "A7": "Appeal Review Count",
+      "B7": "=COUNTIF('Eligibility Register'!$L$2:$L$13,\"Appeal Review\")",
+      "A8": "Average Priority Score",
+      "B8": "=AVERAGE('Eligibility Register'!$K$2:$K$13)"
+    },
+    "excel_tables": {
+      "Eligibility Register": {
+        "name": "tblEligibilityRegister",
+        "ref": "A1:L13"
+      },
+      "County Rollup": {
+        "name": "tblCountyRollup",
+        "ref": "A1:D5"
+      },
+      "Appeal Queue": {
+        "name": "tblAppealQueue",
+        "ref": "A1:E4"
+      },
+      "Publication Controls": {
+        "name": "tblPublicationControls",
+        "ref": "A1:D5"
+      }
+    },
+    "currency_cells": [
+      "Eligibility Register!D2:D13",
+      "Eligibility Register!E2:E13",
+      "Eligibility Register!J2:J13",
+      "County Rollup!C2:C5",
+      "Appeal Queue!D2:D4",
+      "Publication Controls!B2:B5",
+      "Funding Dashboard!B5"
+    ],
+    "conditional_formats": [
+      {
+        "sheet": "Eligibility Register",
+        "sqref": "K2:K13",
+        "type": "cellIs",
+        "operator": "greaterThanOrEqual",
+        "formula": "70"
+      },
+      {
+        "sheet": "Eligibility Register",
+        "sqref": "J2:J13",
+        "type": "cellIs",
+        "operator": "greaterThan",
+        "formula": "0"
+      }
+    ],
+    "chart": {
+      "sheet": "Funding Dashboard",
+      "type": "BarChart",
+      "title": "Eligible Amount by County",
+      "categories": "'County Rollup'!$A$2:$A$5",
+      "values": "'County Rollup'!$C$2:$C$5"
+    },
+    "source_must_contain": [
+      "Raw Intake PRIVATE",
+      "Correction Bulletin DRAFT",
+      "legal hold",
+      "duplicate scratch",
+      "Alicia Tran",
+      "personal phone",
+      "unverified hardship narrative",
+      "N. Fork"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_014_xlsx_disaster_housing_grant_public_release",
+  "task_dir_name": "docops_v2_l3_014_xlsx_disaster_housing_grant_public_release"
+}

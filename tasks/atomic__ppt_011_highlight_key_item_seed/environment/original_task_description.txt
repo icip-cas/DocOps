@@ -1,0 +1,22 @@
+Task ID: ppt_011
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: F2 Highlighting
+Difficulty: Easy-Medium
+
+User Task Description:
+This milestone slide contains one explicitly critical item that should stand out more clearly.
+
+Single-Step Benchmark Instruction:
+Visually emphasize the line marked as Critical so it stands out from the other bullets.
+
+Atomic Scope:
+Only highlighting/emphasis is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The task is narrow and local, so over-formatting is an easy failure mode
+- The slide already has multiple bullets competing for attention
+- The agent must identify the single intended emphasis target
+
+Expected Output Type:
+A revised .pptx deck with the critical line clearly highlighted.

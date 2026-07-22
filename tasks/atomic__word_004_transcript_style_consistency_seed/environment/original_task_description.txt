@@ -1,0 +1,26 @@
+Task ID: word_004
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: F1 Style consistency
+Difficulty: Medium
+
+Inspired By:
+- Title: IA for formatting?
+  URL: https://www.reddit.com/r/word/comments/1rx137e/ia_for_formatting/
+
+User Task Description:
+This transcript packet was assembled from multiple contributors and now has visibly inconsistent formatting.
+
+Single-Step Benchmark Instruction:
+Make the document stylistically consistent by standardizing heading appearance and body-text formatting across all transcript sections, including paragraph-level indentation/spacing for the transcript body.
+
+Atomic Scope:
+Only style consistency is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Capitalization of section labels is inconsistent
+- Some spacing is awkward
+- The content itself could be reorganized, but that is not the explicit request
+
+Expected Output Type:
+A cleaned-up .docx document with consistent run-level and paragraph-level styling.

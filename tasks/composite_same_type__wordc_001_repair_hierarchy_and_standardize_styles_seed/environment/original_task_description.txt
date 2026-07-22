@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_001
+
+Doc type: word
+Atomic operations: S3 Hierarchy editing, F1 Style consistency
+Composition pattern: repair-structure -> restyle
+Difficulty: Hard
+
+User-facing goal:
+This engineering report draft has both a broken heading hierarchy and inconsistent formatting.
+
+Single-step benchmark instruction:
+Repair the heading hierarchy so the subsection under `2. Temporary bypass plan` restarts at `a. Isolation logic`, then standardize same-level heading styles and body paragraph formatting across the report.
+
+Atomic scope:
+Only the hierarchy repair and style consistency work are explicitly requested.
+
+Expected output type:
+A revised .docx document with corrected hierarchy and consistent heading/body styling.

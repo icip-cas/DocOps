@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_008
+
+Doc type: word
+Atomic operations: S2 Reorder, F4 Theme transfer
+Composition pattern: reorder -> retheme
+Difficulty: Medium-Hard
+
+User-facing goal:
+This report needs both a better section sequence and a consistent blue heading theme.
+
+Single-step benchmark instruction:
+Reorder the sections to `Executive Summary -> Findings -> Next Steps -> Appendix`, then apply a blue heading theme to all top-level section headings.
+
+Atomic scope:
+Only the requested section reorder and top-level heading theme change are explicitly requested.
+
+Expected output type:
+A revised .docx report with corrected section order and blue top-level headings.

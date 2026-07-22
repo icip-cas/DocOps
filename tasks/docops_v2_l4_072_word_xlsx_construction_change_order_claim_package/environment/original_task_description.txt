@@ -1,0 +1,1 @@
+Create a substantiated construction change order request and cost/schedule workbook from ten input documents while excluding weather leverage and internal settlement strategy from the public package.

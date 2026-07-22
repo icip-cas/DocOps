@@ -1,0 +1,22 @@
+Task ID: ppt_007
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: C1 Extraction
+Difficulty: Medium
+
+User Task Description:
+This deck contains multiple mentions of dates and owners, but some values were later corrected.
+
+Single-Step Benchmark Instruction:
+Extract the final launch date and the final action owner from the presentation.
+
+Atomic Scope:
+Only information extraction is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Early slides contain plausible but outdated values
+- The correct answer is distributed across multiple slides
+- The deck requires cross-slide resolution rather than local reading
+
+Expected Output Type:
+A concise extraction of the requested fields.

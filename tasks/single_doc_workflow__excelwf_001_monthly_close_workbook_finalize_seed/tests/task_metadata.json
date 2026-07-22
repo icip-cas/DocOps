@@ -1,0 +1,83 @@
+{
+  "task_id": "excelwf_001",
+  "task_dir_name": "excelwf_001_monthly_close_workbook_finalize_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S4 Table/Sheet ops",
+    "C4 Computation",
+    "S2 Reorder",
+    "F2 Highlighting",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "formula-addition -> tab-reorder -> review-theme",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Finalize a monthly close workbook.",
+  "single_step_benchmark_instruction": "Add the helper formulas, reorder the tabs, normalize the issue log as a formal table named CloseIssues, add status dropdowns only to the live status cells, and leave a release-review comment on the summary sheet.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/excelwf_001_monthly_close_workbook_finalize_seed.xlsx",
+  "output_path": "/root/submission/excelwf_001_monthly_close_workbook_finalize_seed.xlsx",
+  "output_filename": "excelwf_001_monthly_close_workbook_finalize_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Summary",
+      "Issue Log",
+      "Monthly Close",
+      "Archive"
+    ],
+    "exact_cells": {
+      "Summary!A1": "Monthly Close",
+      "Summary!B2": "3",
+      "Summary!B3": "12"
+    },
+    "formula_cells": {
+      "Issue Log!D2": "=IF(C2=\"Open\",1,0)",
+      "Issue Log!D3": "=IF(C3=\"Open\",1,0)"
+    },
+    "highlight_rows": [
+      {
+        "sheet": "Issue Log",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 4
+      },
+      {
+        "sheet": "Issue Log",
+        "row": 3,
+        "min_col": 1,
+        "max_col": 4
+      }
+    ],
+    "nonhighlight_rows": [],
+    "sheet_states": {
+      "Archive": "hidden"
+    },
+    "freeze_panes": {
+      "Issue Log": "A2"
+    },
+    "unchanged_sheets": [
+      "Archive"
+    ],
+    "table_refs": {
+      "Issue Log!CloseIssues": "A1:D3"
+    },
+    "data_validation_ranges": {
+      "Issue Log": [
+        "C2:C3"
+      ]
+    },
+    "comments_contain": {
+      "Summary!A1": "Release reviewed"
+    }
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "task_id": "docops_v2_l4_071_word_xlsx_security_incident_notification_clock",
+  "task_dir_name": "docops_v2_l4_071_word_xlsx_security_incident_notification_clock",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "incident-timeline-and-contract-term-reconciliation -> notification-clock-tracker -> privacy-safe-memo -> privileged-strategy-boundary",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_input.docx",
+  "supporting_input_paths": [
+    "/root/incident_timeline.xlsx",
+    "/root/security_notice_terms.pdf",
+    "/root/forensic_summary.docx",
+    "/root/privileged_incident_strategy_note.pdf"
+  ],
+  "output_paths": {
+    "incident_memo": "/root/submission/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_incident_memo.docx",
+    "notification_tracker": "/root/submission/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_notification_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_incident_memo.docx",
+  "output_filename": "incident_notification_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a privacy-safe incident notification memo and breach notification tracker from a draft privileged incident note, timeline, contract notice terms, forensic summary, and privileged strategy note while preserving notice clocks and keeping exploit/legal details out of public materials.",
+  "single_step_benchmark_instruction": "Create incident_notification_memo.docx and breach_notification_tracker.xlsx. Use discovery timestamp 2026-06-12 09:15, track the five notification work items, expose only confirmed portal profile data in public language, preserve workbook formulas/tables/validations/hidden sheets, and keep exploit payload and legal strategy details internal.",
+  "expected_output_type": "A .docx incident memo and .xlsx notification tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "FTC Data Breach Response: A Guide for Business recommends securing operations, fixing vulnerabilities, and notifying appropriate parties",
+      "url": "https://www.ftc.gov/business-guidance/resources/data-breach-response-guide-business"
+    },
+    {
+      "title": "Incident response reporting workflows require translating forensic facts into legally framed notification materials",
+      "url": "https://arxiv.org/abs/2602.22244"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_incident_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_071_word_xlsx_security_incident_notification_clock_notification_tracker.xlsx",
+    "notification_rows": [
+      [
+        "NOT-001",
+        "Acme Retail client notice",
+        "Contract",
+        "2026-06-12 09:15",
+        72,
+        "2026-06-15 09:15",
+        "Privacy Office",
+        "Ready",
+        "Public",
+        "Confirmed portal export table exposure"
+      ],
+      [
+        "NOT-002",
+        "PayGrid processor courtesy notice",
+        "Contract",
+        "2026-06-12 09:15",
+        24,
+        "2026-06-13 09:15",
+        "Vendor Risk",
+        "Completed",
+        "Public",
+        "Token table unaffected; courtesy notice completed"
+      ],
+      [
+        "NOT-003",
+        "Law enforcement consult",
+        "Incident Response",
+        "2026-06-12 09:15",
+        12,
+        "2026-06-12 21:15",
+        "Legal",
+        "Completed",
+        "Internal",
+        "Consulted before external notice timing"
+      ],
+      [
+        "NOT-004",
+        "Affected individual notice decision",
+        "Privacy Assessment",
+        "2026-06-12 09:15",
+        168,
+        "2026-06-19 09:15",
+        "Privacy Office",
+        "Hold",
+        "Internal",
+        "No SSN or payment card confirmed; decision pending"
+      ],
+      [
+        "NOT-005",
+        "Support FAQ publish",
+        "Communications",
+        "2026-06-14 12:00",
+        24,
+        "2026-06-15 12:00",
+        "Comms",
+        "Ready",
+        "Public",
+        "Plain-language FAQ without exploit details"
+      ]
+    ],
+    "impact_rows": [
+      [
+        "DATA-001",
+        "Customer portal profile table",
+        "Names; email addresses; order IDs",
+        1248,
+        "Confirmed exposed",
+        "Public summary allowed"
+      ],
+      [
+        "DATA-002",
+        "Password hashes",
+        "Salted hashes",
+        0,
+        "Not accessed",
+        "Do not mention as exposed"
+      ],
+      [
+        "DATA-003",
+        "Payment cards",
+        "Card data",
+        0,
+        "Not stored in portal",
+        "Do not mention as exposed"
+      ],
+      [
+        "DATA-004",
+        "Social Security numbers",
+        "SSN",
+        0,
+        "Not collected",
+        "Do not mention as exposed"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "EV-IR-01",
+        "WAF alert export",
+        "2026-06-12 09:15",
+        "Public",
+        "Establishes discovery timestamp"
+      ],
+      [
+        "EV-IR-02",
+        "Forensic containment note",
+        "2026-06-13 18:40",
+        "Public",
+        "Confirms vulnerability patched"
+      ],
+      [
+        "EV-IR-03",
+        "Exploit payload sample",
+        "2026-06-12 10:20",
+        "Internal Only",
+        "Do not publish exploit details"
+      ],
+      [
+        "EV-IR-04",
+        "Counsel notice strategy note",
+        "2026-06-14 08:30",
+        "Privileged",
+        "Do not publish legal advice"
+      ]
+    ],
+    "faq_rows": [
+      [
+        "What happened?",
+        "An unauthorized actor accessed a customer portal export table."
+      ],
+      [
+        "What information was involved?",
+        "Names, email addresses, and order IDs for 1,248 customer records were involved."
+      ],
+      [
+        "What information was not involved?",
+        "The portal did not store payment card data or Social Security numbers."
+      ],
+      [
+        "What did we do?",
+        "We contained the issue, patched the affected endpoint, reset relevant credentials, and increased monitoring."
+      ]
+    ],
+    "forbidden_public": [
+      "zero-day",
+      "SQL injection payload",
+      "CVE-2099-4242",
+      "delay notice",
+      "litigation posture",
+      "outside counsel recommends",
+      "root password",
+      "EV-IR-03",
+      "EV-IR-04"
+    ],
+    "sheet_order": [
+      "Notification Tracker",
+      "Impact Assessment",
+      "Evidence Log",
+      "Public FAQ",
+      "Privileged Strategy",
+      "Rules"
+    ],
+    "tables": {
+      "Notification Tracker": [
+        "notification_tracker",
+        "A1:K6"
+      ],
+      "Impact Assessment": [
+        "impact_assessment",
+        "A1:F5"
+      ],
+      "Evidence Log": [
+        "evidence_log",
+        "A1:E5"
+      ],
+      "Public FAQ": [
+        "public_faq",
+        "A1:B5"
+      ]
+    },
+    "hidden_sheets": [
+      "Privileged Strategy",
+      "Rules"
+    ],
+    "defined_names": [
+      "notice_status_choices",
+      "boundary_choices"
+    ],
+    "data_validation_ranges": {
+      "Notification Tracker": [
+        "H2:H6",
+        "I2:I6"
+      ],
+      "Evidence Log": [
+        "D2:D5"
+      ]
+    },
+    "print_areas": {
+      "Notification Tracker": "'Notification Tracker'!$A$1:$K$6",
+      "Impact Assessment": "'Impact Assessment'!$A$1:$F$5",
+      "Evidence Log": "'Evidence Log'!$A$1:$E$5",
+      "Public FAQ": "'Public FAQ'!$A$1:$B$5"
+    },
+    "formula_cells": {
+      "Notification Tracker!K2": "=IF(H2=\"Completed\",\"Done\",IF(F2<>\"\",\"Track\",\"Missing Due Date\"))",
+      "Notification Tracker!K5": "=IF(H5=\"Completed\",\"Done\",IF(F5<>\"\",\"Track\",\"Missing Due Date\"))"
+    },
+    "doc_heading_order": [
+      "Security Incident Notification Memo",
+      "Confirmed Incident Summary",
+      "Notification Clock",
+      "Approved Public Language",
+      "Boundary and Evidence Handling",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "The confirmed discovery timestamp is 2026-06-12 09:15 based on EV-IR-01.",
+      "The confirmed exposed data set is a customer portal profile export containing names, email addresses, and order IDs for 1,248 records.",
+      "Payment card data, Social Security numbers, and password hashes were not confirmed exposed.",
+      "Public materials may say that an unauthorized actor accessed a customer portal export table.",
+      "This memo and breach_notification_tracker.xlsx agree on five notification work items and two public-ready notices."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Counsel Strategy - Remove",
+      "zero-day",
+      "SQL injection payload",
+      "CVE-2099-4242",
+      "delay notice",
+      "litigation posture",
+      "outside counsel recommends",
+      "root password",
+      "EV-IR-03",
+      "EV-IR-04"
+    ],
+    "doc_header_contains": "Discovery: 2026-06-12 09:15",
+    "doc_footer_contains": "breach_notification_tracker.xlsx",
+    "doc_highlight_text": "Priority clock: Acme Retail client notice is due by 2026-06-15 09:15, 72 hours after confirmed discovery."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_071_word_xlsx_security_incident_notification_clock"
+}

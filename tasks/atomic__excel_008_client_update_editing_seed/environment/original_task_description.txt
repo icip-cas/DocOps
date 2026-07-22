@@ -1,0 +1,28 @@
+Task ID: excel_008
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: C2 Editing
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: is there a way to modify formulas based on inputs?
+  URL: https://www.reddit.com/r/excel/comments/1snrbmh/is_there_a_way_to_modify_formulas_based_on_inputs/
+- Title: Data Prep for Software Transition
+  URL: https://www.reddit.com/r/excel/comments/1sna8on/data_prep_for_software_transition/
+
+User Task Description:
+This workbook contains a draft client-facing status note that is too blunt for external communication.
+
+Single-Step Benchmark Instruction:
+Rewrite only cell `B8` on the `Status Draft` sheet so it sounds more formal and client-safe while preserving the underlying meaning about schedule uncertainty.
+
+Atomic Scope:
+Only local content editing is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The edit must stay confined to one specific cell
+- The rewritten sentence should soften tone without removing the risk signal
+- Nearby cells include instructions and noise that should not be rewritten
+
+Expected Output Type:
+A revised .xlsx workbook with the edited sentence in `B8`.

@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_012",
+  "task_dir_name": "pdf_012_table_structure_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "S4 Table/Sheet ops",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdf_012_table_structure_seed.pdf",
+  "source_doc_path": "pdf/pdf_012_table_structure_seed.pdf",
+  "task_description_filename": "pdf_012_table_structure_seed.txt",
+  "task_description_path": "pdf/pdf_012_table_structure_seed.txt",
+  "input_path": "/root/pdf_012_table_structure_seed.pdf",
+  "output_path": "/root/submission/pdf_012_table_structure_seed.pdf",
+  "output_filename": "pdf_012_table_structure_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF contains a structured table where one column incorrectly combines two logical fields.",
+  "single_step_benchmark_instruction": "Split the `Owner / Team` column into two separate table columns named `Owner` and `Team`, while preserving the existing row content.",
+  "atomic_scope": "Only table-structure editing is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the table split into the requested columns.",
+  "inspired_by": [
+    {
+      "title": "how can i transfer a pdf table into word?",
+      "url": "https://www.reddit.com/r/word/comments/1si8saz/how_can_i_transfer_a_pdf_table_into_word/"
+    },
+    {
+      "title": "Tool to extract images from PDFs in their original format, without additional compression, and while retaining color profile information?",
+      "url": "https://www.reddit.com/r/pdf/comments/1smqv12/tool_to_extract_images_from_pdfs_in_their/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The PDF table is visually valid even though its schema is wrong\n- Each row must be restructured without losing any cell content\n- This is a structural table operation, not a free-form rewrite"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": "wordxr_004",
+  "task_dir_name": "wordxr_004_mou_template_scope_term_and_contacts_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-purpose -> replace-scope -> set-term -> build-contact-table",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_004_mou_template_scope_term_and_contacts_seed.docx",
+  "supporting_input_paths": [
+    "/root/scope_note.pdf",
+    "/root/term_sheet.docx",
+    "/root/partner_contacts.xlsx"
+  ],
+  "output_path": "/root/submission/wordxr_004_mou_template_scope_term_and_contacts_seed.docx",
+  "output_filename": "wordxr_004_mou_template_scope_term_and_contacts_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Complete the Purpose.",
+  "single_step_benchmark_instruction": "Complete the Purpose, Scope, Term, and Points-of-Contact sections in the MOU template, fill the contact table, and preserve the template’s heading styles and signature-block layout.",
+  "atomic_scope": "Only the three named sections and the contact table are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the existing headings\n- Do not add legal clauses not requested"
+  },
+  "verifier_expectations": {
+    "paragraph_anchor_groups_under_headings": [
+      {
+        "heading": "Purpose",
+        "required_all": [
+          "groundwater monitoring"
+        ],
+        "required_any_groups": [
+          [
+            "Memorandum of Understanding",
+            "MOU"
+          ],
+          [
+            "collaborat",
+            "cooperat",
+            "shared"
+          ]
+        ]
+      },
+      {
+        "heading": "Scope",
+        "required_all": [
+          "Shared groundwater monitoring",
+          "Quarterly",
+          "data",
+          "Joint public summary memo"
+        ]
+      },
+      {
+        "heading": "Term",
+        "required_all": [
+          "July 1 2025",
+          "June 30 2026",
+          "Renew",
+          "written agreement"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "1,0": "USGS",
+          "1,1": "Mia Torres",
+          "1,2": "mtorres@usgs.gov",
+          "2,0": "River District",
+          "2,1": "Avery Grant",
+          "2,2": "agrant@riverdistrict.gov"
+        }
+      }
+    ]
+  }
+}

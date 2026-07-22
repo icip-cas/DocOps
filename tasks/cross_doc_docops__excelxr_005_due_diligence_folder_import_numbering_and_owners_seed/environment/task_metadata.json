@@ -1,0 +1,34 @@
+{
+  "task_id": "excelxr_005",
+  "task_dir_name": "excelxr_005_due_diligence_folder_import_numbering_and_owners_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "cross-document",
+  "composition_pattern": "extract-sectioned-request-list -> map-hierarchy-to-rows -> fill-launch-metadata -> preserve-summary-formulas",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/diligence_request_extract.pdf",
+    "/root/folder_note.docx",
+    "/root/team_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "output_filename": "excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Convert the sectioned request list into the folder-import workbook.",
+  "single_step_benchmark_instruction": "Fill `Folder Import` with the exact hierarchy marker, folder title, responsible team, and `Missing` status rows, then fill the launch metadata cells on `Cover`. Keep `Folder Template` unchanged and preserve the summary formulas.",
+  "atomic_scope": "Only the imported hierarchy rows, the launch metadata cells, the untouched template sheet, the summary formulas, and the hidden lookup sheet are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep `Folder Template` unchanged\n- Do not replace summary formulas with hardcoded values"
+  }
+}

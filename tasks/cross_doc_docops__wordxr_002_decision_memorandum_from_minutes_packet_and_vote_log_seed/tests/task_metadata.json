@@ -1,0 +1,113 @@
+{
+  "task_id": "wordxr_002",
+  "task_dir_name": "wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-header-table -> replace-section-text -> merge-vote-log",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed.docx",
+  "supporting_input_paths": [
+    "/root/public_agenda.pdf",
+    "/root/public_minutes.pdf",
+    "/root/vote_log.xlsx"
+  ],
+  "output_path": "/root/submission/wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed.docx",
+  "output_filename": "wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Fill the metadata table and the bounded Decision.",
+  "single_step_benchmark_instruction": "Fill the metadata table and the bounded Decision, Basis, Votes, and Action sections of the memorandum using the source documents while preserving the original template header, footer, and styles.",
+  "atomic_scope": "Only the header table and the four named sections are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the existing headings\n- Do not add extra memo sections"
+  },
+  "verifier_expectations": {
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Meeting Date",
+          "0,1": "January 13, 2025",
+          "1,0": "Board Chair",
+          "1,1": "Dr. Karen Holt",
+          "2,0": "Reference Packet"
+        }
+      }
+    ],
+    "table_cell_anchor_groups": [
+      {
+        "index": 0,
+        "cells": {
+          "2,1": {
+            "accepted_all_groups": [
+              [
+                "Licensure",
+                "Telehealth",
+                "FAQ"
+              ],
+              [
+                "Renewal",
+                "Telehealth",
+                "FAQ"
+              ],
+              [
+                "agenda",
+                "minutes",
+                "vote log"
+              ]
+            ]
+          }
+        }
+      }
+    ],
+    "paragraph_anchor_groups_under_headings": [
+      {
+        "heading": "Decision",
+        "required_all": [
+          "renew",
+          "three",
+          "licenses"
+        ]
+      },
+      {
+        "heading": "Basis",
+        "required_all": [
+          "applicants",
+          "cleared",
+          "documentation review"
+        ]
+      },
+      {
+        "heading": "Votes",
+        "required_all": [
+          "Renewal motion",
+          "Passed",
+          "5-0",
+          "Telehealth FAQ",
+          "Accepted",
+          "March agenda"
+        ]
+      },
+      {
+        "heading": "Action Items",
+        "required_all": [
+          "Publish",
+          "renewal notices",
+          "January 20 2025"
+        ]
+      }
+    ]
+  }
+}

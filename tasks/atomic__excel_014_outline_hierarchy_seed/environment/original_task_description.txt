@@ -1,0 +1,26 @@
+Task ID: excel_014
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Excel (.xlsx)
+Atomic Operation: S3 Hierarchy editing
+Difficulty: Hard
+
+Inspired By:
+- Title: Making recipe tree chart but having trouble formatting and automating it
+  URL: https://www.reddit.com/r/excel/comments/1snlk2n/making_recipe_tree_chart_but_having_trouble/
+
+User Task Description:
+This workbook contains a flat program outline that has section rows and detail rows, but no usable hierarchy in Excel's outline structure.
+
+Single-Step Benchmark Instruction:
+On the `Program Outline` sheet, make rows `4`, `7`, and `10` the top-level section rows and group the following detail rows under each section using Excel row outlining, without changing the row order.
+
+Atomic Scope:
+Only hierarchy editing is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The hierarchy is visually implied but not structurally encoded
+- The task requires identifying the correct parent-child row boundaries
+- A correct result changes outline structure rather than rewriting content
+
+Expected Output Type:
+A revised .xlsx workbook with row grouping / outline hierarchy applied.

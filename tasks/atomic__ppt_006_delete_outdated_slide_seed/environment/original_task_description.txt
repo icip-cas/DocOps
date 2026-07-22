@@ -1,0 +1,26 @@
+Task ID: ppt_006
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: S1 Insert/Delete
+Difficulty: Easy-Medium
+
+Inspired By:
+- Title: Live Event Production: Managing PowerPoint decks
+  URL: https://www.reddit.com/r/powerpoint/comments/1rzzm9l/live_event_production_managing_powerpoint_decks/
+
+User Task Description:
+This deck still contains one outdated appendix slide from a previous reporting cycle.
+
+Single-Step Benchmark Instruction:
+Delete the slide titled `Old Appendix (DELETE ME)`.
+
+Atomic Scope:
+Only slide deletion is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The slide is fully formatted, so deletion requires confidence rather than obvious corruption
+- The rest of the deck should remain unchanged
+- Page order must stay coherent after deletion
+
+Expected Output Type:
+A revised .pptx deck with the outdated slide removed.

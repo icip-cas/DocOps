@@ -1,0 +1,189 @@
+{
+  "task_id": "docops_v2_l3_028_pptx_lab_safety_training_deck_remediation",
+  "input_path": "/root/docops_v2_l3_028_pptx_lab_safety_training_deck_remediation_input.pptx",
+  "output_path": "/root/submission/docops_v2_l3_028_pptx_lab_safety_training_deck_remediation_output.pptx",
+  "output_extension": ".pptx",
+  "verifier_expectations": {
+    "slide_size": {
+      "width": 12191695,
+      "height": 6858000
+    },
+    "slide_titles": [
+      "Teaching Lab Safety Training",
+      "Corrected Scope and Roles",
+      "Hazard Classification Matrix",
+      "PPE Donning Workflow",
+      "Spill Response Decision Tree",
+      "Waste Labeling Checklist",
+      "Knowledge Check",
+      "Training Release Checklist"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "Dr. Mira Holt",
+      "555-0182",
+      "BSL-3",
+      "hydrofluoric acid",
+      "2025-04-15",
+      "Room B301",
+      "incident memo",
+      "animal colony"
+    ],
+    "required_text_by_slide": {
+      "Teaching Lab Safety Training": [
+        "Course TLS-2026-09",
+        "Effective 2026-09-01",
+        "Teaching labs B214 and B216",
+        "lab-safety@univ.example"
+      ],
+      "Corrected Scope and Roles": [
+        "Scope: undergraduate teaching labs only",
+        "Public safety contact: lab-safety@univ.example",
+        "Roles are listed by function, not by individual name"
+      ],
+      "Hazard Classification Matrix": [
+        "Escalate only when the matrix requires safety coordinator review"
+      ],
+      "PPE Donning Workflow": [
+        "Sequence: coat, goggles, gloves, task check, glove change"
+      ],
+      "Spill Response Decision Tree": [
+        "Stop work, isolate area, notify supervisor, document closeout"
+      ],
+      "Waste Labeling Checklist": [
+        "Every container requires chemical name, accumulation start date, owner group, and hazard class"
+      ],
+      "Knowledge Check": [
+        "Passing score: 3 of 3 correct before lab access is restored"
+      ],
+      "Training Release Checklist": [
+        "Release condition 1: outdated course facts removed",
+        "Release condition 2: procedures match teaching-lab scope",
+        "Release condition 3: notes and footer complete"
+      ]
+    },
+    "tables": {
+      "Hazard Classification Matrix": [
+        [
+          "Hazard",
+          "Teaching-lab control",
+          "Escalation trigger",
+          "Owner group"
+        ],
+        [
+          "Broken glass",
+          "Use rigid sharps container",
+          "Injury or blood present",
+          "Lab supervisor"
+        ],
+        [
+          "Solvent splash",
+          "Use eyewash and report",
+          "Eye exposure or symptoms",
+          "Safety coordinator"
+        ],
+        [
+          "Unknown powder",
+          "Stop work and cover area",
+          "Identity cannot be confirmed",
+          "Safety coordinator"
+        ],
+        [
+          "Minor spill",
+          "Use stocked spill kit",
+          "Beyond bench mat area",
+          "Facilities support"
+        ]
+      ],
+      "Waste Labeling Checklist": [
+        [
+          "Waste stream",
+          "Required label element",
+          "Storage rule",
+          "Status"
+        ],
+        [
+          "Aqueous dye waste",
+          "Chemical name and date",
+          "Closed secondary tray",
+          "Ready"
+        ],
+        [
+          "Solvent wipes",
+          "Hazard class and owner group",
+          "Fire-safe container",
+          "Ready"
+        ],
+        [
+          "Sharps",
+          "Biohazard or glass designation",
+          "Rigid closed container",
+          "Ready"
+        ],
+        [
+          "Broken glass",
+          "Course and room identifier",
+          "Labeled box below bench",
+          "Ready"
+        ]
+      ],
+      "Knowledge Check": [
+        [
+          "Question",
+          "Correct answer",
+          "Remediation if missed"
+        ],
+        [
+          "Which rooms are covered?",
+          "B214 and B216",
+          "Repeat scope slide"
+        ],
+        [
+          "When do you escalate a spill?",
+          "When matrix trigger is met",
+          "Review decision tree"
+        ],
+        [
+          "What must be on waste labels?",
+          "Name, date, owner group, hazard class",
+          "Repeat checklist"
+        ]
+      ]
+    },
+    "style": {
+      "title_background": "0F2F2E",
+      "content_background": "F8FAF5",
+      "title_font": "Arial",
+      "title_color_title_slide": "FFFFFF",
+      "title_color_content": "1F2937",
+      "accent_fill": "D97706",
+      "footer_text": "Teaching Lab Safety Training | TLS-2026-09"
+    },
+    "speaker_notes": [
+      "Open with course TLS-2026-09 and confirm this training applies only to teaching labs B214 and B216.",
+      "Confirm roles before showing procedures: learner, lab supervisor, safety coordinator, and facilities support.",
+      "Use the matrix to distinguish routine teaching-lab hazards from escalation-only situations.",
+      "Demonstrate the PPE sequence exactly as shown and pause before the glove-change step.",
+      "Ask learners to choose the response path before revealing the escalation rule.",
+      "Remind learners that waste labels must be complete before material leaves the bench area.",
+      "Read each knowledge-check prompt and collect responses before showing the correct answer.",
+      "Close by confirming the release checklist and the public safety contact mailbox."
+    ],
+    "source_must_contain": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "Dr. Mira Holt",
+      "555-0182",
+      "BSL-3",
+      "hydrofluoric acid",
+      "2025-04-15",
+      "Room B301",
+      "incident memo",
+      "animal colony"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_028_pptx_lab_safety_training_deck_remediation",
+  "task_dir_name": "docops_v2_l3_028_pptx_lab_safety_training_deck_remediation"
+}

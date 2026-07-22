@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_012",
+  "task_dir_name": "excel_012_archive_sheet_delete_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "S1 Insert/Delete",
+  "difficulty": "Medium",
+  "source_doc_filename": "excel_012_archive_sheet_delete_seed.xlsx",
+  "source_doc_path": "excel/excel_012_archive_sheet_delete_seed.xlsx",
+  "task_description_filename": "excel_012_archive_sheet_delete_seed.txt",
+  "task_description_path": "excel/excel_012_archive_sheet_delete_seed.txt",
+  "input_path": "/root/excel_012_archive_sheet_delete_seed.xlsx",
+  "output_path": "/root/submission/excel_012_archive_sheet_delete_seed.xlsx",
+  "output_filename": "excel_012_archive_sheet_delete_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains one obsolete sheet that should no longer be present in the deliverable.",
+  "single_step_benchmark_instruction": "Delete the worksheet named `Archive_2024_DO_NOT_USE` and leave the rest of the workbook unchanged.",
+  "atomic_scope": "Only sheet deletion is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with the obsolete sheet removed.",
+  "inspired_by": [
+    {
+      "title": "Excel is not saving multiple sheets",
+      "url": "https://www.reddit.com/r/excel/comments/1sncbt9/excel_is_not_saving_multiple_sheets/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The workbook contains multiple tabs and one of them looks plausibly useful unless the name is read carefully\n- The instruction is structural, not content-based\n- Nothing else in the workbook should be renamed or edited"
+  }
+}

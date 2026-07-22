@@ -1,0 +1,33 @@
+{
+  "task_id": "excelc_001",
+  "task_dir_name": "excelc_001_ops_note_repair_and_evidence_highlight_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C5 Reasoning",
+    "C2 Editing",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "understand -> edit -> highlight",
+  "difficulty": "Hard",
+  "source_doc_filename": "excelc_001_ops_note_repair_and_evidence_highlight_seed.xlsx",
+  "source_doc_path": "excel/excelc_001_ops_note_repair_and_evidence_highlight_seed.xlsx",
+  "task_description_filename": "excelc_001_ops_note_repair_and_evidence_highlight_seed.txt",
+  "task_description_path": "excel/excelc_001_ops_note_repair_and_evidence_highlight_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_001_ops_note_repair_and_evidence_highlight_seed.xlsx",
+  "output_path": "/root/submission/excelc_001_ops_note_repair_and_evidence_highlight_seed.xlsx",
+  "output_filename": "excelc_001_ops_note_repair_and_evidence_highlight_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains an inaccurate ops-summary note that should be corrected and visually supported with evidence.",
+  "single_step_benchmark_instruction": "Using the evidence on `Monthly Data`, correct only cell `B8` on `Ops Summary` so the executive note reflects the true steepest backlog region and whether any site crossed the 12-incident threshold, then highlight only the supporting evidence rows on `Monthly Data`.",
+  "atomic_scope": "Only the targeted note rewrite in `Ops Summary!B8` and the supporting-row highlight on `Monthly Data` are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook with an accurate executive-safe note and highlighted supporting rows.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Workbook-wide styling is still uneven\n- Other notes on the summary sheet are intentionally left untouched"
+  }
+}

@@ -1,0 +1,443 @@
+{
+  "task_id": "docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule",
+  "task_dir_name": "docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule",
+  "doc_type": "pdf+xlsx",
+  "primary_modality": "PDF, Excel (.xlsx), Word (.docx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_input.docx",
+  "supporting_input_paths": [
+    "/root/programming_brief.docx",
+    "/root/film_catalog_venue_access.xlsx",
+    "/root/filmmaker_travel_update.docx",
+    "/root/tech_notes.pdf",
+    "/root/private_sponsor_note.docx"
+  ],
+  "output_paths": {
+    "public_program": "/root/submission/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_public_program.pdf",
+    "schedule_control": "/root/submission/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_schedule_control.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_public_program.pdf",
+  "output_filename": "public_screening_program.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-schedule-privacy-strict",
+  "user_task_description": "Create a public screening program PDF and schedule control workbook by resolving film runtime, venue, Q&A, turnaround, accessibility, and private-note constraints.",
+  "single_step_benchmark_instruction": "Create public_screening_program.pdf and festival_schedule_control.xlsx. Resolve schedule constraints, include public access/advisory notes, preserve workbook formulas/tables/validation/hidden sheets, and exclude private sponsor/hotel/jury/greenroom notes.",
+  "expected_output_type": "A .pdf public program and .xlsx schedule control workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Film festival programming and screening schedule workflows",
+      "url": "https://www.filmfreeway.com/"
+    },
+    {
+      "title": "Cinema accessibility services such as captions and audio description",
+      "url": "https://www.arts.gov/impact/accessibility"
+    },
+    {
+      "title": "Event run-of-show and venue scheduling operations",
+      "url": "https://www.eventbrite.com/blog/run-of-show-template-ds00/"
+    }
+  ],
+  "verifier_expectations": {
+    "pdf_output": "/root/submission/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_public_program.pdf",
+    "xlsx_output": "/root/submission/docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule_schedule_control.xlsx",
+    "pdf_required": [
+      "Harbor Lights Micro-Festival",
+      "Public Screening Program",
+      "Saturday, October 3, 2026",
+      "11:00 AM",
+      "Harbor One",
+      "Tide Tables",
+      "Open captions",
+      "1:10 PM",
+      "Glass Orchard",
+      "Director Q&A with Mira Chen",
+      "2:00 PM",
+      "Studio B",
+      "Paper Kites",
+      "Audio description headsets available",
+      "4:00 PM",
+      "Night Ferry",
+      "Live captioning for Q&A",
+      "5:20 PM",
+      "Salt Room",
+      "Sensory advisory: low-frequency sound",
+      "7:15 PM",
+      "Closing Shorts Block",
+      "Rush line opens 20 minutes before each screening"
+    ],
+    "pdf_forbidden": [
+      "VIP sponsor dinner",
+      "artist hotel",
+      "hold seats for donors",
+      "jury conflict",
+      "private travel delay",
+      "greenroom passcode"
+    ],
+    "schedule_rows": [
+      [
+        "Slot",
+        "Date",
+        "Venue",
+        "Start",
+        "Title",
+        "Runtime Min",
+        "Q&A Min",
+        "Turnover Min",
+        "Block Min",
+        "End",
+        "Public Access Note"
+      ],
+      [
+        1,
+        "2026-10-03",
+        "Harbor One",
+        "11:00 AM",
+        "Tide Tables",
+        82,
+        0,
+        18,
+        "=F2+G2+H2",
+        "12:40 PM",
+        "Open captions"
+      ],
+      [
+        2,
+        "2026-10-03",
+        "Harbor One",
+        "1:10 PM",
+        "Glass Orchard",
+        74,
+        20,
+        20,
+        "=F3+G3+H3",
+        "3:04 PM",
+        "Director Q&A with Mira Chen"
+      ],
+      [
+        3,
+        "2026-10-03",
+        "Studio B",
+        "2:00 PM",
+        "Paper Kites",
+        68,
+        0,
+        22,
+        "=F4+G4+H4",
+        "3:30 PM",
+        "Audio description headsets available"
+      ],
+      [
+        4,
+        "2026-10-03",
+        "Harbor One",
+        "4:00 PM",
+        "Night Ferry",
+        96,
+        15,
+        24,
+        "=F5+G5+H5",
+        "6:15 PM",
+        "Live captioning for Q&A"
+      ],
+      [
+        5,
+        "2026-10-03",
+        "Studio B",
+        "5:20 PM",
+        "Salt Room",
+        88,
+        0,
+        20,
+        "=F6+G6+H6",
+        "7:08 PM",
+        "Sensory advisory: low-frequency sound"
+      ],
+      [
+        6,
+        "2026-10-03",
+        "Harbor One",
+        "7:15 PM",
+        "Closing Shorts Block",
+        91,
+        25,
+        19,
+        "=F7+G7+H7",
+        "9:30 PM",
+        "Open captions and closing remarks"
+      ]
+    ],
+    "constraint_rows": [
+      [
+        "Constraint",
+        "Requirement",
+        "Evidence",
+        "Status"
+      ],
+      [
+        "Harbor One turnaround before Glass Orchard",
+        ">=30 minutes after Tide Tables end",
+        "12:40 PM to 1:10 PM",
+        "Pass"
+      ],
+      [
+        "Harbor One turnaround before Night Ferry",
+        ">=45 minutes after Glass Orchard block",
+        "3:04 PM to 4:00 PM",
+        "Pass"
+      ],
+      [
+        "Studio B conflict check",
+        "Salt Room starts after Paper Kites end plus buffer",
+        "3:30 PM to 5:20 PM",
+        "Pass"
+      ],
+      [
+        "Mira Chen availability",
+        "Q&A after 1:00 PM arrival",
+        "Glass Orchard starts 1:10 PM",
+        "Pass"
+      ],
+      [
+        "Live captioning assigned",
+        "Night Ferry Q&A requires live captioning",
+        "Access roster confirms 4:00 PM",
+        "Pass"
+      ],
+      [
+        "Audio description assigned",
+        "Paper Kites requires headset availability",
+        "Studio B 2:00 PM",
+        "Pass"
+      ]
+    ],
+    "access_rows": [
+      [
+        "Film",
+        "Access Service",
+        "Public Wording",
+        "Source",
+        "Include"
+      ],
+      [
+        "Tide Tables",
+        "Open captions",
+        "Open captions",
+        "accessibility_roster.xlsx",
+        "Yes"
+      ],
+      [
+        "Paper Kites",
+        "Audio description",
+        "Audio description headsets available",
+        "accessibility_roster.xlsx",
+        "Yes"
+      ],
+      [
+        "Night Ferry",
+        "Live Q&A captioning",
+        "Live captioning for Q&A",
+        "accessibility_roster.xlsx",
+        "Yes"
+      ],
+      [
+        "Salt Room",
+        "Sensory advisory",
+        "Sensory advisory: low-frequency sound",
+        "tech_notes.pdf",
+        "Yes"
+      ],
+      [
+        "Closing Shorts Block",
+        "Open captions",
+        "Open captions and closing remarks",
+        "accessibility_roster.xlsx",
+        "Yes"
+      ]
+    ],
+    "public_copy_rows": [
+      [
+        "Program Item",
+        "Public Copy",
+        "Status"
+      ],
+      [
+        "Festival",
+        "Harbor Lights Micro-Festival",
+        "Ready"
+      ],
+      [
+        "Rush line",
+        "Rush line opens 20 minutes before each screening",
+        "Ready"
+      ],
+      [
+        "Venue note",
+        "All screenings are at Harbor One or Studio B",
+        "Ready"
+      ],
+      [
+        "Cancellation note",
+        "No cancellations in public schedule",
+        "Ready"
+      ]
+    ],
+    "private_rows": [
+      [
+        "Private Note",
+        "Treatment"
+      ],
+      [
+        "VIP sponsor dinner",
+        "Exclude"
+      ],
+      [
+        "artist hotel",
+        "Exclude"
+      ],
+      [
+        "hold seats for donors",
+        "Exclude"
+      ],
+      [
+        "jury conflict",
+        "Exclude"
+      ],
+      [
+        "private travel delay",
+        "Exclude"
+      ],
+      [
+        "greenroom passcode",
+        "Exclude"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Festival",
+        "Harbor Lights Micro-Festival",
+        "Programming brief",
+        "Matched"
+      ],
+      [
+        "Festival date",
+        "2026-10-03",
+        "Venue availability",
+        "Matched"
+      ],
+      [
+        "Public screenings",
+        "=COUNTA('Screening Schedule'!E2:E7)",
+        "Screening Schedule",
+        "Calculated"
+      ],
+      [
+        "Constraint checks passed",
+        "=COUNTIF('Constraint QA'!D2:D7,\"Pass\")",
+        "Constraint QA",
+        "Calculated"
+      ],
+      [
+        "Access notes included",
+        "=COUNTIF('Accessibility Map'!E2:E6,\"Yes\")",
+        "Accessibility Map",
+        "Calculated"
+      ],
+      [
+        "Private notes excluded",
+        6,
+        "Private Notes",
+        "Checked"
+      ],
+      [
+        "Program ready",
+        "=IF(AND(B4=6,B5=6,B6=5,B7=6),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "sheet_order": [
+      "Program Summary",
+      "Screening Schedule",
+      "Constraint QA",
+      "Accessibility Map",
+      "Public Copy",
+      "Private Notes"
+    ],
+    "tables": {
+      "Program Summary": [
+        "tblProgramSummary",
+        "A1:D8"
+      ],
+      "Screening Schedule": [
+        "tblScreeningSchedule",
+        "A1:K7"
+      ],
+      "Constraint QA": [
+        "tblConstraintQA",
+        "A1:D7"
+      ],
+      "Accessibility Map": [
+        "tblAccessibilityMap",
+        "A1:E6"
+      ],
+      "Public Copy": [
+        "tblPublicCopy",
+        "A1:C5"
+      ],
+      "Private Notes": [
+        "tblPrivateNotes",
+        "A1:B7"
+      ]
+    },
+    "formula_cells": {
+      "Program Summary!B4": "=COUNTA('Screening Schedule'!E2:E7)",
+      "Program Summary!B5": "=COUNTIF('Constraint QA'!D2:D7,\"Pass\")",
+      "Program Summary!B6": "=COUNTIF('Accessibility Map'!E2:E6,\"Yes\")",
+      "Program Summary!B8": "=IF(AND(B4=6,B5=6,B6=5,B7=6),\"Ready\",\"Hold\")",
+      "Screening Schedule!I2": "=F2+G2+H2",
+      "Screening Schedule!I3": "=F3+G3+H3",
+      "Screening Schedule!I4": "=F4+G4+H4",
+      "Screening Schedule!I5": "=F5+G5+H5",
+      "Screening Schedule!I6": "=F6+G6+H6",
+      "Screening Schedule!I7": "=F7+G7+H7"
+    },
+    "hidden_sheets": [
+      "Private Notes"
+    ],
+    "defined_names": [
+      "ScreeningCount",
+      "ConstraintPassCount",
+      "ProgramReady"
+    ],
+    "print_areas": {
+      "Program Summary": "A1:D8",
+      "Screening Schedule": "A1:K7",
+      "Constraint QA": "A1:D7",
+      "Accessibility Map": "A1:E6",
+      "Public Copy": "A1:C5"
+    },
+    "data_validation": {
+      "Constraint QA": [
+        "D2:D7"
+      ],
+      "Accessibility Map": [
+        "E2:E6"
+      ],
+      "Public Copy": [
+        "C2:C5"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_053_pdf_xlsx_film_festival_screening_schedule"
+}

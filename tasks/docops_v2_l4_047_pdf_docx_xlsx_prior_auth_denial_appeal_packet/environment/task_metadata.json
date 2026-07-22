@@ -1,0 +1,588 @@
+{
+  "task_id": "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet",
+  "task_dir_name": "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet",
+  "doc_type": "pdf+docx+xlsx",
+  "primary_modality": "PDF, Word (.docx), and Excel (.xlsx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/appeal_template.docx",
+    "/root/denial_letter.pdf",
+    "/root/payer_policy_excerpt.pdf",
+    "/root/neurology_visit_note.docx",
+    "/root/patient_impact_message.docx",
+    "/root/medication_and_claims.xlsx",
+    "/root/previous_authorization.pdf",
+    "/root/pulmonary_history_note.pdf",
+    "/root/internal_appeal_strategy.docx"
+  ],
+  "output_paths": {
+    "appeal_letter": "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_appeal_letter.docx",
+    "evidence_tracker": "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_evidence_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_appeal_letter.docx",
+  "output_filename": "prior_auth_appeal_letter.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-privacy-strict",
+  "user_task_description": "Create an external prior authorization appeal letter and evidence tracker workbook from nine source documents while mapping payer criteria, calculating the appeal deadline, proving medication history, and excluding internal strategy notes.",
+  "single_step_benchmark_instruction": "Create prior_auth_appeal_letter.docx and appeal_evidence_tracker.xlsx. Appeal denial DEN-7842, map all payer criteria to evidence, calculate the 60-day deadline, preserve workbook formulas/tables/validation/hidden sheets, and keep internal legal/escalation strategy out of external outputs.",
+  "expected_output_type": "A .docx appeal letter and .xlsx evidence tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "AMA prior authorization physician survey and administrative burden discussions",
+      "url": "https://www.ama-assn.org/practice-management/prior-authorization"
+    },
+    {
+      "title": "CMS Interoperability and Prior Authorization Final Rule",
+      "url": "https://www.cms.gov/priorities/key-initiatives/burden-reduction/interoperability/policies-and-regulations/cms-interoperability-and-prior-authorization-final-rule-cms-0057-f"
+    },
+    {
+      "title": "KFF prior authorization issue briefs on denials and appeals",
+      "url": "https://www.kff.org/tag/prior-authorization/"
+    },
+    {
+      "title": "OSWorld benchmark for real computer-use tasks",
+      "url": "https://os-world.github.io/"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_appeal_letter.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_evidence_tracker.xlsx",
+    "doc_heading_order": [
+      "Prior Authorization Appeal Letter",
+      "Patient and Request",
+      "Denial Being Appealed",
+      "Medical Necessity Evidence",
+      "Step-Therapy and Safety Rationale",
+      "Requested Action",
+      "Attachments and Privacy Boundary"
+    ],
+    "doc_required": [
+      "Member: Nina Patel",
+      "Member ID: AC-77824",
+      "Denial ID: DEN-7842",
+      "Appeal deadline: 2026-08-06",
+      "Requested service: Rimegepant ODT 75 mg, 8 tablets per 30 days",
+      "Diagnosis code: G43.709",
+      "18 migraine days per month",
+      "MIDAS score 42",
+      "sumatriptan was stopped for chest tightness",
+      "rizatriptan was ineffective after an adequate trial",
+      "propranolol is contraindicated because of asthma",
+      "not prescribed with another CGRP antagonist",
+      "approve coverage for Rimegepant ODT 75 mg at 8 tablets per 30 days",
+      "five mapped payer criteria are satisfied",
+      "Attachments: A denial letter, B payer criteria, C clinical note, D medication history, E prior authorization history"
+    ],
+    "doc_forbidden": [
+      "bad-faith claim",
+      "plan usually folds",
+      "threaten DOI complaint",
+      "Dr. Kline is not a neurologist",
+      "use the patient's employer escalation",
+      "off-label quantity workaround",
+      "legal escalation script"
+    ],
+    "doc_header": "CONFIDENTIAL APPEAL PACKAGE - EXTERNAL VERSION",
+    "doc_footer": "Prepared for payer appeal submission; internal strategy notes excluded.",
+    "criteria_rows": [
+      [
+        "Criterion",
+        "Evidence",
+        "Source",
+        "Status"
+      ],
+      [
+        "Migraine diagnosis",
+        "G43.709 chronic migraine documented",
+        "Visit note 2026-06-04",
+        "Met"
+      ],
+      [
+        "Frequency threshold",
+        "18 migraine days per month; MIDAS 42",
+        "Visit note and patient impact note",
+        "Met"
+      ],
+      [
+        "Two preferred triptans",
+        "Sumatriptan stopped for chest tightness; rizatriptan ineffective after adequate trial",
+        "Medication history and claims",
+        "Met"
+      ],
+      [
+        "Safety contraindication",
+        "Propranolol contraindicated because of asthma",
+        "Pulmonary history note",
+        "Met"
+      ],
+      [
+        "Quantity limit",
+        "8 tablets per 30 days requested; no concurrent CGRP antagonist",
+        "Request form and claims",
+        "Met"
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "Attachment",
+        "Evidence Type",
+        "Filename",
+        "Use in Appeal",
+        "Disposition"
+      ],
+      [
+        "A",
+        "Denial letter",
+        "denial_letter.pdf",
+        "DEN-7842 dated 2026-06-07; denied for missing triptan/MIDAS proof",
+        "Include"
+      ],
+      [
+        "B",
+        "Payer criteria",
+        "payer_policy_excerpt.pdf",
+        "Requires migraine diagnosis, frequency, two triptans, quantity limit, no duplicate CGRP",
+        "Include"
+      ],
+      [
+        "C",
+        "Clinical note",
+        "neurology_visit_note.docx",
+        "18 migraine days/month, MIDAS 42, G43.709, no other CGRP",
+        "Include"
+      ],
+      [
+        "D",
+        "Medication history",
+        "medication_and_claims.xlsx",
+        "Sumatriptan adverse effect and rizatriptan inadequate response",
+        "Include"
+      ],
+      [
+        "E",
+        "Prior authorization history",
+        "previous_authorization.pdf",
+        "No active CGRP authorization; prior ubrogepant expired 2026-02-28",
+        "Include"
+      ],
+      [
+        "X",
+        "Internal strategy",
+        "internal_appeal_strategy.docx",
+        "Attorney/client strategy and escalation notes",
+        "Exclude"
+      ]
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Member",
+        "Nina Patel",
+        "Patient message and denial letter",
+        "Matched"
+      ],
+      [
+        "Member ID",
+        "AC-77824",
+        "Denial letter",
+        "Matched"
+      ],
+      [
+        "Denial ID",
+        "DEN-7842",
+        "Denial letter",
+        "Matched"
+      ],
+      [
+        "Denial date",
+        "2026-06-07",
+        "Denial letter",
+        "Matched"
+      ],
+      [
+        "Appeal deadline",
+        "=B5+60",
+        "60 calendar-day appeal window",
+        "Calculated 2026-08-06"
+      ],
+      [
+        "Medication",
+        "Rimegepant ODT 75 mg",
+        "Request form",
+        "Matched"
+      ],
+      [
+        "Requested quantity",
+        "8 tablets per 30 days",
+        "Request form and payer limit",
+        "Within limit"
+      ],
+      [
+        "Diagnosis",
+        "G43.709",
+        "Clinical note",
+        "Matched"
+      ],
+      [
+        "Migraine days/month",
+        18,
+        "Clinical note",
+        "Meets threshold"
+      ],
+      [
+        "MIDAS",
+        42,
+        "Clinical note",
+        "Severe impact"
+      ],
+      [
+        "Criteria met count",
+        "=COUNTIF('Criteria Mapping'!E2:E6,\"Met\")",
+        "Criteria Mapping",
+        "Calculated"
+      ],
+      [
+        "Appeal ready",
+        "=IF(B12=5,\"Ready\",\"Hold\")",
+        "Criteria Mapping",
+        "Calculated"
+      ]
+    ],
+    "criteria_mapping_rows": [
+      [
+        "Criterion ID",
+        "Payer Requirement",
+        "Extracted Evidence",
+        "Source File",
+        "Status",
+        "Appeal Letter Anchor"
+      ],
+      [
+        "C-01",
+        "Document migraine diagnosis",
+        "G43.709 chronic migraine",
+        "neurology_visit_note.docx",
+        "Met",
+        "Diagnosis code: G43.709"
+      ],
+      [
+        "C-02",
+        "At least 4 migraine days/month or severe functional impairment",
+        "18 migraine days/month and MIDAS 42",
+        "neurology_visit_note.docx; patient_impact_message.docx",
+        "Met",
+        "18 migraine days per month; MIDAS score 42"
+      ],
+      [
+        "C-03",
+        "Failure or intolerance of two preferred triptans",
+        "Sumatriptan chest tightness; rizatriptan ineffective after adequate trial",
+        "medication_and_claims.xlsx",
+        "Met",
+        "sumatriptan was stopped for chest tightness; rizatriptan was ineffective"
+      ],
+      [
+        "C-04",
+        "No duplicate CGRP antagonist therapy",
+        "Prior ubrogepant authorization expired 2026-02-28; no active CGRP claim",
+        "previous_authorization.pdf; medication_and_claims.xlsx",
+        "Met",
+        "not prescribed with another CGRP antagonist"
+      ],
+      [
+        "C-05",
+        "Quantity within plan limit",
+        "8 tablets per 30 days requested",
+        "denial_letter.pdf; payer_policy_excerpt.pdf",
+        "Met",
+        "8 tablets per 30 days"
+      ]
+    ],
+    "timeline_rows": [
+      [
+        "Event",
+        "Date",
+        "File",
+        "Required Action",
+        "Due Date",
+        "Status"
+      ],
+      [
+        "Denial issued",
+        "2026-06-07",
+        "denial_letter.pdf",
+        "Start 60-day appeal clock",
+        "=B2+60",
+        "Open"
+      ],
+      [
+        "Patient impact received",
+        "2026-06-10",
+        "patient_impact_message.docx",
+        "Confirm functional impact",
+        "2026-06-12",
+        "Done"
+      ],
+      [
+        "Clinical evidence finalized",
+        "2026-06-14",
+        "neurology_visit_note.docx",
+        "Map criteria",
+        "2026-06-17",
+        "Done"
+      ],
+      [
+        "Appeal packet target",
+        "2026-06-18",
+        "appeal_template.docx",
+        "Submit appeal",
+        "2026-06-20",
+        "Ready"
+      ]
+    ],
+    "attachments_rows": [
+      [
+        "Attachment",
+        "Filename",
+        "Include?",
+        "Redaction/Boundary",
+        "Order"
+      ],
+      [
+        "A",
+        "denial_letter.pdf",
+        "Yes",
+        "No internal notes",
+        1
+      ],
+      [
+        "B",
+        "payer_policy_excerpt.pdf",
+        "Yes",
+        "Use criteria excerpt only",
+        2
+      ],
+      [
+        "C",
+        "neurology_visit_note.docx",
+        "Yes",
+        "Clinical facts only",
+        3
+      ],
+      [
+        "D",
+        "medication_and_claims.xlsx",
+        "Yes",
+        "Include medication history tab only",
+        4
+      ],
+      [
+        "E",
+        "previous_authorization.pdf",
+        "Yes",
+        "Include expiration page only",
+        5
+      ],
+      [
+        "X",
+        "internal_appeal_strategy.docx",
+        "No",
+        "Exclude attorney/client strategy",
+        0
+      ]
+    ],
+    "privacy_rows": [
+      [
+        "Check",
+        "Rule",
+        "Result",
+        "Reviewer"
+      ],
+      [
+        "External letter excludes internal strategy",
+        "No legal threat or DOI complaint language",
+        "Pass",
+        "QA"
+      ],
+      [
+        "Evidence tracker excludes internal escalation from public sheets",
+        "No bad-faith or employer escalation text",
+        "Pass",
+        "QA"
+      ],
+      [
+        "Clinical details limited to medical necessity",
+        "No unrelated reproductive, employer, or family details",
+        "Pass",
+        "QA"
+      ],
+      [
+        "Attachment X excluded",
+        "Internal strategy not sent to payer",
+        "Pass",
+        "QA"
+      ]
+    ],
+    "raw_claim_rows": [
+      [
+        "Date",
+        "Medication",
+        "Quantity",
+        "Outcome"
+      ],
+      [
+        "2025-09-12",
+        "Sumatriptan 50 mg",
+        9,
+        "Stopped: chest tightness"
+      ],
+      [
+        "2025-10-10",
+        "Sumatriptan 50 mg",
+        9,
+        "Stopped"
+      ],
+      [
+        "2026-01-06",
+        "Rizatriptan 10 mg",
+        9,
+        "Ineffective"
+      ],
+      [
+        "2026-02-07",
+        "Rizatriptan 10 mg",
+        9,
+        "Ineffective"
+      ],
+      [
+        "2026-03-09",
+        "Rizatriptan 10 mg",
+        9,
+        "Ineffective"
+      ],
+      [
+        "2026-04-01",
+        "Topiramate 25 mg",
+        30,
+        "Stopped: cognitive adverse effects"
+      ]
+    ],
+    "payer_rule_rows": [
+      [
+        "Rule",
+        "Threshold"
+      ],
+      [
+        "Appeal window days",
+        60
+      ],
+      [
+        "Monthly quantity limit",
+        8
+      ],
+      [
+        "Required criteria met",
+        5
+      ]
+    ],
+    "sheet_order": [
+      "Appeal Summary",
+      "Criteria Mapping",
+      "Evidence Index",
+      "Timeline",
+      "Attachments Checklist",
+      "Privacy Review",
+      "Raw Claims",
+      "Payer Rules"
+    ],
+    "tables": {
+      "Appeal Summary": [
+        "tblAppealSummary",
+        "A1:D13"
+      ],
+      "Criteria Mapping": [
+        "tblCriteriaMapping",
+        "A1:F6"
+      ],
+      "Evidence Index": [
+        "tblEvidenceIndex",
+        "A1:E7"
+      ],
+      "Timeline": [
+        "tblTimeline",
+        "A1:F5"
+      ],
+      "Attachments Checklist": [
+        "tblAttachments",
+        "A1:E7"
+      ],
+      "Privacy Review": [
+        "tblPrivacy",
+        "A1:D5"
+      ],
+      "Raw Claims": [
+        "tblRawClaims",
+        "A1:D7"
+      ],
+      "Payer Rules": [
+        "tblPayerRules",
+        "A1:B4"
+      ]
+    },
+    "formula_cells": {
+      "Appeal Summary!B6": "=B5+60",
+      "Appeal Summary!B12": "=COUNTIF('Criteria Mapping'!E2:E6,\"Met\")",
+      "Appeal Summary!B13": "=IF(B12=5,\"Ready\",\"Hold\")",
+      "Timeline!E2": "=B2+60"
+    },
+    "hidden_sheets": [
+      "Raw Claims",
+      "Payer Rules"
+    ],
+    "defined_names": [
+      "AppealDeadline",
+      "CriteriaMetCount",
+      "RequestedQuantity"
+    ],
+    "print_areas": {
+      "Appeal Summary": "A1:D13",
+      "Criteria Mapping": "A1:F6",
+      "Evidence Index": "A1:E7",
+      "Timeline": "A1:F5",
+      "Attachments Checklist": "A1:E7",
+      "Privacy Review": "A1:D5"
+    },
+    "data_validation": {
+      "Criteria Mapping": [
+        "E2:E6"
+      ],
+      "Attachments Checklist": [
+        "C2:C7"
+      ],
+      "Privacy Review": [
+        "C2:C5"
+      ]
+    },
+    "forbidden_public": [
+      "bad-faith claim",
+      "plan usually folds",
+      "threaten DOI complaint",
+      "Dr. Kline is not a neurologist",
+      "use the patient's employer escalation",
+      "off-label quantity workaround",
+      "legal escalation script"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet"
+}

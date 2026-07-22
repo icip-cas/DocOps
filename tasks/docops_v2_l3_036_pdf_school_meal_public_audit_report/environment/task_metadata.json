@@ -1,0 +1,161 @@
+{
+  "task_id": "docops_v2_l3_036_pdf_school_meal_public_audit_report",
+  "task_dir_name": "docops_v2_l3_036_pdf_school_meal_public_audit_report",
+  "doc_type": "pdf",
+  "primary_modality": "PDF",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "M1 PDF metadata",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-page-removal -> page-reorder -> correction-log-application -> public-table-rebuild -> header-band-style-migration -> metadata-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-metadata-strict",
+  "user_task_description": "Prepare a clean public school meal program audit report from a messy internal review PDF.",
+  "single_step_benchmark_instruction": "Remove internal pages, reorder public sections, apply correction-log fixes, rebuild public tables, apply explicit color-coded header bands, footer text, page numbering, and public PDF metadata.",
+  "atomic_scope": "Only the requested PDF-wide workflow edits are in scope; public audit facts, correction facts, page order, style bands, footers, page numbering, and metadata must be preserved.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested single-PDF workflow.",
+  "input_path": "/root/docops_v2_l3_036_pdf_school_meal_public_audit_report_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_036_pdf_school_meal_public_audit_report_output.pdf",
+  "output_filename": "docops_v2_l3_036_pdf_school_meal_public_audit_report_output.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "pdf",
+  "verifier_expectations": {
+    "page_count": 11,
+    "page_titles": [
+      "Metro Schools Meal Program Public Audit",
+      "Executive Findings",
+      "Meal Count Reconciliation",
+      "Site Compliance Matrix",
+      "Vendor Invoice Review",
+      "Allergen Communication Log",
+      "Corrective Action Timeline",
+      "Public Outreach Commitments",
+      "Nutrition Standard Checklist",
+      "Publication Style Guide",
+      "Appendix Release Register"
+    ],
+    "footer": "Metro Schools Public Meal Audit | School Year 2026",
+    "metadata": {
+      "title": "Metro Schools Meal Program Public Audit - Public Release",
+      "subject": "Public meal program audit for school year 2026",
+      "author": "Metro Schools Nutrition Services",
+      "keywords": "public,meal audit,nutrition,school year 2026"
+    },
+    "header_colors": [
+      "1F2937",
+      "0F766E",
+      "0F766E",
+      "166534",
+      "7C2D12",
+      "1D4ED8",
+      "B91C1C",
+      "1D4ED8",
+      "166534",
+      "6B7280",
+      "1F2937"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "student medical note",
+      "vendor dispute",
+      "staff disciplinary note",
+      "personal phone",
+      "legal settlement draft",
+      "do not release",
+      "internal scoring memo",
+      "18,420",
+      "Site B-12",
+      "$9,800",
+      "2026-05-03",
+      "2026-06-30"
+    ],
+    "required_lines_by_page": {
+      "1": [
+        "Public audit report",
+        "School year: 2026",
+        "Public release date: 2026-07-15",
+        "Prepared by Metro Schools Nutrition Services"
+      ],
+      "2": [
+        "Overall finding | Substantial compliance",
+        "Meals reconciled | 18,240",
+        "Sites reviewed | 8",
+        "Corrective actions closed | 4 of 5"
+      ],
+      "3": [
+        "Meal Type | Public Count | Reconciled Count | Status",
+        "Breakfast | 7,880 | 7,880 | Reconciled",
+        "Lunch | 10,360 | 10,360 | Reconciled",
+        "Total meals | 18,240 | 18,240 | Reconciled"
+      ],
+      "4": [
+        "Site | Review Area | Public Finding | Status",
+        "Site B-21 | Meal count controls | Corrected roster import | Complete",
+        "Site C-04 | Temperature log | Daily log current | Complete",
+        "Site D-09 | Offer-versus-serve | Staff refresher complete | Complete",
+        "Site E-02 | Civil rights poster | Replacement posted | Complete"
+      ],
+      "5": [
+        "Vendor | Public Invoice Item | Reviewed Amount | Finding",
+        "FreshStart Foods | Produce delivery credit | $980 | Corrected overage",
+        "Northline Dairy | Milk delivery schedule | $0 | No exception",
+        "City Bakery | Whole-grain bread invoice | $0 | No exception"
+      ],
+      "6": [
+        "Notice ID | Allergen Topic | Public Notice Date | Status",
+        "AL-001 | Sesame menu notice | 2026-05-13 | Posted",
+        "AL-002 | Milk substitution guidance | 2026-05-20 | Posted",
+        "AL-003 | Nut-free field trip meals | 2026-06-02 | Posted"
+      ],
+      "7": [
+        "Action ID | Corrective Action | Public Due Date | Owner | Status",
+        "CA-001 | Correct site roster import for Site B-21 | 2026-06-15 | Nutrition Data Team | Complete",
+        "CA-002 | Refresh offer-versus-serve training | 2026-06-18 | Training Lead | Complete",
+        "CA-003 | Add invoice overage review step | 2026-06-22 | Finance Liaison | Open"
+      ],
+      "8": [
+        "Commitment ID | Audience | Public Commitment | Status",
+        "OUT-001 | Families | Publish audit summary in family newsletter | Ready",
+        "OUT-002 | Site managers | Share corrected reconciliation checklist | Complete",
+        "OUT-003 | Community partners | Post public meal count summary | Ready"
+      ],
+      "9": [
+        "Standard | Public Evidence | Status",
+        "Meal pattern compliance | Production records reviewed | Complete",
+        "Civil rights notice | Posters verified at reviewed sites | Complete",
+        "Food safety logs | Temperature logs sampled | Complete",
+        "Allergen communication | Public notices posted | Complete"
+      ],
+      "10": [
+        "Style element | Public requirement",
+        "Header band height | 40 points",
+        "Cover and appendix color | 1F2937",
+        "Findings and reconciliation color | 0F766E",
+        "Compliance and nutrition color | 166534",
+        "Vendor invoice color | 7C2D12",
+        "Corrective action color | B91C1C",
+        "Footer text | Metro Schools Public Meal Audit | School Year 2026"
+      ],
+      "11": [
+        "Register field | Public value",
+        "Appendix A | Meal count reconciliation notes",
+        "Appendix B | Site review category definitions",
+        "Appendix C | Public outreach commitments",
+        "Release approval | Nutrition Services Director"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_036_pdf_school_meal_public_audit_report"
+}

@@ -1,0 +1,142 @@
+{
+  "task_id": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+  "task_dir_name": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+  "doc_type": "word+ppt",
+  "primary_modality": "Word (.docx) and PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "shortlist-source-filter -> Word TOC/landscape-sheet repair -> PPT interview grid rebuild -> cross-output role/project consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+  "supporting_input_paths": [
+    "/root/interview_source_matrix.xlsx",
+    "/root/interview_agenda_confidentiality_note.docx",
+    "/root/shortlist_interview_style_brief.pdf"
+  ],
+  "output_paths": {
+    "document": "/root/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+    "deck": "/root/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+  "output_filename": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Create a shortlist interview leave-behind and synchronized interview deck from a draft Word file, source matrix, agenda note, and style brief while excluding a confidential project.",
+  "single_step_benchmark_instruction": "Finalize Word and PPTX outputs. Repair Word TOC, compact margins, and landscape project sheet section; rebuild PPT slide order, tables, and locked reference slide; apply graphite/copper style; exclude PX-31; keep role and project IDs synchronized across outputs.",
+  "atomic_scope": "Word/PPT cross-document interview package style workflow.",
+  "expected_output_type": "A final .docx leave-behind and .pptx interview deck saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "PowerPoint slide masters and layouts support consistent formatting",
+      "url": "https://support.microsoft.com/en-US/PowerPoint/training/what-is-a-slide-master-in-powerpoint"
+    },
+    {
+      "title": "Microsoft Word TOC requires heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    }
+  ],
+  "verifier_expectations": {
+    "document_output": "/root/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+    "deck_output": "/root/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx",
+    "heading_order": [
+      "Shortlist Interview Leave-Behind",
+      "Interview Storyline",
+      "Core Team Roles",
+      "Landscape Project Sheets",
+      "Closeout and Hand-off"
+    ],
+    "required_text": [
+      "same graphite/copper visual system",
+      "ROLE-01, ROLE-02, ROLE-03 and PX-18, PX-24 only"
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Notes - Remove",
+      "Old blue theme",
+      "Private Resort Concept",
+      "PX-31|Private Resort Concept"
+    ],
+    "header_contains": "Shortlist Interview Package | Graphite/Copper",
+    "footer_contains": "shortlist_interview_deck.pptx",
+    "team_rows": [
+      [
+        "ROLE-01",
+        "Principal-in-Charge",
+        "Maya Lin",
+        "Opening + close"
+      ],
+      [
+        "ROLE-02",
+        "Design Lead",
+        "Tomas Vega",
+        "Design approach"
+      ],
+      [
+        "ROLE-03",
+        "Delivery Lead",
+        "Priya Shah",
+        "Schedule and risk"
+      ]
+    ],
+    "project_rows": [
+      [
+        "PX-18",
+        "Civic Library Renewal",
+        "Adaptive reuse",
+        "Include"
+      ],
+      [
+        "PX-24",
+        "Harbor Resilience Center",
+        "Flood-ready civic design",
+        "Include"
+      ]
+    ],
+    "highlight_text": "Format exception resolved: PX-31 is excluded because it is confidential and not presentation-safe.",
+    "section_count_min": 2,
+    "landscape_section_index": 1,
+    "ppt_titles": [
+      "Shortlist Interview Deck",
+      "Storyline and Team",
+      "Project Proof Points",
+      "Risk and Delivery",
+      "Reference - Locked Interview Grid"
+    ],
+    "ppt_required": [
+      "Final deck uses graphite/copper interview system",
+      "LOCKED REFERENCE"
+    ],
+    "ppt_forbidden": [
+      "Scratch Pricing - Remove",
+      "Old Blue Project Slides",
+      "Private Resort Concept"
+    ],
+    "public_roles": [
+      "ROLE-01",
+      "ROLE-02",
+      "ROLE-03"
+    ],
+    "public_projects": [
+      "PX-18",
+      "PX-24"
+    ],
+    "confidential_projects": [
+      "PX-31"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style"
+}

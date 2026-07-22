@@ -1,0 +1,146 @@
+{
+  "task_id": "docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook",
+  "task_dir_name": "docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook",
+  "doc_type": "pdf+word",
+  "primary_modality": "PDF (.pdf) and Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "zone-roster-filter -> public-PDF-signage-bookmarks -> internal-DOCX-landscape-runbook -> radio-code-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_input.pdf",
+  "supporting_input_paths": [
+    "/root/zone_roster.xlsx",
+    "/root/safety_accessibility_radio_note.docx",
+    "/root/signage_format_standard.pdf"
+  ],
+  "output_paths": {
+    "packet": "/root/submission/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_packet.pdf",
+    "document": "/root/submission/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_document.docx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_packet.pdf",
+  "output_filename": "docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_input.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Create a public campus evacuation signage PDF and an internal floor marshal drill runbook from a draft sign PDF, zone roster, safety note, and signage standard.",
+  "single_step_benchmark_instruction": "Create the final PDF and DOCX. Public PDF must include only public zones and no radio codes. DOCX must be landscape, include a live TOC, preserve all public and staff-only zones, retain radio channel/internal notes, and highlight high-risk drill controls.",
+  "atomic_scope": "PDF/DOCX public signage plus internal runbook formatting workflow.",
+  "expected_output_type": "A final public .pdf signage pack and internal .docx runbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Adobe Acrobat bookmarks and page organization",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    },
+    {
+      "title": "Microsoft Word TOC requires heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    }
+  ],
+  "verifier_expectations": {
+    "packet_output": "/root/submission/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_packet.pdf",
+    "document_output": "/root/submission/docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_document.docx",
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Campus Evacuation Signage Pack",
+      "Zone Z-1A North Lobby",
+      "Zone Z-2B Science Wing",
+      "Zone Z-3C Auditorium"
+    ],
+    "pdf_required": [
+      "Published Zone Count 3",
+      "Z-1A",
+      "Z-2B",
+      "Z-3C",
+      "High Contrast black and safety green",
+      "Internal Radio Codes excluded"
+    ],
+    "pdf_forbidden": [
+      "Z-4D",
+      "Radio 11",
+      "Radio 12",
+      "Radio 13",
+      "Radio 99",
+      "Green Alpha",
+      "Maintenance Tunnel"
+    ],
+    "outline_titles": [
+      "Campus Evacuation Signage Pack",
+      "Zone Z-1A North Lobby",
+      "Zone Z-2B Science Wing",
+      "Zone Z-3C Auditorium"
+    ],
+    "heading_order": [
+      "Floor Marshal Drill Runbook",
+      "Public Signage Boundary",
+      "Marshal Zone Control Table",
+      "Staff-only Route"
+    ],
+    "doc_required": [
+      "Public PDF signage uses only Z-1A, Z-2B, and Z-3C; internal radio details remain in this runbook.",
+      "Z-4D remains in the internal runbook for facilities staff and is excluded from the public signage PDF."
+    ],
+    "doc_forbidden": [
+      "Manual TOC placeholder",
+      "Draft"
+    ],
+    "doc_header": "Floor Marshal Drill Runbook | Internal",
+    "doc_footer": "Public signage: docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook_input.pdf",
+    "runbook_rows": [
+      [
+        "Z-1A",
+        "North Lobby",
+        "Door N1",
+        "Alpha",
+        "Radio 11",
+        "All clear phrase: Green Alpha"
+      ],
+      [
+        "Z-2B",
+        "Science Wing",
+        "Stair S2",
+        "Beta",
+        "Radio 12",
+        "Mobility assistance chair staged at S2"
+      ],
+      [
+        "Z-3C",
+        "Auditorium",
+        "Door A3",
+        "Gamma",
+        "Radio 13",
+        "Sweep balcony before closing A3"
+      ],
+      [
+        "Z-4D",
+        "Maintenance Tunnel",
+        "Service Gate M4",
+        "Staff Only",
+        "Radio 99",
+        "Internal staff route; do not publish"
+      ]
+    ],
+    "highlight_text": "High-risk drill note: Z-2B mobility assistance chair and Z-3C balcony sweep must be confirmed before all-clear.",
+    "public_zone_ids": [
+      "Z-1A",
+      "Z-2B",
+      "Z-3C"
+    ],
+    "internal_zone_ids": [
+      "Z-4D"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_046_pdf_word_campus_evacuation_signage_runbook"
+}

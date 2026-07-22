@@ -1,0 +1,524 @@
+{
+  "task_id": "docops_v2_l3_018_xlsx_ai_governance_inventory_release",
+  "task_dir_name": "docops_v2_l3_018_xlsx_ai_governance_inventory_release",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Formula construction",
+    "F2 Style migration",
+    "F3 Conditional formatting",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-sheet-removal -> sheet-reorder -> correction-log-application -> public-table-rebuild -> formula-rebuild -> tab-style-migration -> number-formatting -> heatmap-style",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "reference_sources": [
+    {
+      "title": "NIST AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "usage": "Used as structural inspiration for Govern/Map/Measure/Manage worksheet organization; all task facts are synthetic."
+    }
+  ],
+  "verifier_mode": "semantic-structural-style-formula-strict",
+  "user_task_description": "Prepare a clean public AI governance inventory workbook from a messy internal AI risk review workbook.",
+  "single_step_benchmark_instruction": "Remove internal sheets, reorder and rebuild public AI governance sheets, apply correction-log fixes, reconstruct formulas, apply public tab colors, table styling, number formats, and risk heatmap fills.",
+  "atomic_scope": "Only the requested workbook-wide workflow edits are in scope; public AI governance, correction, formula, sheet order, tab color, number format, and style facts must be preserved.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested single-workbook workflow.",
+  "input_path": "/root/docops_v2_l3_018_xlsx_ai_governance_inventory_release_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_018_xlsx_ai_governance_inventory_release_output.xlsx",
+  "output_filename": "docops_v2_l3_018_xlsx_ai_governance_inventory_release_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "spreadsheet",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Governance Summary",
+      "AI System Inventory",
+      "RMF Function Matrix",
+      "Risk Assessment Register",
+      "Evaluation Evidence",
+      "Incident Log",
+      "Human Oversight Plan",
+      "Public Transparency Register",
+      "Publication Style Guide",
+      "Appendix Index"
+    ],
+    "tab_colors": {
+      "Governance Summary": "243B53",
+      "AI System Inventory": "0F766E",
+      "RMF Function Matrix": "1D4ED8",
+      "Risk Assessment Register": "B91C1C",
+      "Evaluation Evidence": "166534",
+      "Incident Log": "7C2D12",
+      "Human Oversight Plan": "7030A0",
+      "Public Transparency Register": "5B6770",
+      "Publication Style Guide": "243B53",
+      "Appendix Index": "1D4ED8"
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "prompt injection transcript",
+      "vendor security exception",
+      "employee performance note",
+      "personal phone",
+      "legal hold",
+      "do not publish",
+      "model failure rumor",
+      "private benchmark score"
+    ],
+    "header_fill": "243B53",
+    "header_font": "FFFFFF",
+    "body_font": "Aptos",
+    "summary_title_fill": "243B53",
+    "date_format": "yyyy-mm-dd",
+    "percent_format": "0%",
+    "summary_cells": {
+      "A1": "AI Governance Inventory Workbook",
+      "A3": "Public Release Date",
+      "B3": "2026-07-01",
+      "A4": "AI Systems",
+      "B4": "=COUNTA('AI System Inventory'!A2:A7)",
+      "A5": "High Risks",
+      "B5": "=COUNTIF('Risk Assessment Register'!E2:E7,\"High\")",
+      "A6": "Open Incidents",
+      "B6": "=COUNTIF('Incident Log'!E2:E6,\"Open\")",
+      "A7": "Average Evaluation Coverage",
+      "B7": "=AVERAGE('Evaluation Evidence'!E2:E7)"
+    },
+    "risk_level_fills": {
+      "High": "C00000",
+      "Medium": "F4B183",
+      "Low": "70AD47"
+    },
+    "date_cells": [
+      "Evaluation Evidence!D2",
+      "Evaluation Evidence!D3",
+      "Evaluation Evidence!D4",
+      "Evaluation Evidence!D5",
+      "Evaluation Evidence!D6",
+      "Evaluation Evidence!D7",
+      "Incident Log!D2",
+      "Incident Log!D3",
+      "Incident Log!D4",
+      "Incident Log!D5",
+      "Incident Log!D6"
+    ],
+    "percent_cells": [
+      "Evaluation Evidence!E2",
+      "Evaluation Evidence!E3",
+      "Evaluation Evidence!E4",
+      "Evaluation Evidence!E5",
+      "Evaluation Evidence!E6",
+      "Evaluation Evidence!E7"
+    ],
+    "tables": {
+      "AI System Inventory": [
+        [
+          "System ID",
+          "System Name",
+          "Use Case",
+          "Owner",
+          "Public Status"
+        ],
+        [
+          "AI-001",
+          "Chatbot Triage v1.0",
+          "Service request routing",
+          "Ravi Sharma",
+          "Active"
+        ],
+        [
+          "AI-002",
+          "Permit Summary Assistant",
+          "Summary preparation support",
+          "Lena Ortiz",
+          "Active"
+        ],
+        [
+          "AI-003",
+          "Inspection Photo Classifier",
+          "Image triage",
+          "Omar Lee",
+          "Pilot"
+        ],
+        [
+          "AI-004",
+          "Call Center Topic Model",
+          "Topic clustering",
+          "Maya Patel",
+          "Active"
+        ],
+        [
+          "AI-005",
+          "Benefits Document Extractor",
+          "Form field extraction",
+          "Nina Brooks",
+          "Pilot"
+        ],
+        [
+          "AI-006",
+          "Translation Quality Monitor",
+          "Translation QA sampling",
+          "Theo Grant",
+          "Active"
+        ]
+      ],
+      "RMF Function Matrix": [
+        [
+          "Function",
+          "Public Control",
+          "Evidence Owner",
+          "Status"
+        ],
+        [
+          "Govern",
+          "AI inventory reviewed quarterly",
+          "Ravi Sharma",
+          "Current"
+        ],
+        [
+          "Map",
+          "Use cases mapped to affected stakeholder groups",
+          "Maya Patel",
+          "Current"
+        ],
+        [
+          "Measure",
+          "Evaluation evidence reviewed before release",
+          "Lena Ortiz",
+          "Current"
+        ],
+        [
+          "Manage",
+          "Risk treatment actions tracked to closure",
+          "Omar Lee",
+          "Current"
+        ]
+      ],
+      "Risk Assessment Register": [
+        [
+          "Risk ID",
+          "System ID",
+          "Risk",
+          "Score",
+          "Level",
+          "Mitigation"
+        ],
+        [
+          "R-001",
+          "AI-001",
+          "Incorrect routing recommendation",
+          4,
+          "High",
+          "Human review for priority cases"
+        ],
+        [
+          "R-002",
+          "AI-002",
+          "Unsupported summary statement",
+          3,
+          "Medium",
+          "Citation check before publication"
+        ],
+        [
+          "R-003",
+          "AI-003",
+          "Image quality drift",
+          3,
+          "Medium",
+          "Monthly sample review"
+        ],
+        [
+          "R-004",
+          "AI-004",
+          "Topic label ambiguity",
+          2,
+          "Low",
+          "Analyst label review"
+        ],
+        [
+          "R-005",
+          "AI-005",
+          "Extraction field mismatch",
+          4,
+          "High",
+          "Dual verification for payment fields"
+        ],
+        [
+          "R-006",
+          "AI-006",
+          "Translation quality variance",
+          2,
+          "Low",
+          "QA sampling threshold"
+        ]
+      ],
+      "Evaluation Evidence": [
+        [
+          "Evidence ID",
+          "System ID",
+          "Evaluation",
+          "Evaluation Date",
+          "Coverage",
+          "Status"
+        ],
+        [
+          "EV-001",
+          "AI-001",
+          "Bias evaluation",
+          "2026-06-10",
+          0.92,
+          "Complete"
+        ],
+        [
+          "EV-002",
+          "AI-002",
+          "Citation faithfulness review",
+          "2026-06-12",
+          0.88,
+          "Complete"
+        ],
+        [
+          "EV-003",
+          "AI-003",
+          "Image drift sample",
+          "2026-06-14",
+          0.84,
+          "Complete"
+        ],
+        [
+          "EV-004",
+          "AI-004",
+          "Topic coherence review",
+          "2026-06-15",
+          0.9,
+          "Complete"
+        ],
+        [
+          "EV-005",
+          "AI-005",
+          "Field extraction accuracy",
+          "2026-06-18",
+          0.86,
+          "Complete"
+        ],
+        [
+          "EV-006",
+          "AI-006",
+          "Translation adequacy sample",
+          "2026-06-20",
+          0.89,
+          "Complete"
+        ]
+      ],
+      "Incident Log": [
+        [
+          "Incident ID",
+          "System ID",
+          "Public Issue",
+          "Date",
+          "Status"
+        ],
+        [
+          "INC-001",
+          "AI-001",
+          "Routing queue mismatch corrected",
+          "2026-06-21",
+          "Closed"
+        ],
+        [
+          "INC-002",
+          "AI-002",
+          "Summary citation corrected",
+          "2026-06-22",
+          "Closed"
+        ],
+        [
+          "INC-003",
+          "AI-005",
+          "Extraction field mismatch under review",
+          "2026-06-25",
+          "Open"
+        ],
+        [
+          "INC-004",
+          "AI-006",
+          "Translation QA sample expanded",
+          "2026-06-26",
+          "Open"
+        ],
+        [
+          "INC-005",
+          "AI-003",
+          "Photo quality warning tuned",
+          "2026-06-27",
+          "Closed"
+        ]
+      ],
+      "Human Oversight Plan": [
+        [
+          "System ID",
+          "Human Review Point",
+          "Reviewer Role",
+          "Cadence"
+        ],
+        [
+          "AI-001",
+          "Priority service routing",
+          "Service Supervisor",
+          "Daily"
+        ],
+        [
+          "AI-002",
+          "Published summaries",
+          "Records Analyst",
+          "Before release"
+        ],
+        [
+          "AI-003",
+          "Low-confidence image labels",
+          "Inspection Lead",
+          "Weekly"
+        ],
+        [
+          "AI-004",
+          "New topic labels",
+          "Program Analyst",
+          "Monthly"
+        ],
+        [
+          "AI-005",
+          "Payment-related fields",
+          "Benefits Reviewer",
+          "Every batch"
+        ],
+        [
+          "AI-006",
+          "Low-confidence translations",
+          "Language Access Lead",
+          "Weekly"
+        ]
+      ],
+      "Public Transparency Register": [
+        [
+          "Register ID",
+          "System ID",
+          "Public Disclosure",
+          "Status"
+        ],
+        [
+          "TR-001",
+          "AI-001",
+          "Service routing assistant disclosed",
+          "Published"
+        ],
+        [
+          "TR-002",
+          "AI-002",
+          "Summary assistance disclosed",
+          "Published"
+        ],
+        [
+          "TR-003",
+          "AI-003",
+          "Pilot classifier disclosed",
+          "Published"
+        ],
+        [
+          "TR-004",
+          "AI-004",
+          "Aggregate topic model disclosed",
+          "Published"
+        ],
+        [
+          "TR-005",
+          "AI-005",
+          "Extractor pilot disclosed",
+          "Published"
+        ],
+        [
+          "TR-006",
+          "AI-006",
+          "Translation QA monitor disclosed",
+          "Published"
+        ]
+      ],
+      "Publication Style Guide": [
+        [
+          "Element",
+          "Requirement"
+        ],
+        [
+          "Header fill",
+          "243B53"
+        ],
+        [
+          "Header font",
+          "White bold"
+        ],
+        [
+          "Body font",
+          "Aptos"
+        ],
+        [
+          "Date format",
+          "yyyy-mm-dd"
+        ],
+        [
+          "Percent format",
+          "0%"
+        ],
+        [
+          "Risk heatmap",
+          "High C00000, Medium F4B183, Low 70AD47"
+        ],
+        [
+          "Tab colors",
+          "Public color set applied"
+        ]
+      ],
+      "Appendix Index": [
+        [
+          "Appendix",
+          "Description",
+          "Owner",
+          "Public Status"
+        ],
+        [
+          "A",
+          "AI inventory summary",
+          "Ravi Sharma",
+          "Ready"
+        ],
+        [
+          "B",
+          "RMF function mapping",
+          "Maya Patel",
+          "Ready"
+        ],
+        [
+          "C",
+          "Evaluation evidence extract",
+          "Lena Ortiz",
+          "Ready"
+        ],
+        [
+          "D",
+          "Transparency register extract",
+          "Theo Grant",
+          "Ready"
+        ]
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_018_xlsx_ai_governance_inventory_release"
+}

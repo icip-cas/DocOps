@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_009
+
+Doc type: word
+Atomic operations: C1 Extraction, S4 Table/Sheet ops
+Composition pattern: extract -> restructure
+Difficulty: Medium-Hard
+
+User-facing goal:
+This action table is missing status values that are stated in the notes below it.
+
+Single-step benchmark instruction:
+Insert a new `Status` column between `Owner` and `Due Date`, then populate each row using the statuses stated in the note bullets under the table.
+
+Atomic scope:
+Only the inserted `Status` column and extracted status values are explicitly requested.
+
+Expected output type:
+A revised .docx document with a populated `Status` column added to the table.

@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_079_word_xlsx_board_minutes_and_action_register"
+description = "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register - DocOps v2 final L4 task."
+authors = []
+keywords = ["word", "excel", "cross-document", "multi-output", "document-processing"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["word", "excel", "cross-document", "multi-output", "manual-expansion"]
+task_id = "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register"
+doc_type = "word+xlsx"
+primary_modality = "Word (.docx) and Excel (.xlsx)"
+atomic_operation = "Cross-document Multi-output Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-strict-tolerant"
+composition_type = "cross-document multi-output"
+composition_pattern = "agenda-section-order -> reconcile-attendance-and-votes -> publish-minutes -> build-action-register-output -> cross-output-action-consistency"
+atomic_operations = ["C1 Extraction", "C2 Editing", "C3 Generation", "C5 Reasoning", "F1 Style consistency", "F2 Highlighting", "S1 Insert/Delete", "S2 Reorder", "S3 Hierarchy editing", "S4 Table/Sheet ops"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register"
+final_index = 79
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_079_word_xlsx_board_minutes_and_action_register_minutes.docx"
+TASK_ID = "docops_v2_l4_079_word_xlsx_board_minutes_and_action_register"
+DOC_TYPE = "word+xlsx"
+
+[solution.env]

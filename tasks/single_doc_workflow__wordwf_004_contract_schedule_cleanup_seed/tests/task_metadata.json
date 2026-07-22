@@ -1,0 +1,121 @@
+{
+  "task_id": "wordwf_004",
+  "task_dir_name": "wordwf_004_contract_schedule_cleanup_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "restructure -> table-repair -> note",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the contract schedule draft while preserving the listed clauses and schedule values.",
+  "single_step_benchmark_instruction": "Remove the visible Draft: prefixes, restore the exact section order, refresh the table of contents, keep the schedule table values unchanged, normalize body style, and make the Appendix start on a fresh page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .docx document that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/wordwf_004_contract_schedule_cleanup_seed.docx",
+  "output_path": "/root/submission/wordwf_004_contract_schedule_cleanup_seed.docx",
+  "output_filename": "wordwf_004_contract_schedule_cleanup_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Contract Overview",
+        "Heading 1"
+      ],
+      [
+        "Clause Hierarchy",
+        "Heading 1"
+      ],
+      [
+        "Schedule",
+        "Heading 1"
+      ],
+      [
+        "Conflict Note",
+        "Heading 1"
+      ],
+      [
+        "Appendix",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Contract Overview",
+      "Clause Hierarchy",
+      "Schedule",
+      "Conflict Note",
+      "Appendix"
+    ],
+    "required_paragraphs": [
+      "This draft consolidates the schedule and clause structure.",
+      "Section 1 remains governing.",
+      "Subsections now appear in logical order.",
+      "Milestone A is due on 2026-06-14.",
+      "Milestone B is due on 2026-06-21.",
+      "The schedule note resolves the timing conflict between teams.",
+      "Appendix includes the updated signoff list."
+    ],
+    "forbidden_paragraphs": [
+      "TOC placeholder - update fields",
+      "Draft: Remove this scratch section before publication.",
+      "Draft: Internal reviewer notes must not remain in the released file.",
+      "Draft: Contract Overview",
+      "Draft: Clause Hierarchy",
+      "Draft: Schedule",
+      "Draft: Conflict Note",
+      "Draft: Appendix",
+      "Draft: This draft consolidates the schedule and clause structure.",
+      "Draft: Section 1 remains governing.",
+      "Draft: Subsections now appear in logical order.",
+      "Draft: Milestone A is due on 2026-06-14.",
+      "Draft: Milestone B is due on 2026-06-21.",
+      "Draft: The schedule note resolves the timing conflict between teams.",
+      "Draft: Appendix includes the updated signoff list."
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Milestone",
+          "0,1": "Owner",
+          "0,2": "Status",
+          "1,0": "Milestone A",
+          "1,1": "Ops",
+          "1,2": "On track",
+          "2,0": "Milestone B",
+          "2,1": "Legal",
+          "2,2": "Pending"
+        }
+      }
+    ],
+    "page_break_before": [
+      "Appendix"
+    ],
+    "toc_present": true,
+    "header_contains": [
+      "Contract Schedule | 2026-05-09"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 3
+      }
+    ]
+  }
+}

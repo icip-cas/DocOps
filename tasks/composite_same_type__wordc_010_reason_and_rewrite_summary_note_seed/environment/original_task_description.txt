@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_010
+
+Doc type: word
+Atomic operations: C5 Reasoning, C2 Editing
+Composition pattern: reason -> rewrite
+Difficulty: Medium-Hard
+
+User-facing goal:
+This policy summary note misstates the true approval conflict and needs to be corrected.
+
+Single-step benchmark instruction:
+Rewrite only the summary note paragraph so it accurately summarizes the approval conflict stated in the policy statements above, including the standard CFO rule for purchases above $50,000 and the emergency COO-only exception.
+
+Atomic scope:
+Only the summary note rewrite grounded in the conflicting policy statements is explicitly requested.
+
+Expected output type:
+A revised .docx policy memo with one corrected summary note paragraph.

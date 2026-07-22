@@ -1,0 +1,22 @@
+Task ID: word_009
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: F2 Highlighting
+Difficulty: Easy-Medium
+
+User Task Description:
+This review note document contains several clauses, but only some are marked as critical.
+
+Single-Step Benchmark Instruction:
+Visually highlight the lines that are explicitly marked as Critical.
+
+Atomic Scope:
+Only emphasis/highlighting is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The critical lines are embedded in otherwise plain text
+- The task is local, so over-highlighting is a failure mode
+- The document contains multiple clauses that look equally important but are not explicitly marked critical
+
+Expected Output Type:
+A revised .docx document with the correct lines highlighted.

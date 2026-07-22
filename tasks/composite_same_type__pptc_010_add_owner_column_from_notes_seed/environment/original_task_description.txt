@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_010
+
+Doc type: ppt
+Atomic operations: C1 Extraction, S4 Table/Sheet ops
+Composition pattern: extract -> restructure
+Difficulty: Medium-Hard
+
+User-facing goal:
+This milestone table is missing owner values that can be recovered from the notes panel.
+
+Single-step benchmark instruction:
+Insert a new `Owner` column into the milestone table on Slide 1, then populate it using the owner names stated in the notes panel on the same slide.
+
+Atomic scope:
+Only the inserted `Owner` column and extracted owner values are explicitly requested.
+
+Expected output type:
+A revised .pptx slide with a populated `Owner` column added to the milestone table.

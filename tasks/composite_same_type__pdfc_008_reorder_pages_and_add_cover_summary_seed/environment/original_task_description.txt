@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_008
+
+Doc type: pdf
+Atomic operations: S2 Reorder, C3 Generation
+Composition pattern: reorder -> generate
+Difficulty: Hard
+
+User-facing goal:
+This report should be reordered and open with a concise management summary box.
+
+Single-step benchmark instruction:
+Reorder the pages to `Scope -> Findings -> Recommendations -> Appendix`, then fill the cover summary box with exactly three short lines starting `Permit:`, `Supplier:`, and `Staffing:` in that order.
+
+Atomic scope:
+Only the page reorder and the three-line cover summary are explicitly requested.
+
+Expected output type:
+A revised .pdf report with corrected page order and a populated cover summary box.

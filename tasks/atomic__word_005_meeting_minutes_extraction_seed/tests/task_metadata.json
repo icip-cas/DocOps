@@ -1,0 +1,31 @@
+{
+  "task_id": "word_005",
+  "task_dir_name": "word_005_meeting_minutes_extraction_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "C1 Extraction",
+  "difficulty": "Hard",
+  "source_doc_filename": "word_005_meeting_minutes_extraction_seed.docx",
+  "source_doc_path": "word/word_005_meeting_minutes_extraction_seed.docx",
+  "task_description_filename": "word_005_meeting_minutes_extraction_seed.txt",
+  "task_description_path": "word/word_005_meeting_minutes_extraction_seed.txt",
+  "input_path": "/root/word_005_meeting_minutes_extraction_seed.docx",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This meeting-minutes draft contains several proposed dates and ownership notes, but some were superseded later in the document.",
+  "single_step_benchmark_instruction": "Extract the final approved shutdown date and the final action owner for the vendor contact list.",
+  "atomic_scope": "Only information extraction is explicitly requested in this task.",
+  "expected_output_type": "A concise extraction of the two requested fields.",
+  "inspired_by": [
+    {
+      "title": "How much has Copilot changed the way word docs get edited these days?",
+      "url": "https://www.reddit.com/r/word/comments/1skxkx3/how_much_has_copilot_changed_the_way_word_docs/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Earlier values are plausible but outdated\n- Corrections appear later and are phrased narratively, not in a clean table\n- There are near-miss distractors like tentative and fallback dates"
+  }
+}

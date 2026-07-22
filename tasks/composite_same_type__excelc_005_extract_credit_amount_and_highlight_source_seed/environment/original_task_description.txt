@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_005
+
+Doc type: excel
+Atomic operations: C1 Extraction, F2 Highlighting
+Composition pattern: extract -> highlight
+Difficulty: Medium-Hard
+
+User-facing goal:
+This credit workbook needs the final approved amount surfaced and the source decision row highlighted.
+
+Single-step benchmark instruction:
+Fill `Summary!B3` with the final approved customer credit amount for `CR-1184` when the shipment date is after `2026-04-18`, then highlight the supporting decision row on `Requests`.
+
+Atomic scope:
+Only the targeted extracted amount and supporting-row highlight are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with the extracted amount in `Summary!B3` and the correct source row highlighted.

@@ -1,0 +1,425 @@
+{
+  "task_id": "docops_v2_l4_074_word_xlsx_export_compliance_shipping_release",
+  "task_dir_name": "docops_v2_l4_074_word_xlsx_export_compliance_shipping_release",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_input.docx",
+  "supporting_input_paths": [
+    "/root/commercial_invoice.xlsx",
+    "/root/packing_list.xlsx",
+    "/root/eccn_classification_note.pdf",
+    "/root/hts_origin_certificate.docx",
+    "/root/denied_party_screening.xlsx",
+    "/root/lithium_battery_sds.pdf",
+    "/root/freight_forwarder_email.docx",
+    "/root/end_use_statement.pdf",
+    "/root/internal_margin_strategy.pdf"
+  ],
+  "output_paths": {
+    "release_memo": "/root/submission/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_release_memo.docx",
+    "workbook": "/root/submission/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_release_memo.docx",
+  "output_filename": "export_shipping_release_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create an export shipping release memo and compliance workbook from ten source documents while holding controlled/internal lines, assembling the broker packet sequence, reconciling release totals, and preserving public shipping documentation boundaries.",
+  "single_step_benchmark_instruction": "Create export_shipping_release_memo.docx and export_compliance_release_workbook.xlsx. Release exactly three public shipment lines, hold the 5A002 prototype crypto board, require lithium handling docs for BAT-310, build the broker packet order, reconcile release count/value controls, preserve workbook controls, and keep internal margin/routing strategy out of public outputs.",
+  "expected_output_type": "A .docx export release memo and .xlsx export compliance workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Export compliance workflows require classification, screening, license treatment, invoice, packing, origin, and end-use documentation",
+      "url": "https://www.bis.gov/regulations/export-administration-regulations-ear"
+    },
+    {
+      "title": "Denied party screening and ECCN/license review are common controls in export release workflows",
+      "url": "https://www.trade.gov/consolidated-screening-list"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_release_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_074_word_xlsx_export_compliance_shipping_release_workbook.xlsx",
+    "ship_rows": [
+      [
+        "REL-001",
+        "ELG-100 Gateway Sensor",
+        40,
+        2400,
+        96000,
+        "8531.10.0045",
+        "EAR99",
+        "United States",
+        "NLR",
+        "Release"
+      ],
+      [
+        "REL-002",
+        "CRP-200 Encrypted Router",
+        12,
+        3000,
+        36000,
+        "8517.62.0090",
+        "5A992.c",
+        "United States",
+        "NLR",
+        "Release"
+      ],
+      [
+        "REL-003",
+        "BAT-310 Lithium Battery Pack",
+        80,
+        160,
+        12800,
+        "8507.60.0020",
+        "EAR99",
+        "Malaysia",
+        "NLR",
+        "Release with lithium handling docs"
+      ],
+      [
+        "HOLD-004",
+        "Prototype Crypto Board",
+        2,
+        11000,
+        22000,
+        "8542.31.0001",
+        "5A002",
+        "United States",
+        "License Required",
+        "Hold"
+      ],
+      [
+        "INT-900",
+        "Internal margin model",
+        1,
+        0,
+        0,
+        "N/A",
+        "Internal",
+        "Internal",
+        "Internal Only",
+        "Internal"
+      ]
+    ],
+    "screen_rows": [
+      [
+        "Aurora Mobility GmbH",
+        "Consignee",
+        "Germany",
+        "Clear",
+        "2026-06-20",
+        "Release"
+      ],
+      [
+        "NorthBridge Logistics",
+        "Freight forwarder",
+        "Netherlands",
+        "Clear",
+        "2026-06-20",
+        "Release"
+      ],
+      [
+        "Helios Technical University",
+        "End user",
+        "Germany",
+        "Clear",
+        "2026-06-20",
+        "Release"
+      ],
+      [
+        "Internal margin desk",
+        "Internal",
+        "United States",
+        "Not screened",
+        "2026-06-20",
+        "Internal"
+      ]
+    ],
+    "doc_check_rows": [
+      [
+        "DOC-001",
+        "Commercial invoice",
+        "commercial_invoice.xlsx",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-002",
+        "Packing list",
+        "packing_list.xlsx",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-003",
+        "ECCN classification note",
+        "eccn_classification_note.pdf",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-004",
+        "HTS and origin certificate",
+        "hts_origin_certificate.docx",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-005",
+        "Denied party screening",
+        "denied_party_screening.xlsx",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-006",
+        "Lithium battery SDS",
+        "lithium_battery_sds.pdf",
+        "Required for BAT-310",
+        "Ready"
+      ],
+      [
+        "DOC-007",
+        "End-use statement",
+        "end_use_statement.pdf",
+        "Required",
+        "Ready"
+      ],
+      [
+        "DOC-008",
+        "Internal margin strategy",
+        "internal_margin_strategy.pdf",
+        "Internal Only",
+        "Do Not Attach"
+      ]
+    ],
+    "public_invoice_rows": [
+      [
+        "ELG-100 Gateway Sensor",
+        40,
+        "$96,000.00",
+        "8531.10.0045",
+        "EAR99",
+        "United States"
+      ],
+      [
+        "CRP-200 Encrypted Router",
+        12,
+        "$36,000.00",
+        "8517.62.0090",
+        "5A992.c",
+        "United States"
+      ],
+      [
+        "BAT-310 Lithium Battery Pack",
+        80,
+        "$12,800.00",
+        "8507.60.0020",
+        "EAR99",
+        "Malaysia"
+      ]
+    ],
+    "broker_packet_rows": [
+      [
+        1,
+        "Commercial invoice",
+        "Public Invoice Summary",
+        "Attach",
+        "Released lines only; value total must reconcile to Shipment Release"
+      ],
+      [
+        2,
+        "Packing list",
+        "packing_list.xlsx",
+        "Attach",
+        "Remove held and internal-only lines before broker packet"
+      ],
+      [
+        3,
+        "ECCN classification note",
+        "eccn_classification_note.pdf",
+        "Attach",
+        "Use only public classifications for released lines"
+      ],
+      [
+        4,
+        "HTS and origin certificate",
+        "hts_origin_certificate.docx",
+        "Attach",
+        "Country-of-origin statement covers released lines only"
+      ],
+      [
+        5,
+        "Denied party screening",
+        "denied_party_screening.xlsx",
+        "Attach",
+        "Consignee, forwarder, and end user are clear"
+      ],
+      [
+        6,
+        "Lithium battery SDS",
+        "lithium_battery_sds.pdf",
+        "Attach for BAT-310",
+        "Required because BAT-310 is included"
+      ],
+      [
+        7,
+        "End-use statement",
+        "end_use_statement.pdf",
+        "Attach",
+        "Civil campus mobility research statement"
+      ]
+    ],
+    "recon_rows": [
+      [
+        "Released public line count",
+        "=COUNTIF('Shipment Release'!J2:J6,\"Release\")+COUNTIF('Shipment Release'!J2:J6,\"Release with lithium handling docs\")",
+        3,
+        "=IF(B2=C2,\"Pass\",\"Fail\")"
+      ],
+      [
+        "Held controlled line count",
+        "=COUNTIF('Shipment Release'!J2:J6,\"Hold\")",
+        1,
+        "=IF(B3=C3,\"Pass\",\"Fail\")"
+      ],
+      [
+        "Internal-only line count",
+        "=COUNTIF('Shipment Release'!J2:J6,\"Internal\")",
+        1,
+        "=IF(B4=C4,\"Pass\",\"Fail\")"
+      ],
+      [
+        "Released extended value",
+        "=SUM('Shipment Release'!E2:E4)",
+        144800,
+        "=IF(B5=C5,\"Pass\",\"Fail\")"
+      ],
+      [
+        "Lithium release gate",
+        "=IF(COUNTIFS('Shipment Release'!B2:B6,\"*BAT-310*\",'Shipment Release'!J2:J6,\"Release with lithium handling docs\")=1,\"Pass\",\"Fail\")",
+        "Pass",
+        "=IF(B6=C6,\"Pass\",\"Fail\")"
+      ]
+    ],
+    "forbidden_public": [
+      "HOLD-004",
+      "Prototype Crypto Board",
+      "5A002",
+      "INT-900",
+      "gross margin",
+      "discount floor",
+      "target margin",
+      "reroute through Dubai",
+      "license risk appetite"
+    ],
+    "sheet_order": [
+      "Shipment Release",
+      "Screening Log",
+      "Document Checklist",
+      "Public Invoice Summary",
+      "Broker Packet",
+      "Release Reconciliation",
+      "Internal Pricing",
+      "Rules"
+    ],
+    "tables": {
+      "Shipment Release": [
+        "shipment_release",
+        "A1:K6"
+      ],
+      "Screening Log": [
+        "screening_log",
+        "A1:F5"
+      ],
+      "Document Checklist": [
+        "document_checklist",
+        "A1:E9"
+      ],
+      "Public Invoice Summary": [
+        "public_invoice_summary",
+        "A1:F4"
+      ],
+      "Broker Packet": [
+        "broker_packet",
+        "A1:E8"
+      ],
+      "Release Reconciliation": [
+        "release_reconciliation",
+        "A1:D6"
+      ]
+    },
+    "hidden_sheets": [
+      "Internal Pricing",
+      "Rules"
+    ],
+    "defined_names": [
+      "release_decisions",
+      "license_treatments",
+      "packet_actions"
+    ],
+    "data_validation_ranges": {
+      "Shipment Release": [
+        "J2:J6",
+        "I2:I6"
+      ],
+      "Broker Packet": [
+        "D2:D8"
+      ]
+    },
+    "print_areas": {
+      "Shipment Release": "'Shipment Release'!$A$1:$K$6",
+      "Screening Log": "'Screening Log'!$A$1:$F$5",
+      "Document Checklist": "'Document Checklist'!$A$1:$E$9",
+      "Public Invoice Summary": "'Public Invoice Summary'!$A$1:$F$4",
+      "Broker Packet": "'Broker Packet'!$A$1:$E$8",
+      "Release Reconciliation": "'Release Reconciliation'!$A$1:$D$6"
+    },
+    "formula_cells": {
+      "Shipment Release!K2": "=IF(J2=\"Release\",\"OK\",IF(J2=\"Release with lithium handling docs\",\"OK WITH DOCS\",\"HOLD\"))",
+      "Shipment Release!K5": "=IF(J5=\"Release\",\"OK\",IF(J5=\"Release with lithium handling docs\",\"OK WITH DOCS\",\"HOLD\"))",
+      "Release Reconciliation!B2": "=COUNTIF('Shipment Release'!J2:J6,\"Release\")+COUNTIF('Shipment Release'!J2:J6,\"Release with lithium handling docs\")",
+      "Release Reconciliation!D5": "=IF(B5=C5,\"Pass\",\"Fail\")",
+      "Release Reconciliation!B6": "=IF(COUNTIFS('Shipment Release'!B2:B6,\"*BAT-310*\",'Shipment Release'!J2:J6,\"Release with lithium handling docs\")=1,\"Pass\",\"Fail\")"
+    },
+    "doc_heading_order": [
+      "Export Shipping Release Memo",
+      "Release Decision",
+      "Released Line Summary",
+      "Screening and Documents",
+      "Broker Packet Assembly",
+      "Boundary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "Release ELG-100 Gateway Sensor, CRP-200 Encrypted Router, and BAT-310 Lithium Battery Pack for the Hamburg shipment.",
+      "Hold the controlled prototype line because it requires license review and is not part of the released shipping packet.",
+      "Consignee, freight forwarder, and end user screening results are clear as of 2026-06-20.",
+      "The public broker packet totals $144,800.00 and contains seven external attachments in the prescribed order.",
+      "This memo and export_compliance_release_workbook.xlsx agree that exactly three shipment lines are released, one controlled prototype line is held, one internal-only line is excluded, and the released public value is $144,800.00."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Internal Pricing Strategy - Remove",
+      "HOLD-004",
+      "Prototype Crypto Board",
+      "5A002",
+      "INT-900",
+      "gross margin",
+      "discount floor",
+      "target margin",
+      "reroute through Dubai",
+      "license risk appetite"
+    ],
+    "doc_header_contains": "Shipment lines released: 3",
+    "doc_footer_contains": "export_compliance_release_workbook.xlsx",
+    "doc_highlight_text": "Control note: BAT-310 may release only with lithium battery handling documentation attached."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_074_word_xlsx_export_compliance_shipping_release"
+}

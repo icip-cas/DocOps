@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_002
+
+Doc type: excel
+Atomic operations: S4 Table/Sheet ops, C4 Computation, F4 Theme transfer
+Composition pattern: restructure -> compute -> restyle
+Difficulty: Hard
+
+User-facing goal:
+This tracker workbook needs a computed priority column and a coherent navy-and-steel visual treatment.
+
+Single-step benchmark instruction:
+Insert a new `Priority Score` column between `Days Late` and `Owner` on `Tracker`, fill `D2:D5` with formulas that multiply the severity weight from `Weights` by `2` when `Days Late` is greater than `0` and otherwise by `1`, then apply a navy-and-steel theme to the header bands and visible sheet tabs.
+
+Atomic scope:
+Only the inserted formula column and the requested workbook theme updates are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with the computed `Priority Score` column and consistent themed headers/tabs.

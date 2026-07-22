@@ -1,0 +1,73 @@
+{
+  "task_id": "excelwf_002",
+  "task_dir_name": "excelwf_002_audit_tracker_publication_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "F3 Layout control",
+    "C4 Computation",
+    "F2 Highlighting",
+    "S1 Insert/Delete"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "sheet-repair -> formula-update -> archive-hide",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Publish an audit tracker workbook.",
+  "single_step_benchmark_instruction": "Repair the workbook layout, convert the tracker into a formal table named AuditTable, add status dropdowns on the live tracker rows, and hide the archive content so the workbook reads like a finished audit packet.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/excelwf_002_audit_tracker_publication_seed.xlsx",
+  "output_path": "/root/submission/excelwf_002_audit_tracker_publication_seed.xlsx",
+  "output_filename": "excelwf_002_audit_tracker_publication_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Audit Tracker",
+      "Exception Watch",
+      "Archive"
+    ],
+    "exact_cells": {
+      "Audit Tracker!A1": "Task",
+      "Audit Tracker!B2": "Mia",
+      "Audit Tracker!C3": "Late"
+    },
+    "formula_cells": {},
+    "highlight_rows": [
+      {
+        "sheet": "Audit Tracker",
+        "row": 3,
+        "min_col": 1,
+        "max_col": 3
+      }
+    ],
+    "nonhighlight_rows": [],
+    "sheet_states": {
+      "Archive": "hidden"
+    },
+    "freeze_panes": {
+      "Audit Tracker": "A2"
+    },
+    "unchanged_sheets": [
+      "Archive"
+    ],
+    "table_refs": {
+      "Audit Tracker!AuditTable": "A1:C3"
+    },
+    "data_validation_ranges": {
+      "Audit Tracker": [
+        "C2:C3"
+      ]
+    },
+    "comments_contain": {
+      "Audit Tracker!A1": "Published tracker"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "ppt_004",
+  "task_dir_name": "ppt_004_slide_reorder_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "S2 Reorder",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "ppt_004_slide_reorder_seed.pptx",
+  "source_doc_path": "ppt/ppt_004_slide_reorder_seed.pptx",
+  "task_description_filename": "ppt_004_slide_reorder_seed.txt",
+  "task_description_path": "ppt/ppt_004_slide_reorder_seed.txt",
+  "input_path": "/root/ppt_004_slide_reorder_seed.pptx",
+  "output_path": "/root/submission/ppt_004_slide_reorder_seed.pptx",
+  "output_filename": "ppt_004_slide_reorder_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "The deck's slides are out of logical order.",
+  "single_step_benchmark_instruction": "Reorder the slides so the presentation flows in the sequence: Executive Summary -> Root Cause -> Implementation Plan -> Appendix.",
+  "atomic_scope": "Only slide reordering is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with corrected slide order.",
+  "inspired_by": [
+    {
+      "title": "Automated table of contents",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1s98sok/automated_table_of_contents/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The deck has no polished theme\n- The slide layouts are very plain\n- Some text could be tightened, but that is not the explicit request"
+  }
+}

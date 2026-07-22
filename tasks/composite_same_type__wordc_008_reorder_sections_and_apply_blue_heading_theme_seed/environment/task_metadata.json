@@ -1,0 +1,32 @@
+{
+  "task_id": "wordc_008",
+  "task_dir_name": "wordc_008_reorder_sections_and_apply_blue_heading_theme_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> retheme",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.docx",
+  "source_doc_path": "word/wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.docx",
+  "task_description_filename": "wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.txt",
+  "task_description_path": "word/wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.docx",
+  "output_path": "/root/submission/wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.docx",
+  "output_filename": "wordc_008_reorder_sections_and_apply_blue_heading_theme_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report needs both a better section sequence and a consistent blue heading theme.",
+  "single_step_benchmark_instruction": "Reorder the sections to `Executive Summary -> Findings -> Next Steps -> Appendix`, then apply a blue heading theme to all top-level section headings.",
+  "atomic_scope": "Only the requested section reorder and top-level heading theme change are explicitly requested.",
+  "expected_output_type": "A revised .docx report with corrected section order and blue top-level headings.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Body text should stay unchanged\n- Only top-level headings need the theme transfer"
+  }
+}

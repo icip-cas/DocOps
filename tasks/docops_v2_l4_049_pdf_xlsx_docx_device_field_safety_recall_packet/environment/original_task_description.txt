@@ -1,0 +1,1 @@
+Prepare a public customer field safety notice PDF, an internal Excel reconciliation workbook, and a regulatory cover memo from a draft notice, affected-lot master, raw customer response export, publication rules, and internal root-cause note while preventing internal engineering/legal details from leaking into the public notice.

@@ -1,0 +1,190 @@
+{
+  "task_id": "excelxr_001",
+  "task_dir_name": "excelxr_001_board_action_register_from_minutes_packet_and_aliases_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "rebuild-two-live-sheets -> fill-dual-trackers -> restore-dashboard-formulas -> preserve-validations-and-cf",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_001_board_action_register_from_minutes_packet_and_aliases_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/board_packet_extract.pdf",
+    "/root/decision_note.docx",
+    "/root/owner_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_001_board_action_register_from_minutes_packet_and_aliases_seed.xlsx",
+  "output_filename": "excelxr_001_board_action_register_from_minutes_packet_and_aliases_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Populate only the blank rows of the `Decision Register` sheet with motion ID.",
+  "single_step_benchmark_instruction": "Populate only the blank rows of the `Decision Register` sheet with motion ID, agenda item, normalized owner, due date, and packet-support section from the meeting materials. Then move `Decision Register` directly after `Cover` without altering formulas, styles, or other sheets.",
+  "atomic_scope": "Only the two live sheets, both template sheets, the dashboard formulas, workbook names, and highlighted late rows are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the template sheets unchanged\n- Do not replace formulas with hardcoded text"
+  },
+  "verifier_expectations": {
+    "sheet_order": [
+      "Cover",
+      "Decision Template",
+      "Current Decisions",
+      "Exception Template",
+      "Current Exceptions",
+      "Dashboard",
+      "Lookup"
+    ],
+    "exact_cells": {
+      "Current Decisions!A2": "BD-01",
+      "Current Decisions!B2": "Licensure Renewal",
+      "Current Decisions!C2": "Mia Torres",
+      "Current Decisions!D2": "Governance",
+      "Current Decisions!E2": "Minutes Extract",
+      "Current Decisions!F2": "Open",
+      "Current Decisions!G2": "2025-01-18",
+      "Current Decisions!A3": "BD-02",
+      "Current Decisions!B3": "Public Packet Release",
+      "Current Decisions!C3": "Devin Park",
+      "Current Decisions!D3": "Posting",
+      "Current Decisions!E3": "Posting Checklist",
+      "Current Decisions!F3": "Late",
+      "Current Decisions!G3": "2025-01-15",
+      "Current Decisions!A4": "BD-03",
+      "Current Decisions!B4": "Finance Appendix",
+      "Current Decisions!C4": "Glen Ho",
+      "Current Decisions!D4": "Finance",
+      "Current Decisions!E4": "Budget Appendix",
+      "Current Decisions!F4": "Complete",
+      "Current Decisions!G4": "2025-01-12",
+      "Current Exceptions!A2": "EX-01",
+      "Current Exceptions!B2": "Telehealth FAQ",
+      "Current Exceptions!C2": "Ravi Shah",
+      "Current Exceptions!D2": "Policy",
+      "Current Exceptions!E2": "Citation Note",
+      "Current Exceptions!F2": "Late",
+      "Current Exceptions!G2": "2025-01-14",
+      "Current Exceptions!A3": "EX-02",
+      "Current Exceptions!B3": "Ethics Appendix",
+      "Current Exceptions!C3": "Jordan Ellis",
+      "Current Exceptions!D3": "Governance",
+      "Current Exceptions!E3": "Ethics Memo",
+      "Current Exceptions!F3": "Open",
+      "Current Exceptions!G3": "2025-01-17",
+      "Current Exceptions!A4": "EX-03",
+      "Current Exceptions!B4": "Speaker Notes",
+      "Current Exceptions!C4": "Naomi Reed",
+      "Current Exceptions!D4": "Communications",
+      "Current Exceptions!E4": "Presenter Draft",
+      "Current Exceptions!F4": "Complete",
+      "Current Exceptions!G4": "2025-01-10"
+    },
+    "formula_cells": {
+      "Current Decisions!H2": "=IF(F2=\"Late\",\"Yes\",\"No\")",
+      "Current Decisions!H3": "=IF(F3=\"Late\",\"Yes\",\"No\")",
+      "Current Decisions!H4": "=IF(F4=\"Late\",\"Yes\",\"No\")",
+      "Current Exceptions!H2": "=IF(F2=\"Late\",\"Yes\",\"No\")",
+      "Current Exceptions!H3": "=IF(F3=\"Late\",\"Yes\",\"No\")",
+      "Current Exceptions!H4": "=IF(F4=\"Late\",\"Yes\",\"No\")",
+      "Dashboard!B2": "=COUNTIF('Current Decisions'!F2:F4,\"Open\")+COUNTIF('Current Exceptions'!F2:F4,\"Open\")",
+      "Dashboard!B3": "=COUNTIF('Current Decisions'!F2:F4,\"Late\")+COUNTIF('Current Exceptions'!F2:F4,\"Late\")",
+      "Dashboard!B4": "=COUNTIF('Current Decisions'!F2:F4,\"Complete\")+COUNTIF('Current Exceptions'!F2:F4,\"Complete\")",
+      "Dashboard!B5": "=ROWS('Current Decisions'!A2:A4)+ROWS('Current Exceptions'!A2:A4)"
+    },
+    "header_style_matches": [
+      {
+        "target_sheet": "Current Decisions",
+        "target_cells": [
+          "A1",
+          "B1"
+        ],
+        "reference_sheet": "Decision Template",
+        "reference_cells": [
+          "A1",
+          "B1"
+        ]
+      },
+      {
+        "target_sheet": "Current Exceptions",
+        "target_cells": [
+          "A1",
+          "B1"
+        ],
+        "reference_sheet": "Exception Template",
+        "reference_cells": [
+          "A1",
+          "B1"
+        ]
+      }
+    ],
+    "highlight_rows": [
+      {
+        "sheet": "Current Exceptions",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 8
+      }
+    ],
+    "nonhighlight_rows": [
+      {
+        "sheet": "Current Decisions",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 8
+      },
+      {
+        "sheet": "Current Exceptions",
+        "row": 3,
+        "min_col": 1,
+        "max_col": 8
+      }
+    ],
+    "unchanged_sheets": [
+      "Decision Template",
+      "Exception Template"
+    ],
+    "table_refs": {
+      "Current Decisions!primary_live_table": "A1:H4",
+      "Current Exceptions!secondary_live_table": "A1:H4"
+    },
+    "sheet_states": {
+      "Lookup": "hidden"
+    },
+    "freeze_panes": {
+      "Current Decisions": "A2",
+      "Current Exceptions": "A2"
+    },
+    "conditional_format_ranges": {
+      "Current Decisions": [
+        "<ConditionalFormatting A2:H4>"
+      ],
+      "Current Exceptions": [
+        "<ConditionalFormatting A2:H4>"
+      ]
+    },
+    "data_validation_ranges": {
+      "Current Decisions": [
+        "F2:F4"
+      ],
+      "Current Exceptions": [
+        "F2:F4"
+      ]
+    },
+    "defined_names": [
+      "status_choices",
+      "tracked_primary",
+      "tracked_secondary"
+    ],
+    "comments_contain": {
+      "Current Decisions!H2": "Escalate to program lead",
+      "Current Exceptions!H2": "Escalate to program lead"
+    }
+  }
+}

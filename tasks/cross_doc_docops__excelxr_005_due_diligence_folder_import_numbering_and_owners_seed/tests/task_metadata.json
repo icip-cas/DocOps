@@ -1,0 +1,115 @@
+{
+  "task_id": "excelxr_005",
+  "task_dir_name": "excelxr_005_due_diligence_folder_import_numbering_and_owners_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "cross-document",
+  "composition_pattern": "extract-sectioned-request-list -> map-hierarchy-to-rows -> fill-launch-metadata -> preserve-summary-formulas",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/diligence_request_extract.pdf",
+    "/root/folder_note.docx",
+    "/root/team_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "output_filename": "excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Convert the sectioned request list into the folder-import workbook.",
+  "single_step_benchmark_instruction": "Fill `Folder Import` with the exact hierarchy marker, folder title, responsible team, and `Missing` status rows, then fill the launch metadata cells on `Cover`. Keep `Folder Template` unchanged and preserve the summary formulas.",
+  "atomic_scope": "Only the imported hierarchy rows, the launch metadata cells, the untouched template sheet, the summary formulas, and the hidden lookup sheet are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep `Folder Template` unchanged\n- Do not replace summary formulas with hardcoded values"
+  },
+  "verifier_expectations": {
+    "sheet_order": [
+      "Cover",
+      "Folder Template",
+      "Folder Import",
+      "Summary",
+      "Lookup"
+    ],
+    "exact_cells": {
+      "Cover!B3": "Northline DDQ Rev C",
+      "Cover!B4": "Northline DDQ / External Share",
+      "Cover!B5": "Missing",
+      "Folder Import!A2": "1.1",
+      "Folder Import!B2": "Corporate Records",
+      "Folder Import!C2": "Legal",
+      "Folder Import!D2": "Missing",
+      "Folder Import!A3": "1.1.2",
+      "Folder Import!B3": "Legacy Charter",
+      "Folder Import!C3": "Legal",
+      "Folder Import!D3": "Missing",
+      "Folder Import!A4": "2.3",
+      "Folder Import!B4": "Insurance Certificates",
+      "Folder Import!C4": "Finance",
+      "Folder Import!D4": "Missing",
+      "Folder Import!A5": "2.3.1",
+      "Folder Import!B5": "Broker Certificates",
+      "Folder Import!C5": "Finance",
+      "Folder Import!D5": "Missing",
+      "Folder Import!A6": "3.2",
+      "Folder Import!B6": "Commercial Contracts",
+      "Folder Import!C6": "Commercial",
+      "Folder Import!D6": "Missing",
+      "Folder Import!A7": "3.2.4",
+      "Folder Import!B7": "Material Contracts",
+      "Folder Import!C7": "Commercial",
+      "Folder Import!D7": "Missing"
+    },
+    "formula_cells": {
+      "Summary!B2": "=COUNTA('Folder Import'!A2:A7)",
+      "Summary!B3": "=COUNTIF('Folder Import'!D2:D7,\"Missing\")",
+      "Summary!B4": "=COUNTIF('Folder Import'!C2:C7,\"Finance\")"
+    },
+    "header_style_matches": [
+      {
+        "target_sheet": "Folder Import",
+        "target_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1"
+        ],
+        "reference_sheet": "Folder Template",
+        "reference_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1"
+        ]
+      }
+    ],
+    "unchanged_sheets": [
+      "Folder Template"
+    ],
+    "table_refs": {
+      "Folder Import!folder_import_table": "A1:D7"
+    },
+    "sheet_states": {
+      "Lookup": "hidden"
+    },
+    "freeze_panes": {
+      "Folder Import": "A2"
+    },
+    "data_validation_ranges": {
+      "Folder Import": [
+        "D2:D7"
+      ]
+    },
+    "defined_names": [
+      "folder_status_choices"
+    ]
+  }
+}

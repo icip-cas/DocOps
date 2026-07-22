@@ -1,0 +1,1 @@
+Refresh the metric tiles and action table.

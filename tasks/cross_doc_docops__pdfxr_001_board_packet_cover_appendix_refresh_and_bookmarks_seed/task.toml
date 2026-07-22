@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed"
+description = "pdfxr_001 - cross-document skill-gap v2 task for DocumentBenchmark."
+authors = []
+keywords = ["pdf", "cross-document", "document-processing", "c1-extraction", "c2-editing", "s1-insert/delete", "s2-reorder", "s3-hierarchy-editing"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["pdf", "cross-document", "document-processing", "skill-gap-v2", "pdf"]
+task_id = "pdfxr_001"
+doc_type = "pdf"
+primary_modality = "PDF (.pdf)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document skill-gap V2"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "reorder-public-pages -> fill-cover -> replace-appendix-lines -> rebuild-outline"
+atomic_operations = ["C1 Extraction", "C2 Editing", "S1 Insert/Delete", "S2 Reorder", "S3 Hierarchy editing"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed.pdf"
+OUTPUT_PATH = "/root/submission/pdfxr_001_board_packet_cover_appendix_refresh_and_bookmarks_seed.pdf"
+TASK_ID = "pdfxr_001"
+DOC_TYPE = "pdf"
+
+[solution.env]

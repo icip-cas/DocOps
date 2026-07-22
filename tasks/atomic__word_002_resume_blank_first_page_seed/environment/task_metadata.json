@@ -1,0 +1,35 @@
+{
+  "task_id": "word_002",
+  "task_dir_name": "word_002_resume_blank_first_page_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "S1 Insert/Delete",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "word_002_resume_blank_first_page_seed.docx",
+  "source_doc_path": "word/word_002_resume_blank_first_page_seed.docx",
+  "task_description_filename": "word_002_resume_blank_first_page_seed.txt",
+  "task_description_path": "word/word_002_resume_blank_first_page_seed.txt",
+  "input_path": "/root/word_002_resume_blank_first_page_seed.docx",
+  "output_path": "/root/submission/word_002_resume_blank_first_page_seed.docx",
+  "output_filename": "word_002_resume_blank_first_page_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This resume document opens with an unwanted blank first page before the actual content begins.",
+  "single_step_benchmark_instruction": "Delete the blank first page while keeping the rest of the resume content intact.",
+  "atomic_scope": "Only deletion of the unwanted blank page is explicitly requested in this task.",
+  "expected_output_type": "A corrected .docx document with no blank opening page.",
+  "inspired_by": [
+    {
+      "title": "How do you delete a blank first page??",
+      "url": "https://www.reddit.com/r/word/comments/1rhvhgd/how_do_you_delete_a_blank_first_page/"
+    },
+    {
+      "title": "CV editing",
+      "url": "https://www.reddit.com/r/word/comments/1s8t0is/cv_editing/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Fonts and section styling are inconsistent\n- Spacing is slightly uneven across sections\n- Footer page numbering may need review, but that is not the explicit request"
+  }
+}

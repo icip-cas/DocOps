@@ -1,0 +1,1 @@
+Create a best-value RFP award recommendation memo and evaluation scorebook from a draft memo, raw scoring export, evaluation rules, vendor proposal excerpts, and evaluator conflict note while applying mandatory gates, weighted scoring, price normalization, and public/confidential boundaries.

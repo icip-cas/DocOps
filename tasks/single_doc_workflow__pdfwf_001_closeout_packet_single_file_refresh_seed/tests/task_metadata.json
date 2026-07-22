@@ -1,0 +1,74 @@
+{
+  "task_id": "pdfwf_001",
+  "task_dir_name": "pdfwf_001_closeout_packet_single_file_refresh_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "S1 Insert/Delete",
+    "C3 Generation",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "reorder -> delete -> cover-fill -> bookmark-rebuild",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean the closeout packet PDF while preserving the live page text.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the superseded pages, restore the live pages to the requested order from Cover through Reference Notes, and add bookmarks for each live page.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pdf packet that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pdfwf_001_closeout_packet_single_file_refresh_seed.pdf",
+  "output_path": "/root/submission/pdfwf_001_closeout_packet_single_file_refresh_seed.pdf",
+  "output_filename": "pdfwf_001_closeout_packet_single_file_refresh_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_title_contains_order": [
+      "Cover",
+      "Status Summary",
+      "Approved Sheet A",
+      "Updated Sheet B",
+      "Appendix",
+      "Reference Notes"
+    ],
+    "cover_lines": [
+      "Packet: Closeout Rev C",
+      "Approved Pages: 2",
+      "Inserted Notes: 1"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Status Summary",
+        "lines": [
+          "approved material",
+          "superseded sheet has been replaced"
+        ]
+      },
+      {
+        "page_title": "Updated Sheet B",
+        "lines": [
+          "This updated sheet replaces the superseded sheet."
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Superseded Sheet B",
+      "Old Divider"
+    ],
+    "outline_contains_order": [
+      "Cover",
+      "Status Summary",
+      "Approved Sheet A",
+      "Updated Sheet B",
+      "Appendix",
+      "Reference Notes"
+    ],
+    "theme_colors_any": []
+  }
+}

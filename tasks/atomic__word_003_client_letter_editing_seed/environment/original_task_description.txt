@@ -1,0 +1,26 @@
+Task ID: word_003
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: C2 Editing
+Difficulty: Medium
+
+Inspired By:
+- Title: How much has Copilot changed the way word docs get edited these days?
+  URL: https://www.reddit.com/r/word/comments/1skxkx3/how_much_has_copilot_changed_the_way_word_docs/
+
+User Task Description:
+This client communication draft contains rushed, overly blunt wording in the message body.
+
+Single-Step Benchmark Instruction:
+Rewrite the sections labeled `Draft opening` and `Draft ask` so they sound more professional and client-appropriate, while preserving the underlying facts and urgency.
+
+Atomic Scope:
+Only the text editing request is explicit in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Fonts and spacing are inconsistent
+- Heading formatting is uneven
+- The document layout is visually messy
+
+Expected Output Type:
+A revised .docx document with more professional wording in the specified sections.

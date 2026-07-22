@@ -1,0 +1,32 @@
+Task ID: pdf_006
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: C3 Generation
+Difficulty: Hard
+
+Inspired By:
+- Title: Export Reddit thread as a PDF?
+  URL: https://www.reddit.com/r/pdf/comments/1slym6z/export_reddit_thread_as_a_pdf/
+- Title: Tools for Academic Literature PDFs to Plain Text?
+  URL: https://www.reddit.com/r/pdf/comments/1sjyvhv/tools_for_academic_literature_pdfs_to_plain_text/
+
+User Task Description:
+This PDF contains raw operational findings plus an empty management summary area.
+
+Single-Step Benchmark Instruction:
+Replace the placeholder inside the blank `Management Summary` box on page 1 with a concise executive summary.
+The summary must mention all three themes:
+- recurring file-quality issues, including the outdated mapping/header inconsistency
+- approval delays caused by an outdated approver list
+- inconsistent ticket labeling across queues
+
+Atomic Scope:
+Only content generation is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The target summary is not directly present anywhere in the PDF
+- Relevant evidence is distributed across multiple raw notes
+- The output must fit a constrained, pre-existing summary space
+
+Expected Output Type:
+A revised PDF with a constrained executive summary added to page 1.

@@ -1,0 +1,52 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet"
+description = "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet - DocOps v2 final L4 task."
+authors = []
+keywords = ["word", "excel", "pdf", "healthcare", "prior-authorization", "appeal", "privacy", "cross-document"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["word", "excel", "pdf", "cross-document", "many-input", "healthcare-operations"]
+task_id = "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet"
+doc_type = "pdf+docx+xlsx"
+primary_modality = "PDF, Word (.docx), and Excel (.xlsx)"
+atomic_operation = "Cross-document Evidence Mapping and Multi-output Packet Assembly"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-structural-privacy-strict"
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet"
+final_index = 47
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_input.docx"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet_appeal_letter.docx"
+TASK_ID = "docops_v2_l4_047_pdf_docx_xlsx_prior_auth_denial_appeal_packet"
+DOC_TYPE = "pdf+docx+xlsx"
+
+[solution.env]

@@ -1,0 +1,47 @@
+{
+  "task_id": "docops_v2_l3_020_xlsx_month_close_over10",
+  "task_dir_name": "docops_v2_l3_020_xlsx_month_close_over10",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "F4 Theme transfer",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 12,
+  "composition_type": "single-document",
+  "composition_pattern": "raw-cleaning -> lookup-formulas -> duplicate/receipt flags -> exception-sheet -> summary-repair -> validation -> highlighting -> hide-raw -> reorder -> release-format",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A monthly close workbook needs a release-ready summary driven by cleaned transactions and exception logic.",
+  "single_step_benchmark_instruction": "Create Clean Transactions and Exceptions sheets; clean and reorder the raw transactions; add Category, Owner, Receipt Required, Review Flag, and Signed Amount formulas; convert cleaned data to CleanTransactions; add Receipt validation; highlight review rows; generate exception rows; repair Close Summary revenue, expense, and net formulas; rename the summary title; hide Raw Transactions and Archive; reorder sheets for release; apply basic release formatting.",
+  "atomic_scope": "Single-document workflow with coupled edits; preserve unrelated document-native structure.",
+  "expected_output_type": "A revised .xlsx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Trying to find unique values when comparing hundreds of millions of rows",
+      "url": "https://np.reddit.com/r/excel/comments/uoixte/trying_to_find_unique_values_when_comparing/"
+    },
+    {
+      "title": "Index Match to return multiple values",
+      "url": "https://us.reddit.com/r/excel/comments/seajec/how_can_i_use_index_match_to_return_multiple/"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_020_xlsx_month_close_over10_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_020_xlsx_month_close_over10_output.xlsx",
+  "output_filename": "docops_v2_l3_020_xlsx_month_close_over10_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_020_xlsx_month_close_over10"
+}

@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_007
+
+Doc type: ppt
+Atomic operations: S1 Insert/Delete, C3 Generation
+Composition pattern: insert -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This deck needs a new executive summary slide at the front.
+
+Single-step benchmark instruction:
+Insert a new first slide titled `Executive Summary` and generate exactly three concise bullets using the prefixes `Supplier:`, `Inspection:`, and `Staffing:` in that order.
+
+Atomic scope:
+Only the inserted first slide and its three generated bullets are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with a new first summary slide containing exactly three bullets.

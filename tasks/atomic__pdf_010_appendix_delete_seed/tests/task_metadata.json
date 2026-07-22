@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_010",
+  "task_dir_name": "pdf_010_appendix_delete_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "S1 Insert/Delete",
+  "difficulty": "Medium",
+  "source_doc_filename": "pdf_010_appendix_delete_seed.pdf",
+  "source_doc_path": "pdf/pdf_010_appendix_delete_seed.pdf",
+  "task_description_filename": "pdf_010_appendix_delete_seed.txt",
+  "task_description_path": "pdf/pdf_010_appendix_delete_seed.txt",
+  "input_path": "/root/pdf_010_appendix_delete_seed.pdf",
+  "output_path": "/root/submission/pdf_010_appendix_delete_seed.pdf",
+  "output_filename": "pdf_010_appendix_delete_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF packet contains one obsolete appendix page that should not be part of the final document.",
+  "single_step_benchmark_instruction": "Delete the page titled `Superseded Rate Card` and leave the remaining pages unchanged.",
+  "atomic_scope": "Only page deletion is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the obsolete page removed.",
+  "inspired_by": [
+    {
+      "title": "Slice and merge two different pdfs",
+      "url": "https://www.reddit.com/r/pdf/comments/1s9p0hm/slice_and_merge_two_different_pdfs/"
+    },
+    {
+      "title": "Acrobat Pro alternatives for batch Bates Numbering across multiple PDFs?",
+      "url": "https://www.reddit.com/r/pdf/comments/1sm47um/acrobat_pro_alternatives_for_batch_bates/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The obsolete page still looks like a legitimate report page\n- The operation is structural, not textual\n- The surrounding pages should remain in place and unchanged"
+  }
+}

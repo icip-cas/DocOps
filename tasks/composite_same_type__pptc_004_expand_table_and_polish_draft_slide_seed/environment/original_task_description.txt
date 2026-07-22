@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_004
+
+Doc type: ppt
+Atomic operations: S4 Table/Sheet ops, C2 Editing
+Composition pattern: restructure -> rewrite
+Difficulty: Medium-Hard
+
+User-facing goal:
+This milestone slide needs an extra status field and executive-ready supporting bullets.
+
+Single-step benchmark instruction:
+Insert a new `Status` column between `Milestone` and `Due Date` in the table on Slide 1, then rewrite the three draft bullets on that slide into exactly three labeled bullets starting `Vendor status:`, `Install date:`, and `Client update:` in that order.
+
+Atomic scope:
+Only the requested table-column insertion and the three targeted bullet rewrites are explicitly requested.
+
+Expected output type:
+A revised .pptx slide with the expanded table and polished draft bullets.

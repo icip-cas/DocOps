@@ -1,0 +1,1 @@
+Regenerated L3 single-workbook workflow seed: rebuild a messy internal accreditation evidence workbook into a clean public evidence package by removing internal sheets, applying correction-log fixes, rebuilding public tables, reconstructing formulas, applying tab colors, applying table styles, and preserving a risk heatmap style. All content is synthetic.

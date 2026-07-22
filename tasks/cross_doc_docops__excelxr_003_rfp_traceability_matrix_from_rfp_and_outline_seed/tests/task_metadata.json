@@ -1,0 +1,116 @@
+{
+  "task_id": "excelxr_003",
+  "task_dir_name": "excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "cross-document",
+  "composition_pattern": "extract-rfp-locators -> map-proposal-sections -> fill-traceability-matrix -> preserve-summary-formulas",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/rfp_traceability_extract.pdf",
+    "/root/compliance_note.docx",
+    "/root/owner_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed.xlsx",
+  "output_filename": "excelxr_003_rfp_traceability_matrix_from_rfp_and_outline_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Fill the blank traceability matrix with the exact requirement mappings.",
+  "single_step_benchmark_instruction": "Fill the blank rows in `Compliance Matrix` with the exact requirement text, RFP locator, proposal section, compliance code, owner, and evidence note gathered from the supporting documents. Keep `Matrix Template` unchanged and preserve the summary formulas.",
+  "atomic_scope": "Only the live matrix rows, the untouched template sheet, the summary formulas, and the hidden lookup sheet are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep `Matrix Template` unchanged\n- Do not replace summary formulas with hardcoded values"
+  },
+  "verifier_expectations": {
+    "sheet_order": [
+      "Cover",
+      "Matrix Template",
+      "Compliance Matrix",
+      "Summary",
+      "Lookup"
+    ],
+    "exact_cells": {
+      "Compliance Matrix!A2": "RF-01",
+      "Compliance Matrix!B2": "Data encryption at rest and in transit is mandatory.",
+      "Compliance Matrix!C2": "Sec 3.2 / p4 / ¶2",
+      "Compliance Matrix!D2": "Proposal Section 2.3",
+      "Compliance Matrix!E2": "F",
+      "Compliance Matrix!F2": "Avery Grant",
+      "Compliance Matrix!G2": "AES-256 platform controls",
+      "Compliance Matrix!A3": "RF-02",
+      "Compliance Matrix!B3": "Retain searchable audit logs for at least 365 days.",
+      "Compliance Matrix!C3": "Sec 5.1 / p7 / ¶1",
+      "Compliance Matrix!D3": "Proposal Section 4.1",
+      "Compliance Matrix!E3": "F",
+      "Compliance Matrix!F3": "Mia Torres",
+      "Compliance Matrix!G3": "SIEM retention policy",
+      "Compliance Matrix!A4": "RF-03",
+      "Compliance Matrix!B4": "Provide a documented disaster-recovery test summary from the last 12 months.",
+      "Compliance Matrix!C4": "Sec 7.4 / p11 / ¶3",
+      "Compliance Matrix!D4": "Proposal Section 5.2",
+      "Compliance Matrix!E4": "P",
+      "Compliance Matrix!F4": "Ravi Shah",
+      "Compliance Matrix!G4": "DR test scheduled for Q2"
+    },
+    "formula_cells": {
+      "Summary!B2": "=COUNTIF('Compliance Matrix'!E2:E4,\"F\")",
+      "Summary!B3": "=COUNTIF('Compliance Matrix'!E2:E4,\"P\")",
+      "Summary!B4": "=COUNTIF('Compliance Matrix'!E2:E4,\"N\")",
+      "Summary!B5": "=COUNTA('Compliance Matrix'!A2:A4)"
+    },
+    "header_style_matches": [
+      {
+        "target_sheet": "Compliance Matrix",
+        "target_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "E1",
+          "F1",
+          "G1"
+        ],
+        "reference_sheet": "Matrix Template",
+        "reference_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "E1",
+          "F1",
+          "G1"
+        ]
+      }
+    ],
+    "unchanged_sheets": [
+      "Matrix Template"
+    ],
+    "table_refs": {
+      "Compliance Matrix!compliance_matrix": "A1:G4"
+    },
+    "sheet_states": {
+      "Lookup": "hidden"
+    },
+    "freeze_panes": {
+      "Compliance Matrix": "A2"
+    },
+    "data_validation_ranges": {
+      "Compliance Matrix": [
+        "E2:E4"
+      ]
+    },
+    "defined_names": [
+      "code_choices"
+    ]
+  }
+}

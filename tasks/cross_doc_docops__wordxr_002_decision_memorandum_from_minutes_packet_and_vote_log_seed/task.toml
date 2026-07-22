@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed"
+description = "wordxr_002 - cross-document skill-gap v2 task for DocumentBenchmark."
+authors = []
+keywords = ["word", "cross-document", "document-processing", "c1-extraction", "c3-generation", "f1-style-consistency", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["word", "cross-document", "document-processing", "skill-gap-v2", "word"]
+task_id = "wordxr_002"
+doc_type = "word"
+primary_modality = "Word (.docx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document skill-gap V2"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "fill-header-table -> replace-section-text -> merge-vote-log"
+atomic_operations = ["C1 Extraction", "C3 Generation", "F1 Style consistency", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed.docx"
+OUTPUT_PATH = "/root/submission/wordxr_002_decision_memorandum_from_minutes_packet_and_vote_log_seed.docx"
+TASK_ID = "wordxr_002"
+DOC_TYPE = "word"
+
+[solution.env]

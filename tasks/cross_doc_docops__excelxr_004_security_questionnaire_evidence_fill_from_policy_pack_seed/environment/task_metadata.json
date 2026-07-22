@@ -1,0 +1,34 @@
+{
+  "task_id": "excelxr_004",
+  "task_dir_name": "excelxr_004_security_questionnaire_evidence_fill_from_policy_pack_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-required-questionnaire-rows -> map-evidence-fields -> preserve-prefilled-row -> preserve-summary-formulas",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_004_security_questionnaire_evidence_fill_from_policy_pack_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/security_questionnaire_extract.pdf",
+    "/root/followup_note.docx",
+    "/root/evidence_index.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_004_security_questionnaire_evidence_fill_from_policy_pack_seed.xlsx",
+  "output_filename": "excelxr_004_security_questionnaire_evidence_fill_from_policy_pack_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Fill only the unanswered required controls in the questionnaire.",
+  "single_step_benchmark_instruction": "Fill only the unanswered required rows in `Security Questionnaire` using the exact response status, evidence ID, source page, and response note gathered from the supporting documents. Leave prefilled non-required rows unchanged, keep `Questionnaire Template` unchanged, and preserve the summary formulas.",
+  "atomic_scope": "Only the target questionnaire rows, the untouched template sheet, the preserved prefilled row, the summary formulas, and the hidden lookup sheet are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Leave prefilled non-required rows unchanged\n- Keep `Questionnaire Template` unchanged\n- Do not replace summary formulas with hardcoded values"
+  }
+}

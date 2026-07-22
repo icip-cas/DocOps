@@ -1,0 +1,110 @@
+{
+  "task_id": "pptxr_004",
+  "task_dir_name": "pptxr_004_handover_owner_matrix_from_closeout_logs_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C4 Computation",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "refresh-metrics -> replace-blocker-table -> duplicate-reference-slide -> insert-owner-escalations -> preserve-reference",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+  "supporting_input_paths": [
+    "/root/handover_metrics.xlsx",
+    "/root/blocker_log.xlsx",
+    "/root/owner_note.docx"
+  ],
+  "output_path": "/root/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+  "output_filename": "pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Refresh the handover metrics.",
+  "single_step_benchmark_instruction": "Refresh the handover metrics, replace the outstanding-items table, insert `Owner Escalations` by duplicating the locked reference matrix slide, and preserve the closing and reference slide order.",
+  "atomic_scope": "Only the refreshed metrics, replaced blocker table, inserted owner-escalation slide, and preserved reference slide are required.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the reference slide unchanged\n- Do not rebuild the inserted slide with a different table layout"
+  },
+  "verifier_expectations": {
+    "titles_order": [
+      "Closeout Handover Deck",
+      "Handover Status",
+      "Outstanding Items",
+      "Owner Escalations",
+      "Closing",
+      "Layout Reference - Owner Matrix"
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Owner Matrix"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Handover Status",
+        "required_lines": [
+          "Open Items",
+          "6",
+          "Late Items",
+          "2",
+          "Completed",
+          "14"
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Outstanding Items",
+        "cells": {
+          "1,0": "Startup Letter",
+          "1,1": "Mia Torres",
+          "1,2": "Late",
+          "2,0": "Warranty Table",
+          "2,1": "Ravi Shah",
+          "2,2": "Open",
+          "3,0": "O&M Signoff",
+          "3,1": "Devin Park",
+          "3,2": "Open"
+        }
+      },
+      {
+        "slide_title": "Owner Escalations",
+        "cells": {
+          "1,0": "Startup Letter",
+          "1,1": "Mia Torres",
+          "1,2": "Late",
+          "2,0": "Warranty Table",
+          "2,1": "Ravi Shah",
+          "2,2": "Open",
+          "3,0": "O&M Signoff",
+          "3,1": "Devin Park",
+          "3,2": "Open"
+        }
+      }
+    ],
+    "shape_count_matches_input": [
+      {
+        "slide_title": "Owner Escalations",
+        "reference_title": "Layout Reference - Owner Matrix"
+      }
+    ],
+    "title_signature_matches_input": [
+      {
+        "slide_title": "Owner Escalations",
+        "reference_title": "Layout Reference - Owner Matrix"
+      }
+    ],
+    "body_signature_matches_input": [
+      {
+        "slide_title": "Owner Escalations",
+        "reference_title": "Layout Reference - Owner Matrix"
+      }
+    ]
+  }
+}

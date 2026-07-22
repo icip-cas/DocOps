@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_002
+
+Doc type: pdf
+Atomic operations: S2 Reorder, S3 Hierarchy editing
+Composition pattern: reorder -> rebuild-structure
+Difficulty: Hard
+
+User-facing goal:
+This report is out of order and the bookmark tree should match the corrected sequence.
+
+Single-step benchmark instruction:
+Reorder the pages so the report reads `Scope -> Findings -> Recommendations -> Appendix`, then rebuild the bookmarks so `Site A` and `Site B` are nested under `Findings`.
+
+Atomic scope:
+Only the page reorder and bookmark hierarchy rebuild are explicitly requested.
+
+Expected output type:
+A revised .pdf document with corrected page order and bookmark hierarchy.

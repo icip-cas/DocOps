@@ -1,0 +1,32 @@
+{
+  "task_id": "excelc_007",
+  "task_dir_name": "excelc_007_delete_archive_and_generate_cover_note_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "delete -> generate",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excelc_007_delete_archive_and_generate_cover_note_seed.xlsx",
+  "source_doc_path": "excel/excelc_007_delete_archive_and_generate_cover_note_seed.xlsx",
+  "task_description_filename": "excelc_007_delete_archive_and_generate_cover_note_seed.txt",
+  "task_description_path": "excel/excelc_007_delete_archive_and_generate_cover_note_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/excelc_007_delete_archive_and_generate_cover_note_seed.xlsx",
+  "output_path": "/root/submission/excelc_007_delete_archive_and_generate_cover_note_seed.xlsx",
+  "output_filename": "excelc_007_delete_archive_and_generate_cover_note_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook still contains an obsolete archive sheet and needs a concise cover note for reviewers.",
+  "single_step_benchmark_instruction": "Delete the worksheet named `Archive_OLD`, then write exactly two short lines into `Cover!B3`: the first must start with `Supplier:` and the second must start with `Inspection:`.",
+  "atomic_scope": "Only the archive-sheet deletion and the two-sentence cover note are explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook without `Archive_OLD` and with a two-sentence note in `Cover!B3`.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- No tab reorder is required\n- Keep the note concise and grounded in the workbook context"
+  }
+}

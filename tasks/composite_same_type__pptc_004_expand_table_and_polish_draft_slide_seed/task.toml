@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__composite_same_type__pptc_004_expand_table_and_polish_draft_slide_seed"
+description = "pptc_004 - composite same-type task for DocumentBenchmark batch v1."
+authors = []
+keywords = ["ppt", "s4-table-sheet-ops", "c2-editing", "document-processing", "composite", "same-doc-type"]
+
+[metadata]
+difficulty_level = "L2-composite"
+benchmark_split = "composite_same_type"
+difficulty = "Medium-Hard"
+category = "document-processing"
+tags = ["ppt", "s4-table-sheet-ops", "c2-editing", "document-processing", "composite", "same-doc-type"]
+task_id = "pptc_004"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Composite"
+source_type = "Composite same-type benchmark seed"
+verifier_mode = "semantic-strict"
+composition_type = "same-doc-type"
+composition_pattern = "restructure -> rewrite"
+atomic_operations = ["S4 Table/Sheet ops", "C2 Editing"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptc_004_expand_table_and_polish_draft_slide_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptc_004_expand_table_and_polish_draft_slide_seed.pptx"
+TASK_ID = "pptc_004"
+DOC_TYPE = "ppt"
+
+[solution.env]

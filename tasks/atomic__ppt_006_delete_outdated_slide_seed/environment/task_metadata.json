@@ -1,0 +1,31 @@
+{
+  "task_id": "ppt_006",
+  "task_dir_name": "ppt_006_delete_outdated_slide_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "S1 Insert/Delete",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "ppt_006_delete_outdated_slide_seed.pptx",
+  "source_doc_path": "ppt/ppt_006_delete_outdated_slide_seed.pptx",
+  "task_description_filename": "ppt_006_delete_outdated_slide_seed.txt",
+  "task_description_path": "ppt/ppt_006_delete_outdated_slide_seed.txt",
+  "input_path": "/root/ppt_006_delete_outdated_slide_seed.pptx",
+  "output_path": "/root/submission/ppt_006_delete_outdated_slide_seed.pptx",
+  "output_filename": "ppt_006_delete_outdated_slide_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck still contains one outdated appendix slide from a previous reporting cycle.",
+  "single_step_benchmark_instruction": "Delete the slide titled `Old Appendix (DELETE ME)`.",
+  "atomic_scope": "Only slide deletion is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with the outdated slide removed.",
+  "inspired_by": [
+    {
+      "title": "Live Event Production: Managing PowerPoint decks",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1rzzm9l/live_event_production_managing_powerpoint_decks/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The slide is fully formatted, so deletion requires confidence rather than obvious corruption\n- The rest of the deck should remain unchanged\n- Page order must stay coherent after deletion"
+  }
+}

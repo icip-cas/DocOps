@@ -1,0 +1,276 @@
+{
+  "task_id": "docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet",
+  "task_dir_name": "docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet",
+  "doc_type": "pdf+xlsx+docx",
+  "primary_modality": "PDF (.pdf), Excel (.xlsx), and Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops",
+    "S5 PDF bookmark ops"
+  ],
+  "num_atomic_operations": 10,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "lot-master-and-rules-filtering -> public-PDF-field-safety-notice -> internal-XLSX-reconciliation -> regulatory-DOCX-cover-memo -> cross-output-public-internal-boundary-consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/affected_lot_master.xlsx",
+    "/root/customer_response_export.xlsx",
+    "/root/field_action_regulatory_rules.pdf",
+    "/root/internal_root_cause_note.pdf"
+  ],
+  "output_paths": {
+    "notice_pdf": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_notice_pdf.pdf",
+    "reconciliation_workbook": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_reconciliation_workbook.xlsx",
+    "cover_memo": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_cover_memo.docx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_notice_pdf.pdf",
+  "output_filename": "customer_field_safety_notice.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Prepare a public customer field safety notice PDF, an internal Excel reconciliation workbook, and a regulatory cover memo from a draft notice, affected-lot master, raw customer response export, publication rules, and internal root-cause note while preventing internal engineering/legal details from leaking into the public notice.",
+  "single_step_benchmark_instruction": "Create customer_field_safety_notice.pdf, field_action_reconciliation.xlsx, and regulatory_cover_memo.docx. Publish only FA-01 through FA-06 in the PDF, retain FA-INT-07 and FA-LEGAL-08 only in the workbook, preserve workbook formulas/tables/validation/hidden sheets/print areas, and ensure the DOCX cover memo reconciles the PDF notice with the workbook using a real TOC.",
+  "atomic_scope": "Cross-document, multi-output workflow with public/internal boundary enforcement, PDF navigation, Word TOC, and Excel native controls.",
+  "expected_output_type": "A .pdf public notice, .xlsx reconciliation workbook, and .docx cover memo saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Medical-device recall and field-correction workflows require customer notification, affected-product scope control, and correction/removal records",
+      "url": "https://www.fda.gov/medical-devices/medical-device-recalls"
+    },
+    {
+      "title": "Document-control pain point: public customer packets and internal reconciliation sheets often drift when affected-product lists and confidential notes are reconciled manually",
+      "url": "local:DocumentBenchmark L4 scenario synthesis"
+    }
+  ],
+  "verifier_expectations": {
+    "pdf_output": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_notice_pdf.pdf",
+    "xlsx_output": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_reconciliation_workbook.xlsx",
+    "docx_output": "/root/submission/docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet_cover_memo.docx",
+    "public_ids": [
+      "FA-01",
+      "FA-02",
+      "FA-03",
+      "FA-04",
+      "FA-05",
+      "FA-06"
+    ],
+    "internal_ids": [
+      "FA-INT-07",
+      "FA-LEGAL-08"
+    ],
+    "public_lots": [
+      [
+        "FA-01",
+        "GlucoTrack GT-200 Sensor",
+        "LOT-2147A",
+        "United States",
+        "Quarantine unused sensors; update meter firmware v2.8",
+        "2026-07-31"
+      ],
+      [
+        "FA-02",
+        "GlucoTrack GT-200 Sensor",
+        "LOT-2148B",
+        "Canada",
+        "Quarantine unused sensors; update meter firmware v2.8",
+        "2026-07-31"
+      ],
+      [
+        "FA-03",
+        "GlucoTrack GT-200 Sensor",
+        "LOT-2151D",
+        "European Union",
+        "Apply corrected IFU insert and confirm training",
+        "2026-08-07"
+      ],
+      [
+        "FA-04",
+        "GlucoTrack GT-200 Sensor",
+        "LOT-2160C",
+        "Australia",
+        "Apply corrected IFU insert and confirm training",
+        "2026-08-07"
+      ],
+      [
+        "FA-05",
+        "KetoCheck KC-10 Strip",
+        "LOT-4412A",
+        "United States",
+        "Stop use for high-humidity storage locations",
+        "2026-08-14"
+      ],
+      [
+        "FA-06",
+        "KetoCheck KC-10 Strip",
+        "LOT-4413B",
+        "Canada",
+        "Stop use for high-humidity storage locations",
+        "2026-08-14"
+      ]
+    ],
+    "customer_rows": [
+      [
+        "Harborview Clinic",
+        "FA-01",
+        "CH-101",
+        "Pending response",
+        "2026-06-18",
+        42
+      ],
+      [
+        "Northlake Diabetes Center",
+        "FA-01",
+        "CH-102",
+        "Completed",
+        "2026-06-19",
+        0
+      ],
+      [
+        "Maple Health Network",
+        "FA-02",
+        "CH-103",
+        "Completed",
+        "2026-06-20",
+        0
+      ],
+      [
+        "Riverside Pharmacy",
+        "FA-03",
+        "CH-104",
+        "Pending response",
+        "2026-06-21",
+        18
+      ],
+      [
+        "Metro Hospital",
+        "FA-04",
+        "CH-105",
+        "Training scheduled",
+        "2026-06-22",
+        12
+      ],
+      [
+        "Cedar Point Urgent Care",
+        "FA-05",
+        "CH-106",
+        "Pending response",
+        "2026-06-22",
+        9
+      ],
+      [
+        "Prairie Home Health",
+        "FA-06",
+        "CH-107",
+        "Completed",
+        "2026-06-23",
+        0
+      ]
+    ],
+    "pdf_outline": [
+      "1. Field Safety Notice Summary",
+      "2. Affected Products",
+      "3. Required Customer Actions",
+      "4. Response Form and Contacts"
+    ],
+    "pdf_required_phrases": [
+      "Customer Field Safety Notice",
+      "Action type: Customer notification and field correction.",
+      "This notice covers FA-01, FA-02, FA-03, FA-04, FA-05, and FA-06 only.",
+      "potential sensor reading shift under specific storage conditions",
+      "Response form fields: organization name, contact name, affected lots on hand, action completed, transfer confirmation, signature, and date."
+    ],
+    "public_forbidden_text": [
+      "FA-INT-07",
+      "FA-LEGAL-08",
+      "PILOT-77",
+      "LOT-2199X",
+      "ASIC comparator drift",
+      "Attorney work product",
+      "Harborview Clinic",
+      "CH-101",
+      "open-unit counts",
+      "GT-300 Pre-release"
+    ],
+    "workbook_sheet_order": [
+      "Lot Reconciliation",
+      "Customer Responses",
+      "Response Summary",
+      "Rules",
+      "Internal Notes"
+    ],
+    "lot_table_ref": "A1:L9",
+    "response_table_ref": "A1:G8",
+    "hidden_sheets": [
+      "Rules",
+      "Internal Notes"
+    ],
+    "defined_names": [
+      "publish_choices",
+      "response_status_choices",
+      "region_choices"
+    ],
+    "data_validation_ranges": {
+      "Lot Reconciliation": [
+        "F2:F9",
+        "D2:D9"
+      ],
+      "Customer Responses": [
+        "D2:D8"
+      ]
+    },
+    "freeze_panes": {
+      "Lot Reconciliation": "A2",
+      "Customer Responses": "A2"
+    },
+    "print_areas": {
+      "Lot Reconciliation": "'Lot Reconciliation'!$A$1:$L$9",
+      "Customer Responses": "'Customer Responses'!$A$1:$G$8",
+      "Response Summary": "'Response Summary'!$A$1:$B$6"
+    },
+    "formula_cells": {
+      "Lot Reconciliation!H2": "=IF(F2=\"Yes\",\"IN NOTICE\",\"INTERNAL\")",
+      "Lot Reconciliation!I8": "=IF(L8=\"PUBLIC\",\"OK\",\"RESTRICTED\")",
+      "Lot Reconciliation!K2": "=COUNTIF('Customer Responses'!$B:$B,A2)",
+      "Customer Responses!G2": "=IF(OR(D2=\"Pending response\",F2>0),\"Yes\",\"No\")",
+      "Customer Responses!G8": "=IF(OR(D8=\"Pending response\",F8>0),\"Yes\",\"No\")",
+      "Response Summary!B2": "=COUNTIF('Lot Reconciliation'!F:F,\"Yes\")",
+      "Response Summary!B3": "=COUNTIF('Lot Reconciliation'!F:F,\"No\")",
+      "Response Summary!B4": "=COUNTIF('Customer Responses'!G:G,\"Yes\")"
+    },
+    "doc_heading_order": [
+      "Regulatory Cover Memo",
+      "Scope",
+      "Public Notice Package",
+      "Reconciliation Controls",
+      "Exclusions and Internal Retention"
+    ],
+    "doc_required_paragraphs": [
+      "This memo packages the customer field safety notice for FA-01 through FA-06 and reconciles the notice against the internal field action workbook.",
+      "The public customer notice contains six publishable affected product rows and excludes engineering pilot and legal-hold rows.",
+      "The workbook keeps lot reconciliation, customer response status, summary formulas, validation lists, print areas, and a hidden rules sheet.",
+      "The PDF notice and workbook must agree that FA-01, FA-02, FA-03, FA-04, FA-05, and FA-06 are the only notice-published rows.",
+      "Confidential root-cause detail and attorney-review text remain only in the hidden internal notes sheet."
+    ],
+    "doc_header_contains": "Public notice rows: 6",
+    "doc_footer_contains": "field_action_reconciliation.xlsx",
+    "doc_highlight_text": "High-risk follow-up: CH-101, CH-104, and CH-106 remain pending and require outreach before the customer response deadline.",
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Internal Root Cause - Remove",
+      "ASIC comparator drift",
+      "PILOT-77|Internal Lab"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_049_pdf_xlsx_docx_device_field_safety_recall_packet"
+}

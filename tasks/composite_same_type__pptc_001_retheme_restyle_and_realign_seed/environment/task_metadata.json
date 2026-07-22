@@ -1,0 +1,33 @@
+{
+  "task_id": "pptc_001",
+  "task_dir_name": "pptc_001_retheme_restyle_and_realign_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "F4 Theme transfer",
+    "F1 Style consistency",
+    "F3 Layout control"
+  ],
+  "num_atomic_operations": 3,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "retheme -> restyle -> realign",
+  "difficulty": "Hard",
+  "source_doc_filename": "pptc_001_retheme_restyle_and_realign_seed.pptx",
+  "source_doc_path": "ppt/pptc_001_retheme_restyle_and_realign_seed.pptx",
+  "task_description_filename": "pptc_001_retheme_restyle_and_realign_seed.txt",
+  "task_description_path": "ppt/pptc_001_retheme_restyle_and_realign_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_001_retheme_restyle_and_realign_seed.pptx",
+  "output_path": "/root/submission/pptc_001_retheme_restyle_and_realign_seed.pptx",
+  "output_filename": "pptc_001_retheme_restyle_and_realign_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck needs a coherent theme, consistent typography, and aligned workstream cards.",
+  "single_step_benchmark_instruction": "Apply a unified navy professional theme across the deck, make slide titles and card/body text stylistically consistent, and align the three workstream cards on Slide 2 onto one even horizontal line with equal spacing.",
+  "atomic_scope": "Only the deck-wide theming, style consistency, and Slide 2 card alignment are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with coherent theme, consistent styling, and corrected card alignment.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Storyline issues may remain\n- Do not reorder slides"
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "task_id": "docops_v2_l4_075_word_xlsx_leave_accommodation_case_file",
+  "task_dir_name": "docops_v2_l4_075_word_xlsx_leave_accommodation_case_file",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_input.docx",
+  "supporting_input_paths": [
+    "/root/employee_request_form.docx",
+    "/root/medical_certification.pdf",
+    "/root/attendance_hours.xlsx",
+    "/root/job_description.docx",
+    "/root/essential_functions_matrix.xlsx",
+    "/root/manager_notes.docx",
+    "/root/policy_handbook_excerpt.pdf",
+    "/root/accommodation_options.xlsx",
+    "/root/internal_legal_strategy.pdf"
+  ],
+  "output_paths": {
+    "determination_memo": "/root/submission/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_determination_memo.docx",
+    "case_tracker": "/root/submission/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_case_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_determination_memo.docx",
+  "output_filename": "leave_accommodation_determination.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-privacy-strict",
+  "user_task_description": "Create a manager-safe leave accommodation determination memo and HR case tracker workbook from ten source documents while calculating eligibility, leave-bank, notice-deadline, and manager-packet audit controls, and keeping medical and legal strategy details out of public/manager-facing outputs.",
+  "single_step_benchmark_instruction": "Create leave_accommodation_determination.docx and leave_accommodation_case_tracker.xlsx. Determine FMLA eligibility, approve the correct intermittent leave/accommodation package, calculate leave-bank and notice-deadline controls, build a manager-packet audit, preserve workbook formulas/tables/validation/hidden sheets, and keep medical diagnosis, medication, provider, and legal strategy details out of manager-facing materials.",
+  "expected_output_type": "A .docx determination memo and .xlsx leave accommodation case tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "DOL FMLA Employee Guide covers eligibility, leave process, notices, certification, and return-to-work protections",
+      "url": "https://www.dol.gov/agencies/whd/fmla/employee-guide"
+    },
+    {
+      "title": "EEOC reasonable accommodation guidance describes the ADA interactive process and confidentiality limits",
+      "url": "https://www.eeoc.gov/laws/guidance/enforcement-guidance-reasonable-accommodation-and-undue-hardship-under-ada"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_determination_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_075_word_xlsx_leave_accommodation_case_file_case_tracker.xlsx",
+    "case_rows": [
+      [
+        "FMLA tenure",
+        43,
+        ">=12 months",
+        "=IF(B2>=12,\"Pass\",\"Fail\")",
+        "HRIS extract",
+        "HR"
+      ],
+      [
+        "Hours worked",
+        1304,
+        ">=1250 hours",
+        "=IF(B3>=1250,\"Pass\",\"Fail\")",
+        "Attendance log",
+        "HR"
+      ],
+      [
+        "75-mile headcount",
+        68,
+        ">=50 employees",
+        "=IF(B4>=50,\"Pass\",\"Fail\")",
+        "Site roster",
+        "HR"
+      ],
+      [
+        "Qualifying need",
+        "Certified need for intermittent leave",
+        "Certification sufficient",
+        "Pass",
+        "Medical certification",
+        "HR confidential"
+      ],
+      [
+        "Prior FMLA used",
+        96,
+        "Track against 480-hour bank",
+        "Tracked",
+        "Attendance log",
+        "HR confidential"
+      ],
+      [
+        "Manager-visible basis",
+        "Work restrictions and schedule limits only",
+        "No medical detail",
+        "Ready",
+        "Determination memo",
+        "Manager"
+      ]
+    ],
+    "leave_rows": [
+      [
+        "Annual FMLA bank",
+        480,
+        "12 weeks x 40 hours",
+        "Policy",
+        "HR"
+      ],
+      [
+        "Prior FMLA used",
+        96,
+        "Attendance log through 2026-06-18",
+        "Actual",
+        "HR"
+      ],
+      [
+        "Remaining before request",
+        "=B2-B3",
+        "Calculated",
+        "Open",
+        "HR"
+      ],
+      [
+        "Approved intermittent cap",
+        64,
+        "Up to 8 hours/week for 8 weeks",
+        "Approved",
+        "Manager"
+      ],
+      [
+        "Remaining after approval",
+        "=B4-B5",
+        "Calculated",
+        "Open",
+        "HR"
+      ],
+      [
+        "First review date",
+        "2026-07-22",
+        "30-day interactive-process check",
+        "Pending",
+        "Manager"
+      ]
+    ],
+    "accom_rows": [
+      [
+        "ACC-01",
+        "2026-06-24 to 2026-08-16",
+        "Allow intermittent FMLA absences up to 8 hours per week with normal call-in unless emergency.",
+        "Approved",
+        "2026-07-22",
+        "Manager"
+      ],
+      [
+        "ACC-02",
+        "2026-06-24 to 2026-08-16",
+        "Use a temporary 10:00 AM-6:30 PM local schedule on treatment days.",
+        "Approved",
+        "2026-07-22",
+        "Manager"
+      ],
+      [
+        "ACC-03",
+        "2026-06-24 to 2026-08-16",
+        "Permit remote work Tuesday and Thursday when job duties can be completed securely.",
+        "Trial",
+        "2026-07-22",
+        "Manager"
+      ],
+      [
+        "ACC-04",
+        "By 2026-06-26",
+        "Provide ergonomic chair and glare-reduction screen at the Denver workstation.",
+        "Approved",
+        "2026-07-22",
+        "Manager"
+      ],
+      [
+        "ACC-05",
+        "During approved absence blocks",
+        "Do not remove customer escalation duty; use backup coverage only during approved absence blocks.",
+        "Modified",
+        "2026-08-16",
+        "Manager"
+      ]
+    ],
+    "comm_rows": [
+      [
+        "LOG-01",
+        "2026-06-19",
+        "Employee request received",
+        "Request form",
+        "Completed",
+        "HR"
+      ],
+      [
+        "LOG-02",
+        "2026-06-20",
+        "Eligibility notice and rights packet sent",
+        "Policy handbook",
+        "Completed",
+        "HR"
+      ],
+      [
+        "LOG-03",
+        "2026-06-21",
+        "Designation decision prepared",
+        "Certification and hours log",
+        "Completed",
+        "HR"
+      ],
+      [
+        "LOG-04",
+        "2026-06-22",
+        "Manager instruction packet ready",
+        "Determination memo",
+        "Ready",
+        "Manager"
+      ],
+      [
+        "LOG-05",
+        "2026-07-22",
+        "First interactive-process review",
+        "Accommodation plan",
+        "Pending",
+        "Manager"
+      ]
+    ],
+    "manager_rows": [
+      [
+        "Tell manager",
+        "Approved schedule, absence cap, coverage process, equipment, and review dates."
+      ],
+      [
+        "Do not tell manager",
+        "Provider names, treatment notes, condition specifics, or legal strategy."
+      ],
+      [
+        "Escalation rule",
+        "Any attendance issue during the approved window returns to HR before discipline."
+      ]
+    ],
+    "deadline_rows": [
+      [
+        "Eligibility notice",
+        "2026-06-19",
+        "=DATE(2026,6,19)+5",
+        "2026-06-20",
+        "Completed",
+        "Within notice clock"
+      ],
+      [
+        "Certification review",
+        "2026-06-19",
+        "=DATE(2026,6,19)+5",
+        "2026-06-21",
+        "Completed",
+        "Certification sufficient"
+      ],
+      [
+        "Designation decision",
+        "2026-06-21",
+        "=DATE(2026,6,21)+5",
+        "2026-06-22",
+        "Completed",
+        "Within designation clock"
+      ],
+      [
+        "Manager packet",
+        "2026-06-22",
+        "=DATE(2026,6,22)+2",
+        "2026-06-22",
+        "Ready",
+        "Before effective date"
+      ],
+      [
+        "Interactive-process review",
+        "2026-06-24",
+        "=DATE(2026,6,24)+28",
+        "2026-07-22",
+        "Pending",
+        "30-day check"
+      ]
+    ],
+    "audit_rows": [
+      [
+        "AUD-01",
+        "Approved absence cap appears",
+        "Leave Bank and memo",
+        "Pass",
+        "64 hours"
+      ],
+      [
+        "AUD-02",
+        "First review date appears",
+        "Leave Bank and memo",
+        "Pass",
+        "2026-07-22"
+      ],
+      [
+        "AUD-03",
+        "Provider names excluded",
+        "Manager instructions and memo",
+        "Pass",
+        "No provider name appears"
+      ],
+      [
+        "AUD-04",
+        "Condition specifics excluded",
+        "Manager instructions and memo",
+        "Pass",
+        "Restrictions and schedule limits only"
+      ],
+      [
+        "AUD-05",
+        "Legal strategy excluded",
+        "Manager instructions and memo",
+        "Pass",
+        "Escalate to HR before discipline"
+      ]
+    ],
+    "medical_rows": [
+      [
+        "Diagnosis",
+        "migraine with aura"
+      ],
+      [
+        "Medication",
+        "topiramate"
+      ],
+      [
+        "Provider",
+        "Dr. Selene Ortega, neurology"
+      ],
+      [
+        "Restricted detail",
+        "Light sensitivity and unpredictable flare days are medical details for HR only."
+      ]
+    ],
+    "legal_rows": [
+      [
+        "Restricted note",
+        "If operations complain, do not discipline anyway; assess accommodation first."
+      ],
+      [
+        "Litigation note",
+        "Avoid performance termination while protected leave is pending."
+      ]
+    ],
+    "forbidden_public": [
+      "migraine with aura",
+      "topiramate",
+      "Dr. Selene Ortega",
+      "neurology",
+      "diagnosis",
+      "medication",
+      "lawsuit",
+      "settlement",
+      "discipline anyway",
+      "performance termination"
+    ],
+    "sheet_order": [
+      "Case Summary",
+      "Leave Bank",
+      "Accommodation Plan",
+      "Communications Log",
+      "Manager Instructions",
+      "Notice Deadlines",
+      "Manager Packet Audit",
+      "Medical Detail",
+      "Legal Strategy",
+      "Rules"
+    ],
+    "tables": {
+      "Case Summary": [
+        "case_summary",
+        "A1:F7"
+      ],
+      "Leave Bank": [
+        "leave_bank",
+        "A1:E7"
+      ],
+      "Accommodation Plan": [
+        "accommodation_plan",
+        "A1:F6"
+      ],
+      "Communications Log": [
+        "communications_log",
+        "A1:F6"
+      ],
+      "Manager Instructions": [
+        "manager_instructions",
+        "A1:B4"
+      ],
+      "Notice Deadlines": [
+        "notice_deadlines",
+        "A1:F6"
+      ],
+      "Manager Packet Audit": [
+        "manager_packet_audit",
+        "A1:E6"
+      ]
+    },
+    "hidden_sheets": [
+      "Medical Detail",
+      "Legal Strategy",
+      "Rules"
+    ],
+    "defined_names": [
+      "case_status_choices",
+      "accommodation_status_choices",
+      "communication_status_choices",
+      "audit_status_choices"
+    ],
+    "data_validation_ranges": {
+      "Case Summary": [
+        "D2:D7"
+      ],
+      "Accommodation Plan": [
+        "D2:D6"
+      ],
+      "Communications Log": [
+        "E2:E6"
+      ],
+      "Notice Deadlines": [
+        "E2:E6"
+      ],
+      "Manager Packet Audit": [
+        "D2:D6"
+      ]
+    },
+    "print_areas": {
+      "Case Summary": "'Case Summary'!$A$1:$F$7",
+      "Leave Bank": "'Leave Bank'!$A$1:$E$7",
+      "Accommodation Plan": "'Accommodation Plan'!$A$1:$F$6",
+      "Communications Log": "'Communications Log'!$A$1:$F$6",
+      "Manager Instructions": "'Manager Instructions'!$A$1:$B$4",
+      "Notice Deadlines": "'Notice Deadlines'!$A$1:$F$6",
+      "Manager Packet Audit": "'Manager Packet Audit'!$A$1:$E$6"
+    },
+    "formula_cells": {
+      "Case Summary!D2": "=IF(B2>=12,\"Pass\",\"Fail\")",
+      "Case Summary!D3": "=IF(B3>=1250,\"Pass\",\"Fail\")",
+      "Case Summary!D4": "=IF(B4>=50,\"Pass\",\"Fail\")",
+      "Leave Bank!B4": "=B2-B3",
+      "Leave Bank!B6": "=B4-B5",
+      "Notice Deadlines!C2": "=DATE(2026,6,19)+5",
+      "Notice Deadlines!C6": "=DATE(2026,6,24)+28"
+    },
+    "doc_heading_order": [
+      "Leave Accommodation Determination",
+      "Determination",
+      "Eligibility Summary",
+      "Manager Instructions",
+      "Notice and Audit Controls",
+      "Confidentiality Boundary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "Approve FMLA-protected intermittent leave up to 8 hours per week from 2026-06-24 through 2026-08-16.",
+      "Approve a temporary schedule adjustment, two remote-work days where duties can be completed securely, and workstation equipment controls.",
+      "The manager packet audit confirms the 64-hour cap, 2026-07-22 review date, and exclusion of provider names, condition specifics, and legal strategy.",
+      "Share only restrictions, schedule limits, equipment needs, coverage process, and review dates with the manager.",
+      "This memo and leave_accommodation_case_tracker.xlsx agree on the 64 approved intermittent hours, the first review date of 2026-07-22, and five passing manager-packet audit controls."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Manager Note - Unsafe Draft",
+      "migraine with aura",
+      "topiramate",
+      "Dr. Selene Ortega",
+      "neurology",
+      "diagnosis",
+      "medication",
+      "lawsuit",
+      "settlement",
+      "discipline anyway",
+      "performance termination"
+    ],
+    "doc_header_contains": "Manager-safe version",
+    "doc_footer_contains": "leave_accommodation_case_tracker.xlsx",
+    "doc_highlight_text": "Escalate any attendance issue during the approved window to HR before discipline."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_075_word_xlsx_leave_accommodation_case_file"
+}

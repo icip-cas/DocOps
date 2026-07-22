@@ -1,0 +1,28 @@
+Task ID: pdf_009
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: F4 Theme transfer
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: I need to translate a PDF file into another language while preserving the exact layout.
+  URL: https://www.reddit.com/r/pdf/comments/1sm0hrg/i_need_to_translate_a_pdf_file_into_another/
+- Title: I need Acrobat editor alternative
+  URL: https://www.reddit.com/r/pdf/comments/1sja7un/i_need_acrobat_editor_alternative/
+
+User Task Description:
+This PDF proposal uses inconsistent accent colors across pages and callout elements.
+
+Single-Step Benchmark Instruction:
+Apply a cohesive navy-based corporate theme across the whole PDF, including heading bars and callout boxes, while keeping the text content unchanged.
+
+Atomic Scope:
+Only theme transfer is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The visual system spans multiple pages and multiple element types
+- Local recoloring is not enough; the result should feel globally coherent
+- Content and layout should stay intact while the theme changes
+
+Expected Output Type:
+A revised PDF with a consistent document-wide theme.

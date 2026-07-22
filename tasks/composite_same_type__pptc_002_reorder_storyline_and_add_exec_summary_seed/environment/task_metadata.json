@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_002",
+  "task_dir_name": "pptc_002_reorder_storyline_and_add_exec_summary_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> generate",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_002_reorder_storyline_and_add_exec_summary_seed.pptx",
+  "source_doc_path": "ppt/pptc_002_reorder_storyline_and_add_exec_summary_seed.pptx",
+  "task_description_filename": "pptc_002_reorder_storyline_and_add_exec_summary_seed.txt",
+  "task_description_path": "ppt/pptc_002_reorder_storyline_and_add_exec_summary_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_002_reorder_storyline_and_add_exec_summary_seed.pptx",
+  "output_path": "/root/submission/pptc_002_reorder_storyline_and_add_exec_summary_seed.pptx",
+  "output_filename": "pptc_002_reorder_storyline_and_add_exec_summary_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck should follow an executive story order and open with a constrained summary slide.",
+  "single_step_benchmark_instruction": "Reorder the deck to `Executive Summary -> Root Cause -> Implementation Plan -> Appendix`, then populate the `Executive Summary` slide with exactly three bullets using the prefixes `Vendor:`, `Inspection:`, and `Staffing:` in that order.",
+  "atomic_scope": "Only the slide reorder and the constrained three-bullet summary content are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with the required slide order and a grounded summary slide.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Existing design roughness may remain outside the summary slide\n- Do not add extra slides"
+  }
+}

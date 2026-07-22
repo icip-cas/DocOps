@@ -1,0 +1,28 @@
+Task ID: ppt_003
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: F4 Theme transfer
+Difficulty: Medium
+
+Inspired By:
+- Title: Why do so many presentations still have inconsistent colors and layouts? Are people not using Slide Master?
+  URL: https://www.reddit.com/r/powerpoint/comments/1sknmk4/why_do_so_many_presentations_still_have/
+- Title: Good all-round PowerPoint theme for lectures?
+  URL: https://www.reddit.com/r/powerpoint/comments/1s7z1dz/good_allround_powerpoint_theme_for_lectures/
+
+User Task Description:
+This deck was assembled from mismatched slides and needs a consistent visual theme.
+
+Single-Step Benchmark Instruction:
+Apply a unified blue professional theme across the whole presentation.
+
+Atomic Scope:
+Only global theme transfer is explicitly requested in this task.
+
+Latent Issues Intentionally Left In The Seed:
+- Some spacing is awkward
+- Slide layouts are basic
+- Content wording could be improved, but that is not the explicit request
+
+Expected Output Type:
+A revised .pptx deck with a coherent blue theme.

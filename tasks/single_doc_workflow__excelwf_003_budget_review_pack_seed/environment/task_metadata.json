@@ -1,0 +1,65 @@
+{
+  "task_id": "excelwf_003",
+  "task_dir_name": "excelwf_003_budget_review_pack_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C4 Computation",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "F2 Highlighting",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "summary-sheet -> totals-formulas -> tab-reorder",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Build a budget review workbook from internal sheets.",
+  "single_step_benchmark_instruction": "Create the summary sheet, add the totals formulas, turn the summary block into a formal table named BudgetSummary, add a reviewer note on the summary title cell, and reorder the tabs so the budget review pack reads cleanly from summary to archive.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/excelwf_003_budget_review_pack_seed.xlsx",
+  "output_path": "/root/submission/excelwf_003_budget_review_pack_seed.xlsx",
+  "output_filename": "excelwf_003_budget_review_pack_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Summary",
+      "Budget Q1",
+      "Budget Q2",
+      "Archive"
+    ],
+    "exact_cells": {
+      "Summary!A1": "Metric",
+      "Summary!B2": "=SUM('Budget Q1'!B2:B3)",
+      "Summary!B3": "=SUM('Budget Q2'!B2:B3)"
+    },
+    "formula_cells": {
+      "Summary!B2": "=SUM('Budget Q1'!B2:B3)",
+      "Summary!B3": "=SUM('Budget Q2'!B2:B3)"
+    },
+    "highlight_rows": [],
+    "nonhighlight_rows": [],
+    "sheet_states": {
+      "Archive": "hidden"
+    },
+    "freeze_panes": {
+      "Summary": "A2"
+    },
+    "unchanged_sheets": [
+      "Archive"
+    ],
+    "table_refs": {
+      "Summary!BudgetSummary": "A1:B3"
+    },
+    "comments_contain": {
+      "Summary!A1": "Budget review ready"
+    }
+  }
+}

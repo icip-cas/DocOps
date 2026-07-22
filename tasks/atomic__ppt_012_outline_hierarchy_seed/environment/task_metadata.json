@@ -1,0 +1,26 @@
+{
+  "task_id": "ppt_012",
+  "task_dir_name": "ppt_012_outline_hierarchy_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "S3 Hierarchy editing",
+  "difficulty": "Medium",
+  "source_doc_filename": "ppt_012_outline_hierarchy_seed.pptx",
+  "source_doc_path": "ppt/ppt_012_outline_hierarchy_seed.pptx",
+  "task_description_filename": "ppt_012_outline_hierarchy_seed.txt",
+  "task_description_path": "ppt/ppt_012_outline_hierarchy_seed.txt",
+  "input_path": "/root/ppt_012_outline_hierarchy_seed.pptx",
+  "output_path": "/root/submission/ppt_012_outline_hierarchy_seed.pptx",
+  "output_filename": "ppt_012_outline_hierarchy_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This slide outline has the wrong bullet hierarchy: some items that should be sub-points are currently at the top level.",
+  "single_step_benchmark_instruction": "Fix the outline hierarchy so that task-level items are nested correctly under their parent workstreams.",
+  "atomic_scope": "Only hierarchy editing is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with corrected bullet hierarchy.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The text content itself is fine, but the structural levels are wrong\n- A visual fix is not enough if the logical bullet levels remain incorrect\n- Multiple lines need consistent promotion/demotion decisions"
+  }
+}

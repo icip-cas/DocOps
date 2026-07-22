@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_008
+
+Doc type: excel
+Atomic operations: S2 Reorder, F4 Theme transfer
+Composition pattern: reorder -> retheme
+Difficulty: Medium-Hard
+
+User-facing goal:
+This review pack should follow a clean tab order and use a cohesive blue theme.
+
+Single-step benchmark instruction:
+Reorder the workbook tabs to `Cover -> Metrics -> Risks -> Notes`, then apply a muted blue theme to the sheet title bands and visible tab colors.
+
+Atomic scope:
+Only the requested sheet reorder and visual theme transfer are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with the target tab order and a blue review theme.

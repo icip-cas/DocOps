@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_003",
+  "task_dir_name": "pdfc_003_fill_summary_box_and_apply_theme_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C3 Generation",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "generate -> retheme",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_003_fill_summary_box_and_apply_theme_seed.pdf",
+  "source_doc_path": "pdf/pdfc_003_fill_summary_box_and_apply_theme_seed.pdf",
+  "task_description_filename": "pdfc_003_fill_summary_box_and_apply_theme_seed.txt",
+  "task_description_path": "pdf/pdfc_003_fill_summary_box_and_apply_theme_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_003_fill_summary_box_and_apply_theme_seed.pdf",
+  "output_path": "/root/submission/pdfc_003_fill_summary_box_and_apply_theme_seed.pdf",
+  "output_filename": "pdfc_003_fill_summary_box_and_apply_theme_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report has an empty summary box and inconsistent accent colors.",
+  "single_step_benchmark_instruction": "Replace the placeholder text in the `Management Summary` box on page 1 with exactly three short lines starting `Supplier:`, `Inspection:`, and `Staffing:` in that order, then retheme the title bar and callout boxes to a cohesive blue-gray palette.",
+  "atomic_scope": "Only the three constrained summary bullets and the requested blue-gray theme update are explicitly requested.",
+  "expected_output_type": "A revised .pdf document with a filled summary box and a cohesive blue-gray theme.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The rest of the report text should remain unchanged\n- Do not add extra pages"
+  }
+}

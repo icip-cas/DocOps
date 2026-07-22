@@ -1,0 +1,203 @@
+{
+  "task_id": "wordxr_003",
+  "task_dir_name": "wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-metadata -> preserve-toc -> replace-ddq-sections -> insert-heading2 -> update-exhibit-appendix",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "supporting_input_paths": [
+    "/root/response_fields.xlsx",
+    "/root/release_extract.pdf",
+    "/root/exhibit_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "output_filename": "wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Create the exhibit-index hierarchy from the request list.",
+  "single_step_benchmark_instruction": "Create the exhibit-index hierarchy from the request list, populate the appendix table from the inventory, insert the required Heading 2 exception note, and keep the appendix in its own section with a distinct header and footer.",
+  "atomic_scope": "Only the metadata table, TOC field, named sections, Heading 2 insertion, appendix section header/footer, appendix table, and highlighted exception line are required.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the title logo intact\n- Do not collapse the appendix into the body section"
+  },
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Response Scope",
+        "Heading 1"
+      ],
+      [
+        "Restricted Exhibits",
+        "Heading 1"
+      ],
+      [
+        "Disclosure Controls",
+        "Heading 2"
+      ],
+      [
+        "Exception Watch",
+        "Heading 1"
+      ],
+      [
+        "Exhibit Index",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Response Scope",
+      "Restricted Exhibits",
+      "Disclosure Controls",
+      "Exception Watch",
+      "Exhibit Index"
+    ],
+    "forbidden_paragraphs": [
+      "[Fill]"
+    ],
+    "paragraphs_under_headings": [
+      {
+        "heading": "Response Scope",
+        "exact_lines": [
+          "Release the questionnaire narrative and the final evidence exhibits only."
+        ]
+      },
+      {
+        "heading": "Restricted Exhibits",
+        "exact_lines": [
+          "Keep the penetration-test appendix out of the customer packet."
+        ]
+      },
+      {
+        "heading": "Disclosure Controls",
+        "exact_lines": [
+          "The appendix header must differ from the body header.",
+          "Preserve the built-in TOC field for customer review."
+        ]
+      },
+      {
+        "heading": "Exception Watch",
+        "exact_lines": [
+          "Do not expose the internal remediation tracker in the exhibit appendix."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Customer",
+          "0,1": "Northline Health",
+          "1,0": "Due Date",
+          "1,1": "2025-04-18",
+          "2,0": "Response Version",
+          "2,1": "Response Rev C"
+        }
+      },
+      {
+        "index": 1,
+        "cells": {
+          "0,0": "Exhibit",
+          "0,1": "Description",
+          "0,2": "Release Status",
+          "1,0": "A",
+          "1,1": "SOC 2 bridge letter",
+          "1,2": "Release",
+          "2,0": "B",
+          "2,1": "Security architecture summary",
+          "2,2": "Release",
+          "3,0": "C",
+          "3,1": "Internal remediation tracker",
+          "3,2": "Hold"
+        }
+      }
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 2
+      },
+      {
+        "index": 1,
+        "rows": 4,
+        "cols": 3
+      }
+    ],
+    "style_matches": [
+      {
+        "target_text": "Release the questionnaire narrative and the final evidence exhibits only.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Keep the penetration-test appendix out of the customer packet.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Do not expose the internal remediation tracker in the exhibit appendix.",
+        "reference_text": "Reference body style anchor."
+      }
+    ],
+    "toc_present": true,
+    "section_count": 2,
+    "section_headers": [
+      {
+        "index": 0,
+        "contains": [
+          "DDQ Release Control | External Response Memo"
+        ]
+      },
+      {
+        "index": 1,
+        "contains": [
+          "Appendix B | Exhibit Index"
+        ]
+      }
+    ],
+    "section_footers": [
+      {
+        "index": 0,
+        "contains": [
+          "Main response memo - appendix released as separate exhibit section"
+        ]
+      },
+      {
+        "index": 1,
+        "contains": [
+          "Customer exhibit appendix only"
+        ]
+      }
+    ],
+    "section_links": [
+      {
+        "index": 1,
+        "header": false,
+        "footer": false
+      }
+    ],
+    "header_contains": [
+      "DDQ Release Control | External Response Memo",
+      "Appendix B | Exhibit Index"
+    ],
+    "footer_contains": [
+      "Main response memo - appendix released as separate exhibit section",
+      "Customer exhibit appendix only"
+    ],
+    "inline_shape_count": 1,
+    "highlighted_paragraphs": [
+      "Do not expose the internal remediation tracker in the exhibit appendix."
+    ]
+  }
+}

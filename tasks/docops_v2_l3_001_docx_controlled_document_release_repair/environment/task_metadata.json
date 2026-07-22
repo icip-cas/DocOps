@@ -1,0 +1,241 @@
+{
+  "task_id": "docops_v2_l3_001_docx_controlled_document_release_repair",
+  "input_path": "/root/docops_v2_l3_001_docx_controlled_document_release_repair_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_001_docx_controlled_document_release_repair_output.docx",
+  "output_extension": ".docx",
+  "verifier_expectations": {
+    "headings": [
+      "Controlled Document Release Repair Packet",
+      "Correction Register Applied",
+      "Controlled Document Metadata",
+      "Revision History",
+      "Distribution and Training Workflow",
+      "Obsolete Copy Retirement Checklist",
+      "Final Release Appendix"
+    ],
+    "required_phrases": [
+      "This repaired packet applies the correction register across the controlled document release record.",
+      "QMS-PR-007 version 4.2 is ready for controlled release.",
+      "The effective date is 2026-08-01 and training is due by 2026-08-15.",
+      "Quality Systems Office owns the document and Compliance Director approves the release.",
+      "All release metadata, revision history, training, and obsolete copy steps have been reconciled."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "TODO",
+      "uncertain",
+      "QMS-PR-700",
+      "version 4.1",
+      "2026-07-01",
+      "QA analyst",
+      "Interim Approver",
+      "2026-08-25",
+      "5 years",
+      "2026-09-05",
+      "aproval",
+      "effectve",
+      "obsolte",
+      "distribtuion",
+      "trainng",
+      "retetion"
+    ],
+    "tables": {
+      "Correction Register Applied": [
+        [
+          "Issue",
+          "Correct Public Value",
+          "Applied To"
+        ],
+        [
+          "Document ID",
+          "QMS-PR-007",
+          "Metadata and footer"
+        ],
+        [
+          "Version",
+          "4.2",
+          "Revision history"
+        ],
+        [
+          "Effective date",
+          "2026-08-01",
+          "Metadata"
+        ],
+        [
+          "Owner",
+          "Quality Systems Office",
+          "Metadata"
+        ],
+        [
+          "Approver",
+          "Compliance Director",
+          "Approval record"
+        ],
+        [
+          "Training due",
+          "2026-08-15",
+          "Workflow"
+        ],
+        [
+          "Retention period",
+          "6 years",
+          "Checklist"
+        ]
+      ],
+      "Controlled Document Metadata": [
+        [
+          "Field",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Document ID",
+          "QMS-PR-007",
+          "Corrected"
+        ],
+        [
+          "Version",
+          "4.2",
+          "Corrected"
+        ],
+        [
+          "Effective date",
+          "2026-08-01",
+          "Corrected"
+        ],
+        [
+          "Owner",
+          "Quality Systems Office",
+          "Corrected"
+        ],
+        [
+          "Approver",
+          "Compliance Director",
+          "Corrected"
+        ]
+      ],
+      "Revision History": [
+        [
+          "Version",
+          "Date",
+          "Public Change Summary"
+        ],
+        [
+          "4.0",
+          "2025-04-15",
+          "Baseline controlled release"
+        ],
+        [
+          "4.1",
+          "2026-02-10",
+          "Minor distribution update"
+        ],
+        [
+          "4.2",
+          "2026-08-01",
+          "Corrected approval workflow and obsolete copy controls"
+        ]
+      ],
+      "Distribution and Training Workflow": [
+        [
+          "Step",
+          "Owner",
+          "Due Date",
+          "Output"
+        ],
+        [
+          "Publish controlled copy",
+          "Quality Systems Office",
+          "2026-08-01",
+          "Released controlled document"
+        ],
+        [
+          "Notify document users",
+          "Quality Systems Office",
+          "2026-08-03",
+          "Distribution notice"
+        ],
+        [
+          "Complete training",
+          "Department Leads",
+          "2026-08-15",
+          "Training completion record"
+        ],
+        [
+          "Archive release evidence",
+          "Records Coordinator",
+          "2026-08-20",
+          "Release evidence packet"
+        ]
+      ],
+      "Obsolete Copy Retirement Checklist": [
+        [
+          "Control",
+          "Required Result",
+          "Status"
+        ],
+        [
+          "Obsolete copy retirement",
+          "Complete by 2026-08-05",
+          "Ready"
+        ],
+        [
+          "Retention period",
+          "6 years",
+          "Ready"
+        ],
+        [
+          "Approval record",
+          "Compliance Director approval retained",
+          "Ready"
+        ],
+        [
+          "Distribution list",
+          "Current users notified",
+          "Ready"
+        ]
+      ]
+    },
+    "appendix_phrases": [
+      "All spelling repairs are complete.",
+      "All incorrect version and date values have been removed.",
+      "Final review status: ready for controlled document release."
+    ],
+    "style": {
+      "title_font": "Aptos Display",
+      "title_size_pt": 18,
+      "title_color": "0F4C5C",
+      "heading_color": "0F4C5C",
+      "body_font": "Aptos",
+      "body_size_pt": 10.5,
+      "table_header_fill": "0F4C5C",
+      "table_header_font": "FFFFFF",
+      "margin_inches": 0.8,
+      "footer_text": "Controlled Document Release Repair Packet | 2026"
+    },
+    "metadata": {
+      "author": "Quality Systems Office",
+      "title": "Controlled Document Release Repair Packet"
+    },
+    "page_break_before": [
+      "Distribution and Training Workflow",
+      "Final Release Appendix"
+    ],
+    "source_must_contain": [
+      "QMS-PR-700",
+      "version 4.1",
+      "aproval",
+      "effectve",
+      "obsolte",
+      "distribtuion",
+      "trainng",
+      "retetion",
+      "QA analyst",
+      "2026-07-01"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_001_docx_controlled_document_release_repair",
+  "task_dir_name": "docops_v2_l3_001_docx_controlled_document_release_repair"
+}

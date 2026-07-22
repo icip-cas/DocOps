@@ -1,0 +1,277 @@
+{
+  "task_id": "docops_v2_l3_039_pdf_night_work_variance_hearing_repair",
+  "input_path": "/root/docops_v2_l3_039_pdf_night_work_variance_hearing_repair_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_039_pdf_night_work_variance_hearing_repair_output.pdf",
+  "output_extension": ".pdf",
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_titles": [
+      "Night Work Variance Hearing Packet",
+      "Corrected Case Summary",
+      "Hearing Notice Workflow",
+      "Mitigation and Monitoring Matrix",
+      "Resident Comment Routing",
+      "Release Checklist"
+    ],
+    "outline_titles": [
+      "Night Work Variance Hearing Packet",
+      "Corrected Case Summary",
+      "Hearing Notice Workflow",
+      "Mitigation and Monitoring Matrix",
+      "Resident Comment Routing",
+      "Release Checklist"
+    ],
+    "required_phrases_by_page": {
+      "0": [
+        "Case ID",
+        "NV-2026-417",
+        "Metro Utilities Joint Trench Program",
+        "Cedar Street between 3rd Avenue and 7th Avenue",
+        "2026-09-14 to 2026-09-18",
+        "9:00 PM to 5:00 AM",
+        "2026-08-27"
+      ],
+      "1": [
+        "Public comment deadline: 2026-08-25 at 5:00 PM",
+        "noisevariance@city.example",
+        "Requests for language access",
+        "accommodation must be routed"
+      ],
+      "2": [
+        "The workflow must be completed in sequence",
+        "agenda posting cannot occur",
+        "accommodation line are both confirmed"
+      ],
+      "3": [
+        "Monitoring records must be attached to the case file within one business day after each night of work"
+      ],
+      "4": [
+        "All resident comments must remain tied to case NV-2026-417",
+        "received after 2026-08-25 at 5:00 PM are marked late"
+      ],
+      "5": [
+        "Final release decision: approve the packet for public posting",
+        "all six pages are present"
+      ]
+    },
+    "tables": {
+      "Corrected Case Summary": [
+        [
+          "Field",
+          "Correct Public Value",
+          "Status"
+        ],
+        [
+          "Case ID",
+          "NV-2026-417",
+          "Applied"
+        ],
+        [
+          "Applicant",
+          "Metro Utilities Joint Trench Program",
+          "Applied"
+        ],
+        [
+          "Corridor",
+          "Cedar Street between 3rd Avenue and 7th Avenue",
+          "Applied"
+        ],
+        [
+          "Work window",
+          "2026-09-14 to 2026-09-18",
+          "Applied"
+        ],
+        [
+          "Night hours",
+          "9:00 PM to 5:00 AM",
+          "Applied"
+        ],
+        [
+          "Public contact",
+          "noisevariance@city.example",
+          "Applied"
+        ]
+      ],
+      "Hearing Notice Workflow": [
+        [
+          "Step",
+          "Owner",
+          "Required action",
+          "Due"
+        ],
+        [
+          "1",
+          "Permit desk",
+          "Publish corrected hearing notice",
+          "2026-08-13"
+        ],
+        [
+          "2",
+          "Clerk",
+          "Open public comment docket",
+          "2026-08-14"
+        ],
+        [
+          "3",
+          "Accessibility coordinator",
+          "Confirm language access line",
+          "2026-08-16"
+        ],
+        [
+          "4",
+          "Hearing officer",
+          "Review packet before agenda posting",
+          "2026-08-22"
+        ],
+        [
+          "5",
+          "Public works",
+          "Post corridor signage",
+          "2026-09-10"
+        ]
+      ],
+      "Mitigation and Monitoring Matrix": [
+        [
+          "Control",
+          "Requirement",
+          "Monitoring evidence",
+          "Status"
+        ],
+        [
+          "Noise barrier",
+          "Install temporary barrier at blocks 3-5",
+          "Photo log before 9:00 PM",
+          "Ready"
+        ],
+        [
+          "Truck staging",
+          "No idling outside signed staging area",
+          "Inspector checklist",
+          "Ready"
+        ],
+        [
+          "Back-up alarms",
+          "Use broadband alarms where equipment supports it",
+          "Equipment roster",
+          "Ready"
+        ],
+        [
+          "Resident hotline",
+          "Route all complaints to noisevariance@city.example",
+          "Daily inbox export",
+          "Ready"
+        ],
+        [
+          "Overnight lighting",
+          "Aim lights away from residences",
+          "Field verification note",
+          "Ready"
+        ]
+      ],
+      "Resident Comment Routing": [
+        [
+          "Input channel",
+          "Routing rule",
+          "Response target"
+        ],
+        [
+          "Email",
+          "noisevariance@city.example",
+          "Acknowledge within 1 business day"
+        ],
+        [
+          "Web form",
+          "Attach to case NV-2026-417",
+          "Include in hearing packet"
+        ],
+        [
+          "Hearing testimony",
+          "Log speaker name and topic",
+          "Summarize before deliberation"
+        ],
+        [
+          "Accommodation request",
+          "Escalate to accessibility coordinator",
+          "Confirm before 2026-08-22"
+        ]
+      ],
+      "Release Checklist": [
+        [
+          "Release item",
+          "Requirement",
+          "Status"
+        ],
+        [
+          "Corrected facts",
+          "NV-2026-417, Cedar Street, 2026-09-14 to 2026-09-18",
+          "Complete"
+        ],
+        [
+          "Public notice",
+          "Hearing date and comment deadline included",
+          "Complete"
+        ],
+        [
+          "Restricted material",
+          "Internal scorecard and personal contact details removed",
+          "Complete"
+        ],
+        [
+          "Accessibility",
+          "Accommodation routing included",
+          "Complete"
+        ],
+        [
+          "Style",
+          "Header, accent, footer, metadata, and bookmarks applied",
+          "Complete"
+        ]
+      ]
+    },
+    "forbidden_phrases": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "PRIVATE contact",
+      "do not circulate",
+      "NV-24-7781",
+      "Ridgeway Paving",
+      "Maple Avenue",
+      "2026-08-08",
+      "2026-09-01 to 2026-09-05",
+      "555-0166",
+      "enforcement score",
+      "staff-only",
+      "phone tree"
+    ],
+    "metadata": {
+      "title": "Night Work Variance Hearing Packet NV-2026-417",
+      "author": "City Noise Variance Office",
+      "subject": "Corrected public hearing packet for night work variance NV-2026-417"
+    },
+    "style": {
+      "page_width": 612,
+      "page_height": 792,
+      "header_bar": "334155",
+      "accent": "14B8A6",
+      "footer_text": "Night Work Variance Hearing Packet | NV-2026-417"
+    },
+    "source_must_contain": [
+      "DRAFT",
+      "INTERNAL ONLY",
+      "PRIVATE contact",
+      "do not circulate",
+      "NV-24-7781",
+      "Ridgeway Paving",
+      "Maple Avenue",
+      "2026-08-08",
+      "2026-09-01 to 2026-09-05",
+      "555-0166",
+      "enforcement score",
+      "staff-only",
+      "phone tree"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_039_pdf_night_work_variance_hearing_repair",
+  "task_dir_name": "docops_v2_l3_039_pdf_night_work_variance_hearing_repair"
+}

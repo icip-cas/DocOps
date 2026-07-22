@@ -1,0 +1,1 @@
+Inspired by real spreadsheet users reconciling messy monthly close workbooks with lookups, summaries, validation, and exceptions.

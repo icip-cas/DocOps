@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_007",
+  "task_dir_name": "pdf_007_body_style_consistency_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "F1 Style consistency",
+  "difficulty": "Medium",
+  "source_doc_filename": "pdf_007_body_style_consistency_seed.pdf",
+  "source_doc_path": "pdf/pdf_007_body_style_consistency_seed.pdf",
+  "task_description_filename": "pdf_007_body_style_consistency_seed.txt",
+  "task_description_path": "pdf/pdf_007_body_style_consistency_seed.txt",
+  "input_path": "/root/pdf_007_body_style_consistency_seed.pdf",
+  "output_path": "/root/submission/pdf_007_body_style_consistency_seed.pdf",
+  "output_filename": "pdf_007_body_style_consistency_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF brief has consistent section labels but inconsistent body-paragraph styling.",
+  "single_step_benchmark_instruction": "Make the body paragraphs on page 1 use one consistent body style, while leaving the title and section labels unchanged.",
+  "atomic_scope": "Only formatting consistency is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with normalized body-paragraph styling.",
+  "inspired_by": [
+    {
+      "title": "White text isn't white. Have to use pptx workaround to make it white?",
+      "url": "https://www.reddit.com/r/pdf/comments/1sm0tyd/white_text_isnt_white_have_to_use_pptx_workaround/"
+    },
+    {
+      "title": "Wobbly text when set at an angle slight angle using indesign",
+      "url": "https://www.reddit.com/r/pdf/comments/1sm0nby/wobbly_text_when_set_at_an_angle_slight_angle/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The styling drift looks partly intentional because different paragraphs use different emphasis systems\n- The instruction targets body text only, not every text element on the page\n- Visual consistency matters more than textual changes here"
+  }
+}

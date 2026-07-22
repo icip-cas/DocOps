@@ -1,0 +1,48 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__atomic__ppt_004_slide_reorder_seed"
+description = "ppt_004 - S2 Reorder task exported from DocumentBenchmark source seeds."
+authors = []
+keywords = ["ppt", "s2-reorder", "document-processing", "single-step", "source-doc-export"]
+
+[metadata]
+difficulty_level = "L1-atomic"
+benchmark_split = "atomic"
+difficulty = "Easy-Medium"
+category = "document-processing"
+tags = ["ppt", "s2-reorder", "document-processing", "single-step", "source-doc-export"]
+task_id = "ppt_004"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "S2 Reorder"
+source_type = "Reddit-derived representative benchmark seed"
+verifier_mode = "semantic-strict"
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/ppt_004_slide_reorder_seed.pptx"
+OUTPUT_PATH = "/root/submission/ppt_004_slide_reorder_seed.pptx"
+TASK_ID = "ppt_004"
+DOC_TYPE = "ppt"
+
+[solution.env]

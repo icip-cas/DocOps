@@ -1,0 +1,3 @@
+Regenerated L3 single-document workflow seed.
+
+Create a public mobility pilot board packet from a complex internal Word working draft. The final output must reorder sections, remove internal and private material, rebuild public tables, compute budget variances, preserve a real Word TOC field, normalize header/footer, and move the public contact appendix to a new page.

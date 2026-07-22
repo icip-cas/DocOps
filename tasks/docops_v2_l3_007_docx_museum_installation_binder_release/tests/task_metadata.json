@@ -1,0 +1,458 @@
+{
+  "task_id": "docops_v2_l3_007_docx_museum_installation_binder_release",
+  "task_dir_name": "docops_v2_l3_007_docx_museum_installation_binder_release",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Calculation",
+    "S3 Hierarchy editing",
+    "F1 Header/footer",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-cleanup -> section-reorder -> loan-register -> schedule-duration-calculation -> label-copy-cleanup -> condition-log -> appendix-split -> header-footer",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-strict",
+  "user_task_description": "Prepare a complex museum exhibition installation binder from a messy single Word working draft.",
+  "single_step_benchmark_instruction": "Rename and release the installation binder, remove internal material, reorder sections, rebuild loan/schedule/environment/label/condition/accessibility/contact tables, compute inclusive duration values, keep a TOC field, move Appendix A to a new page, and normalize header/footer.",
+  "atomic_scope": "Only the requested document-wide workflow edits are in scope; public exhibition facts and native Word structures must be preserved.",
+  "expected_output_type": "A revised .docx artifact that completes the requested single-document workflow.",
+  "input_path": "/root/docops_v2_l3_007_docx_museum_installation_binder_release_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_007_docx_museum_installation_binder_release_output.docx",
+  "output_filename": "docops_v2_l3_007_docx_museum_installation_binder_release_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "title": "East Wing Textile Exhibition Installation Binder",
+    "heading_order": [
+      "Curatorial Brief",
+      "Object Loan Register",
+      "Gallery Installation Schedule",
+      "Environmental Monitoring Plan",
+      "Public Label Copy Set",
+      "Condition Report Exception Log",
+      "Accessibility Production Checklist",
+      "Appendix A - Vendor and Courier Contacts"
+    ],
+    "required_paragraphs": [
+      "This installation binder prepares the East Wing textile exhibition for registrar, conservation, and gallery operations review.",
+      "The exhibition includes 11 loaned objects across three galleries, with 6 mounts, 4 case rotations, and 2 courier-supervised installations.",
+      "Environmental targets are 68-72 degrees Fahrenheit and 45-55 percent relative humidity unless a lender condition is stricter.",
+      "Public-facing label copy is approved for production and separated from registrar-only handling notes."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "Draft:",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "parking lot",
+      "lender dispute",
+      "insurance reserve",
+      "courier hotel",
+      "donor sensitivity",
+      "pest incident",
+      "unreleased valuation",
+      "security route",
+      "do not disclose",
+      "staff overtime cap",
+      "crate damage rumor",
+      "confidential lender",
+      "private conservation note"
+    ],
+    "loan_rows": [
+      [
+        "Object ID",
+        "Title",
+        "Lender",
+        "Gallery",
+        "Display Method",
+        "Courier Required"
+      ],
+      [
+        "TX-001",
+        "Indigo Fragment Panel",
+        "North Coast Archive",
+        "Gallery A",
+        "Case 1 rotation",
+        "No"
+      ],
+      [
+        "TX-002",
+        "Embroidered River Cloth",
+        "Marlowe Collection",
+        "Gallery A",
+        "Custom mount",
+        "Yes"
+      ],
+      [
+        "TX-003",
+        "Sampler with Red Border",
+        "Hillside Museum",
+        "Gallery A",
+        "Wall mount",
+        "No"
+      ],
+      [
+        "TX-004",
+        "Silk Banner Study",
+        "Marlowe Collection",
+        "Gallery B",
+        "Low-light case",
+        "Yes"
+      ],
+      [
+        "TX-005",
+        "Dyed Thread Card",
+        "University Textile Lab",
+        "Gallery B",
+        "Case 2 rotation",
+        "No"
+      ],
+      [
+        "TX-006",
+        "Loom Pattern Notebook",
+        "North Coast Archive",
+        "Gallery B",
+        "Book cradle",
+        "No"
+      ],
+      [
+        "TX-007",
+        "Weaver Portrait Cloth",
+        "Estate of Lina Voss",
+        "Gallery B",
+        "Custom mount",
+        "No"
+      ],
+      [
+        "TX-008",
+        "Child's Festival Sash",
+        "Hillside Museum",
+        "Gallery C",
+        "Case 3 rotation",
+        "No"
+      ],
+      [
+        "TX-009",
+        "Pattern Transfer Sheet",
+        "University Textile Lab",
+        "Gallery C",
+        "Flat file display",
+        "No"
+      ],
+      [
+        "TX-010",
+        "Blue Resist Shawl",
+        "North Coast Archive",
+        "Gallery C",
+        "Custom mount",
+        "No"
+      ],
+      [
+        "TX-011",
+        "Repair Sample Set",
+        "Conservation Teaching Trust",
+        "Gallery C",
+        "Case 4 rotation",
+        "No"
+      ]
+    ],
+    "schedule_rows": [
+      [
+        "Phase",
+        "Start Date",
+        "End Date",
+        "Duration Days",
+        "Owner"
+      ],
+      [
+        "Receiving",
+        "2026-08-31",
+        "2026-09-02",
+        "3",
+        "Registrar"
+      ],
+      [
+        "Mount fabrication",
+        "2026-09-03",
+        "2026-09-08",
+        "6",
+        "Preparators"
+      ],
+      [
+        "Gallery paint cure",
+        "2026-09-09",
+        "2026-09-10",
+        "2",
+        "Facilities"
+      ],
+      [
+        "Case installation",
+        "2026-09-11",
+        "2026-09-14",
+        "4",
+        "Exhibition Design"
+      ],
+      [
+        "Object installation",
+        "2026-09-15",
+        "2026-09-18",
+        "4",
+        "Registrar"
+      ],
+      [
+        "Lighting focus",
+        "2026-09-19",
+        "2026-09-20",
+        "2",
+        "Lighting"
+      ],
+      [
+        "Label placement",
+        "2026-09-21",
+        "2026-09-22",
+        "2",
+        "Graphics"
+      ],
+      [
+        "Final walkthrough",
+        "2026-09-23",
+        "2026-09-23",
+        "1",
+        "Project Lead"
+      ]
+    ],
+    "environment_rows": [
+      [
+        "Zone",
+        "Target Temperature",
+        "Target RH",
+        "Monitoring Frequency",
+        "Escalation"
+      ],
+      [
+        "Gallery A",
+        "68-72 degrees Fahrenheit",
+        "45-55 percent RH",
+        "Twice daily",
+        "Conservation"
+      ],
+      [
+        "Gallery B",
+        "68-70 degrees Fahrenheit",
+        "48-52 percent RH",
+        "Hourly during opening week",
+        "Conservation"
+      ],
+      [
+        "Gallery C",
+        "68-72 degrees Fahrenheit",
+        "45-55 percent RH",
+        "Twice daily",
+        "Facilities"
+      ],
+      [
+        "Case 1",
+        "68-72 degrees Fahrenheit",
+        "45-55 percent RH",
+        "Daily",
+        "Registrar"
+      ],
+      [
+        "Case 4",
+        "68-72 degrees Fahrenheit",
+        "45-55 percent RH",
+        "Daily",
+        "Conservation"
+      ]
+    ],
+    "label_rows": [
+      [
+        "Label ID",
+        "Object ID",
+        "Approved Title",
+        "Word Count",
+        "Production Status"
+      ],
+      [
+        "L-01",
+        "TX-001",
+        "Indigo Fragment Panel",
+        "62",
+        "Ready"
+      ],
+      [
+        "L-02",
+        "TX-002",
+        "Embroidered River Cloth",
+        "74",
+        "Ready"
+      ],
+      [
+        "L-03",
+        "TX-004",
+        "Silk Banner Study",
+        "58",
+        "Ready"
+      ],
+      [
+        "L-04",
+        "TX-006",
+        "Loom Pattern Notebook",
+        "66",
+        "Ready"
+      ],
+      [
+        "L-05",
+        "TX-010",
+        "Blue Resist Shawl",
+        "69",
+        "Ready"
+      ]
+    ],
+    "condition_rows": [
+      [
+        "Exception ID",
+        "Object ID",
+        "Issue",
+        "Action",
+        "Release Status"
+      ],
+      [
+        "CR-01",
+        "TX-002",
+        "Loose edge threads noted before mount approval",
+        "Support stitching documented",
+        "Cleared"
+      ],
+      [
+        "CR-02",
+        "TX-004",
+        "Light sensitivity requires stricter Gallery B limits",
+        "Use low-light case settings",
+        "Cleared"
+      ],
+      [
+        "CR-03",
+        "TX-006",
+        "Book cradle angle adjusted after test fit",
+        "Use revised cradle wedge",
+        "Cleared"
+      ],
+      [
+        "CR-04",
+        "TX-011",
+        "Sample packet needs case rotation label",
+        "Add rotation card to Case 4",
+        "Cleared"
+      ]
+    ],
+    "accessibility_rows": [
+      [
+        "Item",
+        "Format",
+        "Quantity",
+        "Status"
+      ],
+      [
+        "Large-print labels",
+        "18-point print packet",
+        "80",
+        "Ready"
+      ],
+      [
+        "Tactile orientation map",
+        "Raised-line map",
+        "6",
+        "Ready"
+      ],
+      [
+        "Audio description scripts",
+        "Audio guide script",
+        "5",
+        "Ready"
+      ],
+      [
+        "Low-vision route notes",
+        "Gallery handout",
+        "80",
+        "Ready"
+      ],
+      [
+        "Captioned installation video",
+        "Captioned media file",
+        "1",
+        "Ready"
+      ],
+      [
+        "Seating location tags",
+        "Gallery sign set",
+        "12",
+        "Ready"
+      ]
+    ],
+    "contact_rows": [
+      [
+        "Role",
+        "Organization",
+        "Name",
+        "Email",
+        "Public Phone"
+      ],
+      [
+        "Registrar",
+        "East Wing Museum",
+        "Anika Rao",
+        "registrar@example.test",
+        "555-0401"
+      ],
+      [
+        "Conservation",
+        "East Wing Museum",
+        "Milo Grant",
+        "conservation@example.test",
+        "555-0402"
+      ],
+      [
+        "Courier",
+        "Marlowe Collection",
+        "Sofia Bell",
+        "courier@example.test",
+        "555-0403"
+      ],
+      [
+        "Mount Fabrication",
+        "Framewright Studio",
+        "Nadia Moss",
+        "mounts@example.test",
+        "555-0404"
+      ],
+      [
+        "Graphics",
+        "ClearType Production",
+        "Owen Li",
+        "graphics@example.test",
+        "555-0405"
+      ]
+    ],
+    "header_contains": [
+      "East Wing Textile Exhibition | Installation Binder 2026-09-23"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "toc_present": true,
+    "page_break_before": [
+      "Appendix A - Vendor and Courier Contacts"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_007_docx_museum_installation_binder_release"
+}

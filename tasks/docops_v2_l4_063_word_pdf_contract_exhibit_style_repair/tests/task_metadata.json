@@ -1,0 +1,133 @@
+{
+  "task_id": "docops_v2_l4_063_word_pdf_contract_exhibit_style_repair",
+  "task_dir_name": "docops_v2_l4_063_word_pdf_contract_exhibit_style_repair",
+  "doc_type": "word+pdf",
+  "primary_modality": "Word (.docx) and PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 8,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "contract-style-playbook -> Word heading/TOC repair -> PDF exhibit packet pruning -> bookmark rebuild -> cross-output exhibit consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_input.docx",
+  "supporting_input_paths": [
+    "/root/contract_style_playbook.docx",
+    "/root/clause_style_matrix.xlsx",
+    "/root/source_exhibit_packet.pdf"
+  ],
+  "output_paths": {
+    "document": "/root/submission/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_document.docx",
+    "packet": "/root/submission/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_packet.pdf"
+  },
+  "output_path": "/root/submission/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_document.docx",
+  "output_filename": "docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Repair a contract Word document and produce a final PDF exhibit packet using a style playbook, clause matrix, and draft exhibit source packet.",
+  "single_step_benchmark_instruction": "Create the final DOCX and PDF. Repair Word heading hierarchy and TOC, apply final headers/footers, highlight formatting exceptions, promote Data Processing and Service Level sections to Exhibit A/B, remove obsolete/internal Exhibit C material, and rebuild PDF bookmarks.",
+  "atomic_scope": "Word/PDF cross-document style repair with native TOC and PDF outline validation.",
+  "expected_output_type": "A final .docx agreement and .pdf exhibit packet saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Microsoft Word TOC requires heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    },
+    {
+      "title": "Adobe Acrobat PDF bookmarks and page organization",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    }
+  ],
+  "verifier_expectations": {
+    "document_output": "/root/submission/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_document.docx",
+    "packet_output": "/root/submission/docops_v2_l4_063_word_pdf_contract_exhibit_style_repair_packet.pdf",
+    "heading_order": [
+      "Master Services Agreement Style Repair",
+      "1. Scope and Ordering",
+      "1.1 Service Catalog",
+      "2. Data Processing Addendum",
+      "3. Service Level Credits",
+      "Signature Routing Notes",
+      "Clause Formatting Matrix"
+    ],
+    "required_text": [
+      "The service catalog clause remains in the agreement body with numbered Heading 2 styling.",
+      "Exhibit A is promoted from the source packet and styled as a controlled exhibit.",
+      "Exhibit B is promoted from the source packet and styled as a controlled exhibit.",
+      "The signature packet must include Exhibit A and Exhibit B only."
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Notes - Remove",
+      "Internal pricing floor",
+      "obsolete Exhibit C",
+      "Obsolete Exhibit C"
+    ],
+    "header_contains": "MSA Style Final | Exhibits: A-B",
+    "footer_contains": "Clause style status: Final",
+    "clause_rows": [
+      [
+        "1.1",
+        "Service Catalog",
+        "Keep in agreement body",
+        "Body Text + numbered heading"
+      ],
+      [
+        "2.1",
+        "Data Processing Addendum",
+        "Promote to Exhibit A",
+        "Heading 1 + exhibit label"
+      ],
+      [
+        "3.1",
+        "Service Level Credits",
+        "Promote to Exhibit B",
+        "Heading 1 + exhibit label"
+      ]
+    ],
+    "highlight_texts": [
+      "Formatting exception: Clause 2.1 must use Exhibit A heading style.",
+      "Formatting exception: Clause 3.1 must use Exhibit B heading style."
+    ],
+    "pdf_page_count": 4,
+    "pdf_titles": [
+      "Contract Exhibit Packet",
+      "Exhibit A - Data Processing Addendum",
+      "Exhibit B - Service Level Credits",
+      "Formatting Certificate"
+    ],
+    "pdf_required": [
+      "Exhibits Included A-B",
+      "Clause 2.1",
+      "Clause 3.1",
+      "MSA Style Final | Exhibits: A-B"
+    ],
+    "pdf_forbidden": [
+      "Obsolete Exhibit C",
+      "internal pricing floor",
+      "Internal pricing floor"
+    ],
+    "outline_titles": [
+      "Contract Exhibit Packet",
+      "Exhibit A - Data Processing Addendum",
+      "Exhibit B - Service Level Credits",
+      "Formatting Certificate"
+    ],
+    "public_exhibits": [
+      "Exhibit A",
+      "Exhibit B"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_063_word_pdf_contract_exhibit_style_repair"
+}

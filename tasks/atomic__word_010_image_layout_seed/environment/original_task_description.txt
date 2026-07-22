@@ -1,0 +1,22 @@
+Task ID: word_010
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: Word (.docx)
+Atomic Operation: F3 Layout control
+Difficulty: Medium
+
+User Task Description:
+This document contains three site images, but they are not laid out cleanly.
+
+Single-Step Benchmark Instruction:
+Adjust the layout so the three images appear on one neat row with balanced spacing and alignment.
+
+Atomic Scope:
+Only layout control is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The content itself is simple, but the visual arrangement is awkward
+- The images have uneven sizing and alignment
+- A local layout fix can easily disturb surrounding structure if handled clumsily
+
+Expected Output Type:
+A revised .docx document with a cleaner image layout.

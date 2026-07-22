@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_001
+
+Doc type: pdf
+Atomic operations: C5 Reasoning, F2 Highlighting
+Composition pattern: detect -> highlight
+Difficulty: Hard
+
+User-facing goal:
+This contract excerpt contains a payment-timing conflict that should be highlighted for review.
+
+Single-step benchmark instruction:
+Review the payment references on page 1 and highlight only the statements that create the timing contradiction between the base clause, the schedule entry, and the late-fee trigger. Do not rewrite the text.
+
+Atomic scope:
+Only the true conflicting payment lines should be visually highlighted.
+
+Expected output type:
+A revised .pdf document with the conflicting payment lines highlighted.

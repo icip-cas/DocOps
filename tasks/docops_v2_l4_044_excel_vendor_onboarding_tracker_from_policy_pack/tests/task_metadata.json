@@ -1,0 +1,201 @@
+{
+  "task_id": "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack",
+  "task_dir_name": "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C4 Computation",
+    "F2 Highlighting",
+    "S1 Insert/Delete",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "extract-policy-requirements -> map-owner-aliases -> fill-release-tracker -> restore-review-formulas -> preserve-validations-and-hidden-rule-sheet",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack_input.xlsx",
+  "supporting_input_paths": [
+    "/root/vendor_evidence_policy_packet.pdf",
+    "/root/vendor_owner_directory.docx",
+    "/root/evidence_index.xlsx"
+  ],
+  "output_path": "/root/submission/docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack_output.xlsx",
+  "output_filename": "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A vendor onboarding tracker must be completed from a policy packet, owner directory, and evidence index while preserving formulas, validations, hidden rules, and the tracker template.",
+  "single_step_benchmark_instruction": "Complete the Vendor Tracker using the supporting policy packet, owner directory, and evidence index. Fill only the blank required rows, keep the optional Delta Foods row unchanged, set the cover status to Ready for Release, restore live Release Flag formulas, highlight Partial and Missing rows, preserve the template sheet, data validation, native table, summary formulas, and hidden Rules sheet.",
+  "atomic_scope": "Cross-document workflow with one primary Excel output and three supporting files; preserve unrelated workbook-native structure.",
+  "expected_output_type": "A revised .xlsx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Community spreadsheet consolidation and dashboard formula pain points",
+      "url": "local:DocumentBenchmark L3 reddit Excel workflow seeds"
+    },
+    {
+      "title": "EasyMergeR: merging multiple XLSX sheets as a real workflow bottleneck",
+      "url": "https://arxiv.org/abs/2309.00639"
+    },
+    {
+      "title": "Excelsior: spreadsheet structure edits can break dependent formulas",
+      "url": "https://arxiv.org/abs/2407.03621"
+    }
+  ],
+  "verifier_expectations": {
+    "sheet_order": [
+      "Cover",
+      "Tracker Template",
+      "Vendor Tracker",
+      "Summary",
+      "Rules"
+    ],
+    "exact_cells": {
+      "Vendor Tracker!A2": "V-101",
+      "Vendor Tracker!B2": "Aurora Labs",
+      "Vendor Tracker!C2": "Access logging",
+      "Vendor Tracker!D2": "Yes",
+      "Vendor Tracker!E2": "Ava Chen",
+      "Vendor Tracker!F2": "Provided",
+      "Vendor Tracker!G2": "SEC-12",
+      "Vendor Tracker!H2": "p12",
+      "Vendor Tracker!I2": "Centralized access logs retained 365 days.",
+      "Vendor Tracker!A3": "V-102",
+      "Vendor Tracker!B3": "Beacon Clinic",
+      "Vendor Tracker!C3": "Backup encryption",
+      "Vendor Tracker!D3": "Yes",
+      "Vendor Tracker!E3": "Noah Patel",
+      "Vendor Tracker!F3": "Provided",
+      "Vendor Tracker!G3": "INF-07",
+      "Vendor Tracker!H3": "p27",
+      "Vendor Tracker!I3": "Backup archives encrypted with AES-256.",
+      "Vendor Tracker!A4": "V-103",
+      "Vendor Tracker!B4": "Cedar Pay",
+      "Vendor Tracker!C4": "Vendor access review",
+      "Vendor Tracker!D4": "Yes",
+      "Vendor Tracker!E4": "Rosa Iyer",
+      "Vendor Tracker!F4": "Partial",
+      "Vendor Tracker!G4": "IAM-03",
+      "Vendor Tracker!H4": "p33",
+      "Vendor Tracker!I4": "Legacy vendor review cadence still being completed.",
+      "Vendor Tracker!A5": "V-104",
+      "Vendor Tracker!B5": "Delta Foods",
+      "Vendor Tracker!C5": "Customer-managed keys",
+      "Vendor Tracker!D5": "No",
+      "Vendor Tracker!E5": "Ava Chen",
+      "Vendor Tracker!F5": "N/A",
+      "Vendor Tracker!G5": "N/A",
+      "Vendor Tracker!H5": "N/A",
+      "Vendor Tracker!I5": "Optional control - leave unchanged.",
+      "Vendor Tracker!A6": "V-105",
+      "Vendor Tracker!B6": "Ember Health",
+      "Vendor Tracker!C6": "Incident response",
+      "Vendor Tracker!D6": "Yes",
+      "Vendor Tracker!E6": "Marcus Lee",
+      "Vendor Tracker!F6": "Provided",
+      "Vendor Tracker!G6": "IR-09",
+      "Vendor Tracker!H6": "p41",
+      "Vendor Tracker!I6": "Incident bridge and escalation owner documented.",
+      "Vendor Tracker!A7": "V-106",
+      "Vendor Tracker!B7": "Finch Retail",
+      "Vendor Tracker!C7": "Data processing agreement",
+      "Vendor Tracker!D7": "Yes",
+      "Vendor Tracker!E7": "Lina Morgan",
+      "Vendor Tracker!F7": "Missing",
+      "Vendor Tracker!G7": "LEG-11",
+      "Vendor Tracker!H7": "p18",
+      "Vendor Tracker!I7": "DPA countersignature missing from legal packet.",
+      "Cover!B4": "Ready for Release"
+    },
+    "formula_cells": {
+      "Vendor Tracker!J2": "=IF(AND(D2=\"Yes\",F2=\"Provided\"),\"Ready\",IF(AND(D2=\"Yes\",F2=\"Partial\"),\"Watch\",IF(AND(D2=\"Yes\",F2=\"Missing\"),\"Hold\",\"Ready\")))",
+      "Vendor Tracker!J3": "=IF(AND(D3=\"Yes\",F3=\"Provided\"),\"Ready\",IF(AND(D3=\"Yes\",F3=\"Partial\"),\"Watch\",IF(AND(D3=\"Yes\",F3=\"Missing\"),\"Hold\",\"Ready\")))",
+      "Vendor Tracker!J4": "=IF(AND(D4=\"Yes\",F4=\"Provided\"),\"Ready\",IF(AND(D4=\"Yes\",F4=\"Partial\"),\"Watch\",IF(AND(D4=\"Yes\",F4=\"Missing\"),\"Hold\",\"Ready\")))",
+      "Vendor Tracker!J6": "=IF(AND(D6=\"Yes\",F6=\"Provided\"),\"Ready\",IF(AND(D6=\"Yes\",F6=\"Partial\"),\"Watch\",IF(AND(D6=\"Yes\",F6=\"Missing\"),\"Hold\",\"Ready\")))",
+      "Vendor Tracker!J7": "=IF(AND(D7=\"Yes\",F7=\"Provided\"),\"Ready\",IF(AND(D7=\"Yes\",F7=\"Partial\"),\"Watch\",IF(AND(D7=\"Yes\",F7=\"Missing\"),\"Hold\",\"Ready\")))",
+      "Summary!B3": "=COUNTIF('Vendor Tracker'!F2:F7,\"Provided\")",
+      "Summary!B4": "=COUNTIF('Vendor Tracker'!F2:F7,\"Partial\")",
+      "Summary!B5": "=COUNTIF('Vendor Tracker'!F2:F7,\"Missing\")",
+      "Summary!B6": "=COUNTIF('Vendor Tracker'!J2:J7,\"Ready\")",
+      "Summary!B7": "=COUNTIF('Vendor Tracker'!J2:J7,\"Watch\")",
+      "Summary!B8": "=COUNTIF('Vendor Tracker'!J2:J7,\"Hold\")"
+    },
+    "formula_result_cells": {
+      "Vendor Tracker!J2": "Ready",
+      "Vendor Tracker!J3": "Ready",
+      "Vendor Tracker!J4": "Watch",
+      "Vendor Tracker!J5": "Ready",
+      "Vendor Tracker!J6": "Ready",
+      "Vendor Tracker!J7": "Hold"
+    },
+    "unchanged_sheets": [
+      "Tracker Template"
+    ],
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "status_choices"
+    ],
+    "data_validation_ranges": {
+      "Vendor Tracker": [
+        "F2:F7"
+      ]
+    },
+    "table_refs": {
+      "Vendor Tracker!vendor_tracker_table": "A1:J7"
+    },
+    "highlight_rows": [
+      {
+        "sheet": "Vendor Tracker",
+        "row": 4,
+        "min_col": 1,
+        "max_col": 10
+      },
+      {
+        "sheet": "Vendor Tracker",
+        "row": 7,
+        "min_col": 1,
+        "max_col": 10
+      }
+    ],
+    "header_style_matches": [
+      {
+        "target_sheet": "Vendor Tracker",
+        "target_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "E1",
+          "F1",
+          "G1",
+          "H1",
+          "I1",
+          "J1"
+        ],
+        "reference_sheet": "Tracker Template",
+        "reference_cells": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "E1",
+          "F1",
+          "G1",
+          "H1",
+          "I1",
+          "J1"
+        ]
+      }
+    ],
+    "freeze_panes": {
+      "Vendor Tracker": "A2"
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_044_excel_vendor_onboarding_tracker_from_policy_pack"
+}

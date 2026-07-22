@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l3_029_pptx_qbr_release_deck"
+description = "docops_v2_l3_029_pptx_qbr_release_deck - DocOps v2 final L3 task."
+authors = []
+keywords = ["powerpoint", "pptx", "long-flow", "single-document", "qbr", "deck-release"]
+
+[metadata]
+difficulty_level = "L3-single-document-long-flow"
+benchmark_split = "docops_v2_final_l3"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["powerpoint", "pptx", "long-flow", "single-document", "qbr"]
+task_id = "docops_v2_l3_029_pptx_qbr_release_deck"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Single-document Long-Flow Workflow"
+source_type = "DocOps v2 final L3 dataset"
+verifier_mode = "semantic-strict-one-to-one"
+composition_type = "single-document"
+composition_pattern = "draft-slide-removal -> section-reorder -> agenda-sync -> slide-number-sync -> metric-table-update -> risk-action-cascade -> decision-notes -> appendix-publication -> locked-reference-preservation"
+atomic_operations = ["C1 Extraction", "C2 Editing", "C3 Generation", "C4 Computation", "C5 Reasoning", "F1 Style consistency", "F3 Layout control", "S1 Insert/Delete", "S2 Reorder", "S3 Hierarchy editing"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l3_029_pptx_qbr_release_deck"
+final_index = 29
+final_difficulty = "L3"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx"
+OUTPUT_PATH = "/root/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx"
+TASK_ID = "docops_v2_l3_029_pptx_qbr_release_deck"
+DOC_TYPE = "ppt"
+
+[solution.env]

@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__composite_same_type__pdfc_006_rewrite_paragraph_and_match_body_style_seed"
+description = "pdfc_006 - composite same-type task for DocumentBenchmark batch v1."
+authors = []
+keywords = ["pdf", "c2-editing", "f1-style-consistency", "document-processing", "composite", "same-doc-type"]
+
+[metadata]
+difficulty_level = "L2-composite"
+benchmark_split = "composite_same_type"
+difficulty = "Medium-Hard"
+category = "document-processing"
+tags = ["pdf", "c2-editing", "f1-style-consistency", "document-processing", "composite", "same-doc-type"]
+task_id = "pdfc_006"
+doc_type = "pdf"
+primary_modality = "PDF (.pdf)"
+atomic_operation = "Composite"
+source_type = "Composite same-type benchmark seed"
+verifier_mode = "semantic-strict"
+composition_type = "same-doc-type"
+composition_pattern = "rewrite -> restyle"
+atomic_operations = ["C2 Editing", "F1 Style consistency"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf"
+OUTPUT_PATH = "/root/submission/pdfc_006_rewrite_paragraph_and_match_body_style_seed.pdf"
+TASK_ID = "pdfc_006"
+DOC_TYPE = "pdf"
+
+[solution.env]

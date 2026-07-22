@@ -1,0 +1,31 @@
+{
+  "task_id": "ppt_002",
+  "task_dir_name": "ppt_002_alignment_layout_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "F3 Layout control",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "ppt_002_alignment_layout_seed.pptx",
+  "source_doc_path": "ppt/ppt_002_alignment_layout_seed.pptx",
+  "task_description_filename": "ppt_002_alignment_layout_seed.txt",
+  "task_description_path": "ppt/ppt_002_alignment_layout_seed.txt",
+  "input_path": "/root/ppt_002_alignment_layout_seed.pptx",
+  "output_path": "/root/submission/ppt_002_alignment_layout_seed.pptx",
+  "output_filename": "ppt_002_alignment_layout_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This slide contains three content cards that are obviously misaligned and unevenly distributed.",
+  "single_step_benchmark_instruction": "Align the three workstream cards so they sit on a clean horizontal line with even spacing.",
+  "atomic_scope": "Only layout/alignment is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with evenly aligned cards.",
+  "inspired_by": [
+    {
+      "title": "Anyone else spending way too much time just formatting slides instead of actually thinking?",
+      "url": "https://www.reddit.com/r/powerpoint/comments/1ryq4ko/anyone_else_spending_way_too_much_time_just/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Typography is plain\n- Colors are inconsistent\n- The deck has no master theme, but that is not the explicit request"
+  }
+}

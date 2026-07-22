@@ -1,0 +1,41 @@
+{
+  "task_id": "docops_v2_l3_009_docx_incident_manual_publication",
+  "task_dir_name": "docops_v2_l3_009_docx_incident_manual_publication",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 18,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-cleanup -> public-boundary-redaction -> section-reorder -> toc-generation -> table-normalization -> action-register -> appendix-release -> header-footer-pagination -> highlight-open-exception",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A draft incident response Word manual must be converted into a public release manual through a long ordered workflow.",
+  "single_step_benchmark_instruction": "Remove draft/internal material; create a real TOC; reorder and rename sections; normalize timeline, communication, exception, action, evidence, and approval tables; insert required page breaks; update header/footer; highlight the unresolved MFA evidence exception; preserve only public-safe content.",
+  "atomic_scope": "Single-document long-flow Word publication workflow with ordered section, table, TOC, privacy-boundary, and formatting operations.",
+  "expected_output_type": "A revised .docx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Word long-document TOC, section break, and header/footer publication pain",
+      "url": "https://support.microsoft.com/word"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_009_docx_incident_manual_publication_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_009_docx_incident_manual_publication_output.docx",
+  "output_filename": "docops_v2_l3_009_docx_incident_manual_publication_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_009_docx_incident_manual_publication"
+}

@@ -1,0 +1,26 @@
+{
+  "task_id": "word_011",
+  "task_dir_name": "word_011_theme_transfer_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "F4 Theme transfer",
+  "difficulty": "Medium",
+  "source_doc_filename": "word_011_theme_transfer_seed.docx",
+  "source_doc_path": "word/word_011_theme_transfer_seed.docx",
+  "task_description_filename": "word_011_theme_transfer_seed.txt",
+  "task_description_path": "word/word_011_theme_transfer_seed.txt",
+  "input_path": "/root/word_011_theme_transfer_seed.docx",
+  "output_path": "/root/submission/word_011_theme_transfer_seed.docx",
+  "output_filename": "word_011_theme_transfer_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This document was assembled from mismatched source files and now looks visually inconsistent.",
+  "single_step_benchmark_instruction": "Apply a unified blue professional theme across the document.",
+  "atomic_scope": "Only theme transfer is explicitly requested in this task.",
+  "expected_output_type": "A revised .docx document with a coherent blue professional theme.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The document already has multiple conflicting style signals\n- The requested output is global, not just a local formatting patch\n- Theme transfer requires consistency without changing the underlying content"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "task_id": "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format",
+  "task_dir_name": "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "foundation-format-guide -> Word margin/TOC/table repair -> Excel print/rule controls -> public/internal budget-line consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_input.docx",
+  "supporting_input_paths": [
+    "/root/raw_budget_export.xlsx",
+    "/root/reviewer_formatting_note.docx",
+    "/root/foundation_upload_format_guide.pdf"
+  ],
+  "output_paths": {
+    "document": "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_document.docx",
+    "workbook": "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_document.docx",
+  "output_filename": "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_input.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Prepare a foundation grant narrative and budget workbook with strict upload formatting, public/internal budget line separation, and live spreadsheet controls.",
+  "single_step_benchmark_instruction": "Create the final Word narrative and Excel budget workbook. Fix Word margins, headings, TOC, table style, header/footer, and highlighted exception note. Preserve all budget lines in Excel while publishing only P-01/P-02/P-03 in the Word narrative; keep formulas, print area, data validation, hidden rules, conditional formatting, and named ranges live.",
+  "atomic_scope": "Word/XLSX cross-document grant upload formatting workflow.",
+  "expected_output_type": "A final .docx narrative and .xlsx budget workbook saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Microsoft Word TOC requires heading styles",
+      "url": "https://support.microsoft.com/en-us/office/insert-a-table-of-contents-882e8564-0edb-435e-84b5-1d8552ccf0c0"
+    },
+    {
+      "title": "Microsoft Excel print areas and page setup",
+      "url": "https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e"
+    }
+  ],
+  "verifier_expectations": {
+    "document_output": "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_document.docx",
+    "workbook_output": "/root/submission/docops_v2_l4_066_word_xlsx_grant_narrative_budget_format_workbook.xlsx",
+    "margins": {
+      "top": 640080,
+      "bottom": 640080,
+      "left": 685800,
+      "right": 685800
+    },
+    "heading_order": [
+      "Grant Narrative Format Package",
+      "Project Summary",
+      "Budget Narrative",
+      "Funder Format Compliance",
+      "Appendix - Internal Exclusions"
+    ],
+    "required_text": [
+      "The narrative uses the foundation format standard: compact margins, forest headings, and a controlled budget table.",
+      "The public budget narrative includes only the three fundable request lines from the workbook.",
+      "The Word narrative and Excel workbook must share the same public line IDs: P-01, P-02, and P-03.",
+      "One internal-only unallowable cost remains in the workbook for reviewer traceability and is not published in the narrative."
+    ],
+    "forbidden_text": [
+      "Manual TOC placeholder",
+      "Draft Formatting Notes - Remove",
+      "Gala catering",
+      "P-04",
+      "old 1.25 inch margin"
+    ],
+    "header_contains": "Foundation Grant Format | Narrative pages 1-4",
+    "footer_contains": "grant_budget_format_workbook.xlsx",
+    "public_budget_rows": [
+      [
+        "P-01",
+        "Community clinic staffing",
+        "$185,000",
+        "Core service delivery"
+      ],
+      [
+        "P-02",
+        "Mobile health van",
+        "$96,000",
+        "Capital request"
+      ],
+      [
+        "P-03",
+        "Evaluation partner",
+        "$42,000",
+        "Subaward evaluation"
+      ]
+    ],
+    "highlight_text": "Formatting exception resolved: internal-only unallowable costs remain in the workbook and are excluded from the narrative.",
+    "sheet_order": [
+      "Budget Summary",
+      "Rules"
+    ],
+    "workbook_rows": [
+      [
+        "P-01",
+        "Community clinic staffing",
+        185000,
+        "Core",
+        "Budget Narrative",
+        "Yes"
+      ],
+      [
+        "P-02",
+        "Mobile health van",
+        96000,
+        "Capital",
+        "Budget Narrative",
+        "Yes"
+      ],
+      [
+        "P-03",
+        "Evaluation partner",
+        42000,
+        "Subaward",
+        "Budget Narrative",
+        "Yes"
+      ],
+      [
+        "P-04",
+        "Gala catering",
+        18000,
+        "Unallowable",
+        "Internal Only",
+        "No"
+      ]
+    ],
+    "table_ref": "A2:H6",
+    "print_area": "'Budget Summary'!$A$1:$H$6",
+    "freeze_panes": "A3",
+    "formula_cells": {
+      "G3": "=IF(F3=\"Yes\",\"IN NARRATIVE\",\"INTERNAL\")",
+      "G4": "=IF(F4=\"Yes\",\"IN NARRATIVE\",\"INTERNAL\")",
+      "G5": "=IF(F5=\"Yes\",\"IN NARRATIVE\",\"INTERNAL\")",
+      "G6": "=IF(F6=\"Yes\",\"IN NARRATIVE\",\"INTERNAL\")",
+      "H3": "=IF(C3>0,\"PRINT\",\"CHECK\")",
+      "H4": "=IF(C4>0,\"PRINT\",\"CHECK\")",
+      "H5": "=IF(C5>0,\"PRINT\",\"CHECK\")",
+      "H6": "=IF(C6>0,\"PRINT\",\"CHECK\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "funding_class_choices",
+      "publish_choices"
+    ],
+    "data_validation_ranges": [
+      "D3:D6",
+      "F3:F6"
+    ],
+    "public_line_ids": [
+      "P-01",
+      "P-02",
+      "P-03"
+    ],
+    "internal_line_ids": [
+      "P-04"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_066_word_xlsx_grant_narrative_budget_format"
+}

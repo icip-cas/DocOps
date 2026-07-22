@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__pptxr_005_public_health_briefing_template_fill_from_message_map_seed"
+description = "pptxr_005 - cross-document skill-gap v2 task for DocumentBenchmark."
+authors = []
+keywords = ["ppt", "cross-document", "document-processing", "c1-extraction", "c4-computation", "s1-insert/delete", "f1-style-consistency"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["ppt", "cross-document", "document-processing", "skill-gap-v2", "ppt"]
+task_id = "pptxr_005"
+doc_type = "ppt"
+primary_modality = "PowerPoint (.pptx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document skill-gap V2"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "refresh-metrics -> insert-decision-slide -> preserve-order"
+atomic_operations = ["C1 Extraction", "C4 Computation", "S1 Insert/Delete", "F1 Style consistency"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/pptxr_005_public_health_briefing_template_fill_from_message_map_seed.pptx"
+OUTPUT_PATH = "/root/submission/pptxr_005_public_health_briefing_template_fill_from_message_map_seed.pptx"
+TASK_ID = "pptxr_005"
+DOC_TYPE = "ppt"
+
+[solution.env]

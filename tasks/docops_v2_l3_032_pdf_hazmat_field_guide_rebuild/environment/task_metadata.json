@@ -1,0 +1,135 @@
+{
+  "task_id": "docops_v2_l3_032_pdf_hazmat_field_guide_rebuild",
+  "task_dir_name": "docops_v2_l3_032_pdf_hazmat_field_guide_rebuild",
+  "doc_type": "pdf",
+  "primary_modality": "PDF",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "M1 PDF metadata",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "internal-page-removal -> page-reorder -> correction-log-application -> section-table-rebuild -> style-band-migration -> metadata-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "reference_sources": [
+    {
+      "title": "PHMSA Emergency Response Guidebook page",
+      "url": "https://www.phmsa.dot.gov/training/hazmat/erg/emergency-response-guidebook-erg",
+      "usage": "Used only as structural inspiration for a complex public emergency-response guide; task facts and PDF content are synthetic."
+    }
+  ],
+  "verifier_mode": "semantic-structural-style-metadata-strict",
+  "user_task_description": "Prepare a clean public hazardous-materials field guide from a messy internal working PDF.",
+  "single_step_benchmark_instruction": "Remove internal pages, reorder public sections, apply correction-log fixes, rebuild public tables, migrate color-coded section header bands, clean sensitive text, and set public PDF metadata.",
+  "atomic_scope": "Only the requested PDF-wide workflow edits are in scope; public guide facts, correction facts, section order, style bands, footers, and metadata must be preserved.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested single-PDF workflow.",
+  "input_path": "/root/docops_v2_l3_032_pdf_hazmat_field_guide_rebuild_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_032_pdf_hazmat_field_guide_rebuild_output.pdf",
+  "output_filename": "docops_v2_l3_032_pdf_hazmat_field_guide_rebuild_output.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "pdf",
+  "verifier_expectations": {
+    "page_count": 8,
+    "page_titles": [
+      "Capstone Harbor HazMat Field Guide",
+      "Quick Actions",
+      "Substance Index",
+      "Protective Action Distances",
+      "Isolation Zones",
+      "Responder PPE Matrix",
+      "Decontamination Workflow",
+      "Public Release Log"
+    ],
+    "footer": "Capstone Harbor Public Field Guide | Effective 2026-07-15",
+    "metadata": {
+      "title": "Capstone Harbor HazMat Field Guide - Public Release",
+      "subject": "Public hazardous-materials incident field guide",
+      "author": "Capstone Harbor Emergency Management",
+      "keywords": "public,hazmat,field guide,2026-07-15"
+    },
+    "header_colors": [
+      "0E3A53",
+      "C85A3D",
+      "F2C94C",
+      "F2C94C",
+      "2F6F4E",
+      "2F6F4E",
+      "2F6F4E",
+      "0E3A53"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "unverified",
+      "chlorine plume rumor",
+      "vendor liability",
+      "personal phone",
+      "do not release",
+      "draft evacuation",
+      "old guide 128",
+      "Ammonia Anhydrus",
+      "evacuation 0.8 mi",
+      "2026-07-01"
+    ],
+    "required_lines_by_page": {
+      "1": [
+        "Public incident field guide",
+        "Version 3.0",
+        "Effective: 2026-07-15",
+        "For public safety coordination"
+      ],
+      "2": [
+        "1 | Confirm material identity from placard, shipping paper, or facility contact.",
+        "2 | Establish initial isolation before beginning rescue or containment.",
+        "3 | Use the public information officer for all community messages.",
+        "4 | Escalate to unified command when protective action distances exceed one mile."
+      ],
+      "3": [
+        "UN 1005 | Ammonia, anhydrous | 125 | Toxic inhalation gas",
+        "UN 1017 | Chlorine | 124 | Toxic inhalation gas",
+        "UN 1203 | Gasoline | 128 | Flammable liquid",
+        "UN 1977 | Nitrogen, refrigerated liquid | 120 | Cryogenic gas",
+        "UN 1993 | Flammable liquids, n.o.s. | 128 | Flammable liquid"
+      ],
+      "4": [
+        "Chlorine | Small | 100 ft | 0.3 mi | 1.1 mi",
+        "Chlorine | Large | 800 ft | 1.7 mi | 4.2 mi",
+        "Ammonia, anhydrous | Small | 100 ft | 0.2 mi | 0.6 mi",
+        "Gasoline | Large | 150 ft | 0.3 mi | 0.5 mi"
+      ],
+      "5": [
+        "Hot Zone | Entry only for trained responders in assigned PPE.",
+        "Warm Zone | Decontamination corridor and exposure monitoring.",
+        "Cold Zone | Command, triage, media staging, and family assistance.",
+        "Public Perimeter | Community notification and traffic control."
+      ],
+      "6": [
+        "Toxic inhalation gas | Positive-pressure SCBA | Level A or B | Continuous air monitoring",
+        "Flammable liquid | SCBA when vapor present | Structural turnout or Level B | Eliminate ignition sources",
+        "Cryogenic gas | Face shield and insulated gloves | Thermal protection | Ventilate low areas"
+      ],
+      "7": [
+        "Step 1 | Gross rinse before medical evaluation when contamination is visible.",
+        "Step 2 | Remove outer garments and bag as contaminated material.",
+        "Step 3 | Document exposed person name, time, substance, and symptoms.",
+        "Step 4 | Transfer clean patients to triage with exposure tag attached."
+      ],
+      "8": [
+        "Release owner | Capstone Harbor Emergency Management",
+        "Public release date | 2026-07-15",
+        "Correction log applied | Yes",
+        "Nonpublic pages removed | Yes"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_032_pdf_hazmat_field_guide_rebuild"
+}

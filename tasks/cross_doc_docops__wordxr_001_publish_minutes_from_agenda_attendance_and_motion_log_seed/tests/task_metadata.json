@@ -1,0 +1,177 @@
+{
+  "task_id": "wordxr_001",
+  "task_dir_name": "wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "F1 Style consistency",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "publish-status-fields -> replace-minutes-sections -> insert-h2-subheading -> build-attendance-table -> insert-page-break -> highlight-watch",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "supporting_input_paths": [
+    "/root/posting_fields.xlsx",
+    "/root/published_agenda_notes.pdf",
+    "/root/attendance_rows.docx"
+  ],
+  "output_path": "/root/submission/wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "output_filename": "wordxr_001_publish_minutes_from_agenda_attendance_and_motion_log_seed.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Publish the minutes by replacing placeholders under existing headings.",
+  "single_step_benchmark_instruction": "Publish the minutes by replacing placeholders under existing headings, filling the attendance table, recording motions in the correct section order, changing status from Draft to Final, and preserving the TOC and heading hierarchy.",
+  "atomic_scope": "Only the header table, the named sections, the page break, the attendance table, and the highlighted exception paragraph are required The inserted `Publication Controls` heading must use Heading 2 and the attachment section must still begin on a new page.",
+  "expected_output_type": "A revised .docx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the posting-copy header/footer and logo\n- Do not add new agenda headings"
+  },
+  "verifier_expectations": {
+    "heading_sequence": [
+      [
+        "Call to Order",
+        "Heading 1"
+      ],
+      [
+        "Licensure Renewals",
+        "Heading 1"
+      ],
+      [
+        "Action Log",
+        "Heading 1"
+      ],
+      [
+        "Publication Controls",
+        "Heading 2"
+      ],
+      [
+        "Exception Watch",
+        "Heading 1"
+      ],
+      [
+        "Attendance",
+        "Heading 1"
+      ]
+    ],
+    "heading_order": [
+      "Call to Order",
+      "Licensure Renewals",
+      "Action Log",
+      "Publication Controls",
+      "Exception Watch",
+      "Attendance"
+    ],
+    "forbidden_paragraphs": [
+      "[Fill]"
+    ],
+    "paragraphs_under_headings": [
+      {
+        "heading": "Call to Order",
+        "exact_lines": [
+          "Meeting called to order using the published agenda."
+        ]
+      },
+      {
+        "heading": "Licensure Renewals",
+        "exact_lines": [
+          "Three pending licenses were renewed without objection."
+        ]
+      },
+      {
+        "heading": "Action Log",
+        "exact_lines": [
+          "Staff will circulate the updated FAQ draft by February 14, 2025."
+        ]
+      },
+      {
+        "heading": "Publication Controls",
+        "exact_lines": [
+          "Do not post until the attendance page is complete.",
+          "Keep the posting-copy header and footer unchanged."
+        ]
+      },
+      {
+        "heading": "Exception Watch",
+        "exact_lines": [
+          "Remove the internal speaker-prep note before uploading the posting copy."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "cells": {
+          "0,0": "Meeting Status",
+          "0,1": "Final",
+          "1,0": "Chair",
+          "1,1": "Dr. Karen Holt",
+          "2,0": "Posting Date",
+          "2,1": "2025-02-14"
+        }
+      },
+      {
+        "index": 1,
+        "cells": {
+          "0,0": "Role",
+          "0,1": "Name",
+          "1,0": "Chair",
+          "1,1": "Dr. Karen Holt",
+          "2,0": "Member A",
+          "2,1": "Eli Monroe",
+          "3,0": "Member B",
+          "3,1": "Priya Singh"
+        }
+      }
+    ],
+    "table_sizes": [
+      {
+        "index": 0,
+        "rows": 3,
+        "cols": 2
+      },
+      {
+        "index": 1,
+        "rows": 4,
+        "cols": 2
+      }
+    ],
+    "style_matches": [
+      {
+        "target_text": "Meeting called to order using the published agenda.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Three pending licenses were renewed without objection.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Staff will circulate the updated FAQ draft by February 14, 2025.",
+        "reference_text": "Reference body style anchor."
+      },
+      {
+        "target_text": "Remove the internal speaker-prep note before uploading the posting copy.",
+        "reference_text": "Reference body style anchor."
+      }
+    ],
+    "page_break_before": [
+      "Attendance"
+    ],
+    "header_contains": [
+      "Meeting Publication Control | Public Board Minutes"
+    ],
+    "footer_contains": [
+      "Post only after the status line and attendance table are complete"
+    ],
+    "inline_shape_count": 1,
+    "highlighted_paragraphs": [
+      "Remove the internal speaker-prep note before uploading the posting copy."
+    ]
+  }
+}

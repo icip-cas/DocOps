@@ -1,0 +1,442 @@
+{
+  "task_id": "docops_v2_l3_008_docx_mobility_board_packet_release",
+  "task_dir_name": "docops_v2_l3_008_docx_mobility_board_packet_release",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "C3 Calculation",
+    "S3 Hierarchy editing",
+    "F1 Header/footer",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-cleanup -> section-reorder -> comment-response -> budget-reconciliation -> permit-tracker -> privacy-redaction -> appendix-split -> header-footer",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-strict",
+  "user_task_description": "Prepare a complex public mobility pilot board packet from a messy single Word working draft.",
+  "single_step_benchmark_instruction": "Rename and release the board packet, remove internal material, reorder sections, rebuild comment/budget/commitment/permit/outreach/contact tables, compute variance values, keep a TOC field, move Appendix A to a new page, and normalize header/footer.",
+  "atomic_scope": "Only the requested document-wide workflow edits are in scope; public mobility pilot facts and native Word structures must be preserved.",
+  "expected_output_type": "A revised .docx artifact that completes the requested single-document workflow.",
+  "input_path": "/root/docops_v2_l3_008_docx_mobility_board_packet_release_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_008_docx_mobility_board_packet_release_output.docx",
+  "output_filename": "docops_v2_l3_008_docx_mobility_board_packet_release_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "title": "Northbank Mobility Pilot Public Board Packet",
+    "heading_order": [
+      "Release Brief",
+      "Project Snapshot",
+      "Public Comment Response Matrix",
+      "Pilot Budget Reconciliation",
+      "Mitigation Commitments",
+      "Permit Conditions Tracker",
+      "Accessibility and Outreach Record",
+      "Appendix A - Public Contact Directory"
+    ],
+    "required_paragraphs": [
+      "This public board packet summarizes the Northbank Mobility Pilot for council review and community release.",
+      "The pilot covers 6.4 corridor miles, 42 curb-management zones, and 14 transit signal priority intersections.",
+      "Public engagement included 9 pop-up sessions, 3 virtual briefings, and materials in English, Spanish, Chinese, and large print.",
+      "All public commitments are ready for board review without procurement, personnel, or legal strategy notes."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "Draft:",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "parking lot",
+      "litigation strategy",
+      "vendor protest",
+      "property owner phone",
+      "employee discipline",
+      "procurement ceiling",
+      "confidential bid",
+      "legal hold",
+      "named complainant",
+      "cash-flow warning",
+      "do not disclose",
+      "internal risk",
+      "board optics"
+    ],
+    "snapshot_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Project",
+        "Northbank Mobility Pilot",
+        "Board memo",
+        "Confirmed"
+      ],
+      [
+        "Packet Date",
+        "2026-11-04",
+        "Board calendar",
+        "Confirmed"
+      ],
+      [
+        "Lead Agency",
+        "City Mobility Office",
+        "Board memo",
+        "Confirmed"
+      ],
+      [
+        "Corridor Length",
+        "6.4 miles",
+        "Engineering summary",
+        "Confirmed"
+      ],
+      [
+        "Curb Zones",
+        "42 curb-management zones",
+        "Operations log",
+        "Confirmed"
+      ],
+      [
+        "TSP Intersections",
+        "14 intersections",
+        "Signal plan",
+        "Confirmed"
+      ],
+      [
+        "Pilot Status",
+        "Ready for board review",
+        "Release review",
+        "Confirmed"
+      ]
+    ],
+    "comment_rows": [
+      [
+        "Comment ID",
+        "Theme",
+        "Public Concern",
+        "Final Response",
+        "Status",
+        "Owner"
+      ],
+      [
+        "C-001",
+        "Safety",
+        "Request safer crossings near Alder Market",
+        "Add daylighting and temporary curb extensions at Alder Market",
+        "Addressed",
+        "Street Design"
+      ],
+      [
+        "C-002",
+        "Accessibility",
+        "Need audible crossing support at two signals",
+        "Include audible crossing checks in signal activation plan",
+        "Addressed",
+        "Signals"
+      ],
+      [
+        "C-003",
+        "Loading",
+        "Delivery drivers need clear loading windows",
+        "Publish loading window map before launch",
+        "Addressed",
+        "Curb Operations"
+      ],
+      [
+        "C-004",
+        "Transit",
+        "Concern about bus delay during pilot activation",
+        "Coordinate signal priority testing with Metro Route 18",
+        "Addressed",
+        "Transit Liaison"
+      ],
+      [
+        "C-005",
+        "Business access",
+        "Small businesses asked for signage",
+        "Install wayfinding signs one week before launch",
+        "Addressed",
+        "Outreach"
+      ],
+      [
+        "C-006",
+        "Data privacy",
+        "Request public privacy summary",
+        "Publish aggregated metrics only",
+        "Addressed",
+        "Data Governance"
+      ],
+      [
+        "C-007",
+        "Night work",
+        "Noise concern for overnight striping",
+        "Limit striping to approved daytime windows",
+        "Addressed",
+        "Construction"
+      ],
+      [
+        "C-008",
+        "Evaluation",
+        "Ask how success will be measured",
+        "Report travel-time reliability, curb turnover, and safety observations",
+        "Addressed",
+        "Evaluation"
+      ]
+    ],
+    "budget_rows": [
+      [
+        "Category",
+        "Approved Cap",
+        "Final Estimate",
+        "Variance",
+        "Board Note"
+      ],
+      [
+        "Street markings",
+        "$48,000",
+        "$46,650",
+        "$1,350",
+        "Under cap"
+      ],
+      [
+        "Signal adjustments",
+        "$72,500",
+        "$73,420",
+        "-$920",
+        "Covered by contingency"
+      ],
+      [
+        "Curb signage",
+        "$31,500",
+        "$29,880",
+        "$1,620",
+        "Under cap"
+      ],
+      [
+        "Outreach",
+        "$22,000",
+        "$21,475",
+        "$525",
+        "Under cap"
+      ],
+      [
+        "Accessibility services",
+        "$18,500",
+        "$19,025",
+        "-$525",
+        "Covered by contingency"
+      ],
+      [
+        "Evaluation",
+        "$27,500",
+        "$26,890",
+        "$610",
+        "Under cap"
+      ],
+      [
+        "Total",
+        "$220,000",
+        "$217,340",
+        "$2,660",
+        "Final estimate under board cap"
+      ]
+    ],
+    "commitment_rows": [
+      [
+        "Commitment ID",
+        "Commitment",
+        "Trigger",
+        "Public Owner",
+        "Evidence ID"
+      ],
+      [
+        "M-01",
+        "Publish loading window map before launch",
+        "Board approval",
+        "Curb Operations",
+        "EV-201"
+      ],
+      [
+        "M-02",
+        "Complete accessibility walk-through before activation",
+        "Pre-launch checklist",
+        "Accessibility Lead",
+        "EV-202"
+      ],
+      [
+        "M-03",
+        "Add temporary curb extensions at Alder Market",
+        "Safety comment response",
+        "Street Design",
+        "EV-203"
+      ],
+      [
+        "M-04",
+        "Post multilingual notices at all pilot zones",
+        "Public notice window",
+        "Outreach",
+        "EV-204"
+      ],
+      [
+        "M-05",
+        "Release aggregated monthly metrics",
+        "Data publication cycle",
+        "Data Governance",
+        "EV-205"
+      ],
+      [
+        "M-06",
+        "Hold post-launch listening session",
+        "Thirty-day review",
+        "Community Liaison",
+        "EV-206"
+      ],
+      [
+        "M-07",
+        "Document signal timing exceptions",
+        "Signal activation",
+        "Signals",
+        "EV-207"
+      ]
+    ],
+    "permit_rows": [
+      [
+        "Condition ID",
+        "Requirement",
+        "Due Date",
+        "Status",
+        "Evidence ID"
+      ],
+      [
+        "P-01",
+        "Public notice posted",
+        "2026-10-14",
+        "Complete",
+        "EV-301"
+      ],
+      [
+        "P-02",
+        "Temporary traffic control plan logged",
+        "2026-10-21",
+        "Complete",
+        "EV-302"
+      ],
+      [
+        "P-03",
+        "Accessibility review completed",
+        "2026-10-24",
+        "Complete",
+        "EV-303"
+      ],
+      [
+        "P-04",
+        "Daytime striping window confirmed",
+        "2026-10-28",
+        "Complete",
+        "EV-304"
+      ],
+      [
+        "P-05",
+        "Monthly metrics publication schedule approved",
+        "2026-11-01",
+        "Complete",
+        "EV-305"
+      ]
+    ],
+    "outreach_rows": [
+      [
+        "Channel",
+        "Count",
+        "Languages",
+        "Public Evidence"
+      ],
+      [
+        "Pop-up sessions",
+        "9",
+        "English, Spanish, Chinese",
+        "Sign-in summary"
+      ],
+      [
+        "Virtual briefings",
+        "3",
+        "English, Spanish",
+        "Recording index"
+      ],
+      [
+        "Door hangers",
+        "1,850",
+        "English, Spanish, Chinese",
+        "Distribution log"
+      ],
+      [
+        "Large-print packets",
+        "64",
+        "Large print",
+        "Accessibility log"
+      ],
+      [
+        "Hotline messages",
+        "118",
+        "English, Spanish, Chinese",
+        "Comment intake log"
+      ]
+    ],
+    "contact_rows": [
+      [
+        "Role",
+        "Name",
+        "Email",
+        "Public Phone"
+      ],
+      [
+        "Project Manager",
+        "Elena Park",
+        "elena.park@example.test",
+        "555-0301"
+      ],
+      [
+        "Curb Operations",
+        "Ravi Shah",
+        "curbops@example.test",
+        "555-0302"
+      ],
+      [
+        "Accessibility Lead",
+        "Nora Kim",
+        "accessibility@example.test",
+        "555-0303"
+      ],
+      [
+        "Community Liaison",
+        "Luis Mateo",
+        "community@example.test",
+        "555-0304"
+      ],
+      [
+        "Data Governance",
+        "Iris Chen",
+        "data@example.test",
+        "555-0305"
+      ]
+    ],
+    "header_contains": [
+      "Northbank Mobility Pilot | Public Board Packet 2026-11-04"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "toc_present": true,
+    "page_break_before": [
+      "Appendix A - Public Contact Directory"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_008_docx_mobility_board_packet_release"
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": "pptwf_005",
+  "task_dir_name": "pptwf_005_team_sync_deck_caption_cleanup_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "F1 Style consistency",
+    "F3 Layout control"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "single-document",
+  "composition_pattern": "caption-cleanup -> agenda-reorder -> preserve-reference",
+  "difficulty": "Medium-Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Clean up a team sync deck with caption fixes.",
+  "single_step_benchmark_instruction": "Remove visible Draft: prefixes, delete the Old Roadmap Draft slide, restore the live slide order from Team Sync through the locked reference slide, and do not modify the locked reference slide.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .pptx deck that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/pptwf_005_team_sync_deck_caption_cleanup_seed.pptx",
+  "output_path": "/root/submission/pptwf_005_team_sync_deck_caption_cleanup_seed.pptx",
+  "output_filename": "pptwf_005_team_sync_deck_caption_cleanup_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "slide_title_contains_order": [
+      "Team Sync",
+      "Agenda",
+      "Roadmap",
+      "Caption Cleanup",
+      "Closing",
+      "Layout Reference - Caption"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Team Sync",
+        "required_lines": [
+          "Workflow-locked team sync deck",
+          "Keep the caption layout stable."
+        ]
+      },
+      {
+        "slide_title": "Agenda",
+        "required_lines": [
+          "Standup",
+          "Roadmap",
+          "Risks"
+        ]
+      },
+      {
+        "slide_title": "Roadmap",
+        "required_lines": [
+          "Caption A",
+          "Caption B",
+          "Caption C"
+        ]
+      },
+      {
+        "slide_title": "Caption Cleanup",
+        "required_lines": [
+          "Draft caption one",
+          "Draft caption two",
+          "Draft caption three"
+        ]
+      },
+      {
+        "slide_title": "Closing",
+        "required_lines": [
+          "Thanks",
+          "Close the deck after the working slides."
+        ]
+      }
+    ],
+    "slide_tables": [],
+    "reference_slides_match_input": [
+      "Layout Reference - Caption"
+    ],
+    "absent_slide_titles": [
+      "Old Roadmap Draft"
+    ]
+  }
+}

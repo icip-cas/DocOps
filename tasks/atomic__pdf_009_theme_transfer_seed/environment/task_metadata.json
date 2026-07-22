@@ -1,0 +1,35 @@
+{
+  "task_id": "pdf_009",
+  "task_dir_name": "pdf_009_theme_transfer_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "F4 Theme transfer",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdf_009_theme_transfer_seed.pdf",
+  "source_doc_path": "pdf/pdf_009_theme_transfer_seed.pdf",
+  "task_description_filename": "pdf_009_theme_transfer_seed.txt",
+  "task_description_path": "pdf/pdf_009_theme_transfer_seed.txt",
+  "input_path": "/root/pdf_009_theme_transfer_seed.pdf",
+  "output_path": "/root/submission/pdf_009_theme_transfer_seed.pdf",
+  "output_filename": "pdf_009_theme_transfer_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This PDF proposal uses inconsistent accent colors across pages and callout elements.",
+  "single_step_benchmark_instruction": "Apply a cohesive navy-based corporate theme across the whole PDF, including heading bars and callout boxes, while keeping the text content unchanged.",
+  "atomic_scope": "Only theme transfer is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with a consistent document-wide theme.",
+  "inspired_by": [
+    {
+      "title": "I need to translate a PDF file into another language while preserving the exact layout.",
+      "url": "https://www.reddit.com/r/pdf/comments/1sm0hrg/i_need_to_translate_a_pdf_file_into_another/"
+    },
+    {
+      "title": "I need Acrobat editor alternative",
+      "url": "https://www.reddit.com/r/pdf/comments/1sja7un/i_need_acrobat_editor_alternative/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The visual system spans multiple pages and multiple element types\n- Local recoloring is not enough; the result should feel globally coherent\n- Content and layout should stay intact while the theme changes"
+  }
+}

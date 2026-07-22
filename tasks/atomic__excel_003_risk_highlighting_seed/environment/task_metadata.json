@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_003",
+  "task_dir_name": "excel_003_risk_highlighting_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "F2 Highlighting",
+  "difficulty": "Easy-Medium",
+  "source_doc_filename": "excel_003_risk_highlighting_seed.xlsx",
+  "source_doc_path": "excel/excel_003_risk_highlighting_seed.xlsx",
+  "task_description_filename": "excel_003_risk_highlighting_seed.txt",
+  "task_description_path": "excel/excel_003_risk_highlighting_seed.txt",
+  "input_path": "/root/excel_003_risk_highlighting_seed.xlsx",
+  "output_path": "/root/submission/excel_003_risk_highlighting_seed.xlsx",
+  "output_filename": "excel_003_risk_highlighting_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This tracker sheet has risk scores, but urgent items do not stand out visually.",
+  "single_step_benchmark_instruction": "Visually highlight all rows where the `Risk Score` is greater than or equal to 85.",
+  "atomic_scope": "Only highlighting/emphasis is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook where high-risk rows are clearly highlighted.",
+  "inspired_by": [
+    {
+      "title": "Conditional formatting based on a different cell's value",
+      "url": "https://www.reddit.com/r/excel/comments/1sndxcd/conditional_formatting_based_on_a_different_cells/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Column widths and layout are rough\n- Status logic could be improved\n- Dates are not visually prioritized, but that is not the explicit request"
+  }
+}

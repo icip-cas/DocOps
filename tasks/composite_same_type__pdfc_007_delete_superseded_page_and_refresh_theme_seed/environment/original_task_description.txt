@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_007
+
+Doc type: pdf
+Atomic operations: S1 Insert/Delete, F4 Theme transfer
+Composition pattern: delete -> retheme
+Difficulty: Medium-Hard
+
+User-facing goal:
+This report still includes a superseded page and mixed accent colors.
+
+Single-step benchmark instruction:
+Delete the page titled `Superseded Rate Card`, then retheme the remaining title bars and callout boxes to a cohesive blue-gray palette.
+
+Atomic scope:
+Only the page deletion and requested theme transfer are explicitly requested.
+
+Expected output type:
+A revised .pdf report without the superseded page and with a blue-gray theme.

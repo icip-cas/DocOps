@@ -1,0 +1,496 @@
+{
+  "task_id": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+  "task_dir_name": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+  "doc_type": "pptx+xlsx",
+  "primary_modality": "PowerPoint (.pptx), Excel (.xlsx), PDF, and Word (.docx)",
+  "composition_type": "cross-document many-input multi-output",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+  "supporting_input_paths": [
+    "/root/energy_audit_report.docx",
+    "/root/brightgrid_rebate_guide.pdf",
+    "/root/vendor_quote_and_cutsheets.pdf",
+    "/root/baseline_utility_usage.xlsx",
+    "/root/internal_pricing_strategy.docx"
+  ],
+  "output_paths": {
+    "summary_deck": "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+    "calculation_tracker": "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+  "output_filename": "utility_rebate_mv_summary.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-formula-privacy-strict",
+  "user_task_description": "Create a utility rebate M&V deck and calculation tracker from an energy audit, rebate guide, vendor quote, baseline workbook, and internal pricing notes while excluding ineligible measures and private strategy.",
+  "single_step_benchmark_instruction": "Create utility_rebate_mv_summary.pptx and rebate_measure_calculation_tracker.xlsx. Identify eligible and excluded measures, calculate kWh savings and incentive caps with formulas, preserve workbook structure, and exclude private pricing strategy from public outputs.",
+  "expected_output_type": "A .pptx summary deck and .xlsx calculation tracker saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "U.S. DOE energy savings performance and M&V resources",
+      "url": "https://www.energy.gov/eere/femp/measurement-and-verification"
+    },
+    {
+      "title": "ENERGY STAR commercial building energy efficiency resources",
+      "url": "https://www.energystar.gov/buildings"
+    },
+    {
+      "title": "Utility commercial energy efficiency rebate application workflows",
+      "url": "https://www.dsireusa.org/"
+    }
+  ],
+  "verifier_expectations": {
+    "pptx_output": "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+    "xlsx_output": "/root/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx",
+    "slide_titles": [
+      "Utility Rebate M&V Summary",
+      "Eligible Measures",
+      "Excluded Items",
+      "Savings and Incentive",
+      "Submission Checklist",
+      "Privacy Boundary"
+    ],
+    "ppt_required": [
+      "Harbor Point Medical Office",
+      "BrightGrid Commercial Custom Rebate",
+      "L-101 North lobby LED retrofit",
+      "H-202 chilled water pump VFD",
+      "L-102 south loading dock LED retrofit",
+      "Garage stairwell sensors excluded: controls-only",
+      "East wing BAS schedule excluded: code-required",
+      "57,361.2 kWh",
+      "$7,254.53",
+      "$50,220.00 eligible installed cost",
+      "customer signature by 2026-08-14",
+      "internal pricing strategy excluded"
+    ],
+    "ppt_forbidden": [
+      "inflate run hours",
+      "split the invoice",
+      "move garage sensors under lighting",
+      "hide code required BAS",
+      "vendor margin target",
+      "private pricing strategy"
+    ],
+    "summary_rows": [
+      [
+        "Field",
+        "Value",
+        "Source",
+        "Review"
+      ],
+      [
+        "Site",
+        "Harbor Point Medical Office",
+        "Energy audit report",
+        "Matched"
+      ],
+      [
+        "Program",
+        "BrightGrid Commercial Custom Rebate",
+        "Program guide",
+        "Matched"
+      ],
+      [
+        "Eligible measures",
+        3,
+        "Eligibility Review",
+        "Calculated"
+      ],
+      [
+        "Excluded measures",
+        2,
+        "Excluded Measures",
+        "Calculated"
+      ],
+      [
+        "Total kWh savings",
+        "='Measure Calculations'!G5",
+        "Measure Calculations",
+        "Calculated"
+      ],
+      [
+        "Eligible installed cost",
+        "='Measure Calculations'!H5",
+        "Measure Calculations",
+        "Calculated"
+      ],
+      [
+        "Total approved incentive",
+        "='Measure Calculations'!L5",
+        "Measure Calculations",
+        "Calculated"
+      ],
+      [
+        "Net cost after incentive",
+        "=B7-B8",
+        "Measure Calculations",
+        "Calculated"
+      ],
+      [
+        "Submission due",
+        "2026-08-14",
+        "Program guide",
+        "Pending signature"
+      ],
+      [
+        "Package ready",
+        "=IF(AND(B4=3,B5=2,B8>7000),\"Ready\",\"Hold\")",
+        "Cross-check",
+        "Calculated"
+      ]
+    ],
+    "measure_rows": [
+      [
+        "Measure ID",
+        "Measure",
+        "Qty/HP",
+        "Baseline W",
+        "Proposed W",
+        "Hours",
+        "kWh Savings",
+        "Installed Cost",
+        "Incentive Formula",
+        "Gross Incentive",
+        "50% Cost Cap",
+        "Approved Incentive"
+      ],
+      [
+        "L-101",
+        "North lobby LED retrofit",
+        186,
+        82,
+        28,
+        3200,
+        "=(D2-E2)*C2*F2/1000",
+        24180,
+        "=G2*0.08",
+        "=G2*0.08",
+        "=H2*50%",
+        "=MIN(J2,K2)"
+      ],
+      [
+        "H-202",
+        "Chilled water pump VFD",
+        30,
+        "",
+        "",
+        4100,
+        "=C3*615",
+        18900,
+        "=C3*120",
+        "=C3*120",
+        "=H3*50%",
+        "=MIN(J3,K3)"
+      ],
+      [
+        "L-102",
+        "South loading dock LED retrofit",
+        42,
+        96,
+        34,
+        2600,
+        "=(D4-E4)*C4*F4/1000",
+        7140,
+        "=G4*0.08",
+        "=G4*0.08",
+        "=H4*50%",
+        "=MIN(J4,K4)"
+      ],
+      [
+        "TOTAL",
+        "Eligible project total",
+        "",
+        "",
+        "",
+        "",
+        "=SUM(G2:G4)",
+        "=SUM(H2:H4)",
+        "",
+        "=SUM(J2:J4)",
+        "=SUM(K2:K4)",
+        "=SUM(L2:L4)"
+      ]
+    ],
+    "eligibility_rows": [
+      [
+        "Measure ID",
+        "Requirement",
+        "Evidence",
+        "Status",
+        "PPT Anchor"
+      ],
+      [
+        "L-101",
+        "DLC listed lighting retrofit with wattage reduction",
+        "186 fixtures, 82W to 28W, 3,200 hours, DLC listed",
+        "Eligible",
+        "North lobby LED retrofit"
+      ],
+      [
+        "H-202",
+        "Existing constant-speed pump, VFD added, >2,000 operating hours",
+        "30 hp pump, constant speed, 4,100 hours/year",
+        "Eligible",
+        "chilled water pump VFD"
+      ],
+      [
+        "L-102",
+        "DLC listed lighting retrofit with wattage reduction",
+        "42 fixtures, 96W to 34W, 2,600 hours, DLC listed",
+        "Eligible",
+        "south loading dock LED retrofit"
+      ]
+    ],
+    "excluded_rows": [
+      [
+        "Item ID",
+        "Item",
+        "Reason",
+        "Disposition"
+      ],
+      [
+        "X-01",
+        "Garage stairwell occupancy sensors",
+        "Controls-only change with no fixture wattage reduction under lighting measure",
+        "Exclude"
+      ],
+      [
+        "X-02",
+        "East wing BAS schedule adjustment",
+        "Required by tenant-buildout code sequence; not above-code savings",
+        "Exclude"
+      ]
+    ],
+    "checklist_rows": [
+      [
+        "Item",
+        "Owner",
+        "Due Date",
+        "Status"
+      ],
+      [
+        "Customer signature",
+        "Facilities Director",
+        "2026-08-14",
+        "Pending"
+      ],
+      [
+        "Vendor quote",
+        "Project Manager",
+        "2026-08-08",
+        "Ready"
+      ],
+      [
+        "DLC cut sheets",
+        "Engineer",
+        "2026-08-08",
+        "Ready"
+      ],
+      [
+        "Existing condition photos",
+        "Field Lead",
+        "2026-08-09",
+        "Ready"
+      ],
+      [
+        "M&V worksheet",
+        "Energy Analyst",
+        "2026-08-10",
+        "Ready"
+      ]
+    ],
+    "raw_rows": [
+      [
+        "ID",
+        "Location",
+        "Type",
+        "Qty/HP",
+        "Baseline",
+        "Proposed",
+        "Hours",
+        "Cost",
+        "Notes"
+      ],
+      [
+        "L-101",
+        "North lobby",
+        "LED",
+        186,
+        82,
+        28,
+        3200,
+        24180,
+        "DLC listed"
+      ],
+      [
+        "H-202",
+        "Central plant",
+        "VFD",
+        30,
+        "",
+        "",
+        4100,
+        18900,
+        "Existing constant-speed pump"
+      ],
+      [
+        "L-102",
+        "South loading dock",
+        "LED",
+        42,
+        96,
+        34,
+        2600,
+        7140,
+        "DLC listed"
+      ],
+      [
+        "X-01",
+        "Garage stairwell",
+        "Controls",
+        58,
+        "",
+        "",
+        8760,
+        5600,
+        "Controls-only"
+      ],
+      [
+        "X-02",
+        "East wing",
+        "BAS schedule",
+        "",
+        "",
+        "",
+        "",
+        4200,
+        "Code-required"
+      ]
+    ],
+    "rules_rows": [
+      [
+        "Rule",
+        "Value"
+      ],
+      [
+        "Lighting $/kWh",
+        0.08
+      ],
+      [
+        "VFD $/hp",
+        120
+      ],
+      [
+        "Cost cap",
+        "50%"
+      ],
+      [
+        "Signature due",
+        "2026-08-14"
+      ]
+    ],
+    "sheet_order": [
+      "Project Summary",
+      "Measure Calculations",
+      "Eligibility Review",
+      "Excluded Measures",
+      "Submission Checklist",
+      "Raw Inputs",
+      "Program Rules"
+    ],
+    "tables": {
+      "Project Summary": [
+        "tblProjectSummary",
+        "A1:D11"
+      ],
+      "Measure Calculations": [
+        "tblMeasureCalculations",
+        "A1:L5"
+      ],
+      "Eligibility Review": [
+        "tblEligibilityReview",
+        "A1:E4"
+      ],
+      "Excluded Measures": [
+        "tblExcludedMeasures",
+        "A1:D3"
+      ],
+      "Submission Checklist": [
+        "tblSubmissionChecklist",
+        "A1:D6"
+      ],
+      "Raw Inputs": [
+        "tblRawInputs",
+        "A1:I6"
+      ],
+      "Program Rules": [
+        "tblProgramRules",
+        "A1:B5"
+      ]
+    },
+    "formula_cells": {
+      "Project Summary!B6": "='Measure Calculations'!G5",
+      "Project Summary!B7": "='Measure Calculations'!H5",
+      "Project Summary!B8": "='Measure Calculations'!L5",
+      "Project Summary!B9": "=B7-B8",
+      "Project Summary!B11": "=IF(AND(B4=3,B5=2,B8>7000),\"Ready\",\"Hold\")",
+      "Measure Calculations!G2": "=(D2-E2)*C2*F2/1000",
+      "Measure Calculations!J2": "=G2*0.08",
+      "Measure Calculations!K2": "=H2*50%",
+      "Measure Calculations!L2": "=MIN(J2,K2)",
+      "Measure Calculations!G3": "=C3*615",
+      "Measure Calculations!J3": "=C3*120",
+      "Measure Calculations!K3": "=H3*50%",
+      "Measure Calculations!L3": "=MIN(J3,K3)",
+      "Measure Calculations!G4": "=(D4-E4)*C4*F4/1000",
+      "Measure Calculations!J4": "=G4*0.08",
+      "Measure Calculations!K4": "=H4*50%",
+      "Measure Calculations!L4": "=MIN(J4,K4)",
+      "Measure Calculations!G5": "=SUM(G2:G4)",
+      "Measure Calculations!H5": "=SUM(H2:H4)",
+      "Measure Calculations!J5": "=SUM(J2:J4)",
+      "Measure Calculations!K5": "=SUM(K2:K4)",
+      "Measure Calculations!L5": "=SUM(L2:L4)"
+    },
+    "hidden_sheets": [
+      "Raw Inputs",
+      "Program Rules"
+    ],
+    "defined_names": [
+      "TotalKwhSavings",
+      "TotalApprovedIncentive",
+      "EligibleInstalledCost"
+    ],
+    "print_areas": {
+      "Project Summary": "A1:D11",
+      "Measure Calculations": "A1:L5",
+      "Eligibility Review": "A1:E4",
+      "Excluded Measures": "A1:D3",
+      "Submission Checklist": "A1:D6"
+    },
+    "data_validation": {
+      "Eligibility Review": [
+        "D2:D4"
+      ],
+      "Excluded Measures": [
+        "D2:D3"
+      ],
+      "Submission Checklist": [
+        "D2:D6"
+      ]
+    },
+    "forbidden_public": [
+      "inflate run hours",
+      "split the invoice",
+      "move garage sensors under lighting",
+      "hide code required BAS",
+      "vendor margin target",
+      "private pricing strategy"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet"
+}

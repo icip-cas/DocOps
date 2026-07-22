@@ -1,0 +1,1 @@
+Regenerated L3 single-presentation workflow seed: rebuild a messy internal hospital evacuation exercise deck into a clean public briefing by removing internal slides and notes, applying correction-log fixes, rebuilding public table slides, migrating explicit visual styles, and preserving concise public speaker notes. All content is synthetic.

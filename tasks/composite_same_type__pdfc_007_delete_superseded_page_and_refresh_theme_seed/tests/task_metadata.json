@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_007",
+  "task_dir_name": "pdfc_007_delete_superseded_page_and_refresh_theme_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "F4 Theme transfer"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "delete -> retheme",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pdfc_007_delete_superseded_page_and_refresh_theme_seed.pdf",
+  "source_doc_path": "pdf/pdfc_007_delete_superseded_page_and_refresh_theme_seed.pdf",
+  "task_description_filename": "pdfc_007_delete_superseded_page_and_refresh_theme_seed.txt",
+  "task_description_path": "pdf/pdfc_007_delete_superseded_page_and_refresh_theme_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_007_delete_superseded_page_and_refresh_theme_seed.pdf",
+  "output_path": "/root/submission/pdfc_007_delete_superseded_page_and_refresh_theme_seed.pdf",
+  "output_filename": "pdfc_007_delete_superseded_page_and_refresh_theme_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report still includes a superseded page and mixed accent colors.",
+  "single_step_benchmark_instruction": "Delete the page titled `Superseded Rate Card`, then retheme the remaining title bars and callout boxes to a cohesive blue-gray palette.",
+  "atomic_scope": "Only the page deletion and requested theme transfer are explicitly requested.",
+  "expected_output_type": "A revised .pdf report without the superseded page and with a blue-gray theme.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Remaining text should stay unchanged\n- Do not reorder the remaining pages"
+  }
+}

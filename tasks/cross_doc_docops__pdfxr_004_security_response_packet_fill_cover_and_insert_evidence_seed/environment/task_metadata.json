@@ -1,0 +1,37 @@
+{
+  "task_id": "pdfxr_004",
+  "task_dir_name": "pdfxr_004_security_response_packet_fill_cover_and_insert_evidence_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-body-lines -> insert-support-page -> delete-internal-page -> reorder-kept-pages -> rebuild-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_004_security_response_packet_fill_cover_and_insert_evidence_seed.pdf",
+  "supporting_input_paths": [
+    "/root/cover_values.xlsx",
+    "/root/response_rules.docx",
+    "/root/customer_summary.pdf",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_004_security_response_packet_fill_cover_and_insert_evidence_seed.pdf",
+  "output_filename": "pdfxr_004_security_response_packet_fill_cover_and_insert_evidence_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Fill the cover placeholders from the answered questionnaire.",
+  "single_step_benchmark_instruction": "Fill the cover placeholders from the answered questionnaire, insert the required evidence pages in the specified section order, and keep the legal disclaimer and existing approved appendix pages unchanged.",
+  "atomic_scope": "Only the cover lines, body lines, inserted support page, deleted internal page, final page order, and outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the image-bearing evidence page\n- Do not flatten the packet into regenerated plain pages"
+  }
+}

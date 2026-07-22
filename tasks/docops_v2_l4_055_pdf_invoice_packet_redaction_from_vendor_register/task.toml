@@ -1,0 +1,55 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/docops-v2-final__docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register"
+description = "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register - DocOps v2 final L4 task."
+authors = []
+keywords = ["pdf", "cross-document", "document-processing", "redaction", "bookmarks", "packet-assembly"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "docops_v2_final_l4"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["pdf", "cross-document", "document-processing", "manual-expansion"]
+task_id = "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register"
+doc_type = "pdf"
+primary_modality = "PDF (.pdf)"
+atomic_operation = "Cross-document Composite"
+source_type = "DocOps v2 final L4 dataset"
+verifier_mode = "semantic-strict-tolerant"
+composition_type = "cross-document"
+composition_pattern = "read-register-decisions -> redact-sensitive-fields -> remove-duplicate-and-internal-pages -> insert-approved-appendix -> update-cover-and-bookmarks"
+atomic_operations = ["C1 Extraction", "C2 Editing", "S1 Insert/Delete", "S2 Reorder", "S3 Hierarchy editing"]
+
+final_dataset = "docops_v2_final_80"
+final_task_slug = "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register"
+final_index = 55
+final_difficulty = "L4"
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register_input.pdf"
+OUTPUT_PATH = "/root/submission/docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register_output.pdf"
+TASK_ID = "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register"
+DOC_TYPE = "pdf"
+
+[solution.env]

@@ -1,0 +1,90 @@
+{
+  "task_id": "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register",
+  "task_dir_name": "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "read-register-decisions -> redact-sensitive-fields -> remove-duplicate-and-internal-pages -> insert-approved-appendix -> update-cover-and-bookmarks",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register_input.pdf",
+  "supporting_input_paths": [
+    "/root/vendor_release_register.xlsx",
+    "/root/client_redaction_policy.docx",
+    "/root/approved_remittance_appendix.pdf"
+  ],
+  "output_path": "/root/submission/docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register_output.pdf",
+  "output_filename": "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register_output.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict-tolerant",
+  "user_task_description": "A client invoice packet must be assembled from a register, redaction policy, and approved appendix while removing duplicate/internal pages and preserving PDF navigation.",
+  "single_step_benchmark_instruction": "Prepare the invoice packet for client release. Remove the duplicate Alpine invoice page and internal payment routing page, redact Federal Tax ID and Bank Routing values on released invoices, insert the approved remittance appendix after invoices, update cover status/page count, and rebuild bookmarks.",
+  "atomic_scope": "Cross-document PDF packet workflow with selective deletion, redaction, insertion, page-order control, and bookmark preservation.",
+  "expected_output_type": "A revised .pdf artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Community PDF packet assembly, page organization, and redaction pain points",
+      "url": "local:DocumentBenchmark reddit_pdf_posts.json"
+    },
+    {
+      "title": "Adobe Acrobat organize pages and redaction workflows",
+      "url": "https://helpx.adobe.com/acrobat/using/removing-sensitive-content-pdfs.html"
+    }
+  ],
+  "verifier_expectations": {
+    "page_count": 4,
+    "page_titles": [
+      "Invoice Release Packet",
+      "Invoice - Alpine Labs INV-1001",
+      "Invoice - Birch Clinic INV-1002",
+      "Approved Remittance Appendix"
+    ],
+    "required_phrases": [
+      "Status Final Client Release",
+      "Page Count 4",
+      "Duplicate and internal-only payment pages removed",
+      "Invoice ID INV-1001",
+      "Amount $12,400",
+      "Invoice ID INV-1002",
+      "Amount $8,750",
+      "Federal Tax ID [REDACTED TAX ID]",
+      "Bank Routing [REDACTED BANK ROUTING]",
+      "Appendix ID REM-2026-07"
+    ],
+    "forbidden_phrases": [
+      "DUPLICATE DO NOT RELEASE",
+      "Duplicate copy",
+      "INTERNAL ONLY",
+      "Hidden staging batch",
+      "Status Draft",
+      "Page Count 5",
+      "12-3456789",
+      "98-7654321",
+      "021000021",
+      "011000015"
+    ],
+    "outline_titles": [
+      "Release Cover",
+      "Invoices",
+      "Alpine Labs INV-1001",
+      "Birch Clinic INV-1002",
+      "Approved Remittance Appendix"
+    ],
+    "sensitive_patterns_absent": [
+      "\\\\b\\\\d{2}-\\\\d{7}\\\\b",
+      "\\\\b0\\\\d{8}\\\\b"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_055_pdf_invoice_packet_redaction_from_vendor_register"
+}

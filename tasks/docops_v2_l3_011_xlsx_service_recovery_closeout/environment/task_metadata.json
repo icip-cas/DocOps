@@ -1,0 +1,47 @@
+{
+  "task_id": "docops_v2_l3_011_xlsx_service_recovery_closeout",
+  "task_dir_name": "docops_v2_l3_011_xlsx_service_recovery_closeout",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 18,
+  "composition_type": "single-document",
+  "composition_pattern": "raw-normalization -> priority-inference -> owner-lookup -> SLA-computation -> breach-flags -> part-cost-lookup -> exception-review -> customer-notice-release -> dashboard-repair -> validation-highlight-hide-reorder",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A field-service closeout workbook needs a long, ordered release workflow from raw tickets into a release-safe dashboard, exception register, and customer notice pack.",
+  "single_step_benchmark_instruction": "Replace the stale dashboard; create Release Queue, Exception Review, and Customer Notices; preserve source lookup sheets; populate the release queue from Raw Intake; infer priority; map owners and SLA hours; compute age hours and breach flags using Dashboard!B2; map part costs; generate escalation reasons and customer notices; suppress internal notes; create exception and notice tables; repair dashboard formulas; add native tables, validation, freeze panes, highlights, release ordering, and hidden raw/scratch/archive sheets.",
+  "atomic_scope": "Single-document long-flow workflow with ordered dependent operations; preserve source data while creating publishable derived sheets.",
+  "expected_output_type": "A revised .xlsx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Excel operational reporting pain: lookup formulas, validations, conditional formatting, and dashboards",
+      "url": "https://www.reddit.com/r/excel/"
+    },
+    {
+      "title": "Microsoft Excel support topics for tables, data validation, formulas, and conditional formatting",
+      "url": "https://support.microsoft.com/excel"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_011_xlsx_service_recovery_closeout_input.xlsx",
+  "output_path": "/root/submission/docops_v2_l3_011_xlsx_service_recovery_closeout_output.xlsx",
+  "output_filename": "docops_v2_l3_011_xlsx_service_recovery_closeout_output.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_011_xlsx_service_recovery_closeout"
+}

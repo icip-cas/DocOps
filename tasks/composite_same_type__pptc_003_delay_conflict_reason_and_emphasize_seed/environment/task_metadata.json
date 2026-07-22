@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_003",
+  "task_dir_name": "pptc_003_delay_conflict_reason_and_emphasize_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C5 Reasoning",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "detect -> emphasize",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_003_delay_conflict_reason_and_emphasize_seed.pptx",
+  "source_doc_path": "ppt/pptc_003_delay_conflict_reason_and_emphasize_seed.pptx",
+  "task_description_filename": "pptc_003_delay_conflict_reason_and_emphasize_seed.txt",
+  "task_description_path": "ppt/pptc_003_delay_conflict_reason_and_emphasize_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_003_delay_conflict_reason_and_emphasize_seed.pptx",
+  "output_path": "/root/submission/pptc_003_delay_conflict_reason_and_emphasize_seed.pptx",
+  "output_filename": "pptc_003_delay_conflict_reason_and_emphasize_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck contains one outdated delay statement that should be visually emphasized for review.",
+  "single_step_benchmark_instruction": "Compare the updated launch date on Slide 1 with the schedule bullets on Slide 2, then visually emphasize only the inconsistent bullet on Slide 2 so it stands out from the surrounding lines.",
+  "atomic_scope": "Only the emphasis of the truly inconsistent delay line is explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with the inconsistent line clearly emphasized.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not rewrite the slide text\n- Leave other bullets unchanged"
+  }
+}

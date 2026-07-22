@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: wordc_006
+
+Doc type: word
+Atomic operations: C2 Editing, F1 Style consistency
+Composition pattern: rewrite -> restyle
+Difficulty: Medium
+
+User-facing goal:
+This client letter has two rough draft sections and inconsistent body formatting.
+
+Single-step benchmark instruction:
+Rewrite the sections titled `Draft opening` and `Draft ask` so they sound professional and client-appropriate, then standardize those rewritten body paragraphs to one consistent style.
+
+Atomic scope:
+Only the two targeted rewrites and body-style normalization for those sections are explicitly requested.
+
+Expected output type:
+A revised .docx letter with polished draft sections and consistent body styling.

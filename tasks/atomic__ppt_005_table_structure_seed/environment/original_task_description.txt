@@ -1,0 +1,26 @@
+Task ID: ppt_005
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PowerPoint (.pptx)
+Atomic Operation: S4 Table/Sheet ops
+Difficulty: Medium
+
+Inspired By:
+- Title: Trying to figure out a PPT Report
+  URL: https://www.reddit.com/r/powerpoint/comments/1smzxig/trying_to_figure_out_a_ppt_report/
+
+User Task Description:
+This slide contains a milestone table, but the table is missing an `Owner` column.
+
+Single-Step Benchmark Instruction:
+Insert a new `Owner` column between `Milestone` and `Due Date` in the table on the slide.
+
+Atomic Scope:
+Only the table-structure change is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- Table edits in slides are brittle compared with plain text edits
+- The change must preserve the existing rows and column order around the insertion point
+- The slide is otherwise simple, so the task is specifically structural
+
+Expected Output Type:
+A revised .pptx deck with the requested table modification.

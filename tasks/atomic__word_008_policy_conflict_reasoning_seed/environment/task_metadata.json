@@ -1,0 +1,26 @@
+{
+  "task_id": "word_008",
+  "task_dir_name": "word_008_policy_conflict_reasoning_seed",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operation": "C5 Reasoning",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "word_008_policy_conflict_reasoning_seed.docx",
+  "source_doc_path": "word/word_008_policy_conflict_reasoning_seed.docx",
+  "task_description_filename": "word_008_policy_conflict_reasoning_seed.txt",
+  "task_description_path": "word/word_008_policy_conflict_reasoning_seed.txt",
+  "input_path": "/root/word_008_policy_conflict_reasoning_seed.docx",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This memo draft contains procedural statements that may not all be compatible with one another.",
+  "single_step_benchmark_instruction": "Identify the conflict in the approval logic and reply using exactly this 4-line template: Statement A: ... | Statement B: ... | Final rule: ... | Why: ... Your answer should stay document-grounded: cite the temporary waiver statement, the final correction, and the surviving finance-approval rule.",
+  "atomic_scope": "Only document-grounded reasoning over document consistency is explicitly requested in this task.",
+  "expected_output_type": "A structured, document-grounded explanation of the conflicting approval logic.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- Several lines are individually plausible\n- The contradiction only becomes clear after comparing multiple statements\n- A later correction changes how an earlier rule should be interpreted"
+  }
+}

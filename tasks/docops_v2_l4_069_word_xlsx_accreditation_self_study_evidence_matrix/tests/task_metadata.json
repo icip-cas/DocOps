@@ -1,0 +1,355 @@
+{
+  "task_id": "docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix",
+  "task_dir_name": "docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "standards-and-assessment-filtering -> privacy-safe-self-study-response -> evidence-matrix-workbook -> action-plan-reconciliation",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_input.docx",
+  "supporting_input_paths": [
+    "/root/program_standards_excerpt.pdf",
+    "/root/raw_assessment_export.xlsx",
+    "/root/evidence_inventory.xlsx",
+    "/root/assessment_committee_minutes.docx"
+  ],
+  "output_paths": {
+    "self_study_response": "/root/submission/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_self_study_response.docx",
+    "evidence_matrix": "/root/submission/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_evidence_matrix.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_self_study_response.docx",
+  "output_filename": "accreditation_self_study_response.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a privacy-safe accreditation self-study response and evidence matrix workbook from draft response text, standards, raw assessment data, evidence inventory, and committee minutes. Preserve aggregate evidence while keeping student-level artifacts and comments internal.",
+  "single_step_benchmark_instruction": "Create accreditation_self_study_response.docx and accreditation_evidence_matrix.xlsx. Publicly report STD-1, STD-3, and STD-4 as met, STD-2 as action required, cite only publishable evidence, preserve Excel formulas/tables/validations/hidden sheets, and keep student names/raw comments out of the DOCX and public workbook sheets.",
+  "expected_output_type": "A .docx self-study response and .xlsx evidence matrix saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "FERPA-style privacy constraints protect personally identifiable information from student education records",
+      "url": "https://www.ecfr.gov/current/title-34/subtitle-A/part-99"
+    },
+    {
+      "title": "Accreditation self-study workflows commonly require evidence mapping, assessment outcomes, and documented improvement actions",
+      "url": "local:DocumentBenchmark L4 scenario synthesis"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_self_study_response.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix_evidence_matrix.xlsx",
+    "standards_rows": [
+      [
+        "STD-1",
+        "Curriculum Alignment",
+        "PLO-1",
+        "EV-101; EV-102",
+        80,
+        84,
+        "Met",
+        "Ready"
+      ],
+      [
+        "STD-2",
+        "Assessment Cycle",
+        "PLO-2",
+        "EV-201; EV-203",
+        75,
+        72,
+        "Action Required",
+        "Action Plan Required"
+      ],
+      [
+        "STD-3",
+        "Faculty Qualifications",
+        "PLO-3",
+        "EV-301",
+        100,
+        100,
+        "Met",
+        "Ready"
+      ],
+      [
+        "STD-4",
+        "Student Support",
+        "PLO-4",
+        "EV-401",
+        70,
+        78,
+        "Met",
+        "Ready"
+      ]
+    ],
+    "assessment_rows": [
+      [
+        "PLO-1",
+        "Capstone integration",
+        "CIS-410",
+        31,
+        26,
+        84
+      ],
+      [
+        "PLO-2",
+        "Assessment cycle closure",
+        "CIS-420",
+        25,
+        18,
+        72
+      ],
+      [
+        "PLO-3",
+        "Faculty qualification coverage",
+        "Program file",
+        12,
+        12,
+        100
+      ],
+      [
+        "PLO-4",
+        "Student support usage",
+        "Advising dashboard",
+        40,
+        31,
+        78
+      ]
+    ],
+    "evidence_rows": [
+      [
+        "EV-101",
+        "STD-1",
+        "Curriculum map crosswalk",
+        "Publishable",
+        "Appendix A"
+      ],
+      [
+        "EV-102",
+        "STD-1",
+        "Capstone rubric aggregate summary",
+        "Publishable",
+        "Appendix B"
+      ],
+      [
+        "EV-201",
+        "STD-2",
+        "Assessment committee cycle minutes",
+        "Publishable",
+        "Appendix C"
+      ],
+      [
+        "EV-202",
+        "STD-2",
+        "Raw student artifact sample with names",
+        "Internal Only",
+        "Do Not Publish"
+      ],
+      [
+        "EV-203",
+        "STD-2",
+        "Improvement plan for rubric calibration",
+        "Publishable",
+        "Appendix D"
+      ],
+      [
+        "EV-301",
+        "STD-3",
+        "Faculty qualification matrix",
+        "Publishable",
+        "Appendix E"
+      ],
+      [
+        "EV-401",
+        "STD-4",
+        "Advising analytics aggregate",
+        "Publishable",
+        "Appendix F"
+      ],
+      [
+        "EV-402",
+        "STD-4",
+        "Raw student grievance comments",
+        "Internal Only",
+        "Do Not Publish"
+      ]
+    ],
+    "action_rows": [
+      [
+        "ACT-201",
+        "STD-2",
+        "PLO-2",
+        "Revise rubric calibration workshop and sample moderation cycle",
+        "Assessment Chair",
+        "2026-10-15",
+        "Open",
+        "Yes"
+      ],
+      [
+        "ACT-202",
+        "STD-2",
+        "PLO-2",
+        "Add second checkpoint for evidence upload completeness",
+        "Program Coordinator",
+        "2026-11-01",
+        "Open",
+        "Yes"
+      ],
+      [
+        "ACT-401",
+        "STD-4",
+        "PLO-4",
+        "Monitor advising appointment no-show rate in spring review",
+        "Student Success Lead",
+        "2027-02-15",
+        "Watch",
+        "No"
+      ]
+    ],
+    "public_appendix_rows": [
+      [
+        "STD-1",
+        "Met",
+        "EV-101; EV-102",
+        "Curriculum map and capstone rubric aggregates show 84% achievement against an 80% threshold."
+      ],
+      [
+        "STD-2",
+        "Action Required",
+        "EV-201; EV-203",
+        "PLO-2 reached 72% against a 75% threshold; two improvement actions are open."
+      ],
+      [
+        "STD-3",
+        "Met",
+        "EV-301",
+        "Faculty coverage remains complete across required qualification categories."
+      ],
+      [
+        "STD-4",
+        "Met",
+        "EV-401",
+        "Aggregate advising data show 78% support usage against a 70% threshold."
+      ]
+    ],
+    "forbidden_private": [
+      "Jordan Ellis",
+      "Mina Patel",
+      "student grievance",
+      "Raw student artifact",
+      "Morgan Lee",
+      "Priya Shah",
+      "EV-202",
+      "EV-402"
+    ],
+    "sheet_order": [
+      "Standards Matrix",
+      "Assessment Summary",
+      "Evidence Index",
+      "Action Tracker",
+      "Public Appendix",
+      "Raw Protected Notes",
+      "Rules"
+    ],
+    "tables": {
+      "Standards Matrix": [
+        "standards_matrix",
+        "A1:H5"
+      ],
+      "Assessment Summary": [
+        "assessment_summary",
+        "A1:H5"
+      ],
+      "Evidence Index": [
+        "evidence_index",
+        "A1:F9"
+      ],
+      "Action Tracker": [
+        "action_tracker",
+        "A1:I4"
+      ],
+      "Public Appendix": [
+        "public_appendix",
+        "A1:D5"
+      ]
+    },
+    "hidden_sheets": [
+      "Raw Protected Notes",
+      "Rules"
+    ],
+    "defined_names": [
+      "boundary_choices",
+      "status_choices",
+      "public_commitment_choices"
+    ],
+    "data_validation_ranges": {
+      "Evidence Index": [
+        "D2:D9"
+      ],
+      "Action Tracker": [
+        "G2:G4",
+        "H2:H4"
+      ]
+    },
+    "print_areas": {
+      "Standards Matrix": "'Standards Matrix'!$A$1:$H$5",
+      "Assessment Summary": "'Assessment Summary'!$A$1:$H$5",
+      "Evidence Index": "'Evidence Index'!$A$1:$F$9",
+      "Action Tracker": "'Action Tracker'!$A$1:$I$4",
+      "Public Appendix": "'Public Appendix'!$A$1:$D$5"
+    },
+    "formula_cells": {
+      "Standards Matrix!G2": "=IF(F2>=E2,\"Met\",\"Action Required\")",
+      "Standards Matrix!G3": "=IF(F3>=E3,\"Met\",\"Action Required\")",
+      "Standards Matrix!H3": "=IF(G3=\"Met\",\"Ready\",\"Action Plan Required\")",
+      "Assessment Summary!F3": "=ROUND(E3/D3*100,0)",
+      "Assessment Summary!H3": "=IF(F3>=G3,\"Met\",\"Action Required\")",
+      "Evidence Index!F5": "=IF(D5=\"Publishable\",\"May Cite\",\"Do Not Cite\")",
+      "Action Tracker!I2": "=IF(G2=\"Closed\",\"Complete\",\"Open\")"
+    },
+    "doc_heading_order": [
+      "Accreditation Self-Study Response",
+      "Executive Summary",
+      "Standards Status",
+      "Evidence Boundary",
+      "Action Plan",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "The program meets STD-1, STD-3, and STD-4 and has an action plan for STD-2.",
+      "The response uses aggregate assessment and advising evidence and excludes protected student-level records.",
+      "Public evidence is limited to EV-101, EV-102, EV-201, EV-203, EV-301, and EV-401.",
+      "Student-level artifacts, direct student comments, and internal protected notes are retained only in the hidden Raw Protected Notes sheet.",
+      "This response and accreditation_evidence_matrix.xlsx agree that STD-2 is the only action-required standard."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Raw Student Evidence - Remove",
+      "Jordan Ellis",
+      "Mina Patel",
+      "student grievance",
+      "Raw student artifact",
+      "Morgan Lee",
+      "Priya Shah",
+      "EV-202",
+      "EV-402"
+    ],
+    "doc_header_contains": "Action-required standards: 1",
+    "doc_footer_contains": "accreditation_evidence_matrix.xlsx",
+    "doc_highlight_text": "Action-required focus: STD-2 PLO-2 reached 72% against the 75% threshold and requires two public improvement commitments."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_069_word_xlsx_accreditation_self_study_evidence_matrix"
+}

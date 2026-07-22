@@ -1,0 +1,1 @@
+Regenerated L3 single-PDF task seed: public permit notice errata repair packet. The source contains duplicate draft pages, OCR-like spelling errors, wrong parcel and date facts, obsolete fee and condition count, private scratch notes, and missing public bookmarks. The target PDF must rebuild a clean six-page public packet with corrected facts, public outline, metadata, and style.

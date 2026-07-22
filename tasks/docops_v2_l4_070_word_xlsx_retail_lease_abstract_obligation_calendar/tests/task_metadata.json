@@ -1,0 +1,277 @@
+{
+  "task_id": "docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar",
+  "task_dir_name": "docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar",
+  "doc_type": "word+xlsx",
+  "primary_modality": "Word (.docx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Redaction",
+    "F2 Highlighting",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output",
+  "composition_pattern": "lease-clause-and-amendment-reconciliation -> obligation-calendar-generation -> CAM-cap-calculation -> public-abstract-memo -> internal-strategy-boundary",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_input.docx",
+  "supporting_input_paths": [
+    "/root/executed_lease_excerpt.pdf",
+    "/root/amendment_2_renewal_cam.docx",
+    "/root/landlord_cam_statement.xlsx",
+    "/root/internal_renewal_strategy_note.pdf"
+  ],
+  "output_paths": {
+    "lease_abstract_memo": "/root/submission/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_lease_abstract_memo.docx",
+    "obligation_calendar": "/root/submission/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_obligation_calendar.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_lease_abstract_memo.docx",
+  "output_filename": "lease_abstract_memo.docx",
+  "output_extension": ".docx",
+  "output_kind": "multi-document",
+  "verifier_mode": "semantic-structural-boundary-strict",
+  "user_task_description": "Create a retail lease abstract memo and lease obligation calendar from a draft abstract, executed lease excerpt, amendment, landlord CAM statement, and internal renewal strategy note while correcting renewal dates, calculating CAM over-cap exposure, and keeping internal negotiation strategy out of public lease administration materials.",
+  "single_step_benchmark_instruction": "Create lease_abstract_memo.docx and lease_obligation_calendar.xlsx. Correct the renewal notice window to 2028-07-01 through 2028-09-30, calendar five public obligations, calculate CAM over-cap review, preserve Excel formulas/tables/validation/hidden sheets/print areas, and keep INT-900 strategy details out of public outputs.",
+  "expected_output_type": "A .docx lease abstract memo and .xlsx obligation calendar saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Lease audits examine lease documents, statements, amendments, and correspondence to determine whether charges are proper",
+      "url": "https://en.wikipedia.org/wiki/Lease_audit"
+    },
+    {
+      "title": "CAM charges are common lease pass-through charges and often involve negotiated exclusions and prorations",
+      "url": "https://en.wikipedia.org/wiki/Common_area_maintenance_charges"
+    }
+  ],
+  "verifier_expectations": {
+    "docx_output": "/root/submission/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_lease_abstract_memo.docx",
+    "xlsx_output": "/root/submission/docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar_obligation_calendar.xlsx",
+    "abstract_rows": [
+      [
+        "RENT-BASE",
+        "Base rent",
+        "Lease Sec. 4.1",
+        "$18,750/mo through 2026; $19,500/mo in 2027; $20,250/mo in 2028",
+        "2026-01-01",
+        "Lease Admin",
+        "Yes",
+        "Rent Schedule",
+        "Current",
+        "Public"
+      ],
+      [
+        "OPT-RENEW",
+        "Renewal option",
+        "Amendment 2 Sec. 3",
+        "One 5-year option; notice window 2028-07-01 through 2028-09-30",
+        "2028-07-01",
+        "Real Estate",
+        "Yes",
+        "Obligation Calendar",
+        "Calendarized",
+        "Public"
+      ],
+      [
+        "CAM-CAP",
+        "Controllable CAM cap",
+        "Lease Sec. 8.4; CAM statement",
+        "5% cap over 2024 controllable CAM base; 2025 statement shows $2,800 over cap",
+        "2026-08-15",
+        "Lease Audit",
+        "Yes",
+        "CAM Reconciliation",
+        "Dispute",
+        "Public"
+      ],
+      [
+        "INS-CERT",
+        "Insurance certificate",
+        "Lease Sec. 11.2",
+        "Annual certificate due each January 15",
+        "2027-01-15",
+        "Risk",
+        "Yes",
+        "Obligation Calendar",
+        "Open",
+        "Public"
+      ],
+      [
+        "SALES-RPT",
+        "Gross sales report",
+        "Lease Sec. 6.3",
+        "Monthly gross sales report due by the 10th calendar day",
+        "2026-07-10",
+        "Store Ops",
+        "Yes",
+        "Obligation Calendar",
+        "Recurring",
+        "Public"
+      ]
+    ],
+    "calendar_rows": [
+      [
+        "OPT-001",
+        "Renewal option opens",
+        "Renewal",
+        "2028-07-01",
+        "Real Estate",
+        "Open Window",
+        "Amendment 2 Sec. 3",
+        "Public",
+        "90 days before final deadline"
+      ],
+      [
+        "OPT-002",
+        "Final renewal notice deadline",
+        "Renewal",
+        "2028-09-30",
+        "Real Estate",
+        "Critical Deadline",
+        "Amendment 2 Sec. 3",
+        "Public",
+        "Do not miss"
+      ],
+      [
+        "CAM-001",
+        "2025 CAM audit objection deadline",
+        "CAM Audit",
+        "2026-08-15",
+        "Lease Audit",
+        "Critical Deadline",
+        "CAM statement dated 2026-06-16",
+        "Public",
+        "$2,800 over cap"
+      ],
+      [
+        "INS-001",
+        "Annual insurance certificate due",
+        "Insurance",
+        "2027-01-15",
+        "Risk",
+        "Open",
+        "Lease Sec. 11.2",
+        "Public",
+        "Recurring annual item"
+      ],
+      [
+        "RPT-001",
+        "Monthly gross sales report due",
+        "Reporting",
+        "2026-07-10",
+        "Store Ops",
+        "Recurring",
+        "Lease Sec. 6.3",
+        "Public",
+        "Use monthly close file"
+      ]
+    ],
+    "forbidden_public": [
+      "INT-900",
+      "walk-away",
+      "settlement leverage",
+      "internal renewal floor",
+      "$22,000",
+      "do not disclose option leverage",
+      "landlord pressure plan"
+    ],
+    "sheet_order": [
+      "Lease Abstract",
+      "Obligation Calendar",
+      "CAM Reconciliation",
+      "Rent Schedule",
+      "Public Summary",
+      "Internal Strategy",
+      "Rules"
+    ],
+    "tables": {
+      "Lease Abstract": [
+        "lease_abstract",
+        "A1:J6"
+      ],
+      "Obligation Calendar": [
+        "obligation_calendar",
+        "A1:I6"
+      ],
+      "CAM Reconciliation": [
+        "cam_reconciliation",
+        "A1:H4"
+      ],
+      "Rent Schedule": [
+        "rent_schedule",
+        "A1:F4"
+      ],
+      "Public Summary": [
+        "public_summary",
+        "A1:B4"
+      ]
+    },
+    "hidden_sheets": [
+      "Internal Strategy",
+      "Rules"
+    ],
+    "defined_names": [
+      "status_choices",
+      "boundary_choices"
+    ],
+    "data_validation_ranges": {
+      "Lease Abstract": [
+        "I2:I6"
+      ],
+      "Obligation Calendar": [
+        "F2:F6",
+        "H2:H6"
+      ]
+    },
+    "print_areas": {
+      "Lease Abstract": "'Lease Abstract'!$A$1:$J$6",
+      "Obligation Calendar": "'Obligation Calendar'!$A$1:$I$6",
+      "CAM Reconciliation": "'CAM Reconciliation'!$A$1:$H$4",
+      "Rent Schedule": "'Rent Schedule'!$A$1:$F$4",
+      "Public Summary": "'Public Summary'!$A$1:$B$4"
+    },
+    "formula_cells": {
+      "CAM Reconciliation!E2": "=ROUND(B2*(1+D2),0)",
+      "CAM Reconciliation!F2": "=C2-E2",
+      "CAM Reconciliation!G2": "=IF(F2>0,\"Dispute\",\"OK\")",
+      "Rent Schedule!E2": "=D2*12",
+      "Rent Schedule!E4": "=D4*12"
+    },
+    "doc_heading_order": [
+      "Retail Lease Abstract Memo",
+      "Executive Summary",
+      "Critical Dates",
+      "Rent and CAM Economics",
+      "Evidence Boundary",
+      "Cross-File Reconciliation"
+    ],
+    "doc_required_paragraphs": [
+      "This memo abstracts the North Pier Bikes lease for Unit 4B at Harbor Market Retail Center.",
+      "The renewal option notice window runs from 2028-07-01 through 2028-09-30 and replaces the superseded draft date.",
+      "Base rent steps are $18,750 per month in 2026, $19,500 per month in 2027, and $20,250 per month in 2028.",
+      "Operations-facing lease administration materials may include critical dates, rent steps, CAM dispute amount, and public obligations.",
+      "This memo and lease_obligation_calendar.xlsx agree on five public obligations and no public internal-strategy obligation."
+    ],
+    "doc_forbidden_text": [
+      "Manual TOC placeholder",
+      "Internal Renewal Strategy - Remove",
+      "INT-900",
+      "walk-away",
+      "settlement leverage",
+      "internal renewal floor",
+      "$22,000",
+      "do not disclose option leverage",
+      "landlord pressure plan"
+    ],
+    "doc_header_contains": "North Pier Bikes Unit 4B",
+    "doc_footer_contains": "lease_obligation_calendar.xlsx",
+    "doc_highlight_text": "CAM review: 2025 controllable CAM is $2,800 over the 5% cap and must be objected to by 2026-08-15."
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_070_word_xlsx_retail_lease_abstract_obligation_calendar"
+}

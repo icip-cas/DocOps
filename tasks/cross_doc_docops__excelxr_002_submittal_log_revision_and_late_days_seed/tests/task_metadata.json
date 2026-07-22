@@ -1,0 +1,170 @@
+{
+  "task_id": "excelxr_002",
+  "task_dir_name": "excelxr_002_submittal_log_revision_and_late_days_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C4 Computation",
+    "F2 Highlighting",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 4,
+  "composition_type": "cross-document",
+  "composition_pattern": "rebuild-return-and-hold-sheets -> fill-dual-trackers -> restore-dashboard-formulas -> preserve-validations-and-cf",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "supporting_input_paths": [
+    "/root/reviewer_return_extract.pdf",
+    "/root/revision_note.docx",
+    "/root/owner_map.xlsx"
+  ],
+  "output_path": "/root/submission/excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "output_filename": "excelxr_002_submittal_log_revision_and_late_days_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Update only the returned submittal rows with the new revision status and resubmit date.",
+  "single_step_benchmark_instruction": "Update only the returned submittal rows with the new revision status and resubmit date, insert a `Late Days` formula column immediately after `Due Date`, and highlight rejected rows in the requested color while preserving filters and existing formulas.",
+  "atomic_scope": "Only the two live sheets, both template sheets, the dashboard formulas, workbook names, and highlighted late rows are required.",
+  "expected_output_type": "A revised .xlsx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the template sheets unchanged\n- Do not flatten the workbook into plain cells"
+  },
+  "verifier_expectations": {
+    "sheet_order": [
+      "Cover",
+      "Return Template",
+      "Returned Sheets",
+      "Approved Template",
+      "Approved Holds",
+      "Revision Dashboard",
+      "Lookup"
+    ],
+    "exact_cells": {
+      "Returned Sheets!A2": "RS-01",
+      "Returned Sheets!B2": "Mechanical Sheets",
+      "Returned Sheets!C2": "Lena Ortiz",
+      "Returned Sheets!D2": "Review",
+      "Returned Sheets!E2": "Seal Set",
+      "Returned Sheets!F2": "Late",
+      "Returned Sheets!G2": "2025-08-12",
+      "Returned Sheets!A3": "RS-02",
+      "Returned Sheets!B3": "Life Safety Sheets",
+      "Returned Sheets!C3": "Naomi Reed",
+      "Returned Sheets!D3": "Review",
+      "Returned Sheets!E3": "Citation Set",
+      "Returned Sheets!F3": "Open",
+      "Returned Sheets!G3": "2025-08-15",
+      "Returned Sheets!A4": "RS-03",
+      "Returned Sheets!B4": "Narrative",
+      "Returned Sheets!C4": "Mia Torres",
+      "Returned Sheets!D4": "Coordination",
+      "Returned Sheets!E4": "Narrative Update",
+      "Returned Sheets!F4": "Complete",
+      "Returned Sheets!G4": "2025-08-11",
+      "Approved Holds!A2": "AH-01",
+      "Approved Holds!B2": "Civil Sheets",
+      "Approved Holds!C2": "Ravi Shah",
+      "Approved Holds!D2": "Civil",
+      "Approved Holds!E2": "Approved Civil Set",
+      "Approved Holds!F2": "Complete",
+      "Approved Holds!G2": "2025-08-10",
+      "Approved Holds!A3": "AH-02",
+      "Approved Holds!B3": "Landscape Sheets",
+      "Approved Holds!C3": "Devin Park",
+      "Approved Holds!D3": "Landscape",
+      "Approved Holds!E3": "Approved Landscape Set",
+      "Approved Holds!F3": "Open",
+      "Approved Holds!G3": "2025-08-18",
+      "Approved Holds!A4": "AH-03",
+      "Approved Holds!B4": "Cover Sheet",
+      "Approved Holds!C4": "Priya Singh",
+      "Approved Holds!D4": "Graphics",
+      "Approved Holds!E4": "Cover Update",
+      "Approved Holds!F4": "Late",
+      "Approved Holds!G4": "2025-08-13"
+    },
+    "formula_cells": {
+      "Returned Sheets!H2": "=IF(F2=\"Late\",MAX(0,TODAY()-G2),0)",
+      "Returned Sheets!H3": "=IF(F3=\"Late\",MAX(0,TODAY()-G3),0)",
+      "Returned Sheets!H4": "=IF(F4=\"Late\",MAX(0,TODAY()-G4),0)",
+      "Approved Holds!H2": "=IF(F2=\"Late\",MAX(0,TODAY()-G2),0)",
+      "Approved Holds!H3": "=IF(F3=\"Late\",MAX(0,TODAY()-G3),0)",
+      "Approved Holds!H4": "=IF(F4=\"Late\",MAX(0,TODAY()-G4),0)",
+      "Revision Dashboard!B2": "=COUNTIF('Returned Sheets'!F2:F4,\"Open\")+COUNTIF('Approved Holds'!F2:F4,\"Open\")",
+      "Revision Dashboard!B3": "=COUNTIF('Returned Sheets'!F2:F4,\"Late\")+COUNTIF('Approved Holds'!F2:F4,\"Late\")",
+      "Revision Dashboard!B4": "=COUNTIF('Returned Sheets'!F2:F4,\"Complete\")+COUNTIF('Approved Holds'!F2:F4,\"Complete\")",
+      "Revision Dashboard!B5": "=ROWS('Returned Sheets'!A2:A4)+ROWS('Approved Holds'!A2:A4)"
+    },
+    "header_style_matches": [
+      {
+        "target_sheet": "Returned Sheets",
+        "target_cells": [
+          "A1",
+          "B1"
+        ],
+        "reference_sheet": "Return Template",
+        "reference_cells": [
+          "A1",
+          "B1"
+        ]
+      },
+      {
+        "target_sheet": "Approved Holds",
+        "target_cells": [
+          "A1",
+          "B1"
+        ],
+        "reference_sheet": "Approved Template",
+        "reference_cells": [
+          "A1",
+          "B1"
+        ]
+      }
+    ],
+    "highlight_rows": [
+      {
+        "sheet": "Returned Sheets",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 8
+      }
+    ],
+    "nonhighlight_rows": [
+      {
+        "sheet": "Returned Sheets",
+        "row": 3,
+        "min_col": 1,
+        "max_col": 8
+      },
+      {
+        "sheet": "Approved Holds",
+        "row": 2,
+        "min_col": 1,
+        "max_col": 8
+      }
+    ],
+    "unchanged_sheets": [
+      "Return Template",
+      "Approved Template"
+    ],
+    "sheet_states": {
+      "Lookup": "hidden"
+    },
+    "data_validation_ranges": {
+      "Returned Sheets": [
+        "F2:F4"
+      ],
+      "Approved Holds": [
+        "F2:F4"
+      ]
+    },
+    "defined_names": [
+      "status_choices",
+      "tracked_primary",
+      "tracked_secondary"
+    ]
+  }
+}

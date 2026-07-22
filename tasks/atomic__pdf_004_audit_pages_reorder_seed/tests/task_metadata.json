@@ -1,0 +1,31 @@
+{
+  "task_id": "pdf_004",
+  "task_dir_name": "pdf_004_audit_pages_reorder_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operation": "S2 Reorder",
+  "difficulty": "Medium",
+  "source_doc_filename": "pdf_004_audit_pages_reorder_seed.pdf",
+  "source_doc_path": "pdf/pdf_004_audit_pages_reorder_seed.pdf",
+  "task_description_filename": "pdf_004_audit_pages_reorder_seed.txt",
+  "task_description_path": "pdf/pdf_004_audit_pages_reorder_seed.txt",
+  "input_path": "/root/pdf_004_audit_pages_reorder_seed.pdf",
+  "output_path": "/root/submission/pdf_004_audit_pages_reorder_seed.pdf",
+  "output_filename": "pdf_004_audit_pages_reorder_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This audit PDF contains the right pages but in the wrong sequence.",
+  "single_step_benchmark_instruction": "Reorder the pages so the report flows in the sequence: Scope -> Findings -> Recommendations -> Appendix.",
+  "atomic_scope": "Only page reordering is explicitly requested in this task.",
+  "expected_output_type": "A revised PDF with the pages in correct order.",
+  "inspired_by": [
+    {
+      "title": "Slice and merge two different pdfs",
+      "url": "https://www.reddit.com/r/pdf/comments/1s9p0hm/slice_and_merge_two_different_pdfs/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- Every page looks valid on its own\n- The correct order must be inferred from section titles rather than page numbers in the viewer\n- No other content changes are requested"
+  }
+}

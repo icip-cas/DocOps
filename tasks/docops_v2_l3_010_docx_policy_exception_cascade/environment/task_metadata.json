@@ -1,0 +1,48 @@
+{
+  "task_id": "docops_v2_l3_010_docx_policy_exception_cascade",
+  "task_dir_name": "docops_v2_l3_010_docx_policy_exception_cascade",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "F3 Layout control",
+    "F4 Theme transfer",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 13,
+  "composition_type": "single-document",
+  "composition_pattern": "toc-field -> section-reorder -> exception-extraction -> release-matrix -> exception-register -> highlight -> appendix-pagination -> header-count-cascade -> cleanup",
+  "difficulty": "Very Hard",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-strict-one-to-one",
+  "user_task_description": "A policy manual needs exceptions extracted into tables whose counts and blocking status affect the release header and control matrix.",
+  "single_step_benchmark_instruction": "Remove the manual TOC placeholder; add a real TOC field; reorder sections to Scope, Controls, Exceptions, Appendix A - Definitions, Appendix B - Evidence; remove Draft wording; generate the specified native Release Matrix and Exception Register tables without making them heading sections; highlight the specified MFA exception paragraph; start both appendices on new pages; set the header to Policy Manual | Exceptions Open: 2 | 2026-06-05; normalize footer with Page and no confidential/draft wording.",
+  "atomic_scope": "Single-document workflow with coupled edits; preserve unrelated document-native structure.",
+  "expected_output_type": "A revised .docx artifact saved to the required output path.",
+  "inspired_by": [
+    {
+      "title": "Table of contents",
+      "url": "https://www.reddit.com/r/MicrosoftWord/comments/1de3nu5"
+    },
+    {
+      "title": "Create Table of contents for Annexes",
+      "url": "https://www.reddit.com/r/MicrosoftWord/comments/1hsn1tb"
+    }
+  ],
+  "input_path": "/root/docops_v2_l3_010_docx_policy_exception_cascade_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_010_docx_policy_exception_cascade_output.docx",
+  "output_filename": "docops_v2_l3_010_docx_policy_exception_cascade_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_010_docx_policy_exception_cascade"
+}

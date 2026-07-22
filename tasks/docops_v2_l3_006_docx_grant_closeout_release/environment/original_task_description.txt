@@ -1,0 +1,1 @@
+Create a public grant closeout packet from a messy single Word working draft. The task is a single-document workflow: clean draft/private material, reorder sections, rebuild budget and evidence tables, compute variance values, preserve public outcomes, and normalize release metadata.

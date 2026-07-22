@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_014",
+  "task_dir_name": "excel_014_outline_hierarchy_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "S3 Hierarchy editing",
+  "difficulty": "Hard",
+  "source_doc_filename": "excel_014_outline_hierarchy_seed.xlsx",
+  "source_doc_path": "excel/excel_014_outline_hierarchy_seed.xlsx",
+  "task_description_filename": "excel_014_outline_hierarchy_seed.txt",
+  "task_description_path": "excel/excel_014_outline_hierarchy_seed.txt",
+  "input_path": "/root/excel_014_outline_hierarchy_seed.xlsx",
+  "output_path": "/root/submission/excel_014_outline_hierarchy_seed.xlsx",
+  "output_filename": "excel_014_outline_hierarchy_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains a flat program outline that has section rows and detail rows, but no usable hierarchy in Excel's outline structure.",
+  "single_step_benchmark_instruction": "On the `Program Outline` sheet, make rows `4`, `7`, and `10` the top-level section rows and group the following detail rows under each section using Excel row outlining, without changing the row order.",
+  "atomic_scope": "Only hierarchy editing is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with row grouping / outline hierarchy applied.",
+  "inspired_by": [
+    {
+      "title": "Making recipe tree chart but having trouble formatting and automating it",
+      "url": "https://www.reddit.com/r/excel/comments/1snlk2n/making_recipe_tree_chart_but_having_trouble/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The hierarchy is visually implied but not structurally encoded\n- The task requires identifying the correct parent-child row boundaries\n- A correct result changes outline structure rather than rewriting content"
+  }
+}

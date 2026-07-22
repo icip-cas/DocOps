@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pptc_002
+
+Doc type: ppt
+Atomic operations: S2 Reorder, C3 Generation
+Composition pattern: reorder -> generate
+Difficulty: Medium-Hard
+
+User-facing goal:
+This deck should follow an executive story order and open with a constrained summary slide.
+
+Single-step benchmark instruction:
+Reorder the deck to `Executive Summary -> Root Cause -> Implementation Plan -> Appendix`, then populate the `Executive Summary` slide with exactly three bullets using the prefixes `Vendor:`, `Inspection:`, and `Staffing:` in that order.
+
+Atomic scope:
+Only the slide reorder and the constrained three-bullet summary content are explicitly requested.
+
+Expected output type:
+A revised .pptx deck with the required slide order and a grounded summary slide.

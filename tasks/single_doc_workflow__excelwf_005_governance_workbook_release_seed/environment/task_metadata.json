@@ -1,0 +1,64 @@
+{
+  "task_id": "excelwf_005",
+  "task_dir_name": "excelwf_005_governance_workbook_release_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "C4 Computation",
+    "F4 Theme transfer",
+    "F1 Style consistency"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "single-document",
+  "composition_pattern": "sheet-delete -> tab-rename -> reference-refresh",
+  "difficulty": "Hard",
+  "source_type": "Single-document workflow V1",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Release the governance workbook without renaming or deleting its live sheets.",
+  "single_step_benchmark_instruction": "Restore the sheet order to Governance, Dashboard, and Archive; keep Archive hidden; repair the Dashboard formulas; convert the Governance range to a formal table named GovernanceMetrics; freeze the Dashboard header row; and add the release comment on the Dashboard title cell.",
+  "atomic_scope": "Only the bounded document-wide edits and structural changes explicitly requested.",
+  "expected_output_type": "A revised .xlsx workbook that completes the requested single-document workflow.",
+  "notes": {
+    "Task Notes": "- Preserve unrelated content unless the task explicitly requires a change"
+  },
+  "input_path": "/root/excelwf_005_governance_workbook_release_seed.xlsx",
+  "output_path": "/root/submission/excelwf_005_governance_workbook_release_seed.xlsx",
+  "output_filename": "excelwf_005_governance_workbook_release_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_expectations": {
+    "sheet_order": [
+      "Governance",
+      "Dashboard",
+      "Archive"
+    ],
+    "exact_cells": {
+      "Governance!A1": "Metric",
+      "Dashboard!B2": "=Governance!B2",
+      "Dashboard!B3": "=Governance!B3"
+    },
+    "formula_cells": {
+      "Dashboard!B2": "=Governance!B2",
+      "Dashboard!B3": "=Governance!B3"
+    },
+    "highlight_rows": [],
+    "nonhighlight_rows": [],
+    "sheet_states": {
+      "Archive": "hidden"
+    },
+    "freeze_panes": {
+      "Dashboard": "A2"
+    },
+    "unchanged_sheets": [
+      "Archive"
+    ],
+    "table_refs": {
+      "Governance!GovernanceMetrics": "A1:B3"
+    },
+    "comments_contain": {
+      "Dashboard!A1": "Release comment"
+    }
+  }
+}

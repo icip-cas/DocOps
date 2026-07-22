@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_013",
+  "task_dir_name": "excel_013_workbook_reorder_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "S2 Reorder",
+  "difficulty": "Medium",
+  "source_doc_filename": "excel_013_workbook_reorder_seed.xlsx",
+  "source_doc_path": "excel/excel_013_workbook_reorder_seed.xlsx",
+  "task_description_filename": "excel_013_workbook_reorder_seed.txt",
+  "task_description_path": "excel/excel_013_workbook_reorder_seed.txt",
+  "input_path": "/root/excel_013_workbook_reorder_seed.xlsx",
+  "output_path": "/root/submission/excel_013_workbook_reorder_seed.xlsx",
+  "output_filename": "excel_013_workbook_reorder_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains the right worksheets but they are arranged in an inconvenient order.",
+  "single_step_benchmark_instruction": "Reorder the worksheets so the tab order becomes: `Instructions` -> `Lookup` -> `Detail_Q1` -> `Detail_Q2` -> `Summary`.",
+  "atomic_scope": "Only worksheet reordering is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with the requested tab order.",
+  "inspired_by": [
+    {
+      "title": "Sorting and rearranging data using Pivot Table",
+      "url": "https://www.reddit.com/r/excel/comments/1sn86sl/sorting_and_rearranging_data_using_pivot_table/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The current order is plausible enough that a shallow pass may miss the issue\n- Several sheet names are similar and easy to misplace\n- The task is structural and should not trigger content edits"
+  }
+}

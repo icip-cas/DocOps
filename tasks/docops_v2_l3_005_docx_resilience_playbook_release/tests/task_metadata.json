@@ -1,0 +1,299 @@
+{
+  "task_id": "docops_v2_l3_005_docx_resilience_playbook_release",
+  "task_dir_name": "docops_v2_l3_005_docx_resilience_playbook_release",
+  "doc_type": "word",
+  "primary_modality": "Word (.docx)",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "S3 Hierarchy editing",
+    "F1 Header/footer",
+    "S1 Insert/Delete",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 7,
+  "composition_type": "single-document",
+  "composition_pattern": "draft-cleanup -> section-reorder -> table-rebuild -> privacy-redaction -> appendix-split -> header-footer",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-strict",
+  "user_task_description": "Prepare a complex community resilience operations playbook for public release from a messy working draft.",
+  "single_step_benchmark_instruction": "Rename and release the playbook, remove private/draft material, reorder sections, build activation/role/supply/communications tables, keep a TOC field, move Appendix A to a new page, and normalize header/footer.",
+  "atomic_scope": "Only the requested document-wide workflow edits are in scope; public content and native Word structures must be preserved.",
+  "expected_output_type": "A revised .docx artifact that completes the requested single-document workflow.",
+  "input_path": "/root/docops_v2_l3_005_docx_resilience_playbook_release_input.docx",
+  "output_path": "/root/submission/docops_v2_l3_005_docx_resilience_playbook_release_output.docx",
+  "output_filename": "docops_v2_l3_005_docx_resilience_playbook_release_output.docx",
+  "output_extension": ".docx",
+  "output_kind": "document",
+  "inspired_by": [
+    {
+      "title": "FEMA community preparedness planning templates",
+      "url": "https://www.ready.gov/"
+    },
+    {
+      "title": "Public community resilience and mutual-aid playbooks",
+      "url": "https://www.ready.gov/community-preparedness-toolkit"
+    }
+  ],
+  "verifier_expectations": {
+    "title": "Community Resilience Operations Playbook",
+    "heading_order": [
+      "Release Summary",
+      "Activation Criteria",
+      "Role Matrix",
+      "Site Operations",
+      "Supply Kit Reconciliation",
+      "Communications Tree",
+      "Appendix A - Public Contact Directory"
+    ],
+    "required_paragraphs": [
+      "This public release coordinates neighborhood cooling, charging, and wellness-check operations.",
+      "Primary locations are North Pier Library, East Yard School, and Mosaic Senior Center.",
+      "Accessibility support includes ASL interpretation on request, large-print intake forms, and step-free entry at all public sites.",
+      "Open warming or cooling support when the heat index reaches 103 F, the overnight low falls below 28 F, or an outage exceeds 4 hours.",
+      "Volunteer guidance must stay public, practical, and free of donor or discipline details."
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "Draft:",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "parking lot",
+      "donor optics",
+      "discipline Jordan",
+      "unconfirmed generator vendor",
+      "gate code 4419",
+      "security code",
+      "sponsor dinner",
+      "private logistics",
+      "not for public release",
+      "cash card exception"
+    ],
+    "activation_rows": [
+      [
+        "Trigger",
+        "Threshold",
+        "Owner",
+        "Public Action"
+      ],
+      [
+        "Heat index",
+        ">= 103 F",
+        "Operations Lead",
+        "Open cooling room and publish hydration checks"
+      ],
+      [
+        "Overnight cold",
+        "< 28 F",
+        "Site Coordinator",
+        "Open warming corner and blanket station"
+      ],
+      [
+        "Power outage",
+        "> 4 hours",
+        "Communications Lead",
+        "Open charging table and wellness-check desk"
+      ],
+      [
+        "Air quality",
+        "AQI >= 151",
+        "Health Liaison",
+        "Distribute masks and move activities indoors"
+      ]
+    ],
+    "role_rows": [
+      [
+        "Role",
+        "Lead",
+        "Backup",
+        "Radio Call Sign",
+        "Public Phone",
+        "Shift Window"
+      ],
+      [
+        "Operations Lead",
+        "Mina Rao",
+        "Owen Price",
+        "Ops-1",
+        "555-0101",
+        "08:00-16:00"
+      ],
+      [
+        "Site Coordinator",
+        "Nia Brooks",
+        "Leo Marin",
+        "Site-2",
+        "555-0102",
+        "07:30-15:30"
+      ],
+      [
+        "Volunteer Captain",
+        "Samir Patel",
+        "Ivy Chen",
+        "Vol-3",
+        "555-0103",
+        "09:00-17:00"
+      ],
+      [
+        "Supply Lead",
+        "Tessa Nguyen",
+        "Marco Silva",
+        "Supply-4",
+        "555-0104",
+        "10:00-18:00"
+      ],
+      [
+        "Communications Lead",
+        "Ruth Okafor",
+        "Ben Hart",
+        "Comms-5",
+        "555-0105",
+        "08:00-20:00"
+      ],
+      [
+        "Health Liaison",
+        "Dr. Amara Singh",
+        "Jules Rivera",
+        "Health-6",
+        "555-0106",
+        "10:00-18:00"
+      ]
+    ],
+    "supply_rows": [
+      [
+        "Item",
+        "On Hand",
+        "Minimum",
+        "Gap",
+        "Reorder Action"
+      ],
+      [
+        "N95 masks",
+        340,
+        500,
+        160,
+        "Order 160 before release weekend"
+      ],
+      [
+        "Water cases",
+        42,
+        60,
+        18,
+        "Move 18 cases from reserve"
+      ],
+      [
+        "Blankets",
+        75,
+        80,
+        5,
+        "Request 5 clean blankets"
+      ],
+      [
+        "Phone power banks",
+        28,
+        35,
+        7,
+        "Charge and add 7 loaner units"
+      ],
+      [
+        "Large-print intake forms",
+        120,
+        100,
+        0,
+        "No reorder needed"
+      ]
+    ],
+    "communications_rows": [
+      [
+        "Step",
+        "Condition",
+        "Contact",
+        "Channel",
+        "Response Window"
+      ],
+      [
+        1,
+        "Site opens",
+        "Operations Lead",
+        "Radio Ops-1",
+        "10 minutes"
+      ],
+      [
+        2,
+        "Capacity reaches 75%",
+        "Communications Lead",
+        "SMS group",
+        "15 minutes"
+      ],
+      [
+        3,
+        "Medical concern",
+        "Health Liaison",
+        "Phone 555-0106",
+        "Immediate"
+      ],
+      [
+        4,
+        "Supply gap",
+        "Supply Lead",
+        "Radio Supply-4",
+        "20 minutes"
+      ],
+      [
+        5,
+        "Public bulletin needed",
+        "Communications Lead",
+        "Website and lobby board",
+        "30 minutes"
+      ]
+    ],
+    "contact_rows": [
+      [
+        "Public Role",
+        "Name",
+        "Email",
+        "Phone"
+      ],
+      [
+        "Operations Desk",
+        "Mina Rao",
+        "opsdesk@example.test",
+        "555-0101"
+      ],
+      [
+        "Volunteer Desk",
+        "Samir Patel",
+        "volunteers@example.test",
+        "555-0103"
+      ],
+      [
+        "Supply Desk",
+        "Tessa Nguyen",
+        "supplies@example.test",
+        "555-0104"
+      ],
+      [
+        "Health Desk",
+        "Dr. Amara Singh",
+        "health@example.test",
+        "555-0106"
+      ]
+    ],
+    "header_contains": [
+      "Community Resilience Playbook | Release 2026-09-18"
+    ],
+    "footer_contains": [
+      "Page"
+    ],
+    "toc_present": true,
+    "page_break_before": [
+      "Appendix A - Public Contact Directory"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_005_docx_resilience_playbook_release"
+}

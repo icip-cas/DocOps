@@ -1,0 +1,26 @@
+{
+  "task_id": "ppt_008",
+  "task_dir_name": "ppt_008_bullet_editing_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operation": "C2 Editing",
+  "difficulty": "Medium",
+  "source_doc_filename": "ppt_008_bullet_editing_seed.pptx",
+  "source_doc_path": "ppt/ppt_008_bullet_editing_seed.pptx",
+  "task_description_filename": "ppt_008_bullet_editing_seed.txt",
+  "task_description_path": "ppt/ppt_008_bullet_editing_seed.txt",
+  "input_path": "/root/ppt_008_bullet_editing_seed.pptx",
+  "output_path": "/root/submission/ppt_008_bullet_editing_seed.pptx",
+  "output_filename": "ppt_008_bullet_editing_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This client-facing slide contains bullets that are too blunt and emotionally charged.",
+  "single_step_benchmark_instruction": "Rewrite the three draft bullets so they sound professional and executive-appropriate while preserving the underlying message slots: paperwork/files still need correction; corrected files/materials are needed today or promptly; and another delay would require escalation to the steering team or leadership.",
+  "atomic_scope": "Only content editing is explicitly requested in this task.",
+  "expected_output_type": "A revised .pptx deck with three professionally rewritten but anchor-preserving bullets.",
+  "inspired_by": [],
+  "notes": {
+    "Why This Variant Is Hard": "- The original wording is clear but not client-safe\n- The revised bullets must preserve urgency without sounding hostile\n- The change should stay local to the existing slide content"
+  }
+}

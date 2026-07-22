@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: excelc_006
+
+Doc type: excel
+Atomic operations: C2 Editing, F1 Style consistency
+Composition pattern: rewrite -> restyle
+Difficulty: Medium
+
+User-facing goal:
+This client update sheet has one risky draft sentence and inconsistent nearby body formatting.
+
+Single-step benchmark instruction:
+Rewrite only `Status Draft!B8` so it sounds formal and client-safe while preserving the schedule uncertainty, then make `B8:B10` use one consistent body style that matches `B7`.
+
+Atomic scope:
+Only the targeted draft rewrite and requested body-style normalization are explicitly requested.
+
+Expected output type:
+A revised .xlsx workbook with a polished sentence in `B8` and matched body styling in `B8:B10`.

@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_008",
+  "task_dir_name": "pdfc_008_reorder_pages_and_add_cover_summary_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> generate",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_008_reorder_pages_and_add_cover_summary_seed.pdf",
+  "source_doc_path": "pdf/pdfc_008_reorder_pages_and_add_cover_summary_seed.pdf",
+  "task_description_filename": "pdfc_008_reorder_pages_and_add_cover_summary_seed.txt",
+  "task_description_path": "pdf/pdfc_008_reorder_pages_and_add_cover_summary_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_008_reorder_pages_and_add_cover_summary_seed.pdf",
+  "output_path": "/root/submission/pdfc_008_reorder_pages_and_add_cover_summary_seed.pdf",
+  "output_filename": "pdfc_008_reorder_pages_and_add_cover_summary_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report should be reordered and open with a concise management summary box.",
+  "single_step_benchmark_instruction": "Reorder the pages to `Scope -> Findings -> Recommendations -> Appendix`, then fill the cover summary box with exactly three short lines starting `Permit:`, `Supplier:`, and `Staffing:` in that order.",
+  "atomic_scope": "Only the page reorder and the three-line cover summary are explicitly requested.",
+  "expected_output_type": "A revised .pdf report with corrected page order and a populated cover summary box.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Leave the detailed page wording unchanged\n- Keep the summary to exactly three short lines"
+  }
+}

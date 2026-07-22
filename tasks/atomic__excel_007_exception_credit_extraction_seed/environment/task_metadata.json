@@ -1,0 +1,35 @@
+{
+  "task_id": "excel_007",
+  "task_dir_name": "excel_007_exception_credit_extraction_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C1 Extraction",
+  "difficulty": "Hard",
+  "source_doc_filename": "excel_007_exception_credit_extraction_seed.xlsx",
+  "source_doc_path": "excel/excel_007_exception_credit_extraction_seed.xlsx",
+  "task_description_filename": "excel_007_exception_credit_extraction_seed.txt",
+  "task_description_path": "excel/excel_007_exception_credit_extraction_seed.txt",
+  "input_path": "/root/excel_007_exception_credit_extraction_seed.xlsx",
+  "output_path": "/root/submission/final_answer.txt",
+  "output_filename": "final_answer.txt",
+  "output_extension": ".txt",
+  "output_kind": "text",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook contains an exception tracker plus an unstructured email trail with superseded values.",
+  "single_step_benchmark_instruction": "Extract the final approved customer credit amount for request `CR-1184` if the North Unit shipment goes out after Apr 18. Reply using exactly this 3-line template: Request ID: CR-1184 | Condition: shipment goes out after Apr 18 | Final approved credit: $6,950",
+  "atomic_scope": "Only content extraction is explicitly requested in this task.",
+  "expected_output_type": "A concise, template-constrained extraction.",
+  "inspired_by": [
+    {
+      "title": "Extracting data from PDF in an organized manner?",
+      "url": "https://www.reddit.com/r/excel/comments/1sn21r5/extracting_data_from_pdf_in_an_organized_manner/"
+    },
+    {
+      "title": "Is there a way to search for values across sheets?",
+      "url": "https://www.reddit.com/r/excel/comments/1smwxwu/is_there_a_way_to_search_for_values_across_sheets/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The workbook contains a near-match request ID (`CR-1184A`) that is not the target\n- An earlier draft amount is still visible in the tracker but has been superseded in the notes\n- The target value depends on a condition embedded inside a narrative email block"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_007",
+  "task_dir_name": "pptc_007_insert_summary_slide_and_generate_bullets_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "S1 Insert/Delete",
+    "C3 Generation"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "insert -> generate",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx",
+  "source_doc_path": "ppt/pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx",
+  "task_description_filename": "pptc_007_insert_summary_slide_and_generate_bullets_seed.txt",
+  "task_description_path": "ppt/pptc_007_insert_summary_slide_and_generate_bullets_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx",
+  "output_path": "/root/submission/pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx",
+  "output_filename": "pptc_007_insert_summary_slide_and_generate_bullets_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck needs a new executive summary slide at the front.",
+  "single_step_benchmark_instruction": "Insert a new first slide titled `Executive Summary` and generate exactly three concise bullets using the prefixes `Supplier:`, `Inspection:`, and `Staffing:` in that order.",
+  "atomic_scope": "Only the inserted first slide and its three generated bullets are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with a new first summary slide containing exactly three bullets.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not delete any existing slides\n- Keep the summary concise and factual"
+  }
+}

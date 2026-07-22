@@ -1,0 +1,26 @@
+Task ID: pdf_008
+Source Type: Reddit-derived representative benchmark seed
+Primary Modality: PDF (.pdf)
+Atomic Operation: F3 Layout control
+Difficulty: Medium-Hard
+
+Inspired By:
+- Title: Got stuck while building a PDF editing tool.
+  URL: https://www.reddit.com/r/pdf/comments/1slyk16/got_stuck_while_building_a_pdf_editing_tool/
+
+User Task Description:
+This PDF contains three milestone callout boxes that are visually misaligned even though their content is correct.
+
+Single-Step Benchmark Instruction:
+Realign the three milestone boxes into one evenly spaced horizontal row beneath the title, without changing any of the box text.
+
+Atomic Scope:
+Only layout control is explicitly requested in this task.
+
+Why This Variant Is Hard:
+- The page has a valid-looking but awkward layout rather than an obvious rendering failure
+- The target requires geometric alignment, not text rewriting
+- Text must remain unchanged while object positions move
+
+Expected Output Type:
+A revised PDF with the milestone boxes cleanly aligned.

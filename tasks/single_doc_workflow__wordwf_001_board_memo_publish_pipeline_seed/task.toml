@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__single_doc_workflow__wordwf_001_board_memo_publish_pipeline_seed"
+description = "wordwf_001_board_memo_publish_pipeline_seed - single-document workflow task for DocumentBenchmark."
+authors = []
+keywords = ["word", "single-document", "workflow", "docx"]
+
+[metadata]
+difficulty_level = "L3-single-document-workflow"
+benchmark_split = "single_doc_workflow"
+difficulty = "Hard"
+category = "document-processing"
+tags = ["word", "single-document", "workflow", "docx"]
+task_id = "wordwf_001"
+doc_type = "word"
+primary_modality = "Word (.docx)"
+atomic_operation = "Single-document Workflow"
+source_type = "Single-document workflow V1"
+verifier_mode = "semantic-strict"
+composition_type = "single-document"
+composition_pattern = "draft-marker-cleanup -> reorder -> toc-refresh -> header-footer"
+atomic_operations = ["C2 Editing", "S2 Reorder", "S3 Hierarchy editing", "F1 Style consistency", "S1 Insert/Delete"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/wordwf_001_board_memo_publish_pipeline_seed.docx"
+OUTPUT_PATH = "/root/submission/wordwf_001_board_memo_publish_pipeline_seed.docx"
+TASK_ID = "wordwf_001"
+DOC_TYPE = "word"
+
+[solution.env]

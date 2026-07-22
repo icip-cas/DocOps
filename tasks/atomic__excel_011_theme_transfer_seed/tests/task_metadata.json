@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_011",
+  "task_dir_name": "excel_011_theme_transfer_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "F4 Theme transfer",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "excel_011_theme_transfer_seed.xlsx",
+  "source_doc_path": "excel/excel_011_theme_transfer_seed.xlsx",
+  "task_description_filename": "excel_011_theme_transfer_seed.txt",
+  "task_description_path": "excel/excel_011_theme_transfer_seed.txt",
+  "input_path": "/root/excel_011_theme_transfer_seed.xlsx",
+  "output_path": "/root/submission/excel_011_theme_transfer_seed.xlsx",
+  "output_filename": "excel_011_theme_transfer_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook has three operational tabs with inconsistent accent colors and no shared visual theme.",
+  "single_step_benchmark_instruction": "Apply a muted navy-and-steel visual theme across all visible sheets in this workbook, including section headers and tab colors, while keeping the workbook content unchanged.",
+  "atomic_scope": "Only global theme transfer is explicitly requested in this task.",
+  "expected_output_type": "A revised .xlsx workbook with a consistent cross-sheet theme.",
+  "inspired_by": [
+    {
+      "title": "Search Bar thats acts like a Slicer",
+      "url": "https://www.reddit.com/r/excel/comments/1snq9ob/search_bar_thats_acts_like_a_slicer/"
+    }
+  ],
+  "notes": {
+    "Why This Variant Is Hard": "- The workbook spans multiple sheets with different existing accent colors\n- A good result needs global visual coherence, not one-off recoloring\n- Content and structure should remain intact while the visual system changes"
+  }
+}

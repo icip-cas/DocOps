@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed"
+description = "wordxr_003 - cross-document skill-gap v6 workflow-locked task for DocumentBenchmark."
+authors = []
+keywords = ["word", "cross-document", "document-processing", "c1-extraction", "c2-editing", "f1-style-consistency", "f2-highlighting", "s3-hierarchy-editing", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["word", "cross-document", "document-processing", "skill-gap-v6-workflow-locked", "word"]
+task_id = "wordxr_003"
+doc_type = "word"
+primary_modality = "Word (.docx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "fill-metadata -> preserve-toc -> replace-ddq-sections -> insert-heading2 -> update-exhibit-appendix"
+atomic_operations = ["C1 Extraction", "C2 Editing", "F1 Style consistency", "F2 Highlighting", "S3 Hierarchy editing", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx"
+OUTPUT_PATH = "/root/submission/wordxr_003_due_diligence_exhibit_index_sectioned_appendix_seed.docx"
+TASK_ID = "wordxr_003"
+DOC_TYPE = "word"
+
+[solution.env]

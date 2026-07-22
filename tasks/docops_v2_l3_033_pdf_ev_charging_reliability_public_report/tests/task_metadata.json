@@ -1,0 +1,156 @@
+{
+  "task_id": "docops_v2_l3_033_pdf_ev_charging_reliability_public_report",
+  "task_dir_name": "docops_v2_l3_033_pdf_ev_charging_reliability_public_report",
+  "doc_type": "pdf",
+  "primary_modality": "PDF",
+  "atomic_operations": [
+    "C2 Editing",
+    "S2 Reorder",
+    "S4 Table ops",
+    "F2 Style migration",
+    "M1 PDF metadata",
+    "R1 Privacy cleanup"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "single-document",
+  "composition_pattern": "confidential-cleanup -> correction-log-application -> summary-rebuild -> uptime-register -> outage-timeline -> maintenance-log -> style-migration -> metadata-cleanup",
+  "difficulty": "Hard",
+  "difficulty_level": "L3-single-document-workflow",
+  "source_type": "DocOps v2 final L3 dataset",
+  "verifier_mode": "semantic-structural-style-metadata-strict",
+  "user_task_description": "Prepare a clean public EV charging reliability report from a messy internal network operations PDF.",
+  "single_step_benchmark_instruction": "Complete the ordered workflow: clean confidential material, apply correction-log facts, rebuild reliability summary, station uptime register, outage timeline, maintenance log, equity commitments, payment incident, communications timeline, then apply public style and metadata.",
+  "atomic_scope": "Only the requested strict-order PDF workflow edits are in scope; corrected public EV charging reliability facts, page order, table content, header bands, footer, page numbering, and metadata must be preserved.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested strict-order single-PDF workflow.",
+  "input_path": "/root/docops_v2_l3_033_pdf_ev_charging_reliability_public_report_input.pdf",
+  "output_path": "/root/submission/docops_v2_l3_033_pdf_ev_charging_reliability_public_report_output.pdf",
+  "output_filename": "docops_v2_l3_033_pdf_ev_charging_reliability_public_report_output.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "pdf",
+  "verifier_expectations": {
+    "page_count": 10,
+    "page_titles": [
+      "MetroCharge EV Reliability Report",
+      "Reliability Summary",
+      "Station Uptime Register",
+      "Outage Event Timeline",
+      "Maintenance Action Log",
+      "Equity Access Commitments",
+      "Payment System Incident Review",
+      "Public Communications Timeline",
+      "Publication Style Guide",
+      "Appendix Release Register"
+    ],
+    "footer": "MetroCharge Public Reliability Report | Q1 2026",
+    "metadata": {
+      "title": "MetroCharge EV Reliability Report - Public Release",
+      "subject": "Public EV charging reliability report for Q1 2026",
+      "author": "MetroCharge Reliability Office",
+      "keywords": "public,EV charging,reliability,Q1 2026"
+    },
+    "header_colors": [
+      "0B132B",
+      "0F766E",
+      "0F766E",
+      "B45309",
+      "1D4ED8",
+      "6D28D9",
+      "B45309",
+      "6D28D9",
+      "4B5563",
+      "0B132B"
+    ],
+    "forbidden_phrases": [
+      "DRAFT",
+      "PRIVATE",
+      "INTERNAL",
+      "scratch",
+      "vendor penalty note",
+      "driver complaint phone",
+      "cybersecurity exception",
+      "legal hold",
+      "do not release",
+      "internal SLA dispute",
+      "private station revenue",
+      "Station C-17",
+      "91.2%",
+      "2026-02-18",
+      "Nia Rowe",
+      "2026-03-12"
+    ],
+    "required_lines_by_page": {
+      "1": [
+        "Public reliability report",
+        "Reporting period: Q1 2026",
+        "Public release date: 2026-04-15",
+        "Prepared by MetroCharge Reliability Office"
+      ],
+      "2": [
+        "Network uptime | 97.2%",
+        "Active public stations | 42",
+        "Corrected payment outage date | 2026-02-08",
+        "Public notice date | 2026-03-10"
+      ],
+      "3": [
+        "Station | Corridor | Uptime | Status",
+        "Station C-71 | East Loop | 97.2% | Meets target",
+        "Station A-04 | Civic Center | 98.1% | Meets target",
+        "Station B-19 | Library Hub | 96.8% | Monitor",
+        "Station D-08 | Medical District | 97.5% | Meets target"
+      ],
+      "4": [
+        "Event ID | Public Event | Date | Status",
+        "OUT-001 | Payment gateway outage identified | 2026-02-08 | Resolved",
+        "OUT-002 | Station C-71 connector fault isolated | 2026-02-09 | Resolved",
+        "OUT-003 | Roaming-network retry window adjusted | 2026-02-10 | Complete",
+        "OUT-004 | Public reliability note prepared | 2026-03-10 | Complete"
+      ],
+      "5": [
+        "Action ID | Maintenance Action | Owner | Due | Status",
+        "MA-001 | Replace Station C-71 connector handle",
+        "Nia Rowan | 2026-02-12 | Complete",
+        "MA-002 | Update payment retry monitor",
+        "Reliability Engineering | 2026-02-14 | Complete",
+        "MA-003 | Add uptime exception review",
+        "Operations Analytics | 2026-02-20 | Complete"
+      ],
+      "6": [
+        "Commitment ID | Public Access Commitment | Status",
+        "EQ-001 | Keep two chargers available within East Loop corridor | Active",
+        "EQ-002 | Publish downtime notices within one business day | Active",
+        "EQ-003 | Prioritize repair dispatch near medical facilities | Active"
+      ],
+      "7": [
+        "Item | Public Finding | Status",
+        "Payment outage root category | Gateway configuration fault | Closed",
+        "Customer payment reversals | Completed for duplicate authorizations | Closed",
+        "Public notification | Corrected notice posted 2026-03-10 | Complete"
+      ],
+      "8": [
+        "Communication | Audience | Public Date | Status",
+        "Reliability bulletin | Drivers | 2026-03-10 | Posted",
+        "Council district note | District offices | 2026-03-11 | Sent",
+        "Open-data update | Public dashboard | 2026-03-15 | Posted"
+      ],
+      "9": [
+        "Style element | Public requirement",
+        "Header band height | 40 points",
+        "Cover and appendix color | 0B132B",
+        "Summary and uptime color | 0F766E",
+        "Outage and payment color | B45309",
+        "Maintenance color | 1D4ED8",
+        "Equity and communications color | 6D28D9",
+        "Footer text | MetroCharge Public Reliability Report | Q1 2026"
+      ],
+      "10": [
+        "Register field | Public value",
+        "Appendix A | Uptime calculation note",
+        "Appendix B | Payment incident category definitions",
+        "Appendix C | Equity access commitments",
+        "Release approval | Reliability Office Director"
+      ]
+    }
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l3_033_pdf_ev_charging_reliability_public_report"
+}

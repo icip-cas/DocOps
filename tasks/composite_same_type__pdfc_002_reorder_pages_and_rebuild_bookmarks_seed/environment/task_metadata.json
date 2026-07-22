@@ -1,0 +1,32 @@
+{
+  "task_id": "pdfc_002",
+  "task_dir_name": "pdfc_002_reorder_pages_and_rebuild_bookmarks_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "reorder -> rebuild-structure",
+  "difficulty": "Hard",
+  "source_doc_filename": "pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.pdf",
+  "source_doc_path": "pdf/pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.pdf",
+  "task_description_filename": "pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.txt",
+  "task_description_path": "pdf/pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.pdf",
+  "output_path": "/root/submission/pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.pdf",
+  "output_filename": "pdfc_002_reorder_pages_and_rebuild_bookmarks_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This report is out of order and the bookmark tree should match the corrected sequence.",
+  "single_step_benchmark_instruction": "Reorder the pages so the report reads `Scope -> Findings -> Recommendations -> Appendix`, then rebuild the bookmarks so `Site A` and `Site B` are nested under `Findings`.",
+  "atomic_scope": "Only the page reorder and bookmark hierarchy rebuild are explicitly requested.",
+  "expected_output_type": "A revised .pdf document with corrected page order and bookmark hierarchy.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Page content should remain unchanged\n- No theming work is required"
+  }
+}

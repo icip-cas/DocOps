@@ -1,0 +1,154 @@
+{
+  "task_id": "docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof",
+  "task_dir_name": "docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof",
+  "doc_type": "pdf+xlsx",
+  "primary_modality": "PDF (.pdf) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "F2 Highlighting",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "SKU-panel-filtering -> PDF artwork proof page/bookmark rebuild -> Excel QA checklist controls -> cross-output panel consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_input.pdf",
+  "supporting_input_paths": [
+    "/root/sku_panel_master.xlsx",
+    "/root/locale_typography_note.docx",
+    "/root/carton_artwork_style_sheet.pdf"
+  ],
+  "output_paths": {
+    "packet": "/root/submission/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_packet.pdf",
+    "workbook": "/root/submission/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_packet.pdf",
+  "output_filename": "docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_input.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Prepare a final carton artwork PDF proof and matching QA checklist from a draft PDF, SKU master, locale typography note, and style sheet while filtering retired-market artwork.",
+  "single_step_benchmark_instruction": "Create the final PDF and Excel checklist. Rebuild the PDF proof with cover, public panels, QA certificate and bookmarks; exclude SKU-X99; preserve Spanish warning status; create Excel QA table with print area, formulas, validation, hidden rules, conditional formatting, and cross-output proof page mapping.",
+  "atomic_scope": "PDF/XLSX packaging artwork proof workflow with style and locale controls.",
+  "expected_output_type": "A final .pdf artwork proof and .xlsx QA checklist saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "Adobe Acrobat bookmarks and page organization",
+      "url": "https://helpx.adobe.com/acrobat/using/page-thumbnails-bookmarks-pdfs.html"
+    },
+    {
+      "title": "Microsoft Excel print areas and persistent worksheet formatting",
+      "url": "https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e"
+    }
+  ],
+  "verifier_expectations": {
+    "packet_output": "/root/submission/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_packet.pdf",
+    "workbook_output": "/root/submission/docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof_workbook.xlsx",
+    "pdf_page_count": 5,
+    "pdf_titles": [
+      "Carton Artwork Proof",
+      "SKU-A12 English Panel",
+      "SKU-A12 Spanish Panel",
+      "SKU-B07 English Panel",
+      "QA Certificate"
+    ],
+    "pdf_required": [
+      "Published Panel Count 3",
+      "Retired SKU Excluded SKU-X99",
+      "Locale EN",
+      "Locale ES",
+      "Warning Panel SKU-A12 Spanish Panel",
+      "Bleed 0.125 inch retained"
+    ],
+    "pdf_forbidden": [
+      "Legacy French Panel",
+      "Retired artwork"
+    ],
+    "outline_titles": [
+      "Carton Artwork Proof",
+      "SKU-A12 English Panel",
+      "SKU-A12 Spanish Panel",
+      "SKU-B07 English Panel",
+      "QA Certificate"
+    ],
+    "sheet_order": [
+      "Artwork QA",
+      "Rules"
+    ],
+    "checklist_rows": [
+      [
+        "CHK-01",
+        "SKU-A12",
+        "English Panel",
+        "Copy lockup",
+        "Pass",
+        "Publish"
+      ],
+      [
+        "CHK-02",
+        "SKU-A12",
+        "Spanish Panel",
+        "Accent mark review",
+        "Warning",
+        "Publish"
+      ],
+      [
+        "CHK-03",
+        "SKU-B07",
+        "English Panel",
+        "Dose statement alignment",
+        "Pass",
+        "Publish"
+      ],
+      [
+        "CHK-04",
+        "SKU-X99",
+        "Legacy French Panel",
+        "Retired market artwork",
+        "Internal",
+        "Do Not Publish"
+      ]
+    ],
+    "table_ref": "A2:I6",
+    "print_area": "'Artwork QA'!$A$1:$I$6",
+    "freeze_panes": "A3",
+    "formula_cells": {
+      "H3": "=IF(F3=\"Publish\",\"IN PDF\",\"INTERNAL\")",
+      "H4": "=IF(F4=\"Publish\",\"IN PDF\",\"INTERNAL\")",
+      "H5": "=IF(F5=\"Publish\",\"IN PDF\",\"INTERNAL\")",
+      "H6": "=IF(F6=\"Publish\",\"IN PDF\",\"INTERNAL\")",
+      "I3": "=IF(E3=\"Warning\",\"REVIEW\",\"OK\")",
+      "I4": "=IF(E4=\"Warning\",\"REVIEW\",\"OK\")",
+      "I5": "=IF(E5=\"Warning\",\"REVIEW\",\"OK\")",
+      "I6": "=IF(E6=\"Warning\",\"REVIEW\",\"OK\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "result_choices",
+      "publish_choices"
+    ],
+    "data_validation_ranges": [
+      "E3:E6",
+      "F3:F6"
+    ],
+    "public_skus": [
+      "SKU-A12",
+      "SKU-B07"
+    ],
+    "retired_skus": [
+      "SKU-X99"
+    ]
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_051_pdf_xlsx_carton_artwork_locale_proof"
+}

@@ -1,0 +1,32 @@
+{
+  "task_id": "pptc_005",
+  "task_dir_name": "pptc_005_extract_launch_fields_and_emphasize_source_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "F2 Highlighting"
+  ],
+  "num_atomic_operations": 2,
+  "composition_type": "same-doc-type",
+  "composition_pattern": "extract -> emphasize",
+  "difficulty": "Medium-Hard",
+  "source_doc_filename": "pptc_005_extract_launch_fields_and_emphasize_source_seed.pptx",
+  "source_doc_path": "ppt/pptc_005_extract_launch_fields_and_emphasize_source_seed.pptx",
+  "task_description_filename": "pptc_005_extract_launch_fields_and_emphasize_source_seed.txt",
+  "task_description_path": "ppt/pptc_005_extract_launch_fields_and_emphasize_source_seed.txt",
+  "source_type": "Composite same-type benchmark seed",
+  "input_path": "/root/pptc_005_extract_launch_fields_and_emphasize_source_seed.pptx",
+  "output_path": "/root/submission/pptc_005_extract_launch_fields_and_emphasize_source_seed.pptx",
+  "output_filename": "pptc_005_extract_launch_fields_and_emphasize_source_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This deck needs the final launch date and owner surfaced on the summary slide and the source line emphasized.",
+  "single_step_benchmark_instruction": "Fill the two summary callouts on Slide 1 with the final launch date and final action owner from the deck, then visually emphasize the source line on the detailed status slide.",
+  "atomic_scope": "Only the two extracted callout values and the corresponding source-line emphasis are explicitly requested.",
+  "expected_output_type": "A revised .pptx deck with populated summary callouts and one emphasized evidence line.",
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- Do not add extra slides\n- Leave non-source bullets unchanged"
+  }
+}

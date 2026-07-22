@@ -1,0 +1,1 @@
+A clinical quality CAPA audit response tracker and public audit response deck must be generated from a draft deck, deviation log, audit scope note, regulation excerpt, and evidence index while excluding internal-only root-cause material.

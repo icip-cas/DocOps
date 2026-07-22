@@ -1,0 +1,134 @@
+{
+  "task_id": "pdfxr_003",
+  "task_dir_name": "pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed",
+  "doc_type": "pdf",
+  "primary_modality": "PDF (.pdf)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C5 Reasoning",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S3 Hierarchy editing"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "fill-cover -> replace-body-lines -> insert-two-support-pages -> delete-stale-page -> reorder-kept-pages -> rebuild-nested-outline",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "supporting_input_paths": [
+    "/root/cover_values.xlsx",
+    "/root/upload_rules.docx",
+    "/root/upload_log.pdf",
+    "/root/folder_map.pdf",
+    "/root/bookmark_plan.docx"
+  ],
+  "output_path": "/root/submission/pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "output_filename": "pdfxr_003_due_diligence_latest_uploads_packet_and_nested_bookmarks_seed.pdf",
+  "output_extension": ".pdf",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Insert only the latest-upload exhibits.",
+  "single_step_benchmark_instruction": "Insert only the latest-upload exhibits, remove outdated duplicates, update the cover totals by request-list section, and build nested bookmarks that mirror the request-list hierarchy.",
+  "atomic_scope": "Only the cover lines, body lines, inserted support pages, deleted stale page, final page order, and outline are required.",
+  "expected_output_type": "A revised .pdf artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Preserve the image-bearing evidence pages\n- Do not rebuild the packet as plain text pages"
+  },
+  "verifier_expectations": {
+    "page_count": 6,
+    "page_titles_order": [
+      "Cover",
+      "Latest Upload Rules",
+      "Upload Log",
+      "Folder Map",
+      "Evidence Folder A",
+      "Evidence Folder B"
+    ],
+    "cover_lines": [
+      "Room: Northline Diligence",
+      "Inserted Pages: 2",
+      "Latest Uploads: 3"
+    ],
+    "required_page_lines": [
+      {
+        "page_title": "Latest Upload Rules",
+        "lines": [
+          "Rule 1: Insert the upload log and folder map before the retained evidence pages.",
+          "Rule 2: Keep the image-bearing evidence pages in the final order.",
+          "Rule 3: Remove stale request-index pages from the packet."
+        ]
+      },
+      {
+        "page_title": "Upload Log",
+        "lines": [
+          "Insert the upload log after the rules page."
+        ]
+      },
+      {
+        "page_title": "Folder Map",
+        "lines": [
+          "Insert the folder map after the upload log."
+        ]
+      }
+    ],
+    "absent_page_titles": [
+      "Stale Request Index"
+    ],
+    "outline": [
+      [
+        0,
+        "Packet"
+      ],
+      [
+        1,
+        "Cover"
+      ],
+      [
+        1,
+        "Latest Upload Rules"
+      ],
+      [
+        1,
+        "Supporting Pages"
+      ],
+      [
+        2,
+        "Upload Log"
+      ],
+      [
+        2,
+        "Folder Map"
+      ],
+      [
+        1,
+        "Evidence Folder A"
+      ],
+      [
+        1,
+        "Evidence Folder B"
+      ]
+    ],
+    "page_image_mins": [
+      {
+        "page_title": "Cover",
+        "min_images": 1
+      },
+      {
+        "page_title": "Evidence Folder A",
+        "min_images": 1
+      },
+      {
+        "page_title": "Evidence Folder B",
+        "min_images": 1
+      },
+      {
+        "page_title": "Folder Map",
+        "min_images": 1
+      }
+    ],
+    "theme_colors_any": [
+      "F3EEE7"
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "task_id": "pptxr_003",
+  "task_dir_name": "pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 6,
+  "composition_type": "cross-document",
+  "composition_pattern": "replace-summary -> refresh-risk-table -> duplicate-reference-slide -> insert-evidence-highlights -> preserve-references",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed.pptx",
+  "supporting_input_paths": [
+    "/root/summary_note.docx",
+    "/root/control_status.xlsx",
+    "/root/quote_note.pdf"
+  ],
+  "output_path": "/root/submission/pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed.pptx",
+  "output_filename": "pptxr_003_security_readout_appendix_refresh_from_questionnaire_and_evidence_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Update the customer answer grid.",
+  "single_step_benchmark_instruction": "Update the customer answer grid, duplicate the appendix reference slide to create `Evidence Highlights`, fill three evidence bullets and IDs, preserve the theme and reference-slide geometry, and keep the final live slide order as Policy Readout, Summary, Risks, Evidence Divider, Evidence Highlights, Customer Answer Grid, and Closing before the two unchanged locked reference slides.",
+  "atomic_scope": "Only the updated summary, refreshed risk table, inserted Evidence Highlights slide, and preserved reference slides are required.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep both reference slides unchanged\n- Do not rebuild the inserted slides with different layouts"
+  },
+  "verifier_expectations": {
+    "titles_order": [
+      "Policy Readout",
+      "Summary",
+      "Risks",
+      "Evidence Divider",
+      "Evidence Highlights",
+      "Customer Answer Grid",
+      "Closing",
+      "Layout Reference - Evidence Appendix",
+      "Layout Reference - Quote Callout"
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Evidence Appendix",
+      "Layout Reference - Quote Callout"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Summary",
+        "exact_lines": [
+          "FAQ revision cleared legal review.",
+          "Posting window closes Friday.",
+          "Reserve monitoring remains stable.",
+          "Replace the three placeholder summary lines."
+        ]
+      }
+    ],
+    "slide_text_anchors": [
+      {
+        "slide_title": "Evidence Highlights",
+        "required_all": [
+          "FAQ revision cleared legal review",
+          "Posting window closes Friday",
+          "Reserve monitoring remains stable"
+        ]
+      },
+      {
+        "slide_title": "Customer Answer Grid",
+        "required_all": [
+          "What changed in the packet?",
+          "FAQ revision cleared legal review",
+          "Which exception remains open?",
+          "License packet QA",
+          "When does posting close?",
+          "Posting window closes Friday"
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Risks",
+        "cells": {
+          "1,0": "Posting backlog",
+          "1,1": "Devin Park",
+          "2,0": "License packet QA",
+          "2,1": "Mia Torres"
+        }
+      }
+    ],
+    "picture_slides": [
+      {
+        "slide_title": "Evidence Highlights",
+        "min_pictures": 1
+      }
+    ],
+    "notes_exact_lines": [
+      {
+        "slide_title": "Evidence Highlights",
+        "exact_lines": [
+          "Evidence appendix inserted from the locked reference layout.",
+          "Built from chart evidence."
+        ]
+      }
+    ],
+    "shape_count_matches_input": [
+      {
+        "slide_title": "Evidence Highlights",
+        "reference_title": "Layout Reference - Evidence Appendix"
+      }
+    ],
+    "picture_count_matches_input": [
+      {
+        "slide_title": "Evidence Highlights",
+        "reference_title": "Layout Reference - Evidence Appendix"
+      }
+    ],
+    "title_signature_matches_input": [
+      {
+        "slide_title": "Evidence Highlights",
+        "reference_title": "Layout Reference - Evidence Appendix"
+      }
+    ],
+    "body_signature_matches_input": [
+      {
+        "slide_title": "Evidence Highlights",
+        "reference_title": "Layout Reference - Evidence Appendix"
+      }
+    ]
+  }
+}

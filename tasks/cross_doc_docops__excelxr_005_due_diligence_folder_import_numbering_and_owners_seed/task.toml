@@ -1,0 +1,51 @@
+schema_version = "1.1"
+
+[task]
+name = "documentbenchmark/final130__cross_doc_docops__excelxr_005_due_diligence_folder_import_numbering_and_owners_seed"
+description = "excelxr_005 - due-diligence folder import task for DocumentBenchmark."
+authors = []
+keywords = ["excel", "cross-document", "document-processing", "c1-extraction", "s3-hierarchy-editing", "s4-table/sheet-ops"]
+
+[metadata]
+difficulty_level = "L4-cross-document"
+benchmark_split = "cross_doc_docops"
+difficulty = "Very Hard"
+category = "document-processing"
+tags = ["excel", "cross-document", "document-processing", "skill-gap-v7-realworld", "folder-import"]
+task_id = "excelxr_005"
+doc_type = "excel"
+primary_modality = "Excel (.xlsx)"
+atomic_operation = "Cross-document Composite"
+source_type = "Cross-document document-ops V7 realworld"
+verifier_mode = "semantic-strict"
+composition_type = "cross-document"
+composition_pattern = "extract-sectioned-request-list -> map-hierarchy-to-rows -> fill-launch-metadata -> preserve-summary-formulas"
+atomic_operations = ["C1 Extraction", "S3 Hierarchy editing", "S4 Table/Sheet ops"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 1
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+mcp_servers = []
+skills_dir = "/skills"
+workdir = "/root"
+
+[verifier.env]
+TASK_METADATA_PATH = "/tests/task_metadata.json"
+
+[environment.env]
+INPUT_PATH = "/root/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx"
+OUTPUT_PATH = "/root/submission/excelxr_005_due_diligence_folder_import_numbering_and_owners_seed.xlsx"
+TASK_ID = "excelxr_005"
+DOC_TYPE = "excel"
+
+[solution.env]

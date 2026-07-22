@@ -1,0 +1,158 @@
+{
+  "task_id": "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style",
+  "task_dir_name": "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style",
+  "doc_type": "ppt+xlsx",
+  "primary_modality": "PowerPoint (.pptx) and Excel (.xlsx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C2 Editing",
+    "C3 Generation",
+    "C4 Computation",
+    "C5 Reasoning",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S2 Reorder",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 9,
+  "composition_type": "cross-document multi-output style-format",
+  "composition_pattern": "poster-style-brief -> PPT slide-size/card-grid repair -> accessibility-caption-gate -> Excel print-spec controls -> cross-output export consistency",
+  "difficulty": "Very Hard",
+  "difficulty_level": "L4-cross-document",
+  "source_type": "DocOps v2 final L4 dataset",
+  "input_path": "/root/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_input.pptx",
+  "supporting_input_paths": [
+    "/root/poster_session_schedule.xlsx",
+    "/root/poster_accessibility_note.docx",
+    "/root/poster_style_brief.pdf"
+  ],
+  "output_paths": {
+    "deck": "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_deck.pptx",
+    "workbook": "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_workbook.xlsx"
+  },
+  "output_path": "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_deck.pptx",
+  "output_filename": "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_input.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "multi-document",
+  "verifier_mode": "style-format-semantic-strict",
+  "user_task_description": "Repair a conference poster deck and produce a print/accessibility specification workbook using a session schedule, accessibility note, and style brief.",
+  "single_step_benchmark_instruction": "Create the final PPTX and XLSX. Fix slide size and poster layout, remove scratch slides, preserve a locked reference grid, apply the ink/coral/mint palette, flag P-118 caption repair, and keep Excel print/accessibility controls live.",
+  "atomic_scope": "PPT/XLSX cross-document style workflow with slide-size, card-grid, print-spec, and accessibility gate validation.",
+  "expected_output_type": "A final .pptx poster deck and .xlsx print/accessibility spec saved to /root/submission.",
+  "inspired_by": [
+    {
+      "title": "PowerPoint slide size and layout templates are common style failure points",
+      "url": "https://support.microsoft.com/en-us/office/change-the-size-of-your-slides-040a811c-be43-40b9-8d04-0de5ed79987e"
+    },
+    {
+      "title": "Excel print areas and worksheet setup are persistent format controls",
+      "url": "https://support.microsoft.com/en-us/office/set-or-clear-a-print-area-on-a-worksheet-27048af8-a321-416d-ba1b-e99ae2182a7e"
+    }
+  ],
+  "verifier_expectations": {
+    "deck_output": "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_deck.pptx",
+    "workbook_output": "/root/submission/docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style_workbook.xlsx",
+    "slide_size": [
+      12191695,
+      6858000
+    ],
+    "titles": [
+      "Conference Poster Accessibility Pack",
+      "Evidence Card Grid",
+      "Caption Repair Panel",
+      "Reference - Locked Poster Grid"
+    ],
+    "deck_required": [
+      "Final poster deck uses ink/coral/mint palette",
+      "Caption repair required before export",
+      "LOCKED REFERENCE"
+    ],
+    "deck_forbidden": [
+      "Scratch Notes - Remove",
+      "Uncaptioned Evidence Cards",
+      "Draft poster layout"
+    ],
+    "session_rows": [
+      [
+        "P-104",
+        "Medication adherence micro-study",
+        "Dr. Kim",
+        "Track A",
+        "Ready"
+      ],
+      [
+        "P-118",
+        "Clinic scheduling equity audit",
+        "Dr. Mensah",
+        "Track B",
+        "Needs caption"
+      ],
+      [
+        "P-126",
+        "Remote monitoring pilot",
+        "Dr. Alvarez",
+        "Track C",
+        "Ready"
+      ]
+    ],
+    "sheet_order": [
+      "Print Spec",
+      "Rules"
+    ],
+    "spec_rows": [
+      [
+        "Slide 1",
+        "Poster Cover",
+        "Title 30pt",
+        "Ready",
+        "Export"
+      ],
+      [
+        "Slide 2",
+        "Evidence Cards",
+        "Card labels 13pt",
+        "Ready",
+        "Export"
+      ],
+      [
+        "Slide 3",
+        "Caption Repair",
+        "Caption text 12pt minimum",
+        "Needs caption",
+        "Hold"
+      ],
+      [
+        "Slide 4",
+        "Reference Layout",
+        "Locked reference grid",
+        "Ready",
+        "Do not export"
+      ]
+    ],
+    "table_ref": "A2:G6",
+    "print_area": "'Print Spec'!$A$1:$G$6",
+    "freeze_panes": "A3",
+    "formula_cells": {
+      "F3": "=IF(E3=\"Export\",\"POSTER\",\"REFERENCE\")",
+      "F4": "=IF(E4=\"Export\",\"POSTER\",\"REFERENCE\")",
+      "F5": "=IF(E5=\"Export\",\"POSTER\",\"REFERENCE\")",
+      "F6": "=IF(E6=\"Export\",\"POSTER\",\"REFERENCE\")",
+      "G3": "=IF(D3=\"Needs caption\",\"HOLD\",\"OK\")",
+      "G4": "=IF(D4=\"Needs caption\",\"HOLD\",\"OK\")",
+      "G5": "=IF(D5=\"Needs caption\",\"HOLD\",\"OK\")",
+      "G6": "=IF(D6=\"Needs caption\",\"HOLD\",\"OK\")"
+    },
+    "hidden_sheets": [
+      "Rules"
+    ],
+    "defined_names": [
+      "readiness_choices"
+    ],
+    "data_validation_ranges": [
+      "D3:D6"
+    ],
+    "caption_hold_slide": "Slide 3"
+  },
+  "final_dataset": "docops_v2_final_80",
+  "final_task_slug": "docops_v2_l4_059_ppt_xlsx_conference_poster_accessibility_style"
+}

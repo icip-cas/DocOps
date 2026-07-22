@@ -1,0 +1,1 @@
+Prepare a final carton artwork PDF proof and matching QA checklist from a draft PDF, SKU master, locale typography note, and style sheet while filtering retired-market artwork.\n

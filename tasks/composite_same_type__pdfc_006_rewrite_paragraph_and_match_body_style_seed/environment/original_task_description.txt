@@ -1,0 +1,18 @@
+Composite DocumentBenchmark seed: pdfc_006
+
+Doc type: pdf
+Atomic operations: C2 Editing, F1 Style consistency
+Composition pattern: rewrite -> restyle
+Difficulty: Medium-Hard
+
+User-facing goal:
+This status memo contains one informal paragraph and inconsistent body styling.
+
+Single-step benchmark instruction:
+Rewrite only the paragraph beginning `The supplier missed two promised dates again` so it reads formally while preserving the meaning, then make its body style match the surrounding body paragraphs.
+
+Atomic scope:
+Only the targeted paragraph rewrite and body-style matching are explicitly requested.
+
+Expected output type:
+A revised .pdf memo with one formalized paragraph and matching body styling.

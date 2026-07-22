@@ -1,0 +1,110 @@
+{
+  "task_id": "pptxr_001",
+  "task_dir_name": "pptxr_001_monthly_board_pack_refresh_locked_layout_seed",
+  "doc_type": "ppt",
+  "primary_modality": "PowerPoint (.pptx)",
+  "atomic_operations": [
+    "C1 Extraction",
+    "C4 Computation",
+    "F1 Style consistency",
+    "S1 Insert/Delete",
+    "S4 Table/Sheet ops"
+  ],
+  "num_atomic_operations": 5,
+  "composition_type": "cross-document",
+  "composition_pattern": "refresh-metrics -> duplicate-reference-slide -> insert-decision-card -> refresh-live-table -> preserve-reference",
+  "difficulty": "Very Hard",
+  "source_type": "Cross-document document-ops V7 realworld",
+  "input_path": "/root/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+  "supporting_input_paths": [
+    "/root/metrics.xlsx",
+    "/root/decision_note.docx",
+    "/root/action_log.xlsx"
+  ],
+  "output_path": "/root/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+  "output_filename": "pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+  "output_extension": ".pptx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "Refresh the metric tiles and action table.",
+  "single_step_benchmark_instruction": "Refresh the metric tiles and action table, insert a `Decision Snapshot` slide by duplicating the locked reference layout, place it before `Closing`, and keep the reference slide unchanged.",
+  "atomic_scope": "Only the refreshed metrics, inserted decision slide, refreshed live table, and preserved reference slide are required.",
+  "expected_output_type": "A revised .pptx artifact that completes the requested cross-document document operation.",
+  "notes": {
+    "Task Notes": "- Keep the reference slide unchanged\n- Do not rebuild the inserted slide with a different layout"
+  },
+  "verifier_expectations": {
+    "titles_order": [
+      "Monthly Board Pack",
+      "Metrics",
+      "Decision Snapshot",
+      "Action Tracker",
+      "Closing",
+      "Layout Reference - Decision Card"
+    ],
+    "reference_slides_match_input": [
+      "Layout Reference - Decision Card"
+    ],
+    "slide_text": [
+      {
+        "slide_title": "Metrics",
+        "required_lines": [
+          "Open Actions",
+          "5",
+          "Late Items",
+          "2",
+          "Completed",
+          "8"
+        ]
+      },
+      {
+        "slide_title": "Decision Snapshot",
+        "required_lines": [
+          "Decision A",
+          "Release the revised FAQ.",
+          "Decision B",
+          "Approve the corrected attendance count.",
+          "Decision C",
+          "Post the packet by Friday."
+        ]
+      }
+    ],
+    "slide_tables": [
+      {
+        "slide_title": "Action Tracker",
+        "cells": {
+          "1,0": "Mia Torres",
+          "1,1": "Release FAQ",
+          "1,2": "2025-02-14",
+          "2,0": "Devin Park",
+          "2,1": "Post packet",
+          "2,2": "2025-02-15"
+        }
+      }
+    ],
+    "shape_count_matches_input": [
+      {
+        "slide_title": "Decision Snapshot",
+        "reference_title": "Layout Reference - Decision Card"
+      }
+    ],
+    "picture_count_matches_input": [
+      {
+        "slide_title": "Decision Snapshot",
+        "reference_title": "Layout Reference - Decision Card"
+      }
+    ],
+    "title_signature_matches_input": [
+      {
+        "slide_title": "Decision Snapshot",
+        "reference_title": "Layout Reference - Decision Card"
+      }
+    ],
+    "body_signature_matches_input": [
+      {
+        "slide_title": "Decision Snapshot",
+        "reference_title": "Layout Reference - Decision Card"
+      }
+    ]
+  }
+}

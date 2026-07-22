@@ -1,0 +1,31 @@
+{
+  "task_id": "excel_001",
+  "task_dir_name": "excel_001_budget_bucket_totals_seed",
+  "doc_type": "excel",
+  "primary_modality": "Excel (.xlsx)",
+  "atomic_operation": "C4 Computation",
+  "difficulty": "Medium",
+  "source_doc_filename": "excel_001_budget_bucket_totals_seed.xlsx",
+  "source_doc_path": "excel/excel_001_budget_bucket_totals_seed.xlsx",
+  "task_description_filename": "excel_001_budget_bucket_totals_seed.txt",
+  "task_description_path": "excel/excel_001_budget_bucket_totals_seed.txt",
+  "input_path": "/root/excel_001_budget_bucket_totals_seed.xlsx",
+  "output_path": "/root/submission/excel_001_budget_bucket_totals_seed.xlsx",
+  "output_filename": "excel_001_budget_bucket_totals_seed.xlsx",
+  "output_extension": ".xlsx",
+  "output_kind": "document",
+  "verifier_mode": "semantic-strict",
+  "user_task_description": "This workbook tracks costs with a code in one column and needs totals split into Maintenance and Operations budgets.",
+  "single_step_benchmark_instruction": "Using formulas, calculate the correct Maintenance total and Operations total in the summary area based on the cost-code mapping in the `Code Map` sheet.",
+  "atomic_scope": "Only the summary computation is explicitly requested in this task.",
+  "expected_output_type": "A repaired .xlsx workbook with correct formula-driven totals.",
+  "inspired_by": [
+    {
+      "title": "Directing costs to multiple different totals based on category",
+      "url": "https://www.reddit.com/r/excel/comments/1snym9r/directing_costs_to_multiple_different_totals/"
+    }
+  ],
+  "notes": {
+    "Latent Issues Intentionally Left In The Seed": "- The Budget Bucket column in the main table is blank\n- The summary panel formatting is uneven\n- The workbook layout is cluttered and could be improved, but that is not the explicit request"
+  }
+}
