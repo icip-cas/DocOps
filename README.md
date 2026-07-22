@@ -1,6 +1,17 @@
+<div align="center">
+
 # DocOps
 
-[Project Page](https://jiangxiaohuan3.github.io/docops.github.io/) | [License](LICENSE)
+<p>
+  <a href="https://docopsbench.github.io">
+    <img src="https://img.shields.io/badge/Project%20Page-docopsbench.github.io-2F80ED?style=for-the-badge&logo=githubpages&logoColor=white" alt="Project Page">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-Apache--2.0-34A853?style=for-the-badge&logo=apache&logoColor=white" alt="License">
+  </a>
+</p>
+
+</div>
 
 DocOps is a Harbor-formatted benchmark for evaluating document-operation
 agents across Excel, Word, PowerPoint, and PDF files. Unlike document QA
