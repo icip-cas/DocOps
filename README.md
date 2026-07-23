@@ -292,3 +292,17 @@ and required release files.
 
 This repository is released under the Apache-2.0 license. Third-party
 components and bundled skills retain their own license notices where included.
+
+## 📚 Citation
+
+```bibtex
+@misc{jiang2026docopsverifiablebenchmarkautonomous,
+      title={DocOps: A Verifiable Benchmark for Autonomous Agents in Complex Document Operations}, 
+      author={Jiazhen Jiang and Boxi Cao and Lingyong Yan and Yaojie Lu and Hongyu Lin and Shuaiqiang Wang and Dawei Yin and Xianpei Han and Le Sun},
+      year={2026},
+      eprint={2607.19865},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2607.19865}, 
+}
+```
