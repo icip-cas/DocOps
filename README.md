@@ -6,6 +6,9 @@
   <a href="https://docopsbench.github.io">
     <img src="https://img.shields.io/badge/Project%20Page-docopsbench.github.io-2F80ED?style=for-the-badge&logo=githubpages&logoColor=white" alt="Project Page">
   </a>
+  <a href="https://arxiv.org/abs/2607.19865">
+    <img src="https://img.shields.io/badge/arXiv-2607.19865-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-Apache--2.0-34A853?style=for-the-badge&logo=apache&logoColor=white" alt="License">
   </a>
